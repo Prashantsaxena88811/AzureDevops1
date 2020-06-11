@@ -27,7 +27,7 @@ jobs:
         npm install sfdx-cli --global
       displayName: Install Salesforce CLI devsandboxDeploy
     - bash: 
-        sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
+        sfdx force:auth:jwt:grant --clientid $(SandboxClientID) --jwtkeyfile ./server.key --username $(SandboxUserName) --instanceurl $(salesforceProdInstanceUrl) -a prod
       displayName: Authorize devsandboxDeploy org 
     - bash: 
         sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
