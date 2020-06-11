@@ -5,14 +5,14 @@ trigger:
       - master
 jobs:
 - job: ProdDeploy
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/devsandbox'))
   steps:
     - task: UseNode@1
     - bash: 
         npm install sfdx-cli --global
       displayName: Install Salesforce CLI
     - bash: 
-        sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
+        sfdx force:auth:jwt:grant --clientid $(SandboxClientID) --jwtkeyfile ./server.key --username $($(SandboxUserName)) --instanceurl $(salesforceProdInstanceUrl) -a prod
       displayName: Authorize salesforce org
     - bash: 
         sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
