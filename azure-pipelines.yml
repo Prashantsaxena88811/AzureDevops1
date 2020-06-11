@@ -4,7 +4,7 @@ trigger:
     include:
       - master
       - devsandbox
-      - devsandbox1
+      - devSandbox1
 jobs:
 - job: ProdDeploy
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -34,7 +34,7 @@ jobs:
       displayName: Deploying Extra Metadata to the Org
 
 - job: devsandbox11Deploy
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/devsandbox1'))
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/devSandbox1'))
   steps:
     - task: UseNode@1
     - bash: 
