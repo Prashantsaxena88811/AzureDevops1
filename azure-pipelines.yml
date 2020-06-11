@@ -2,10 +2,9 @@ trigger:
   batch: "true"
   branches:
     include:
-      - master
       - devsandbox
 jobs:
-- job: ProdDeploy
+- job: devsandboxProdDeploy
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/devsandbox'))
   steps:
     - task: UseNode@1
