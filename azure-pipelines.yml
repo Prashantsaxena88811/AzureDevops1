@@ -27,7 +27,7 @@ jobs:
         npm install  --global sfdx-cli@7.45.1
       displayName: Install Salesforce CLI
     - bash: 
-        sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
+        sfdx force:auth:jwt:grant --clientid $(devsandboxkey) --jwtkeyfile ./server.key --username $(devsandboxus) --instanceurl $(salesforceProdInstanceUrl) -a prod
       displayName: Authorize salesforce org
     - bash: 
         sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
@@ -41,7 +41,7 @@ jobs:
         npm install  --global sfdx-cli@7.45.1
       displayName: Install Salesforce CLI
     - bash: 
-        sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
+        sfdx force:auth:jwt:grant --clientid devsandbox1us --jwtkeyfile ./server.key --username $(devsandbox1us) --instanceurl $(salesforceProdInstanceUrl) -a prod
       displayName: Authorize salesforce org
     - bash: 
         sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
