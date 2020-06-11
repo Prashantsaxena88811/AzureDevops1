@@ -11,7 +11,7 @@ jobs:
   steps:
     - task: UseNode@1
     - bash: 
-        npm install sfdx-cli --global
+        npm install  --global sfdx-cli@7.45.1
       displayName: Install Salesforce CLI
     - bash: 
         sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
@@ -24,7 +24,7 @@ jobs:
   steps:
     - task: UseNode@1
     - bash: 
-        npm install sfdx-cli --global
+        npm install  --global sfdx-cli@7.45.1
       displayName: Install Salesforce CLI
     - bash: 
         sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
@@ -38,7 +38,7 @@ jobs:
   steps:
     - task: UseNode@1
     - bash: 
-        npm install sfdx-cli --global
+        npm install  --global sfdx-cli@7.45.1
       displayName: Install Salesforce CLI
     - bash: 
         sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
