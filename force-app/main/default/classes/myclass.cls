@@ -4,6 +4,7 @@ public with sharing class myclass {
 	}
 
 	public String getAppVersion() {
+		integer ii;
 		System.debug('chnagepVersiongetAppVersion doneddd');
 		System.debug('for testing1');
 		return '1.0.0';
