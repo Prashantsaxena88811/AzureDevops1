@@ -8,8 +8,7 @@ public with sharing class myclass {
 
 		system.debug('asdadadasd');
   	    integer zz;
-
-		System.debug('chnages arreee bhai ise revrt krna hh thk hhh');
+		System.debug('chnages gqqetAppVersiongetAppVersiongetAppVersiongetAppVersion done');
 		System.debug('for testing12dddddddddddd111111111111dddddd');
 		return '1.0.0';
 	}
