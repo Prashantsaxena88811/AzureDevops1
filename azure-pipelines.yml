@@ -28,7 +28,7 @@ jobs:
         sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
       displayName: Deploying Extra Metadata to the Org
 - job: devsandboxProdDeploy
-  condition: and(succeeded(), eq('refs/pull/4/merge', 'refs/heads/devsandbox'))
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/devsandbox'))
   steps:
     - task: UseNode@1
     - bash: 
@@ -42,7 +42,7 @@ jobs:
       displayName: Deploying Extra Metadata to the Org
 
 - job: devsandbox11Deploy
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/devSandbox1'))
+  condition: and(succeeded(), eq('refs/pull/4/merge', 'refs/heads/devSandbox1'))
   steps:
     - task: UseNode@1
     - bash: 
