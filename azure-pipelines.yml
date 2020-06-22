@@ -16,7 +16,7 @@ pr:
       
 jobs:
 - job: ProdDeploy
-  condition: and(succeeded(), eq(variables['PullRequest.SourceBranch'], 'refs/heads/master'))
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   steps:
     - task: UseNode@1
     - bash: 
