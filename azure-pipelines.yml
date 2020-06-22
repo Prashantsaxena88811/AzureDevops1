@@ -5,14 +5,6 @@ trigger:
       - master
       - devsandbox
       - devSandbox1
-
-pr:
-  autoCancel: "true"
-  branches:
-    include:
-      - master
-      - devsandbox
-      - devsandbox1      
 jobs:
 - job: ProdDeploy
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -28,7 +20,7 @@ jobs:
         sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
       displayName: Deploying Extra Metadata to the Org
 - job: devsandboxProdDeploy
-  condition: and(succeeded(), eq('refs/pull/4/merge', 'refs/heads/devsandbox'))
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/devsandbox'))
   steps:
     - task: UseNode@1
     - bash: 
