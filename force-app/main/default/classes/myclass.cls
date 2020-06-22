@@ -5,6 +5,10 @@ public with sharing class myclass {
 	}
 
 	public String getAppVersion() {
+		integer ii;
+		String ss1;
+		System.debug('acha to ye baat h');
+		System.debug('for testing1');
 
 		system.debug('asdadadasd');
   	    integer zz;
@@ -14,3 +18,4 @@ public with sharing class myclass {
 		return '1.0.0';
 	}
 }
+
