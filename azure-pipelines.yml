@@ -10,9 +10,7 @@ pr:
   branches:
     include:
       - master
-      - devsandbox
-      - devsandbox1
-     
+
 jobs:
 - job: ProdDeploy
   #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
