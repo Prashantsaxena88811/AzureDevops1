@@ -15,11 +15,11 @@ jobs:
         npm install  --global sfdx-cli@7.45.1
       displayName: Install Salesforce CLI
     - bash: 
-        sfdx force:org:create -v Prashantsxntesting7@gmail.com -f edition=developer -a scratchOrg1 
-      displayName: Create Scratch Org  
-    - bash: 
         sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
       displayName: Authorize salesforce org
+    - bash: 
+        sfdx force:org:create -v prod -f edition=developer -a scratchOrg1 
+      displayName: Create Scratch Org 
     - bash: 
         sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
       displayName: Deploying Extra Metadata to the Org
