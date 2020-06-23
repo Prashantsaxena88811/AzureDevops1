@@ -3,8 +3,7 @@ pr:
   branches:
     include:
       - master
-      - devsandbox
-      - devsandbox1 
+      
       
 jobs:
 - job: ProdDeploy
