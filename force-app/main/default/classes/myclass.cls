@@ -17,6 +17,7 @@ public with sharing class myclass {
 		System.debug('for tjhhfhgesting1');
 		System.debug('for tjhhfhgesting2');
 		System.debug('new debug of devsandbox1 branch for testing');
+		System.debug('new debug of devsandbox1 branch for testing22222222');
   
 
 		return '1.0.0';
