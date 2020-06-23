@@ -13,9 +13,7 @@ public with sharing class myclass {
 		system.debug('asdadadasd');
   	    integer zz;
 		System.debug('chnages gqqetAppVersiongetAppVersiongetAppVersiongetAppVersion done');
-    System.debug('for testingeeeeeeeeeeeeeeeeeeeeeeeedeeeeee22222211111111111111111111111111111');
-    System.debug('for testingeeeeeeeeeeeeeeeeeeeeeeeeeeeeee222222');
-		System.debug('for tjhhfhgesting1');
+   		System.debug('for tjhhfhgesting1');
 
 
 		return '1.0.0';
