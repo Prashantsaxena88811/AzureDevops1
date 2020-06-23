@@ -1,3 +1,11 @@
+trigger:
+  batch: "true"
+  branches:
+    include:
+      - master
+      - devsandbox
+      - devSandbox1
+      
 pr:
   autoCancel: "true"
   branches:
@@ -8,7 +16,7 @@ pr:
       
 jobs:
 - job: ProdDeploy
-  #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   steps:
     - task: UseNode@1
     - bash: 
@@ -16,6 +24,33 @@ jobs:
       displayName: Install Salesforce CLI
     - bash: 
         sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
+      displayName: Authorize salesforce org
+    - bash: 
+        sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
+      displayName: Deploying Extra Metadata to the Org
+- job: devsandboxProdDeploy
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/devsandbox'))
+  steps:
+    - task: UseNode@1
+    - bash: 
+        npm install  --global sfdx-cli@7.45.1
+      displayName: Install Salesforce CLI
+    - bash: 
+        sfdx force:auth:jwt:grant --clientid $(devsandboxkey) --jwtkeyfile ./server.key --username $(devsandboxus) --instanceurl $(salesforceProdInstanceUrl) -a prod
+      displayName: Authorize salesforce org
+    - bash: 
+        sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
+      displayName: Deploying Extra Metadata to the Org
+
+- job: devsandbox11Deploy
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/devSandbox1'))
+  steps:
+    - task: UseNode@1
+    - bash: 
+        npm install  --global sfdx-cli@7.45.1
+      displayName: Install Salesforce CLI
+    - bash: 
+        sfdx force:auth:jwt:grant --clientid $(devsandbox1key) --jwtkeyfile ./server.key --username $(devsandbox1us) --instanceurl $(salesforceProdInstanceUrl) -a prod
       displayName: Authorize salesforce org
     - bash: 
         sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
