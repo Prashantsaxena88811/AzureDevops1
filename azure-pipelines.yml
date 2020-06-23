@@ -18,7 +18,7 @@ jobs:
         sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
       displayName: Authorize salesforce org
     - bash: 
-        sfdx force:org:create -v prod -f edition=developer -a scratchOrg1 
+        sfdx force:org:create -v prod  edition=developer -a scratchOrg1 
       displayName: Create Scratch Org 
     - bash: 
         sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
