@@ -19,7 +19,10 @@ jobs:
       displayName: Authorize salesforce org
     - bash: 
         sfdx force:org:create -v prod  edition=developer -a scratchOrg1 
-      displayName: Create Scratch Org 
+      displayName: Create Scratch Org
+    - bash: 
+        sfdx force:user:password:generate --targetusername scratchOrg1 -v prod
+      displayName: Generating Scratch Org Password   
     - bash: 
         sfdx force:source:deploy -l RunLocalTests -p ./force-app -u scratchOrg1 -w 10
       displayName: Deploying Extra Metadata to the Org
