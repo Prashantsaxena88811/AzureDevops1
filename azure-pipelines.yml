@@ -37,7 +37,7 @@ jobs:
   #condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
   #condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'master'))	
   #condition: and(succeeded(), eq(variables['System.PullRequest.SourceBranch'], 'master'))
-  condition:  and(succeeded(), and( eq(variables['Build.SourceBranch'], 'refs/heads/devsandbox'), eq(variables['Build.Reason'], 'IndividualCI')))
+  condition:  and(succeeded(), and( eq(variables['Build.SourceBranch'], 'refs/heads/devsandbox1'), eq(variables['Build.Reason'], 'IndividualCI')))
   steps:
     - task: UseNode@1
     - bash: 
