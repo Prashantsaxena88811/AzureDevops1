@@ -6,7 +6,7 @@ pr:
       
       
 jobs:
-- job: CommitJOB_ProdDeploy
+- job: PullRequestJob_sandboxDeploy
   #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   #condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
   #condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'master'))	
@@ -32,12 +32,12 @@ jobs:
     - bash: 
       displayName: YE TOH DEV SANDBOX1 H 1
       
-- job: PullRequestJob_sandboxDeploy
+- job: CommitJOB_ProdDeploy
   #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   #condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
   #condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'master'))	
   #condition: and(succeeded(), eq(variables['System.PullRequest.SourceBranch'], 'master'))
-  condition:  and(succeeded(), and( eq(variables['Build.SourceBranch'], 'master'), eq(variables['Build.Reason'], 'IndividualCI')))
+  condition:  and(succeeded(), and( eq(variables['Build.SourceBranch'], 'refs/heads/devsandbox'), eq(variables['Build.Reason'], 'IndividualCI')))
   steps:
     - task: UseNode@1
     - bash: 
