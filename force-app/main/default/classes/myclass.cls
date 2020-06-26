@@ -3,6 +3,7 @@ public with sharing class myclass {
 		getAppVersion();
 		getAppVersion();
 		integer xxxxx;
+		integer xxxxx2;
 	}
 
 	public String getAppVersion() {
