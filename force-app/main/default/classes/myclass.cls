@@ -17,7 +17,7 @@ public with sharing class myclass {
     System.debug('for testingeeeeeeeeeee1111111eeeeeeeeeeeeeeeeeee2222224');
 		System.debug('for tjhhfhgesting1');
 		System.debug('for tjhhfhgesting33233333333333');
-  		integer wwwwwww;
+  		integer ww;
 
 		return '1.0.0';
 	}
