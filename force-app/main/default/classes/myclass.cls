@@ -26,7 +26,7 @@ public with sharing class myclass {
     System.debug('for tjhhfhgesting23');
     Integer YeToDevSandbxo1H1;
     return '1.0.0146';
-		
+	integer new1;	
 	}
 }
 
