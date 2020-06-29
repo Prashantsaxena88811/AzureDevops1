@@ -2,9 +2,9 @@ public with sharing class myclass {
 	public myclass() {
 		getAppVersion();
 		getAppVersion();
-    integer xxxxx;
+    		integer xxxxx;
 		integer xxxxx2;
-    System.debug('11111222245');
+    		System.debug('11111222245');
 
 	}
 
