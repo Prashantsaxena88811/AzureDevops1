@@ -2,9 +2,9 @@ public with sharing class myclass {
 	public myclass() {
 		getAppVersion();
 		getAppVersion();
- 
-		integer xxxxx;
+    integer xxxxx;
 		integer xxxxx2;
+    System.debug('11111222245');
 
 	}
 
@@ -19,14 +19,14 @@ public with sharing class myclass {
 		System.debug('chnages gqqetAppVersiongetAppVersiongetAppVersiongetAppVersion done');
     		System.debug('for testingeeeeeeeeeee1111111eeeeeeeeeeeeeeeeeee222222');
 		System.debug('for tjhhfhgesting1');
-		System.debug('for tjhhfhgesting2');
+    System.debug('for tjhhfhgesting2');
 		System.debug('new debug of devsandbox1 branch for testing');
 		System.debug('new debug of devsandbox1 branch for testing22222222');
 		System.debug('1');
-  
-
-		return '1.0.012';
-		Integer YeToDevSandbxo1H1;
+    System.debug('for tjhhfhgesting23');
+    Integer YeToDevSandbxo1H1;
+    return '1.0.012';
+		
 	}
 }
 
