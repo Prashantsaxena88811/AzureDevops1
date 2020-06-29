@@ -2,6 +2,7 @@ public with sharing class myclass {
 	public myclass() {
 		getAppVersion();
 		getAppVersion();
+		System.debug('11111222245');
 	}
 
 	public String getAppVersion() {
@@ -11,10 +12,10 @@ public with sharing class myclass {
 		System.debug('for testing1');
 
 		system.debug('asdadadasd');
-  	    integer zz;
+  	    	integer zz;
 		System.debug('chnages gqqetAppVersiongetAppVersiongetAppVersiongetAppVersion done');
-    System.debug('for testingeeeeeeeeeeeeeeeeeeeeeeeeeeeeee22222211111111111111111111111111111');
-		integer devsandbox;
+     integer devsandbox;
+
 
 		return '1.0.0';
 	}
