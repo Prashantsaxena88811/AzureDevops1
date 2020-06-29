@@ -26,7 +26,7 @@ public with sharing class myclass {
   
 
 		return '1.0.0';
-		Integer YeToDevSandbxo1H;
+		Integer YeToDevSandbxo1H1;
 	}
 }
 
