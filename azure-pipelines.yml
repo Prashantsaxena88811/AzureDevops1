@@ -7,7 +7,7 @@ trigger:
       - devSandbox1
       
 pr:
-  autoCancel: "true"
+autoCancel: "true"
   branches:
     include:
       - master
