@@ -2,7 +2,7 @@ public with sharing class myclass {
 	public myclass() {
 		getAppVersion();
 		getAppVersion();
-		System.debug('111112222');
+		System.debug('1111122224');
 	}
 
 	public String getAppVersion() {
