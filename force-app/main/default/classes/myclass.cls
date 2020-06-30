@@ -7,7 +7,7 @@ public with sharing class myclass {
 		System.debug('chnages gqqetAppVersiongetAppVersiongetAppVersiongetAppVersion done');
 		System.debug('for tjhhfhgesting1');
 		integer devsandbox2;
-		return '1.0.0';
+		return '1.0.01';
 	}
 	public static void main1(){
 		
