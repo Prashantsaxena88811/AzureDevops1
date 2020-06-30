@@ -9,7 +9,7 @@ public with sharing class myclass {
 		integer devsandbox2;
 		return '1.0.0';
 	}
-	public static void main1(){
+	public static void main2(){
 		
 	}
 }
