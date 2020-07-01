@@ -29,9 +29,8 @@ jobs:
       displayName: Deploying Extra Metadata to the Org
 
     - task: UseNode@1
-      condition: always()
+      condition: succeededOrFailed()
     - bash: 
-      condition: always()
         sfdx force:source:deploy:report -u prod 
       displayName: Deployment Report
     
