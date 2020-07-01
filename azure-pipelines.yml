@@ -31,6 +31,7 @@ jobs:
     - task: UseNode@1
       condition: always()
     - bash: 
+      condition: always()
         sfdx force:source:deploy:report -u prod 
       displayName: Deployment Report
     
