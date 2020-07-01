@@ -28,7 +28,7 @@ jobs:
         sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
       displayName: Deploying Extra Metadata to the Org
     - bash: 
-        echo sfdx force:source:deploy:report -u prod 
+        echo $(sfdx force:source:deploy:report -u prod)
       displayName: Deployment Report  
 
 
