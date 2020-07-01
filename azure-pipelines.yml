@@ -31,7 +31,7 @@ jobs:
         echo $(sfdx force:source:deploy:report -u prod)
       displayName: Deployment Report  
     - bash: 
-        sfdx force:data:record:create -u prod -s Deployment_Error_Log__c -v "Name=echo $(sfdx force:source:deploy:report -u prod)"
+        sfdx force:data:record:create -u prod -s Deployment_Error_Log__c -v "Name='echo $(sfdx force:source:deploy:report -u prod)'"
       displayName: Deployment Report    
 
 
