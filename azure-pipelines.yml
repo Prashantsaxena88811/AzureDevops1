@@ -37,7 +37,7 @@ stages:
 - stage: GeneratingdeploymentReportStage
   dependsOn:
   - ProdDeployStage
-  condition: failed()
+  condition: succeeded()
   jobs:
   - job: GeneratingdeploymentReportStageJob
     steps:
