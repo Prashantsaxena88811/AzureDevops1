@@ -14,7 +14,7 @@ pr:
       - devSandbox1      
 jobs:
 - job: ProdDeploy
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  condition:  eq(variables['Build.SourceBranch'], 'refs/heads/master')
   continueOnError: true
   steps:
     - task: UseNode@1
