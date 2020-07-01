@@ -60,20 +60,4 @@ jobs:
         sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
       displayName: Deploying Extra Metadata to the Org
 #https://docs.microsoft.com/en-us/azure/devops/pipelines/process/conditions?view=azure-devops&tabs=yaml
-- job: Generate_Deployment_Report   
-  dependsOn:
-  - ProdDeploy
-  steps:
-    - task: UseNode@1
-    - bash: 
-        npm install  --global sfdx-cli@7.45.1
-      displayName: Install Salesforce CLI
-    - bash: 
-        sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
-      displayName: Authorize salesforce org
-    - bash: 
-        sfdx force:source:deploy:report -u prod 
-      displayName: Deployment Report
 
-
-    
