@@ -12,7 +12,7 @@ public with sharing class myclass {
 		System.debug('for testing1');
 
 		system.debug('asdadadasd');
-  	    	integer zz;
+  	    	integer zz11;
 		System.debug('chnages gqqetAppVersiongetAppVersiongetAppVersiongetAppVersion done');
     System.debug('for testingeeeeeeeeeee1111111eeeeeeeeeeeeeeeeeee2222224');
 		System.debug('for tjhhfhgesting1');
