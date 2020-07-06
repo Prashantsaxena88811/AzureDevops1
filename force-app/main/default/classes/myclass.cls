@@ -19,7 +19,7 @@ public with sharing class myclass {
 		System.debug('for tjhhfhgesting33233333333333');
   		integer ww;
 		integer ww2;
-		return '1.0.0';
+		return '1.0.01';
 	}
 }
 
