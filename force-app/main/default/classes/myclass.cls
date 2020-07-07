@@ -3,7 +3,7 @@ public with sharing class myclass {
 		getAppVersion();
 		getAppVersion();
     		integer xxxxx;
-		integer xxxxx2;
+		integer xxxxx12;
     		System.debug('11111222245');
 
 	}
