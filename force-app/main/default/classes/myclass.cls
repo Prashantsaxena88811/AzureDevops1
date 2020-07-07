@@ -11,7 +11,7 @@ public with sharing class myclass {
 	public String getAppVersion() {
 		integer ii;
 		String ss1;
-		System.debug('acha to ye baat h');
+		System.debug('acha to ye baat h2');
 		System.debug('for testing1');
 
 		system.debug('asdadadasd');
