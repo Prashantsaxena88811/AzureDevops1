@@ -1,68 +1,23 @@
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
 trigger:
-  batch: "true"
-  branches:
-    include:
-      - master
-      - devsandbox
-      - devSandbox1
-      
-pr:
-  branches:
-    include:
-      - master
-      - devsandbox
-      - devSandbox1      
-jobs:
-- job: ProdDeploy
-  timeoutInMinutes: 10
-  condition:  eq(variables['Build.SourceBranch'], 'refs/heads/master')
-  continueOnError: true
-  steps:
-    - task: UseNode@1
-    - bash: 
-        npm install  --global sfdx-cli@7.45.1
-      displayName: Install Salesforce CLI
-    - bash: 
-        sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
-      displayName: Authorize salesforce org
-    - bash: 
-        sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
-      displayName: Deploying Extra Metadata to the Org
-    - bash: 
-        echo $(sfdx force:source:deploy:report -u prod)
-      displayName: Deployment Report  
-    - bash: 
-        sfdx force:data:record:create -u prod -s Deployment_Error_Log__c -v "Name='$(sfdx force:source:deploy:report -u prod)'"
-      displayName: Creating Deployment Debug Log record
-      condition: always()  
+- master
 
+pool:
+  vmImage: 'windows-latest'
 
-- job: devsandboxProdDeploy
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/devsandbox'))
-  steps:
-    - task: UseNode@1
-    - bash: 
-        npm install  --global sfdx-cli@7.45.1
-      displayName: Install Salesforce CLI
-    - bash: 
-        sfdx force:auth:jwt:grant --clientid $(devsandboxkey) --jwtkeyfile ./server.key --username $(devsandboxus) --instanceurl $(salesforceProdInstanceUrl) -a prod
-      displayName: Authorize salesforce org
-    - bash: 
-        sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
-      displayName: Deploying Extra Metadata to the Org
-
-- job: devsandbox11Deploy
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/devSandbox1'))
-  steps:
-    - task: UseNode@1
-    - bash: 
-        npm install  --global sfdx-cli@7.45.1
-      displayName: Install Salesforce CLI
-    - bash: 
-        sfdx force:auth:jwt:grant --clientid $(devsandbox1key) --jwtkeyfile ./server.key --username $(devsandbox1us) --instanceurl $(salesforceProdInstanceUrl) -a prod
-      displayName: Authorize salesforce org
-    - bash: 
-        sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod -w 10
-      displayName: Deploying Extra Metadata to the Org
-#https://docs.microsoft.com/en-us/azure/devops/pipelines/process/conditions?view=azure-devops&tabs=yaml
-
+steps:
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'test'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
