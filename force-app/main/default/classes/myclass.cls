@@ -4,7 +4,7 @@ public with sharing class myclass {
 		getAppVersion();
     		integer xxxxx;
 		integer xxxxx12;
-    		System.debug('111112nnnnnnnnnnnnnn22245');
+    		System.debug('111112nnnnnnnnnnnnnn2224566');
 
 	}
 
