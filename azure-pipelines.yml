@@ -34,7 +34,7 @@ jobs:
     - bash: 
         sfdx force:data:record:create -u prod -s Deployment_Error_Log__c -v "Name='$(sfdx force:source:deploy:report -u prod)'"
       displayName: Creating Deployment Debug Log record
-      condition: always()  
+      condition: failed()  
 
 
 - job: devsandboxProdDeploy
