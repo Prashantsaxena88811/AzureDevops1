@@ -5,6 +5,7 @@ trigger:
       - master
       - devsandbox
       - devSandbox1
+      - devSandbox2
       
 pr:
   branches:
