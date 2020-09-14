@@ -13,7 +13,7 @@
             <allInternalUsers/>
         </sharedTo>
         <sharedFrom>
-            1<allInternalUsers/>
+            <allInternalUsers/>
         </sharedFrom>
     </sharingOwnerRules>
     <sharingOwnerRules>
@@ -26,10 +26,10 @@
         </accountSettings>
         <label>test rule 1</label>
         <sharedTo>
-            1<role>CEO</role>
+            <role>CEO</role>
         </sharedTo>
         <sharedFrom>
-            <roleE>CEO</role>
+            <role>CEO</role>
         </sharedFrom>
     </sharingOwnerRules>
 </SharingRules>
