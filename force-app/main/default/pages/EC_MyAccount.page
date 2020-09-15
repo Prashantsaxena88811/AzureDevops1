@@ -11,6 +11,6 @@
 * Venkatesh       6th Jun 19                 Created the page
 Prathyusha
 ********************************************************************************************************/-->
-<apex:page Controller="" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" cache="false" applyHtmlTag="false">
+<apex:page  docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" cache="false" applyHtmlTag="false">
   
 </apex:page>
