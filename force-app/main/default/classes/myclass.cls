@@ -6,7 +6,7 @@ public with sharing class myclass {
 	}
 
 	public String getAppVersion() {
-		Account1 aa = new Account();
+		Account aa = new Account();
 		aa.Name = 'testAccount';
 		integer ii;
 		String ss1;
