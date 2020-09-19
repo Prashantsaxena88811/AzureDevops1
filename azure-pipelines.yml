@@ -21,7 +21,7 @@ jobs:
   steps:
     - task: UseNode@1
     - bash: 
-        #npm install  --global sfdx-cli@7.45.1
+        #npm install   --global sfdx-cli@7.45.1
         npm install  --global sfdx-cli@7.45.1
       displayName: Install Salesforce CLI
     - bash: 
