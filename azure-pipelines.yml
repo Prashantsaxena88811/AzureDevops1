@@ -55,7 +55,7 @@ jobs:
       displayName: Set new variable value
       condition: failed()
     - script: |
-        echo '##vso[task.setvariable variable=one]${{one:1:5}}'
+        
         echo ${{ variables.one }} # outputs initialValue
         echo 'output---->' $(one) # outputs secondValue
         echo 'output---->' ${one:1:5} # outputs secondValue
