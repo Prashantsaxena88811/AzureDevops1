@@ -56,7 +56,7 @@ jobs:
       condition: failed()
     - script: |
         echo ${{ variables.one }} # outputs initialValue
-        echo $(one) # outputs secondValue
+        echo 'output---->' $(one) # outputs secondValue
       displayName: Second variable pass  
       condition: failed()
 
