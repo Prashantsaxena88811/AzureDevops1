@@ -51,7 +51,7 @@ jobs:
       displayName: Creating Deployment Debug Log record
       condition: failed()  
 
-    - bash: echo '##vso[task.setvariable variable=one]secondValue'
+    - bash: echo '##vso[task.setvariable variable=one]sfdx force:source:deploy:report -u prod'
       displayName: Set new variable value
       condition: failed()
     - script: |
