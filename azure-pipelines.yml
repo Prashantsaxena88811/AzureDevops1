@@ -35,7 +35,7 @@ jobs:
         deploy =  $(sfdx force:source:deploy:report -u prod)
         echo ${deploy}
       displayName: Deployment Report  
-    - bash: 
+    - script: | 
         echo $(sfdx force:source:deploy:report -u prod)
         deploy =  $(sfdx force:source:deploy:report -u prod)
         echo 'printed data---->' $(deploy) '--end--'
