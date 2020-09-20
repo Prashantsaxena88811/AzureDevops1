@@ -13,6 +13,11 @@ pr:
       - master
       - devsandbox
       - devSandbox1      
+
+variables:
+- name: one
+  value: initialValue 
+
 jobs:
 - job: ProdDeploy
   timeoutInMinutes: 10
@@ -36,10 +41,12 @@ jobs:
         echo ${deploy}
       displayName: Deployment Report  
     - script: | 
-        echo $(sfdx force:source:deploy:report -u prod)
-        deploy =  $(sfdx force:source:deploy:report -u prod)
-        echo 'printed data---->' $(deploy) '--end-1-'
-        echo 'printed data---->' '--end-2-'
+        echo ${{ variables.one }} # outputs initialValue
+        echo $(one)
+        # echo $(sfdx force:source:deploy:report -u prod)
+        # deploy =  $(sfdx force:source:deploy:report -u prod)
+        # echo 'printed data---->' $(deploy) '--end-1-'
+        # echo 'printed data---->' '--end-2-'
         sfdx force:data:record:create -u prod -s Deployment_Error_Log__c -v "Name='$(sfdx force:source:deploy:report -u prod)'"
       displayName: Creating Deployment Debug Log record
       condition: failed()  
