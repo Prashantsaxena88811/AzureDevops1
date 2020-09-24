@@ -33,7 +33,7 @@ jobs:
         sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server1.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
       displayName: Authorize salesforce org
     - bash: 
-        sfdx force:source:deploy -l RunLocalTests -p ./force-app -u prod
+        sfdx force:source:deploy  -p ./force-app -u prod
       displayName: Deploying Extra Metadata to the Org
     - bash: 
         echo $(sfdx force:source:deploy:report -u prod)
