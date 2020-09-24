@@ -30,7 +30,7 @@ jobs:
         npm install  --global sfdx-cli@7.45.1
       displayName: Install Salesforce CLI
     - bash: 
-        sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server1.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
+        sfdx force:auth:jwt:grant --clientid $(salesforceProdClientid) --jwtkeyfile ./server2.key --username $(salesforceProdUsername) --instanceurl $(salesforceProdInstanceUrl) -a prod
       displayName: Authorize salesforce org
     - bash: 
         sfdx force:source:deploy  -p ./force-app -u prod
