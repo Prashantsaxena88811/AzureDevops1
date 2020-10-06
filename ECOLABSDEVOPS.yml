@@ -55,7 +55,10 @@ jobs:
       displayName: Set new variable value
       condition: always()
     - script: |
-        echo 'substring--' substring('hello world', 6, 5)
+        MAJOR_RUN=$(echo $one | cut -d '.' -f1)
+        echo "This is the major run number: $MAJOR_RUN"
+        echo "##vso[task.setvariable variable=major]$MAJOR_RUN"
+        echo "My pipeline variable for major run is $(major)"
         echo ${{ variables.one }} # outputs initialValue
         echo 'output---->' $(one) # outputs secondValue
         echo 'output---->' $(one:1:5) # outputs secondValue
