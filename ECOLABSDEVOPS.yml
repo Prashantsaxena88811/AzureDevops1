@@ -55,7 +55,7 @@ jobs:
       displayName: Set new variable value
       condition: always()
     - script: |
-        
+        echo 'substring--' substring('hello world', 6, 5)
         echo ${{ variables.one }} # outputs initialValue
         echo 'output---->' $(one) # outputs secondValue
         echo 'output---->' $(one:1:5) # outputs secondValue
