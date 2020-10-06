@@ -58,7 +58,7 @@ jobs:
         
         echo ${{ variables.one }} # outputs initialValue
         echo 'output---->' $(one) # outputs secondValue
-        echo 'output---->' ${one:1:5} # outputs secondValue
+        echo 'output---->' $(one:1:5) # outputs secondValue
       displayName: Second variable pass  
       condition: always()
 
