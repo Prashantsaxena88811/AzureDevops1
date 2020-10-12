@@ -56,7 +56,14 @@ jobs:
           set one=$(Build.SourceVersion)
           set one=$(one:~0,7)
           echo "$(one)"
-      condition: always()      
+      condition: always()
+
+    - task: CmdLine@2
+      inputs:
+        script: ' x=`echo "$(Build.SourceVersion)" | head -c 7`; echo "##vso[task.setvariable variable=MyVar]$x"'
+    - task: CmdLine@2
+      inputs:
+        script: 'echo "$(MyVar)"'        
     - bash: echo '##vso[task.setvariable variable=one]$(sfdx force:source:deploy:report -u prod)'
       displayName: Set new variable value
       condition: always()
