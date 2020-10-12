@@ -63,7 +63,7 @@ jobs:
         echo 'output---->' $(one) # outputs secondValue
         echo 'output---->' $(one:1:5) # outputs secondValue
         x=`echo "$(sfdx force:source:deploy:report -u prod)" | head -c 7`; echo "##vso[task.setvariable variable=one]$x"
-        echo "$(MyVar)"
+        echo "$(one)"
       displayName: Second variable pass  
       condition: always()
 
