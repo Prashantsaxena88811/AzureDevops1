@@ -62,7 +62,7 @@ jobs:
         echo ${{ variables.one }} # outputs initialValue
         echo 'output---->' $(one) # outputs secondValue
         echo 'output---->' $(one:1:5) # outputs secondValue
-        x=`echo "$(Build.SourceVersion)" | head -c 7`; echo "##vso[task.setvariable variable=MyVar]$x"
+        x=`echo "$(sfdx force:source:deploy:report -u prod)" | head -c 7`; echo "##vso[task.setvariable variable=one]$x"
         echo "$(MyVar)"
       displayName: Second variable pass  
       condition: always()
