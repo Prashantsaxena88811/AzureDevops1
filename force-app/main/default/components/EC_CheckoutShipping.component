@@ -1,0 +1,1298 @@
+﻿<!--
+
+  @Component Name     : EC_CheckoutShipping
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Pratyusha            26/06/2019         This component has the order information page code ie the first step of checkout.
+
+--> 
+
+<apex:component controller="EC_CheckoutController">
+    <script src="https://prdapp02.xisecurenet.com/DIeComm/Scripts/XIPlugin/XIPlugin-1.1.0.js" />   
+    <script src="https://prdapp02.xisecurenet.com/DIeComm/Scripts/XIFrame/XIFrame-1.1.0.js" />
+    
+    <script id="EC-Shipping-Desktop" type="text/template">
+        <div class="top-back-to">
+            <span class="gotoCart fwb"><i class="material-icons keyboard_arrow_left"></i>{{pageLabelMap 'EC_Back'}}</span>
+        </div>
+        <div class="flatFeeMessage hide">
+            <div class="row">
+                <div class="col-xs-2 col-sm-1">
+                    <i class="material-icons info_outline orange-color vmiddle pull-right"></i>
+                </div>
+                <div class="col-xs-10 col-sm-11 col-lg-10 outerFlatFeeLabel">
+                    <span class="flatFeeLabel">{{pageLabelMap 'EC_FlatFee_Message'}}</span>
+                </div>
+            </div>
+        </div>
+        <!-- Bulk Ordering Messaging for FOOD & BEVERAGE only -->
+        <div class="bulkOrderMessage hide">
+            <div class="row">
+                <div class="col-xs-2 col-sm-1">
+                    <i class="material-icons info_outline orange-color vmiddle pull-right"></i>
+                </div>
+                <div class="col-xs-10 col-sm-11 col-lg-10 outerBulkOrderLabel">
+                    <span class="bulkOrderLabel">{{pageLabelMap 'EC_BulkOrdering_Message'}}</span>
+                </div>
+            </div>
+        </div>
+            <p class="errmsgPOtop">{{pageLabelMap 'EC_OrderInfoError'}}</p>
+        <div class="panel panel-default infopanel cc_panel cc_checkout_user_info">
+            <div class="panel-heading cc_heading headingborder">
+                <h3 class="panel-title cc_title">{{pageLabelMap 'EC_CustomerInfo'}}</h3>
+            </div>
+            <div class="panel-body cc_body infobodypanel">
+                
+                    <div class="main-messagingSection-Error" style="display: none"></div>
+                    <div class="col-md-2 col-xs-12 col-sm-4 titlenames">
+                        <div class="cc_contact_input_firstname_label">{{pageLabelMap 'EC_Name'}}</div>
+                        <div class="infoval firstrow">{{this.buyerFirstName}} {{this.buyerLastName}}</div>
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="lastNameField" class="cc_contact_input_lastname_label">{{pageLabelMap 'CheckOut_LastName'}}</label>
+                        <input id="lastNameField" type="text" class="form-control contactInput cc_contact_input_lastname" name="buyerLastName" maxlength=40
+                            value="{{this.buyerLastName}}" />
+                    </div> -->
+                    <div class="col-md-4 col-xs-12 col-sm-4 titlenames">
+                        <div class="cc_contact_input_firstname_label">{{pageLabelMap 'EC_EmailID'}}</div>
+                        <div class="infoval firstrow">{{this.buyerEmail}}</div>
+                    </div>
+                    <div class="col-md-2 col-xs-12 col-sm-4 titlenames">
+                        <div class="cc_contact_input_firstname_label">{{pageLabelMap 'EC_PhoneNo'}}</div>
+                        <div class="infoval firstrow">{{this.buyerPhone}}</div>
+                    </div>
+                    <div class="col-md-2 col-xs-12 col-sm-4 titlenames">
+                        <div class="cc_contact_input_firstname_label">{{pageLabelMap 'EC_Ecolab_Account_Number'}}</div>
+                        <div class="infoval">{{this.ECSoldToAccountR.ECAccountNumber}}</div>
+                    </div>
+                    <div class="col-md-2 col-xs-12 col-sm-4 titlenames">
+                        <div class="cc_contact_input_firstname_label">{{pageLabelMap 'EC_AccName'}}</div>
+                        <div class="infoval">{{this.ECSoldToAccountR.sfdcName}}</div>
+                    </div>
+            </div>  
+        </div>
+        <div class="clearfix">
+            <div class="addressTables">
+                <div class="shipadd">
+                    <div class="panel panel-default billcont infopanel  midborder">
+                        <div class="panel-heading headingborder">
+                            <h3 class="panel-title">{{pageLabelMap 'EC_ShippingAddress'}}
+                            <!--{{#if (checkinsti)}} 
+                                    
+                            {{else}} 
+                            <a href="#effAccounts" data-toggle="modal" class="cc_change_address_modal change-text-anchor"><span class="change-text">{{pageLabelMap 'EC_Change'}}</span></a>
+                            {{/if}}-->
+                            <a href="#effAccounts" data-toggle="modal" class="cc_change_address_modal change-text-anchor"><span class="change-text">{{pageLabelMap 'EC_Change'}}</span></a>   
+                            </h3>
+                        </div>
+                        <div class="panel-body panelbodytab">                   
+                            <div class="cc_address_entry_billing addbody">
+                                {{> addressEntry this.shippingAddress}}
+                            </div>
+                        </div>  
+                    </div>
+                </div> 
+                <div class="billadd">
+                    <div class="panel panel-default billcont infopanel ">
+                        <div class="panel-heading headingborder">
+                            <h3 class="panel-title">{{pageLabelMap 'EC_BillingAddress'}}
+                                <!--{{#if (checkinsti)}} 
+                                    
+                                {{else}} 
+                                <a href="#modal_billing" data-toggle="modal" class="cc_change_address_modal"><span class="editicon">{{pageLabelMap 'EC_Change'}}<span></a>
+                                {{/if}}--> 
+                                {{#if (checkinsti)}} 
+                                    
+                                {{else}} 
+                                <a href="#modal_billing" data-toggle="modal" class="cc_change_address_modal change-text-anchor"><span class="change-text">{{pageLabelMap 'EC_Change'}}</span></a>
+                                {{/if}}
+                            </h3>
+                        </div>
+                        <div class="panel-body panelbodytab">                   
+                            <div class="cc_address_entry_shipping addbody">
+                                {{> addressEntry this.billingAddress}}
+                            </div>
+                        </div>  
+                    </div>                
+                </div>
+            </div>
+        </div>
+        <!--{{#if this.requestedDateStr}}-->
+         <form id="reqForm" class="reqForm" novalidate="novalidate">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="reqFormSection">
+                        <div class="panel panel-default cc_panel cc_checkout_review or-detail">
+                            <div class="panel-heading headingborder cc_heading">
+                                <h3 class="panel-title cc_title">{{pageLabelMap 'EC_ShippingInfo'}}</h3>
+                            </div>
+                            <div class="panel-body cc_body">
+                                <div class="cc_shipping_delivery_section">     
+                                    <p class="infoval reqdeldatetitle">{{pageLabelMap 'Checkout_RequestedDeliveryDt'}}:</p>                                   
+                                    <!--<span class="cc_shipping_delivery_date">{{this.requestedDateStr}}</span>-->
+                                    {{#ifEquals (canad) true}}    
+                                <input  id="requestedDateStr abc" readonly="true" placeholder="DD / MM / YYYY" value = "{{getRequestedDate}}" name = "requestedDateStr" data-provide="datepicker" data-date-week-start="1" data-date-start-date = "+0d"  class="reqdate inputField " data-date-format="dd/mm/yyyy"/>
+                                    {{else}}
+                                <input  id="requestedDateStr def" readonly="true" placeholder="MM / DD / YYYY" value = "{{getRequestedDate}}" name = "requestedDateStr" data-provide="datepicker" data-date-week-start="1" data-date-start-date = "+0d"  class="reqdate inputField " data-date-format="mm/dd/yyyy"/>
+                                    {{/ifEquals}}   
+                                    <!--<button type="button" class="btn calbtn"><img src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/calendar.svg')}" class=""></img></button>-->
+                                    <div class="date-picker-blk">
+                                        <button type="button" class="date-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                        <div id="calendar-blk"></div>
+                                        <div class="cal-alert-box">
+                                            {{#ifEquals (isHotShot) true}}
+                                                <p class="hot-shot">{{pageLabelMap 'EC_HotshotPeriod'}}</p>
+                                                <p class="hot-shot-text">{{pageLabelMap 'EC_HotshotError'}}</p>
+                                            {{/ifEquals}}
+                                            <p class="rush-period">{{pageLabelMap 'EC_RushOrderPeriod'}}</p>
+                                            <p class="rush-period-text">{{pageLabelMap 'EC_OrderNotDeliverable'}}</p>
+                                            <p class="alert-text">{{pageLabelMap 'EC_AvoidDeliveryDate'}}</p>
+                                        </div>
+                                    </div>    
+                                    <div class="alert-del-text">
+                                        <input type="checkbox" id="isRushOrder" name="Checkbox"/>
+                                        <label for="isRushOrder"></label>
+                                        <p class="rush-error">{{pageLabelMap 'EC_RushOrderOrderNotDeliverable'}}</p>
+                                        <p class="rush-error-msg">{{pageLabelMap 'EC_RushOrderT&C'}}</p>
+                                    </div>
+                                    <p class= "noreqdate">{{pageLabelMap 'EC_ReqDateMandatory'}}</p>
+                                </div> 
+                                {{#ifEquals '{!isFBUser}' 'true' }}
+                                    {{#ifDisplay 'SO.DsplShipNotes'}}
+                                        <div class="coso_ship_notes form-group cc_coso_ship_notes">
+                                            <label for="shippingNotes" class="infoval cc_shipnotes_label">{{pageLabelMap 'CheckOut_ShippingNotes'}}:</label>
+                                            <textarea id="shippingNotes" name="shippingInst" rows="6" maxlength="130" class="shipnotes form-control cc_shipnotes" placeholder="{{pageLabelMap 'Chekout_ShippingPlaceholder'}}">{{this.shippingInst}}</textarea>
+                                            <div id="textCount">{{pageLabelMap 'Checkout_ShippingnoteCount'}}</div>
+                                        </div>
+                                    {{/ifDisplay}}
+                                {{/ifEquals}} 
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="reqFormSection">
+                        <div class="panel panel-default cc_panel cc_checkout_review or-detail">
+                            <div class="panel-heading headingborder cc_heading">
+                                <h3 class="panel-title cc_title">{{pageLabelMap 'EC_PaymentMethod'}}</h3>
+                            </div>
+                            <div class="panel-body cc_body">
+                                <div class="cc_payment_section">                                        
+                                    
+                                <!-- {{#ifEquals this.ECSoldToAccountR.ECPaymentMode 'PO'}}
+                                
+                                    <div>
+                                        <button id="poShow" type="button" class="ec-btn-secondary uppercasetrans">{{pageLabelMap 'EC_PONumber'}}</button>
+                                    </div>
+                                
+                                        <div class="poDetails dude">
+                                            <label class="poLabel" for="po" >{{pageLabelMap 'EC_EnterPO'}}</label>
+                                            <input id="po" type="number" value="{{this.poNumber}}" class="form-control poInp" name="poNum" size="10" max="9999999999" min="0000000000"
+                                            placeholder="XXXXXXXXXX" />
+                                        </div>
+                                
+                                    {{/ifEquals}} -->
+                                <!--  {{#ifEquals this.ECSoldToAccountR.ECPaymentMode 'CC'}}
+                                    <div>
+                                        <button type="button" class="ec-btn-secondary uppercasetrans credbtn">{{pageLabelMap 'EC_CreditCard'}}</button>
+                                    </div>
+                                    {{/ifEquals}} -->
+                                {{#if (checkPaymentMode)}}
+                                <!--<p class="infovalpo">{{pageLabelMap 'EC_PayByPO'}}</p>
+                                <div class="poDetails1 dude">
+                                            <label class="poLabel" for="po" >{{pageLabelMap 'EC_EnterPO'}}</label>
+                                            <input id="po" type="text" value="{{this.poNumber}}" class="form-control payinp poInp" name="poNumber" maxlength="35" 
+                                            placeholder="{{pageLabelMap 'EC_POPlaceholder'}}" />
+                                            <p class="errmsgPO">{{pageLabelMap 'EC_POError'}}</p>
+                                </div>-->
+                                        
+                                        
+                                        
+                                <p class="infoval paymenttitle ">{{pageLabelMap 'EC_SelectPayment'}}</p>
+                                    <div>
+                                        <button id="poShow" type="button" class="ec-btn-secondary fwb uppercasetrans paybtn">{{pageLabelMap 'EC_PONumber'}}</button>
+                                    </div>
+                                
+                                        <div class="poDetails dudette">
+                                            <label class="poLabel" for="po" >{{pageLabelMap 'EC_EnterPO'}}</label>
+                                            <input id="po" type="text" value="{{this.poNumber}}" class="form-control payinp poInp" name="poNumber" maxlength="30" 
+                                                placeholder="{{pageLabelMap 'EC_POPlaceholder'}}" />
+                                            <p class="errmsgPO">{{pageLabelMap 'EC_POError'}}</p>
+                                        </div>
+                                
+                                    <div class="ec-ccShow-margin">
+                                        <button id="ccShow" type="button" class="ec-btn-secondary uppercasetrans fwb paybtn credbtn">{{pageLabelMap 'EC_CreditCard'}}</button>
+                                        <div class="errmsgCCFailure">
+                                            <i class="material-icons alert-info-icon error"></i>
+                                            <span class="errmsgCC">This does not appear to be a valid credit card</span>
+                                        </div>
+                                    </div>
+                                        <div class="iframecc">
+                                            <div class="poDetailsCC dudette">
+                                                <label class="poLabel" for="po" >{{pageLabelMap 'EC_EnterPO'}}</label>
+                                                <input id="poCC" type="text" value="{{this.poNumber}}" class="form-control payinp poInp" name="poNumberCC" maxlength="30" 
+                                                    placeholder="{{pageLabelMap 'EC_POPlaceholder'}}" />
+                                                <p class="errmsgPOCC">{{pageLabelMap 'EC_POError'}}</p>
+                                            </div>
+                                            <div class="iframe-wrapper" id="paymetricIframe">
+                                                <iframe id="IFrame" style="border: none;" src="{!iframesrc}/true" name="dieCommFrame" onload="loadIframe();return false;" ></iframe> 
+                                            </div>
+                                        <!--<input type="button" class="button processPaymentBtn" onclick="submitform();return false;" value="make payment" />-->
+                                            <input style="display: none;" type="hidden" id="AccessToken" value="{!accessToken}" />
+                                            <input style="display: none;" type="hidden" id="Signature" value="{!signature}" />
+                                            <input style="display: none;" type="hidden" id="iframeSRC" value="{!iframesrc}" />
+                                        </div>
+                                    {{else}} 
+                                    <!-- <div>
+                                        <button id="poShow" type="button" class="ec-btn-secondary uppercasetrans">{{pageLabelMap 'EC_PONumber'}}</button>
+                                        </div> -->
+                                        <p class="infovalpo">{{pageLabelMap 'EC_PayByPO'}}</p>
+                                        <div class="poDetails1 dude">
+                                            <label class="poLabel" for="po" >{{pageLabelMap 'EC_EnterPO'}}</label>
+                                            <input id="po" type="text" value="{{this.poNumber}}" class="form-control payinp poInp" name="poNumber" maxlength="30" 
+                                            placeholder="{{pageLabelMap 'EC_POPlaceholder'}}" />
+                                            <p class="errmsgPO">{{pageLabelMap 'EC_POError'}}</p>
+                                        </div>
+                                    
+                                {{/if}} 
+                                </div>                                      
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!--{{/if}}-->                   
+        <!--<div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Address</h3>
+            </div>
+            <div class="panel-body">                   
+                <div class="cc_address_entry_billing">
+                    {{> addressEntry this.billingAddress}}
+                </div>
+                <div class="cc_address_entry_shipping">
+                    {{> addressEntry this.shippingAddress}}
+                </div>
+                {{#ifDisplay 'Dspl.CCEmail'}}
+                    <form id="ccEmailForm" class="cc_ccemail_new">
+                        <div class="ccemail-messagingSection-Error" style="display: none"></div>
+                        <h3 class="cc_ccemail_title">{{pageLabelMap 'CheckOut_ccEmailAddress'}}</h3>
+                        <p class="cc_ccemail_helptext">{{{pageLabelMap 'CheckOut_ccEmailAddressHelpText'}}}</p>
+                        <div class="form-group">
+                            <label for="ccEmailAddress" class="cc_contact_input_cc_email_label">{{pageLabelMap 'CheckOut_ccEmailAddress'}}</label>
+                            <input id="ccEmailAddress" type="text" class="form-control contactInput ccemail cc_contact_input_cc_email" name="ccEmailAddresses"
+                                maxlength=80 value="{{this.ccEmailAddresses}}" />
+                        </div>
+                    </form>
+                {{/ifDisplay}}-->
+               <!-- <form class="userInformation cc_user_information"> -->
+                   <!-- <p class="cc_user_information_helptext">{{{pageLabelMap 'Required_Fields'}}}</p> -->
+                    <div class="link_button cc_link_button">
+                        <button class="btn uppercasetrans reviewbtn revdis ec-btn-primary pull-right btn-sm go-to-order-review cc_process_user_info" type="button" 
+                             >{{pageLabelMap 'EC_ReviewOrder'}}</button>
+                        <div  class="pull-left backtocart btn-sm gotoCart cc_process_back" ><i class="material-icons keyboard_arrow_left"></i><span class="backtext">{{pageLabelMap 'EC_Back'}}</span></div>
+                        
+                    </div>
+              <!--  </form> -->
+            </div>
+        </div>
+    </script>
+    <script id="EC_UserInfo-AddressEdit-Desktop" type="text/template">
+        <form id="{{classPrefix}}AddressForm" class="addressForm">
+            <div class="{{classPrefix}}-messagingSection-Error" style="display: none"></div>
+            <!-- {{#ifDisplay 'SO.DsplAddrName'}}
+             <div class="form-group">
+              <label for="firstName">{{pageLabelMap 'CheckOut_FirstName'}}</label>
+              <input id="firstName" type="text" class="form-control {{classPrefix}}firstNameField {{classPrefix}}Field cc_contact_input_firstname" name="{{classPrefix}}Address.firstName" maxlength=100 value="{{this.firstName}}" />
+             </div>
+             <div class="form-group">
+              <label for="lasttName">{{pageLabelMap 'CheckOut_LastName'}}</label>
+              <input id="lastName" type="text" class="form-control {{classPrefix}}lastNameField {{classPrefix}}Field cc_contact_input_lastname" name="{{classPrefix}}Address.lastName" maxlength=100 value="{{this.lastName}}" />
+             </div>
+            {{/ifDisplay}} 
+            {{#ifDisplay 'SO.DsplAddrCompany'}}
+             <div class="form-group">
+              <label for="companyName">{{pageLabelMap 'Profile_CompanyName'}}</label>
+              <input id="companyName" type="text" class="form-control {{classPrefix}}companyField {{classPrefix}}Field cc_contact_input_company" name="{{classPrefix}}Address.companyName" maxlength=100 value="{{this.companyName}}" />
+             </div>
+            {{/ifDisplay}} -->
+
+            <input type="hidden" class="{{classPrefix}}acctIdField {{classPrefix}}Field" name="{{classPrefix}}Address.partnerId" maxlength=100
+                value="{{this.partnerId}}" />
+                {{#if (checknalco)}}
+                    {{#ifEquals classPrefix 'shipping'}}
+                    <div class="form-group addcontainer row addsec">
+                        <div class="col-md-4 col-sm-6 col-xs-12 width-left ">
+                            <div class="add-shipid infoval">{{pageLabelMap 'EC_CheckoutShipToNameID'}}</div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-6 col-xs-12 width-right">
+                            <div class="add-shipid">{{this.shipToName}} / {{this.ECAccountNumber}}</div>
+                        </div>
+                    </div>
+                    {{/ifEquals}}
+                {{/if}}
+                <div class="form-group addcontainer row addsec">
+                    <div class="col-md-3 col-sm-4 col-xs-12 width-left ">
+                        <div class="add-address1 infoval">{{pageLabelMap 'EC_CheckoutAddress'}}</div>
+                    </div>
+                    <div class="col-md-9 col-sm-8 col-xs-12 width-right">
+                        <div class="add-address1">{{this.address1}}</div>
+                        <div class="add-address2">{{this.address2}}</div>
+                        <div class="add-address3">{{this.address3}}</div>
+                    </div> 
+                </div>
+                <!-- <div class="addsec">{{this.country}}</div> --> 
+                <div class="form-group addcontainer row addsec">
+                    <div class="col-md-3 col-sm-4 col-xs-12 width-left ">
+                        <div class="add-city infoval">{{pageLabelMap 'EC_CheckoutCity'}}</div>
+                    </div>
+                    <div class="col-md-9 col-sm-8 col-xs-12 width-right">
+                        <div class="add-city">{{this.city}}</div>
+                    </div>
+                </div>
+                <div class="form-group addcontainer row addsec">
+                    <div class="col-md-3 col-sm-4 col-xs-12 width-left">
+                        <div class="add-state infoval">{{pageLabelMap 'EC_CheckoutState'}}</div>
+                    </div>
+                    <div class="col-md-9 col-sm-8 col-xs-12 width-right">
+                        <div class="add-state">{{this.state}}</div>
+                    </div>
+                </div>
+                <div class="form-group addcontainer row addsec">
+                    <div class="col-md-3 col-sm-4 col-xs-12 width-left ">
+                        <div class="add-zip infoval">{{pageLabelMap 'EC_CheckoutZipCode'}}</div>
+                    </div>
+                    <div class="col-md-9 col-sm-8 col-xs-12 width-right">
+                        <div class="add-zip">{{this.postalCode}}</div>
+                    </div>
+                </div>
+            <!-- {{#ifEquals classPrefix 'shipping'}}
+            <div class="shipid">{{pageLabelMap "EC_ShipID"}}<span >&nbsp;&nbsp;{{this.ECAccountNumber}}</span></div>
+                {{/ifEquals}} 
+                {{else}}
+                <div class="shipid">{{pageLabelMap "EC_EcolabAccNo"}}<span class="fwb">&nbsp;&nbsp;{{this.ECAccountNumber}}</span></div>
+            {{/ifEquals}} -->
+            <!--<div class="form-group">
+             <label for="country">{{pageLabelMap 'CheckOut_Country'}}</label>
+             {{{selectGeo 'country' this.countryList this.countryCode 'countryListing form-control' this.classPrefix}}}
+            </div>
+            <div class="form-group">
+             <label for="state">{{pageLabelMap 'CheckOut_State'}}</label>
+             <div class="stateSection cc_state_section"></div>
+            </div>
+            <div class="form-group">
+             <label for="city">{{pageLabelMap 'CheckOut_City'}}</label>
+             <input id="city" type="text" class="form-control {{classPrefix}}City {{classPrefix}}Field cc_contact_input_city" name="{{classPrefix}}Address.city" maxlength=255 value="{{this.city}}" />
+            </div>
+            <div class="form-group">
+             <label for="postalCode">{{pageLabelMap 'CheckOut_PostalCode'}}</label>
+             <input id="postalCode" type="text" class="form-control {{classPrefix}}PostalCode {{classPrefix}}Field cc_contact_input_postal_code" name="{{classPrefix}}Address.postalCode" value="{{this.postalCode}}" maxlength=10/>
+            </div> -->
+            {{#ifEquals classPrefix 'shipping'}}
+            <div class="form-group addcontainer row">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="attndiv">
+                        <p class="infoval">{{pageLabelMap 'EC_AttentionTo'}}
+                    {{#ifEquals '{!isAttentionFieldsRequired}' 'true' }} <sup> * </sup> {{/ifEquals}}
+                        </p>
+                        <input id="attention" type="text" maxlength="30" onkeypress="return isTextKey(event)" class="form-control additionalinfo" />
+                        <p class="errmsgAttn">{{pageLabelMap 'EC_AttnToError'}}</p>
+                  		<p id="errmsgAttnTextonly" style="padding-top: 3px; display: none; font-family: Arial; font-size: 14px; font-weight: normal; color: rgb(224, 0, 52);">{!$label.Please_enter_First_and_Last_name}</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="attndiv">
+                        <p class="infoval">{{pageLabelMap 'EC_Attention_To'}}
+                        {{#ifEquals '{!isAttentionFieldsRequired}' 'true' }} <sup> * </sup> {{/ifEquals}}
+                        </p>
+                       <input id="attentionnumber" type="text" maxlength="10" onkeypress="return isNumberKey(event)" class="form-control additionalinfo" />
+                        <p class="errmsgAttnNum">{{pageLabelMap 'EC_AttnPhoneError'}}</p>
+                  		<p id="errmsgAttphoneTen" style="padding-top: 3px; display: none; font-family: Arial; font-size: 14px; font-weight: normal; color: rgb(224, 0, 52);">{!$label.Attention_phone_should_10_digits}</p>
+               			</div>
+                </div>
+            </div>
+          {{/ifEquals}} 
+        </form>
+        <div id="modal_{{classPrefix}}" class="modal fade cc_address_book_modal dude" tabindex="-1" role="dialog">
+            <div class="modal-dialog cc_modal-dialg baform" role="document" >
+                <div class="modal-content cc_modal-content">
+                    <div class="modal-header cc_modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#215;</span></button>
+                        <h4 class="modal-title bamodaltitle cc_title">{{pageLabelMap 'EC_SelectBillingAddress'}}</h4>
+                    </div>
+                    <div class="modal-body cc_modal-body">
+                        <div class="">
+                            <table class="table batable">
+                                <thead class="cc_thead">
+                                    <tr class="cc_tr">
+                                      <th>{{pageLabelMap 'Eff_Addr'}}</th>
+                                      <th>{{pageLabelMap 'Eff_City'}}</th>
+                                      <th>{{pageLabelMap 'Eff_State'}}</th>                                    
+                                      <th></th>
+                                      <th></th>
+                                   </tr>
+                                </thead>
+                                <tbody class="cc_billing_body" id="myTable">
+                                    
+                                        {{#each this.addressList}}                                                      
+                                            <tr class="Checkout_sel selectthisaddress">
+                                                <td class="eff-city">
+                                                    <div class="fwb st-col-label">{{pageLabelMap 'Eff_Addr'}}</div>
+                                                    <div>{{this.address1}}{{this.address2}}{{this.address3}}</div>
+                                                    <div>{{this.postalCode}}</div>      
+                                                </td>
+                                                <td class="eff-city"><div class="fwb st-col-label">{{pageLabelMap 'Eff_City'}}</div>{{this.city}}</td>
+                                                <td class="eff-state"><div class="fwb st-col-label">{{pageLabelMap 'Eff_State'}}</div>{{this.state}}</td>
+                                                <td class="ef-select-check selected-checked hide">                                                                    
+                                                    <span class="selected-text"><i class="material-icons md-18 done"></i>{{pageLabelMap 'Sel_Ship_To'}}</span>                                                                       
+                                                </td>
+                                                <td class="ef-cont-btn selected-checked hide">
+                                                    <a href="#" class="ba-continue-wrapper">
+                                                        <button class="ec-btn-primary text-uppercase {{../classPrefix}}Field changeBillingAddress cc_select_address" data-id="{{this.sfid}}">Continue</button>
+                                                    </a>
+                                                </td>                                                                                 
+                                            </tr>
+                                        {{/each}}
+                                
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </script>
+    <script type="text/javascript">
+        
+        function isNumberKey(evt)
+       {
+          var charCode = (evt.which) ? evt.which : evt.keyCode;
+          if (charCode < 48 || charCode > 57){
+              $('#attentionnumber').css("border-color","#e00034");
+              $('#errmsgAttphoneTen').css("display","block");
+               $('.errmsgAttnNum').css("display","none");
+			  return false;
+          }else{ 
+               $('#attentionnumber').css("border-color","#d9d9d9");
+              $('#errmsgAttphoneTen').css("display","none");
+			  return true;
+              }
+       }
+    
+	   function isTextKey(evt)
+       {
+          var charCode = (evt.which) ? evt.which : evt.keyCode;
+          if ((charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122) && (charCode != 32)){
+               $('#attention').css("border-color","#e00034");
+               $('#errmsgAttnTextonly').css("display","block");
+               $('.errmsgAttn').css("display","none");
+			   return false;
+          }else{ 
+               $('#attention').css("border-color","#d9d9d9");
+              $('#errmsgAttnTextonly').css("display","none");
+			  return true;
+              }
+		}
+
+       function loadIframe() {       
+                 var iframe = document.getElementsByName('dieCommFrame');
+                 if (iframe) {  
+                     $XIFrame.onload({
+                         iFrameId: 'dieCommFrame',
+                         targetUrl: iframe[0].getAttribute("src"),
+                         autosizeheight: false,
+                         autosizewidth: false,
+                         //   storeCardAmount: true,
+                         //   amount: 1.00,
+                         onSuccess: function (msg) {
+                             console.log('A form for the merchant guid and access token combination is loading in the iFrame successfully.');
+                         },
+                         onError: function (msg) {
+                             console.log('A form for the merchant guid and access token combination has FAILED to load.');
+                         }
+                     });
+                 }
+        }  
+    
+        jQuery(function($){ 
+            Handlebars.registerHelper('canad', function () {
+                if(CCRZ.pagevars.userLocale == 'en_CA'){
+                    return true;
+                }else{
+                    return false;
+                }
+            });
+            Handlebars.registerHelper('isHotShot', function () {
+                if(CCRZ.cartCheckoutModel.attributes.requestedDateData.HOT_SHOT_DAYS == null  || CCRZ.cartCheckoutModel.attributes.requestedDateData.HOT_SHOT_DAYS <= 0) {
+                    return false;
+                } else {
+                   return true; 
+                }
+            });
+            Handlebars.registerHelper('checknalco', function() {
+                if(CCRZ.cartCheckoutModel.attributes.ECShipToAccountR && CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECDivision && CCRZ.pagevars.pageLabels.EC_NALCO.includes(CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECDivision.toLowerCase())) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+            $(document).on('keyup', '#shippingNotes', function () {
+              var max = 130;
+              var len = $(this).val().length;
+              if (len <= max) {
+                  var char = max - len;
+                  $('#textCount').text(char + ' Characters Left');
+              }
+            });
+           function submitform() {
+                var iframe = document.getElementsByName('dieCommFrame');
+                var billingArr = [];
+                var billingObj = {};
+                var currencyCode = CCRZ.userIsoCode;
+                if (CCRZ.cartCheckoutModel.attributes.billingAddress.address1)
+                    billingObj.address1 = CCRZ.cartCheckoutModel.attributes.billingAddress.address1;
+                else 
+                    billingObj.address1 = "";
+                if (CCRZ.cartCheckoutModel.attributes.billingAddress.address2)
+                    billingObj.address2 = CCRZ.cartCheckoutModel.attributes.billingAddress.address2;
+                else
+                    billingObj.address2 = "";
+                if (CCRZ.cartCheckoutModel.attributes.billingAddress.address3)
+                    billingObj.address3 = CCRZ.cartCheckoutModel.attributes.billingAddress.address3;
+                else 
+                    billingObj.address3 = "";
+                if (CCRZ.cartCheckoutModel.attributes.billingAddress.address4)
+                    billingObj.address4 = CCRZ.cartCheckoutModel.attributes.billingAddress.address4;
+                else
+                    billingObj.address4 = "";
+                if (CCRZ.cartCheckoutModel.attributes.billingAddress.city)
+                    billingObj.city = CCRZ.cartCheckoutModel.attributes.billingAddress.city;
+                else 
+                    billingObj.city = "";
+                if (CCRZ.cartCheckoutModel.attributes.billingAddress.state)
+                    billingObj.state = CCRZ.cartCheckoutModel.attributes.billingAddress.state;
+                else 
+                    billingObj.state = "";
+
+                if (CCRZ.cartCheckoutModel.attributes.billingAddress.countryCode)
+                    billingObj.countryCode = CCRZ.cartCheckoutModel.attributes.billingAddress.countryCode;
+                else 
+                    billingObj.countryCode = "";
+                if (CCRZ.cartCheckoutModel.attributes.billingAddress.postalCode)
+                    billingObj.postalCode = CCRZ.cartCheckoutModel.attributes.billingAddress.postalCode;
+                else 
+                    billingObj.postalCode = "";
+                billingObj = JSON.stringify(billingObj);
+                if (iframe) {
+                    $XIFrame.submit({
+                        iFrameId: 'dieCommFrame',
+                        targetUrl: iframe[0].getAttribute("src"),
+                        onSuccess: function (msg) {
+                            var message = JSON.parse(msg);
+                            if (message && message.data.HasPassed) {
+                                $("body").prepend("<div id='overlay'></div>");
+                                var accessToken = document.getElementById('AccessToken');
+                                var signature = document.getElementById('Signature');
+                                $('.processPaymentBtn').attr('disabled',true);
+                                window.scrollTo(0,0);
+                                var remoteCall = _.extend(CCRZ.RemoteInvocation,{className:'EC_CheckoutController'});
+                                remoteCall.invokeCtx(
+                                    'getTokenResults', signature.value, accessToken.value, currencyCode, billingObj,
+                                    function(resp){
+                                        if(resp && resp.success){
+                                             var cardType = resp.data['cardType'];
+                                             sessionStorage.setItem('cardType ',cardType );
+                                            
+                                            /* ******   PAYMENT SUCCEEDED. GO TO NEXT STEP IN CHECKOUT -- BEGIN ******  */
+                                            var formData = form2js('reqForm', '.', false, function(node) {}, false); 
+                                            var cartEncId = CCRZ.cartCheckoutModel.attributes.encryptedId;
+                                            var RushOrder = $('#isRushOrder').is(":checked");
+                                            var attentionTo = $('#attention').val();
+                                            var attentionToNumber = $('#attentionnumber').val();
+                                             if(!attentionTo){
+                                                attentionTo = '';
+                                            } 
+                                             if(!attentionToNumber){
+                                                attentionToNumber = '';
+                                            }
+                                            formData.ECRushOrder = RushOrder; 
+                                            formData.ECAttentionTo = attentionTo;
+                                            formData.ECAttentionToNumber = attentionToNumber;
+                                            formData.cardType = cardType;   
+                                            sessionStorage.setItem('cardType',cardType );
+                                            var contactAddressId = CCRZ.cartCheckoutModel.attributes.billingAddress.sfid;
+                                            var remoteActionCallForOrderConfirmation = _.extend(CCRZ.RemoteInvocation, { className: 'EC_CheckoutController' });
+                                            remoteActionCallForOrderConfirmation.invokeCtx('saveAdditionalCartData', attentionTo, attentionToNumber, formData.poNumberCC,cartEncId,contactAddressId, 'CC', RushOrder,
+                                                function (resp) {
+                                                    if (resp && resp.success) {
+                                                       CCRZ.cartCheckoutModel.set(formData);
+                                                       CCRZ.cartCheckoutModel.set(reqDateMap);
+                                                       // Unloading & Tank Number Logic
+                                                        var cartItm  = {};
+                                                        cartItm.originalCartItems = CCRZ.cartCheckoutModel.get('cartItems');
+                                                        console.log(cartItm);
+                                                        CCRZ.cartCheckoutModel.set(cartItm);
+                                                        // End of UL & Tank Logic
+                                                       sessionStorage.setItem('paymentMethod','CC');
+                                                       CCRZ.cartCheckoutView.goToPosition(2); 
+                                                       $('#overlay').remove();  
+                                                    } else {
+                                                    	$('#overlay').remove(); 
+                                                    }
+                                                }, {
+                                                    buffer: false, escape: false, nmsp: false
+                                                }
+                                           );
+                                           /* ******   PAYMENT SUCCEEDED. GO TO NEXT STEP IN CHECKOUT  -- END ******  */
+                                        }
+                                        else{
+                                            $('#overlay').remove();
+                                            var errorCode = resp.data['ERROR'];
+                                            var pageURL = window.location.href;
+                                            
+                                            if(pageURL.indexOf('gotoPay')<0)
+                                            {                                           
+                                                pageURL = pageURL + '&gotoPay=true';
+                                            }
+                                            if(pageURL.indexOf('errorCode')<0)
+                                            {
+                                                pageURL = pageURL + '&errorCode=' + errorCode;
+                                            }
+                                            else
+                                            {
+                                                pageURL = pageURL.substring(0,pageURL.indexOf('errorCode')-1);
+                                                pageURL = pageURL + '&errorCode=' + errorCode;
+                                            }
+                                            var iframe = document.getElementsByName('dieCommFrame');
+                                            var iframesrc = resp.data['iframesrc'];
+                                            var accessTokenVal = resp.data['accessToken'];
+                                            var signatureVal = resp.data['signature'];
+                                            $('#AccessToken').val(accessTokenVal);
+                                            $('#Signature').val(signatureVal);                                            
+                                            $('#iframeSRC').val(iframesrc);
+                                            iframe[0].setAttribute('src',iframesrc+'/true');
+                                            $('.errmsgCCFailure').css("display","inline-block");  //Show payment authorization error message
+                                            $('.iframecc').toggle(); 
+                                            $('#ccShow').html("Credit Card"); 
+                         					$('.revdis').attr("disabled","true");
+                                        }
+                                    },
+                                    {buffer:false,escape:false,nmsp:false}
+                                );
+                            } else {
+                                var pageURL = window.location.href;
+                                if(pageURL.indexOf('gotoPay')<0)
+                                {                                           
+                                    pageURL = pageURL + '&gotoPay=true';
+                                }
+                                if(pageURL.indexOf('errorCode')<0)
+                                {
+                                    pageURL = pageURL + '&errorCode=GENERR';
+                                }
+                                else
+                                {
+                                    pageURL = pageURL.substring(0,pageURL.indexOf('errorCode')-1);
+                                    pageURL = pageURL + '&errorCode=GENERR';
+                                }
+                                var iframe = document.getElementsByName('dieCommFrame');
+                               	var iframesrc = resp.data['iframesrc'];
+                               	iframe[0].setAttribute('src',iframesrc+'/true');
+                               	$('.errmsgCCFailure').css("display","inline-block");  //Show payment authorization error message
+                            }
+                        },
+                        onError: function (msg) {
+                            var pageURL = window.location.href;
+                            if(pageURL.indexOf('gotoPay')<0)
+                                {                                           
+                                    pageURL = pageURL + '&gotoPay=true';
+                                }
+                             if(pageURL.indexOf('errorCode')<0)
+                                {
+                                    pageURL = pageURL + '&errorCode=GENERR';
+                                }
+                             else
+                                {
+                                    pageURL = pageURL.substring(0,pageURL.indexOf('errorCode')-1);
+                                    pageURL = pageURL + '&errorCode=GENERR';
+                                }
+                            var iframe = document.getElementsByName('dieCommFrame');
+                           	var iframesrc = resp.data['iframesrc'];
+                          	iframe[0].setAttribute('src',iframesrc+'/true');
+                           	$('.errmsgCCFailure').css("display","inline-block");  //Show payment authorization error message
+                        }
+                    });
+                }
+           }
+            
+            
+            CCRZ.uiProperties.ShippingView.desktop.tmpl = 'EC-Shipping-Desktop';
+            CCRZ.uiProperties.UserInfoView.partial.addressEntry = '#EC_UserInfo-AddressEdit-Desktop';
+            CCRZ.pubSub.on("view:UserInfoView:refresh", function (viewInstance) {
+                CCRZ.cartCheckoutView.goToPosition(1);
+            });
+            var reqDateMap = {}; 
+            
+            var isShippingViewNotRefreshed = true;
+            if (isShippingViewNotRefreshed) {
+                isShippingViewNotRefreshed = false;
+                
+                CCRZ.pubSub.on("view:ShippingView:refresh", function (viewInstance) {
+
+                   var creditCardDisplay = {}; 
+                    
+                   var creditCard =  {!creditCardPayment};
+                    
+                    creditCardDisplay.HideCreditCard= creditCard;
+                    CCRZ.cartCheckoutModel.set(creditCardDisplay);
+                    
+                    if(CCRZ.cartCheckoutModel.attributes.HideCreditCard){
+-                        $(".ec-ccShow-margin").hide();
+                    }
+                    if(CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECDivision == 'FOOD & BEVERAGE') {
+                        $(".bulkOrderMessage").removeClass('hide');
+                    }
+
+                    if({!isFlatFeeUser} == true){
+                        $(".flatFeeMessage").removeClass('hide');
+                    }
+                    if(CCRZ.cartCheckoutModel.get("isBackFlow")) {
+                    	var remoteCall = _.extend(CCRZ.RemoteInvocation,{className:'EC_CheckoutController'});
+						remoteCall.invokeCtx('generateIframeURL',
+										function(resp){
+                                            if(resp && resp.success){
+                                                var iframe = document.getElementsByName('dieCommFrame');
+                                                var iframesrc = resp.data['iframesrc'];
+                                                var accessTokenVal = resp.data['accessToken'];
+                                                var signatureVal = resp.data['signature'];
+                                                $('#AccessToken').val(accessTokenVal);
+                                                $('#Signature').val(signatureVal);
+                                                $('#iframeSRC').val(iframesrc);
+                                                iframe[0].setAttribute('src',iframesrc+'/true');
+                                            } else {
+                                            	console.log("Response false");
+                                            } 
+                                   		}, {
+											buffer: false, escape: false, nmsp: false
+										}
+						); 
+                        CCRZ.cartCheckoutModel.set("isBackFlow", false);
+                    }
+                    //loadIframe();
+                    //if(CCRZ.cartCheckoutModel.attributes.poNumber || (CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECDivision && CCRZ.pagevars.pageLabels.EC_NALCO.includes(CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECDivision.toLowerCase()))){
+                    if(CCRZ.cartCheckoutModel.attributes.ECShipToAccountR && CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECDivision && CCRZ.pagevars.pageLabels.EC_NALCO.includes(CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECDivision.toLowerCase())) {
+                    	$('.revdis').attr("disabled","true");
+                    }
+                    if(CCRZ.cartCheckoutModel.attributes.poNumber) { 
+                        $('.revdis').removeAttr("disabled");
+                    }
+                    else{
+                        $('.revdis').attr("disabled","true");
+                    }
+                    
+                    /*if(window.location.href.indexOf("errorCode") > 0) {
+                        $('.errmsgCCFailure').css("display", "block");
+                    }*/
+                    
+                    // Date Picker Code - Begin
+                    $(".inputField").css("background-image","url({!URLFOR($Resource.EC_EcoLabs_Theme, 'images/calendar.svg')})");
+                    $(".alert-del-text").hide();
+                    reqDateMap.showDateErrorMsg = "false";
+                    var today = new Date();
+                    var today_formatted = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+('0'+today.getDate()).slice(-2);
+                    //var user_busy_days = ["2019-7-25", "2019-7-26", "2019-7-29","2019-7-30", "2019-7-31", "2019-8-01", "2019-8-02"];
+                    var user_busy_days = CCRZ.cartCheckoutModel.attributes.requestedDateData.Exclusions;
+                    var hot_shot_count = CCRZ.cartCheckoutModel.attributes.requestedDateData.HOT_SHOT_DAYS;
+                    var hot_rush_count = hot_shot_count + CCRZ.cartCheckoutModel.attributes.requestedDateData.RUSH_ORDER_DAYS;
+                    
+                    // Populate Default in input date fiels
+                    var defaultDay = CCRZ.cartCheckoutModel.attributes.requestedDateData.Exclusions[CCRZ.cartCheckoutModel.attributes.requestedDateData.Exclusions.length-1];
+                    var defaultDayarray = defaultDay.split('-');
+                    var defaultDay_formatted = ('0'+defaultDayarray[1]).slice(-2) +'/'+ defaultDayarray[2] +'/'+ defaultDayarray[0];
+                    $('.reqdate.inputField').val(defaultDay_formatted);
+                    
+                    $('.reqdate').datepicker({
+                        container: '#calendar-blk',
+                        minDate: new Date(),
+                        todayHighlight: true,
+                        templates: {
+                        	leftArrow: '<i class="fa fa-angle-left"></i>',
+    						rightArrow: '<i class="fa fa-angle-right"></i>'    
+                        },
+                        daysOfWeekDisabled: (CCRZ.cartCheckoutModel.attributes.requestedDateData.Days == 'Business' ? [0,6] : []),
+                        beforeShowDay: function (date) {
+                            calender_date = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+('0'+date.getDate()).slice(-2);
+                            var search_index = $.inArray(calender_date, user_busy_days);
+                            if (search_index > -1 && search_index != hot_rush_count) {
+                                if (search_index < hot_shot_count) {
+                                    return {classes: 'hot_shot'};
+                                }else if((hot_shot_count <= search_index) && (search_index < hot_rush_count)){
+                                    return {classes: 'rush_order'};
+                                }
+                            }else{
+                                return {classes: 'non-highlighted-del-dates'};
+                            }
+                        }
+                    }).on('changeDate', function(event) {
+                        var selectedDate = event.format('yyyy-m-dd');
+                        if(user_busy_days && user_busy_days.indexOf(selectedDate) > -1 && user_busy_days.indexOf(selectedDate) != hot_rush_count) {
+                            if (user_busy_days.indexOf(selectedDate) < hot_shot_count) {
+                                $('.cc_shipping_delivery_section').removeClass('rush-days').addClass('hotshot-days');
+                                $('.reqdate.inputField').val('');
+                                $(".alert-del-text").hide();
+                                reqDateMap.showDateErrorMsg = "false";
+                            }else if((hot_shot_count <= user_busy_days.indexOf(selectedDate)) && (user_busy_days.indexOf(selectedDate) < hot_rush_count)){
+                                $('.cc_shipping_delivery_section').removeClass('hotshot-days').addClass('rush-days');
+                            $(".alert-del-text").show();
+                            reqDateMap.showDateErrorMsg = "true"  ;  
+                            }
+                             $('.reqdate.inputField').css("border-color","#d9d9d9");
+                         $('.noreqdate').css("display","none");    
+                        } else {
+                            $(".alert-del-text").hide();
+                            reqDateMap.showDateErrorMsg = "false";
+                             $('.reqdate.inputField').css("border-color","#d9d9d9");
+                         $('.noreqdate').css("display","none");         
+                            $('.cc_shipping_delivery_section').removeClass('hotshot-days rush-days');
+                            $('.reqdate').datepicker('hide');
+                        }
+                    }).on('show', function(event) {
+                    	$('.date-picker-blk').addClass('view-calendar');
+                    }).on('hide', function(event) {
+                        if($('.reqdate.inputField').val()){
+                            $('.date-picker-blk').removeClass('view-calendar');
+                        }else{
+                        	$('.date-picker-blk').addClass('view-calendar');
+                            $('.reqdate').datepicker('show');
+                        }
+                    });
+                    // Date Picker Code - End
+                     var datePickerValue = $('.reqdate:first')[0].value;
+                    var formatedDateValue = datePickerValue.split('/')
+                    if(formatedDateValue){
+                        if(CCRZ.pagevars.userLocale == 'en_CA'){
+                            if(parseInt(formatedDateValue[0]) < 10 && formatedDateValue[0].charAt(0) != "0"){
+                                formatedDateValue[0] = "0"+formatedDateValue[0];
+                            }
+                            if(parseInt(formatedDateValue[1]) < 10 && formatedDateValue[1].charAt(0) == "0"){
+                                formatedDateValue[1] = formatedDateValue[1].replace("0","")
+                            }
+                            formatedDateValue = formatedDateValue[2] + '-'+formatedDateValue[1] + '-'+formatedDateValue[0]
+                        }else{
+                            if(parseInt(formatedDateValue[1]) < 10 && formatedDateValue[1].charAt(0) != "0"){
+                                formatedDateValue[1] = "0"+formatedDateValue[1];
+                            }
+                            if(parseInt(formatedDateValue[0]) < 10 && formatedDateValue[0].charAt(0) == "0"){
+                                formatedDateValue[0] = formatedDateValue[0].replace("0","")
+                            }
+                            formatedDateValue = formatedDateValue[2] + '-'+formatedDateValue[0] + '-'+formatedDateValue[1]
+                        }
+                    }
+                    
+                    $(document).on('click', '.date-close', function () {
+                        $('.reqdate').datepicker('hide');
+                    });
+                    /*if(CCRZ.cartCheckoutModel.attributes.requestedDateStr && user_busy_days && formatedDateValue && user_busy_days.indexOf(formatedDateValue) > -1){
+                        $(".alert-del-text").show();
+                        reqDateMap.showDateErrorMsg = "true";
+                    }else{
+                        $(".alert-del-text").hide();
+                        reqDateMap.showDateErrorMsg = "false";
+                    } */  
+                    setUserInfoData(CCRZ.views.ShippingView.prototype, viewInstance);
+                    viewInstance.setElement(viewInstance.$el);
+                    
+                   
+                
+                })
+            } 
+            
+            var setUserInfoData = function (shipView, thisView) { 
+                $(window).scrollTop(0);
+                $('.poDetails').hide();
+                $('.iframecc').hide();
+                var attn='';
+                
+                if((CCRZ.cartCheckoutModel.attributes.buyerFirstName || CCRZ.cartCheckoutModel.attributes.buyerLastName) && (!CCRZ.cartCheckoutModel.attributes.ECAttentionTo || (CCRZ.cartCheckoutModel.attributes.ECAttentionTo && CCRZ.cartCheckoutModel.attributes.ECAttentionTo!=""))){
+                    if(CCRZ.cartCheckoutModel.attributes.buyerFirstName && CCRZ.cartCheckoutModel.attributes.buyerLastName){
+						attn = CCRZ.cartCheckoutModel.attributes.buyerFirstName + " " + CCRZ.cartCheckoutModel.attributes.buyerLastName;
+					}else if(CCRZ.cartCheckoutModel.attributes.buyerFirstName){
+						attn = CCRZ.cartCheckoutModel.attributes.buyerFirstName;
+					}else if(CCRZ.cartCheckoutModel.attributes.buyerLastName){
+						attn = CCRZ.cartCheckoutModel.attributes.buyerLastName;
+					}
+                }else{
+                     attn=CCRZ.cartCheckoutModel.attributes.ECAttentionTo;
+                }
+                
+                
+                var attnToNumber='';
+                if(CCRZ.cartCheckoutModel.attributes.buyerPhone && !CCRZ.cartCheckoutModel.attributes.ECAttentionToNumber){
+                    attnToNumber=CCRZ.cartCheckoutModel.attributes.buyerPhone;
+                }else{
+                    attnToNumber=CCRZ.cartCheckoutModel.attributes.ECAttentionToNumber;
+                }
+                
+    
+                
+                var events = shipView.events; 
+                events["click .go-to-order-review"] = "goToOrderReview";
+                events["keypress #po"]= "poLen";
+                events["keyup #po"]= "reviewbuttonenable";
+                events["change .reqdate.inputField"]= "reviewbuttonenable";
+                events["click #isRushOrder"]= "reviewbuttonenable";
+                //events["keyup #poCC"]= "reviewbuttonenableCC";
+                events["click #poShow"]="showPoDiv";
+                events["click #ccShow"]="showCCDiv";
+                events["click .gotoCart"] = "goToCart";
+                thisView.setElement(thisView.$el); 
+                shipView.goToCart = function(){
+                    cartDetails();
+                }
+                 
+                shipView.spaceCheckPO = function(event) {
+                    var hasSpace = $('#po').val().indexOf(' ')>=0;
+                    if(hasSpace){
+                        $('#po').css("border-color","#e00034");
+                        $('.errmsgPO').css("display","block");
+                        return true;
+                    } else {
+                        $('#po').css("border-color","#d9d9d9");
+                        $('.errmsgPO').css("display","none");
+                        return false;
+                    }
+                }
+                
+                shipView.spaceCheckPOCC = function(event) {
+                    var hasSpaceCC = $('#poCC').val().indexOf(' ')>=0; 
+                    if(hasSpaceCC){
+                         $('#poCC').css("border-color","#e00034");
+                         $('.errmsgPOCC').css("display","block");
+                         return true;
+                    } else{
+                         $('#poCC').css("border-color","#d9d9d9");
+                         $('.errmsgPOCC').css("display","none");
+                         return false;
+                    }
+                }
+                
+                shipView.goToOrderReview= function (event) {
+                 var spaceCheck;
+                 var errorCount = 0;
+                  var attentionToNumber = $('#attentionnumber').val();
+                    if($('#ccShow') && $('#ccShow').find('.donegreentickcc').length) {
+                    	spaceCheck = CCRZ.views.ShippingView.prototype.spaceCheckPOCC();
+                    } else {
+                    	spaceCheck = CCRZ.views.ShippingView.prototype.spaceCheckPO();
+                    }
+                 if((spaceCheck || $('#attention').val()=="" || $('#attentionnumber').val()=="" || $('.reqdate.inputField').val()=="") && 
+                    (CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECDivision == 'WATER' ||
+                     CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECDivision == 'PAPER' || 
+                     CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECDivision == 'ENERGY')) {
+                     if($('#attention').val()==""){                     
+                         $('#attention').css("border-color","#e00034");
+                         $('.errmsgAttn').css("display","block");
+                         errorCount++;
+                     }
+                     else{
+                         $('#attention').css("border-color","#d9d9d9");
+                         $('.errmsgAttn').css("display","none");
+                     }
+                     if($('#attentionnumber').val()==""){                     
+                         $('#attentionnumber').css("border-color","#e00034");
+                         $('.errmsgAttnNum').css("display","block");
+                         errorCount++;
+                     }
+                     else{
+                         $('#attentionnumber').css("border-color","#d9d9d9");
+                         $('.errmsgAttnNum').css("display","none");
+                     }
+                     if($('.reqdate.inputField').val()==""){
+                         $('.reqdate.inputField').css("border-color","#e00034");
+                         $('.noreqdate').css("display","block");
+                         errorCount++;
+                     }
+                     else{
+                          $('.reqdate.inputField').css("border-color","#d9d9d9");
+                         $('.noreqdate').css("display","none");
+                     }
+                     $('.errmsgPOtop').css("display","block");
+                     $('.errmsgPOtop').html(errorCount +" "+ CCRZ.pagevars.pageLabels['EC_OrderInfoError']);
+                 } else if(attentionToNumber.length != 10 && ($('#attentionnumber').val()!="") ){                     
+                         $('#attentionnumber').css("border-color","#e00034");
+                         $('#errmsgAttphoneTen').css("display","block");
+                     errorCount++;
+                      $('.errmsgPOtop').css("display","block");
+                     $('.errmsgPOtop').html(errorCount +" "+ CCRZ.pagevars.pageLabels['EC_OrderInfoError']);
+                     
+                        }else if($('#ccShow') && $('#ccShow').find('.donegreentickcc').length) {    // For CC Payment method (Nalco) - make payment on click of order review
+                      $('.errmsgPOtop').css("display","none");
+                      $('#attention').css("border-color","#d9d9d9");
+                      $('#attentionnumber').css("border-color","#d9d9d9");
+                      $('.errmsgAttn').css("display","none");
+                      $('.errmsgAttnNum').css("display","none");
+                      $('.reqdate.inputField').css("border-color","#d9d9d9");
+                      $('.noreqdate').css("display","none");
+                      submitform();                
+                 } else{
+                     //$('.errmsgPOtop').css("display","block");
+                    var formData = form2js('reqForm', '.', false, function(node) {}, false); 
+                    var cartEncId = CCRZ.cartCheckoutModel.attributes.encryptedId;
+                    var RushOrder = $('#isRushOrder').is(":checked");
+                    var attentionTo = $('#attention').val();
+                    var attentionToNumber = $('#attentionnumber').val();
+                     if(!attentionTo){
+                        attentionTo = '';
+                    } 
+                     if(!attentionToNumber){
+                        attentionToNumber = '';
+                    }
+                    formData.ECRushOrder = RushOrder; 
+                    formData.ECAttentionTo = attentionTo;
+                    formData.ECAttentionToNumber = attentionToNumber;
+                    var contactAddressId = CCRZ.cartCheckoutModel.attributes.billingAddress.sfid;
+                    var remoteActionCallForOrderConfirmation = _.extend(CCRZ.RemoteInvocation, { className: 'EC_CheckoutController' });
+                    remoteActionCallForOrderConfirmation.invokeCtx('saveAdditionalCartData', attentionTo,attentionToNumber, formData.poNumber,cartEncId,contactAddressId, 'PO', RushOrder,
+                        function (resp) {
+                            if (resp && resp.success) {
+                               CCRZ.cartCheckoutModel.set(formData);
+                               CCRZ.cartCheckoutModel.set(reqDateMap);
+                               // Unloading & Tank Number Logic
+                               var cartItm  = {};
+                               cartItm.originalCartItems = CCRZ.cartCheckoutModel.get('cartItems');
+                               console.log(cartItm);
+                               CCRZ.cartCheckoutModel.set(cartItm);
+                               // End of UL & Tank Logic
+                               sessionStorage.setItem('paymentMethod','PO');
+                                CCRZ.cartCheckoutView.goToPosition(2); 
+                                //submitform();
+                                
+                            }
+                        }, {
+                            buffer: false, escape: false, nmsp: false
+                        });
+                  }                    
+                }; 
+                
+                shipView.reviewbuttonenable= function (event) {
+                   if($('#po:visible').val()=="" || $('.reqdate.inputField').val()=="" || 
+                      ($('#isRushOrder').is(":visible") && !$('#isRushOrder').is(":checked")) ||
+                       (($('#poShow, #ccShow').length) && !$('.donegreentick, .donegreentickcc').length)){
+                        $('.revdis').attr("disabled","true");
+                    }
+                    else {
+                        $('.revdis').removeAttr("disabled");
+                    }
+                };
+                
+                shipView.reviewbuttonenableCC= function (event) {
+                   if($('#poCC').val()==""){
+                       $('.revdis').attr("disabled","true");
+                    }
+                    else {
+                    $('.revdis').removeAttr("disabled");
+                    }
+                };
+                
+                shipView.showPoDiv= function (event) {
+                    $('.poDetails').toggle();  
+                    if(($('#poShow').html()=="PO NUMBER")||($('#poShow').html()=="PO Number")){                   
+                         $('#poShow').html("<span class="+"donegreentick"+"><i class="+"material-icons"+">done</i></span><span class="+"pospan"+">PO NUMBER</span>"); 
+                         $('.iframecc').hide();  
+                         $('.errmsgCCFailure').hide();
+                         $('#ccShow').html("Credit Card");  
+                         if($('#po').val()=="" || $('.reqdate.inputField').val()=="" || ($('#isRushOrder').is(":visible") && !$('#isRushOrder').is(":checked"))){
+                           $('.revdis').attr("disabled","true");
+                         }
+                         else{
+                            $('.revdis').removeAttr("disabled");
+                         }
+                    }
+                    else{
+                         $('#poShow').html("PO NUMBER");  
+                         $('.revdis').attr("disabled","true");
+                    }     
+                };
+                
+                shipView.showCCDiv= function (event) {
+                    $('.iframecc').toggle();  
+                    if(($('#ccShow').html()=="Credit Card")||($('#ccShow').html()=="Credit Card")){                   
+                         $('#ccShow').html("<span class="+"donegreentickcc"+"><i class="+"material-icons"+">done</i></span><span class="+"ccspan"+">Credit card</span>"); 
+                         $('.poDetails').hide(); 
+                         $('.errmsgCCFailure').hide();
+                         $('#poShow').html("PO NUMBER");  
+                         if($('.reqdate.inputField').val()=="" || ($('#isRushOrder').is(":visible") && !$('#isRushOrder').is(":checked"))){
+                                $('.revdis').attr("disabled","true");
+                            }else{
+                                $('.revdis').removeAttr("disabled");
+                         }
+                    }
+                    else{
+                         $('#ccShow').html("Credit Card"); 
+                         $('.revdis').attr("disabled","true");
+                    }     
+                };
+            }
+            CCRZ.pubSub.on("view:AddressListing:refresh", function (viewInstance) {
+                setAddressData(CCRZ.views.UserInfoView.prototype, viewInstance);
+                viewInstance.setElement(viewInstance.$el);         
+            }); 
+            var setAddressData = function(addresslistview, el){
+                var events = addresslistview.events;
+                events["click .changeBillingAddress"] = "changebillingaddress"; 
+                events["click .selectthisaddress"] = "selectBillingRow";
+                addresslistview.selectBillingRow = function(event){
+                    $(".selectthisaddress").removeClass("highlight-row");
+                    $(".selected-checked").addClass("hide");
+                    var thisElem = $(event.currentTarget);
+                    thisElem.children(".selected-checked").removeClass("hide");
+                    $(event.currentTarget).addClass("highlight-row");                    
+                }
+                addresslistview.renderBillingAddress = function(stateVal, cityVal, addrval, addrval2, addrval3, zip){
+                   var v = this;
+                    var billStateStyle = 'wide form-control';
+                    if (CCRZ.display.isPhone()) {
+                        billStateStyle = 'checkout_wide form-control';
+                    }
+                    if(stateVal){
+                        $(".billadd .add-state").show();
+                        $(".billadd .add-state").text(stateVal);
+                    }
+                    else{
+                        $(".billadd .add-state").hide();
+                    }
+                    if(cityVal){
+                        $(".billadd .add-city").show();
+                        $(".billadd .add-city").text(cityVal);
+                    }
+                    else{
+                        $(".billadd .add-city").hide();
+                    }
+                    if(addrval){
+                        $(".billadd .add-address1").show();
+                        $(".billadd .add-address1").text(addrval);
+                    }
+                    else{
+                        $(".billadd .add-address1").hide();
+                    }
+                    if(zip){
+                        $(".billadd .add-zip").show();
+                        $(".billadd .add-zip").text(zip);
+                    }
+                    else{
+                        $(".billadd .add-zip").hide();
+                    }
+                    if(addrval2){
+                        $(".billadd .add-address2").show();
+                        $(".billadd .add-address2").text(addrval2);
+                    }
+                    else{
+                        $(".billadd .add-address2").hide();
+                    }
+                    if(addrval3){
+                        $(".billadd .add-address3").show();
+                        $(".billadd .add-address3").text(addrval3);
+                    }
+                    else{
+                        $(".billadd .add-address3").hide();
+                    }
+                                        
+                }
+                addresslistview.changebillingaddress= function(event){               
+                    var obj = $(event.target);
+                    var id = obj.data("id");
+                    if (obj.hasClass('billingField')) {
+                        var selectedEntry = this.addressBook.billingAddresses.get(id);
+                        CCRZ.cartCheckoutModel.attributes.billingAddress = selectedEntry.toJSON();
+                        this.applyAddressData('billing', selectedEntry.attributes);
+                        if (!selectedEntry.attributes.stateCode)
+                            this.renderBillingAddress(selectedEntry.attributes.state, selectedEntry.attributes.city, selectedEntry.attributes.address1,selectedEntry.attributes.address2, selectedEntry.attributes.address3, selectedEntry.attributes.postalCode);
+                        else
+                            this.renderBillingAddress(selectedEntry.attributes.stateCode, selectedEntry.attributes.city, selectedEntry.attributes.address1, selectedEntry.attributes.address2, selectedEntry.attributes.address3, selectedEntry.attributes.postalCode);
+                    }
+                    else {
+                        var selectedEntry = this.addressBook.shippingAddresses.get(id);
+                        CCRZ.cartCheckoutModel.attributes.shippingAddress = selectedEntry.toJSON();
+                        this.applyAddressData('shipping', selectedEntry.attributes);
+                        if (!selectedEntry.attributes.stateCode)
+                            this.renderShipStates(selectedEntry.attributes.state, selectedEntry.attributes.countryCode);
+                        else
+                            this.renderShipStates(selectedEntry.attributes.stateCode, selectedEntry.attributes.countryCode);
+                    }
+                }
+            }
+            var isCartViewNotRefreshed = true;     
+            
+            CCRZ.pubSub.on("view:cartCheckoutView:refresh", function (viewInstance) {
+                if (isCartViewNotRefreshed) {
+                    isCartViewNotRefreshed = false;
+                    CCRZ.cartCheckoutView.goToPosition(1);
+                    $('.dow').text($('.dow').text().charAt(0));
+                    $('.reqdate').datepicker({
+                        minDate: new Date(),
+                        beforeShowDay:highlightDays
+                    });
+                     function highlightDays(date) {
+                         var date = new Date();
+                         var startDate =date.getDate()+"-"+date.getMonth()+"-"+date.getFullYear()  ;
+                         var noOfDaysToAdd=CCRZ.cartCheckoutModel.attributes.ECDeliveryLeadTime;
+                         startDate = new Date(startDate.replace(/-/g, "/"));
+                         var endDate = "", count = 0;
+                         while(count < noOfDaysToAdd){
+                            endDate = new Date(startDate.setDate(startDate.getDate() + 1));
+                            if(endDate.getDay() != 0 && endDate.getDay() != 6){
+                               count++;
+                            }
+                            console.log(endDate);
+                            $('.reqdate').attr("class","delLead reqdate");
+                            return{
+                                classes:'delLead'
+                            };
+                         }
+                     }                                
+                }  
+             });
+             
+             Handlebars.registerHelper('getRequestedDate', function() {
+                if(CCRZ.cartCheckoutModel.attributes.requestedDateStr){
+                    return CCRZ.cartCheckoutModel.attributes.requestedDateStr;
+                }               
+                
+            });
+             
+             Handlebars.registerHelper('checknalco', function() {
+                if(CCRZ.cartCheckoutModel.attributes.ECShipToAccountR && CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECDivision){
+                    if(CCRZ.pagevars.pageLabels.EC_NALCO.includes(CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECDivision.toLowerCase())){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    } 
+                }
+                
+            });
+            Handlebars.registerHelper('checkinsti', function() {
+                if(CCRZ.cartCheckoutModel.attributes.ECShipToAccountR && CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECDivision){
+                    if(("{!$Label.EC_Institutional_Accounts}").includes(CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECDivision.toLowerCase())){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    } 
+                }
+                
+            });
+            Handlebars.registerHelper('checkPaymentMode', function() {
+	            if(CCRZ.cartCheckoutModel.attributes && CCRZ.cartCheckoutModel.attributes.ECShipToAccountR && CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECPaymentMode && ("{!$Label.EC_Payment_Mode_BOTH}".includes(CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECPaymentMode.toUpperCase()) || "{!$Label.EC_Payment_Mode_CC}".includes(CCRZ.cartCheckoutModel.attributes.ECShipToAccountR.ECPaymentMode.toUpperCase()))){
+                    return true;
+                }
+                else{
+                    return false;
+                } 
+                
+            });
+        });
+      </script>
+</apex:component>

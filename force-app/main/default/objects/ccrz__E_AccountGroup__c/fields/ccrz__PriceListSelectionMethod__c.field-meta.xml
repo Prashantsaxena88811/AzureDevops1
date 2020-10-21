@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__PriceListSelectionMethod__c</fullName>
+    <deprecated>false</deprecated>
+    <description>When the Account Group is associated with multiple price lists that contain a price for the same item this is used to determine which price should be selected.  Sequence order refers to the sequence field on the Account Group-Price List junction object.</description>
+    <externalId>false</externalId>
+    <label>PriceList Selection Method</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Best Price</fullName>
+                <default>false</default>
+                <label>Best Price</label>
+            </value>
+            <value>
+                <fullName>Sequence Order</fullName>
+                <default>true</default>
+                <label>Sequence Order</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

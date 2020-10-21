@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__All</fullName>
+    <columns>NAME</columns>
+    <columns>ccrz__CacheName__c</columns>
+    <columns>ccrz__Storefront__c</columns>
+    <columns>ccrz__Pagename__c</columns>
+    <columns>ccrz__Locale__c</columns>
+    <columns>ccrz__EffectiveStart__c</columns>
+    <columns>ccrz__EffectiveEnd__c</columns>
+    <columns>ccrz__Enabled__c</columns>
+    <columns>ccrz__SequencePriority__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

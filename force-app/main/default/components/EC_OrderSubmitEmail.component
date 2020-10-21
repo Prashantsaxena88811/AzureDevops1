@@ -1,0 +1,138 @@
+<apex:component controller="EC_OrderSubmitEmail" access="global">
+<apex:attribute type="String" name="orderId" assignTo="{!ordId}" description="Order id"/>
+{!$Label.EC_Order_submit_mail_firstLine}
+{!$Label.EC_Order_submit_mail_SecondLine}
+
+
+{!$Label.EC_order_submit_mail_requestorEmail} {!orderInfoWrapper.contactEmail}
+
+
+{!$Label.EC_order_submit_mail_ccOrderNumber} {!OrderInfoWrapper.orderNumber}
+
+
+{!$Label.EC_order_submit_mail_soldToNbr} {!orderInfoWrapper.soldToNumber}
+
+
+{!$Label.EC_order_submit_mail_soldToName} {!orderInfoWrapper.soldToName}
+
+
+{!$Label.EC_order_submit_mail_billToNbr} {!orderInfoWrapper.BillToNumber}
+
+
+{!$Label.EC_order_submit_mail_shipToNbr} {!orderInfoWrapper.shipToNumber}
+
+
+{!$Label.EC_order_submit_mail_spaNbr} {!orderInfoWrapper.spaNumber}
+
+
+{!$Label.EC_order_submit_mail_locationAddress}
+{!orderInfoWrapper.locationAddressLine1}
+<apex:outputtext rendered="{!orderInfoWrapper.locationAddressLine2 != null}">{!orderInfoWrapper.locationAddressLine2} </apex:outputtext>
+<apex:outputtext rendered="{!orderInfoWrapper.locationAddressLine3!= null}">{!orderInfoWrapper.locationAddressLine3} </apex:outputtext>
+{!orderInfoWrapper.locationCity}, {!orderInfoWrapper.locationState} {!orderInfoWrapper.locationPostalCode}
+{!orderInfoWrapper.locationCountry}
+
+
+<apex:outputtext rendered="{!orderInfoWrapper.PONumber != null}">
+{!$Label.EC_order_submit_mail_po} {!orderInfoWrapper.PONumber}
+
+
+</apex:outputtext>
+<apex:outputtext rendered="{!orderInfoWrapper.creditTokenNumber != null}">
+{!$Label.EC_order_submit_mail_token}: {!orderInfoWrapper.creditTokenNumber}
+
+
+</apex:outputtext>
+
+<!-- payment -->
+
+<apex:outputtext rendered="{!orderInfoWrapper.tokenizedCard != null}">
+{!$Label.EC_Tokenized_Card}: {!orderInfoWrapper.tokenizedCard}
+
+
+</apex:outputtext>
+<apex:outputtext rendered="{!orderInfoWrapper.cardHolderName != null}">
+{!$Label.EC_Card_Holder_Name}: {!orderInfoWrapper.cardHolderName}
+
+
+</apex:outputtext>
+<apex:outputtext rendered="{!orderInfoWrapper.cardExpiration != null}">
+{!$Label.EC_Card_Expiration}: {!orderInfoWrapper.cardExpiration}
+
+
+</apex:outputtext>
+<apex:outputtext rendered="{!orderInfoWrapper.cardType != null}">
+
+{!$Label.EC_Card_Type}: {!orderInfoWrapper.cardType}
+
+</apex:outputtext>
+<apex:outputtext rendered="{!orderInfoWrapper.cardCVV != null}">
+{!$Label.EC_CVV}: {!orderInfoWrapper.cardCVV}
+</apex:outputtext>
+
+<apex:repeat value="{!orderInfoWrapper.bulkOrderItemsMap}" var="unloadingPoint">
+<apex:outputtext rendered="{!orderInfoWrapper.isMultipleOrdersNeeded == True}">
+
+{!$Label.order_submit_mail_Multiple_Orders_Needed}
+*******************************
+{!$Label.order_submit_mail_Unloading_Point} {!orderInfoWrapper.defaultUnloadingPoint}
+</apex:outputtext>
+<apex:outputtext rendered="{!orderInfoWrapper.isMultipleOrdersNeeded == False}">
+
+{!$Label.order_submit_mail_Unloading_Point} {!orderInfoWrapper.defaultUnloadingPoint}
+</apex:outputtext>    
+    <apex:repeat value="{!orderInfoWrapper.bulkOrderItemsMap[unloadingPoint]}" var="item">
+      <apex:outputtext >
+
+{!$Label.EC_order_submit_mail_product} {!item.productSku}
+{!$Label.EC_order_submit_mail_qty} {!item.quantity}
+{!$Label.EC_order_submit_mail_uom} {!item.customPricingUOM}
+    </apex:outputtext>
+
+      <apex:outputtext rendered="{!item.tankNumber != null}">
+{!$Label.order_submit_mail_Tank_Number} {!item.tankNumber}
+      </apex:outputtext>
+    </apex:repeat>
+</apex:repeat>
+
+  <apex:repeat value="{!orderInfoWrapper.nonBulkOrderItemsMap}" var="unloadingPoint">
+  <apex:outputtext rendered="{!orderInfoWrapper.isMultipleOrdersNeeded == True}">
+
+{!$Label.order_submit_mail_Multiple_Orders_Needed}
+*******************************
+{!$Label.order_submit_mail_Unloading_Point} {!unloadingPoint}
+  </apex:outputtext>
+      <apex:outputtext rendered="{!orderInfoWrapper.isMultipleOrdersNeeded == False}">
+
+{!$Label.order_submit_mail_Unloading_Point} {!unloadingPoint}
+</apex:outputtext>  
+    <apex:repeat value="{!orderInfoWrapper.nonBulkOrderItemsMap[unloadingPoint]}" var="item">
+     <apex:outputtext >
+
+{!$Label.EC_order_submit_mail_product} {!item.productSku}
+{!$Label.EC_order_submit_mail_qty} {!item.quantity}
+{!$Label.EC_order_submit_mail_uom} {!item.customPricingUOM}
+    </apex:outputtext>
+    </apex:repeat>
+  </apex:repeat>
+
+<apex:repeat var="item" value="{!orderInfoWrapper.orderItemsWithoutUP}">
+    {!$Label.EC_order_submit_mail_product} {!item.productSku}
+    {!$Label.EC_order_submit_mail_qty} {!item.quantity}
+    {!$Label.EC_order_submit_mail_uom} {!item.customPricingUOM}
+</apex:repeat>
+
+{!$Label.EC_order_submit_mail_reqDelDate}  <apex:outputText value="{0,date,MM/dd/yy}"> <apex:param value="{!orderInfoWrapper.requestDeliveryDate}" /> </apex:outputText>
+
+{!$Label.EC_order_submit_mail_DelContactNamePhone}  {!orderInfoWrapper.deliveryContactNamePhone}
+
+
+Set as Permanent Delivery Contact:
+
+
+{!$Label.EC_order_submit_mail_notes} {!orderInfoWrapper.shippingNotes}
+
+
+
+
+</apex:component>

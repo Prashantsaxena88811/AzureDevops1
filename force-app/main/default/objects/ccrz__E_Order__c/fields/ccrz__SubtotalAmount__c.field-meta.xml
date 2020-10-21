@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__SubtotalAmount__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Sum of CC Orer Item : Item Total</description>
+    <externalId>false</externalId>
+    <label>Subtotal Amount</label>
+    <summarizedField>ccrz__E_OrderItem__c.ccrz__ItemTotal__c</summarizedField>
+    <summaryForeignKey>ccrz__E_OrderItem__c.ccrz__Order__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

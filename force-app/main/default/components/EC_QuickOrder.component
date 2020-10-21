@@ -1,0 +1,170 @@
+<!--
+
+  @Component Name     : EC_QuickOrder
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Pratyusha            7/16/2019         Quick order component.
+
+--> 
+
+<apex:component controller="EC_QuickOrderController">
+    <script id="EC-MiniQuickOrder-Desktop" type="text/template">
+        <div class="panel panel-default cc_panel cc_mini_quick_order">
+            <div class="panel-heading cc_heading">
+                <h3 class="panel-title cc_title">{{pageLabelMap 'QuickOrder'}}
+                    <span class="pull-right">
+                        <span class="icon-toggle minitoggle cc_filter_icon" role="button" data-toggle="collapse" data-target="#collapseMiniQuickOrder" aria-expanded="true"
+                            aria-controls="collapseMiniQuickOrder">
+                            <i class="material-icons  minitgle keyboard_arrow_down menu-expand"></i>
+                            <i class="material-icons  minitgle keyboard_arrow_up menu-collapse"></i>
+                        </span>
+                    </span>
+                </h3>
+            </div>
+            <div id="collapseMiniQuickOrder" class="panel-collapse rowitems collapse in">
+                <div class="cc_body">
+                    <div id="quick_order" class="quick_order cc_quick_order"></div>
+                    <p class="cc_caption">{{pageLabelMap 'QuickOrder_QuickOrderBoxCaption'}}</p>
+                    <form id="skuQtyForm" class="form-horizontal cc_form_sku_qty">
+                        <div class="quickOrderRow cc_quick_order_row">
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-footer cc_footer">
+                    <div class="form-group text-center cc_form_group clearfix">
+                        <button class="btn btn-default btn-sm addMore cc_addmore ec-btn-secondary col-md-6 fwb" type="submit">{{pageLabelMap 'QuickOrder_AddMore'}}</button>
+                         {{#ifEquals '{!buyOnline}' "true"}}
+                            <button class="ga-addtocart btn btn-default btn-sm addToCart cc_addtocart ec-btn-primary col-md-6 fwb" type="submit">{{pageLabelMap 'QuickOrder_AddToCart'}}</button>
+                          {{/ifEquals}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    
+    <script id="EC-MiniQuickOrder-Mobile" type="text/template">
+        <div class="full-btn col-xs-12" data-toggle="modal" data-target="#quick-order-modal">
+            <span class="pull-left">{{pageLabelMap 'QuickOrder'}}</span>
+            <span class="pull-right material-icons keyboard_arrow_right lh-16"></span>
+        </div>
+        
+        <div class="modal fade right MobileNav" id="quick-order-modal" tabindex="-1" role="dialog" style="display:none;">
+            <div class="modal-dialog modal-sm modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close cc_close" data-dismiss="modal" aria-label="Close">
+                            <span class="visible-xs" aria-hidden="true">&times</span>
+                            <span class="hidden-xs modal-back-link blue-color fz-14"><span class="material-icons arrow_back vmiddle"></span>{{pageLabelMap 'EC_Back'}}</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="panel panel-default cc_panel cc_mini_quick_order">
+                            <div class="panel-heading cc_heading">
+                                <h3 class="panel-title cc_title">{{pageLabelMap 'QuickOrder'}}
+                                    <span class="pull-right">
+                                        <span class="icon-toggle minitoggle cc_filter_icon" role="button" data-toggle="collapse" data-target="#collapseMiniQuickOrder" aria-expanded="true"
+                                            aria-controls="collapseMiniQuickOrder">
+                                            <i class="material-icons  minitgle keyboard_arrow_down menu-expand"></i>
+                                            <i class="material-icons  minitgle keyboard_arrow_up menu-collapse"></i>
+                                        </span>
+                                    </span>
+                                </h3>
+                            </div>
+                            <div id="collapseMiniQuickOrder" class="panel-collapse rowitems collapse in">
+                                <div class="cc_body">
+                                    <div id="quick_order" class="quick_order cc_quick_order"></div>
+                                    <p class="cc_caption">{{pageLabelMap 'QuickOrder_QuickOrderBoxCaption'}}</p>
+                                    <form id="skuQtyForm" class="form-horizontal cc_form_sku_qty">
+                                        <div class="quickOrderRow cc_quick_order_row">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="panel-footer cc_footer">
+                                    <div class="form-group text-center cc_form_group clearfix">
+                                        <button class="btn btn-default btn-sm addMore cc_addmore ec-btn-secondary col-md-6 fwb" type="submit">{{pageLabelMap 'QuickOrder_AddMore'}}</button>
+                                         {{#ifEquals '{!buyOnline}' "true"}}
+                                            <button class="ga-addtocart btn btn-default btn-sm addToCart cc_addtocart ec-btn-primary col-md-6 fwb" type="submit">{{pageLabelMap 'QuickOrder_AddToCart'}}</button>
+                                          {{/ifEquals}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="EC-MiniQuickOrder-Entry-Desktop" type="text/template">
+        <div class="form-group cc_form_quickorder row">
+            <div class="col-xs-8 orderItem">
+                <label for="quickorder[{{safeQuote this}}].sku" class="sr-only">{{pageLabelMap 'EC_EnterSKU'}}</label>
+                <input id="quickorder[{{safeQuote this}}].sku" type="text"
+                    class="form-control quickOrderField addToCartOnEnter sku-input cc_sku_input"
+                    placeholder="{{pageLabelMap 'QuickOrder_SKUPlaceholder'}}" name="quickorder[{{safeQuote this}}].sku" />
+            </div>
+            <div class="col-xs-4 orderquantity">
+                <label for="quickorder[{{safeQuote this}}].qty" class="sr-only">Enter Quantity</label>
+                <div class="qtydiv input-group input-group-sm cc_input_group">
+                    <span class="input-group-btn cust-min cc_input_group_btn">
+                    	<button type="button" class="minusqo btn btn-sm btn-default custom-minus cc_minus material-icons remove"/> 
+                    </span>
+                	<input id="quickorder[{{safeQuote this}}].qty" class="inpbox plp-input" type="text" min="1" value="1" maxlength="7"
+                    class="form-control addToCartOnEnter qty-input cc_qty_input"
+                    placeholder="{{pageLabelMap 'QuickOrder_QTYPlaceholder'}}" name="quickorder[{{safeQuote this}}].qty" /> 
+                    <span class="input-group-btn cc_input_group_btn pluswidth minus-wrapper">
+                    	<button type="button" class="plusqo btn btn-sm btn-default plus pludisbtn plus-width cc_plus material-icons add"/>
+                    </span>
+                </div> 
+            </div>
+        </div>
+    </script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            // to decide the position and view of quick order according to the screen size
+            if(window.innerWidth <=1365) {
+                CCRZ.uiProperties.QuickOrderView.desktop.selector = ".search-box-LeftNav";
+                CCRZ.uiProperties.searchWidget.desktop.left.selector = "quick-order";
+                CCRZ.uiProperties.QuickOrderView.desktop.tmpl = 'EC-MiniQuickOrder-Mobile';
+            } else {
+                CCRZ.uiProperties.QuickOrderView.desktop.selector = ".quick-order";
+                CCRZ.uiProperties.searchWidget.desktop.left.selector = "search-box-LeftNav";
+                CCRZ.uiProperties.QuickOrderView.desktop.tmpl = 'EC-MiniQuickOrder-Desktop';
+            }
+            
+            CCRZ.uiProperties.QuickOrderView.entry.tmpl = 'EC-MiniQuickOrder-Entry-Desktop';
+            
+            CCRZ.pubSub.on('view:QuickOrderView:refresh', function (viewInstance) {
+                setQuickOrder(CCRZ.views.QuickOrderView.prototype, CCRZ.models.MiniQuickOrderModel.prototype, viewInstance);
+                viewInstance.setElement(viewInstance.$el);
+            });
+            
+            var setQuickOrder = function (QOView, QOModel, viewIn) {
+                var events = QOView.events;
+                events["click .minusqo"] = "minusZeroQO";
+                events["click .plusqo"] = "plusrightQO";
+                events["keydown .inpbox"] = "disableZeroQO";
+                // incr decr functions and disabling decr when zero
+                QOView.plusrightQO = function (event) {
+                    var textval = event.currentTarget.parentElement.previousElementSibling.value;
+                    textval=parseInt(textval)+1;
+                    event.currentTarget.parentElement.previousElementSibling.value=textval;  
+                }
+                QOView.minusZeroQO = function (event) {
+                    var textval = event.currentTarget.parentElement.nextElementSibling.value;
+                    if(textval>1){
+                        textval=parseInt(textval)-1;
+                        event.currentTarget.parentElement.nextElementSibling.value=textval;
+                    }
+                }
+                QOView.disableZeroQO = function (event) {
+                    if (event.target.value.length == 0 && event.which == 48 ){
+                      return false;
+                   }
+                }
+                    
+             }
+        });
+    </script>
+</apex:component>

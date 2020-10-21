@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source__c</fullName>
+    <externalId>false</externalId>
+    <label>Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Self-Registration</fullName>
+                <default>false</default>
+                <label>Self-Registration</label>
+            </value>
+            <value>
+                <fullName>CDM Event</fullName>
+                <default>false</default>
+                <label>CDM Event</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

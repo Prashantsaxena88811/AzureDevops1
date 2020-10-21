@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Subscription_Duration__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Duration of the subscription of this product in months.  Acts as a static duration.  If the user is unable to select a duration on the cart / product detail page, then B2B Commerce uses this field to determine how long a subscription lasts.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Duration of the subscription of this product in months.  Acts as a static duration.  If the user is unable to select a duration on the cart / product detail page, then B2B Commerce uses this field to determine how long a subscription lasts.</inlineHelpText>
+    <label>Subscription Duration</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

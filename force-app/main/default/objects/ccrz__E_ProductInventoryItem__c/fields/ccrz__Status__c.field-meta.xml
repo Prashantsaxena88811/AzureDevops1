@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Inventory item status</description>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In Stock</fullName>
+                <default>false</default>
+                <label>In Stock</label>
+            </value>
+            <value>
+                <fullName>Out of Stock</fullName>
+                <default>false</default>
+                <label>Out of Stock</label>
+            </value>
+            <value>
+                <fullName>Pre Order</fullName>
+                <default>false</default>
+                <label>Pre Order</label>
+            </value>
+            <value>
+                <fullName>Back Order</fullName>
+                <default>false</default>
+                <label>Back Order</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

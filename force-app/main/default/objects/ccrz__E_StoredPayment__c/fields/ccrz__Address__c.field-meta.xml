@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Address__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The address associated with this payment.</description>
+    <externalId>false</externalId>
+    <label>Address</label>
+    <referenceTo>ccrz__E_ContactAddr__c</referenceTo>
+    <relationshipLabel>CC Stored Payments</relationshipLabel>
+    <relationshipName>StoredPayments</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

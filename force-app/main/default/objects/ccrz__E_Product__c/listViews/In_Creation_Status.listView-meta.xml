@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Creation_Status</fullName>
+    <columns>NAME</columns>
+    <columns>ccrz__AlternateName__c</columns>
+    <columns>EC_Product_Media_Url__c</columns>
+    <columns>ccrz__ProductStatus__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ccrz__ProductStatus__c</field>
+        <operation>equals</operation>
+        <value>In Creation</value>
+    </filters>
+    <label>In Creation Status</label>
+    <language>en_US</language>
+</ListView>

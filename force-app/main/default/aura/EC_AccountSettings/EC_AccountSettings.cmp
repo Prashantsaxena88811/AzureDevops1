@@ -1,0 +1,263 @@
+<!--
+  @Component Name     : EC_AccountSettings.cmp
+  @Description        :
+  @Author             : harsn@deloitte.com
+  @Group              :
+  @Modification Log   :
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0        7/5/2019            harsn@deloitte.com     Initial Version
+-->
+<aura:component controller="EC_ContactAccountInfo"
+    implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="contactName" type="String" />
+    <aura:attribute name="contEmail" type="String" />
+    <aura:attribute name="contPhone" type="String" />
+    <aura:attribute name="orginalAccountsList" type="List" />
+    <aura:attribute name="accounts" type="List" />
+    <aura:attribute name="search" type="String" />
+    <aura:attribute name="toShowAcc" type="boolean" default="false" />
+    <aura:attribute name="accNumber" type="String"  />
+    <aura:attribute name="eMail" type="String"  />
+    <aura:attribute name="errorFlag" type="boolean" default="false" />
+    <aura:attribute name="AlignmentMap" type="Map" default="" />
+    <aura:attribute name="statusForPop" type="string" />
+     <aura:attribute name="labelForPop" type="string" />
+    <aura:attribute name="messageForPop" type="string" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+    <aura:handler name="render" value="{!this}" action="{!c.setDefaultTab}"/>
+    <aura:attribute name="landingPage" type="string" default=""/>
+   <aura:if isTrue="{!v.showSpinner}" >
+        <div class="slds-spinner_container">
+          <div role="status" class="slds-spinner slds-spinner--medium">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+         </div>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!!v.showSpinner}" > 
+    <div aura:id="accountSettingsPageSpinner" class="slds-spinner_container">
+        <div role="status" class="slds-spinner slds-spinner--large">
+            <span class="slds-assistive-text">{!$Label.c.EC_Loading_text}</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </div>
+
+    <div class="slds-grid ie-grid">
+        <div class="slds-col accounts-wrapper">
+            <h1 class = "mainHeading">{!$Label.c.EC_Accounts_Header}</h1>
+            <div class="contact-section contact-us slds-show_medium">
+                <div class="heading">{!$Label.c.EC_Accounts_ContactInformationHeader}</div>
+                <div class="slds-clearfix user-info">
+                    <div class="name">
+                        <label class="label-name">{!$Label.c.EC_Accounts_Contact_NameLabel}</label>
+                        <label class="label-value">{!v.contactName}</label>
+                    </div>
+                    <div class="email-id">
+                        <label class="label-name">{!$Label.c.EC_Accounts_Contact_EmailLabel}</label>
+                        <label class="label-value">{!v.contEmail}</label>
+                    </div>
+                    <div class="phone-number">
+                        <label class="label-name">{!$Label.c.EC_Accounts_Contact_PhoneLabel}</label>
+                        <label class="label-value">{!v.contPhone}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-section slds-hide_medium">
+                <div class="heading">{!$Label.c.EC_Accounts_ContactInformationHeader}</div>
+                <div class="value">
+                    <label class="label-name">{!$Label.c.EC_Accounts_Contact_NameLabel}</label>
+                    <label class="label-value">{!v.contactName}</label>
+                    <label class="label-name">{!$Label.c.EC_Accounts_Contact_EmailLabel}</label>
+                    <label class="label-value">{!v.contEmail}</label>
+                    <label class="label-name">{!$Label.c.EC_Accounts_Contact_PhoneLabel}</label>
+                    <label class="label-value">{!v.contPhone}</label>
+                </div>
+            </div>
+            <div class="accounts-section">
+                <div class="slds-tabs--default">
+                    <ul class="slds-tabs--default__nav" role="tablist">
+                        <li  aura:id="accountSettingsId" class="slds-tabs--default__item  slds-active" title="Products" role="presentation" >
+                            <a class="slds-tabs--default__link" href="javascript:void(0);" onclick="{!c.accountSettings}" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-default-1" id="Product_linking">{!$Label.c.EC_AccountSettings_AccInfo}
+                            </a>
+                        </li>
+
+                        <li  aura:id="portalAccessId"  class="slds-tabs--default__item " title="Orders" role="presentation">
+                            <a class="slds-tabs--default__link" href="javascript:void(0);" onclick="{!c.portalAccess}" role="tab" tabindex="-1" aria-selected="true" aria-controls="tab-default-2" id="orders_linking">{!$Label.c.EC_AccountSettings_PortalAccess}</a>
+                        </li>
+                    </ul>
+                    <div aura:id="accountSettingsDataId" id="tab-default-1" class="slds-tabs--default__content slds-show" role="tabpanel" aria-labelledby="Product_linking">
+                        <div aura:id="accountAlignment" class="self_cover">
+                            <div class="account-info">
+                                <span class="align_text top-spacer slds-show_medium">{!$Label.c.EC_Align_Account}</span>
+                                <span class="align_text slds-hide_medium">{!$Label.c.EC_AccountSettings_AddAccount}</span>
+                                <aura:if isTrue="{!!v.toShowAcc}">
+                                    <button class="add-account ec_btn_primary" onclick="{!c.addAccount}">{!$Label.c.EC_Add_Account}</button>
+                                </aura:if>
+                            </div>
+                            <aura:if isTrue="{!v.toShowAcc}">
+
+                                <div class="account-second">
+
+                                    <div class="account-group">
+                                        <lightning:input aura:id="accNo" type="text" name="accNo" label="{!$Label.c.EC_Account_Number}" required="true" class="account-input" value="{!v.accNumber}"
+                                         onchange="{!c.checkEntry}"  onblur="{!c.checkEntry}" autocomplete="none"/>
+                                        <lightning:input aura:id="Mail" type="email" name="Mail" label="{!$Label.c.EC_Sales_Rep_Email}" required="true" class="account-input" value="{!v.eMail}"
+                                         onchange="{!c.checkEntry}" onblur="{!c.checkEntry}" autocomplete="none" />
+                                    </div>
+                                    <div class="btn-group">
+                                        <button class="ec_btn_secondary cancel" onclick="{!c.addAccount}">{!$Label.c.EC_Cancel}</button>
+                                        <button class="ec_btn_primary add" disabled="true" aura:id="add_button" onclick="{!c.submitAccount}">{!$Label.c.EC_Add}</button>
+                                    </div>
+                                </div>
+                            </aura:if>
+                        </div>
+                        <!-- Self Alignment End-->
+                        <div class="value">
+                            <span>{!$Label.c.EC_Accounts_AccountInfo_Info_1}<span class="count slds-p-horizontal_xx-small">{!v.accounts.length}<span class="slds-p-left_xx-small count">{!$Label.c.EC_Accounts_AccountInfo_Info_3}</span></span> </span>
+                            <div class="search-wrapper slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <ui:inputText label="" value="{!v.search}" placeholder="Search" class="slds-input"
+                                                  keyup="{!c.performAccountsSearch}" updateOn="keyup" />
+                                </div>
+                                <lightning:button class="material-icons" onclick="{!c.performAccountsSearch}">{!$Label.c.EC_Search}
+                                </lightning:button>
+                            </div>
+                        </div>
+                        <div class="support_message"><p class="message_text">{!$Label.c.EC_Support_text} <strong class="slds-p-horizontal_xx-small">{!$Label.c.EC_Support_Number}</strong></p></div>
+                        <aura:iteration items="{!v.accounts}" var="acc">
+                            <div class="account-details-section">
+                                <div class="left">
+                                    <h3><span>{!$Label.c.EC_Accounts_ShipTo_Header} </span>
+                                    	<span class="slds-hide_medium">
+                                            <img src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-keyboard-arrow-right.png'}" onclick="{!c.showShipToInfo}" />
+                                        </span>
+                                    </h3>
+                                    <span class="seperator"></span>
+                                    <div class="account-details">
+                                        <div class="account-name">
+                                            <span>{!$Label.c.EC_Accounts_AccountNameLabel}</span>
+                                            <span class="label-value">
+                                                <aura:unescapedHtml value="{!acc.accName}" /></span>
+
+                                        </div>
+                                        <aura:if isTrue="{!not(acc.accNum == null)}">
+                                            <div class="account-number">
+                                                <span>{!$Label.c.EC_Accounts_AccountNumberLabel}</span>
+                                                <span class="label-value">
+                                                    <aura:unescapedHtml value="{!acc.accNum}" /></span>
+                                            </div>
+                                        </aura:if>
+                                        <aura:if isTrue="{!not(acc.primaryRepName == null)}">
+                                            <div class="account-sales-contact">
+                                                <span>{!$Label.c.EC_PrimaryRepLabel}</span>
+                                                <span class="label-value">
+                                                    <aura:unescapedHtml value="{!acc.primaryRepName}" /></span>
+                                            </div>
+                                        </aura:if>
+                                    </div>
+                                </div>
+
+                               	<div class="slds-hide_medium slds-hide">
+                                    <div class="">
+                                        <div class="opacity-layer"></div>
+                                        <div id="sideNav" class="sidenav">
+                                            <span class="closebtn">
+                                                <img src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-close.png'}" onclick="{!c.closePopUp}"/>
+                                            </span>
+                                            <aura:if isTrue="{!not(empty(acc.lstShipTo))}">
+                                                <div class="heading">{!acc.accName}</div>
+                                                <div class="support_message"><p class="message_text">{!$Label.c.EC_Support_text} <strong class="slds-p-horizontal_xx-small">{!$Label.c.EC_Support_Number}</strong></p></div>
+                                                <aura:iteration items="{!acc.lstShipTo}" var="ship">
+                                                    <div class="ship-to-details">
+                                                        <div class="address">
+                                                            <label class="label-name">{!$Label.c.EC_AccountSettings_AccountAddress}</label>
+                                                            <div class="address-values">
+                                                                <div>
+                                                                	<aura:unescapedHtml value="{!ship.shipToStreet}" />
+                                                                </div>
+                                                                <div>
+                                                                    <aura:unescapedHtml value="{!ship.shipToAddress}" />
+                                                                </div>
+                                                                <div>
+                                                                    <aura:unescapedHtml value="{!ship.phoneNumber}" />
+                                                                </div>
+                                                                <div>
+                                                                    {!$Label.c.EC_Accounts_ShipTo_TableHeader_ID} : <aura:unescapedHtml value="{!ship.shipToId}" />
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="state-info">
+                                                            <div class="state">
+                                                                <label class="label-name">{!$Label.c.EC_Accounts_ShipTo_TableHeader_Name}</label>
+                                                                <aura:if isTrue="{!ship.isNalco}">
+                                                                <aura:unescapedHtml value="{!ship.shipToName}" />
+                                                                </aura:if>
+                                                                <span class="disp-block">
+                                                                <aura:unescapedHtml value="{!ship.shipToId}" />
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </aura:iteration>
+                                            </aura:if>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="slds-show_medium">
+                                    <div class="right">
+                                        <div class="heading">{!$Label.c.EC_Accounts_ShipToAddress_Header}</div>
+                                        <aura:if isTrue="{!not(empty(acc.lstShipTo))}">
+                                            <table>
+                                                <tr>
+                                                    <th class="tbl-header-address">{!$Label.c.EC_Accounts_ShipTo_TableHeader_Address}</th>
+                                                    <th class="tbl-header-city">{!$Label.c.EC_Accounts_ShipTo_TableHeader_Name}</th>
+                                                </tr>
+                                                <aura:iteration items="{!acc.lstShipTo}" var="ship">
+                                                    <tr>
+                                                        <td>
+                                                            <aura:unescapedHtml value="{!ship.shipToStreet}"/><br/>
+                                                            <aura:unescapedHtml value="{!ship.shipToAddress}"/><br/>
+                                                            <aura:unescapedHtml value="{!ship.phoneNumber}"/>
+                                                        </td>
+                                                            <td>
+                                                                <aura:if isTrue="{!ship.isNalco}">
+                                                                <aura:unescapedHtml value="{!ship.shipToName}" />
+                                                                </aura:if>
+                                                                <span class="disp-block">
+                                                                <aura:unescapedHtml value="{!ship.shipToId}" />
+                                                                </span>
+                                                            </td>
+                                                   </tr>
+                                                </aura:iteration>
+                                            </table>
+                                        </aura:if>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </aura:iteration>
+                    </div>
+                    <div aura:id="portalAccessDataId" id="tab-default-2" class="slds-tabs--default__content slds-hide" role="tabpanel" aria-labelledby="orders_linking">
+                        <c:EC_RequestForPortalAccess/>
+                    </div>
+                </div>
+               <aura:if isTrue="{!v.errorFlag}">
+                    <c:EC_SelfAlignmentPopups status="{!v.statusForPop }" label="{!v.labelForPop }" message="{!v.messageForPop }" />
+              </aura:if>
+
+
+            </div>
+
+        </div>
+    </div>
+    </aura:if>
+</aura:component>

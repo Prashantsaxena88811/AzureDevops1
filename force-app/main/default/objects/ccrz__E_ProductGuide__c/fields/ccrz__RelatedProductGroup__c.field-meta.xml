@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__RelatedProductGroup__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Related Product Group</label>
+    <referenceTo>ccrz__E_RelatedProductGroup__c</referenceTo>
+    <relationshipLabel>CC Product Guides</relationshipLabel>
+    <relationshipName>E_ProductGuides</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

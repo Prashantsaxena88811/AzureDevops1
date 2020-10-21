@@ -1,0 +1,866 @@
+<apex:component access="global" controller="EC_EmailCartDetailController">
+    <apex:attribute name="cartSFId" assignTo="{!cartId}" type="String" description="cart sf id"/>
+    <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+    	<head>
+      		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <!--[if gte mso 9]>
+            	<xml>
+                    <o:OfficeDocumentSettings>
+                       <o:AllowPNG/>
+                       <o:PixelsPerInch>96</o:PixelsPerInch>
+                    </o:OfficeDocumentSettings>
+                </xml>
+            <![endif]-->
+      		<meta name="viewport" content="width=device-width" />
+      		<!--[if !mso]><!-->
+      		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      		<!--<![endif]-->
+      		<title></title>
+            <style type="text/css" id="media-query">
+                body {
+                  margin: 0;
+                  padding: 0;
+                }
+                a:visited, a:active {
+                   color:#1d9cd3 !important;
+                   color:#1d9cd3;
+                }
+               
+                table,
+                tr,
+                td {
+                  vertical-align: top;
+                  border-collapse: collapse;
+                }
+        
+                .ie-browser table,
+                .mso-container table {
+                  table-layout: fixed;
+                }
+                
+                * {
+                  line-height: inherit;
+                }
+                
+                a[x-apple-data-detectors=true] {
+                  color: inherit !important;
+                  text-decoration: none !important;
+                }
+                
+                [owa] .img-container div,
+                [owa] .img-container button {
+                  display: block !important;
+                }
+        
+                [owa] .fullwidth button {
+                  width: 100% !important;
+                }
+                
+                [owa] .block-grid .col {
+                  display: table-cell;
+                  float: none !important;
+                  vertical-align: top;
+                }
+                
+                .ie-browser .num12,
+                .ie-browser .block-grid,
+                [owa] .num12,
+                [owa] .block-grid {
+                  width: 500px !important;
+                }
+        
+                .ExternalClass,
+                .ExternalClass p,
+                .ExternalClass span,
+                .ExternalClass font,
+                .ExternalClass td,
+                .ExternalClass div {
+                  line-height: 100%;
+                }
+                
+                .ie-browser .mixed-two-up .num4,
+                [owa] .mixed-two-up .num4 {
+                  width: 164px !important;
+                }
+                
+                .ie-browser .mixed-two-up .num8,
+                [owa] .mixed-two-up .num8 {
+                  width: 328px !important;
+                }
+        
+                .ie-browser .block-grid.two-up .col,
+                [owa] .block-grid.two-up .col {
+                  width: 250px !important;
+                }
+                
+                .ie-browser .block-grid.three-up .col,
+                [owa] .block-grid.three-up .col {
+                  width: 166px !important;
+                }
+                
+                .ie-browser .block-grid.four-up .col,
+                [owa] .block-grid.four-up .col {
+                  width: 125px !important;
+                }
+        
+                .ie-browser .block-grid.five-up .col,
+                [owa] .block-grid.five-up .col {
+                  width: 100px !important;
+                }
+                
+                .ie-browser .block-grid.six-up .col,
+                [owa] .block-grid.six-up .col {
+                  width: 83px !important;
+                }
+                
+                .ie-browser .block-grid.seven-up .col,
+                [owa] .block-grid.seven-up .col {
+                  width: 71px !important;
+                }
+        
+                .ie-browser .block-grid.eight-up .col,
+                [owa] .block-grid.eight-up .col {
+                  width: 62px !important;
+                }
+                
+                .ie-browser .block-grid.nine-up .col,
+                [owa] .block-grid.nine-up .col {
+                  width: 55px !important;
+                }
+                
+                .ie-browser .block-grid.ten-up .col,
+                [owa] .block-grid.ten-up .col {
+                  width: 50px !important;
+                }
+                
+                .ie-browser .block-grid.eleven-up .col,
+                [owa] .block-grid.eleven-up .col {
+                  width: 45px !important;
+                }
+        
+                .ie-browser .block-grid.twelve-up .col,
+                [owa] .block-grid.twelve-up .col {
+                  width: 41px !important;
+                }
+                a:-webkit-any-link {
+                    text-decoration: none !important;
+                }
+                .ii a[href] {
+                    color: #4d4f53 !important;
+                }
+                a {
+                    text-decoration: none !important;
+                    color: #4d4f53 !important;
+                }
+                @media only screen and (min-width: 520px) {
+                  .block-grid {
+                    width: 500px !important;
+                  }
+                  .block-grid .col {
+                    vertical-align: top;
+                  }
+                  .block-grid .col.num12 {
+                    width: 500px !important;
+                  }
+                  .block-grid.mixed-two-up .col.num4 {
+                    width: 164px !important;
+                  }
+                  .block-grid.mixed-two-up .col.num8 {
+                    width: 328px !important;
+                  }
+                  .block-grid.two-up .col {
+                    width: 250px !important;
+                  }
+                  .block-grid.three-up .col {
+                    width: 166px !important;
+                  }
+                  .block-grid.four-up .col {
+                    width: 125px !important;
+                  }
+                  .block-grid.five-up .col {
+                    width: 100px !important;
+                  }
+                  .block-grid.six-up .col {
+                    width: 83px !important;
+                  }
+                  .block-grid.seven-up .col {
+                    width: 71px !important;
+                  }
+                  .block-grid.eight-up .col {
+                    width: 62px !important;
+                  }
+                  .block-grid.nine-up .col {
+                    width: 55px !important;
+                  }
+                  .block-grid.ten-up .col {
+                    width: 50px !important;
+                  }
+                  .block-grid.eleven-up .col {
+                    width: 45px !important;
+                  }
+                  .block-grid.twelve-up .col {
+                    width: 41px !important;
+                  }
+                }
+        
+                @media (max-width: 520px) {
+                  .block-grid, .col {
+                    min-width: 320px !important;
+                    max-width: 100% !important;
+                    display: block !important;
+                  }
+                  .block-grid {
+                    width: calc(100% - 40px) !important;
+                  }
+                  .col {
+                    width: 100% !important;
+                  }
+                  .col > div {
+                    margin: 0 auto;
+                  }
+                  img.fullwidth,
+                  img.fullwidthOnMobile {
+                    max-width: 100% !important;
+                  }
+                  .no-stack .col {
+                    min-width: 0 !important;
+                    display: table-cell !important;
+                  }
+                  .no-stack.two-up .col {
+                    width: 50% !important;
+                  }
+                  .no-stack.mixed-two-up .col.num4 {
+                    width: 33% !important;
+                  }
+                  .no-stack.mixed-two-up .col.num8 {
+                    width: 66% !important;
+                  }
+                  .no-stack.three-up .col.num4 {
+                    width: 33% !important;
+                  }
+                  .no-stack.four-up .col.num3 {
+                    width: 25% !important;
+                  }
+                  .mobile_hide {
+                    min-height: 0px;
+                    max-height: 0px;
+                    max-width: 0px;
+                    display: none;
+                    overflow: hidden;
+                    font-size: 0px;
+                  }
+                }
+      		</style>
+      		<link rel="stylesheet" href="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.css" />
+      		<script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+    	</head>
+        <body class="clean-body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #FFFFFF; color: #343434;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+      		<style type="text/css" id="media-query-bodytag">
+        		@media (max-width: 520px) {
+                    .block-grid {
+                        min-width: 320px!important;
+                        max-width: 100%!important;
+                        width: 100%!important;
+                        display: block!important;
+                    }
+                    .col {
+                        min-width: 320px!important;
+                        max-width: 100%!important;
+                        width: 100%!important;
+                        display: block!important;
+                    }
+                    .col > div {
+                        margin: 0 auto;
+                    }
+                    img.fullwidth {
+                        max-width: 100%!important;
+                    }
+                    img.fullwidthOnMobile {
+                        max-width: 100%!important;
+                    }
+                    .no-stack .col {
+                        min-width: 0!important;
+                        display: table-cell!important;
+                    }
+                    .no-stack.two-up .col {
+                        width: 50%!important;
+                    }
+                    .no-stack.mixed-two-up .col.num4 {
+                        width: 33%!important;
+                    }
+                    .no-stack.mixed-two-up .col.num8 {
+                        width: 66%!important;
+                    }
+                    .no-stack.three-up .col.num4 {
+                        width: 33%!important;
+                    }
+                    .no-stack.four-up .col.num3 {
+                    	width: 25%!important;
+                   	}
+                    .mobile_hide {
+                        min-height: 0px!important;
+                        max-height: 0px!important;
+                        max-width: 0px!important;
+                        display: none!important;
+                        overflow: hidden!important;
+                        font-size: 0px!important;
+                    }
+                    a:visited, a:active {
+                        color:#1d9cd3 !important;
+                        color:#1d9cd3;
+                    }
+         		}
+      		</style>
+            <!--[if IE]>
+         		<div class="ie-browser">
+         	<![endif]-->
+      		<!--[if mso]>
+                <div class="mso-container">
+            <![endif]-->
+                    
+            <table class="nl-container" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #ffffff;width: 100%; color: #343434;" cellpadding="0" cellspacing="0">
+        		<tbody>
+            		<tr style="vertical-align: top;">
+               			<td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top; color: #343434;">
+               				<!--[if (mso)|(IE)]>
+                  				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+                  					<tr>
+                  						<td align="center" style="background-color: transparent;">
+                  			<![endif]-->
+                  			<div>
+                     			<div style="Margin: 0 auto;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;" class="block-grid ">
+                        			<div style="border-collapse: collapse;display: table;width: 100%;">
+                           				<!--[if (mso)|(IE)]>
+                                           <table width="100%" cellpadding="0" cellspacing="0" border="0" >
+                                              <tr>
+                                                 <td style="background-color:white;" align="center">
+                                                    <table cellpadding="0" cellspacing="0" style="width: 680px;border-top:1px solid #dadada;border-left:1px solid #dadada;border-right:1px solid #dadada;">
+                                                       <tr class="layout-full-width" style="background-color:#007ac9;">
+                                        <![endif]-->
+                                       	<!--[if (mso)|(IE)]>
+                                        	<td align="center" width="680" style="width:680px; padding-right: 30px; padding-left: 30px; padding-top:0px;padding-bottom:20px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top">
+                                        <![endif]-->
+                                        <div class="col num12" style="min-width: 320px;max-width: 550px;display: table-cell;vertical-align: top;">
+                                        	<div style="background-color:#007ac9; ; width: 100% !important;">
+                                           		<!--[if (!mso)&(!IE)]><!-->
+                                                <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:0px; padding-bottom:40px; padding-right: 0px; padding-left: 0px;">
+                                                <!--<![endif]-->
+                                                <div align="center" class="img-container center  autowidth  fullwidth " style="padding-right: 20px;  padding-left: 20px;">
+                                                	<!--[if mso]>
+                                                    	<table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                            <tr style="line-height:0px;line-height:0px;">
+                                                                <td style="padding-right: 20px; padding-left: 20px;" align="left">
+                                                    <![endif]-->
+                                                    <div style="line-height:20px;font-size:1px">&nbsp;</div>                                                                        
+                                                    	<img align="left" src="{!$Label.EC_OrderSubmitEmailImage}" alt="Ecolab" width="127" height="26" style="width: 127px; height: 26px;display:block; border:none; outline:none; text-decoration:none;"/>
+                                                        <div style="line-height:15px;font-size:1px">&nbsp;</div>
+                                                       		<!--[if mso]>
+                                                     			</td>
+                                                  				</tr>
+                                              					</table>
+                                           					<![endif]-->
+                                                        </div>
+                                                       	<!--[if mso]>
+                                                               <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                                  <tr style="line-height:0px;line-height:0px;">
+                                                                     <td style="padding-right: 0px; padding-left: 0px;" align="center">
+                                                       	<![endif]-->
+                                                       	<!--[if mso]>
+                                                                     </td>
+                                                                  </tr>
+                                                               </table>
+                                                       	<![endif]-->
+                                                       	<!--[if (!mso)&(!IE)]><!-->
+                                                   		</div>
+                                                   		<!--<![endif]-->
+                                                	</div>
+                                             	</div>
+                                          		<!--[if (mso)|(IE)]>
+                                          			</td>
+                                                   	</tr>
+                                                	</table>
+                                             		</td>
+                                                    </tr>
+                                                    </table>
+                                       			<![endif]-->                           
+                        					</div>
+                     					</div>   
+                  					</div>
+                                                                     
+                                    
+                                    <div>
+                     			<div style="Margin: 0 auto;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;" class="block-grid ">
+                        			<div style="border-collapse: collapse;display: table;width: 100%;">
+                           				<!--[if (mso)|(IE)]>
+                                           <table width="100%" cellpadding="0" cellspacing="0" border="0" >
+                                              <tr>
+                                                 <td style="background-color:white;" align="center">
+                                                    <table cellpadding="0" cellspacing="0" style="width: 680px;border-top:1px solid #dadada;border-left:1px solid #dadada;border-right:1px solid #dadada;">
+                                                       <tr class="layout-full-width" style="background-color:#f5f7fa;">
+                                        <![endif]-->
+                                       	<!--[if (mso)|(IE)]>
+                                        	<td align="center" width="680" style="width:680px; padding-right: 30px; padding-left: 30px; padding-top:0px;padding-bottom:20px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top">
+                                        <![endif]-->
+                                        <div class="col num12" style="min-width: 320px;max-width: 550px;display: table-cell;vertical-align: top;">
+                                        	<div style="background-color:#f5f7fa;width:100% !important;">
+                                           		<!--[if (!mso)&(!IE)]><!-->
+                                                <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:0px; padding-bottom:40px; padding-right: 0px; padding-left: 0px;">
+                                                <!--<![endif]-->
+                                                <div align="center" class="img-container center  autowidth  fullwidth " style="padding-right: 20px;  padding-left: 20px;">
+                                                	<!--[if mso]>
+                                                    	<table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                            <tr style="line-height:0px;line-height:0px;">
+                                                                <td style="padding-right: 20px; padding-left: 20px;text-align:center" align="center">
+                                                    <![endif]-->
+                                                    
+                                                    <div style="color: #005172;font-weight:700;font-size:18pt;padding:20px 10px">{!CartDetailsInfo.user} has shared a cart with you</div>
+                                                        <apex:outputPanel rendered="{!(CartDetailsInfo.userComments!='')}">
+                                                        	<div style="background: #fff;min-height:15px;padding-top:10px;padding-bottom:10px">{!CartDetailsInfo.userComments}</div> 
+                                                        </apex:outputPanel>
+                                                       	<div style="height: 40px;line-height: 40px;">These products are recommended for your operation</div>
+                                                        <!--[if mso]>
+                                                    	<table width="80px" cellpadding="0" cellspacing="0" border="0" style="color:#fff">
+                                                            <tr style="line-height:0px;line-height:0px;">
+                                                                <td style="padding-right: 20px; padding-left: 20px;text-align:center;color: #fff;background: #007ac9" align="center">
+                                                    	<![endif]--> 
+                                                        <div style="color:white">    
+                                                            <a href="{!CartDetailsInfo.cartUrl}" style="display:block;cursor:pointer;background: #007ac9;height:30px;color:white !important;text-decoration-color:#fff !important;margin:0 auto;width: 80px;margin-top:10px;line-height:30px;">
+                                                            	<span style="color: #fff !important; text-decoration-color:#fff !important"><font color="#FFFFFF">View Cart</font></span>
+                                                            </a>
+                                                       	</div>
+                                                    	<!--[if mso]>
+                                                     		</td>
+                                                  			</tr>
+                                              				</table>
+                                           				<![endif]-->
+                                                       		<!--[if mso]>
+                                                     			</td>
+                                                  				</tr>
+                                              					</table>
+                                           					<![endif]-->
+                                                        </div>
+                                                       	<!--[if mso]>
+                                                               <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                                  <tr style="line-height:0px;line-height:0px;">
+                                                                     <td style="padding-right: 0px; padding-left: 0px;" align="center">
+                                                       	<![endif]-->
+                                                       	<!--[if mso]>
+                                                                     </td>
+                                                                  </tr>
+                                                               </table>
+                                                       	<![endif]-->
+                                                       	<!--[if (!mso)&(!IE)]><!-->
+                                                   		</div>
+                                                   		<!--<![endif]-->
+                                                	</div>
+                                             	</div>
+                                          		<!--[if (mso)|(IE)]>
+                                          			</td>
+                                                   	</tr>
+                                                	</table>
+                                             		</td>
+                                                    </tr>
+                                                    </table>
+                                       			<![endif]-->                           
+                        					</div>
+                     					</div>   
+                  					</div>
+                                                                     
+                                                                     
+                  					
+                  					<div>
+                                         <div style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color:#ffffff;" class="block-grid ">
+                                            <div style="border-collapse: collapse;display: table;width: 100%;">
+                                               <!--[if (mso)|(IE)]>
+                                               <table width="100%" cellpadding="0" cellspacing="0" border="0" >
+                                                  <tr>
+                                                     <td align="center">
+                                                        <table cellpadding="0" cellspacing="0" style="width: 680px;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;">
+                                                           <tr class="layout-full-width">
+                                                           <![endif]-->
+                                                           <!--[if (mso)|(IE)]>
+                                                              <td align="center" width="680" style="width:680px;padding-right: 50px; padding-left: 50px; padding-top:0px; padding-bottom:0px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top">
+                                                              <![endif]-->
+                                                                 <div class="col num12" style="min-width: 320px;max-width: 600px;display: table-cell;vertical-align: top;">
+                                                                    <div style="width: 100% !important;">
+                                                                       <!--[if (!mso)&(!IE)]><!-->
+                                                                          <div style="width: 500px;margin: 0 auto;border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:0px; padding-bottom:0px; padding-right: 0px; padding-left: 0px;">
+                                                                             <!--<![endif]-->
+                                                                                <div class="">
+                                                                                <!--[if mso]>
+                                                                                   <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                                                      <tr>
+                                                                                         <td style="padding-right: 20px; padding-left: 20px; padding-top: 0px;padding-bottom: 0px;">
+                                                                                         <![endif]-->
+                                                                                          <div style="border-top:0px solid transparent;border-left:0px solid transparent;border-bottom:0px solid transparent;border-right:0px solid transparent;padding-top:5px;padding-bottom:0px;padding-right:0px;padding-left:0px;line-height:120%;padding-right:0px;padding-left:0px;padding-top:0px;padding-bottom:0px;line-height:14px;font-size:12px;color:#909090;font-family:Arial;text-align:left;">
+                                                                                             <!--[if mso]>
+                                                                                             <table class="table"   width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%;text-align:left;" >
+                                                                                                 <tr>
+                                                                                                    <td style="padding-right: 20px; padding-left: 10px; padding-top: 0px;padding-bottom: 0px;background-color: #f5f7fa;">
+                                                                                             <![endif]-->
+                                                                                                    <div style="font-family:Arial,Helvetica Neue, Helvetica, sans-serif;line-height:1.43;font-size: 14px;font-weight: bold;text-align: left;background-color: #f5f7fa;padding-bottom: 5px;padding-top: 15px;margin-top: -20px;">
+                                                                                                         <!--[if mso]>
+                                                                                                         <table class="table" width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%;" >
+                                                                                                             <tr>
+                                                                                                                <td style="padding-right: 30px;padding-top: 15px;padding-bottom: 5px;">
+                                                                                                                <![endif]-->
+                                                                                                                    <span style="display: inline-block;color: #4d4f53;padding-left:10px;padding-right: 250px;font-size: 14px;font-weight: bold;font-family:Arial,Helvetica Neue, Helvetica, sans-serif;line-height: 1.43;">Product Details</span>                                                                                    
+                                                                                                                 <!--[if mso]>       
+                                                                                                                 </td>
+                                                                                                                 <td style="padding-right: 5px;padding-top: 15px;padding-bottom: 5px;">   
+                                                                                                                 <![endif]--> 
+                                                                                                                    <span style="display: inline-block;color: #4d4f53;padding-right: 60px;font-size: 14px;font-weight: bold;font-family:Arial,Helvetica Neue, Helvetica, sans-serif;line-height:1.43;">Quantity</span>
+                                                                                                                 <!--[if mso]>       
+                                                                                                                 </td>
+                                                                                                                 <td style="padding-top: 15px;padding-bottom: 5px;">   
+                                                                                                                 <![endif]-->   
+                                                                                                                 <!--<span style="display: inline-block;color: #4d4f53;font-size: 14px;font-weight: bold;font-family:Arial,Helvetica Neue, Helvetica, sans-serif;line-height:1.43;">Total</span>-->
+                                                                                                                 <!--[if mso]>       
+                                                                                                                 </td>   
+                                                                                                             </tr>
+                                                                                                          </table>           
+                                                                                                          <![endif]--> 
+                                                                                                    </div>    
+                                                                                                    <!--[if mso]>
+                                                                                                    </td>    
+                                                                                                  </tr>   
+                                                                                             </table>
+                                                                                             <![endif]-->
+                                                                                          </div>   
+                                                                                         <!--[if mso]>
+                                                                                         </td>
+                                                                                      </tr>
+                                                                                   </table>
+                                                                                <![endif]-->
+                                                                                </div>
+                                                                             <!--[if (!mso)&(!IE)]><!-->
+                                                                          </div>
+                                                                       <!--<![endif]-->
+                                                                    </div>
+                                                                 </div>
+                                                              <!--[if (mso)|(IE)]>
+                                                              </td>
+                                                           </tr>
+                                                        </table>
+                                                     </td>
+                                                  </tr>
+                                               </table>
+                                               <![endif]-->                           
+                                            </div>
+                                         </div>   
+                                      </div> 
+                                                                                             
+                
+                                       <apex:variable var="cnt" value="{!0}" /> 
+                                    	<apex:repeat value="{!CartDetailsInfo.cartItemInfoList}" var="ordItem">                                                                                          
+                                    	<div class="{!cnt}">
+                                         <div style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;" class="block-grid ">
+                                            <div style="border-collapse: collapse;display: table;width: 100%;">
+                                               <!--[if (mso)|(IE)]>
+                                               <table width="100%" cellpadding="0" cellspacing="0" border="0" style="padding-bottom: 4px;">
+                                                  <tr style="">
+                                                     <td align="center">
+                                                        <table cellpadding="0" cellspacing="0" style="width: 680px;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;">
+                                                           <tr class="layout-full-width" style="background-color:#ffffff;">
+                                                           <![endif]-->
+                                                           <!--[if (mso)|(IE)]>
+                                                              <td align="center" width="680" style="width:680px;padding-right: 50px;padding-left: 50px;padding-top:0px;border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top">
+                                                              <![endif]-->
+                                                                 <div class="col num12" style="min-width: 320px;max-width: 600px;display: table-cell;vertical-align: top;">
+                                                                    <div style="width: 100% !important;">
+                                                                       <!--[if (!mso)&(!IE)]><!-->
+                                                                          <div style="width: 500px; margin: 0 auto;border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:0px; padding-bottom:0px; padding-right: 0px; padding-left: 0px;">
+                                                                             <!--<![endif]-->
+                                                                                <div class="">
+                                                                                <!--[if mso]>
+                                                                                   <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                                                      <tr>
+                                                                                         <td style="padding-right: 20px; padding-left: 20px; padding-top: 0px;padding-bottom: 0px;">
+                                                                                         <![endif]-->
+                                                                                          <div style="border-top:0px solid transparent;border-left:0px solid transparent;border-bottom:0px solid transparent;border-right:0px solid transparent;padding-top:5px;padding-bottom:5px;padding-right:0px;padding-left:0px;line-height:120%;padding-right:0px;padding-left:0px;padding-top:0px;padding-bottom:4px;line-height:14px;font-size:12px;color:#909090;font-family:Arial;text-align:left;">
+                                                                                              <table class="table"   width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
+                                                                                                    <tr style="">
+                                                                                                     <td style="border:1px solid #d9d9d9;" >                                                                                                
+                                                                                                         <table class="table"  width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%;text-align:left;">        
+                                                                                                         <tbody class="">
+                                                                                                            <tr align="left" style="text-align:left;"  >
+                                                                                                                <td width="20% !important" style="width: 20% !important;padding-top:20px;pading-bottom:10px;padding-left:20px;" valign="top">
+                                                                                                                <apex:outputPanel rendered="{!(ordItem.cartItemImage!='')}">
+                                                                                                                 <img src="{!ordItem.cartItemImage}" width="45" height="64" style="height:64px !important;width:45px !important; vertical-align:middle;" ></img>
+                                                                                                                 </apex:outputPanel>
+                                                                                                                 <apex:outputPanel rendered="{!(ordItem.cartItemImage=='')}">
+                                                                                                                 <img src="{!$Label.EC_Default_Image}" width="45" height="64" style="height:64px !important;width:45px !important; vertical-align:middle;" ></img>
+                                                                                                                 </apex:outputPanel>
+                                                                                                                </td>
+                                                                                                               <td width="50%" align="left" style="width:50%; text-align:left;padding-top:10px;padding-bottom:10px;padding-left:10px;" valign="top">
+                                                                                                                  <p style="margin:0 5px;font-size:14px;line-height:18px;text-align:left;">
+                                                                                                                     <div style="font-size:20px;line-height:1.35; color: #373737;">{!ordItem.cartItemName}</div>
+                                                                                                                     <div style="font-size:14px;line-height:1.25 color: #4d4f53;padding:10px 0;letter-spacing:0">
+                                                                                                                            Product code:<strong>{!ordItem.productCode}</strong>
+                                                                                                                     </div>
+                                                                                                                     <!--<div style="color: #005172;font-size:20px;font-family:Arial;padding:10px 0 0 0;">${!ordItem.cartItemUnitPrice}{!CartDetailsInfo.currencyIsoCode}
+                                                                                                                     </div>-->    
+                                                                                                                  </p>
+                                                                                                               </td>
+                                                                                                               <td width="30%" align="right" style="width:30%;text-align:left;padding-top:10px;padding-bottom:10px;padding-left:10px;" valign="top">
+                                                                                                                  <p style="margin:0 5px;font-size:14px;line-height:18px;text-align:left;">
+                                                                                                                      <span style="font-size:14px;line-height:14px; color: #4d4f53;"><strong>{!ordItem.quantity}</strong></span>
+                                                                                                                  </p>
+                                                                                                               </td>
+                                                                                                               <!--<td width="30%" align="right" style="width:30%;padding-right:10px;padding-left:10px;border-collapse: initial; text-align:right;padding-top:10px;padding-bottom:10px;" valign="top">
+                                                                                                                  <p style="margin:0 5px;font-size:14px;line-height:18px;text-align:left;">
+                                                                                                                     <span style="line-height:14px;color:#005172;font-size:20px;">${!ordItem.cartItemTotalPrice} {!CartDetailsInfo.currencyIsoCode}</span>
+                                                                                                                  </p>
+                                                                                                               </td>-->                                                                                                                                                                                                                                                              
+                                                                                                            </tr>
+                                                                                                         </tbody>
+                                                                                                        </table>
+                                                                                                                            
+                                                                                                       </td>
+                                                                                                      </tr>               
+                                                                                                  </table>
+                                                                                          </div>   
+                                                                                         <!--[if mso]>
+                                                                                         </td>
+                                                                                      </tr>
+                                                                                   </table>
+                                                                                <![endif]-->
+                                                                                </div>
+                                                                             <!--[if (!mso)&(!IE)]><!-->
+                                                                          </div>
+                                                                       <!--<![endif]-->
+                                                                    </div>
+                                                                 </div>
+                                                              <!--[if (mso)|(IE)]>
+                                                              </td>
+                                                           </tr>
+                                                        </table>                                                     
+                                                     </td>
+                                                  </tr>
+                                               </table>
+                                               <![endif]-->                           
+                                            </div>
+                                         </div>   
+                                      </div>                                                         
+                                      <apex:variable var="cnt" value="{!cnt+1}"/>
+                                      </apex:repeat>                                                    
+                                    
+                                  
+                                      
+                                      <div>
+                                         <div style="Margin: 20px auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;" class="block-grid ">
+                                            <div style="border-collapse: collapse;display: table;width: 100%;">
+                                               <!--[if (mso)|(IE)]>
+                                               <table width="100%" cellpadding="0" cellspacing="0" border="0" >
+                                                  <tr>
+                                                     <td align="center">
+                                                        <table cellpadding="0" cellspacing="0" style="width: 680px;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;">
+                                                           <tr class="layout-full-width" style="background-color:#ffffff;">
+                                                           <![endif]-->
+                                                           <!--[if (mso)|(IE)]>
+                                                              <td align="center" width="680" style="width:680px; padding-right: 50px; padding-left: 50px; padding-top:0px; padding-bottom:0px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top">
+                                                              <![endif]-->
+                                                                 <div class="col num12" style="min-width: 320px;max-width: 600px;display: table-cell;vertical-align: top;">
+                                                                    <div style="width: 100% !important;">
+                                                                       <!--[if (!mso)&(!IE)]><!-->
+                                                                          <div style="margin: auto;border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:0px; padding-bottom:0px; padding-right: 0px; padding-left: 0px;">
+                                                                             <!--<![endif]-->
+                                                                                <div class="">
+                                                                                <!--[if mso]>
+                                                                                   <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                                                      <tr>
+                                                                                         <td style="padding-right: 20px; padding-left: 20px;;padding-bottom: 0px;">
+                                                                                         <![endif]-->
+                                                                                          <div style="border-top:0px solid transparent;border-left:0px solid transparent;border-bottom:0px solid transparent;border-right:0px solid transparent;padding-top:5px;padding-bottom:0px;padding-right:0px;padding-left:0px;line-height:120%;padding-right:0px;padding-left:0px;padding-top:0px;padding-bottom:0px;line-height:14px;font-size:12px;color:#909090;font-family:Arial;text-align:left;">                                                                                                                                                     
+                                                                                                  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%;padding-top:40px;text-align:right;margin-left: auto;margin-right:auto;background-color:white;border:1px solid transparent;">
+                                                                                                     <tbody>
+                                                                                                        <tr align="left" style="text-align:right;">
+                                                                                                           <td align="left" style="">
+                                                                                                              <p style="margin:0 5px;font-size:14px;line-height:18px;text-align:center;"><span
+                                                                                                              style="font-size:14px;line-height:14px; padding:10px;">For Customer Support call <span style="color:#007ac9;font-weight:bold;">866-851-8670</span></span></p>
+                                                                                                              <p style="margin:0 5px;font-size:14px;line-height:18px;text-align:center;"><span
+                                                                                                              style="font-size:12px;line-height:14px; padding:10px;color: #adafaf;">{!$Label.EC_Order_Ack_Mail_Footer}</span></p>
+                                                                                                           </td>
+                                                                                                           
+                                                                                                        </tr>
+                                                                                                        
+                                                                                                     </tbody>
+                                                                                                  </table> 
+                                                                                          </div>   
+                                                                                         <!--[if mso]>
+                                                                                         </td>
+                                                                                      </tr>
+                                                                                   </table>
+                                                                                <![endif]-->
+                                                                                </div>
+                                                                             <!--[if (!mso)&(!IE)]><!-->
+                                                                          </div>
+                                                                       <!--<![endif]-->
+                                                                    </div>
+                                                                 </div>
+                                                              <!--[if (mso)|(IE)]>
+                                                              </td>
+                                                           </tr>
+                                                        </table>
+                                                     </td>
+                                                  </tr>
+                                               </table>
+                                               <![endif]-->                           
+                                            </div>
+                                         </div>   
+                                      </div>                                                                                                                                                  
+                                                                                                                                                                                      
+                                   		<div>
+                                         <div style="Margin: 0 auto;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;max-height: 7px;" class="block-grid ">
+                                            <div style="border-collapse: collapse;display: table;width: 100%;">
+                                               <!--[if (mso)|(IE)]>
+                                               <table width="100%" cellpadding="0" cellspacing="0" border="0" >
+                                                  <tr>
+                                                     <td style="background-color:transparent;" align="center">
+                                                        <table cellpadding="0" cellspacing="0" style="width: 680px;border-top:1px solid #dadada;border-left:1px solid #dadada;border-right:1px solid #dadada;border-bottom:1px solid transparent;">
+                                                           <tr class="layout-full-width" style="background-color:#5b8f22;">
+                                                           <![endif]-->
+                                                           <!--[if (mso)|(IE)]>
+                                                              <td align="center" width="680" style="width:680px; padding-right: 30px; padding-left: 30px; padding-top:0px; padding-bottom:7px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top">
+                                                              <![endif]-->
+                                                                 <div class="col num12" style="min-width: 320px;max-width: 500px;display: table-cell;vertical-align: top;">
+                                                                    <div style="background-color:#5b8f22 ; width: 100% !important;">
+                                                                       <!--[if (!mso)&(!IE)]><!-->
+                                                                          <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:0px; padding-bottom:10px; padding-right: 0px; padding-left: 0px;">
+                                                                             <!--<![endif]-->
+                                                                                <div align="center" class="img-container center  autowidth  fullwidth " style="padding-right: 20px;  padding-left: 20px;">
+                                                                                   <!--[if mso]>
+                                                                                      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                                                         <tr style="line-height:0px;line-height:0px;">
+                                                                                         </tr>
+                                                                                      </table>
+                                                                                   <![endif]-->
+                                                                                </div>
+                                                                                <!--[if mso]>
+                                                                                   <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                                                      <tr style="line-height:0px;line-height:0px;">
+                                                                                         <td style="padding-right: 0px; padding-left: 0px;" align="center">
+                                                                                         <![endif]-->
+                                                                                         <!--[if mso]>
+                                                                                         </td>
+                                                                                      </tr>
+                                                                                   </table>
+                                                                                <![endif]-->
+                                                                             <!--[if (!mso)&(!IE)]><!-->
+                                                                          </div>
+                                                                       <!--<![endif]-->
+                                                                    </div>
+                                                                 </div>
+                                                              <!--[if (mso)|(IE)]>
+                                                              </td>
+                                                           </tr>
+                                                        </table>
+                                                     </td>
+                                                  </tr>
+                                               </table>
+                                               <![endif]-->                           
+                                            </div>
+                                         </div>   
+                                      </div>
+                                      
+                                      
+                                    <div>
+                                         <div style="Margin: 0 auto;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;" class="block-grid ">
+                                            <div style="border-collapse: collapse;display: table;width: 100%;">
+                                               <!--[if (mso)|(IE)]>
+                                               <table width="100%" cellpadding="0" cellspacing="0" border="0" >
+                                                  <tr>
+                                                     <td style="background-color:transparent;" align="center">
+                                                        <table cellpadding="0" cellspacing="0" style="width: 680px;border-top:0px solid transparent;border-left:1px solid #dadada;border-right:1px solid #dadada;">
+                                                           <tr class="layout-full-width" style="background-color:#007ac9;">
+                                                           <![endif]-->
+                                                           <!--[if (mso)|(IE)]>
+                                                              <td align="center" width="680" style="width:680px; padding-right: 30px; padding-left: 30px; padding-top:24px; padding-bottom:24px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top">
+                                                              <![endif]-->
+                                                                 <div class="col num12" style="min-width: 320px;max-width: 500px;display: table-cell;vertical-align: top;">
+                                                                    <div style="background-color:#007ac9;; width: 100% !important;">
+                                                                       <!--[if (!mso)&(!IE)]><!-->
+                                                                          <div style="color:white; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:0px; padding-bottom:10px; padding-right: 0px; padding-left: 0px;">
+                                                                             <!--<![endif]-->
+                                                                                <div align="center" class="img-container center  autowidth  fullwidth " style="padding-right: 20px;  padding-left: 20px;">
+                                                                                   <!--[if mso]>
+                                                                                       <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                                                           <tr style="line-height:0px;line-height:0px;">
+                                                                                                <td style="padding-right: 20px; padding-left: 20px;" align="center">
+                                                                                            <![endif]-->
+                                                                                            <!--<div style="padding-right: 20px; padding-left: 20px; padding-top: 16px; padding-bottom: 10px;">
+                                                                                                           <div style="font-size:16px;line-height:14px;text-align:left;text-align:center">
+                                                                                                                <p style="margin: 0;font-size: 16px;line-height: 17px;">
+                                                                                                                    <div style="line-height:16px;font-weight:bold;color:white;"><p style="padding-top:20px;">ECOLAB</p></div>
+                                                                                                                    <div style="line-height:16px; color:white;">GLOBAL HEADQUARTERS</div>
+                                                                                                                    <div style="line-height:16px; color:white;">1 Ecolab Place, St. Paul MN 55102</div>
+                                                                                                                    <div style="line-height:16px; color:white;">EcoLab.com</div>
+                                                                                                                    <div style="line-height:16px; color:white;"><p style="padding-top:30px;">Forward Email | Privacy Policy</p></div>
+                                                                                                                        <div style="line-height:16px; color:white;"><p style="padding-top:8px;">© 2019 Ecolab Inc. All rights reserved.</p></div>
+                                                                                                                </p>
+                                                                                                            </div>
+                                                                                             </div>-->
+                                                                                            <div style="padding-right: 20px; padding-left: 20px; padding-top: 16px; padding-bottom: 10px;">
+                                                                                                        <div style="font-size:14px;line-height:14px;text-align:left;text-align:center">
+                                                                                                            <p style="margin: 0;font-size: 16px;line-height: 17px;">
+                                                                                                                <div style="line-height:16px;font-weight:bold;color:white;">ECOLAB</div>
+                                                                                                                <div style="line-height:16px; color:white;">GLOBAL HEADQUARTERS</div>
+                                                                                                                <div style="line-height:16px; color:white;display:inline-block;">1 Ecolab Place, St. Paul MN 55102</div>
+                                                                                                                <div style="line-height:16px; color:white;">Ecolab.com</div>
+                                                                                                                <div style="line-height:16px; color:white;font-size:12px;">
+                                                                                                                    <a href="https://en-in.ecolab.com/privacy-policy" style="text-decoration: underline !important;text-decoration-color: #ffffff !important;color: #ffffff !important;"><span style="color: #FFFFFF; text-decoration: underline !important;text-decoration-color: #ffffff !important;"><font color="#FFFFFF">Privacy Policy</font></span></a>
+                                                                                                                </div>
+                                                                                                                <div style="line-height:16px; color:white;"><p style="font-size: 12px;">© 2019 Ecolab Inc. All rights reserved.</p></div>
+                                                                                                            </p>
+                                                                                                        </div>
+                                                                                            </div>                                                                                                    
+                                                                                            <!--[if mso]>
+                                                                                            </td>  
+                                                                                         </tr>
+                                                                                      </table>
+                                                                                   <![endif]-->
+                                                                                </div>
+                                                                                <!--[if mso]>
+                                                                                   <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                                                      <tr style="line-height:0px;line-height:0px;">
+                                                                                         <td style="padding-right: 0px; padding-left: 0px;" align="center">
+                                                                                         <![endif]-->
+                                                                                         <!--[if mso]>
+                                                                                         </td>
+                                                                                      </tr>
+                                                                                   </table>
+                                                                                <![endif]-->
+                                                                             <!--[if (!mso)&(!IE)]><!-->
+                                                                          </div>
+                                                                       <!--<![endif]-->
+                                                                    </div>
+                                                                 </div>
+                                                              <!--[if (mso)|(IE)]>
+                                                              </td>
+                                                           </tr>
+                                                        </table>
+                                                     </td>
+                                                  </tr>
+                                               </table>
+                                               <![endif]-->                           
+                                            </div>
+                                         </div>   
+                                      </div>                                
+                                                                     
+                                                                     
+                                                                     
+                                  	<!--[if (mso)|(IE)]>
+                                      </td>
+                                      </tr>
+                                      </table>
+                                   <![endif]-->
+               					</td>
+            				</tr>
+         				</tbody>
+      				</table>
+      				<!--[if (mso)|(IE)]>
+         				</div>
+         			<![endif]-->                                   		
+        </body>
+    </html>
+</apex:component>

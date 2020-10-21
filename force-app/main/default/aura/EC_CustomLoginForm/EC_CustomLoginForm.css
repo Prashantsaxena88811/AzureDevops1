@@ -1,0 +1,605 @@
+@media (min-width: 320px) and (max-width: 767px) {
+  .THIS .login-comp-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .THIS .login-comp-wrapper .login-wrapper .login-section {
+    border-radius: 2px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+    margin-top: 40px;
+    margin-bottom: 62px;
+  }
+  .THIS .login-comp-wrapper .login-wrapper .login-section .header {
+    border-radius: 2px;
+    background-color: #007ac9;
+    padding: 27px 42px 26px 40px;
+  }
+  .THIS .login-comp-wrapper .login-wrapper .login-section .content {
+    text-align: center;
+    padding: 0 16px;
+    padding-bottom: 36.5px;
+    border-bottom: solid 1px #d9d9d9;
+  }
+  .THIS .login-comp-wrapper .login-wrapper .login-section .content h2 {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #007ac9;
+    margin-top: 8px;
+  }
+  .THIS .login-comp-wrapper .login-wrapper .login-section .content h3 {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.35px;
+    text-align: center;
+    color: #005172;
+    margin-top: 22px;
+    margin-bottom: 16px;
+  }
+  .THIS .login-comp-wrapper .login-wrapper .login-section .content button {
+    width: 100%;
+	padding-left: 22px;
+	padding-right: 22px;
+	padding-top: 9px;
+	padding-bottom: 8px;
+	line-height: inherit;
+	text-align: left;
+	margin-left: 0;
+    font-size :12px;    
+  }
+  .THIS .login-comp-wrapper .login-wrapper .login-section .content button img {
+    width: 23px;
+  }
+  .THIS .login-comp-wrapper .login-wrapper .login-section .content button label {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.4px;
+    color: #373737;
+    margin-left: 9px;
+  }
+  .THIS .login-comp-wrapper .login-wrapper .login-section .footer {
+    padding: 15.5px 16px 24px 16px;
+    text-align: center;
+  }
+  .THIS .login-comp-wrapper .login-wrapper .login-section .footer label {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4d4f53;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .THIS .login-comp-wrapper .image-wrapper {
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+    display: none;
+  }
+  .THIS .ec_btn_signup{
+    box-sizing: border-box;
+    font-size : 12px;    
+    width: 292.5px;
+    height: 32px;
+    font-weight: bold;    
+    border-radius: 2px;
+    border: solid 1px #007ac9;
+    background-color: #ffffff;
+  }
+  .THIS .helpText {
+    height: 179px;
+    background-color: #f7f7f7;
+  }
+  .THIS .Ecolabs-Customer-Po {
+    width: 253px;
+    height: 80px;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    color: #494a4a;
+  }
+  .THIS .Ecolabs-Customer-Po .text-style-1 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #007ac9;
+  }
+  .THIS .Alignment {
+    margin-left: 25px;
+  }
+  .THIS .Safari-Firefox-and {
+    width: 253px;
+    height: 41px;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    color: #494a4a;
+  }
+  .THIS .Safari-Firefox-and .text-style-1 {
+    color: #007ac9;
+  }
+}
+@media (min-width: 768px) and (max-width: 1365px)
+    {
+  
+  .THIS.slds-grid {
+    margin: 0px;
+  }
+  .THIS .login-comp-wrapper {
+    max-height: 960px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+  }
+  .THIS .login-comp-wrapper.slds-col {
+    padding: 0px;
+  }
+  .THIS .image-wrapper {
+    width: 49.479%;
+    max-width: 49.479%;
+    position: relative;
+    overflow: hidden;
+  }
+    
+   .THIS .image-wrapper img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;    
+  }
+    
+    
+  .THIS .login-wrapper {
+    margin-left: 20.2px;
+    padding-top: 78px;
+    margin-right: 33px;
+    margin-bottom: 71px;
+  }
+  .THIS .login-wrapper .login-section {
+    width: 341px;
+    border-radius: 2px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+  }
+  .THIS .login-wrapper .login-section .header {
+    height: 95px;
+    border-radius: 2px;
+    background-color: #007ac9;
+    padding: 36px 47px 35px 47px;
+  }
+  .THIS .login-wrapper .login-section .content {
+    text-align: center;
+  }
+  .THIS .login-wrapper .login-section .content h2 {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #007ac9;
+    margin-top: 14px;
+  }
+  .THIS .login-wrapper .login-section .content h3 {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    color: #005172;
+    margin-top: 25px;
+  }
+  .THIS .login-wrapper .login-section .content .external-wrapper {
+    width: 309px;
+    margin: 0 auto;
+    border-radius: 2px;
+    border: solid 1px #007ac9;
+    margin-top: 16px;
+    padding: 9px 67px 8px 47px;
+    text-align: left;
+    margin-bottom: 32px;
+  }
+  .THIS .login-wrapper .login-section .content .external-wrapper img {
+    margin-right: 18px;
+  }
+  .THIS .login-wrapper .login-section .content .external-wrapper label {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.13;
+    color: #373737;
+    width: 100%;
+    height: 18px;
+    text-align: center;
+  }
+  .THIS .login-wrapper .login-section .footer {
+    border-top: solid 1px #d9d9d9;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    
+  }
+  .THIS .login-wrapper .login-section .footer label {
+    margin-top: 14px;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.13;
+    letter-spacing: 0.46px;
+    color: #373737;
+  }
+  .THIS .login-wrapper .login-section .footer button {
+    box-sizing: border-box;
+    width: 310px;
+    font-size: 14px;
+    border-radius: 2px; 
+    border: solid 1px #007ac9;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #007ac9;
+    margin-top: 14px;
+    margin-bottom: 32px;
+    height: 36px;
+    text-transform: uppercase;
+  }
+  .THIS .Alignment {
+    margin-left: 22px;
+  }
+  .THIS .helpText {
+    width: 341px;
+    height: 146px;
+    background-color: #f7f7f7;
+}
+.THIS .Ecolabs-Customer-Po {
+  width: 310px;
+  height: 60px;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: #494a4a;
+}
+.THIS .Ecolabs-Customer-Po .text-style-1 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #007ac9;
+}
+.THIS .Ecolabs-Customer-Po .text-style-2 {
+  color: #373737;
+}
+.THIS .Safari-Firefox-and {
+  width: 310px;
+  height: 40px;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: #494a4a;
+ }
+.THIS .Safari-Firefox-and .text-style-1 {
+  color: #007ac9;
+}
+}
+
+@media (min-width:1366px) {
+  
+  .THIS.slds-grid {
+    margin: 0px;
+  }
+  .THIS .login-comp-wrapper {
+    max-height: 960px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+  }
+  .THIS .login-comp-wrapper.slds-col {
+    padding: 0px;
+  }
+  .THIS .image-wrapper {
+    width: 49.479%;
+    max-width: 49.479%;
+    position: relative;
+    overflow: hidden;
+  }
+    
+  .THIS .image-wrapper img{
+   height: 100%;
+    width: 100%;
+    object-fit: cover; 
+  }
+    
+  .THIS .login-wrapper {
+    margin-left: 174px;
+    padding-top: 214px;
+    margin-right: 196px;
+    margin-bottom: 212px;
+  }
+  .THIS .login-wrapper .login-section {
+    width: 100%;
+    border-radius: 2px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+  }
+  .THIS .login-wrapper .login-section .header {
+    height: 95px;
+    border-radius: 2px;
+    background-color: #007ac9;
+    padding: 31px 123px 30px 124px;
+  }
+  .THIS .login-wrapper .login-section .content {
+    text-align: center;
+  }
+  .THIS .login-wrapper .login-section .content h2 {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #007ac9;
+    margin-top: 14px;
+  }
+  .THIS .login-wrapper .login-section .content h3 {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    color: #005172;
+    margin-top:44px;
+  }  
+  .THIS .login-wrapper .login-section .content .external-wrapper {
+    width: 380px;
+    margin: 0 auto;
+    border-radius: 2px;
+    border: solid 1px #007ac9;
+    margin-top: 16px;
+    padding: 8px 79px;
+    text-align: left;
+    margin-bottom: 40px;
+    height: 54px;
+  }
+  .THIS .login-wrapper .login-section .content .external-wrapper img {
+    margin-right: 18px;
+  }
+  .THIS .login-wrapper .login-section .content .external-wrapper label {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.13;
+    letter-spacing: 0.46px;
+    color: #373737;
+    width: 100%;
+    height: 18px;
+    text-align: center;
+  }
+  .THIS .login-wrapper .login-section .footer {
+    border-top: solid 1px #d9d9d9;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0px 110px;
+  }
+  .THIS .login-wrapper .login-section .footer label {
+    margin-top: 31.5px;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.13;
+    letter-spacing: 0.46px;
+    color: #373737;
+  }
+  .THIS .login-wrapper .login-section .footer button {
+    width: 380px;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color:#007AC9;
+    margin-top: 16px;
+    margin-bottom: 60px;
+    height: 54px; 
+  }
+  .THIS .ec_btn_signup{
+  box-sizing: border-box;
+  width: 380px;
+  height: 55px;
+  font-size :14px;      
+  border-radius: 2px;
+  border: solid 1px #007AC9;
+  background-color: #ffffff;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  text-align: center;
+  color: #007AC9;
+  text-transform: uppercase;
+
+  }
+  .THIS .helpText{
+      width: 100%;
+      height: 218px;
+      background-color: #f7f7f7;
+    }
+    .THIS .Ecolabs-Customer-Po {
+      width: 380px;
+      height: 66px;
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.57;
+      letter-spacing: normal;
+      color: #494a4a;
+    }
+   .THIS .Ecolabs-Customer-Po.text-style-1 {
+      font-size: 16px;
+      color: #007ac9;
+    }
+    .THIS .Ecolabs-Customer-Po .text-style-2 {
+      color: #373737;
+    }
+    .THIS .Safari-Firefox-and {
+      width: 380px;
+      height: 44px;
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.57;
+      letter-spacing: normal;
+      color: #494a4a;
+    }
+   .THIS .Safari-Firefox-and .text-style-1 {
+      color: #007ac9;
+    }
+    .THIS .Alignment {
+      padding-left: 52px;
+    }
+  
+}
+@media (min-width: 1366px) and (max-width: 1919px) {
+    .THIS .image-wrapper {
+    	min-width: 59.5%;
+    }
+    .THIS .login-wrapper {
+    	padding : 80px 30px;
+   		margin: 0 auto;
+        box-sizing:border-box;
+        width :40%;
+        
+	}
+}
+
+@media (max-width: 1365px) and (min-width: 768px) {
+    .THIS.slds-grid {
+        max-width: 100%;
+    }
+    .THIS .image-wrapper {
+    	min-width: 50%;
+        display :none;
+    }
+	.THIS .login-wrapper {
+        padding-top: 80px;
+   		margin: 0 auto;
+    	padding-bottom: 80px;
+    }
+}
+@media (min-width: 1920px) {
+  .THIS .image-wrapper {
+    	min-width: 60%;
+    }
+  .THIS .login-wrapper {
+    	padding-top: 80px;
+   		margin: 0 auto;
+    	padding-bottom: 80px;
+        width : 600px;
+        height:591px;
+  }
+  .THIS .Ecolabs-Customer-Po {
+      width: 522px;
+      height: 44px;
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.57;
+      letter-spacing: normal;
+      color: #494a4a;
+    }
+   .THIS .Ecolabs-Customer-Po.text-style-1 {
+      color: #007ac9;
+    } 
+  .THIS .Safari-Firefox-and {
+      width: 522px;
+      height: 44px;
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.57;
+      letter-spacing: normal;
+      color: #494a4a;
+    }
+   .THIS .Safari-Firefox-and .text-style-1 {
+      color: #007ac9;
+    }   
+}

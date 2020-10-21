@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Coupon_Notes__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Admin description of what a coupon is intended to do</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please enter the description of what the coupon is suppose to accomplish</inlineHelpText>
+    <label>Coupon Notes</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

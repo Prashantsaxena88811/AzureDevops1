@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__ContentID__c</fullName>
+    <deprecated>false</deprecated>
+    <description>ID for this particular E_Content object.  ID should describe what this content object represents.  E.g. body for home page body, faq for FAQ link, etc.  There can be multiple objects with the same ID, but must be unique across the storefront/locale.</description>
+    <externalId>false</externalId>
+    <label>Content ID</label>
+    <length>100</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

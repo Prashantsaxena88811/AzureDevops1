@@ -1,0 +1,22 @@
+<!--
+
+  @Component Name     : EC_MarketingBanner.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Soumick               11/26/2019        Component to show the marketing banner
+
+-->
+
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <div class="banner_container">
+        <div class="Rectangle">
+            <p class="Marketing_content_he">{!$Label.c.EC_MarketingBannerHead}</p>
+            <p class="bottom">{!$Label.c.EC_MarketingBannerBottom}</p>
+
+        </div>
+    </div>
+
+
+</aura:component>

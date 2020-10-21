@@ -1,0 +1,105 @@
+.THIS.marketing-wrapper {
+    margin-top: 27px;
+    margin-bottom: 27px;
+    align-items: stretch;
+}
+.THIS.marketing-wrapper .heading {
+  padding-bottom: 16px;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  color: #005172;
+}
+.THIS .covid {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+    padding: 20px 30px;
+    display: flex;
+}
+.THIS .covid-img {
+    width: 133px;
+    margin-right: 20px;
+}
+.THIS .covid-text {
+    width: calc(100% - 153px);
+}
+.THIS .covid-text p {
+    padding-bottom: 17px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+}
+.THIS .covid-text a {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    color: #007ac9;
+}
+.THIS .EmbeddedTweet {
+    max-width: 100%;
+}
+.THIS .twitter-sec {
+    position: relative;
+}
+.THIS .twitter-sec-in {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+}
+@media (min-width: 1024px) {
+	.THIS .twitter-sec-in {
+        position: absolute;
+        height: calc(100% - 40px);
+        bottom: 0;
+        overflow-y: scroll;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+    .THIS.marketing-wrapper .heading {
+    	font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1365px) {
+    .THIS .covid-img {
+        width: 103px;
+        margin: 40px 14px 0 0;
+    }
+    .THIS .covid-text {
+        width: calc(100% - 117px);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.THIS .covid {
+    	margin-bottom: 24px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .THIS.marketing-wrapper .heading {
+    	font-size: 14px;
+    }
+    .THIS .covid {
+        margin-bottom: 16px;
+    }
+    .THIS .covid-img {
+        display: none;
+    }
+    .THIS .covid-text {
+        width: 100%;
+    }
+    .THIS .covid-text p {
+        padding-bottom: 14px;
+        font-size: 14px;
+    }
+    .THIS .covid-text a {
+        font-size: 14px;
+    }
+}

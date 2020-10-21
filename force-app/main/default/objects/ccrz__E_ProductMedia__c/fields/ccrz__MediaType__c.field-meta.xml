@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__MediaType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Determines where this image is displayed. Values are &quot;Product Image&quot;, &quot;Product Image Thumbnail&quot;, &quot;Product Search Image&quot;, &quot;Alternate Image&quot;</description>
+    <externalId>false</externalId>
+    <label>Media Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Alternate Images</fullName>
+                <default>false</default>
+                <label>Alternate Images</label>
+            </value>
+            <value>
+                <fullName>Alternate Thumbnails</fullName>
+                <default>false</default>
+                <label>Alternate Thumbnails</label>
+            </value>
+            <value>
+                <fullName>Datasheets</fullName>
+                <default>false</default>
+                <label>Datasheets</label>
+            </value>
+            <value>
+                <fullName>Safety Documents</fullName>
+                <default>false</default>
+                <label>Safety Documents</label>
+            </value>
+            <value>
+                <fullName>Sales Brochures</fullName>
+                <default>false</default>
+                <label>Sales Brochures</label>
+            </value>
+            <value>
+                <fullName>Product Search Image</fullName>
+                <default>false</default>
+                <label>Product Search Image</label>
+            </value>
+            <value>
+                <fullName>Owner&apos;s Manuals</fullName>
+                <default>false</default>
+                <label>Owner&apos;s Manuals</label>
+            </value>
+            <value>
+                <fullName>Assembly Guides</fullName>
+                <default>false</default>
+                <label>Assembly Guides</label>
+            </value>
+            <value>
+                <fullName>JPG Image</fullName>
+                <default>false</default>
+                <label>JPG Image</label>
+            </value>
+            <value>
+                <fullName>Product Image</fullName>
+                <default>false</default>
+                <label>Product Image</label>
+            </value>
+            <value>
+                <fullName>Product Image Thumbnail</fullName>
+                <default>false</default>
+                <label>Product Image Thumbnail</label>
+            </value>
+            <value>
+                <fullName>Flash Files</fullName>
+                <default>false</default>
+                <label>Flash Files</label>
+            </value>
+            <value>
+                <fullName>Media</fullName>
+                <default>false</default>
+                <label>Media</label>
+            </value>
+            <value>
+                <fullName>SVG Interactive Diagram</fullName>
+                <default>false</default>
+                <label>SVG Interactive Diagram</label>
+            </value>
+            <value>
+                <fullName>Specification Sheets</fullName>
+                <default>false</default>
+                <label>Specification Sheets</label>
+            </value>
+            <value>
+                <fullName>Product Bulletins</fullName>
+                <default>false</default>
+                <label>Product Bulletins</label>
+            </value>
+            <value>
+                <fullName>Operating Manuals</fullName>
+                <default>false</default>
+                <label>Operating Manuals</label>
+            </value>
+            <value>
+                <fullName>SDS Documents</fullName>
+                <default>false</default>
+                <label>SDS Documents</label>
+            </value>
+            <value>
+                <fullName>Label 1s</fullName>
+                <default>false</default>
+                <label>Label 1s</label>
+            </value>
+            <value>
+                <fullName>Label 2s</fullName>
+                <default>false</default>
+                <label>Label 2s</label>
+            </value>
+            <value>
+                <fullName>Catalog Sheets</fullName>
+                <default>false</default>
+                <label>Catalog Sheets</label>
+            </value>
+            <value>
+                <fullName>Analytical Procedures</fullName>
+                <default>false</default>
+                <label>Analytical Procedures</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

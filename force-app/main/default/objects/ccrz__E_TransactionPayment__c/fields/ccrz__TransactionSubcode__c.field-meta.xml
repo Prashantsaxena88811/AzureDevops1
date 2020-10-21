@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__TransactionSubcode__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Used when a secondary code is required for the transaction.  For example, if the transaction failed this might contain the error code.</description>
+    <externalId>false</externalId>
+    <label>Transaction Subcode</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

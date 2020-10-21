@@ -1,0 +1,106 @@
+<!--
+
+  @Component Name     : EC_QuicklistLV
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Srishti               7/29/2019         Quicklist page
+
+--> 
+
+<apex:component controller="EC_QuickListController">
+    <script id="EC-MyAccount-MyWishlist-Desktop" type="text/template">
+        <div class="panel panel-default cc_panel cc_myaccount_mywishlist">
+            <div class="cc_heading">
+                <apex:outputText rendered="{!IF($Profile.Name=='Ecolab Connect iBuy CCP User',true,false)}" value="">
+                <a class="countinue-shop-link" href="{!pageURL}" style ="text-decoration :none;">{!$Label.Ec_Continue_Shopping}</a>
+                </apex:outputText>
+               <div>
+                    <h3 class="cc_title_template">{{pageLabelMap 'MyAccount_MyWishlist'}}</h3>
+                    <p class="cc_create_wishlist">
+                        <button type="button" class="btn btn-default btn-sm createTemplate cc_create_template ec-btn-primary" data-id="" >{{pageLabelMap 'Action_CreateWishlist'}}</button>
+                    </p>
+                </div>
+            </div>
+            <div class="panel-body cc_body cc_myaccount_content">
+                
+                <div class="orderPaginationSec" />
+                <div class="table-responsive cc_table_style">
+                    <table id="cartTable" class="table table-hover cc_table cc_mywishlist_table">
+                        <tr class="cc_table_header_row">
+                            <th class="cc_table_header nameheader">
+                                <span class="cc_table_header_name table_header_item">{{pageLabelMap 'MyAccount_Name'}}</span>
+                            </th>
+                            <th class="cc_table_header lastupdateheader">
+                                <span class="cc_table_header_date table_header_item">{{pageLabelMap 'MyCartsInc_LastUpdate'}}</span>
+                            </th>
+                            <th class="cc_table_header">
+                                <span class="cc_table_header_active table_header_item">{{pageLabelMap 'Heading_Active'}}</span>
+                            </th>
+                            <th class="cc_table_header">
+                                <span class="cc_table_header_actions table_header_item ec-actions">{{pageLabelMap 'MyCartsInc_Actions'}}</span>
+                            </th>
+                        </tr>
+                        {{#each this}}
+                            <tr class="cc_table_row">
+                                <td class="cc_table_col ec-wishlist-name">
+                                    <div class="ec-wishlist-label label-font">Name</div>
+                                    <span class="cc_col_name">
+                                        <!--**********************************************************-->
+                                        <a href="#" data-id="{{sfid}}" class="gotoDetails cc_goto_details">{{name}}</a>
+                                    </span>
+                                </td>
+                                <td class="cc_table_col">
+                                    <div class="ec-wishlist-label label-font">Last Updated</div>
+                                    <span class="cc_col_date">{{lastModifiedDateStr}}</span>
+                                </td>
+                                <td class="cc_table_col">
+                                    <div class="ec-wishlist-label label-font">Default</div>
+                                    <span class="cc_col_active">
+                                        {{#if isActive}}
+                                            {{pageLabelMap 'EC_Yes'}}
+                                        {{else}}
+                                            {{pageLabelMap 'EC_No'}}
+                                        {{/if}}
+                                    </span>
+                                </td>
+                                <td class="cc_table_col ec-wishlist-btn-action" nowrap="true">
+                                    <div class="ec-wishlist-label label-font">Actions</div>
+                                    <div class="button-group cc_button_group">
+                                        <input type="button" class="clone btn btn-default btn-sm cc_clone ec-btn-secondary btn_group_style" data-id="{{sfid}}" value="{{pageLabelMap 'Action_Clone'}}"
+                                        /><!-- -->
+                                        {{#if isRO}}
+                                            &#160;
+                                        {{else}}
+                                            <input type="button" class="btn btn-default btn-sm openModal cc_edit ec-btn-secondary btn_group_style" data-id="{{sfid}}" value="{{pageLabelMap 'Action_Edit'}}"
+                                            />
+                                        {{/if}}
+                                        {{#if isActive}}
+                                            &#160;
+                                        {{else}}
+                                            {{#if isRO}}
+                                                &#160;
+                                            {{else}}
+                                                <input type="button" class="btn btn-default btn-sm delete cc_delete ec-btn-secondary btn_group_style" data-id="{{sfid}}" value="{{pageLabelMap 'Action_Delete'}}"
+                                                />
+                                            {{/if}}
+                                        {{/if}}
+                                    </div>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </table>
+                </div>
+                <div id="modalSec"></div>
+            </div>
+        </div>
+    </script>
+    <script type="text/javascript">
+        jQuery(function($) {
+            CCRZ.uiProperties.myWishlistsView.desktop.tmpl = 'EC-MyAccount-MyWishlist-Desktop';
+        });
+        
+    </script>
+  
+</apex:component>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__IgnoreInstallmentFrequencyFields__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When checked the Installment Frequency and Installment Frequency UOM fields are ignored an instead the Order Frequency and Order Frequency UOM fields are used for both Orders and Installments</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check to have Order frequency determine Installment frequency.</inlineHelpText>
+    <label>Ignore Installment Frequency Fields</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

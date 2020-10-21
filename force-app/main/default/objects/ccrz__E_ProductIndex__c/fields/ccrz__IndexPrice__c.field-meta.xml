@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__IndexPrice__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A single indexed Price for the associated product. Primarily used for sorting on the Product List Page.</description>
+    <externalId>true</externalId>
+    <inlineHelpText>A single indexed Price for the associated product. Primarily used for sorting on the Product List Page.</inlineHelpText>
+    <label>Index Price</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

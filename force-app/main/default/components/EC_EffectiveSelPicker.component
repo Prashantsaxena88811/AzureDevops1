@@ -1,0 +1,633 @@
+<!--
+
+  @Component Name     : EC_EffectiveSelPicker
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Pratyusha             7/05/2019         Component for effective account picker.
+
+-->
+
+<apex:component controller="EC_EffectiveAccountController">
+    <script id="EC-EffAcctSel-Head-View-Desktop" type="text/template">
+        <ul class="list-inline navbar-nav cc_navbar-nav eff-acc-header">
+             <li class="effAccount cc_eff_account">
+                <span class="shipto-text">{{pageLabelMap 'Shipping_To'}}</span>
+                <span class="soldto-acc-name">                
+                    <a href="#" id="datatargethref" class="fz-14 eff-selector-box" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#effAccounts">   
+                        <img src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-location_on.svg')}"></img>
+                        <span class="sl-name soldToDetailsName">{{extrinsic.name}}</span> | <span class="sl-num soldToDetailsNumber">{{extrinsic.accountNumber}}</span>
+                        <span class="launchSel cc_launch_sel" aria-hidden="true"></span>
+                    </a>
+                </span>
+            </li>
+        </ul>
+        <div class="modal fade cc_modal cc_effective_accounts_modal" id="effAccounts" tabindex="-1" role="dialog" aria-labelledby="effAccountsLabel">
+            <div class="modal-dialog eff-modal" role="document">
+                <div class="modal-content cc_modal_content">
+                    <div class="modal-header cc_modal_header">
+                        <button type="button" class="close cc_close op_close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#215;</span></button>
+                        <h4 class="modal-title cc_modal_title custom-modal-title effAccLabel" class="effAccountsLabel" id="effAccountsLabel">{{pageLabelMap 'Select_Eff_Acc'}}</h4>
+                    </div>
+                    <div class="modal-body cc_modal_body accountNames-table">
+                        <!--Search Box-->
+                        <div class="eff-search-wrapper">
+                            <div class="eff-acc-info">{{pageLabelMap 'Acc_Info'}}</div>
+                            <div class="input-group cc_input-group search-modal-input row">
+                                <div class="col-xs-12 col-sm-6 eff-search-box visible-xs">                                   
+                                    <input type="text" id="search_me" class="form-control search_input cc_search_input ui-autocomplete-input search-accountName search_border" placeholder="Search"
+                                    title="Search Account" data-trigger="focus" autocomplete="off"/>
+                                    <span class="eff-searchicon"><i id="replace-icon" class="material-icons search" aria-hidden="true"></i></span>
+                                    <span class="clear-text-box hide"><i class="material-icons clear clear-pos md-18" aria-hidden="true"></i></span>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 search-data">{{pageLabelMap 'showing_eff'}} '<span class="soldto-count"></span>' {{pageLabelMap 'Acc_linked'}} </div> 
+                                <div class="col-xs-12 col-sm-6 search-result-hint hide">{{pageLabelMap 'showing_eff'}} '<span class="searchstr"></span>' {{pageLabelMap 'search_results'}}</div>
+                                <div class="col-xs-12 col-sm-6 no-result hide"><i class="material-icons error icon-pos md-18"></i>{{pageLabelMap 'noResults'}}&nbsp;<span class="search-str"></span></div>
+                                <div class="col-xs-12 col-sm-6 eff-search-box hidden-xs">                                   
+                                    <input type="text" id="search_me" class="form-control search_input cc_search_input ui-autocomplete-input search-accountName search_border" placeholder="Search"
+                                    title="Search Account" data-trigger="focus" autocomplete="off"/>
+                                    <span class="eff-searchicon"><i id="replace-icon" class="material-icons search" aria-hidden="true"></i></span>
+                                    <span class="clear-text-box hide"><i class="material-icons clear clear-pos md-18" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>                    
+                    
+                        <div class="accs-table-wrapper" id="accnt">
+                            {{#each this.effectiveList}}
+                                 {{#ifEquals extrinsic.isDisplay 'true'}}
+                                    <div class="acc-item-wrapper soldTo{{extrinsic.sfid}}" id="acc">
+                                        <div class="row" id="row_id">
+                                            <div class="col-xs-12 col-sm-2 acc-num-wrapper" id="acc-num-wrapper_id">
+                                                <div class="eco-acc">{{pageLabelMap 'Eco_Acc'}}</div>
+                                                <div class="eco-separator"></div> 
+                                                <div class="acc-name-wrapper">                                   
+                                                    <div class="eff-acc-name fz-14">{{pageLabelMap 'Acc_Name'}}</div>
+                                                    <div class="eff-acc-name-val fz-14" id="acc_name">{{{extrinsic.name}}}</div>
+                                                </div>
+                                                <div class="acc-no-wrapper">
+                                                    <div class="eff-acc-num">{{pageLabelMap 'Acc_No'}}</div>
+                                                    <div class="eff-acc-num-val" id="acc_no">{{extrinsic.accountNumber}} &nbsp;</div>
+                                                </div>
+                                                <div class="acc-rep-wrapper">
+                                                    <div class="eff-acc-rep">{{pageLabelMap 'Acc_Rep'}}</div>
+                                                    <div class="eff-acc-rep-val" id="acc_rep">{{{extrinsic.primaryRepName}}} &nbsp;</div>  
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-10 st-table-wrapper">
+                                                <div class="sta-header">{{pageLabelMap 'Ship_Addr'}}</div>
+                                                <table class="table">
+                                                    <thead class="cc_thead">
+                                                        <tr class="cc_tr">
+                                                            <th class="one-head">{{pageLabelMap 'Eff_Addr'}}</th>
+                                                            <th class="two-head">{{pageLabelMap 'Eff_ShipToName'}}</th>
+                                                            <th class="three-head"></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="cc_tbody" id="myTable">
+                                                        {{#each this.extrinsic.shipToAccounts}}                                                         
+                                                            <tr class="pickSel changeSelection {{#ifEquals (checkCurrentAccount sfid) true}}selected{{/ifEquals}}" data-id="{{sfid}}" id="tabletr" >                                    
+                                                                <td class="eff-address" id="address">
+                                                                    <div class="fwb st-col-label">{{pageLabelMap 'Eff_Addr'}}</div>
+                                                                    <div class="st-col-val">{{{address}}}</div>
+                                                                    <div>
+                                                                        <span class="eff-cityAddress">
+                                                                            <div class="st-col-val">{{shipCity}}{{#if shipCity}}, {{/if}}</div>
+                                                                        </span>
+                                                                        <span class="eff-stateAddress">
+                                                                            <div class="st-col-val">{{shipState}}</div>
+                                                                        </span>
+                                                                        <span class="eff-zipcode">
+                                                                            <div class="st-col-val">{{zipCode}}</div>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="eff-country">
+                                                                        <div class="st-col-val">{{shipCountry}}</div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="eff-shipToName" id="shipToName">
+                                                                        <div class="fwb st-col-label">{{pageLabelMap 'Eff_ShipToName'}}</div>
+                                                                         {{#if (isnalco ../extrinsic)}}
+                                                                         <div class="st-col-val">{{{shipToName}}}</div>
+                                                                         {{/if}}
+                                                                     </div>
+                                                                    <div class="eff-shipid" id="shipid">
+                                                                        {{{formatAccountNumber shipToID}}}
+                                                                    </div>
+                                                                </td>
+                                                                <td class="ef-select-check">                                                                    
+                                                                    <span class="selected-text {{#ifEquals (checkCurrentAccount sfid) true}}{{else}}hide{{/ifEquals}}"><i class="material-icons md-18 fwb done vmiddle"></i>{{pageLabelMap 'Sel_Ship_To'}}</span>
+                                                                    <button 
+                                                                        class="ec-btn-secondary text-uppercase redirectPage {{#ifEquals (checkCurrentAccount sfid) true}}hide{{else}}{{/ifEquals}}" 
+                                                                        data-id="{{sfid}}" 
+                                                                        data-country="{{shipCountry}}" >{{pageLabelMap 'Eff_Select'}}
+                                                                    </button>
+                                                                </td>
+                                                            </tr>                                                                    
+                                                        {{/each}}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{/ifEquals}}                    
+                            {{/each}}                                                         
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </script>
+    <script>
+        jQuery(function ($) {
+            CCRZ.uiProperties.EffAccountSelView.header.tmpl = 'EC-EffAcctSel-Head-View-Desktop';
+            if(window.innerWidth <=767) {
+                CCRZ.uiProperties.EffAccountSelView.header.desktop.selector = ".misc-function-mob";
+            }else{
+                CCRZ.uiProperties.EffAccountSelView.header.desktop.selector = ".misc-function";
+            }
+            CCRZ.pubSub.on('view:EffAccountSelView:refresh', function (viewInstance) {
+                
+                //Hide Effective Account when on My Account page
+				if(CCRZ.pagevars.currentPageName.toLowerCase() == 'ccrz__myaccount'){
+                    $(".eff-acc-header").hide();
+                }
+				
+                setAccountsDetail(CCRZ.views.EffAccountSelView.prototype, CCRZ.models.EffAccountModel.prototype, viewInstance);
+                viewInstance.setElement(viewInstance.$el);
+
+                //Trigger Modal first time
+				if(CCRZ.effSelectorView.dataSet.workingEffAccount && CCRZ.pagevars.queryParams.effectiveAccount != CCRZ.effSelectorView.dataSet.workingEffAccount.sfid && CCRZ.pagevars.currentPageName == "ccrz__Cart"){
+                    $("button[data-id="+CCRZ.pagevars.queryParams.effectiveAccount+"]").trigger( "click" );
+                }
+				
+				if(CCRZ.effSelectorView.dataSet.workingEffAccount && CCRZ.pagevars.queryParams.effectiveAccountId != CCRZ.effSelectorView.dataSet.workingEffAccount.sfid && "{!profileName}" == "{!$Label.EC_UserProfile_iBuy}"){
+                    $("button[data-id="+CCRZ.pagevars.queryParams.effectiveAccountId+"]").trigger( "click" );
+                }
+
+                //Highlight Selected account 			 
+                $.each(CCRZ.effSelectorView.dataSet.effectiveList,function(key,value){
+                    if(value.extrinsic && value.extrinsic.shipToAccounts){
+                        $.each(value.extrinsic.shipToAccounts,function(keyin,valuein){
+                            if(valuein.sfid == CCRZ.effSelectorView.dataSet.workingEffAccount.sfid){
+                                $(".soldToDetailsName").html(value.extrinsic.name);
+                                $(".soldToDetailsNumber").html(value.extrinsic.accountNumber);
+                                $(".soldTo"+value.sfid).addClass("highlighted");
+                                // 115368 move highlighted account to top of modal
+                                $(".highlighted").parent().prepend($(".highlighted"));
+                                // 115368 move selected to first child of that account
+                                $(".selected").parent().prepend($(".selected")); 
+                            }
+						});
+					}
+				});
+            });
+            
+            //To Change Effective Account
+            function changeEffAccount(event,v) {
+                var selectedId = $(event.currentTarget).data("id");
+                var selectedCoutry = $(event.currentTarget).data("country");     
+                var selAcc = v.accounts.get(selectedId);              
+                var country = event.currentTarget.dataset.country;                  
+                if(selAcc && selectedId != CCRZ.effSelectorView.dataSet.workingEffAccount.sfid){
+                    $("body").prepend("<div id='overlay'></div>");
+                    if(CCRZ.effSelectorView.dataSet.workingEffAccount.shippingAddress.country != country){
+                        var remoteActionCallUpdateLocale = _.extend(CCRZ.RemoteInvocation, {
+                            className: 'EC_EffectiveAccountController'
+                        });                 
+                        remoteActionCallUpdateLocale.invokeCtx('updateContactLocale', country,selectedId,CCRZ.pagevars.currentCartID,
+                            function (resp) {
+                                if (resp != null && resp.success) {
+                                }
+                                if (selAcc) {
+                                    $('#effAccounts').toggle('close');
+                                    CCRZ.console.log(selAcc);
+                                    CCRZ.pagevars.remoteContext.effAccountId = selAcc.get('sfid');
+                                    v.invokeCtx('selectEffectiveAccount', selAcc.toJSON(), v.miscData, function (response) {
+                                        CCRZ.console.log(response);
+                                        if (response && response.success) {
+                                            CCRZ.pagevars.effAccountId = response.data.workingEffAccount.sfid;
+                                            CCRZ.effSelectorView.dataSet.workingEffAccount.sfid = response.data.workingEffAccount.sfid;
+                                            CCRZ.setCookie('apex__effacc', response.data.workingEffAccount.sfid, 50);
+                                            CCRZ.setCookieWithPath('LSKey[c]apex__effacc', response.data.workingEffAccount.sfid, 50,"/");
+                                            if (CCRZ.pagevars.currentPageName == 'ccrz__ProductList') {
+                                                var queryparam;
+                                                if(CCRZ.pagevars.queryParams && CCRZ.pagevars.queryParams.categoryId){
+                                                    queryparam = "categoryId="+CCRZ.pagevars.queryParams.categoryId;
+                                                }else if(CCRZ.pagevars.queryParams && CCRZ.pagevars.queryParams.searchText){
+                                                    queryparam = "searchText="+CCRZ.pagevars.queryParams.searchText;
+                                                }else{
+                                                    queryparam = "categoryId="+CCRZ.data.menus[1].linkURL;
+                                                }
+                                                document.location = "/"+'{!$Label.EC_Storefront_Name}'+"/ccrz__ProductList?"+queryparam+"&cartID=" + CCRZ.pagevars.currentCartID + getCSRQueryString();
+                                            } else if (CCRZ.pagevars.currentPageName == 'ccrz__ProductDetails') {
+                                                document.location = "/"+'{!$Label.EC_Storefront_Name}'+"/ccrz__ProductDetails?sku="+CCRZ.pagevars.queryParams.sku+"&cartID=" + CCRZ.pagevars.currentCartID + getCSRQueryString();
+                                            } else if (CCRZ.pagevars.currentPageName == 'ccrz__Cart' || CCRZ.pagevars.currentPageName == 'ccrz__CheckoutNew') {
+                                                document.location = "/"+'{!$Label.EC_Storefront_Name}'+"/ccrz__Cart?cartID=" + CCRZ.pagevars.currentCartID + getCSRQueryString();
+                                            } else if (CCRZ.pagevars.currentPageName == 'ccrz__MyAccount') {
+                                                document.location = "/"+'{!$Label.EC_Storefront_Name}'+"/ccrz__MyAccount";
+                                            }
+                                        }
+                                    });
+                                }
+                            }, {
+                                buffer: false, escape: false, nmsp: false
+
+                            }
+                        )
+                    }else{
+                        if (selAcc) {
+                            $('#effAccounts').toggle('close');
+                            CCRZ.console.log(selAcc);
+                            CCRZ.pagevars.remoteContext.effAccountId = selAcc.get('sfid');
+                            v.invokeCtx('selectEffectiveAccount', selAcc.toJSON(), v.miscData, function (response) {
+                                CCRZ.console.log(response);
+                                if (response && response.success) {
+                                    CCRZ.pagevars.effAccountId = response.data.workingEffAccount.sfid;
+                                    CCRZ.effSelectorView.dataSet.workingEffAccount.sfid = response.data.workingEffAccount.sfid;
+                                    CCRZ.setCookie('apex__effacc', response.data.workingEffAccount.sfid, 50);
+                                    CCRZ.setCookieWithPath('LSKey[c]apex__effacc', response.data.workingEffAccount.sfid, 50,"/");
+                                    if (CCRZ.pagevars.currentPageName == 'ccrz__ProductList') {
+                                        var queryparam;
+                                        if(CCRZ.pagevars.queryParams && CCRZ.pagevars.queryParams.categoryId){
+                                            queryparam = "categoryId="+CCRZ.pagevars.queryParams.categoryId;
+                                        }else if(CCRZ.pagevars.queryParams && CCRZ.pagevars.queryParams.searchText){
+                                            queryparam = "searchText="+CCRZ.pagevars.queryParams.searchText;
+                                        }else{
+                                            queryparam = "categoryId="+CCRZ.data.menus[1].linkURL;
+                                        }
+                                        document.location = "/"+'{!$Label.EC_Storefront_Name}'+"/ccrz__ProductList?"+queryparam+"&cartID=" + CCRZ.pagevars.currentCartID + getCSRQueryString();
+                                    } else if (CCRZ.pagevars.currentPageName == 'ccrz__ProductDetails') {
+                                        document.location = "/"+'{!$Label.EC_Storefront_Name}'+"/ccrz__ProductDetails?sku="+CCRZ.pagevars.queryParams.sku+"&cartID=" + CCRZ.pagevars.currentCartID + getCSRQueryString();
+                                    } else if (CCRZ.pagevars.currentPageName == 'ccrz__Cart' || CCRZ.pagevars.currentPageName == 'ccrz__CheckoutNew') {
+                                        document.location = "/"+'{!$Label.EC_Storefront_Name}'+"/ccrz__Cart?cartID=" + CCRZ.pagevars.currentCartID + getCSRQueryString();
+                                    } else if (CCRZ.pagevars.currentPageName == 'ccrz__MyAccount') {
+                                        document.location = "/"+'{!$Label.EC_Storefront_Name}'+"/ccrz__MyAccount";
+                                    }
+                                }
+                            });
+                        }
+                    }        
+                }else{
+                    $("#effAccounts").removeClass("in");
+  					$(".modal-backdrop").remove();
+  					$("#effAccounts").hide();
+                	$("#overlay").remove();
+                }
+            }
+
+            Handlebars.registerHelper('checkCurrentAccount', function (accId) {
+                if(CCRZ.effSelectorView &&  CCRZ.effSelectorView.dataSet &&  CCRZ.effSelectorView.dataSet.workingEffAccount && CCRZ.effSelectorView.dataSet.workingEffAccount.sfid == accId){
+                    return true;
+                }else{
+                    return false;
+                }
+            });  
+
+            Handlebars.registerHelper('isnalco', function(account) {
+                if(account && account.accountDivision && CCRZ.pagevars.pageLabels.EC_NALCO.includes(account.accountDivision.toLowerCase())) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+
+            Handlebars.registerHelper('formatAccountNumber', function(accountnumber) {
+                var accNumberFormatter = '';
+                if (accountnumber != null && accountnumber != '' && accountnumber.split("/").length > 1) {
+                    accNumberFormatter = '<span class="eff-shipid1"><span class="st-col-val">'+ accountnumber.split("/")[0] +'</span></span>/<span class="eff-shipid2"><span class="st-col-val">'+ accountnumber.split("/")[1] +'</span></span>';
+                } else if(accountnumber != null) {
+                	accNumberFormatter = '<span class="eff-shipid1"><span class="st-col-val">'+ accountnumber +'</span></span>';
+                }
+                return accNumberFormatter;
+            });                                                                 
+
+            var setAccountsDetail = function (accView, accModel, viewIn) {
+				$('#effAccounts').on('show.bs.modal', function(){
+                    $('html').css('overflow-y', 'hidden');
+                    $('#effAccounts').data('bs.modal',null); 
+                })
+                $('#effAccounts').on('hide.bs.modal', function(){
+                    $('html').css('overflow-y', 'auto');
+                })
+
+                var effAccs = CCRZ.effSelectorView.accounts.models;
+                var effLen = 0;
+                var validEffLen = 0;
+                for (i = 0; i < effAccs.length; i++) {
+                    if (effAccs[i].attributes.extrinsic && effAccs[i].attributes.extrinsic.isDisplay == 'true') {
+                        effLen++;
+                    }
+                    if (effAccs[i].attributes.extrinsic && effAccs[i].attributes.extrinsic.shipToAccounts) {
+                        var effShipAccs = effAccs[i].attributes.extrinsic.shipToAccounts;
+                        for (j = 0; j < effShipAccs.length; j++) {
+                            if (effShipAccs[j].isValidAccount === 1) {
+                                validEffLen++;
+                            }
+                        }
+                    }
+                }
+
+                //Disable Effective Account picker click on Order Confirmation Page and for iBuy User
+                if(CCRZ.pagevars.currentPageName =='ccrz__OrderConfirmation' || validEffLen === 1){
+                    $("#datatargethref").removeAttr('data-target');
+                    $("#datatargethref").removeAttr('data-toggle');
+                }
+                if('{!$Profile.Name}'== CCRZ.pagevars.pageLabels.EC_ProfileNameIBuyUser){
+                    $("#datatargethref").removeAttr('data-target');
+                    $("#datatargethref").removeAttr('data-toggle');
+                    $("#datatargethref").css("cursor", "default");
+                }
+
+                sessionCookie = CCRZ.getCookie('RSID');
+                sessionCookie.replace('%3D','=');
+                if((!CCRZ.getCookie('sessionCC') || CCRZ.getCookie('sessionCC') != CCRZ.getCookie('RSID')) && CCRZ.effSelectorView && CCRZ.effSelectorView.dataSet && CCRZ.effSelectorView.dataSet.workingEffAccount.sfid){                
+                    var exdate = new Date();
+                    if(CCRZ.getCookie('apex__effacc')){
+                        CCRZ.setCookie('apex__effacc','',exdate-1);
+                    }
+                    var cookiesArr = document.cookie.split(";");
+                    $.each(cookiesArr,function(key,value){
+                        if(value.startsWith("sessionCC")){
+                            var cookieStr = value.split("=");
+                            var cookieKey = cookieStr[0];
+                            CCRZ.setCookie(cookieKey,'',exdate-1);
+                        }
+                        
+                    });
+                    CCRZ.setCookie('sessionCC',sessionCookie);
+                }
+                
+                //Inits
+                var cookieId = '';
+                if(CCRZ.effSelectorView.dataSet && CCRZ.effSelectorView.dataSet.workingEffAccount){
+                 CCRZ.setCookie('apex__effacc', CCRZ.effSelectorView.dataSet.workingEffAccount.sfid, 50);   
+                 CCRZ.setCookieWithPath('LSKey[c]apex__effacc', CCRZ.effSelectorView.dataSet.workingEffAccount.sfid, 50,"/");  
+                }
+                                                                                                   
+                if(CCRZ.effSelectorView.dataSet.workingEffAccount && CCRZ.effSelectorView.dataSet.workingEffAccount.extrinsic && CCRZ.effSelectorView.dataSet.workingEffAccount.extrinsic.currUserId){
+                 cookieId = "effAcc" + CCRZ.effSelectorView.dataSet.workingEffAccount.extrinsic.currUserId;
+                }
+                if (!CCRZ.getCookie(cookieId) && CCRZ.pagevars.currentPageName.toLowerCase() != 'ccrz__myaccount' && validEffLen > 1) {
+                    CCRZ.setCookieWithPath(cookieId, "open", 1, "/");
+                    if('{!$Profile.Name}'!=CCRZ.pagevars.pageLabels.EC_ProfileNameIBuyUser){
+                    $('#effAccounts').modal({
+                        show: 'true',
+                        backdrop: 'static',
+        				keyboard: true
+                    });
+                    }
+                }
+                
+                var soldtotext = effLen + ' {!$Label.EC_ECOLAB}';
+                $(".soldto-count").text(soldtotext);
+
+                //Events
+                var events = accView.events;
+                events["keyup #search_me"] = "search_box";
+                events["click .clear-text-box"]="erase_text";
+                events["click .changeSelection"] = "changeSel";
+                events["click .redirectPage"] = "closeProcessSelection";
+                //Methods
+
+                //Clear the text in search
+                accView.erase_text = function (event) {
+                    var search_var = $(".search-accountName");
+                    $(search_var).each(function(index,element){
+                        $(element).val("");                
+                        $(".clear-text-box").addClass("hide");
+                        $(".eff-searchicon").removeClass("hide");
+                        $(".acc-item-wrapper").removeClass("hideOff");
+                        $(".no-result").addClass("hide");
+                        $(".search-data").removeClass("hide");
+                        $(element).addClass("search_border");
+                        $(element).removeClass("error-red");   
+                    })
+                }
+                
+                //To trigger Search
+                accView.search_box = function (event) {
+                    var searchStr = event.currentTarget.value;
+                    if (searchStr.length > 2) {
+                        $(".search-result-hint").removeClass("hide");
+                        $(".search-data").addClass("hide");
+                    }
+                    $(".searchstr").text(event.currentTarget.value);
+
+                    if (searchStr.length > 2) {
+                        $(".acc-item-wrapper").addClass("hideOff");
+
+
+                        $("#accnt .eff-acc-name-val, #accnt .eff-acc-num-val, #accnt .eff-acc-rep-val, #accnt .eff-address, #accnt .eff-cityAddress, #accnt .eff-zipcode, #accnt .eff-country, #accnt .eff-shipid1, #accnt .eff-shipid2, #accnt .eff-shipToName").each(function (index) {
+                            if ($(this).hasClass("eff-acc-name-val")) {
+                                var name = $(this).text();
+                                if ((name.toLowerCase()).startsWith(searchStr.toLowerCase())) {
+                                    var subName = name.substr(0, searchStr.length);
+                                    $(this).closest(".acc-item-wrapper").removeClass("hideOff");
+                                    var pattern = new RegExp("(" + searchStr + ")", "i");
+                                    var new_text = name.replace(pattern, "<span class='highlight-text'>" + subName + "</span>");
+                                    $(this).html(new_text);
+                                }else if($(this).find(".highlight-text").length > 0){
+                                    $(this).find(".highlight-text").removeClass("highlight-text");
+                                }
+                            }
+                            if ($(this).hasClass("eff-acc-num-val")) {
+                                var accNumber = $(this).text();
+                                if ((accNumber.toLowerCase()).startsWith(searchStr.toLowerCase())) {
+                                    var subName = accNumber.substr(0, searchStr.length);
+                                    $(this).closest(".acc-item-wrapper").removeClass("hideOff");
+                                    var pattern = new RegExp("(" + searchStr + ")", "i");
+                                    var new_text = accNumber.replace(pattern, "<span class='highlight-text'>" + subName + "</span>");
+                                    $(this).html(new_text);
+                                }else if($(this).find(".highlight-text").length > 0){
+                                    $(this).find(".highlight-text").removeClass("highlight-text");
+                                }
+                            }
+                            if ($(this).hasClass("eff-acc-rep-val")) {
+                                var repName = $(this).text();
+                                if ((repName.toLowerCase()).startsWith(searchStr.toLowerCase())) {
+                                    var subName = repName.substr(0, searchStr.length);
+                                    $(this).closest(".acc-item-wrapper").removeClass("hideOff");
+                                    var pattern = new RegExp("(" + searchStr + ")", "i");
+                                    var new_text = repName.replace(pattern, "<span class='highlight-text'>" + subName + "</span>");
+                                    $(this).html(new_text);
+                                }else if($(this).find(".highlight-text").length > 0){
+                                    $(this).find(".highlight-text").removeClass("highlight-text");
+                                }
+                            }
+                            if ($(this).hasClass("eff-shipToName")) {
+                                var shipToName = $(this).children(".st-col-val").text();
+                                if ((shipToName.toLowerCase()).startsWith(searchStr.toLowerCase())) {
+                                    var subName = shipToName.substr(0, searchStr.length);
+                                    $(this).closest(".acc-item-wrapper").removeClass("hideOff");
+                                    var pattern = new RegExp("(" + searchStr + ")", "i");
+                                    var new_text = shipToName.replace(pattern, "<span class='highlight-text'>" + subName + "</span>");
+                                    $(this).children(".st-col-val").html(new_text);
+                                    $(this).parents(".cc_tbody").find(".pickSel").addClass("hide");
+                                    $(".highlight-text").parents(".pickSel").removeClass("hide");
+                                }else if($(this).find(".highlight-text").length > 0){
+                                    $(this).parents(".pickSel").addClass("hide");
+                                    $(this).find(".highlight-text").removeClass("highlight-text");
+                                }
+                            }
+                            if ($(this).hasClass("eff-shipid1")) {
+                                var shipid1 = $(this).children(".st-col-val").text();
+                                if ((shipid1.toLowerCase()).startsWith(searchStr.toLowerCase())) {
+                                    var subNum = shipid1.substr(0, searchStr.length);
+                                    $(this).closest(".acc-item-wrapper").removeClass("hideOff");
+                                    var pattern = new RegExp("(" + searchStr + ")", "i");
+                                    var new_text = shipid1.replace(pattern, "<span class='highlight-text'>" + subNum + "</span>");
+                                    $(this).children(".st-col-val").html(new_text);
+                                    $(this).parents(".cc_tbody").find(".pickSel").addClass("hide");
+                                    $(".highlight-text").parents(".pickSel").removeClass("hide");
+                                }else if($(this).find(".highlight-text").length > 0){
+                                    $(this).find(".highlight-text").removeClass("highlight-text");
+                                }
+                            }
+                            if ($(this).hasClass("eff-shipid2")) {
+                                var shipid2 = $(this).children(".st-col-val").text();
+                                if ((shipid2.toLowerCase()).startsWith(searchStr.toLowerCase())) {
+                                    var subNum = shipid2.substr(0, searchStr.length);
+                                    $(this).closest(".acc-item-wrapper").removeClass("hideOff");
+                                    var pattern = new RegExp("(" + searchStr + ")", "i");
+                                    var new_text = shipid2.replace(pattern, "<span class='highlight-text'>" + subNum + "</span>");
+                                    $(this).children(".st-col-val").html(new_text);
+                                    $(this).parents(".cc_tbody").find(".pickSel").addClass("hide");
+                                    $(".highlight-text").parents(".pickSel").removeClass("hide");
+                                }else if($(this).find(".highlight-text").length > 0){
+                                    $(this).find(".highlight-text").removeClass("highlight-text");
+                                }
+                            }
+                            if ($(this).hasClass("eff-address")) {
+                                var addre = $(this).children(".st-col-val").text();
+                                if ((addre.toLowerCase()).startsWith(searchStr.toLowerCase())) {
+                                    var subName = addre.substr(0, searchStr.length);
+                                    $(this).closest(".acc-item-wrapper").removeClass("hideOff");
+                                    var pattern = new RegExp("(" + searchStr + ")", "i");
+                                    var new_text = addre.replace(pattern, "<span class='highlight-text'>" + subName + "</span>");
+                                    $(this).children(".st-col-val").html(new_text);
+                                    $(this).parents(".cc_tbody").find(".pickSel").addClass("hide");
+                                    $(".highlight-text").parents(".pickSel").removeClass("hide");
+                                }else if($(this).find(".highlight-text").length > 0){
+                                    $(this).find(".highlight-text").removeClass("highlight-text");
+                                }
+                            }
+                            if ($(this).hasClass("eff-cityAddress")) {
+                                var city = $(this).children(".st-col-val").text();
+                                if ((city.toLowerCase()).startsWith(searchStr.toLowerCase())) {
+                                    var subName = city.substr(0, searchStr.length);
+                                    $(this).closest(".acc-item-wrapper").removeClass("hideOff");
+                                    var pattern = new RegExp("(" + searchStr + ")", "i");
+                                    var new_text = city.replace(pattern, "<span class='highlight-text'>" + subName + "</span>");
+                                    $(this).children(".st-col-val").html(new_text);
+                                    $(this).parents(".cc_tbody").find(".pickSel").addClass("hide");
+                                    $(".highlight-text").parents(".pickSel").removeClass("hide");
+                                }else if($(this).find(".highlight-text").length > 0){
+                                    $(this).find(".highlight-text").removeClass("highlight-text");
+                                }
+                            }
+                            if ($(this).hasClass("eff-zipcode")) {
+                                var zipcode = $(this).children(".st-col-val").text();
+                                if ((zipcode.toLowerCase()).startsWith(searchStr.toLowerCase())) {
+                                    var subNum = zipcode.substr(0, searchStr.length);
+                                    $(this).closest(".acc-item-wrapper").removeClass("hideOff");
+                                    var pattern = new RegExp("(" + searchStr + ")", "i");
+                                    var new_text = zipcode.replace(pattern, "<span class='highlight-text'>" + subNum + "</span>");
+                                    $(this).children(".st-col-val").html(new_text);
+                                    $(this).parents(".cc_tbody").find(".pickSel").addClass("hide");
+                                    $(".highlight-text").parents(".pickSel").removeClass("hide");
+                                }else if($(this).find(".highlight-text").length > 0){
+                                    $(this).find(".highlight-text").removeClass("highlight-text");
+                                }
+                            }
+                            if ($(this).hasClass("eff-country")) {
+                                var country = $(this).children(".st-col-val").text();
+                                if ((country.toLowerCase()).startsWith(searchStr.toLowerCase())) {
+                                    var subName = country.substr(0, searchStr.length);
+                                    $(this).closest(".acc-item-wrapper").removeClass("hideOff");
+                                    var pattern = new RegExp("(" + searchStr + ")", "i");
+                                    var new_text = country.replace(pattern, "<span class='highlight-text'>" + subName + "</span>");
+                                    $(this).children(".st-col-val").html(new_text);
+                                    $(this).parents(".cc_tbody").find(".pickSel").addClass("hide");
+                                    $(".highlight-text").parents(".pickSel").removeClass("hide");
+                                }else if($(this).find(".highlight-text").length > 0){
+                                    $(this).find(".highlight-text").removeClass("highlight-text");
+                                }
+                            }
+                        });
+                    }
+                    else {
+                        $(".acc-item-wrapper").removeClass("hideOff");
+                        $(".search-result-hint").addClass("hide");
+                        $(".search-data").removeClass("hide");
+                        $("span.highlight-text").removeClass("highlight-text");
+                        $(".pickSel").removeClass("hide");
+                    }
+                    if ($(".acc-item-wrapper").length == $(".acc-item-wrapper.hideOff").length) {                 
+                        $(".search-result-hint").addClass("hide");
+                        $(".no-result").removeClass("hide");
+                        $(".search-str").text("'" + searchStr + "'");
+                        var search_var = $(".search-accountName");
+                		$(search_var).each(function(index,element){                		
+                            $(element).removeClass("search_border");
+                            $(element).addClass("error-red");
+                            $(element).css("color", "#4d4f53");
+                            $(element).css("font-weight", "bold");
+                        })                        
+                        $(".clear-text-box").removeClass("hide");
+                        $(".eff-searchicon").addClass("hide");
+                    }
+                    else {
+                        $(".no-result").addClass("hide");
+                        var search_var = $(".search-accountName");
+                		$(search_var).each(function(index,element){
+                         $(element).removeClass("error-red");
+                         $(element).addClass("search_border");
+                          $(element).css("color", "#007ac9");
+                        $(element).css("font-weight", "normal");
+                        }) 
+                        $(".clear-text-box").addClass("hide");
+                        $(".eff-searchicon").removeClass("hide");
+                    }
+                }
+                accView.changeSel = function (event) {
+                    var selectedAccId = $(event.currentTarget).data("id");
+                    $(".selected-btn").removeClass("hide");
+                    $(event.currentTarget).find(".ef-continue-wrapper").removeClass("hide");
+                    $(event.currentTarget).find(".selected-btn").addClass("hide");
+                    $("#effAccounts .op_close").data("id", selectedAccId);
+                }
+                accView.redirectTo = function(event){
+                    if (CCRZ.pagevars.currentPageName == 'ccrz__ProductList') {
+                        var queryparam;
+                        if(CCRZ.pagevars.queryParams && CCRZ.pagevars.queryParams.categoryId){
+                            queryparam = "categoryID="+CCRZ.pagevars.queryParams.categoryId;
+                        }else if(CCRZ.pagevars.queryParams && CCRZ.pagevars.queryParams.searchText){
+                            queryparam = "searchText="+CCRZ.pagevars.queryParams.searchText;
+                        }else{
+                            queryparam = "categoryID="+CCRZ.data.menus[1].linkURL;
+                        }
+                        document.location = "/DefaultStore/ccrz__ProductList?"+queryparam+"&cartID=" + CCRZ.pagevars.currentCartID + getCSRQueryString();
+                    } else if (CCRZ.pagevars.currentPageName == 'ccrz__ProductDetails') {
+                        document.location = "/DefaultStore/ccrz__ProductDetails?sku="+CCRZ.pagevars.queryParams.sku+"&cartID=" + CCRZ.pagevars.currentCartID + getCSRQueryString();
+                    } else if (CCRZ.pagevars.currentPageName == 'ccrz__Cart' || CCRZ.pagevars.currentPageName == 'ccrz__CheckoutNew') {
+                        document.location = "/DefaultStore/ccrz__Cart?cartID=" + CCRZ.pagevars.currentCartID + getCSRQueryString();
+                    }
+                }
+                //Reset Effective picker when select button is used
+                accView.closeProcessSelection = function (event) {
+                    $(".search-accountName").val('');
+                    $(".acc-item-wrapper").removeClass("hideOff");
+                    $(".search-result-hint").addClass("hide");
+                    $(".search-data").removeClass("hide");
+                    $("span.highlight-text").removeClass("highlight-text");
+                    var v = this;
+                    $('#effAccounts').modal('hide');
+					changeEffAccount(event,v);  
+                }
+            }
+        })
+    </script>
+</apex:component>

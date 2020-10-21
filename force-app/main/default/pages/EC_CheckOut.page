@@ -1,0 +1,16 @@
+<!--
+
+  @Page Name     : EC_CheckOut
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Sai Kiran Pidugu      6/6/2019          Checkout pages
+
+--> 
+
+<apex:page docType="html-5.0" sidebar="false" showHeader="false"  standardStylesheets="false" applyHtmlTag="false">
+    <c:EC_CheckOutNav />
+    <c:EC_CheckoutShipping />
+    <c:EC_CheckOutOrderReview />  
+</apex:page>

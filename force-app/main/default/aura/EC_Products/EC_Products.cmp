@@ -1,0 +1,104 @@
+<!--
+
+  @Component Name     : EC_Products.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Soumick               11/26/2019        Component for displaying products
+
+-->
+
+<aura:component controller="EC_GlobalSearchController"
+    implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute type="List" name="productsList" />
+    <aura:attribute type="String" name="SearchTextField" />
+    <aura:attribute type="String" name="productsCount" />
+    <aura:attribute name="productsCountChild" type="String" />
+    <aura:attribute name="countUpdateMethod" type="Aura.action" />
+    <aura:attribute name="currentTab" type="Boolean" default="false" />
+    <aura:attribute name="emptyList" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.fetchProducts}" />
+    <aura:attribute name="searchedStringValue" type="String" />
+
+    <aura:registerEvent name="setAttribute" type="c:setAttributeEvent" />
+
+
+    <div class="product-tab-wrapper">
+        <aura:if isTrue="{!v.emptyList}">
+            <div class="product-result-wrapper">
+                <div class="products-container slds-m-top_large">
+                    <div class="slds-grid slds-wrap">
+                        <aura:iteration items="{!v.productsList}" var="item" indexVar="index">
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_4-of-12 product">
+                                <div class="purchased-productSection">
+                                    <div class="published-container slds-hide_medium">
+                                        <span class='publishedOn'>
+                                            <label>{!$Label.c.EC_Home_PurchasedProduct_PurchasedOn}&nbsp;{!item.purchasedOn}</label>
+                                        </span>
+                                    </div>
+
+                                    <div class="product-info">
+                                        <div class="image">
+                                            <a href="{!item.pdpUrl}">
+                                                  <aura:if isTrue="{!item.prodImg == null}">
+                                                  <img src="{!$Resource.EC_Branding_Theme + '/images/product.png'}" />
+                                                      <aura:set attribute="else">
+                                                      <img src="{!item.prodImg}" />
+                                                      </aura:set>
+                                                  </aura:if>
+                                              </a>
+
+                                          </div>
+                                        <div class="text">
+                                            <a href="{!item.pdpUrl}">
+                                                <label class="productName">
+                                                    <a href="{!item.pdpUrl}">{!item.Name}&nbsp;</a>
+                                                </label>
+                                            </a>
+                                            <div class="product-information">
+                                                <span class="code-description">
+
+                                                    <label
+                                                        class="code">{!$Label.c.EC_Home_PurchasedProduct_ProductCode}&nbsp;
+                                                       <label class="value">
+                                                                <a href="{!item.pdpUrl}">{!item.Sku}&nbsp;</a>
+                                                        </label>
+                                                    </label>
+
+                                                </span>
+                                            </div>
+                                            <div class="description">{!item.productDesc}</div>
+                                            <div class="slds-show_medium publishedon">
+                                                <aura:if isTrue="{!not(item.purchasedOn == $Label.c.EC_DummyPurchaseDate)}">
+                                                <span
+                                                    class='publishedOn'><label>{!$Label.c.EC_Home_PurchasedProduct_PurchasedOn}&nbsp;{!item.purchasedOn}</label></span>
+                                                </aura:if>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:iteration>
+                    </div>
+                </div>
+            </div>
+            <aura:set attribute="else">
+                <div class="no-documents slds-hide" aura:id="showEmptyProductList">
+                    <div class="image slds-m-top_x-large">
+                        <i class="material-icons">
+                            info_outline
+                        </i>
+                    </div>
+                    <div class="search-result slds-m-top_large slds-p-bottom_xx-large">
+                        <span>{!$Label.c.EC_SearchEmpty}</span><span
+                            class="searchedValue slds-p-horizontal_xxx-small">"{!v.SearchTextField}"</span>
+                        <span>{!$Label.c.EC_ProductsNotMatched}</span>
+                        <div>{!$Label.c.EC_SelectAnotherCategory}</div>
+                    </div>
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+
+</aura:component>

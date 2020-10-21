@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Composite__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The main product - this would be the bundle, kit or aggregated main product</description>
+    <externalId>false</externalId>
+    <label>Composite</label>
+    <referenceTo>ccrz__E_Product__c</referenceTo>
+    <relationshipLabel>Composite Products</relationshipLabel>
+    <relationshipName>CompositeProducts</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

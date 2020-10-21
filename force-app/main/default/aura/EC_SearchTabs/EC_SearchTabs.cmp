@@ -1,0 +1,508 @@
+<!--
+  
+  @Component Name     : EC_CustomLogin.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  VijayKumar          03/07/2019         
+  Ayusha Patnaik      23/07/2019          Changes for load of data on Load
+-->
+<aura:component controller="EC_GlobalSearchController"
+    implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute type="List" name="productsList" />
+    <aura:attribute type="String" name="SearchTextField" />
+    <aura:attribute type="String" name="SearchQuickList" />
+    <aura:attribute name="emptyList" type="Boolean" default="false" />
+    <aura:attribute name="emptyOrderList" type="Boolean" default="false" />
+    <aura:attribute name="ordersCount" type="String" />
+    <aura:attribute name="DocCount" type="String" />
+    <aura:attribute name="SearchText" type="String" />
+    <aura:attribute name="emptyDocumentsWrapper" type="Boolean" default="false" />
+    <aura:attribute type="List" name="sdsDocsList" />
+    <aura:attribute name="Orders" type="List" />
+    <aura:attribute name="emptyQuickList" type="Boolean" default="false" />
+    <aura:attribute name="quickListCount" type="String" />
+    <aura:attribute type="EC_GlobalSearchController.prodBean[]" name="QuickList" />
+    <aura:attribute name="searchExceptQuicklist" type="Boolean" />
+    <aura:attribute name="pageSize" type="Integer" default="25" />
+
+    <!-- Product Pagination attributes -->
+    <aura:attribute type="List" name="quicklistMasterList" />
+    <aura:attribute name="quicklistSortBy" type="String" access="PRIVATE" default="purchasedOn|DESC" />
+    <aura:attribute name="quicklistPagination" type="Map" />
+    <aura:attribute name="currentQuickListPage" type="Integer" default="1" />
+    <!-- Product Pagination attributes ends -->
+    <!-- Product Pagination attributes -->
+    <aura:attribute type="List" name="documentsMasterList" />
+    <aura:attribute name="documentsSortBy" type="String" access="PRIVATE" default="productPurchaseDate|DESC" />
+    <aura:attribute name="documentsPagination" type="Map" />
+    <aura:attribute name="currentDocumentPage" type="Integer" default="1" />
+    <!-- Product Pagination attributes ends -->
+    <!-- Product Pagination attributes -->
+    <aura:attribute type="List" name="productsMasterList" />
+    <aura:attribute name="productSortBy" type="String" access="PRIVATE" default="purchasedOn|DESC" />
+    <aura:attribute name="productPagination" type="Map" />
+    <aura:attribute name="currentProductPage" type="Integer" default="1" />
+    <!-- Product Pagination attributes ends -->
+    <!-- Orders Pagination attributes -->
+    <aura:attribute type="List" name="ordersMasterList" />
+    <aura:attribute name="ordersSortBy" type="String" access="PRIVATE" default="orderDate|DESC" />
+    <aura:attribute name="ordersPagination" type="Map" />
+    <aura:attribute name="currentOrdersPage" type="Integer" default="1" />
+    <!-- Product Pagination attributes ends -->
+    <aura:attribute name="totalProducts" type="String" access="PRIVATE" />
+    <aura:attribute name="productsCount" type="String" />
+    <aura:attribute name="totalOrderCount" type="String" />
+    <aura:attribute name="totalQuickListCount" type="String" />
+    <aura:attribute name="totalDocumentCount" type="String" />
+    <aura:attribute name="ordersSelected" type="Boolean" default="false" />
+    <aura:attribute name="quicklistSelected" type="Boolean" default="false" />
+    <aura:attribute name="sdsSelected" type="Boolean" default="false" />
+    <!--  <aura:handler event="c:EC_searchText" action="{!c.handleApplicationEvent}"/> -->
+    <aura:attribute name="searchedStringValue" type="String" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <!--<aura:handler name="setAttribute" event="c:setAttributeEvent" action="{!c.setAttributeValue}"/>
+    -->
+     <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+
+   <aura:if isTrue="{!v.showSpinner}" >
+        <div class="slds-spinner_container">
+        <div role="status" class="slds-spinner slds-spinner--medium">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!!v.showSpinner}" >
+    <!-- Dummy Tabs -->
+    <div class="global-search-wrapper">
+        <div class="slds-grid slds-m-top_large custom-tabs">
+            <div class="slds-col">
+                <div class="slds-tabs--default">
+                    <ul class="slds-tabs--default__nav" role="tablist">
+                        <li aura:id="productsId" class="slds-tabs--default__item  slds-active products" title="Products"
+                            role="presentation"><a class="slds-tabs--default__link" href="javascript:void(0);"
+                                onclick="{!c.productTab}" role="tab" tabindex="0" aria-selected="false"
+                                aria-controls="tab-default-1" id="Product_linking">Products <span id="prdCount"
+                                    class="totalRecords">{!v.productPagination.total}</span></a></li>
+                        <li aura:id="OrdersId" class="slds-tabs--default__item orders" title="Orders" role="presentation"><a
+                                class="slds-tabs--default__link" href="javascript:void(0);" onclick="{!c.orderTab}"
+                                role="tab" tabindex="-1" aria-selected="true" aria-controls="tab-default-2"
+                                id="orders_linking">Orders <span id="ordCount"
+                                    class="totalRecords">{!v.ordersPagination.total}</span></a></li>
+                        <aura:if isTrue="{!v.searchExceptQuicklist}">
+                            <li aura:id="quickListId" class="slds-tabs--default__item quicklist" title="Quicklist"
+                                role="presentation"><a class="slds-tabs--default__link" href="javascript:void(0);"
+                                    onclick="{!c.quicklistTab}" role="tab" tabindex="-1" aria-selected="true"
+                                    aria-controls="tab-default-3" id="quickList_linking">Quicklist <span id="qcCount"
+                                        class="totalRecords">{!v.quicklistPagination.total}</span></a></li>
+                        </aura:if>
+                        <li aura:id="sdsId" class="slds-tabs--default__item documents" title="Documents" role="presentation"><a
+                                class="slds-tabs--default__link" href="javascript:void(0);" onclick="{!c.sdsTab}"
+                                role="tab" tabindex="-1" aria-selected="true" aria-controls="tab-default-4"
+                                id="sds_linking">Documents <span id="docCount"
+                                    class="totalRecords">{!v.documentsPagination.total}</span></a></li>
+                    </ul>
+                    <div aura:id="productsDataId" id="tab-default-1"
+                        class="slds-tabs--default__content slds-show product-wrapper" role="tabpanel"
+                        aria-labelledby="Product_linking">
+                        <aura:if isTrue="{!not(empty(v.productsList))}">
+                            <div class="sort-pagination">
+                                <span class="pagination-wrapper">
+                                    <span class="page-info">
+                                        {!lessthan(v.productPagination.total,
+                                        v.pageSize) ? v.productPagination.total :
+                                        v.productPagination.per_page}&nbsp;{!$Label.c.EC_Order_Results_OutOf}&nbsp;{!v.productPagination.total}&nbsp;items
+                                        in Products in&nbsp;<span class="searchedValue">{!v.SearchTextField}</span>
+                                    </span>
+                                </span>
+                                <span class="sort-wrapper">
+                                    <span class="sorting"></span>
+                                    <div class="pageOptions">
+                                        <div class="{!v.productPagination.pre_action ? 'prev_next disabled' : 'prev_next'}"
+                                             data-value="prev" onclick="{!c.changePage}"><img
+                                                                                              src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-left.svg'}"
+                                                                                              data-value="prev" />
+                                        </div>
+                                        <div class="slds-show_medium">
+                                            <div class="pages">
+                                                <aura:iteration items="{!v.productPagination.pageOptions}" var="pageNumber">
+                                                    <div class="{! pageNumber == v.productPagination.page ? 'page_item active' : pageNumber == '...' ? 'page_item disabled' :  'page_item'}"
+                                                         data-value="{!pageNumber}" onclick="{!c.changePage}">{!pageNumber}
+                                                    </div>
+                                                </aura:iteration>
+                                            </div>
+                                        </div>
+                                        <div class="slds-hide_medium">
+                                            <div class="pages">
+                                                <aura:iteration items="{!v.productPagination.mobPageOptions}" var="pageNumber">
+                                                    <div class="{! pageNumber == v.productPagination.page ? 'page_item active' : pageNumber ? 'page_item disabled' :  'page_item'}"
+                                                         data-value="{!pageNumber}" onclick="{!c.changePage}">{!pageNumber}
+                                                    </div>
+                                                </aura:iteration>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="{!v.productPagination.next_action ? 'prev_next disabled' : 'prev_next'}"
+                                             data-value="next" onclick="{!c.changePage}"><img
+                                                                                              src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-right.svg'}"
+                                                                                              data-value="next" />
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </aura:if>
+                        <c:EC_Products aura:Id="prods" emptyList="{!v.emptyList}" productsCount="{!v.productsCount}"
+                            productsList="{!v.productsList}" SearchTextField="{!v.SearchTextField}" />
+                        <aura:if isTrue="{!not(empty(v.productsList))}">
+                            <div class="sort-pagination right">
+                                <span class="sort-wrapper">
+                                    <div class="pageOptions">
+                                        <div class="{!v.productPagination.pre_action ? 'prev_next disabled' : 'prev_next'}"
+                                            data-value="prev" onclick="{!c.changePage}"><img
+                                                src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-left.svg'}"
+                                                data-value="prev" />
+                                        </div>
+                                        <div class="slds-show_medium">
+                                            <div class="pages">
+                                                <aura:iteration items="{!v.productPagination.pageOptions}" var="pageNumber">
+                                                    <div class="{! pageNumber == v.productPagination.page ? 'page_item active' : pageNumber == '...' ? 'page_item disabled' :  'page_item'}"
+                                                         data-value="{!pageNumber}" onclick="{!c.changePage}">{!pageNumber}
+                                                    </div>
+                                                </aura:iteration>
+                                            </div>
+                                        </div>
+                                        <div class="slds-hide_medium">
+                                            <div class="pages">
+                                                <aura:iteration items="{!v.productPagination.mobPageOptions}" var="pageNumber">
+                                                    <div class="{! pageNumber == v.productPagination.page ? 'page_item active' : pageNumber ? 'page_item disabled' :  'page_item'}"
+                                                         data-value="{!pageNumber}" onclick="{!c.changePage}">{!pageNumber}
+                                                    </div>
+                                                </aura:iteration>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="{!v.productPagination.next_action ? 'prev_next disabled' : 'prev_next'}"
+                                            data-value="next" onclick="{!c.changePage}"><img
+                                                src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-right.svg'}"
+                                                data-value="next" />
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </aura:if>
+                    </div>
+                    <aura:if isTrue="{!v.ordersSelected}">
+                        <div aura:id="ordersDataId" id="tab-default-2" class="slds-tabs--default__content order-wrapper slds-hide"
+                            role="tabpanel" aria-labelledby="orders_linking">
+                            <div class="orders-tab-wrapper">
+                                <aura:if isTrue="{!not(empty(v.Orders))}">
+                                    <div class="sort-pagination">
+                                        <span class="pagination-wrapper">
+                                            <span class="page-info">
+                                                {!lessthan(v.ordersPagination.total,
+                                                v.pageSize) ? v.ordersPagination.total :
+                                                v.ordersPagination.per_page}&nbsp;{!$Label.c.EC_Order_Results_OutOf}&nbsp;{!v.ordersPagination.total}&nbsp;items
+                                                in Orders in&nbsp;<span
+                                                    class="searchedValue">{!v.SearchTextField}</span>
+                                            </span>
+                                        </span>
+                                        <span class="sort-wrapper">
+                                          <span class="sorting"></span>
+                                            <div class="pageOptions">
+                                                <div class="{!v.ordersPagination.pre_action ? 'prev_next disabled' : 'prev_next'}"
+                                                    data-value="prev" onclick="{!c.changePage}"><img
+                                                        src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-left.svg'}"
+                                                        data-value="prev" />
+                                                </div>
+                                                <div class="slds-show_medium">
+                                                    <div class="pages">
+                                                        <aura:iteration items="{!v.ordersPagination.pageOptions}"
+                                                                        var="pageNumber">
+                                                            <div class="{! pageNumber == v.ordersPagination.page ? 'page_item active' : pageNumber == '...' ? 'page_item disabled' :  'page_item'}"
+                                                                 data-value="{!pageNumber}" onclick="{!c.changePage}">
+                                                                {!pageNumber}
+                                                            </div>
+                                                        </aura:iteration>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-hide_medium">
+                                                    <div class="pages">
+                                                        <aura:iteration items="{!v.ordersPagination.mobPageOptions}"
+                                                                        var="pageNumber">
+                                                            <div class="{! pageNumber == v.ordersPagination.page ? 'page_item active' : pageNumber ? 'page_item disabled' :  'page_item'}"
+                                                                 data-value="{!pageNumber}" onclick="{!c.changePage}">
+                                                                {!pageNumber}
+                                                            </div>
+                                                        </aura:iteration>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="{!v.ordersPagination.next_action ? 'prev_next disabled' : 'prev_next'}"
+                                                    data-value="next" onclick="{!c.changePage}"><img
+                                                        src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-right.svg'}"
+                                                        data-value="next" />
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </aura:if>
+                                <c:EC_OrderListSearch aura:Id="orders" Orders="{!v.Orders}"
+                                    emptyOrderList="{!v.emptyOrderList}" ordersCount="{!v.ordersCount}"
+                                    SearchTextField="{!v.SearchTextField}" />
+                                <aura:if isTrue="{!not(empty(v.Orders))}">
+                                    <div class="sort-pagination right">
+                                        <span class="sort-wrapper slds_show-medium">
+                                            <div class="pageOptions">
+                                                <div class="{!v.ordersPagination.pre_action ? 'prev_next disabled' : 'prev_next'}"
+                                                    data-value="prev" onclick="{!c.changePage}"><img
+                                                        src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-left.svg'}"
+                                                        data-value="prev" />
+                                                </div>
+                                                <div class="slds-show_medium">
+                                                    <div class="pages">
+                                                        <aura:iteration items="{!v.ordersPagination.pageOptions}"
+                                                                        var="pageNumber">
+                                                            <div class="{! pageNumber == v.ordersPagination.page ? 'page_item active' : pageNumber == '...' ? 'page_item disabled' :  'page_item'}"
+                                                                 data-value="{!pageNumber}" onclick="{!c.changePage}">
+                                                                {!pageNumber}
+                                                            </div>
+                                                        </aura:iteration>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-hide_medium">
+                                                    <div class="pages">
+                                                        <aura:iteration items="{!v.ordersPagination.mobPageOptions}"
+                                                                        var="pageNumber">
+                                                            <div class="{! pageNumber == v.ordersPagination.page ? 'page_item active' : pageNumber ? 'page_item disabled' :  'page_item'}"
+                                                                 data-value="{!pageNumber}" onclick="{!c.changePage}">
+                                                                {!pageNumber}
+                                                            </div>
+                                                        </aura:iteration>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="{!v.ordersPagination.next_action ? 'prev_next disabled' : 'prev_next'}"
+                                                    data-value="next" onclick="{!c.changePage}"><img
+                                                        src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-right.svg'}"
+                                                        data-value="next" />
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </aura:if>
+                            </div>
+                        </div>
+                    </aura:if>
+                    <aura:if isTrue="{!v.quicklistSelected}">
+                        <div aura:id="quickListDataId" id="tab-default-3" class="slds-tabs--default__content quick-wrapper slds-hide"
+                            role="tabpanel" aria-labelledby="quickList_linking">
+                            <div class="quicklist-wrapper">
+                                <aura:if isTrue="{!not(empty(v.QuickList))}">
+                                    <div class="sort-pagination">
+                                        <span class="pagination-wrapper">
+                                            <span class="page-info">
+                                                {!lessthan(v.quicklistPagination.total,
+                                                v.pageSize) ? v.quicklistPagination.total :
+                                                v.quicklistPagination.per_page}&nbsp;{!$Label.c.EC_Order_Results_OutOf}&nbsp;{!v.quicklistPagination.total}&nbsp;results
+                                                in Quicklists in&nbsp;<span
+                                                    class="searchedValue">{!v.SearchTextField}</span>
+                                            </span>
+                                        </span>
+                                        <span class="sort-wrapper">
+                                            <div class="pageOptions">
+                                                <div class="{!v.quicklistPagination.pre_action ? 'prev_next disabled' : 'prev_next'}"
+                                                    data-value="prev" onclick="{!c.changePage}"><img
+                                                        src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-left.svg'}"
+                                                        data-value="prev" />
+                                                </div>
+                                                <div class="slds-show_medium">
+                                                    <div class="pages">
+                                                        <aura:iteration items="{!v.quicklistPagination.pageOptions}"
+                                                                        var="pageNumber">
+                                                            <div class="{! pageNumber == v.quicklistPagination.page ? 'page_item active' : pageNumber == '...' ? 'page_item disabled' :  'page_item'}"
+                                                                 data-value="{!pageNumber}" onclick="{!c.changePage}">
+                                                                {!pageNumber}
+                                                            </div>
+                                                        </aura:iteration>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-hide_medium">
+                                                    <div class="pages">
+                                                        <aura:iteration items="{!v.quicklistPagination.mobPageOptions}"
+                                                                        var="pageNumber">
+                                                            <div class="{! pageNumber == v.quicklistPagination.page ? 'page_item active' : pageNumber ? 'page_item disabled' :  'page_item'}"
+                                                                 data-value="{!pageNumber}" onclick="{!c.changePage}">
+                                                                {!pageNumber}
+                                                            </div>
+                                                        </aura:iteration>
+                                                    </div>
+                                                </div>
+                                               
+                                                <div class="{!v.quicklistPagination.next_action ? 'prev_next disabled' : 'prev_next'}"
+                                                    data-value="next" onclick="{!c.changePage}"><img
+                                                        src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-right.svg'}"
+                                                        data-value="next" />
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </aura:if>
+                                <c:EC_QuickList aura:Id="quickList" SearchTextField="{!v.SearchQuickList}"
+                                    QuickList="{!v.QuickList}" quickListCount="{!v.totalQuickListCount}"
+                                    emptyQuickList="{!v.emptyQuickList}" />
+                                <aura:if isTrue="{!not(empty(v.QuickList))}">
+                                    <div class="sort-pagination right">
+                                        <span class="sort-wrapper">
+                                            <div class="pageOptions">
+                                                <div class="{!v.quicklistPagination.pre_action ? 'prev_next disabled' : 'prev_next'}"
+                                                    data-value="prev" onclick="{!c.changePage}"><img
+                                                        src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-left.svg'}"
+                                                        data-value="prev" />
+                                                </div>
+                                                <div class="slds-show_medium">
+                                                    <div class="pages">
+                                                        <aura:iteration items="{!v.quicklistPagination.pageOptions}"
+                                                                        var="pageNumber">
+                                                            <div class="{! pageNumber == v.quicklistPagination.page ? 'page_item active' : pageNumber == '...' ? 'page_item disabled' :  'page_item'}"
+                                                                 data-value="{!pageNumber}" onclick="{!c.changePage}">
+                                                                {!pageNumber}
+                                                            </div>
+                                                        </aura:iteration>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-hide_medium">
+                                                    <div class="pages">
+                                                        <aura:iteration items="{!v.quicklistPagination.mobPageOptions}"
+                                                                        var="pageNumber">
+                                                            <div class="{! pageNumber == v.quicklistPagination.page ? 'page_item active' : pageNumber == '...' ? 'page_item disabled' :  'page_item'}"
+                                                                 data-value="{!pageNumber}" onclick="{!c.changePage}">
+                                                                {!pageNumber}
+                                                            </div>
+                                                        </aura:iteration>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="{!v.quicklistPagination.next_action ? 'prev_next disabled' : 'prev_next'}"
+                                                    data-value="next" onclick="{!c.changePage}"><img
+                                                        src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-right.svg'}"
+                                                        data-value="next" />
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </aura:if>
+                            </div>
+                        </div>
+                    </aura:if>
+                    <aura:if isTrue="{!v.sdsSelected}">
+                        <div aura:id="sdsDataId" id="tab-default-4" class="slds-tabs--default__content sds-tab-wrapper documents-wrapper slds-hide"
+                            role="tabpanel" aria-labelledby="sds_linking">
+                            <div class="documents-tab-wrapper">
+                                <aura:if isTrue="{!not(empty(v.sdsDocsList))}">
+                                    <div class="sort-pagination">
+                                        <span class="pagination-wrapper">
+                                            <span class="page-info">
+                                                {!lessthan(v.documentsPagination.total,
+                                                v.pageSize) ? v.documentsPagination.total :
+                                                v.documentsPagination.per_page}&nbsp;{!$Label.c.EC_Order_Results_OutOf}&nbsp;{!v.documentsPagination.total}&nbsp;results
+                                                in Documents in&nbsp;<span
+                                                    class="searchedValue">{!v.SearchTextField}</span>
+                                            </span>
+                                        </span>
+                                        <span class="sort-wrapper">
+                                       <span class="sorting"></span>
+                                            <div class="pageOptions">
+                                                <div class="{!v.documentsPagination.pre_action ? 'prev_next disabled' : 'prev_next'}"
+                                                    data-value="prev" onclick="{!c.changePage}"><img
+                                                        src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-left.svg'}"
+                                                        data-value="prev" />
+                                                </div>
+                                                <div class="slds-show_medium">
+                                                    <div class="pages">
+                                                        <aura:iteration items="{!v.documentsPagination.pageOptions}"
+                                                                        var="pageNumber">
+                                                            <div class="{! pageNumber == v.documentsPagination.page ? 'page_item active' : pageNumber == '...' ? 'page_item disabled' :  'page_item'}"
+                                                                 data-value="{!pageNumber}" onclick="{!c.changePage}">
+                                                                {!pageNumber}
+                                                            </div>
+                                                        </aura:iteration>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-hide_medium">
+                                                    <div class="pages">
+                                                        <aura:iteration items="{!v.documentsPagination.mobPageOptions}"
+                                                                        var="pageNumber">
+                                                            <div class="{! pageNumber == v.documentsPagination.page ? 'page_item active' : pageNumber == '...' ? 'page_item disabled' :  'page_item'}"
+                                                                 data-value="{!pageNumber}" onclick="{!c.changePage}">
+                                                                {!pageNumber}
+                                                            </div>
+                                                        </aura:iteration>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="{!v.documentsPagination.next_action ? 'prev_next disabled' : 'prev_next'}"
+                                                    data-value="next" onclick="{!c.changePage}"><img
+                                                        src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-right.svg'}"
+                                                        data-value="next" />
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </aura:if>
+                                <c:EC_Documents aura:Id="docs"  DocCount="{!v.totalDocumentCount}"
+                                    SearchText="{!v.SearchText}" emptyDocumentsWrapper="{!v.emptyDocumentsWrapper}"
+                                    sdsDocsList="{!v.sdsDocsList}" />
+                                <aura:if isTrue="{!not(empty(v.sdsDocsList))}">
+                                    <div class="sort-pagination right">
+                                        <span class="sort-wrapper">
+                                            
+                                            <div class="pageOptions">
+                                                <div class="{!v.documentsPagination.pre_action ? 'prev_next disabled' : 'prev_next'}"
+                                                    data-value="prev" onclick="{!c.changePage}"><img
+                                                        src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-left.svg'}"
+                                                        data-value="prev" />
+                                                </div>
+                                                <div class="slds-show_medium">
+                                                    <div class="pages">
+                                                        <aura:iteration items="{!v.documentsPagination.pageOptions}"
+                                                                        var="pageNumber">
+                                                            <div class="{! pageNumber == v.documentsPagination.page ? 'page_item active' : pageNumber == '...' ? 'page_item disabled' :  'page_item'}"
+                                                                 data-value="{!pageNumber}" onclick="{!c.changePage}">
+                                                                {!pageNumber}
+                                                            </div>
+                                                        </aura:iteration>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-hide_medium">
+                                                    <div class="pages">
+                                                        <aura:iteration items="{!v.documentsPagination.mobPageOptions}"
+                                                                        var="pageNumber">
+                                                            <div class="{! pageNumber == v.documentsPagination.page ? 'page_item active' : pageNumber == '...' ? 'page_item disabled' :  'page_item'}"
+                                                                 data-value="{!pageNumber}" onclick="{!c.changePage}">
+                                                                {!pageNumber}
+                                                            </div>
+                                                        </aura:iteration>
+                                                    </div>
+                                                </div>
+                                                <div class="{!v.documentsPagination.next_action ? 'prev_next disabled' : 'prev_next'}"
+                                                    data-value="next" onclick="{!c.changePage}"><img
+                                                        src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-right.svg'}"
+                                                        data-value="next" />
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </aura:if>
+                            </div>
+                        </div>
+                    </aura:if>
+                </div>
+            </div>
+        </div>
+    </div>
+    </aura:if>
+</aura:component>

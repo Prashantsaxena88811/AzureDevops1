@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__LocationType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>One of Banner, Left Nav, Right Nav, Splash, Splash Phone, or Mobile. Controls the location within a page of the promotion.</description>
+    <externalId>false</externalId>
+    <label>Location Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Banner</fullName>
+                <default>false</default>
+                <label>Banner</label>
+            </value>
+            <value>
+                <fullName>Left Nav</fullName>
+                <default>false</default>
+                <label>Left Nav</label>
+            </value>
+            <value>
+                <fullName>Right Nav</fullName>
+                <default>false</default>
+                <label>Right Nav</label>
+            </value>
+            <value>
+                <fullName>Splash</fullName>
+                <default>false</default>
+                <label>Splash</label>
+            </value>
+            <value>
+                <fullName>Splash Phone</fullName>
+                <default>false</default>
+                <label>Splash Phone</label>
+            </value>
+            <value>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+                <label>Mobile</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

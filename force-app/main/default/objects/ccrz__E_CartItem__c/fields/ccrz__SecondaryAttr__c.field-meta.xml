@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__SecondaryAttr__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The secondary attribute selected for the cart item&apos;s related cc product</description>
+    <externalId>false</externalId>
+    <label>Secondary Attribute</label>
+    <referenceTo>ccrz__E_Attribute__c</referenceTo>
+    <relationshipLabel>CC Cart Items (Secondary Attribute)</relationshipLabel>
+    <relationshipName>ccCartItemsSec</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__StaticResourceName__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Pointing to static resource containing the images</description>
+    <externalId>false</externalId>
+    <inlineHelpText>1. Use prefix &quot;c__&quot; for static resource defined in subscriber org
+2. StaticResource name without prefix refers to static resource inside managed package</inlineHelpText>
+    <label>Static Resource Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

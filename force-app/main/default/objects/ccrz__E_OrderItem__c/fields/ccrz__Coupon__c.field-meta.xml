@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Coupon__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>When a coupon has been applied to the order this field contains a reference to that coupon.</description>
+    <externalId>false</externalId>
+    <label>Coupon</label>
+    <referenceTo>ccrz__E_Coupon__c</referenceTo>
+    <relationshipLabel>Order Items</relationshipLabel>
+    <relationshipName>E_OrderItems</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

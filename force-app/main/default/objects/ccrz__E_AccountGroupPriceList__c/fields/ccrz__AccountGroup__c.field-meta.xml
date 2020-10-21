@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__AccountGroup__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Required - The reference to the account group</description>
+    <externalId>false</externalId>
+    <label>Account Group</label>
+    <referenceTo>ccrz__E_AccountGroup__c</referenceTo>
+    <relationshipLabel>Account Group Price Lists</relationshipLabel>
+    <relationshipName>E_AccountGroupPriceLists</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,135 @@
+<!--
+
+  @Component Name     : EC_ProductDetailWidget
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Srishti              6/26/2019         Suggested products on PDP.
+
+--> 
+
+<apex:component controller="EC_SuggestedProducts"> 
+          
+    <script id="EC-ProductDetail-WidgetContainer-Desktop" type="text/template">
+        <div class="panel panel-default widget_container {{this.sectionID}}_container cc_panel cc_{{this.sectionID}}_container">
+            <div class="panel-heading suggestedheadingborder cc_heading">
+                <h3 class="panel-title suggestedtitle cc_title">{{pageLabelMap 'SuggestedProducts'}}</h3>
+            </div>
+            <div class="panel-body sugbody cc_body">
+                <div class="widget_column cc_widget_column">
+                    <div class="{{this.sectionID}} cc_{{this.sectionID}}"></div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="EC-ProductDetail-ProductsSection-Desktop" type="text/template">
+        <div class="quick_wishlist cc_quick_wishlist cc_addon_tab">
+            
+            <div class="sp-carousel-wrapper col-md-12 col-xs-12">
+                <button class="sugBack col-md-1 col-xs-1">
+                    <i class="material-icons keyboard_arrow_left"></i>
+                </button> 
+                 
+                <div class="responsive sp-carousel col-md-offset-2 col-md-10 col-xs-9">
+                    {{#each this.pageData}}
+                        <div class="test ">
+                            <div class="row">
+                                <div class="quick_wishlist_item col-md-12 cc_quick_wishlist_item">                                   
+                                    <div class="cc_cart_item">
+                                        {{#if this.mediaWrapper}}
+                                            {{productLink this.prodBean 'cc_cart_item' image=(displayImage this.mediaWrapper 'prodDetRel img-responsive suggested-img ga-prodImage' alt=this.prodBean.name dataId=this.prodBean.sku)}}
+                                        {{else}}
+                                             <img class="img-responsive custom-thumbnail ga-prodImage" src="{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.jpg'}"/>                     
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cont">
+                            <div class="row">
+                                <div class="prodName" title="{{this.prodBean.name}}">
+                                    <p class="cc_prod_name">
+                                        {{productLink this.prodBean 'productName cc_data_link ga-prodLink'}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="skulabel">{{pageLabelMap 'ProductCode'}}:&#160<span class="skuvalue ga-prodCode">{{this.prodBean.sku}}</span></p>
+                            </div>
+                            <div class="row">
+                                <p class="shortdescription">{{this.prodBean.UnitOfMeasure}}</p>
+                            </div>
+                            </div>
+                            {{#ifEquals this.prodBean.ProductStatus 'Released'}}
+                                {{#ifEquals '{!viewPrice}' "true"}}                                
+                                <div class="row">
+                                    <div>
+                                        <div class="suggestedprice">
+                                            <input type="hidden" name="qtyIncrement" value="{{this.qtySingleIncrement}}" class="item_qtyIncrement" />
+                                            <input type="hidden" name="qtySkipIncrement" value="{{this.qtySkipIncrement}}" class="item_qtySkipIncrement" />
+                                            {{#ifDisplay 'PD.DsplPrc' }}
+                                                {{#if this.prodBean.primaryAttr}}
+                                                    <span class="cc_attr_message">{{pageLabelMap 'ProductAttributes_PriceMessage'}}</span>
+                                                {{else}}
+                                                    {{#if this.showNewSubscriptionSelection}}
+                                                        <p class="price priceSubscription cc_price_subscription">
+                                                            <strong>{{pageLabelMap 'Prod_SubsAlternatePrice' (price this.price) (price this.minSubPrice) (price this.maxSubPrice)}}</strong>
+                                                        </p>
+                                                    {{else}}
+                                                        {{#if this.displayPrice}}
+                                                            <p class="price displayPrice cc_display_price">
+                                                                {{pageLabelPrefixMap 'DisplayPrice_' this.displayPrice}}
+                                                            </p>
+                                                        {{else}}
+                                                            {{#if this.showPricing}}
+                                                                {{#if this.price}}
+                                                                    <div class="cc_pricing">
+                                                                        <p class="price cc_price sugprice">{{{formatUSD (price this.price)}}}</p>
+                                                                    </div>
+                                                                    
+                                                                {{/if}}
+                                                            {{/if}}
+                                                        {{/if}}
+                                                        {{#if this.isTierPriced}}
+                                                            <div class="cc_prt_tool_tip_div cc_prt_tool_tip_div_pdp">
+                                                                <span class="cc_prt_tool_tip_text cc_prt_tool_tip_text_pdp" data-toggle="tooltip" title="{{pageLabelMap 'ProductPricingTiers_VolumeHover'}}">
+                                                                    {{pageLabelMap 'ProductPricingTiers_VolumePricing'}}
+                                                                </span>
+                                                            </div>
+                                                        {{/if}}
+                                                    {{/if}}
+                                                {{/if}}
+                                            {{/ifDisplay}}
+                                        </div>
+                                    </div>
+                                                                        
+                                </div> 
+                                {{/ifEquals}}
+                    
+                
+                                {{#ifEquals '{!buyOnline}' "true"}} 
+                                {{#if this.prodBean.isAddToCartShow}}                               
+                                <div class="col-sm-12 sp-add-to-cart">
+                                    <button class="ga-addtocart btn fwb uppercasetrans btnAdd ec-btn-secondary add-to-cart" data-sku="{{this.prodBean.sku}}" data-price="{{this.price}}">{{pageLabelMap 'Add to cart'}}</button>
+                                </div>
+                                {{else}}
+                                    <div style="color: #005172;font-size:14px;text-align:left;font-weight:bold;">{{pageLabelMap 'Sales_Entitlement'}}</div>                                
+                                {{/if}}
+                                {{/ifEquals}}
+                            {{/ifEquals}}
+                        </div>                        
+                    {{/each}}
+                </div> 
+                    <button class="sugNext col-md-1 col-xs-1">
+            <i class="material-icons keyboard_arrow_right"></i>
+            </button>
+            </div>
+                
+        </div>
+  </script>
+  <script>
+      jQuery(function ($) {
+          CCRZ.uiProperties.widgetSectionView.desktop.tmpl='EC-ProductDetail-WidgetContainer-Desktop'; // to override suggested products code
+      });
+  </script>
+</apex:component>

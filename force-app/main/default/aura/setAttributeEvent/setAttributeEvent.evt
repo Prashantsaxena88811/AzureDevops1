@@ -1,0 +1,8 @@
+<aura:event type="COMPONENT">
+    <aura:attribute name="attributeValue" type="String"/>
+    <aura:attribute name="prodattributeValue" type="String"/>
+    <aura:attribute name="orderattributeValue" type="String"/>
+    <aura:attribute name="quicklistattributeValue" type="String"/>
+    <aura:attribute name="sdsDocattributeValue" type="String"/>
+    <aura:attribute name="activeTab" type="String"/>
+</aura:event>

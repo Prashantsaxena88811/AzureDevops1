@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__AdjustmentAmount__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Post order placement adjustment amount that can be used by back-end processing to adjust an order total without adjusting other fields. This information is captured here and transferred to order during place-order call.</description>
+    <externalId>false</externalId>
+    <label>Adjustment Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

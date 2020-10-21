@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__BillTo__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Reference to a CC Contact Address object that contains the bill to address data. This will be a unique copy of the address information captured during checkout.</description>
+    <externalId>false</externalId>
+    <label>Bill To</label>
+    <referenceTo>ccrz__E_ContactAddr__c</referenceTo>
+    <relationshipName>E_Orders</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

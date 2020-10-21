@@ -1,0 +1,552 @@
+.THIS.global-header-wrapper.fixed-top{
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    top: 0;
+}
+
+.THIS.global-header-wrapper{
+   
+    
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.46px;
+    
+}
+.THIS .shipping-account-details{
+   color: #ffffff;
+   justify-content: space-between;
+   background-color: #007ac9;
+   height: 36px; 
+}
+.THIS .ship-to{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+.THIS .location{
+    border-radius: 2px;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #4d4f53;
+    padding: 2px 14px;
+    cursor: pointer;
+    margin-left: 8px;
+    display:flex;
+    align-items:center;
+}
+.THIS .ship-to .material-icons.location-icon{
+    font-size:16px;
+}
+.THIS .shipping-account-details .list a{
+    color:#fff;
+}
+
+.THIS .shipping-account-details .list > a{
+    display: flex;
+    align-items: center;
+}
+.THIS .shipping-account-details .list a:hover,
+.THIS .shipping-account-details .list a:active,
+.THIS .shipping-account-details .list a:focus{
+    text-decoration:none;
+}
+
+.THIS .shipping-account-details .list .cart-value a,
+.THIS .shipping-account-details .list .cart-value a:hover,
+.THIS .shipping-account-details .list .cart-value a:hover,
+.THIS .shipping-account-details .list .cart-value a:active,
+.THIS .shipping-account-details .list .cart-value a:focus{
+    text-decoration:underline;
+}
+.THIS .shipping-account-details > .slds-grid{
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+.THIS .list{
+    color: #fff;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    height: 36px;
+}
+.THIS .list .quick-list{
+    padding-left:8px;
+}
+.THIS .location .spacer{
+    padding:0 4px;
+}
+.THIS .list .spacer{
+    padding: 0 22.5px 0px 25.5px;
+}
+.THIS .list .cart-value{
+    padding-left:4px;
+    padding-right:69px;
+}
+.THIS span.cart-value-mobile {
+    position: absolute;
+    left: 20px;
+    top: -5px;
+    min-width: 15px;
+    height: 15px;
+    background-color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 0 2px;
+    color: #005172;
+    text-align: center;
+    border-radius: 15px;
+}
+.THIS .account-information{
+    cursor:pointer;
+    padding:11px 9px 9px 14px;  
+    display:inline-block;
+    display: flex;
+    align-items: center;
+}
+.THIS .account-information:hover{
+     background-color: rgba(0, 0, 0, 0.1);
+}
+.THIS .drop-down{
+    width: 200px;
+    height: 100px;
+    border: 1px solid red;
+    right: 0px;
+    top: 40px;
+    z-index: 1;
+    right: 40px;
+    color: #373737;
+    background:#fff;
+}
+.THIS .ecolab{
+   width: 219px;
+   padding-top:17px;
+}
+.THIS .ecolab img{
+    width: 113px;
+    height: auto;
+    
+}
+.THIS .search-nav{
+    background:#fff;
+    height: 56px;
+}
+.THIS .search-bar{
+    padding: 7px 0px;
+    width: 600px;
+}
+.THIS .search-bar input{
+    height: 42px;
+    border-radius: 2px;
+    border: solid 1px #d9d9d9;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 7px 0px 6px 16px;
+}
+.THIS .search-nav .nav-menu{
+    padding-top:20px;
+    width: 1024px;
+}
+.THIS .search-nav .nav-menu ul li a{
+    text-decoration:none;
+   
+    font-size: 16px;
+    line-height: 1.25;
+    padding-bottom: 14px;
+    color: #4d4f53;
+}
+.THIS .search-nav .nav-menu ul li.Home{
+    margin-right: 52px;
+}
+.THIS .search-nav .nav-menu ul li.Products{
+    margin-right: 42px;
+}
+.THIS .search-nav .nav-menu ul li.Documents{
+    margin-right: 56px;
+}
+.THIS .search-nav .nav-menu ul li.Intelligence{
+    margin-right: 56px;
+}
+.THIS .search-nav .nav-menu ul li.Dashboards{
+    margin-right: 45px;
+}
+.THIS .search-nav .nav-menu ul li.Orders{
+    margin-right: 54px;
+}
+.THIS .search-nav .nav-menu ul li .is-active{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.25;
+    color: #007ac9;
+    border-bottom: 4px solid #007ac9;
+}
+
+
+
+.THIS .active::before {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+}
+.THIS .account-dropdown{
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+    border: solid .5px #d9d9d9;
+    background-color: #f7f7f7;
+    width: 189px;
+    top: 48px;
+    right: 1px;
+    z-index:2;
+}
+.THIS .account-dropdown ul li{
+    padding: 9.5px 13px 9.5px 21px;
+    
+    font-size: 14px;;
+    letter-spacing: 0.5px;
+    text-align: right;
+    color: #4d4f53;
+}
+.THIS .account-dropdown ul li:hover{
+     background-color: rgba(94, 182, 228, 0.2);
+}
+
+.THIS .shipping-account-details .account-dropdown ul li a{
+    display: flex;
+    flex-direction: row;
+    color: #4d4f53;
+    justify-content: flex-end;
+}
+.THIS .shipping-account-details .account-dropdown ul li:hover a{
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    text-align: right;
+    text-decoration:none;
+    color: #007ac9;
+    white-space:nowrap;
+}
+.THIS .account-dropdown ul li a span i{
+    font-size: 16px;
+}
+
+.THIS .account-dropdown ul li:hover a span i{
+    /*color: transparent;
+    fill: transparent;*/
+    outline: #007ac9;
+    color: #007ac9;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.THIS .active
+{
+    color: #0070d2 !important;
+}
+
+@media (max-width: 767px) and (min-width: 320px)
+{
+   .THIS.global-header-wrapper
+    {
+        cursor: pointer;
+    }
+    
+ .THIS.global-header-wrapper .shipping-account-details .list .account-information .material-icons
+    {
+        padding-right: 0px;
+    }
+   
+   .THIS.global-header-wrapper .shipping-account-details .list .bookmark
+    {
+        margin-right: 28.4px;
+    }
+    
+    .THIS.global-header-wrapper .shipping-account-details .list .cart
+    {
+        margin-right: 26px;
+        position: relative;
+    }
+    
+    
+    
+    .THIS.global-header-wrapper .search-nav .ecolab .logo-image{
+    width: 66px ;
+   height: 14px;
+    }
+    
+    .THIS.global-header-wrapper .search-nav .nav-menu{
+    width: 0px;
+    }
+    
+    .THIS.global-header-wrapper .search-nav .nav-menu .header-items 
+    {
+       position: absolute;
+       top: 104px;
+       left: 0px; 
+       height: 100vh;
+       width: 0px;
+       background-color: #ffffff; 
+       z-index: 6;
+       border: 1px solid #d9d9d9; 
+       -webkit-transition: width .2s ease-in-out; /* Safari prior 6.1 */
+        transition: width .2s ease-in-out; 
+        
+    }
+    
+    .THIS.global-header-wrapper .search-nav .nav-menu .showit
+    {
+        width: 48.128%;
+    }
+    
+    
+    
+    .THIS.global-header-wrapper .search-nav .hamburger-menu-ham svg
+    {
+        height:18px;
+        width: 18px;
+        fill: #007ac9;
+    }
+    
+    .THIS.global-header-wrapper .search-nav .hamburger-menu-ham
+    {
+     padding-top: 17px;
+     padding-left: 8px;
+     padding-right: 11px; 
+    }
+    
+    .THIS.global-header-wrapper .search-nav .nav-menu .header-items ul li .is-active
+    {
+      padding-bottom: 8px;
+    }
+    
+    .THIS.global-header-wrapper .search-nav .nav-menu .header-items ul li
+    {
+        margin-left: 21px;
+        margin-bottom: 30px;
+    }
+    
+    .THIS.global-header-wrapper .search-nav .nav-menu .header-items ul .Home
+    {
+        margin-top: 24px;
+    }
+    
+    .THIS.global-header-wrapper .search-nav .search-bar{
+     width: 0px;
+        
+     }
+    
+   .THIS.global-header-wrapper .search-nav .search-bar input{
+    
+    border-radius: 2px;
+    border:0px;
+    background-color: #ffffff;
+    width: 100%;
+    
+}  
+    .THIS.global-header-wrapper .search-nav .full_mobile
+    {
+        width: 100%;
+    }
+    
+   .THIS.global-header-wrapper .search-nav .hide_logo
+    {
+        display: none;
+    }
+    
+    .THIS.global-header-wrapper .search-nav .search-bar .closeit
+    {
+    background: #fff;
+    border: 0;
+    height: 34px;
+    box-shadow: none;
+    color: black;
+    position: absolute;
+    top: 55px;
+    right: 58px; 
+    padding-right: 0px;
+    }
+    
+    .THIS.global-header-wrapper .search-nav .search-bar .openit
+    {
+    background: #fff;
+    border: 0;
+    height: 34px;
+    box-shadow: none;
+    color: black;
+    position: absolute;
+    top: 55px;
+    right: 32px; 
+    padding-right: 0px;
+    }
+
+    
+.THIS.global-header-wrapper .search-nav .search-bar .closeit svg, 
+.THIS.global-header-wrapper .search-nav .search-bar .openit svg{
+  width: 1rem;
+  height: 1rem;
+  color: #0070d2;
+  background: #fff;
+}
+    
+.THIS .shipping-account-details{
+height: 46px;
+}
+    
+.THIS .list{ 
+height: 46px;        
+}
+}
+
+@media (max-width: 1365px) and (min-width: 768px)
+{
+.THIS.global-header-wrapper .search-nav .ecolab .logo-image{
+    width: 82px ;
+   height: 17px;
+    }    
+    
+.THIS.global-header-wrapper .search-nav .search-bar{
+     width: 0px;
+}  
+
+.THIS.global-header-wrapper .search-nav .search-bar input{
+    
+    border-radius: 2px;
+    border:0px;
+    background-color: #ffffff;
+    width: 100%;
+    
+}  
+    .THIS.global-header-wrapper .search-nav .full_mobile
+    {
+        width: 100%;
+    }
+    
+   .THIS.global-header-wrapper .search-nav .hide_logo
+    {
+        display: none;
+    }
+    
+    .THIS.global-header-wrapper .search-nav .search-bar .closeit
+    {
+    background: #fff;
+    border: 0;
+    height: 34px;
+    box-shadow: none;
+    color: black;
+    position: absolute;
+    top: 44px;
+    right: 76px; 
+    padding-right: 0px;
+    }
+    
+    .THIS.global-header-wrapper .search-nav .search-bar .openit {
+    background: #fff;
+    border: 0;
+    height: 34px;
+    box-shadow: none;
+    color: black;
+    position: absolute;
+    top: 45px;
+    right: 39px; 
+    padding-right: 0px;
+    }
+
+    
+.THIS.global-header-wrapper .search-nav .search-bar .closeit svg, 
+.THIS.global-header-wrapper .search-nav .search-bar .openit svg{
+  width: 1rem;
+  height: 1rem;
+  color: #0070d2;
+  background: #fff;
+}    
+
+.THIS .search-nav .nav-menu ul li
+{
+ margin-right: 35px;       
+}   
+    
+.THIS.global-header-wrapper .shipping-account-details .list .spacer{
+    padding: 0 11.5px 0px 16.1px;
+}  
+ 
+.THIS.global-header-wrapper .shipping-account-details .list .cart
+    {
+        margin-right: 32px;
+        position: relative;
+    }
+
+.THIS.global-header-wrapper .shipping-account-details .list .account-information
+{
+  font-size: 13px;      
+} 
+
+.THIS.global-header-wrapper .shipping-account-details .list img
+{
+  margin-right: 8.5px;      
+}    
+
+.THIS.global-header-wrapper .shipping-account-details .list .account-information #iconChange
+{
+font-size:18px;        
+}    
+       
+}
+
+@media (min-width: 1366px) {
+	.cEC_Header.global-header-wrapper .search-nav .search-bar .openit, 
+    .cEC_Header.global-header-wrapper .search-nav .search-bar .closeit {
+        display: none;
+    }
+    .THIS .search-bar {
+        padding-right: 10px;
+    }
+}
+@media (max-width: 1365px) and (min-width: 1024px) {
+    .cEC_Header.global-header-wrapper .search-nav .search-bar {
+        position: relative;
+    }
+	.cEC_Header.global-header-wrapper .search-nav .search-bar .openit {
+        top: 9px;
+        right: 17px;
+        display:block;
+    }
+    .cEC_Header.global-header-wrapper .search-nav .search-bar .closeit {
+        top: 9px;
+        right: 51px;
+        display:block;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+	.THIS .shipping-account-details {
+        height: 46px;
+    }
+    .THIS .list {
+        height: 46px;
+    }
+    .THIS.global-header-wrapper .search-nav .search-bar .openit {
+        top: 55px;
+    	right: 39px;
+    }
+    .THIS.global-header-wrapper .search-nav .search-bar .closeit {
+        top: 54px;
+    }
+}
+@media (min-width: 1900px) {
+    .THIS .search-nav .nav-menu {
+        width: calc(100% - 819px);
+    }
+}

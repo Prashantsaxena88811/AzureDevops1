@@ -1,0 +1,77 @@
+<!--
+  
+  @Component Name     : EC_CustomLogin.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Rahul Goel          21/06/2019         User can login into Ecolab portal by 
+             entering his username
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global"
+                controller="EC_CustomLoginRedirectController">
+    
+    <aura:attribute name="startUrl" type="String" required="false"
+                    description="The url you go to after a successful login" />
+    <aura:attribute name="selfRegisterUrl" type="String" required="false" default="/registrationPage" />
+    <aura:attribute name="communitySelfRegisterUrl" type="String" access="private" />
+    <aura:attribute name="communityURL" type="String" access="private" />
+    <aura:registerevent name="sitePropagatedStartUrl" type="c:setStartUrl" />
+    <aura:handler name="init" value="{!this}" action="{!c.initialize}" />
+    <aura:dependency resource="c:setStartUrl" type="EVENT" />
+    <aura:dependency resource="siteforce:registerQueryEventMap" type="EVENT" />
+    <aura:handler event="c:setStartUrl" action="{!c.setStartUrl}" />
+    
+    <aura:attribute name="width" type="String" />
+    
+    <lightning:flexipageRegionInfo width="{!v.width}" />
+    <aura:attribute name="Username" type="String" />
+    <aura:attribute name="Password" type="String" />
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+
+    <aura:if isTrue="{!v.showSpinner}" >
+        <div class="slds-spinner_container">
+            <div role="status" class="slds-spinner slds-spinner--medium">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!!v.showSpinner}" >
+        <div class="slds-grid">
+            <div class="slds-col login-comp-wrapper">
+                
+                <div class="image-wrapper"><img src="{!$Resource.EC_Branding_Theme + '/images/login_background_old.jpg'}" alt="login"/>
+                </div>
+                <div class="login-wrapper">
+                    <div class="login-section">
+                        <div class="header"><img src="{!$Resource.EC_Branding_Theme + '/images/login_logo.png'}" alt="login"/></div>
+                        <div class="content">
+                         <h1></h1>
+                         <h2></h2>
+                            <h3>{!$Label.c.EC_SIGN_IN}</h3>
+                            <lightning:button class="external-wrapper ec_btn_primary" onclick="{!c.handleLogin}" label="Continue">
+                              Continue  
+                            </lightning:button>
+                        </div>
+                        <div class="footer">
+                            <label>{!$Label.c.EC_Dont_have_an_account}</label>
+                            <lightning:button class="ec_btn_signup" label="{!$Label.c.EC_Login_SignUp}"
+                                              title="{!$Label.c.EC_Login_SignUp}" onclick="{!c.registerRedirect}"></lightning:button>
+                        </div>
+                        <div class="helpText">
+                            <div class="Alignment">
+                                <br/>
+                                <p class="Ecolabs-Customer-Po">{! $Label.c.Ecolab_Customer_Portal }&nbsp;<a href="https://www.google.com/intl/en/chrome/" class="Ecolabs-Customer-Po text-style-1" target="_blank">Download Chrome.</a> </p><br/>
+                                <p class="Safari-Firefox-and">
+                                    <a href="https://support.apple.com/downloads/safari" class="Safari-Firefox-and text-style-1" target ="_blank">Safari</a>,&nbsp;<a href="https://www.mozilla.org/en-US/firefox/new/" class="Safari-Firefox-and text-style-1" target ="_blank" >Firefox</a>&nbsp;and&nbsp;<a href="https://www.microsoft.com/en-us/edge" class="Safari-Firefox-and text-style-1" target ="_blank">Edge</a>&nbsp;{! $Label.c.Acceptable_Browsers}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aura:if>
+</aura:component>

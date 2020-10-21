@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Subscription_End_Date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Determines when the subscription ends.  Depending on the subscriber, this field is calculated from based on date the order is placed and the subscription duration.  Additionally, if this date is met, and Subscription Auto Renewal is set to true, then the end date is extended.  If the date is met, and Subscription Auto Renewal is set to false, then the subscription status is updated and the subscription is expired.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Determines when the subscription ends, or if the this subscription is set to auto renew, then the subscription end date is extended.</inlineHelpText>
+    <label>Subscription End Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

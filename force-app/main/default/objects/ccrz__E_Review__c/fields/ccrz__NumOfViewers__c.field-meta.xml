@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__NumOfViewers__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Number of people view this review</description>
+    <externalId>false</externalId>
+    <label>Number of Viewers</label>
+    <summaryForeignKey>ccrz__E_ReviewLike__c.ccrz__Review__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

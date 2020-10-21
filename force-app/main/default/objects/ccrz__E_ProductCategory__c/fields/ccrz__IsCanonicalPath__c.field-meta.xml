@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__IsCanonicalPath__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Boolean value which flags a Category as the Canonical path for a Product. This is used for determining SEO Friendly URLs.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Flag this Category as the Canonical Path for the Product. This is used for determining SEO Friendly URLs.</inlineHelpText>
+    <label>Canonical Path</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

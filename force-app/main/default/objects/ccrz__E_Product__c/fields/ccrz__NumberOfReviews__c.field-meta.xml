@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__NumberOfReviews__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Formula - number of reviews submitted for this product</description>
+    <externalId>false</externalId>
+    <label>Number Of Reviews</label>
+    <summaryFilterItems>
+        <field>ccrz__E_Review__c.ccrz__Rating__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>ccrz__E_Review__c.ccrz__Status__c</field>
+        <operation>equals</operation>
+        <value>Accepted</value>
+    </summaryFilterItems>
+    <summaryForeignKey>ccrz__E_Review__c.ccrz__Product__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

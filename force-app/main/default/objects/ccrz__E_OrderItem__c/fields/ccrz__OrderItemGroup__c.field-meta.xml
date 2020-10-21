@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__OrderItemGroup__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The Order Item Group that the item belongs to. Used for Line Level Independence.</description>
+    <externalId>false</externalId>
+    <label>Order Item Group</label>
+    <referenceTo>ccrz__E_OrderItemGroup__c</referenceTo>
+    <relationshipLabel>Order Items</relationshipLabel>
+    <relationshipName>E_OrderItems</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

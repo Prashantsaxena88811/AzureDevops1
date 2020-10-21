@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__OrderFrequency__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The frequency of the order component of a Subscription</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used in conjunction with UOM, order frequency is how often the service/product is performed/sent. Must be a whole number.</inlineHelpText>
+    <label>Order Frequency</label>
+    <precision>12</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

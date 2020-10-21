@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__ImageURI__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The URI of the image. If ImageSource__c is URI then this is the HREF pointing to the image. If ImageSource__c is Static Resource then this is a relative reference inside the indicated Static Resource.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Image URI pointing to image hosted in external site</inlineHelpText>
+    <label>ImageURI</label>
+    <length>128</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

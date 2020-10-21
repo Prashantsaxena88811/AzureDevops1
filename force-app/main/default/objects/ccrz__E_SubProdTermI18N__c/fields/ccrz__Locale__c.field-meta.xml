@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Locale__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The locale for which this localization applies.  Localization follows the normal B2B Commerce fallback rules.</description>
+    <externalId>false</externalId>
+    <label>Locale</label>
+    <length>25</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

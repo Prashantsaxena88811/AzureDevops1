@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__SKUFragment__c</fullName>
+    <deprecated>false</deprecated>
+    <description>String used to construct the SKU of a configured product. The format of the constructed SKU can be configured via config setting in the Admin Console.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Optional text used to dynamically create an Item SKU when the CC Attribute is selected on the Storefront</inlineHelpText>
+    <label>SKU Fragment</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

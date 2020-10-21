@@ -1,0 +1,102 @@
+<!--
+
+  @Component Name     : EC_IFrameCustomPage_UI
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Supriya               10/17/2019        Component for the UI on punchout.
+
+--> 
+
+<apex:component controller="EC_PunchoutController">
+
+<apex:includeScript value="{!$Resource.EC_EcoLabs_Theme}"/>    
+<style>
+   html .brandQuaternaryBgr  {
+      background-color: #d8d8d8 !important; 
+   }
+  .bPageHeader, .sidebarCell, .zen-pageFooter {
+      display: none;  
+  }  
+  .bodyDiv.brdPalette.brandPrimaryBrd  {
+      box-shadow: none;
+      border: none;
+      background-color: #d8d8d8 !important; 
+  }
+  #content-wrapper {
+      padding: 30px 0;
+      background-color: #ffffff;
+      width: 598.5px;
+      margin: 12.5% auto;
+  }
+  .inner-wrapper {
+      background-color: #ffffff;
+      border-radius: 1.4px;
+      border: solid 0.7px #e17000;
+      width: 532px;
+      margin: auto;
+  }
+  .image-wrapper {
+      width: 34px;
+      margin: auto;
+      padding-top: 30px;
+  }  
+  #msg-img {
+      width: 34px;
+      height: 34px;
+  }
+  #main-text {
+      padding: 15px 7.0%;  
+  }  
+  .text-content {
+      font-family: Arial;
+      font-size: 14px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #005172;
+  }
+  #sub-text {
+      padding-bottom: 30px;  
+  }  
+  .sub-text-content {
+      font-family: Arial;
+      font-size: 10px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.39;
+      letter-spacing: normal;
+      text-align: center;
+      color: #4d4f53;
+      padding: 0 0 10px 0;
+  } 
+  .link, .link:hover, .link:active, .link:visited {
+      color: #005172;
+      cursor: pointer
+   }  
+</style>  
+
+    <div id="content-wrapper">
+      <div class="inner-wrapper">
+          <div class="image-wrapper">
+              <img id="msg-img" src="{!$Resource.EC_EcoLabs_Theme+'/images/outline-error2.png'}"/>
+          </div>
+          <div id="main-text">
+              <div class="text-content">
+                {!$Label.EC_IBuyMsg}              
+              </div>    
+          </div>
+          <div id="sub-text">
+              <div class="sub-text-content">
+                {!$Label.EC_Please} <a target="_blank" onclick="openLinkNewWindow(); return false;" class="link">{!$Label.EC_ClickHere}</a> {!$Label.EC_IbuyRedirectMsg}
+              </div>
+          </div>    
+      </div>
+  </div>
+  
+</apex:component>

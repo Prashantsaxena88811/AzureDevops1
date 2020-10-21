@@ -1,0 +1,761 @@
+<!--
+
+  @Component Name     : EC_ProductList
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Viraj                6/06/2019         Product list page.
+
+--> 
+
+<apex:component controller="EC_ProductListController"> 
+    <script id="EC-Product-List-Header" type="text/template">    
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="material-icons">expand_less</i>{{pageLabelMap 'EC_Top'}}</button>    
+        <div class="cc_product_list_header col-md-12">            
+            <div class="messagingSection-Error" style="display: none"></div>
+            <div class="messagingSection-Warning" style="display: none"></div>
+            <div class="messagingSection-Info" style="display: none"></div>
+            <div class="cc_panel cc_controls_panel">
+                <div class="panel-body cc_body">
+                    <div class="row plp-details">
+                        
+                        <div class="cc_sort_controls col-xs-12 col-sm-6">
+                            <div class="cc_product_sort pull-left">
+                            
+                            <!-- Sort By - Begin -->
+                              <div class="dropdown">
+                                <span> {{pageLabelMap 'EC_SortBy'}} </span>
+                                {{#if prodCategoryIds}}
+                                    {{#ifDisplay 'PL.SeqSort'}}
+                                        <button class="btn btn-default btn-name-change dropdown-toggle" type="button" data-toggle="dropdown">{{sorting_tag}}
+                                                <span class="caret caret-stay"></span>
+                                        </button>
+                                    {{/ifDisplay}}
+                                    {{else}}
+                                    {{#ifDisplay 'PL.RelSort'}}
+                                        <button class="btn btn-default btn-name-change dropdown-toggle" type="button" data-toggle="dropdown">{{sorting_tag}}
+                                                <span class="caret caret-stay"></span>
+                                        </button>
+                                    {{/ifDisplay}}
+                                {{/if}}
+                                <ul class="dropdown-menu">
+                                    <!-- 116762 Connect R4 | UI/UX: SPIKE: Catalog: Sort by last purchased date  -->
+                                    <!-- {{#ifDisplay 'PL.SeqSort'}}
+                                      <li class="dropdown-submenu sequence">
+                                        <a tabindex="-1" href="#" class="test cc_sort_sequence_toggle {{#ifEquals sortBy 'categorySequence'}} active {{/ifEquals}}">{{pageLabelMap 'EC_LastPurchased'}}</a>
+                                        <ul class="dropdown-menu">
+                                            <li class="cc_sort_sequence_item {{#ifEquals sortBy 'categorySequence'}} {{#ifEquals sortOrder 'desc'}}active{{/ifEquals}}{{/ifEquals}}">
+                                                <a tabindex="-1" href="#" class="cc_sort_option cc_sort_sequence_desc" data-id="categorySequence" data-order="desc">{{pageLabelMap 'ProductList_SortLastPurchasedDesc'}}</a>
+                                            </li>
+                                            <li class="cc_sort_sequence_item {{#ifEquals sortBy 'categorySequence'}} {{#ifEquals sortOrder 'asc'}}active{{/ifEquals}}{{/ifEquals}}">
+                                                <a tabindex="-1" href="#" class="cc_sort_option cc_sort_sequence_asc" data-id="categorySequence" data-order="asc">{{pageLabelMap 'ProductList_SortLastPurchasedAsc'}}</a>
+                                            </li>
+                                        </ul>
+                                      </li>
+                                    {{/ifDisplay}} -->
+
+                                    {{#ifDisplay 'PL.NameSort'}}
+                                        <li class="dropdown-submenu">
+                                            <a tabindex="-1" href="#" class="test cc_sort_name_toggle {{#ifEquals sortBy 'sfdcName'}} active {{/ifEquals}}">{{pageLabelMap 'ProductList_SortName'}}</a>
+                                            <ul class="dropdown-menu">
+                                            <li class="cc_sort_name_item {{#ifEquals sortBy 'sfdcName'}} {{#ifEquals sortOrder 'asc'}}active{{/ifEquals}}{{/ifEquals}}">
+                                                <a tabindex="-1" href="#" class="cc_sort_option cc_sort_name_asc" data-id="sfdcName" data-order="asc">{{pageLabelMap 'ProductList_SortNameAsc'}}</a>
+                                            </li>
+                                            <li class="cc_sort_name_item {{#ifEquals sortBy 'sfdcName'}} {{#ifEquals sortOrder 'desc'}}active{{/ifEquals}}{{/ifEquals}}">
+                                                <a tabindex="-1" href="#" class="cc_sort_option cc_sort_name_desc" data-id="sfdcName" data-order="desc">{{pageLabelMap 'ProductList_SortNameDesc'}}</a>
+                                            </li>
+                                            </ul>
+                                        </li>
+                                    {{/ifDisplay}}
+                                  
+                                    {{#ifDisplay 'PL.NewestSort'}}
+                                        <li class="cc_sort_item"><a tabindex="-1" href="#" data-id="startDate" data-order="desc" class="cc_sort_option cc_sort_newest {{#ifEquals sortBy 'startDate'}} active {{/ifEquals}}">{{pageLabelMap 'ProductList_SortNewest'}}</a></li>
+                                    {{/ifDisplay}}
+                                  
+                                    {{#ifDisplay 'PL.PriceSort'}}
+                                        <li class="dropdown-submenu">
+                                            <a tabindex="-1" href="#" class="test cc_sort_price_toggle {{#ifEquals sortBy 'price'}} active {{/ifEquals}}">{{pageLabelMap 'ProductList_SortPrice'}}</a>
+                                            <ul class="dropdown-menu">
+                                            <li class="cc_sort_price_item {{#ifEquals sortBy 'price'}} {{#ifEquals sortOrder 'asc'}}active{{/ifEquals}}{{/ifEquals}}">
+                                                <a tabindex="-1" href="#" class="cc_sort_option cc_sort_price_asc" data-id="price" data-order="asc">{{pageLabelMap 'ProductList_SortPriceAsc'}}</a>
+                                            </li>
+                                            <li class="cc_sort_price_item {{#ifEquals sortBy 'price'}} {{#ifEquals sortOrder 'desc'}}active{{/ifEquals}}{{/ifEquals}}">
+                                                <a tabindex="-1" href="#" class="cc_sort_option cc_sort_price_desc" data-id="price" data-order="desc">{{pageLabelMap 'ProductList_SortPriceDesc'}}</a>
+                                            </li>
+                                            </ul>
+                                        </li>
+                                    {{/ifDisplay}}
+                                </ul>
+                              </div>
+                            <!-- Sort By - End-->
+                            </div>
+                        </div>
+                        <div class="cc_page_controls col-xs-12 col-sm-6 plp-show-results pull-right">
+                            <ul class="layout list-inline cc_controls_list fa-pull-right">
+                                <li class="col-xs-12 form-group">
+                                    <span>{{pageLabelMap 'EC_Showing'}}</span>
+                                    <select class="form-control cc_page_size_control">
+                                        {{#each itemsPerOptions}}
+                                            
+                                            <option value="{{safeQuote this}}" {{#ifEquals ../pageSize this}} selected {{/ifEquals}}>{{this}}</option>
+                                        {{/each}}
+                                    </select>
+                                    <span> {{pageLabelMap 'EC_Of'}} {{this.prodCount}} {{pageLabelMap 'EC_Results'}}</span>
+                                </li>                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{#if this.prodFilters}}
+            <div class="col-md-12 cc_filter_breadcrumbs">
+                <div class="panel panel-default cc_panel cc_filter_breadcrumb_panel">
+                    <div class="panel-body cc_body">
+                        <div class="row cc_row">
+                           
+                            <div class=" cc_filter_breadcrumb_container display_inline">
+                                <ul class="cc_filter_breadcrumb_list pl-20 list-inline ">
+                                    {{#each this.prodFilters}}
+                                        {{#ifEquals this.filterType 'Slider'}}
+                                            <li class="cc_filter_breadcrumb label label-default">
+                                     <div class="filter_text"> {{this.name}}: {{this.filterMin}} - {{this.filterMax}}&nbsp;({{count}})&#160;&#160;</div>
+                                                <a href="javascript:void(0);" class="remove cc_remove_filter" data-specId="{{this.sfid}}">
+                                                    <i class="material-icons white clear md-18 pull-right" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            &#160;
+                                        {{/ifEquals}}
+                                        {{#ifEquals this.filterType 'Checkbox'}}
+                                            {{#each this.specValues}}
+                                                <li class="cc_filter_breadcrumb label label-default breadcrumb_style">
+                                                    <div class="filter_text">  {{../name}}: {{value}}&nbsp;({{count}})&#160;&#160;</div>
+                                                    <a href="javascript:void(0);" class="remove cc_remove_filter" data-specId="{{../sfid}}" data-specValue="{{value}}">
+                                                        <i class="material-icons clear white md-18 pull-right" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                                &#160;
+                                            {{/each}}
+                                        {{/ifEquals}}
+                                    {{/each}}
+                                </ul>
+                            </div>
+                             <div class=" cc_remove_filters_control display_inline">
+                                <button class="btn btn-default cc_remove_filters button-remove">{{pageLabelMap 'ProductList_ClearFilters'}}</button>
+                            </div>        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+        {{#if this.noResults}}
+            {{>noResultsDisplay}}
+        {{/if}}
+        {{#if this.isSearch}}
+        	{{#ifNotEquals this.noResults true}}
+            	<div class="col-md-12">
+                    <p class="plp-search-word">{{pageLabelMap 'ProductList_SearchResultsBody' this.searchString}}</p>
+                </div>
+            {{/ifNotEquals}}
+        {{/if}}
+    </script>
+    
+    <script id="EC-Product-Item-Grid" type="text/template">
+        <!-- Product List Card - Begin -->
+        <div class="custom-product-item {{#ifNotEquals this.lastPurchaseDate NULL }}lastPurchaseDate{{/ifNotEquals}}{{#ifEquals this.lastPurchaseDate NULL }}noLastPurchaseDate{{/ifEquals}}">          
+            <div class="grid-top-row clearfix">
+                {{#if this.canAddtoCart}}                
+                    <div class="last-purchase-rectangle pull-left">
+                        {{#ifNotEquals this.lastPurchaseDate NULL }}
+                            <span class="last-purchase-description">
+                                <span class='publishedOn'>
+                                    <label>&nbsp;Purchased On {{lastPurchasedDate this.lastPurchaseDate}}&nbsp;</label>
+                                </span>
+                            </span>
+                        {{/ifNotEquals}}
+                    </div>             
+                {{/if}}
+                <div class="pull-right plp-ql-box">
+                    {{#if this.canAddtoCart}}
+                        {{#ifNotEquals this.productType 'Aggregated'}}
+                            {{#unless this.showNewSubscriptionSelection}}
+                                <div class="cc_wishlist">
+                                    <div class="wishFinder" data-sku="{{this.SKU}}">
+                                        <div class="wishButtons"></div>
+                                    </div>
+                                </div>
+                            {{/unless}}
+                        {{/ifNotEquals}}
+                    {{/if}}
+                </div>
+            </div>
+            <div class="cc_product_item cc_grid_item clearfix no-padding grid-center-row {{#if (checknalcoPL this.ECDivision)}}tab-height{{/if}}">
+                <div class="thumbnail-section col-sm-3 no-padding">
+                    <div class="product-image-thumbnail">
+                        {{#if EProductMediasS.[0]}}
+                            {{productLink this 'cc_product_name_img ga-prodImage' image=(displayImage this 'img-responsive custom-thumbnail' src=(displayEProductMedia this.EProductMediasS.[0]) onerror="this.onerror=null;this.src='{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.svg'}'" alt=this.sfdcName dataId=this.SKU)}}
+                        {{else}}
+                            {{productLink this 'cc_product_name_img ga-prodImage' image=(displayImage this 'img-responsive custom-thumbnail' src=(displayNoImage) onerror="this.onerror=null;this.src='{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.svg'}'" alt=this.sfdcName dataId=this.SKU)}}
+                           
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="description-section col-sm-9">
+                    <div class="plp-title-code-wrapper">
+                        <div class="product-title-section clearfix">
+                            <div class="product-title pull-left">
+                                {{#if this.alternateName}}
+                                    {{productEllipsisLink this 'cc_product_name ga-prodLink' text=this.alternateName}}
+                                {{else}}
+                                    {{productEllipsisLink this 'cc_product_name ga-prodLink' text=this.sfdcName}}
+                                {{/if}}
+                            </div>                         
+                        </div>
+                        <div class="product-code-section clearfix">
+                            {{#ifDisplay 'PL.DsplSku'}}
+                                <p class="cc_product_sku_wrap pull-left">
+                                    <span class="cc_label">{{pageLabelMap 'EC_ProductCode'}}</span>
+                                    <span class="cc_product_sku fwb ga-prodCode">{{this.SKU}}</span>
+                                </p>
+                            {{/ifDisplay}}
+                            {{#ifDisplay 'PL.DsplUOM'}}
+                                <div class="cc_product_uom_wrap pull-left">
+                                    <span class="cc_product_uom">{{pageLabelPrefixMap 'UOM_' this.unitOfMeasure}}</span>
+                                </div>
+                            {{/ifDisplay}}
+                        </div>
+                    </div>                 
+                </div>
+            </div>
+            <div class="product-add-section clearfix grid-third-row {{#if (checknalcoPL this.ECDivision)}}inlarge-nalco{{/if}}">
+                <div class="cc_product_grid_actions">
+                    <div class="messagingSection-Warning-{{this.sfid}}" style="display: none"></div>
+                    <div class="messagingSection-Info-{{this.sfid}}" style="display: none"></div>
+                    <div class="messagingSection-Error-{{this.sfid}}" style="display: none"></div>
+                    {{#ifDisplay 'PL.DsplAddCart'}}
+                        {{#unless this.showNewSubscriptionSelection}}
+                        {{#if (checknalcoPL this.ECDivision)}}
+                            <div class="row nalco m-r-0 {{#ifNotEquals '{!buyOnline}' 'true'}} m-r-n5{{/ifNotEquals}}">
+                                {{#if this.canAddtoCart}}
+                                    {{#ifEquals (checkOr '{!viewPrice}' '{!buyOnline}') true}}
+                                        {{#ifEquals '{!viewPrice}' "true"}}
+                                            <div class="col-md-3 hide-tab"></div>
+                                            <div class="m-bottom-10 disp-none-tab {{#ifEquals '{!buyOnline}' 'true'}} col-md-4 {{else}} col-md-6 j-c-right {{/ifEquals}}">
+                                                <div class="cc_price_container cc_grid_price_info caption fa-pull-left">
+                                                    {{>priceDisplay}}
+                                                </div>
+                                            </div>
+                                        {{/ifEquals}}
+                                        {{#ifEquals '{!buyOnline}' "true"}}
+                                            <div class="col-sm-3 v-middle col-xs-12">
+                                            {{> productQuantityControls}}
+                                            <span class='nalco-uom'>
+                                                {{#if (packageTypePL this.packageTypeUOM 'Bulk')}}
+                                                    {{this.productPricingData.productPrice.CustomPricingUOM}}
+                                                {{else}}
+                                                EA
+                                                {{/if}}
+                                            </span>
+                                            </div> 
+                                            <!--part of InstSalesEnt pbi-139350 -->
+                                            {{#if this.isAddToCartShow}}                                         
+                                            <div class="col-md-2 col-sm-6 action cc_action addcartplp wishFinder fa-pull-right">
+                                                <div class="cc_add_to form-group">
+                                                    <button 
+                                                        class="ga-addtocart btn btn-default addtocartplp cc_add_to_btn cc_add_to_btn_{{this.sfid}} ec-btn-secondary text-uppercase fwb" 
+                                                        role="button">{{pageLabelMap 'ProductList_AddToCart'}}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            {{else}}
+                                                <div >{{pageLabelMap 'Sales_Entitlement'}}</div>                                
+                                            {{/if}}
+                                        {{/ifEquals}}
+                                        {{#ifEquals '{!viewPrice}' "true"}}
+                                            <div class="m-bottom-10 disp-none {{#ifEquals '{!buyOnline}' 'true'}} col-md-4 {{else}} col-md-6 j-c-right {{/ifEquals}}">
+                                                <div class="cc_price_container cc_grid_price_info caption fa-pull-left">
+                                                    {{>priceDisplay}}
+                                                </div>
+                                            </div>
+                                        {{/ifEquals}}
+                                    {{/ifEquals}}
+                                {{else}}
+                                    <div class="error_msg no-padding">{{pageLabelMap 'Non_orderable_msgList'}}</div>                                
+                                {{/if}}
+                            </div>
+                        {{else}}
+                        <div class="">
+                            {{#if this.canAddtoCart}}
+                                {{#ifEquals (checkOr '{!viewPrice}' '{!buyOnline}') true}}
+                                    {{#ifEquals '{!viewPrice}' "true"}}
+                                        <div class="cc_price_container cc_grid_price_info caption fa-pull-left">
+                                            {{>priceDisplay}}
+                                        </div>
+                                    {{/ifEquals}}
+                                    {{#ifEquals '{!buyOnline}' "true"}}
+                                        {{> productQuantityControls}}
+                                        <!--part of InstSalesEnt pbi-139350 -->
+                                        {{#if this.isAddToCartShow}}                                          
+                                        <div class="action cc_action addcartplp wishFinder fa-pull-right">
+                                            <div class="cc_add_to form-group">
+                                                <button class="ga-addtocart btn btn-default addtocartplp cc_add_to_btn cc_add_to_btn_{{this.sfid}} ec-btn-secondary text-uppercase fwb" role="button">
+                                                {{pageLabelMap 'ProductList_AddToCart'}}
+                                                </button>
+                                            </div>
+                                        </div>
+                                        {{else}}
+                                            <div style="color: #005172;font-size:14px;text-align:left;font-weight:bold;">{{pageLabelMap 'Sales_Entitlement'}}</div>                                
+                                        {{/if}}
+                                    {{/ifEquals}}
+                                {{/ifEquals}}
+                            {{else}}
+                                <div class="error_msg no-padding">{{pageLabelMap 'Non_orderable_msgList'}}</div>                                
+                            {{/if}}
+                        </div>
+                        {{/if}}
+                        {{/unless}}
+                    {{/ifDisplay}}
+                </div>
+            </div>
+        </div>               
+        <!-- Product List Card - End -->
+        </div>
+    </script>
+    
+    <script id="productQuantityControls" type="text/template"> 
+     <!--part of InstSalesEnt pbi-139350 -->
+     {{#if this.isAddToCartShow}}       
+        <div class="fa-pull-left plp-quan-block">
+            <div class="input-group input-group-sm cc_input_group form-group">
+                <span class="input-group-btn cust-min cc_input_group_btn">
+                    <button type="button" class="btn btn-default custom-minus cc_minus material-icons remove"></button>
+                </span>
+                <input type="text" id="{{sfid}}_qtyEntry"  class="plp-input plpinpdis qty qty entry form-control cc_entry" value="1" maxlength="7"/>
+                <span class="input-group-btn cc_input_group_btn pluswidth minus-wrapper">
+                    <button type="button" class="btn btn-default plus pludisbtn plus-width cc_plus material-icons add"></button>
+                </span>
+            </div>
+        </div>
+         {{/if}}
+    </script>
+    
+    <script id="priceDisplay" type="text/template">
+        {{#ifDisplay 'PL.DsplListPrc'}}
+            {{#if this.basePrice}}
+                <div class="cc_price cc_baseprice">
+                    <span class="cc_base_price_label">{{pageLabelMap 'ProductList_BasePrice'}}</span>
+                    <span class="cc_base_price_value">{{price this.basePrice}}</span>
+                </div>
+            {{/if}}
+        {{/ifDisplay}}
+        {{#ifDisplay 'PL.DsplPrc'}}
+            {{#if this.showNewSubscriptionSelection}}
+                <p class="price priceSubscription cc_subscr_price">{{pageLabelMap 'Prod_SubsListPrice' (price this.price) (price this.minSubPrice) (price this.maxSubPrice)}}</p>
+            {{else}}
+                {{#if this.maxPrice}}
+                    {{#if this.displayPrice}}
+                        <div class="cc_price cc_baseprice">
+                            <span class="price cc_price">{{pageLabelPrefixMap 'DisplayPrice_' this.displayPrice}}</span>
+                        </div>
+                    {{else}}
+                        <span class="price cc_price_label">{{displayRangePrice 'ProductDetails_PriceRangeFormat' this.minPrice this.maxPrice}}</span>
+                    {{/if}}
+                {{else}}
+                    {{#if this.primaryAttr}}
+                        <span class="cc_attr_message">{{pageLabelMap 'ProductAttributes_PriceMessage'}}</span>
+                    {{else}}
+                        {{#if this.displayPrice}}
+                            <div class="cc_price cc_baseprice">
+                                <span class="price cc_price">{{pageLabelPrefixMap 'DisplayPrice_' this.displayPrice}}</span>
+                            </div>
+                        {{else}}
+                            {{#if this.productPricingData.productPrice.price}}
+                                {{#if (checknalcoPL this.ECDivision)}}
+                                    {{#if (taxonomyPL this.taxonomy 'Equipment')}}
+                                        <div class="cc_price price">
+                                            <span class="price cc_price">{{{formatUSD (price this.productPricingData.productPrice.price)}}} <span class="price-wrap-dec one-uom">Per EA</span></span>
+                                        </div>
+                                    {{/if}}
+                                    {{#if (taxonomyPL this.taxonomy 'Chemical')}}
+                                        {{#if (packageTypePL this.packageTypeUOM 'NonBulk')}}
+                                            <div class="cc_price price">
+                                                <span class="price cc_price">{{{formatUSD (price this.productPricingData.productPrice.price)}}} <span class="price-wrap-dec one-uom">Per EA</span></span>
+                                            </div>
+                                            {{#if (nonBulkEA this.packageTypeUOM this.productPricingData)}}
+                                            <div class="cc_price price second-price">
+                                                <span class="price cc_price">{{{formatUSD (price this.productPricingData.productPrice.CustomUnitPrice)}}} <span class="price-wrap-dec">Per {{this.productPricingData.productPrice.CustomPricingUOM}}</span></span>
+                                            </div>
+                                            {{/if}}
+                                        {{/if}}
+                                        {{#if (packageTypePL this.packageTypeUOM 'Bulk')}}
+                                            <div class="cc_price price">
+                                                <span class="price cc_price">{{{formatUSD (price this.productPricingData.productPrice.CustomUnitPrice)}}} <span class="price-wrap-dec one-uom">Per {{this.productPricingData.productPrice.CustomPricingUOM}}</span></span>
+                                            </div>
+                                        {{/if}}
+                                    {{/if}}
+                                {{else}}
+                                    <div class="cc_price price">
+                                        <span class="price cc_price">{{{formatUSD (price this.productPricingData.productPrice.price)}}}</span>
+                                    </div>
+                                {{/if}}
+                                
+                                {{#if this.sellerName}}
+                                    <span class="cc_sold_by">{{pageLabelMap 'Prod_SoldBy'}}: </span>
+                                    <span class="cc_seller_name">{{this.sellerName}}</span>
+                                {{/if}}
+                            {{/if}}
+                            {{#ifEquals this.productPricingData.productPrice.itemType 'tiered'}}
+                                <span class="cc_label">{{pageLabelMap 'ProductPricingTiers_VolumePricing'}}</span>
+                            {{/ifEquals}}
+                            {{#ifEquals this.productType 'Dynamic Kit'}}
+                                <span class="cc_label dispPriceDynKit">{{pageLabelMap 'DisplayPrice_DynamicKit'}}</span>
+                            {{/ifEquals}}
+                        {{/if}}
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+        {{/ifDisplay}}
+        {{#unless this.showNewSubscriptionSelection}}
+            {{#ifDisplay 'PL.DsplSvPrc'}}
+                {{#if this.savings}}
+                    <div class="cc_price cc_yousave_price">
+                        <span class="cc_yousave_label">{{pageLabelMap 'ProductList_Savings'}}</span>
+                        <span class="cc_yousave">{{price this.savings}}</span>
+                    </div>
+                {{/if}}
+            {{/ifDisplay}}
+        {{/unless}}
+        {{#ifDisplay 'PL.DsplAvlb' }}
+            {{#if this.productInventoryItemsS}}
+                {{#ifEquals this.productInventoryItemsS.[0].qtyAvailable 0}}
+                    <p class="cc_avail_disp">{{pageLabelMap 'ProductList_NotAvailable'}}</p>
+                {{/ifEquals}}
+            {{/if}}
+        {{/ifDisplay}}
+    </script>
+    
+    <script>
+        // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+            }
+            
+        jQuery(function ($) {
+                
+            CCRZ.uiProperties.productListPageView.header.tmpl = 'EC-Product-List-Header';
+            CCRZ.uiProperties.productListPageView.productItem.grid.tmpl = 'EC-Product-Item-Grid';
+            Handlebars.registerHelper('sorting_tag',function() {
+                if(CCRZ.productListPageModel.attributes.sortBy =="lastPurchaseDate")
+                {
+                var sort_tag=CCRZ.pagevars.pageLabels.EC_LastPurchased;
+                }
+                else if(CCRZ.productListPageModel.attributes.sortBy =="sfdcName")
+                {
+                var sort_tag=CCRZ.pagevars.pageLabels.EC_NAME;
+                }
+                else if(CCRZ.productListPageModel.attributes.sortBy =="startDate")
+                {
+                var sort_tag=CCRZ.pagevars.pageLabels.EC_NEWEST;
+                }
+                else if(CCRZ.productListPageModel.attributes.sortBy =="price")
+                {
+                var sort_tag=CCRZ.pagevars.pageLabels.EC_PRICE;
+                }   
+                else if(CCRZ.productListPageModel.attributes.sortBy =="searchRank")
+                {
+                var sort_tag=CCRZ.pagevars.pageLabels.ProductList_SortRelevance;
+                } 
+                else{
+                    var sort_tag=CCRZ.pagevars.pageLabels.EC_LastPurchased;
+                    CCRZ.productListPageModel.attributes.sortBy ="lastPurchaseDate";
+                    CCRZ.productListPageModel.attributes.sortOrder = "desc";
+                } 
+                return(sort_tag);
+            });
+            Handlebars.registerHelper('checknalcoPL', function (division) {
+                if (division && CCRZ.pagevars.pageLabels.EC_NALCO.includes(division.toLowerCase())) {
+                    return true;
+                }
+                return false;
+            })
+            Handlebars.registerHelper('taxonomyPL', function (taxonomy, type) {
+                if (taxonomy && CCRZ.pagevars.pageLabels['EC_Taxonomy_'+type].includes(taxonomy.toLowerCase())) {
+                    return true;
+                }
+                return false;
+            })
+            Handlebars.registerHelper('packageTypePL', function (packageType, type) {
+                if (packageType && CCRZ.pagevars.pageLabels['EC_PackageType_'+type] === packageType.toLowerCase() ) {
+                    return true;
+                }
+                return false;
+            })
+            Handlebars.registerHelper('nonBulkEA', function(type, price) {
+                if (CCRZ.pagevars.pageLabels.EC_PackageType_NonBulk === type.toLowerCase()
+                 && price.productPrice.CustomPricingUOM !== 'EA') {
+                    return true;
+                }
+                return false;
+            })
+            Handlebars.registerHelper('lastPurchasedDate', function (lastpurchaseddate) {
+                if (lastpurchaseddate != null && lastpurchaseddate != 'undefined') {
+                    var d = new Date(lastpurchaseddate);
+                    var m = d.getMonth();
+                    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                    var monthName = months[m - 1 + 1];
+                    var day = d.getDate();
+                    var y = d.getFullYear();
+                    var fulldate = monthName + " " + day + ", " + y;
+                    return (fulldate);
+                }
+            });
+            Handlebars.registerHelper('displayNoImage', function() {
+                return new Handlebars.SafeString(CCRZ.pagevars.themeBaseURL + 'images/EC_no_image.svg');
+            });
+            // to show ellipsis
+            Handlebars.registerHelper('productEllipsisLink', function(product, styleClass, options) {
+                var SKU = '';
+                if (!_.isUndefined(product)) {
+                    if (product.linkURL) {
+                        SKU = product.linkURL;
+                    } else if (product.sku) {
+                        SKU = product.sku;
+                    } else if (product.SKU) {
+                        SKU = product.SKU;
+                    } else if (product.productSKU) {
+                        SKU = product.productSKU;
+                    }
+                    var linkObj = {
+                        'name': product.name,
+                        'SKU': SKU,
+                        'friendlyUrl': product.friendlyUrl,
+                        'openInNewWindow': product.openInNewWindow
+                    };
+                    var productJSON = _.escape(JSON.stringify(linkObj));
+                }
+                var content = '';
+                var titlecontent ='';
+                if (product && product.name) {
+                    content = _.escape(product.name);
+                    titlecontent = _.escape(product.name);
+                }
+                if (options && options.hash['image']){
+                    content = options.hash['image'];
+                    titlecontent = options.hash['image'];
+                }
+                if (options && options.hash['text']) {
+                    content = _.escape(_.unescape(options.hash['text']));
+                    titlecontent = _.escape(_.unescape(options.hash['text']));
+                    if(content.length>48){
+                        content = content.substring(0,49)+"...";
+                    }
+                }
+                var href = CCRZ.goToPDP(null, product);
+                if (product.openInNewWindow || product.isNewWindow) {
+                    return new Handlebars.SafeString("<a href='" + href + "' target=\"_blank\" onClick=\"CCRZ.openPDP(this)\" class=\"" + styleClass + " gp_prod" + "\" data-product= '" + productJSON + "' data-id= '" + SKU + "' title= '" + titlecontent + "'>" + content + "</a>")
+                } else {
+                    return new Handlebars.SafeString("<a href='" + href + "' onClick=\"CCRZ.openPDP(this)\" class=\"" + styleClass + " gp_prod" + "\" data-product= '" + productJSON + "' data-id= '" + SKU + "' title= '" + titlecontent + "'>" + content + "</a>");
+                }
+            });
+
+            CCRZ.pubSub.on('view:productItemsView:refresh', function (viewInstance) {
+                setProductList(CCRZ.views.ProductItemsView.prototype, CCRZ.models.ProductListPageModel.prototype, viewInstance);
+                viewInstance.setElement(viewInstance.$el);
+                if(CCRZ.productListPageModel.attributes.sortBy =="lastPurchaseDate") {
+                    var lastPur = $(".lastPurchaseDate").closest($(".cc_product_container"));
+                    var noLastPur = $(".noLastPurchaseDate").first().closest($(".cc_product_container"));
+                    $(lastPur).insertBefore(noLastPur);
+                }
+            });
+            var setProductList = function (plpView, plpModel, viewIn) {
+                
+                // For dropdown
+                $('.dropdown-submenu a.test').on("click", function(e){
+                    $(this).next('ul').toggle();
+                    e.stopPropagation();
+                    e.preventDefault();
+                });
+                $(".dropdown-menu li a").click(function(){
+                  var selText = $(this).text();
+                  $(this).parents('.btn-name-change').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+                });
+                
+                // When the user scrolls down 20px from the top of the document, show the button
+                window.onscroll = function() {scrollFunction()};
+                function scrollFunction() {
+                  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("myBtn").style.display = "block";
+                  } else {
+                    document.getElementById("myBtn").style.display = "none";
+                  }
+                }
+                
+                viewIn.renderDesktop();
+            }
+
+            CCRZ.pubSub.on('view:productItemView:refresh', function (viewInstance) {
+                $(viewInstance.$el).removeClass("col-md-4");
+                viewInstance.gridClass = "col-sm-6";
+               
+                setProductItemView(CCRZ.views.ProductItemView.prototype, viewInstance);
+                viewInstance.renderDesktop();
+                viewInstance.setElement(viewInstance.$el);
+            });
+            
+            var setProductItemView = function(plpItemView, viewIn){                
+                plpItemView.customAdjustQty = function(event){
+                  var qty=1;
+                  var prevQty = parseInt($("#" + viewIn.model.get('sfid') + "_qtyEntry").val());
+                  var newQty = (prevQty - qty)>1 ? prevQty - qty : 1;
+                  $("#" + viewIn.model.get('sfid') + "_qtyEntry").val(newQty);
+                }
+                
+                var events = plpItemView.events;
+                events["click .custom-minus"] = "customAdjustQty"; 
+                events["keydown .plp-input"] = "disableZero";
+                events["blur .plpinpdis"] = "disableAddToCart";
+                events["click .pludisbtn"]= "disaddcartplus";
+
+                plpItemView.disaddcartplus = function (event) {
+                    var qtyInput = $("#" + this.model.get('sfid') + "_qtyEntry");
+                    var qty = qtyInput.val();
+                    if(qty!=0){
+                        $(event.target).parents(".plp-quan-block").next().find(".addtocartplp").attr("disabled", false);
+                    }
+                }
+               
+               plpItemView.disableAddToCart = function (event) {
+                    if(event.target.value ==""){
+                       
+                       $(event.target).parents(".plp-quan-block").next().find(".addtocartplp").attr("disabled", true);
+                    }
+                    else{
+                       $(event.target).parents(".plp-quan-block").next().find(".addtocartplp").attr("disabled", false);
+                    }
+                }
+                
+                plpItemView.disableZero = function (event) {
+                    if (event.target.value.length == 0 && event.which == 48 ){
+                      return false;
+                   }
+                   
+                }
+                
+            }
+            
+            
+            
+            if (CCRZ.pagevars.pageConfig.get('SB.Location')) {
+                CCRZ.util.createView({
+                    templatePrefix: CCRZ.uiProperties.searchWidget.tmpl,
+                    viewName : "prodsearchWidgetView",
+                    preRender : function() {
+                        $('.' + CCRZ.uiProperties.searchWidget.desktop.left.selector).html('');
+                        $('.' + CCRZ.uiProperties.searchWidget.desktop.right.selector).html('');
+                    },
+                    desktop :{
+                        target : CCRZ.pagevars.pageConfig.get('SB.Location') == 'RIGHT' ? CCRZ.uiProperties.searchWidget.desktop.right.selector : CCRZ.pagevars.pageConfig.get('SB.Location') == 'LEFT' ? CCRZ.uiProperties.searchWidget.desktop.left.selector : 'search-box-no-displ'
+                    },
+                    tablet : {
+                        target : CCRZ.pagevars.pageConfig.get('SB.Location') == 'RIGHT' || CCRZ.pagevars.pageConfig.get('SB.Location') == 'LEFT' ? CCRZ.uiProperties.searchWidget.desktop.right.selector : 'search-box-no-displ'
+                    },
+                    phone : {
+                        target : 'search-box-no-displ'
+                    },
+                    events :{
+                        "click .sidebarSearchButton" : "doSearchNav",
+                        "keyup .cc_sidebar_search_text" : "doSearchEnter"
+                    },
+                    doSearchNav : function() {
+                        if(this.validateSearchInput()){
+                            var ccid = CCRZ.pagevars.currentCartID || '';
+                            var storeName = CCRZ.pagevars.storefrontName || '';
+                            var url = encodeURIComponent($.trim($('.search_input1').val()));
+                            var encodedStr = '';
+                            var encodeChars = ["(", ")", "~", "!", "*", "'"];  
+                            for(var i = 0, len = url.length; i < len; i++) {
+                                if (encodeChars.indexOf(url[i]) >= 0) {
+                                    
+                                    encodedStr += '\\' + url[i];
+                                }
+                                else {
+                                    encodedStr += url[i];
+                                }
+                            }
+                            window.location = CCRZ.pageUrls.productList + "?cartID="+ccid+getCSRQueryString()+"&operation=quickSearch&searchText="+encodedStr;
+                        }
+                    },
+                    doSearchEnter : function(event) {
+                        var v = this;
+                        if (window.event && window.event.keyCode == 13 || event.which == 13) {
+                            v.doSearchNav();
+                            return false;
+                        } else {
+                            return true;
+                        }
+                    },
+                    validateSearchInput : function(){
+                        var v = this;
+                        var srchInput = $('.search_input1');
+                        var srchBtn   = $('.sidebarSearchButton');
+                        
+                        var srchVal = false || (srchInput.val()?srchInput.val().trim():false);
+                        
+                        if(srchVal && srchVal.length > 1 ){
+                            $('.searchBoxError').toggle(false);
+                            return true;
+                        }else{
+                            $('.searchBoxError').text(CCRZ.pagevars.pageLabels['ProductSearch_Tooltip']);
+                            $('.searchBoxError').toggle(true);
+                            return false;
+                        }
+                    }
+                }); //Create the view
+            }
+            
+            var uiprops = {};
+            //only use the correct ui properties if they properly defined, else use component defaults.
+            if(CCRZ.uiProperties && CCRZ.uiProperties.autoComplete && CCRZ.uiProperties.autoComplete.PRODUCT_SEARCH && CCRZ.uiProperties.autoComplete.PRODUCT_SEARCH.sidebarSearchText){
+                uiprops = CCRZ.uiProperties.autoComplete.PRODUCT_SEARCH.sidebarSearchText;
+            }
+            var options = _.extend( {minLength:3}, {delay:300}, {resultLimit:10}, {position: {collision:'none flip'}}, uiprops);
+              
+            CCRZ.pubSub.on('view:prodsearchWidgetView:refresh',function(){
+                $('.search_input1').autocomplete({
+                    source: function( request, response ) {            
+                        var remoteActionCallAddToCart = _.extend(CCRZ.RemoteInvocation, {
+                            className: 'ccrz.cc_ctrl_AutoComplete'
+                        });
+                        remoteActionCallAddToCart.invokeCtx('searchAutoComplete', request.term, options.resultLimit,'PRODUCT_SEARCH',
+                            function (resp) {
+                                if(resp && resp.data){                                                                                              
+                                    response(resp.data);                                
+                                } 
+                            }, {
+                                buffer: false, escape: false, nmsp: false
+    
+                            }
+                        );
+                    },
+                     open: function(){
+                        setTimeout(function () {
+                            $('.ui-autocomplete').css('z-index', 99999999999999);
+                            $('.ui-autocomplete').css("min-width",$(".plpsearchcont").width());
+                            $(".plpsearchcont").addClass("suggestion-search-bordered");
+                            var searchBarPosition = $(".plpsearchcont").offset();
+                            $('.ui-autocomplete').css({"top": searchBarPosition.top+35+"px", "left": searchBarPosition.left+"px"});
+                        }, 0);
+                     },
+                     close: function(){
+                        $(".plpsearchcont").removeClass("suggestion-search-bordered"); 
+                     },
+                     minLength: options.minLength,
+                     delay: options.delay,
+                     position: options.position
+                 });
+            })
+            
+        });
+    </script>
+</apex:component>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__ParentAttribute__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Relationship that links a Value to the related attribute group</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Relationship that links a specific CC Attribute to the related CC Attribute parent object</inlineHelpText>
+    <label>Parent Attribute</label>
+    <referenceTo>ccrz__E_Attribute__c</referenceTo>
+    <relationshipLabel>Child Attributes</relationshipLabel>
+    <relationshipName>ChildAttributes</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

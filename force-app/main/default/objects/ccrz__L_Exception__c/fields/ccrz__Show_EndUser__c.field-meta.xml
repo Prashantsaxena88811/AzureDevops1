@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Show_EndUser__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>A flag that say whether the message is shown to the end user in the user interface</description>
+    <externalId>false</externalId>
+    <label>Show EndUser</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

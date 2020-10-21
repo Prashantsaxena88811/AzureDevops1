@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Order__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The Order that the Order Item Group is associated with.</description>
+    <externalId>false</externalId>
+    <label>CC Order</label>
+    <referenceTo>ccrz__E_Order__c</referenceTo>
+    <relationshipLabel>Order Item Groups</relationshipLabel>
+    <relationshipName>E_OrderItemGroups</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Menu__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Reference to the CC Menu record being localized.</description>
+    <externalId>false</externalId>
+    <label>CC Menu</label>
+    <referenceTo>ccrz__E_Menu__c</referenceTo>
+    <relationshipLabel>CC Menu I18N</relationshipLabel>
+    <relationshipName>Menu_I18N</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

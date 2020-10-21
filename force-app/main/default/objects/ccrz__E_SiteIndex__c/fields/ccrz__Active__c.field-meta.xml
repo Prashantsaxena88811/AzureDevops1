@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Active__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Active flag to indicate if Site Index record is in use. When creation of Site Index records is completed by the batch job, all old values will be disabled and removed.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Active flag to indicate if Site Index record is in use by the Storefront.</inlineHelpText>
+    <label>Active</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_User_Logged_In__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This flag is used to identify if a user has logged into the portal. This flag is implemented for Case Closure logic.</description>
+    <externalId>false</externalId>
+    <label>Is User Logged In</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

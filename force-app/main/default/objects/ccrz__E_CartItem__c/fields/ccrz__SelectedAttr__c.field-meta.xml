@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__SelectedAttr__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Attributes Selected for the Cart Item&apos;s Related Product. Data is in JSON Form.</description>
+    <externalId>false</externalId>
+    <label>Selected Attributes</label>
+    <length>1000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

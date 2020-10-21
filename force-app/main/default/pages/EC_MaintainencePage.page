@@ -1,0 +1,313 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0" applyHtmlTag="false" applyBodyTag="false">
+    <html lang="en">
+        <head>
+            
+            <meta charset="utf-8"/>
+            <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+            <apex:includeScript value="{!URLFOR($Resource.EC_Branding_Theme,'/js/jquery-3.3.1.min.js')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.EC_Branding_Theme,'/css/salesforce-lightning-design-system.min.css')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.EC_Branding_Theme,'/css/theme.css')}"/>
+            <apex:includeScript value="/lightning/lightning.out.js" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+            
+            <style>
+                body {
+                	background-color: #f5f7fa;
+                	font-family: Arial;
+                	font-style: normal;
+                    font-stretch: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                }
+            	.header {
+                	height: 72px;
+  					background-color: #007ac9;
+                }
+                .logo img {
+                	height: 26px;
+                	margin: 23px 40px;
+                }
+                .outer-box {
+                	height: 824px;
+                    border-radius: 2px;
+                    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+                    background-color: #ffffff;
+                	margin: 40px;
+                	padding: 40px;
+                }
+                .inner-box {
+                	height: 495px;
+                    border-radius: 2px;
+                    border: solid 1px #e17000;
+                }
+                .round {
+                	width: 290px;
+                	height: 290px;
+                	border-radius: 50%;
+                	background-color: #f7f7f7;
+                	margin-top: 48px;
+                }
+                .text-1 {
+                	font-size: 24px;
+                    font-weight: bold;
+                    color: #005172;
+                	margin-top: 48px;
+                }
+                .text-2 {
+                	font-size: 16px;
+                    line-height: 1.38;
+                    color: #4d4f53;
+                	margin-top: 12px;
+                }
+                
+                .footer-wrapper a{
+                    font-size: 14px;
+                    line-height: 1.93;
+                    letter-spacing: 0.27px;
+                    color: #373737;
+                }
+                .footer-wrapper{
+                	font-size: 14px;
+                    background: #ffffff;
+                    line-height: 1.93;
+                	letter-spacing: .27px;
+                }
+                .copyright-section{
+                    background: #017ac9;
+                    color:#fff;
+                }
+                .social-media li img{
+                    width:40px;
+                    height:40px;
+                }
+                .slds-list_horizontal li i{
+                    font-size: 16px;
+                    vertical-align: middle;
+                }
+                .subsection-heading{
+                    font-size: 16px;
+                    font-weight: bold;
+                    letter-spacing: 0.3px;
+                    color: #005172;
+                }
+                .visit-website img{
+                    width:16px;
+                    height:16px;
+                }
+                .thin-separator{
+                    height: 8px;
+                    background-color: #5b8f22;
+                }
+                .slds-list_horizontal li a{
+                    color:#fff;
+                }
+                .slds-list_horizontal li a:hover {
+                    text-decoration:none;
+                }
+                .slds-list_horizontal li{
+                    margin-right:20px;
+                }
+                .footer_links {
+                  font-size: 13px;
+                  line-height: 1.69;
+                  letter-spacing: 0.37px;
+                  text-align: right;
+                  color: #ffffff;
+                }
+                
+                .material-icons {
+                    font-size: 12px;
+                }
+                
+                @media (max-width: 767px) and (min-width: 320px) {
+                  	.footer-sub-sections {
+                    	padding-top: 16px;
+                    	padding-bottom: 38px;
+                   	}
+                	.social-media, .visit-website {
+                        padding-top: 32px;
+                    }
+                	.subsection-heading {
+                    	font-size: 14px;
+                	}
+                    .social-media li img {
+                        height: 25px;
+                        width: 25px;
+                    }
+                    .parent {
+                        height: 22px;
+                        margin-bottom:9px;
+                    }
+                    .content-left-spacer {
+                        padding-bottom: 4px;
+                    }
+                	.footer_links {
+                		color: #fff !important;
+                	}
+                
+                	.header {
+                        height: 46px;
+                    }
+                    .logo img {
+                        height: 21px;
+                        margin: 12px 21px;
+                    }
+                	.outer-box {
+                        height: 454px;
+                        border-radius: 2px;
+                        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+                        background-color: #ffffff;
+                        margin: 17px 0px 40px 0px;
+                        padding: 20px;
+                	}
+                	.inner-box {
+                        height: 405px;
+                        border-radius: 2px;
+                        border: solid 1px #e17000;
+                	}
+                	.round {
+                        width: 145px;
+                        height: 145px;
+                        border-radius: 50%;
+                        background-color: #f7f7f7;
+                		margin-top: 32px;
+                	}
+                    .text-1 {
+                        font-size: 20px;
+                		line-height: 1.2;
+                		text-align: center;
+                        padding: 0 26px;
+                		margin-top: 24px;
+                    }
+                    .text-2 {
+                        font-size: 14px;
+                        line-height: 1.43;
+                		text-align: center;
+    					padding: 0 26px;
+                		margin-top: 12px;
+                    }
+                }
+                
+            </style>
+            
+        </head>
+        <body>
+            <div class="header">
+                <div class="logo">
+                    <apex:image value="{!URLFOR($Resource.EC_Branding_Theme,'images/logo_white.png')}"/> 
+                </div>
+            </div>
+            <div class="body">
+            	<div class="outer-box">
+                    <div class="inner-box">
+                        <div class="round slds-align_absolute-center"></div>
+                        <div class="text-1 slds-align_absolute-center">
+                            {!$Label.EC_MaintainenceText}   
+                        </div>
+                        <div class="text-2 slds-align_absolute-center">
+                            {!$Label.EC_MaintainenceText2}   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-wrapper">
+            	<div class="slds-grid footer-sub-sections slds-p-vertical_large slds-wrap">
+                    <div class="slds-col slds-size_12-of-12 slds-large-size_5-of-12">
+                        <h4 class="slds-p-bottom_x-small subsection-heading">{!$Label.EC_Footer_AboutEcoLabHeader}</h4>
+                        <div class="content">{!$Label.EC_Footer_AboutEcolabContent}
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-12 slds-show_medium">&nbsp;</div>
+                    <div class="slds-col slds-size_12-of-12 slds-large-size_3-of-12 social-media">
+                        <h4 class="slds-p-bottom_x-small subsection-heading">{!$Label.EC_Footer_MediaLinksHeader}</h4>
+                        <div class="icons">
+                            <ul class="slds-list_horizontal">
+                                <li>
+                                    <a href="{!$Label.EC_Footer_MediaLinksFacebook}" target="_blank">
+                                        <img src="{!$Resource.EC_Branding_Theme + '/images/icons/facebook.png'}"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{!$Label.EC_Footer_MediaLinksInstagram}" target="_blank">
+                                        <img src="{!$Resource.EC_Branding_Theme + '/images/icons/instagram.png'}"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{!$Label.EC_Footer_MediaLinksLinkedIn}" target="_blank">
+                                        <img src="{!$Resource.EC_Branding_Theme + '/images/icons/linkedIn.png'}"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{!$Label.EC_Footer_MediaLinksTwitter}" target="_blank">
+                                        <img src="{!$Resource.EC_Branding_Theme + '/images/icons/twitter.png'}"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{!$Label.EC_Footer_MediaLinksYoutube}" target="_blank">
+                                        <img src="{!$Resource.EC_Branding_Theme + '/images/icons/youtube.png'}"/>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-12 slds-show_medium">&nbsp;</div>
+                    <div class="slds-col slds-size_12-of-12 visit-website slds-p-left_medium slds-large-size_2-of-12">
+                        <h4 class="slds-p-bottom_x-small subsection-heading">{!$Label.EC_Footer_VisitWebsiteHeader}</h4>
+                        <div>
+                            <a href="{!$Label.EC_Footer_VisitWebsiteLink}" target="_blank">{!$Label.EC_Footer_VisitWebsiteContent} 
+                                <span class="slds-p-left_xxx-small"> <img src="{!$Resource.EC_Branding_Theme + '/images/icons/copy.png'}"/></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-clearfix thin-separator">
+                    &nbsp;
+                </div>
+                <div class="copyright-section">
+                    <section class="slds-grid slds-p-vertical_medium content-left-spacer slds-wrap">
+                        <div class="slds-col slds-large-size_7-of-12 slds-size_12-of-12 parent">
+                            <span>{!$Label.EC_Footer_CopyrightContent}</span>
+                        </div>
+                        <div class="slds-col slds-large-size_5-of-12 slds-size_12-of-12 slds-show_medium">
+                            <ul class="slds-list_horizontal slds-float_right">
+                                <li>
+                                    <a href="{!$Label.EC_Footer_SDSDocumentsLink}" target="_blank" >{!$Label.EC_Footer_SDSDocumentsTitle} 
+                                        <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                                    </a> 
+                                    <span class="slds-p-horizontal_large"> |</span>
+                                </li>
+                                <li>
+                                    <a href="{!$Label.EC_Footer_TermsOfUseLink}" target="_blank">{!$Label.EC_Footer_TermsOfUseTitle}
+                                        <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                                    </a>
+                                    <span class="slds-p-horizontal_large">|</span>
+                                </li>
+                                <li>
+                                    <a href="{!$Label.EC_Footer_PrivacyPolicyLink}" target="_blank">{!$Label.EC_Footer_PrivacyPolicyTitle}
+                                        <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="slds-col slds-size_12-of-12 slds-hide_medium parent">
+                            <a href="{!$Label.EC_Footer_SDSDocumentsLink}" target="_blank" class="footer_links">{!$Label.EC_Footer_SDSDocumentsTitle} 
+                                <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                            </a>
+                            <a href="{!$Label.EC_Footer_TermsOfUseLink}" target="_blank" class="footer_links slds-float_right">{!$Label.EC_Footer_TermsOfUseTitle}
+                                <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                            </a>   
+                        </div>
+                        
+                        <div class="slds-col slds-size_12-of-12 slds-hide_medium parent">
+                            <a href="{!$Label.EC_Footer_PrivacyPolicyLink}" target="_blank" class="footer_links">{!$Label.EC_Footer_PrivacyPolicyTitle}
+                                <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                            </a>
+                        </div>
+                        
+                    </section>
+                </div>
+            </div>
+        </body>
+	</html>    
+</apex:page>

@@ -1,0 +1,436 @@
+<!--
+
+  @Component Name     : EC_ServiceRequest.cmp
+
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Soumick               11/26/2019        Component for service requests
+
+-->
+
+<aura:component  controller="EC_ServiceRequestHandler" implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="totalCharCount" type="String" default="0"/>
+    <aura:attribute name="account" type="String" default=""/>
+    <aura:attribute name="accountName" type="String" default=""/>
+    <aura:attribute name="TotalAccounts" type="Integer" default="0"/>
+    <aura:attribute name="requestType" type="String" default=""/>
+    <aura:attribute name="isInstUser" type="Boolean" default="false"/>
+    <aura:attribute name="isDisable" type="Boolean" default="true"/>
+    <aura:attribute name="isSubmitDisabled" type="Boolean" default="false"/>
+    <aura:attribute name="category" type="String" default=""/>
+    <aura:attribute name="contactFirstName" type="String" default=""/>
+    <aura:attribute name="contactLastName" type="String" default=""/>
+    <aura:attribute name="userPhoneNumber" type="String" default=""/>
+    <aura:attribute name="userEmail" type="String" default=""/>
+    <aura:attribute name="actContactFirstName" type="String" default=""/>
+    <aura:attribute name="actContactLastName" type="String" default=""/>
+    <aura:attribute name="actPhone" type="String" default=""/>
+    <aura:attribute name="actUserEmail" type="String" default=""/>
+    <aura:attribute name="showPhoneNumberAsReadOnly" type="Boolean" default="false"/>
+    <aura:attribute name="notes" type="String" default=""/>
+    <aura:attribute name="email" type="String" default=""/>
+    <aura:attribute name="phone" type="String" default=""/>
+    <aura:attribute name="ContactId" type="String" default="" />
+    <aura:attribute name="isFormValidated" type="Boolean" default="true"/>
+    <aura:attribute name="ServiceRegistrationMap" type="Map" default=""/>
+    <aura:attribute name="RequestTypeVal" type="Object" />
+    <aura:attribute name="CategoryTypeVal" type="Object" />
+    <aura:attribute name="isDocError" type="boolean" default="false"/>
+    <aura:attribute name="isDocSuccess" type="boolean" default="false"/>
+    <aura:attribute name="isDocSuccessMessage" type="String" description=""/>
+    <!-- dependent pick list attributes -->
+    <aura:attribute name="listControllingValues" type="list" default="[]" description="to store controller field values"/>
+    <aura:attribute name="listDependingValues" type="list" description="to store dependent field values"/>
+    <aura:attribute name="categoryType" type="String" description="This holds the value of selected Category"/>
+    <aura:attribute name="divisionType" type="String" description="This holds the Value of selected division type"/>
+    <aura:attribute name="currentDate" type="Date"/>
+    <aura:attribute name="depnedentFieldMap" type="map" description="map to store dependent values with controlling value"/>
+    <aura:attribute name="bDisabledDependentFld" type="boolean" default="true"/>
+    <aura:attribute name="objDetail" type="string" default=""/>
+    <aura:attribute name="controllingFieldAPI" type="string" default="EC_Request_Service_Type__c" description="store field API name of Controller field"/>
+    <aura:attribute name="dependingFieldAPI" type="string" default="EC_Category_Values__c" description="store field API name of dependent field"/>
+    <aura:attribute name="DocumentInitialName" type="string" />
+    <aura:attribute name="isDocAvailable" type="boolean" default="false"/>
+    <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+    <aura:attribute name="accountListMap" type="Map" />
+    <aura:attribute name="effectiveAccountId" type="String" default=""/>
+    <aura:attribute name="selectedAccount" type="Map" default="" />
+    <aura:attribute name="searchAccountKey" type="String" default="" />
+    <aura:attribute name="NoSearchResults" type="Boolean" default="false" />
+    <aura:attribute name="effectiveAccountName" type="String" default=""/>
+    <aura:attribute name="effectiveAccountNumber" type="String" default=""/>
+    <aura:attribute name="effectiveParentAccountNumber" type="String" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="selectedShipTo" event="c:EC_AccountPickerEvent" action="{!c.onAccountSelect}"/>
+    
+    <div class="service-request-container">
+        <div class="slds-grid slds-hide service-request-wrapper" aura:id="requestTabs">
+            <div class="request-tabs">
+                <div class="service-request-form">
+                    <div class="form-details">
+                        <h2>{!$Label.c.EC_ContactUs_ServiceRequest}</h2>
+                        <div class="service-request-form-information">
+                            <h3>{!$Label.c.EC_ContactUs_ServiceRepresentative}</h3>
+                        </div>
+                        <div class="service-information">
+                            <h3>{!$Label.c.EC_ContactUs_ServiceInfo}</h3>
+                            <h5><i>{!$Label.c.EC_ContactUs_RequiredFields}</i></h5>
+                            <div class="account slds-is-relative">
+                                <aura:if isTrue="{!v.effectiveAccountName}">
+                                    <lightning:input disabled="{!v.isDisable}" id="{!v.effectiveAccountId}" aura:id="account" label="{!$Label.c.EC_ContactUs_EcolabAccount}" class="custom-input-field" value="{!v.effectiveAccountName}" required="true"  onchange="{!c.validateFields}" messageWhenValueMissing="{!$Label.c.EC_ContactUs_AccountError}" />
+                                    <aura:set attribute="else">
+                                        <lightning:input disabled="{!v.isDisable}" id="{!v.effectiveAccountId}" aura:id="account" label="{!$Label.c.EC_ContactUs_EcolabAccount}" class="custom-input-field" value="{!v.selectedAccount.Name}" required="true"  onchange="{!c.validateFields}" messageWhenValueMissing="{!$Label.c.EC_ContactUs_AccountError}" />
+                                    </aura:set>
+                                </aura:if>
+                                <a class="account-picker slds-is-absolute" onclick="{! c.openModel }">
+                                    <i class="material-icons" aura:id="addIcon">
+                                        add
+                                    </i>
+                                </a>
+
+                            </div>
+                            <div class="category">
+                                <lightning:select name="dependentFld"
+                                                  value="{!v.objDetail}"
+                                                  label="{!$Label.c.EC_ContactUs_Category}"
+                                                  required="true"
+                                                  aura:id="category"
+                                                  class="custom-selectfield"
+                                                  messageWhenValueMissing="{!$Label.c.EC_ContactUs_CategoryError}"
+                                                  disabled="{!v.bDisabledDependentFld}">
+                                    <option value="">{!$Label.c.EC_ContactUs_CategoryError}</option>
+                                    <aura:iteration items="{!v.listDependingValues}" var="val">
+                                        <option value="{!val}">{!val}</option>
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                            <div class="notes-txt slds-is-relative">
+                                <lightning:textarea name="Notes" aura:id="notes" placeholder="" label="{!$Label.c.EC_ContactUs_Description}" maxlength="250" value="{!v.notes}" required="false" messageWhenTooLong="{!$Label.c.EC_ContactUs_DescriptionError}" />
+                                <span class="slds-is-absolute">
+                                    {!v.notes.length}/250
+                                </span>
+                            </div>
+
+                            <div class="attachement-section">
+                                <div class="attach-files">
+                                    <div class="">
+                                        <h4>{!$Label.c.EC_ContactUs_AttachFiles}</h4>
+                                        <div class="format">{!$Label.c.EC_ContactUs_UploadFiles}</div>
+                                    </div>
+                                    <lightning:input aura:id="fileId" accept="application/pdf, image/png, image/jpg, image/jpeg" disabled="{!v.isDocAvailable}" onchange="{!c.handleFilesChange}" type="file" name="file" multiple="false"/>
+                                </div>
+                                <aura:if isTrue="{!v.isDocError}">
+                                    <div class="slds-text-body_small slds-text-color_error slds-text-align_right slds-p-right_large slds-p-bottom_small">{!v.DocumentInitialName} </div>
+                                </aura:if>
+                                <aura:if isTrue="{!v.isDocSuccess}">
+                                    <div class="slds-text-body_small slds-text-color_success slds-text-align_right slds-p-right_large slds-p-bottom_small">{!v.isDocSuccessMessage} </div>
+                                </aura:if>
+                                <aura:if isTrue="{!v.isDocAvailable}">
+                                    <div class="divider"></div>
+                                    <div class="file-name-details">
+                                        <div class="doc">
+                                            <div id="docId"> {!v.DocumentInitialName}</div>
+                                        </div>
+                                        <div class="delete-file" onclick = "{!c.onDeleteFile}">
+                                            <i class="material-icons">
+                                                delete_outline
+                                            </i>
+                                        </div>
+                                    </div>
+                                </aura:if>
+                            </div>
+                            <h4 class="contact-info">{!$Label.c.EC_ContactUs_ContactInformation}</h4>
+                            <div class="contactName">
+                                <lightning:input aura:id="contactName"
+                                                 label="{!$Label.c.EC_ContactUs_ContactName}"
+                                                 class="custom-input-field"
+                                                 value="{!v.contactFirstName+' '+v.contactLastName}" required="false"
+                                                 onchange="{!c.validateFields}"
+                                                 messageWhenValueMissing="{!$Label.c.EC_ContactUs_ContactNameError}" />
+                            </div>
+                            <div class="email">
+                                <lightning:input aura:id="email"
+                                                 label="{!$Label.c.EC_ContactUs_EmailAddress}"
+                                                 class="custom-input-field"
+                                                 type="email"
+                                                 value="{!v.userEmail}" required="true"
+                                                 onchange="{!c.validateFields}"
+                                                 messageWhenValueMissing="{!$Label.c.EC_ContactUs_EmailError}" autocomplete="none"/>
+                            </div>
+                            <!-- <aura:if isTrue="{!v.showPhoneNumberAsReadOnly}">
+                                <div class="phone">
+                                    <div class="lbl-name">{!$Label.c.EC_ContactUs_PhoneNumber}</div>
+                                    <div class="lbl-value" id="contactNumber"> {!v.userPhoneNumber}</div>
+                                </div>
+                                <aura:set attribute="else"> -->
+                                    <div class="phone">
+                                        <lightning:input aura:id="phone" type="tel"
+                                                     class="custom-input-field"
+                                                     value="{!v.phone}" maxlength="10" label="{!$Label.c.EC_Registration_Phone}"
+                                                     onblur="{!c.formatPhoneNumber}" required="true" onchange="{!c.validateFields}"
+                                                     pattern="^(\s*\d\s*){10}$"
+                                                     onfocus="{!c.showOriginalFormat}"
+                                                     messageWhenPatternMismatch="{!$Label.c.EC_Registration_ErrorMsgPhone}"
+                                                     messageWhenValueMissing="{!$Label.c.EC_Registration_ErrorMsgPhone}" autocomplete="none"/>
+                                    </div>
+                                    <!--
+                                <lightning:input aura:id="phone" type="tel" label="Phone Number" class="custom-input-field" value="{!v.phone}" required="true" onchange="{!c.validateFields}" pattern="^(\s*\d\s*){10}$" messageWhenPatternMismatch="{!$Label.c.EC_Registration_ErrorMsgPhone}" messageWhenValueMissing="Please enter Phone Number" />
+
+                                </aura:set>
+                            </aura:if> -->
+
+                            <div class="btn-container">
+                                <lightning:button label="{!$Label.c.EC_ContactUs_CANCEL}" aura:id="upload"  class="ec_btn_secondary" onclick="{!c.resetView}"/>
+                                <lightning:button label="{!$Label.c.EC_ContactUs_SUBMIT}"  class="ec_btn_primary" onclick="{!c.Submit}" disabled="{!v.isSubmitDisabled}"/>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div aura:id="successMsg" class="slds-hide">
+            <div class="slds-grid">
+                <div class="slds-col">
+                    <div class="success-msg">
+                        <div class="request-creation-success-msg">
+                            <div class="image">
+                                <a href="">
+                                    <i class="material-icons">
+                                        check_circle
+                                    </i>
+                                </a>
+                            </div>
+                            <div class="request-thankyou slds-p-bottom_x-small">
+                                <div class="rt-title">{!$Label.c.EC_ContactUs_RequestReceived}</div>
+                                <div>{!$Label.c.EC_ContactUs_Representative}</div>
+                                <div class="rt-info-block">
+                                    <div class="rt-info">
+                                        <div class="slds-grid slds-wrap slds-text-align_left">
+                                            <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_3-of-12">
+                                                <div>
+                                                    <span class="label">{!$Label.c.EC_ContactUs_Requested}</span>
+                                                    <span class="value"><lightning:formattedDateTime value="{!v.currentDate}"/></span>
+                                                </div>
+                                                <div>
+                                                    <span class="label">{!$Label.c.EC_ContactUs_AccountName}</span>
+                                                    <aura:if isTrue="{!v.selectedAccount.Name}">
+                                                            <span class="value">{!v.selectedAccount.Name}</span>
+                                                        <aura:set attribute="else">
+                                                            <span class="value">{!v.effectiveAccountName}</span>
+                                                        </aura:set>
+                                					</aura:if>
+                                                </div>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_6-of-12">
+                                                <div>
+                                                    <span class="label">{!$Label.c.EC_ContactUs_EmailId}</span>
+                                                    <span class="value">{!v.userEmail}</span>
+                                                </div>
+                                                <div>
+                                                    <span class="label">{!$Label.c.EC_ContactUs_PhoneNo}</span>
+                                                    <aura:if isTrue="{!v.showPhoneNumberAsReadOnly}">
+                                                        <span class="value">{!v.userPhoneNumber}</span>
+                                                     	<aura:set attribute="else">
+                                                            <span class="value">{!v.phone}</span>
+                                                        </aura:set>
+                                                    </aura:if>
+                                                </div>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_3-of-12 account-num">
+                                                <span class="label">{!$Label.c.EC_ContactUs_AccountNo}</span>
+                                                <aura:if isTrue="{!v.selectedAccount.accountNumber}">
+                                                    <span class="value">{!v.selectedAccount.accountNumber}</span>
+                                                    <aura:set attribute="else">
+                                                        <span class="value">{!v.effectiveAccountNumber}</span>
+                                                    </aura:set>
+                                                </aura:if>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rt-info-detail">
+                                        <div class="slds-grid slds-wrap slds-text-align_left">
+                                            <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_3-of-12">
+                                                <div>
+                                                    <span class="label">{!$Label.c.EC_ContactUs_ResourceType}</span>
+                                                    <span class="value">{!v.divisionType}</span>
+                                                </div>
+                                                <div>
+                                                    <span class="label">{!$Label.c.EC_ContactUs_CategoryValue}</span>
+                                                    <span class="value">{!v.categoryType}</span>
+                                                </div>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_6-of-12">
+                                                <div>{!$Label.c.EC_ContactUs_Notes}</div>
+                                                <div class="text-bold word-wrap">{!v.notes}</div>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_3-of-12">
+                                                <div>{!$Label.c.EC_ContactUs_Attachments}</div>
+                                                <div class="text-bold word-wrap">{!v.DocumentInitialName}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <aura:if isTrue="{!!v.showSpinner}" >
+            <div class="contact-information-wrapper" aura:id="contactInfo">
+                <div class="contact-section slds-grid slds-wrap">
+                    <div class="slds-col">
+                        <h1>{!$Label.c.EC_ContactUs_ContactInformation}</h1>
+                        <div class="call-section">
+                            <h3>{!$Label.c.EC_ContactUs_Call}</h3>
+                            <div class="support">
+                                <label class="lbl-name">{!$Label.c.EC_ContactUs_TechSupport}:</label>
+
+                                <label class="lbl-value">{!$Label.c.EC_ContactUs_TechNumber}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.isInstUser}">
+            <div class="slds-grid">
+                <div class="slds-col">
+                    <div class="new-service-request" aura:id="newServiceRequest">
+                        <div>{!$Label.c.EC_ContactUs_NewService}</div>
+                        <div><lightning:button label="{!$Label.c.EC_ContactUs_RequestService}"  class="ec_btn_primary" onclick="{!c.newService}" /></div>
+                    </div>
+                </div>
+            </div>
+        </aura:if>
+    </div>
+    <aura:if isTrue="{!v.isModalOpen}">
+        <!-- Modal/Popup Box starts here-->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container modal-account">
+                <!-- Modal/Popup Box Header Starts here-->
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModel }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                                          <span class="slds-assistive-text">Close</span>
+                    <h2 class="slds-p-left_medium slds-p-top_medium slds-p-bottom_medium">{!$Label.c.EC_SR_Account_Picker_Header}</h2>
+                </header>
+                <!--Modal/Popup Box Body Starts here-->
+                <div class="slds-modal__content" id="modal-content-id-1">
+                    <aura:if isTrue="{!v.NoSearchResults}">
+                    <div class="search-wrapper">
+                        <div class="acc-info slds-p-around_medium slds-border_bottom slds-border_top slds-border_left slds-border_right">{!$Label.c.EC_SR_Account_Picker_Info}</div>
+
+                        <div class="acc-search slds-grid slds-wrap slds-grid_vertical-align-center slds-no-gutters slds-p-around_medium slds-border_bottom slds-border_left slds-border_right">
+                            <div class="acc-search-info slds-col slds-size_1-of-1 slds-medium-size_7-of-12 slds-p-top_small slds-order_2 slds-medium-order_1 error-align"><i class="material-icons error-color">error</i>&nbsp;{!$Label.c.EC_SR_Account_Picker_No_Results}&nbsp;<span class="search-str">'{!v.searchAccountKey}'</span></div>
+                            <div class="slds-form-element slds-col slds-size_1-of-1 slds-medium-size_5-of-12 slds-order_1 slds-medium-order_2">
+                                <div class="error-color slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                                    <lightning:input
+                                            aura:id="searchKnowledgeInput"
+                                            name="searchKnowledgeInput"
+                                            label="" type="search"
+                                            placeholder="Search"
+                                            class="searchError"
+                                            isLoading="{! v.issearching }"
+                                            value="{!v.searchAccountKey}"
+                                            onchange="{!c.searchAccounts}"/>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<aura:set attribute="else">
+                        <div class="search-wrapper">
+                        <div class="acc-info slds-p-around_medium slds-border_bottom slds-border_top slds-border_left slds-border_right">Account Information</div>
+                        <div class="acc-search slds-grid slds-wrap slds-grid_vertical-align-center slds-no-gutters slds-p-around_medium slds-border_bottom slds-border_left slds-border_right">
+                            <aura:if isTrue="{!lessthan(v.searchAccountKey.length, 3)}">
+                                <div class="acc-search-info slds-col slds-size_1-of-1 slds-medium-size_7-of-12 slds-p-top_small slds-order_2 slds-medium-order_1">{!$Label.c.EC_SR_Show}&nbsp;'<span class="search-str">{!v.TotalAccounts}&nbsp;{!$Label.c.EC_ECOLAB}</span>'&nbsp;{!$Label.c.EC_SR_Ecolab_accs}</div>
+                            <aura:set attribute="else">
+                                <div class="acc-search-info slds-col slds-size_1-of-1 slds-medium-size_7-of-12 slds-p-top_small slds-order_2 slds-medium-order_1">{!$Label.c.EC_SR_Show}&nbsp;<span class="search-str">'{!v.searchAccountKey}'</span>&nbsp;{!$Label.c.EC_SR_Showing_Results}</div>
+                            </aura:set>
+                            </aura:if>
+                            <div class="slds-form-element slds-col slds-size_1-of-1 slds-medium-size_5-of-12 slds-order_1 slds-medium-order_2">
+                                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                                    <lightning:input
+                                            aura:id="searchKnowledgeInput"
+                                            name="searchKnowledgeInput"
+                                            label="" type="search accounts"
+                                            placeholder="Search"
+                                            isLoading="{! v.issearching }"
+                                            value="{!v.searchAccountKey}"
+                                            onchange="{!c.searchAccounts}"/>
+                                    <a class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default slds-is-absolute" >
+                                        <i class="material-icons" aura:id="searchIcon">
+                                            search
+                                        </i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Use the Apex model and controller to fetch server side data -->
+                    <aura:iteration items="{!v.accountListMap}" var="parentAccount" indexVar="key">
+
+                    <!-- add class "selected" on with onRowSelect -->
+                    <div class="acc-item-wrapper slds-m-top_small slds-m-bottom_small slds-m-left_large slds-m-right_large slds-border_top slds-border_bottom slds-border_right slds-border_left">
+                        <div class="slds-grid slds-wrap slds-no-gutters">
+                            <div class="acc-item slds-p-around_medium slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+                                <div class="slds-grid slds-wrap slds-no-gutters">
+                                    <div class="slds-col slds-size_1-of-1 eco-acc slds-truncate">{!$Label.c.EC_SR_Account_Picker_Account}</div>
+                                    <div class="slds-col slds-size_1-of-1 eco-separator slds-truncate"></div>
+                                </div>
+                                <div class="acc-item-detail slds-grid slds-wrap slds-no-gutters">
+                                    <div class="acc-name-wrapper slds-col fz-14 slds-m-bottom_small slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                        <div class="eff-acc-name fz-14 slds-text-body_regular">{!$Label.c.EC_SR_Account_Name}</div>
+                                        <div class="eff-acc-name-val fz-14 slds-m-bottom_small slds-text-body_regular"><aura:unescapedHtml value="{!parentAccount.ParentAccName}"/></div>
+                                    </div>
+                                    <div class="acc-no-wrapper slds-col fz-14 slds-m-bottom_small slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                        <div class="eff-acc-num fz-14">{!$Label.c.EC_SR_Account_Number}</div>
+                                        <div class="eff-acc-num-val fz-14 slds-m-bottom_small slds-text-body_regular" id="acc_no" value="{!parentAccount.ParentAccNumber}"><aura:unescapedHtml value="{!parentAccount.ParentAccNumber}"/></div>
+                                    </div>
+                                    <!-- PBI-126181 -->
+                                    <aura:if isTrue="{!not(parentAccount.PrimaryRep == null)}">
+                                    <div class="prim-rep-wrapper slds-col fz-14 slds-m-bottom_small slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                        <div class="prim-rep fz-14">{!$Label.c.EC_PrimaryRepLabel}</div>
+                                        <div class="prim-rep-val fz-14 slds-m-bottom_small slds-text-body_regular"><aura:unescapedHtml value="{!parentAccount.PrimaryRep}"/></div>
+                                    </div>
+                                    </aura:if>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-1 slds-large-size_9-of-12 slds-border_left">
+                                <div>
+                                    <div class="slds-col slds-size_1-of-1 slds-large-size_12-of-12 slds-p-top_medium slds-p-bottom_medium slds-show_large addrHeader">
+                                        <span class="sta-header">{!$Label.c.EC_SR_ShipTo_address}</span>
+                                    </div>
+                                    <div class="address-wrapper">
+                                        <div class="slds-grid slds-wrap slds-no-gutters sta-headings slds-p-top_medium slds-p-bottom_medium slds-border_top slds-show_medium">
+                                            <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                                <span class="">{!$Label.c.EC_SR_Acc_address}</span>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-1 slds-medium-size_8-of-12 slds-large-size_8-of-12">
+                                                <span class="">{!$Label.c.EC_SR_Account_ShiptTo}</span>
+                                            </div>
+                                        </div>
+                                        <aura:iteration items="{!parentAccount.value}" var="acc" indexVar="keyvalue">
+                                            <c:EC_ShipToAccountsIterator accListMap="{!v.accountListMap}" ShipToaccount="{!acc}" effectiveAccount="{!v.effectiveAccountId}"/>
+                                        </aura:iteration>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </aura:iteration>
+                    </aura:set>
+                </aura:if>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

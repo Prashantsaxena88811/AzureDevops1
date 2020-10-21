@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__SourceSpec__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>A reference to source spec</description>
+    <externalId>false</externalId>
+    <label>Source Spec</label>
+    <referenceTo>ccrz__E_Spec__c</referenceTo>
+    <relationshipLabel>CC Coupons</relationshipLabel>
+    <relationshipName>CC_Coupons</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

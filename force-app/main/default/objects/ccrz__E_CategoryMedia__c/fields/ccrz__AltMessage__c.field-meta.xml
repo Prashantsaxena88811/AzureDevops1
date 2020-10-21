@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__AltMessage__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Alternate text - this is the message to display if the image cannot be found or rendered by the browser</description>
+    <externalId>false</externalId>
+    <label>AltMessage</label>
+    <length>100</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

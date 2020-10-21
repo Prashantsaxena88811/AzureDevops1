@@ -1,0 +1,149 @@
+{
+  "orgName": "Demo company",
+   "edition": "Developer",
+   "features": [
+     "Communities",
+     "Sites",
+     "ServiceCloud",
+     "SocialCustomerService",
+     "API",
+     "ContactsToMultipleAccounts",
+     "FieldService",
+     "StreamingAPI",
+     "Knowledge",
+     "RecordTypes",
+     "ServiceUser",
+     "DeferSharingCalc",
+     "LightningSalesConsole",
+     "LightningServiceConsole",
+     "Macros",
+     "Workflow"
+   ],
+   "settings": {
+     "communitiesSettings": {
+       "enableNetworksEnabled": true,
+       "enableCommunityWorkspaces": true
+     },
+     "caseSettings": {
+       "systemUserEmail": "Prashant@graytitude.com",
+       "emailToCase": {
+         "enableEmailToCase": true,
+         "enableOnDemandEmailToCase": true
+       }
+     },
+     "languageSettings": {
+       "enableTranslationWorkbench": true,
+       "enablePlatformLanguages": true
+     },
+     "userManagementSettings": {
+       "enableEnhancedProfileMgmt": true,
+       "enableNewProfileUI": true
+     },
+     "socialProfileSettings": {
+       "enableSocialProfiles": true
+     },
+     "socialCustomerServiceSettings": {
+       "caseSubjectOption": "SocialPostSource"
+     },
+     "siteSettings": {
+       "enableProxyLoginICHeader": true,
+       "enableSitesRecordReassignOrgPref": true
+     },
+     "sharingSettings": {
+       "enableAssetSharing": true,
+       "enableExternalSharingModel": true,
+       "enablePortalUserCaseSharing": true,
+       "enablePortalUserVisibility": true,
+       "enableSecureGuestAccess": true,
+       "enableStandardReportVisibility": true
+     },
+     "schemaSettings": {
+       "enableAdvancedCMTSecurity": true,
+       "enableAdvancedCSSecurity": true
+     },
+     "productSettings": {
+       "enableCascadeActivateToRelatedPrices": true,
+       "enableMySettings": true
+     },
+     "orgSettings": {
+       "enableCustomerSuccessPortal": true
+     },
+     "orderSettings": {
+       "enableOrders": true,
+       "enableEnhancedCommerceOrders": true
+     },
+     "omniChannelSettings": {
+       "enableOmniChannel": true,
+       "enableOmniSecondaryRoutingPriority": true
+     },
+     "notificationsSettings": {
+       "enableMobileAppPushNotifications": true,
+       "enableNotifications": true
+     },
+     "myDomainSettings": {
+       "useStabilizedMyDomainHostnames": true,
+       "useStabilizedSandboxMyDomainHostnames": true
+     },
+     "mobileSettings": {
+       "enableImportContactFromDevice": true,
+       "enableOfflineDraftsEnabled": true,
+       "enableS1EncryptedStoragePref2": true,
+       "enableS1OfflinePref": true
+     },
+     "macroSettings": {
+       "macrosInFolders": true
+     },
+     "liveAgentSettings": {
+       "enableQuickTextEnabled": true
+     },
+     "lightningExperienceSettings": {
+       "enableFeedbackInMobile": true,
+       "enableInAppTooltips": true,
+       "enableS1BrowserEnabled": true,
+       "enableS1DesktopEnabled": true
+     },
+     "leadConfigSettings": {
+       "enableOrgWideMergeAndDelete": true
+     },
+     "flowSettings": {
+       "enableFlowBREncodedFixEnabled": true,
+       "enableInvocableFlowFixEnabled": true
+     },
+     "enhancedNotesSettings": {
+       "enableEnhancedNotes": true,
+       "enableTasksOnEnhancedNotes": true
+     },
+     "emailAdministrationSettings": {
+       "enableHtmlEmail": true
+     },
+     "activitiesSettings": {
+       "enableActivityReminders": true,
+       "enableDragAndDropScheduling": true,
+       "enableGroupTasks": true,
+       "enableMultidayEvents": true,
+       "enableRecurringEvents": true,
+       "enableRecurringTasks": true,
+       "enableRollUpActivToContactsAcct": true,
+       "enableSimpleTaskCreateUI": true,
+       "enableUNSTaskDelegatedToNotifications": true,
+       "showHomePageHoverLinksForEvents": true,
+       "showMyTasksHoverLinks": true
+     },
+     "accountIntelligenceSettings": {
+       "enableAutomatedAccountFields": true,
+       "enableAccountLogos": true,
+       "enableNewsStories": true
+     },
+     "accountSettings": {
+       "enableAccountHistoryTracking": true,
+       "enableContactHistoryTracking": true,
+       "showViewHierarchyLink": true
+     },
+     "knowledgeSettings": {
+       "enableKnowledge": true,
+       "enableLightningKnowledge": true,
+       "showValidationStatusField":true
+     }
+   }
+   
+ }

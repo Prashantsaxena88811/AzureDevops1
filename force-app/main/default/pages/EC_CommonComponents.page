@@ -1,0 +1,19 @@
+<!--
+
+  @Page Name     : EC_CommonComponents
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Sai Kiran Pidugu      6/7/2019          Common components
+
+-->
+
+<apex:page docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" cache="false" applyHtmlTag="false">
+    <c:EC_Header />
+    <c:EC_MiniCart />
+    <c:EC_QuickList />
+    <c:EC_Footer />
+    <c:EC_EffectiveSelPicker />
+    <c:EC_QuickOrder />
+</apex:page>

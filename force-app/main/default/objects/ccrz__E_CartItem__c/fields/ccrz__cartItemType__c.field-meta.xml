@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__cartItemType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Defines the type of the line item.  Either Major (main line item), Minor (child line item), or Coupon.</description>
+    <externalId>false</externalId>
+    <label>cart item type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Major</fullName>
+                <default>true</default>
+                <label>Major</label>
+            </value>
+            <value>
+                <fullName>Minor</fullName>
+                <default>false</default>
+                <label>Minor</label>
+            </value>
+            <value>
+                <fullName>Coupon</fullName>
+                <default>false</default>
+                <label>Coupon</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

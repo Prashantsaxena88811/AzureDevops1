@@ -1,0 +1,1041 @@
+@media (min-width: 320px) and (max-width: 767px) {
+  .THIS {
+    margin-top: 23px;
+  }
+  .THIS .noOrders {
+    border-radius: 2px;
+    border: solid 3px #e17000;
+    background-color: #ffffff;
+    padding: 24px 16px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .THIS .noOrders img {
+    width: 72px;
+    height: 72px;
+  }
+  .THIS .noOrders .msg {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .THIS .noOrders .msg .heading {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #005172;
+    margin-top: 12px;
+  }
+  .THIS .noOrders .msg .desc {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4d4f53;
+    margin-top: 8px;
+  }
+  .THIS .heading-wrapper {
+    margin-bottom: 24px;
+  }
+  .THIS .heading-wrapper .heading {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.3px;
+    color: #005172;
+    text-transform: uppercase;
+  }
+  .THIS .purchased-productSection {
+    position: relative;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+    margin-bottom: 16px;
+  }
+  .THIS .purchased-productSection .publishedOn {
+    border-radius: 2px;
+    background-color: rgba(94, 182, 228, 0.1);
+    position: absolute;
+    top: 0;
+    padding: 4px 5px;
+  }
+  .THIS .purchased-productSection .publishedOn label {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: -0.2px;
+  }
+  .THIS .purchased-productSection .product-info {
+    padding: 32px 16px 8px 15px;
+  }
+  .THIS .purchased-productSection .product-info .image {
+    width: 110px;
+    height: 111px;
+    margin: 0 auto;
+  }
+  .THIS .purchased-productSection .product-info .text .productName {
+    display: block;
+  }
+  .THIS .purchased-productSection .product-info .text .productName a {
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #373737;
+  }
+    .THIS .purchased-productSection .product-info .text .mobile-code-description {
+    margin-top: 8px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin-bottom: 14px;
+  }
+  .THIS .purchased-productSection .product-info .text .code-description {
+    margin-top: 8px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin-bottom: 14px;
+  }
+  .THIS .purchased-productSection .product-info .text .mobile-code-description .mobile-description {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0;
+    color: #005172;
+    margin-bottom: 4px;
+  }
+  .THIS .purchased-productSection .product-info .text .mobile-code-description .mobile-line {
+    display: none;
+  }
+  .THIS .purchased-productSection .product-info .text .mobile-code-description .mobile-code {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: .09px;
+    color: #4d4f53;
+  }
+  .THIS .purchased-productSection .product-info .text .mobile-code-description .mobile-code .mobile-value a {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: .09px;
+    color: #4d4f53;
+    font-weight: bold;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button .price-info .dollar {
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: .11px;
+    text-align: right;
+    color: #005172;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button .price-info .cent {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: .27px;
+    color: #005172;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button .price-info .cent span {
+    margin-left: 4px;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button button {
+    width: 100%;
+    height: 36px;
+    border-radius: 2px;
+    border: solid 1px #007ac9;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.34px;
+    text-align: center;
+    color: #007ac9;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button button :hover {
+    font-size: 12px;
+  }
+  .THIS .purchased-productSection .additional-info {
+    background-color: #f7f7f7;
+    padding: 12px 16px 9px 16px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .THIS .purchased-productSection .additional-info .order {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.1px;
+    color: #4d4f53;
+    margin-bottom: 8px;
+  }
+  .THIS .purchased-productSection .additional-info .order label {
+    font-weight: bold;
+    color: #005172;
+  }
+  .THIS .purchased-productSection .additional-info .ship {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.14;
+    letter-spacing: 0;
+    color: #4d4f53;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+  }
+  .THIS .showAll {
+    margin-top: 8px;
+    text-align: center;
+  }
+  .THIS .showAll button {
+    width: 182px;
+  }
+  .THIS .Per-EA {
+  width: 49px;
+  height: 14px;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: .23px;
+  color: #4d4f53;
+  }
+    .THIS .Unit-Price {
+  width: 111px;
+  height: 14px;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: .23px;
+  color: #4d4f53;
+}
+    .THIS .price-info{
+        display:block;
+        margin-bottom: 8px;
+    }
+    .THIS .unit-usd{
+        padding-left: 5px;
+    }
+    /*PBI-139350*/
+    .THIS .contact-distributor-msg {
+        color: #005172;
+        font-family: 'Arial', 'Helvetica', sans-serif;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.29;
+        letter-spacing: 0;
+    }
+}
+@media (min-width: 768px) and (max-width: 1366px) {
+  .THIS {
+    margin-top: 32px;
+    margin-bottom: 40px;
+  }
+  .THIS .noOrders {
+    border-radius: 2px;
+    border: solid 3px #e17000;
+    background-color: #ffffff;
+    padding: 20px 40px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .THIS .noOrders img {
+    width: 72px;
+    height: 72px;
+  }
+  .THIS .noOrders .msg {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 16px;
+  }
+  .THIS .noOrders .msg .heading {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #005172;
+    margin-bottom: 8px;    
+  }
+  .THIS .noOrders .msg .desc {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #4d4f53;
+  }
+  .THIS .heading-wrapper {
+    margin-bottom: 16px;
+  }
+  .THIS .heading-wrapper .heading {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.3px;
+    color: #005172;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .THIS .purchased-productSection {
+    border-radius: 2px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .THIS .purchased-productSection .product-info {
+    padding: 8px 15px 0 8px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .THIS .purchased-productSection .product-info .image {
+    overflow: hidden;
+    position: relative;
+    min-width: 65px;
+    max-width: 65px;
+    height: 66px;
+    margin-top: 24px;
+  }
+  .THIS .purchased-productSection .product-info .image img {
+    width: 100%;
+    height: 100%;
+  }
+  .THIS .purchased-productSection .product-info .text {
+    padding: 36px 17px 4px 8px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 146px;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .THIS .purchased-productSection .product-info .text .productName a {
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #373737;
+    margin-bottom: 8px;
+  }
+  .THIS .purchased-productSection .product-info .text .code-description {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 45px;
+    margin-top: 8px; 
+        
+  }
+  .THIS .purchased-productSection .product-info .text .code-description .code {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: .27px;
+    color: #4d4f53;
+    margin-right: 9px;
+    white-space: nowrap;    
+  }
+  .THIS .purchased-productSection .product-info .text .code-description .code .value a {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: .27px;
+    color: #4d4f53;
+    font-weight: bold;
+  }
+  .THIS .purchased-productSection .product-info .text .code-description .line {
+    height: 17px;
+    border: solid 1px #d9d9d9;
+    width: 1px;
+    margin-right: 9px;
+  }
+  .THIS .purchased-productSection .product-info .text .code-description .description {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: .25px;
+    color: #005172;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    bottom: 72px;
+    width: 100%;
+    padding: .5em;  
+  }
+  .THIS .purchased-productSection .product-info .text .price-button .price-info {
+    -webkit-box-align: baseline;
+    -webkit-align-items: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+        
+  }
+  .THIS .purchased-productSection .product-info .text .price-button .price-info .dollar {
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: .13px;
+    color: #005172;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button .price-info .cent {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: .23px;
+    color: #005172;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button .price-info .cent span {
+    margin-left: 4px;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button button {
+    width: 140px;
+    height: 32px;
+    font-size: 12px;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button button :hover {
+    font-size: 12px;
+  }
+  .THIS .purchased-productSection .additional-info {
+    background-color: #f7f7f7;
+    padding: 17px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;    
+  }
+  .THIS .purchased-productSection .additional-info .order {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #005172;
+  }
+  .THIS .purchased-productSection .additional-info .order a {
+    color: #005172;
+  }
+  .THIS .purchased-productSection .additional-info .ship {
+    max-width: 346px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .THIS .purchased-productSection .additional-info .ship a, .THIS .purchased-productSection .additional-info .ship label {
+    margin-top: 4px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 0;
+    color: #4d4f53;
+  }
+  .THIS .purchased-productSection .publishedOn {
+    border-radius: 2px;
+    background-color: rgba(94, 182, 228, 0.1);
+    position: absolute;
+    top: 0;
+    padding: 4px 5px;
+  }
+  .THIS .purchased-productSection .publishedOn a, .THIS .purchased-productSection .publishedOn label {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: -0.2px;
+    color: #005172;
+  }
+  .THIS .showAll {
+    text-align: center;
+    margin-top: 8px;
+  }
+  .THIS .showAll button {
+    width: 201px;
+  }
+   .THIS .Per-EA {
+  width: 49px;
+  height: 14px;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: .23px;
+  color: #4d4f53;
+}
+    .THIS .Unit-Price {
+  width: 111px;
+  height: 14px;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: .23px;
+  color: #4d4f53;
+}
+    .THIS .price-info{
+        display:block;
+    }
+    .THIS .unit-usd{
+        padding-left: 5px;
+    }
+    .THIS .purchased-productSection .product-info .text .mobile-code-description {
+        display:none;
+    }
+    /*PBI-139350*/
+    .THIS .contact-distributor-msg {
+        color: #005172;
+        font-family: 'Arial', 'Helvetica', sans-serif;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.29;
+        letter-spacing: 0;
+        padding-left: 5em;
+    }  
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .THIS .contact-distributor-msg {
+        font-size: .6em;
+        padding-left: 7em;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1365px) {
+    .THIS .contact-distributor-msg {
+        font-size: .7em;
+        padding-left: 11em;
+    }
+}
+
+@media (min-width: 1366px) {
+  .THIS.home-purchased-wrapper{
+    margin-top: 32px;
+    margin-bottom: 40px;
+  }
+  .THIS .noOrders {
+    border-radius: 2px;
+    border: solid 3px #e17000;
+    background-color: #ffffff;
+    padding: 24px 40px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .THIS .noOrders img {
+    width: 72px;
+    height: 72px;
+  }
+  .THIS .noOrders .msg {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 40px;
+  }
+  .THIS .noOrders .msg .heading {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #005172;
+  }
+  .THIS .noOrders .msg .desc {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #4d4f53;
+  }
+  .THIS .heading-wrapper {
+    margin-bottom: 8px;
+  }
+  .THIS .heading-wrapper .heading {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: .3px;
+    color: #005172;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .THIS .purchased-productSection {
+    border-radius: 2px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .THIS .purchased-productSection .product-info {
+    padding: 1em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: flex-end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+  }
+  .THIS .purchased-productSection .product-info .image {
+    overflow: hidden;
+    position: relative;
+    min-width: 110px;
+    max-width: 110px;
+    height: 110px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .THIS .purchased-productSection .product-info .image img {
+    width: 100%;
+    height: 100%;
+  }
+  .THIS .purchased-productSection .product-info .text {
+    padding: 0 0 8.7px 30px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 146px;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .THIS .purchased-productSection .product-info .text .productName a {
+    font-size: 1.1em;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #373737;
+    margin-bottom: 8px;
+  }
+  .THIS .purchased-productSection .product-info .text .code-description {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  .THIS .purchased-productSection .product-info .text .code-description .code {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: .27px;
+    color: #4d4f53;
+    margin-right: 9px;
+  }
+  .THIS .purchased-productSection .product-info .text .code-description .code .value a {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.27px;
+    color: #4d4f53;
+    font-weight: bold;
+  }
+  .THIS .purchased-productSection .product-info .text .code-description .line {
+    height: 17px;
+    border: solid 1px #d9d9d9;
+    width: 1px;
+    margin-right: 9px;
+  }
+  .THIS .purchased-productSection .product-info .text .code-description .description {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: .25px;
+    color: #005172;
+    padding-bottom: .6em;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button .price-info {
+    -webkit-box-align: baseline;
+    -webkit-align-items: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button .price-info .dollar {
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: .13px;
+    color: #005172;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button .price-info .cent {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: .23px;
+    color: #005172;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button .price-info .cent span {
+    margin-left: 4px;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button button {
+    width: 140px;
+    height: 32px;
+    font-size: 12px;
+  }
+  .THIS .purchased-productSection .product-info .text .price-button button :hover {
+    font-size: 12px;
+  }
+  .THIS .purchased-productSection .additional-info {
+    background-color: #f7f7f7;
+    padding: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .THIS .purchased-productSection .additional-info .order {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #005172;
+  }
+  .THIS .purchased-productSection .additional-info .order a {
+    color: #005172;
+  }
+  .THIS .purchased-productSection .additional-info .ship {
+    max-width: 346px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .THIS .purchased-productSection .additional-info .ship a, .THIS .purchased-productSection .additional-info .ship label {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 0;
+    color: #4d4f53;
+  }
+  .THIS .purchased-productSection .publishedOn {
+    border-radius: 2px;
+    background-color: rgba(94, 182, 228, 0.1);
+    position: absolute;
+    top: 0;
+    padding: 4px 5px;
+  }
+  .THIS .purchased-productSection .publishedOn a, .THIS .purchased-productSection .publishedOn label {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: -0.2px;
+    color: #005172;
+    font-family: 'Arial Narrow', 'Arial', sans-serif;
+  }
+  .THIS .showAll {
+    text-align: center;
+    margin-top: 8px;
+  }
+  .THIS .showAll button {
+    width: 201px;
+  }
+  .THIS .Per-EA {
+  width: 48px;
+  height: 16px;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.27px;
+  color: #4d4f53;
+}
+   .THIS .Unit-Price {
+  width: 111px;
+  height: 14px;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: .23px;
+  color: #4d4f53;
+}
+    .THIS .price-info{
+        display: block;
+    }
+    .THIS .unit-usd{
+        padding-left: 5px;
+    }
+    .THIS .purchased-productSection .product-info .text .mobile-code-description {
+        display: none;
+    }
+    .THIS .purchased-productSection .product-info .text .code-description {
+        flex-flow: wrap;
+    }
+    /*PBI-139350*/
+    .THIS .contact-distributor-msg {
+        color: #005172;
+        font-family: 'Arial', 'Helvetica', sans-serif;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.29;
+        letter-spacing: 0;
+        padding-left: 8em;
+    }
+}
+@media (min-width: 1400px) {
+    .THIS .contact-distributor-msg {
+        padding-left: 1.5em;
+        margin-top: 6em;
+    	  margin-left: -7em;
+    }
+    .THIS .price-button button {
+        margin-top: 5em;
+        margin-left: -5em;
+    }
+}
+@media (min-width: 1440px) {    
+    .THIS .purchased-productSection .product-info .text .code-description .description {
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: .25px;
+        color: #005172;
+    }
+    .THIS .purchased-productSection .product-info .text .productName a {
+        font-size: 1.5em;
+    }
+    /*PBI-139350*/
+    .THIS .contact-distributor-msg {
+        color: #005172;
+        font-family: 'Arial', 'Helvetica', sans-serif;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.29;
+        letter-spacing: 0;
+        padding-left: 10em;
+    }
+}
+
+.THIS .value {
+    white-space: initial;
+}

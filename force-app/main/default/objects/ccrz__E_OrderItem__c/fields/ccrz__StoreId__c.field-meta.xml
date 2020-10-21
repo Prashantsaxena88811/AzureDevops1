@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__StoreId__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The storefront name for this line. This will be the same value as at the order header.</description>
+    <externalId>false</externalId>
+    <label>Store Id</label>
+    <length>128</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

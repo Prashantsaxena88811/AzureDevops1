@@ -1,0 +1,74 @@
+<!--
+
+  @Component Name     : EC_Documents.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Soumick               11/26/2019        Component searches and gives a doc on product description
+
+--> 
+
+<aura:component controller="EC_GlobalSearchController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute type="List" name="sdsDocsList" />
+     <aura:attribute name="DocCount" type="String"/>
+    <aura:attribute name="SearchText" type="String"/>
+    <aura:attribute name="currentTab" type="Boolean" default="false"/>
+    <aura:attribute name="emptyDocumentsWrapper" type="Boolean" default="false"/>
+	
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:registerEvent name="setAttribute" type="c:setAttributeEvent"/>
+    
+    <div class="sds-container">
+        
+        <aura:if isTrue="{!not(v.emptyDocumentsWrapper)}">
+            <div class="documents">
+                <aura:iteration items="{!v.sdsDocsList}" var="item" indexVar="index">
+                    <div class="total-documents">
+                        <div class="document-section-name slds-m-bottom_large">
+                            {!item.prodName}
+                        </div>
+                        <div class="slds-grid slds-wrap">
+                            <aura:iteration items="{!item.lstGroupedSDSBean}" var="itemDoc" indexVar="index">
+                                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_3-of-12 slds-m-bottom_medium">
+                                    <div class="doc-info" onclick="{!c.docLink}" data-order="{!itemDoc.sdsDocLink}">
+                                        <span class="doc-name">{!itemDoc.prodName}</span>
+                                        <span class="doc-url slds-float_right">
+                                            <i class="material-icons">
+                                                open_in_new
+                                            </i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </aura:iteration>
+                        </div>
+                        <div class="sort-pagination slds-hide">
+                            <span class="wrapper"><i class="material-icons icon">keyboard_arrow_left</i>
+                                <span class="box">1</span>
+                                <i class="material-icons icon">keyboard_arrow_right</i>
+                            </span>
+                        </div>
+                    </div>
+                </aura:iteration>
+            </div>
+            <aura:set attribute="else">
+                <div class="sds-documents-wrapper slds-hide" aura:id="sdsDocumentsWrapper">
+                    <div class="no-documents">
+                        <div class="image slds-m-top_x-large">
+                            <i class="material-icons">
+                                info_outline
+                            </i>
+                        </div>
+                        <div class="search-result slds-m-top_large slds-p-bottom_xx-large">
+                            <span>{!$Label.c.EC_SearchEmpty}</span><span class="searchedValue slds-p-horizontal_xx-small">'{!v.SearchText}'</span> <span>{!$Label.c.EC_documentsNotMatched}</span>
+                            <div>{!$Label.c.EC_SelectAnotherCategory}</div>
+                        </div>
+                    </div>
+                </div>
+            </aura:set>
+        </aura:if>
+        
+        
+    </div>
+</aura:component>

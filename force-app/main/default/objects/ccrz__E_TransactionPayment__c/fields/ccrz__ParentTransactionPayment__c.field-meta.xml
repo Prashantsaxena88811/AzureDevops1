@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__ParentTransactionPayment__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>If a transaction payment is made against multiple items, e.g. multiple-invoices, a parent transaction payment may be used to store the core payment data but have child payments that then are used to track individual payment amounts against each individual item.</description>
+    <externalId>false</externalId>
+    <label>Parent Transaction Payment</label>
+    <referenceTo>ccrz__E_TransactionPayment__c</referenceTo>
+    <relationshipLabel>CC Transaction Payments</relationshipLabel>
+    <relationshipName>ChildTransactionPayments</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

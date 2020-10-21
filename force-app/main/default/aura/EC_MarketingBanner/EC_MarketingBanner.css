@@ -1,0 +1,144 @@
+@media (min-width: 320px) and (max-width: 767px) {
+  .THIS {
+    width: 100vw;
+    height: 318px;
+    background-color: #d8d8d8;
+    position: relative;
+  }
+  .THIS .Rectangle {
+    width: 278px;
+    height: 210px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 24px;
+    left: 21px;
+    padding: 16px;
+    padding-bottom: 24px;
+  }
+  .THIS.banner_container .Marketing_content_he {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.3px;
+    color: #005172;
+    width: 55.284552845528455%;
+    margin-bottom: 16px;
+  }
+  .THIS.banner_container .bottom {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #4d4f53;
+  }
+
+  .THIS.banner_container
+    {
+      background-image: url("/resource/EC_Branding_Theme/images/collage_mobile.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+}
+@media (min-width: 768px) and (max-width: 1365px){
+
+
+  .THIS.banner_container .Rectangle {
+    padding: 17px 15px 16px 16px;
+    position: absolute;
+    background-color: #ffffff;
+    top: 112px;
+    left: 32px;
+    right: 1246px;
+    bottom: 1276px;
+    width: 458px;
+    height: 122px;
+  }
+
+  .THIS.banner_container .Rectangle .Marketing_content_he {
+    width: 273px;
+
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.26px;
+    color: #005172;
+  }
+  .THIS.banner_container .Rectangle .bottom {
+    width: 427px;
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: #4d4f53;
+  }
+
+    .THIS.banner_container
+    {
+      background-image: url("/resource/EC_Branding_Theme/images/collage_tab.png");
+      height: 172px;
+      min-height: 172px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+}
+
+@media (min-width: 1366px) {
+  .THIS .marketing_banner {
+    width: 100vw;
+    height: 172px;
+    object-fit: cover;
+  }
+
+  .THIS.banner_container .Rectangle {
+    padding: 24px;
+    position: absolute;
+    background-color: #ffffff;
+    top: 122px;
+    left: 40px;
+    right: 1246px;
+    bottom: 1276px;
+    width: 634px;
+    height: 120px;
+  }
+
+  .THIS.banner_container .Rectangle .Marketing_content_he {
+    width: 273px;
+    height: 34px;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.3px;
+    color: #005172;
+  }
+  .THIS.banner_container .Rectangle .bottom {
+    width: 586px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #4d4f53;
+  }
+
+    .THIS.banner_container
+    {
+      background-image: url("/resource/EC_Branding_Theme/images/collage_1920.png");
+      height: 172px;
+      min-height: 172px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+}

@@ -1,0 +1,337 @@
+<apex:component controller="EC_CheckoutController">
+  
+    <script id="EC-UserInfo-Desktop" type="text/template">
+        <div class="top-back-to">
+            <span class="processBack fwb"><i class="material-icons keyboard_arrow_left"></i>{{pageLabelMap 'EC_BackToCart'}}</span>
+        </div>
+        <div class="panel panel-default infopanel cc_panel cc_checkout_user_info">
+            <div class="panel-heading cc_heading headingborder">
+                <h3 class="panel-title cc_title">{{pageLabelMap 'CheckOut_ContactInformation'}}</h3>
+            </div>
+            <div class="panel-body cc_body">
+                
+                    <div class="main-messagingSection-Error" style="display: none"></div>
+                    <div class="col-md-3 col-xs-3">
+                        <p class="cc_contact_input_firstname_label">{{pageLabelMap 'EC_Name'}}</p>
+                        <p class="infoval">{{this.buyerFirstName}} {{this.buyerLastName}}<p>
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="lastNameField" class="cc_contact_input_lastname_label">{{pageLabelMap 'CheckOut_LastName'}}</label>
+                        <input id="lastNameField" type="text" class="form-control contactInput cc_contact_input_lastname" name="buyerLastName" maxlength=40
+                            value="{{this.buyerLastName}}" />
+                    </div> -->
+                    <div class="col-md-3 col-xs-3">
+                        <p class="cc_contact_input_firstname_label">{{pageLabelMap 'EC_EmailID'}}</p>
+                        <p class="infoval">{{this.buyerEmail}}</p>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <p class="cc_contact_input_firstname_label">{{pageLabelMap 'EC_PhoneNo'}}</p>
+                        <p class="infoval">{{this.buyerPhone}}</p>
+                    </div>
+            </div>  
+        </div>
+        <div class="clearfix">
+            <div class="shipadd">
+                <div class="panel panel-default billcont infopanel  midborder">
+                    <div class="panel-heading headingborder">
+                        <h3 class="panel-title">{{pageLabelMap 'EC_ShippingAddress'}}</h3>
+                    </div>
+                    <div class="panel-body">                   
+                        <div class="cc_address_entry_billing addbody">
+                            {{> addressEntry this.shippingAddress}}
+                        </div>
+                    </div>  
+                </div>
+            </div> 
+            <div class="billadd">
+                <div class="panel panel-default billcont infopanel ">
+                    <div class="panel-heading headingborder">
+                        <h3 class="panel-title">{{pageLabelMap 'EC_BillingAddress'}}</h3>
+                    </div>
+                    <div class="panel-body">                   
+                        <div class="cc_address_entry_shipping addbody">
+                            {{> addressEntry this.billingAddress}}
+                        </div>
+                    </div>  
+                </div>                
+            </div>
+        </div>
+        <!--{{#if this.requestedDateStr}}-->
+            <div class="panel panel-default cc_panel cc_checkout_review or-detail">
+                <div class="panel-heading headingborder cc_heading">
+                    <h3 class="panel-title cc_title">{{pageLabelMap 'Checkout_RequestedDeliveryDt'}}</h3>
+                </div>
+                <div class="panel-body cc_body">
+                    <p class="cc_shipping_delivery_section">     
+                        <p class="infoval">{{pageLabelMap 'EC_RequestedDeliveryDate'}}</p>                                   
+                        <!--<span class="cc_shipping_delivery_date">{{this.requestedDateStr}}</span>-->
+                        <form id="reqForm" class="reqForm" novalidate="novalidate">
+                            <input  id="requestedDateStr"  name = "requestedDateStr" data-provide="datepicker" data-date-week-start="1" data-date-start-date = "+0d" data-date-days-of-week-disabled="0,6" class="reqdate" data-date-format="mm/dd/yyyy"/><button type="button" class="btn calbtn"><img src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/calendar.svg')}"
+                        </form>
+                    class=""></img></button>
+                    </p>                                       
+                </div>
+             </div>
+             
+             <div class="panel panel-default cc_panel cc_checkout_review or-detail">
+                <div class="panel-heading headingborder cc_heading">
+                    <h3 class="panel-title cc_title">{{pageLabelMap 'EC_PaymentMethod'}}</h3>
+                </div>
+                <div class="panel-body cc_body">
+                    <div>                                        
+                        <p class="infoval">{{pageLabelMap 'EC_SelectPayment'}}</p>
+                        <div>
+                            <button id="poShow" type="button" class="ec-btn-secondary uppercasetrans">{{pageLabelMap 'EC_PONumber'}}</button>
+                        </div>
+                        <div class="poDetails">
+                            <label class="poLabel" for="po" >{{pageLabelMap 'EC_EnterPO'}}</label>
+                            <input id="po" type="number"  class="form-control poInp" name="poNum" size="10" max="9999999999" min="0000000000"
+                                placeholder="XXXXXXXXXX" />
+                        </div>
+                        <div>
+                            <button type="button" class="ec-btn-secondary uppercasetrans credbtn">{{pageLabelMap 'EC_CreditCard'}}</button>
+                        </div>
+                    </div>                                      
+                </div>
+             </div>
+             
+        <!--{{/if}}-->                   
+        <!--<div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Address</h3>
+            </div>
+            <div class="panel-body">                   
+                <div class="cc_address_entry_billing">
+                    {{> addressEntry this.billingAddress}}
+                </div>
+                <div class="cc_address_entry_shipping">
+                    {{> addressEntry this.shippingAddress}}
+                </div>
+                {{#ifDisplay 'Dspl.CCEmail'}}
+                    <form id="ccEmailForm" class="cc_ccemail_new">
+                        <div class="ccemail-messagingSection-Error" style="display: none"></div>
+                        <h3 class="cc_ccemail_title">{{pageLabelMap 'CheckOut_ccEmailAddress'}}</h3>
+                        <p class="cc_ccemail_helptext">{{{pageLabelMap 'CheckOut_ccEmailAddressHelpText'}}}</p>
+                        <div class="form-group">
+                            <label for="ccEmailAddress" class="cc_contact_input_cc_email_label">{{pageLabelMap 'CheckOut_ccEmailAddress'}}</label>
+                            <input id="ccEmailAddress" type="text" class="form-control contactInput ccemail cc_contact_input_cc_email" name="ccEmailAddresses"
+                                maxlength=80 value="{{this.ccEmailAddresses}}" />
+                        </div>
+                    </form>
+                {{/ifDisplay}}-->
+               <!-- <form class="userInformation cc_user_information"> -->
+                   <!-- <p class="cc_user_information_helptext">{{{pageLabelMap 'Required_Fields'}}}</p> -->
+                    <div class="link_button cc_link_button">
+                        <div  class="pull-left backtocart btn-sm processBack cc_process_back" ><i class="material-icons keyboard_arrow_left"></i><span class="backtext">{{pageLabelMap 'EC_BackToCart'}}</span></div>
+                        <button class="btn btn-default uppercasetrans reviewbtn ec-btn-primary pull-right btn-sm go-to-order-review cc_process_user_info" type="button" 
+                             >REVIEW ORDER</button>
+                    </div>
+              <!--  </form> -->
+            </div>
+        </div>
+    </script>
+    <script id="EC_UserInfo-AddressEdit-Desktop" type="text/template">
+        <form id="{{classPrefix}}AddressForm" class="addressForm">
+            <div class="{{classPrefix}}-messagingSection-Error" style="display: none"></div>
+            {{#ifEquals classPrefix 'shipping'}}
+            <div class="shipid">{{pageLabelMap "EC_ShipID"}}<span class="fwb">{{this.ECAccountNumber}}</span></div>
+                {{else}}
+                <div class="shipid">{{pageLabelMap "EC_EcolabAccNo"}}<span class="fwb">{{this.ECAccountNumber}}</span></div>
+            {{/ifEquals}}
+            <!--<h3 class="cc_section_title">{{pageLabelMap sectionLabel}}</h3> 
+            {{#ifEquals classPrefix 'shipping'}}
+             <a class="copyAddress cc_copy_address">{{pageLabelMap 'Checkout_UseBillingAddress'}}</a>
+            {{/ifEquals}}
+            <p class="change_address cc_change_address">
+             <a href="#modal_{{classPrefix}}" data-toggle="modal" class="cc_change_address_modal">{{pageLabelMap 'UserInfo_AddressBook'}}</a>
+            </p> -->
+            <!-- {{#ifDisplay 'SO.DsplAddrName'}}
+             <div class="form-group">
+              <label for="firstName">{{pageLabelMap 'CheckOut_FirstName'}}</label>
+              <input id="firstName" type="text" class="form-control {{classPrefix}}firstNameField {{classPrefix}}Field cc_contact_input_firstname" name="{{classPrefix}}Address.firstName" maxlength=100 value="{{this.firstName}}" />
+             </div>
+             <div class="form-group">
+              <label for="lasttName">{{pageLabelMap 'CheckOut_LastName'}}</label>
+              <input id="lastName" type="text" class="form-control {{classPrefix}}lastNameField {{classPrefix}}Field cc_contact_input_lastname" name="{{classPrefix}}Address.lastName" maxlength=100 value="{{this.lastName}}" />
+             </div>
+            {{/ifDisplay}} 
+            {{#ifDisplay 'SO.DsplAddrCompany'}}
+             <div class="form-group">
+              <label for="companyName">{{pageLabelMap 'Profile_CompanyName'}}</label>
+              <input id="companyName" type="text" class="form-control {{classPrefix}}companyField {{classPrefix}}Field cc_contact_input_company" name="{{classPrefix}}Address.companyName" maxlength=100 value="{{this.companyName}}" />
+             </div>
+            {{/ifDisplay}} -->
+            <input type="hidden" class="{{classPrefix}}acctIdField {{classPrefix}}Field" name="{{classPrefix}}Address.partnerId" maxlength=100
+                value="{{this.partnerId}}" />
+            <div class="form-group addcontainer row">
+                <div class="col-md-6 col-xs-6">
+                    <div class="addsec">{{this.address1}}</div>
+                    <div class="addsec">{{this.address2}}</div>
+                    <div class="addsec">{{this.address3}}</div>
+                   <!-- <div class="addsec">{{this.country}}</div> -->
+                    <div class="addsec">{{this.state}}</div>
+                    <div class="addsec">{{this.city}}</div>
+                    <div class="addsec">{{this.postalCode}}</div>
+                </div>
+               <!-- {{#ifEquals classPrefix 'shipping'}}
+                    <div class="editdiv col-md-6 col-xs-6">
+                    </div>
+                {{/ifEquals}} -->
+            </div>
+            <!--<div class="form-group">
+             <label for="country">{{pageLabelMap 'CheckOut_Country'}}</label>
+             {{{selectGeo 'country' this.countryList this.countryCode 'countryListing form-control' this.classPrefix}}}
+            </div>
+            <div class="form-group">
+             <label for="state">{{pageLabelMap 'CheckOut_State'}}</label>
+             <div class="stateSection cc_state_section"></div>
+            </div>
+            <div class="form-group">
+             <label for="city">{{pageLabelMap 'CheckOut_City'}}</label>
+             <input id="city" type="text" class="form-control {{classPrefix}}City {{classPrefix}}Field cc_contact_input_city" name="{{classPrefix}}Address.city" maxlength=255 value="{{this.city}}" />
+            </div>
+            <div class="form-group">
+             <label for="postalCode">{{pageLabelMap 'CheckOut_PostalCode'}}</label>
+             <input id="postalCode" type="text" class="form-control {{classPrefix}}PostalCode {{classPrefix}}Field cc_contact_input_postal_code" name="{{classPrefix}}Address.postalCode" value="{{this.postalCode}}" maxlength=10/>
+            </div> -->
+           {{#ifEquals classPrefix 'shipping'}}
+                  {{#ifEquals '{!isSalesRep}' 'true' }}
+                <div>
+                    <p>{{pageLabelMap 'EC_AttentionTo'}}</p>
+                    <input id="attention" type="text" class="form-control additionalinfo" />
+                </div>
+            {{/ifEquals}} 
+                   {{/ifEquals}}
+        </form>
+        <div id="modal_{{classPrefix}}" class="modal fade cc_address_book_modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog cc_modal-dialg" role="document">
+                <div class="modal-content cc_modal-content">
+                    <div class="modal-header cc_modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#215;</span></button>
+                        <h4 class="modal-title cc_title">{{pageLabelMap 'UserInfo_AddressBookModal'}}</h4>
+                    </div>
+                    <div class="modal-body cc_modal-body">
+                        {{#each this.addressList}}
+                            <div class="row cc_billing_shipping_info">
+                                <div class="col-md-6 cc_personal_info">
+                                    {{> addressDisplay}}
+                                </div>
+                                <div class="col-md-6 cc_select">
+                                    <input type="button" value="{{pageLabelMap 'UserInfo_selectAddress'}}" class="btn btn-default btn-sm {{../classPrefix}}Field selectAddress cc_select_address"
+                                        data-id="{{this.sfid}}" />
+                                </div>
+                            </div>
+                            <hr>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/javascript">
+        jQuery(function($){
+        
+            $('.reqdate').datepicker({
+                minDate: new Date(),
+                beforeShowDay:highlightDays
+            });
+             function highlightDays(date) {
+                 var date = new Date();
+                 var startDate =date.getDate()+"-"+date.getMonth()+"-"+date.getFullYear()  ;
+                 var noOfDaysToAdd=CCRZ.cartCheckoutModel.attributes.ECDeliveryLeadTime;
+                 startDate = new Date(startDate.replace(/-/g, "/"));
+                 var endDate = "", count = 0;
+                 while(count < noOfDaysToAdd){
+                    endDate = new Date(startDate.setDate(startDate.getDate() + 1));
+                    if(endDate.getDay() != 0 && endDate.getDay() != 6){
+                       count++;
+                    }
+                    console.log(endDate);
+                    ('.reqdate').attr("class","delLead reqdate");
+                    return{
+                        classes:'delLead'
+                    };
+                 }
+             }
+            
+            CCRZ.uiProperties.UserInfoView.desktop.tmpl = 'EC-UserInfo-Desktop';
+            CCRZ.uiProperties.UserInfoView.partial.addressEntry = '#EC_UserInfo-AddressEdit-Desktop';
+            
+            var isUserInfoViewNotRefreshed = true;
+            CCRZ.pubSub.on("view:AddressListing:refresh", function (viewInstance) {
+                
+                var date = new Date();
+                var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+                $('.reqdate').datepicker({
+                    minDate: new Date()
+                });
+                if (isUserInfoViewNotRefreshed) {
+                    isUserInfoViewNotRefreshed = false;
+                    setUserInfoData(CCRZ.models.CartCheckout.prototype, CCRZ.views.UserInfoView.prototype, viewInstance);
+                    viewInstance.setElement(viewInstance.$el);
+                }        
+            }); 
+            
+            CCRZ.pubSub.on("view:cartCheckoutView:refresh", function (viewInstance) {
+                $('.dow').text($('.dow').text().charAt(0));
+                $('.reqdate').datepicker({
+                    minDate: new Date(),
+                    beforeShowDay:highlightDays
+                });
+                 function highlightDays(date) {
+                     var date = new Date();
+                     var startDate =date.getDate()+"-"+date.getMonth()+"-"+date.getFullYear()  ;
+                     var noOfDaysToAdd=CCRZ.cartCheckoutModel.attributes.ECDeliveryLeadTime;
+                     startDate = new Date(startDate.replace(/-/g, "/"));
+                     var endDate = "", count = 0;
+                     while(count < noOfDaysToAdd){
+                        endDate = new Date(startDate.setDate(startDate.getDate() + 1));
+                        if(endDate.getDay() != 0 && endDate.getDay() != 6){
+                           count++;
+                        }
+                        console.log(endDate);
+                        ('.reqdate').attr("class","delLead reqdate");
+                        return{
+                            classes:'delLead'
+                        };
+                     }
+                 }
+                
+                
+            });
+            
+            var setUserInfoData = function (modelData, userInfoView, thisView) { 
+                $(window).scrollTop(0);
+                $('.poDetails').hide();
+                var events = userInfoView.events; 
+                events["click .go-to-order-review"] = "goToOrderReview";
+                events["keypress #po"]= "poLen";
+                events["click #poShow"]="showPoDiv";
+                thisView.setElement(thisView.$el); 
+                userInfoView.goToOrderReview= function (event) {
+                     var formData = form2js('reqForm', '.', false, function(node) {}, false);
+                    
+                      CCRZ.cartCheckoutModel.set(formData);
+                      CCRZ.cartCheckoutView.goToPosition(2);                  
+                }; 
+                userInfoView.poLen= function (event) {
+                    if($('#po').val().length>=$('#po').attr('size')){ 
+                        return false; 
+                    }                  
+                }; 
+                userInfoView.showPoDiv= function (event) {
+                    $('.poDetails').toggle();  
+                    if($('#poShow').html()=="PO NUMBER"){                    
+                         $('#poShow').html("<i class="+"material-icons"+">done</i><span class="+"pospan"+">PO NUMBER</span>"); 
+                    }
+                    else{
+                         $('#poShow').html("PO NUMBER");  
+                    }     
+                };
+            }
+            
+             
+            
+        });
+      </script>
+</apex:component>

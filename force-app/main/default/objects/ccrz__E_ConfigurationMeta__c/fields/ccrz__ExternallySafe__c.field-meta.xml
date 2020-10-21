@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__ExternallySafe__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Is this configuration safe to be exported outside of B2B Commerce.
+For example, a configuration to hide/display the cart amount in the header would be ExternallySafe = true. A configuration storing a connection string to an external system would be ExternallySafe = false.</description>
+    <externalId>false</externalId>
+    <label>Externally Safe</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__ContentBody__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The HTML for this particular E_Content object</description>
+    <externalId>false</externalId>
+    <label>Content Body</label>
+    <length>32000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>30</visibleLines>
+</CustomField>

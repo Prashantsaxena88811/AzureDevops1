@@ -1,0 +1,207 @@
+<!--
+
+  @Component Name     : EC_Footer
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Sai Kiran Pidugu     6/07/2019         Component for footer.
+
+-->
+
+<apex:component >
+    <script id="foot_desktop" type="text/template">
+    <!-- popup section above footer-->
+        <div class="cookie-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-11 fwb fz-14">{{pageLabelMap 'EC_Cookie_Popup'}}</div>
+                    <div class="col-xs-1 text-right fz-18">
+                        <span class="ec-cross-icon"><img src="{!$Resource.EC_EcoLabs_Theme+'/images/outline-close.png'}" alt="close"/></span>
+                    </div>
+                </div>
+        	</div>
+        </div>
+    <!-- Footer Top Begin -->
+   
+        <div class="row footer-top-row">
+            <div class="container">
+                <div class="col-lg-5 ec-hide-tab">
+                    <div class="footer-top-heading footer-heading-about">
+                        <span>{{pageLabelMap 'EC_ABOUTECOLAB'}}</span>
+                    </div>
+                    <div class="footer-top-description footer-desc-about">
+                        <span>{{pageLabelMap 'EC_ABOUTECOLABDESC'}}</span>
+                    </div>
+                </div>
+                <div class="col-lg-offset-1 col-lg-3 ec-hide-tab">
+                    <div class="footer-top-heading footer-connect-heading">
+                        <span class="font-family-interstate">{{pageLabelMap 'EC_CONNECT'}}</span>
+                    </div>
+                    <div>
+                        <a href="{{pageLabelMap 'EC_FBURL'}}" target="_blank" rel="noopener">
+                            <div id="facebook-image" class="contact-image"></div>
+                        </a>
+                        <a href="{{pageLabelMap 'EC_INSTAURL'}}" target="_blank" rel="noopener">
+                            <div id="instagram-image" class="contact-image"></div>
+                        </a>
+                        <a href="{{pageLabelMap 'EC_LINKEDINURL'}}" target="_blank" rel="noopener">
+                            <div id="linkedin-image" class="contact-image"></div>
+                        </a>
+                        <a href="{{pageLabelMap 'EC_TWITTERURL'}}" target="_blank" rel="noopener">
+                            <div id="twitter-image" class="contact-image"></div>
+                        </a>
+                        <a href="{{pageLabelMap 'EC_YOUTUBEURL'}}" target="_blank" rel="noopener">
+                            <div id="youtube-image" class="contact-image"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 ec-hide-tab">
+                    <div class="footer-top-heading font-family footer-visit">
+                        <span class="font-family-interstate">{{pageLabelMap 'EC_VISIT'}}</span>
+                    </div>
+                    <div>                      
+                            <a href="{{pageLabelMap 'EC_ECOLABDOTCOMURL'}}" target="_blank" rel="noopener">
+                                <span class="footer-top-anchor footer-top-anchor-style">{{pageLabelMap 'EC_ECOLABDOTCOM'}}</span>
+                                <i class="material-icons outline-launch-icon-grey">launch</i>
+                            </a>  
+                    </div>
+                </div>
+                
+                
+                <div class="col-sm-4 ec-show-tab">
+                    <div class="footer-top-heading footer-heading-about">
+                        <span class="ec-label-tab">{{pageLabelMap 'EC_ABOUTECOLAB'}}</span>
+                    </div>
+                    <div class="footer-top-description footer-desc-about">
+                        <span>{{pageLabelMap 'EC_ABOUTECOLABDESC'}}</span>
+                    </div>
+                </div>
+                <div class="col-sm-offset-1 col-sm-3 ec-show-tab">
+                    <div class="footer-top-heading footer-connect-heading">
+                        <span class="font-family-interstate ec-label-tab">{{pageLabelMap 'EC_CONNECT'}}</span>
+                    </div>
+                    <div>
+                        <div class="row ec-padding-tab">
+                            <div class="col-sm-12">
+                            <a href="{{pageLabelMap 'EC_FBURL'}}" target="_blank" rel="noopener">
+                                <div id="facebook-image" class="contact-image"></div>
+                            </a>
+                            <a href="{{pageLabelMap 'EC_INSTAURL'}}" target="_blank" rel="noopener">
+                                <div id="instagram-image" class="contact-image"></div>
+                            </a>
+                            <a href="{{pageLabelMap 'EC_LINKEDINURL'}}" target="_blank" rel="noopener">
+                                <div id="linkedin-image" class="contact-image"></div>
+                            </a>
+                            </div>
+                        </div>  
+                        <div class="row">
+                            <div class="col-sm-12">
+                             <a href="{{pageLabelMap 'EC_TWITTERURL'}}" target="_blank" rel="noopener">
+                                <div id="twitter-image" class="contact-image"></div>
+                            </a>
+                            <a href="{{pageLabelMap 'EC_YOUTUBEURL'}}" target="_blank" rel="noopener">
+                                <div id="youtube-image" class="contact-image"></div>
+                            </a>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <div class="col-sm-offset-1 col-sm-3 ec-show-tab">
+                    <div class="footer-top-heading font-family footer-visit">
+                        <span class="font-family-interstate ec-label-tab">{{pageLabelMap 'EC_VISIT'}}</span>
+                    </div>
+                    <div>                      
+                            <a href="{{pageLabelMap 'EC_ECOLABDOTCOMURL'}}" target="_blank" rel="noopener">
+                                <span class="footer-top-anchor footer-top-anchor-style">{{pageLabelMap 'EC_ECOLABDOTCOM'}}</span>
+                                <i class="material-icons outline-launch-icon-grey">launch</i>
+                            </a>  
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <!-- Footer Top End -->
+        
+        <div class="row footer-middle-row"></div>
+        
+        <!-- Footer Bottom Begin -->
+        
+        <div class="row footer-bottom-row">
+            <div class="container">
+                <div class="col-lg-6 ec-hide-tab">
+                    <div class="footer-bottom-description">
+                        <span>{{pageLabelMap 'EC_ECOLABRIGHTS'}}</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 ec-hide-tab">
+                    <div class="pull-right">                      
+                            <a href="{{pageLabelMap 'EC_SDSURL'}}" target="_blank" rel="noopener" class="pad-one floatbottom">
+                                <span class="footer-bottom-anchor">{{pageLabelMap 'EC_SDS'}}</span>
+                                <i class="material-icons outline-launch-icon-white">launch</i>
+                            </a>
+                            <span class="footer-bottom-seperator with-seperator">|</span>
+                            <span class="footer-bottom-seperator without-seperator"></span>
+                            <a href="{{pageLabelMap 'EC_TERMSURL'}}" target="_blank" rel="noopener" class="floatbottom">
+                                <span class="footer-bottom-anchor">{{pageLabelMap 'EC_TERMS'}}</span>
+                                <i class="material-icons outline-launch-icon-white">launch</i>
+                            </a>
+                            <span class="footer-bottom-seperator with-seperator">|</span>
+                            <span class="footer-bottom-seperator without-seperator"></span>
+                            <a href="{{pageLabelMap 'EC_PRIVACYURL'}}" target="_blank" rel="noopener" class="floatbottom">
+                                <span class="footer-bottom-anchor">{{pageLabelMap 'EC_PRIVACY'}}</span>
+                                <i class="material-icons outline-launch-icon-white">launch</i>
+                            </a>  
+                    </div>
+                </div>
+                
+                <div class="col-sm-4 ec-show-tab">
+                    <div class="footer-bottom-description">
+                        <span class="ec-footer-bottom-fonts">{{pageLabelMap 'EC_ECOLABRIGHTS'}}</span>
+                    </div>
+                </div>
+                <div class="col-sm-8 ec-show-tab">
+                    <div class="pull-right">                      
+                            <a href="{{pageLabelMap 'EC_SDSURL'}}" target="_blank" rel="noopener" class="pad-one">
+                                <span class="footer-bottom-anchor ec-footer-bottom-fonts">SDS Documents</span>
+                                <i class="material-icons outline-launch-icon-white">launch</i>
+                            </a>
+                            <span class="footer-bottom-seperator with-seperator">|</span>
+                            <span class="footer-bottom-seperator without-seperator"></span>
+                            <a href="{{pageLabelMap 'EC_TERMSURL'}}" target="_blank" rel="noopener">
+                                <span class="footer-bottom-anchor ec-footer-bottom-fonts">{{pageLabelMap 'EC_TERMS'}}</span>
+                                <i class="material-icons outline-launch-icon-white">launch</i>
+                            </a>
+                            <span class="footer-bottom-seperator with-seperator">|</span>
+                            <span class="footer-bottom-seperator without-seperator"></span>
+                            <a href="{{pageLabelMap 'EC_PRIVACYURL'}}" target="_blank" rel="noopener">
+                                <span class="footer-bottom-anchor ec-footer-bottom-fonts">{{pageLabelMap 'EC_PRIVACY'}}</span>
+                                <i class="material-icons outline-launch-icon-white">launch</i>
+                            </a>  
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Footer Bottom End -->
+    </script>
+
+    
+    <script type="text/javascript">
+    	jQuery(function($){ 
+            CCRZ.pubSub.on('view:footView:refresh', function (viewInstance) {
+                // function for cookie message
+                if(sessionStorage.getItem(1) == "false"){
+                   $(".cookie-wrapper").hide(); 
+                }
+                $(".ec-cross-icon").on("click", function(){               
+                    $(".cookie-wrapper").hide();  
+                    sessionStorage.setItem(1,"false");
+                });
+            });
+        });
+    	
+    </script>
+</apex:component>

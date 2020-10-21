@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__BuildTimestamp__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Build Timestamp provides a way to timestamp caches that are built as part of the same process.  Caches are typically built using a batch job and the Build Timestamp provides a way to note those caches built around the same time.  For all caches built as part of the same job the Build Timestamp should be the same.</description>
+    <externalId>false</externalId>
+    <label>Build Timestamp</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

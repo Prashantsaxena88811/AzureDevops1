@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__ProductGroup__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Maps this component to a related product grouping.  This is primarily utilized in the case of dynamic kits, where the composite products are grouped together into separate steps or sections.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Maps this component to a related product grouping.  This is primarily utilized in the case of dynamic kits, where the composite products are grouped together into separate steps or sections.</inlineHelpText>
+    <label>Product Group</label>
+    <referenceTo>ccrz__E_RelatedProductGroup__c</referenceTo>
+    <relationshipLabel>CC Composite Products</relationshipLabel>
+    <relationshipName>CC_Composite_Products</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

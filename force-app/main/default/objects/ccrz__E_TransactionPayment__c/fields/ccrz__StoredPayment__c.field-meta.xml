@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__StoredPayment__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>References the original stored payment, if there is one</description>
+    <externalId>false</externalId>
+    <label>Stored Payment</label>
+    <referenceTo>ccrz__E_StoredPayment__c</referenceTo>
+    <relationshipLabel>CC Transaction Payments</relationshipLabel>
+    <relationshipName>CC_Transaction_Payments</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

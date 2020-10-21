@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__PricingType__c</fullName>
+    <defaultValue>&quot;auto&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Defines how B2B Commerce internally handles the pricing for this cart/order item. If &apos;external&apos; then B2B Commerce pricing will not apply to the cart item (see further documentation for exact rules).</description>
+    <externalId>false</externalId>
+    <label>Pricing Type</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recently_Created</fullName>
+    <columns>NAME</columns>
+    <columns>EC_BuyerCookie__c</columns>
+    <columns>EC_EncryptedCartId__c</columns>
+    <columns>EC_From_Domain__c</columns>
+    <columns>EC_From_Identity__c</columns>
+    <columns>EC_Sender_Domain__c</columns>
+    <columns>EC_Sender_Identity__c</columns>
+    <columns>EC_SenderUserAgent__c</columns>
+    <columns>EC_To_Domain__c</columns>
+    <columns>EC_To_Identity__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Recently Created</label>
+    <language>en_US</language>
+</ListView>

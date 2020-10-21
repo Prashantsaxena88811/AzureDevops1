@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__RuleType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Rule Type</description>
+    <externalId>false</externalId>
+    <label>Rule Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SteppedHistory</fullName>
+                <default>false</default>
+                <label>SteppedHistory</label>
+            </value>
+            <value>
+                <fullName>Combination</fullName>
+                <default>false</default>
+                <label>Combination</label>
+            </value>
+            <value>
+                <fullName>CartTotal</fullName>
+                <default>false</default>
+                <label>CartTotal</label>
+            </value>
+            <value>
+                <fullName>General</fullName>
+                <default>false</default>
+                <label>General</label>
+            </value>
+            <value>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+                <label>Shipping</label>
+            </value>
+            <value>
+                <fullName>TieredHistory</fullName>
+                <default>false</default>
+                <label>TieredHistory</label>
+            </value>
+            <value>
+                <fullName>Stepped</fullName>
+                <default>false</default>
+                <label>Stepped</label>
+            </value>
+            <value>
+                <fullName>Tiered</fullName>
+                <default>false</default>
+                <label>Tiered</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

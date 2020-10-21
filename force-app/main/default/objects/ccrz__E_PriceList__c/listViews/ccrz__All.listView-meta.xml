@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__All</fullName>
+    <columns>NAME</columns>
+    <columns>ccrz__Desc__c</columns>
+    <columns>ccrz__CustomerTypeCode__c</columns>
+    <columns>ccrz__PricelistId__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>PA</value>
+    </filters>
+    <label>CAD</label>
+</ListView>

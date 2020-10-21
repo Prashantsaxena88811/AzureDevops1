@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__ParentMenuItem__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Reference to parent menu item record. Through this field, you can build a third level of Menu hierarchy. If this field is set, then the Menu__c field should be blank.</description>
+    <externalId>false</externalId>
+    <label>Parent Menu Item</label>
+    <referenceTo>ccrz__E_MenuItem__c</referenceTo>
+    <relationshipLabel>Child Menu Items</relationshipLabel>
+    <relationshipName>Child_Menu_Items</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

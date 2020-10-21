@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__OriginalQuantity__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The purpose of this field is to store the appropriate quantity of line items that have products in the form of parent and child like bundles kits and dynamic kits</description>
+    <externalId>false</externalId>
+    <label>Original Quantity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

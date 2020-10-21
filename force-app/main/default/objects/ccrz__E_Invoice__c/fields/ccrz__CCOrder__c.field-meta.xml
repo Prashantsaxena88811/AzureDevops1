@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__CCOrder__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Order to which this invoice applies (optional).</description>
+    <externalId>false</externalId>
+    <label>CC Order</label>
+    <referenceTo>ccrz__E_Order__c</referenceTo>
+    <relationshipLabel>CC Invoices</relationshipLabel>
+    <relationshipName>CCInvoices</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

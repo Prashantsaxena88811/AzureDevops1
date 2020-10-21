@@ -1,0 +1,187 @@
+<!--
+
+  @Component Name     : EC_QuickListDetail
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Pratyusha             7/30/2019         Quicklist detail page
+
+--> 
+
+<apex:component controller="EC_QuickListController">
+    <script id="EC-MyAccount-WishlistDetail-Desktop" type="text/template">
+        <div class="panel panel-default cc_panel cc_myaccount_mywishlists_container">
+            <!--<div class="panel-heading cc_heading">
+                <h3 class="panel-title cc_title">{{pageLabelMap 'MyAccount_MyWishlist'}}</h3>
+            </div> -->
+            <div class="panel-body cc_body">
+                <div class="cc_wishlist_heading">
+                    <h4 class="cc_wishlist_name">{{this.name}}</h4>
+                    {{#if this.note}}
+                    <p class="cc_wishlist_note_label">{{pageLabelMap 'Field_Notes'}}&#58;</p>
+                    <p class="cc_wishlist_note">{{this.note}}</p>
+                    {{/if}}
+                    <div class="cc_wishlist_active">
+                        <span class="cc_wishlist_active_label">Default&#58;</span>
+                        {{#ifEquals this.isActive false}}
+                        <span class="cc_wishlist_active_value">{{pageLabelMap 'No'}}</span>
+                        {{else}}
+                        <span class="cc_wishlist_active_value">{{pageLabelMap 'Yes'}}</span>
+                        {{/ifEquals}}
+                    </div>
+                </div>
+         {{#each this.itemData}}
+          <div class="row cc_wishlist_item">
+           <div class="col-md-3 col-sm-3">
+            <div class="cc_wishlist_image">
+             {{#if this.mediaWrapper }}
+                 {{productLink this.prodBean 'cc_prod_link' image=(displayImage this.mediaWrapper 'accountWish img-responsive' alt=this.prodBean.name dataId=this.prodBean.sku)}}
+             {{else}}
+                 <img class="carouselImg cc_alternate img-responsive thumbnail " src="{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.jpg'}" alt="{{this.product.prodBean.name}}"/>
+             {{/if}}
+            </div>
+           </div>
+           <div class="col-md-4 col-sm-5">
+            <p class="item_title cc_wishlist_item_title">
+             {{productLink this.prodBean 'cc_prod_link'}}
+            </p>
+            <div class="sku cc_sku">
+             {{#ifDisplay 'WL.DsplAddtlSku'}}
+                <span class="cc_label">Product Code:</span>
+                <span class="cc_value">{{this.prodBean.sku}}</span>
+             {{/ifDisplay}}
+            </div>
+           </div>
+           <div class="col-md-offset-2 col-md-3 col-sm-4">
+            <div class="cart_item wishFinder cc_wish_finder" data-sku="{{this.prodBean.sku}}">
+            {{#ifEquals '{!viewPrice}' "true"}}
+              {{#if (checknalcoquicklist this.prodBean)}}
+             <div class="price_block cc_price_block">
+              {{#if (taxonomyQl this.prodBean.taxonomy 'Equipment')}}
+                 <p class="price cc_price">
+                  <span class="value cc_value">{{{price this.price}}}</span>
+                  <span class="ec-price-label">USD</span> 
+                  <span class="per-ea">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span>
+                 </p>
+                  {{/if}}
+               {{#if (taxonomyQl this.prodBean.taxonomy 'Chemical')}}
+                   {{#if (packageTypeQl this.prodBean.packageTypeUOM 'NonBulk')}}
+                 <p class="price cc_price">
+                  <span class="value cc_value">{{{price this.price}}}</span>
+                  <span class="ec-price-label">USD</span> 
+                  <span class="per-ea">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span>
+                 </p>
+                  {{/if}}
+                  {{#if (nonBulkEAQl this.prodBean.packageTypeUOM this.prodBean.CustomPricingUOM)}}
+                  <p class="price cc_price second-price">
+                  <span class="unit-price">{{{price this.prodBean.CustomUnitPrice}}}</span>
+                  <span class="unit-price">USD</span> 
+                  <span class="unit-price">{{pageLabelMap 'EC_UOM_Per'}} {{this.prodBean.CustomPricingUOM}}</span>
+                 </p>
+                  {{/if}}
+                   {{#if (packageTypeQl this.prodBean.packageTypeUOM 'Bulk')}}
+                   <p class="price cc_price">
+                  <span class="value cc_value">{{{price this.price}}}</span>
+                  <span class="ec-price-label">USD</span> 
+                  <span class="per-ea">{{pageLabelMap 'EC_UOM_Per'}} {{this.prodBean.CustomPricingUOM}}</span>
+                 </p>
+               {{/if}}
+              {{/if}}
+              </div>
+              {{/if}}
+             {{/ifEquals}}
+                {{#ifEquals '{!buyOnline}' "true"}}
+                <!--part of InstSalesEnt pbi-139350 -->
+                {{#if this.prodBean.isAddToCartShow}} 
+                   <p class="cc_wishlist_action">
+                    <button type="button" class="btn btn-default btn-sm addItem cc_add_item ec-btn-primary ec-btn-primary-qd" data-id="{{uid}}">ADD TO CART</button>
+                   </p>
+                   {{else}}
+                    	<div style="color:#005172;font-size:14px;font-weight:bold;padding-bottom:2em">{{pageLabelMap 'Sales_Entitlement'}}</div>                                
+                    {{/if}}
+               {{/ifEquals}}
+               
+             <div class="wishButtons cc_wish_buttons"></div>
+            </div>
+           </div>
+          </div>
+    
+          {{#if ../isRO}}
+           &#160;
+          {{else}}
+          <div class="row">
+           <div class="col-md-3 col-sm-3">
+            <div class="ec-center-pos">
+                <button type="button" class="btn btn-default btn-sm deleteItem cc_delete ec-btn-secondary ec-btn-secondary-qd" data-id="{{uid}}" data-pid="{{parentId}}">DELETE</button>
+            </div>
+           </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+                <div class="ec-item-border"></div>
+            </div>
+          </div>
+          {{/if}}
+    
+          <hr>
+         {{/each}}
+        </div>
+      </div>
+    </script>
+    <script>
+        jQuery(function ($) {
+            CCRZ.uiProperties.wishlistDetailsView.desktop.tmpl = "EC-MyAccount-WishlistDetail-Desktop";
+            
+            CCRZ.pubSub.on("view:myWishlistsView:refresh", function(viewInstance) {
+                setQuickList(CCRZ.models.WishlistModel.prototype, CCRZ.views.myWishlistsView.prototype, viewInstance);
+                viewInstance.setElement(viewInstance.$el);
+            });
+            // display products in quicklist
+            var setQuickList = function(wishListModel, wishListView, thisView) {
+                thisView.setElement(thisView.$el);
+                wishListView.openQuickList = function(sfid) {
+                    var selList = thisView.detailsView.pickerView.coll.models.filter(function(item) {
+                        return item.id==sfid;
+                    });
+                    if (selList !== null && selList !== undefined && selList.length > 0) {
+                        thisView.detailsView.generateDisplay(selList[0], thisView.$el);
+                    }
+                }
+                var url_string = window.location.href
+                var url = new URL(url_string);
+                var quicklistid = url.searchParams.get("quicklistid");
+                if (quicklistid !== null && quicklistid !== undefined && quicklistid !== '') {
+                    wishListView.openQuickList(quicklistid);
+                }
+            }
+        });
+       
+	 Handlebars.registerHelper('taxonomyQl', function (taxonomy, type) {
+                if (type && taxonomy && CCRZ.pagevars.pageLabels['EC_Taxonomy_'+type].includes(taxonomy.toLowerCase())) {
+                    return true;
+                }
+                return false;
+            });
+            Handlebars.registerHelper('packageTypeQl', function (packageType, type) {
+                if (type && packageType && CCRZ.pagevars.pageLabels['EC_PackageType_'+type] === packageType.toLowerCase() ) {
+                    return true;
+                }
+                return false;
+            });
+            Handlebars.registerHelper('nonBulkEAQl', function(type, uom) {
+                if (type && CCRZ.pagevars.pageLabels.EC_PackageType_NonBulk === type.toLowerCase()
+                 && uom.toLowerCase() !== CCRZ.pagevars.pageLabels.EC_UOM_EA.toLowerCase()) {
+                    return true;
+                }
+                return false;
+            });
+            Handlebars.registerHelper('checknalcoquicklist', function(prod) {
+                if (prod && prod.ECDivision && CCRZ.pagevars.pageLabels.EC_NALCO.includes(prod.ECDivision.toLowerCase())) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+    </script>
+</apex:component>
