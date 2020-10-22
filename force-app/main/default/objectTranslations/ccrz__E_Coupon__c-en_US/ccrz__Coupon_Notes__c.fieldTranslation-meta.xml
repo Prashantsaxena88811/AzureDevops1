@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please enter the description of what the coupon is suppose to accomplish --></help>
+    <label><!-- Coupon Notes --></label>
+    <name>ccrz__Coupon_Notes__c</name>
+</CustomFieldTranslation>

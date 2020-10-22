@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__DisplayType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Drives the display of this guide in the UI</description>
+    <externalId>false</externalId>
+    <label>Display Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Single-Select</fullName>
+                <default>false</default>
+                <label>Single-Select</label>
+            </value>
+            <value>
+                <fullName>Single-Select Quantity</fullName>
+                <default>false</default>
+                <label>Single-Select Quantity</label>
+            </value>
+            <value>
+                <fullName>Multi-Select</fullName>
+                <default>false</default>
+                <label>Multi-Select</label>
+            </value>
+            <value>
+                <fullName>Multi-Select Quantity</fullName>
+                <default>false</default>
+                <label>Multi-Select Quantity</label>
+            </value>
+            <value>
+                <fullName>Image-Select</fullName>
+                <default>false</default>
+                <label>Image-Select</label>
+            </value>
+            <value>
+                <fullName>Image-Select Quantity</fullName>
+                <default>false</default>
+                <label>Image-Select Quantity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

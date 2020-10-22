@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC_Category_Values__c</fullName>
+    <externalId>false</externalId>
+    <label>EC Category Value</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>EC_Request_Service_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MACHINE PROBLEM - DISH</fullName>
+                <default>false</default>
+                <label>MACHINE PROBLEM - DISH</label>
+            </value>
+            <value>
+                <fullName>MACHINE PROBLEM - DISPENSER</fullName>
+                <default>false</default>
+                <label>MACHINE PROBLEM - DISPENSER</label>
+            </value>
+            <value>
+                <fullName>MACHINE PROBLEM - LAUNDRY</fullName>
+                <default>false</default>
+                <label>MACHINE PROBLEM - LAUNDRY</label>
+            </value>
+            <value>
+                <fullName>GLASS WASHER</fullName>
+                <default>false</default>
+                <label>GLASS WASHER</label>
+            </value>
+            <value>
+                <fullName>CONVEYOR BELT</fullName>
+                <default>false</default>
+                <label>CONVEYOR BELT</label>
+            </value>
+            <value>
+                <fullName>PRERINSE SPRAYER</fullName>
+                <default>false</default>
+                <label>PRERINSE SPRAYER</label>
+            </value>
+            <value>
+                <fullName>OUT OF PRODUCT</fullName>
+                <default>false</default>
+                <label>OUT OF PRODUCT</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION</fullName>
+                <default>false</default>
+                <label>INSTALLATION</label>
+            </value>
+            <value>
+                <fullName>TRAINING</fullName>
+                <default>false</default>
+                <label>TRAINING</label>
+            </value>
+            <value>
+                <fullName>OTHER</fullName>
+                <default>false</default>
+                <label>OTHER</label>
+            </value>
+            <value>
+                <fullName>CANCEL SERVICE REQUEST</fullName>
+                <default>false</default>
+                <label>CANCEL SERVICE REQUEST</label>
+            </value>
+            <value>
+                <fullName>NEED MSDS</fullName>
+                <default>false</default>
+                <label>NEED MSDS</label>
+            </value>
+            <value>
+                <fullName>DELIVERY ISSUE</fullName>
+                <default>false</default>
+                <label>DELIVERY ISSUE</label>
+            </value>
+            <value>
+                <fullName>PRICING</fullName>
+                <default>false</default>
+                <label>PRICING</label>
+            </value>
+            <value>
+                <fullName>CREDIT ISSUE</fullName>
+                <default>false</default>
+                <label>CREDIT ISSUE</label>
+            </value>
+            <value>
+                <fullName>RETURN</fullName>
+                <default>false</default>
+                <label>RETURN</label>
+            </value>
+            <value>
+                <fullName>INFORMATION</fullName>
+                <default>false</default>
+                <label>INFORMATION</label>
+            </value>
+            <value>
+                <fullName>REPAIR</fullName>
+                <default>false</default>
+                <label>REPAIR</label>
+            </value>
+            <value>
+                <fullName>MAINTENANCE</fullName>
+                <default>false</default>
+                <label>MAINTENANCE</label>
+            </value>
+            <value>
+                <fullName>DE-INSTALLATION</fullName>
+                <default>false</default>
+                <label>DE-INSTALLATION</label>
+            </value>
+            <value>
+                <fullName>REBUILDING</fullName>
+                <default>false</default>
+                <label>REBUILDING</label>
+            </value>
+            <value>
+                <fullName>PRODUCT CHANGE</fullName>
+                <default>false</default>
+                <label>PRODUCT CHANGE</label>
+            </value>
+            <value>
+                <fullName>COMMISIONING</fullName>
+                <default>false</default>
+                <label>COMMISIONING</label>
+            </value>
+            <value>
+                <fullName>CONCENTRATION CHANGE/CHECK</fullName>
+                <default>false</default>
+                <label>CONCENTRATION CHANGE/CHECK</label>
+            </value>
+            <value>
+                <fullName>REMEDIATION</fullName>
+                <default>false</default>
+                <label>REMEDIATION</label>
+            </value>
+            <value>
+                <fullName>TENDER PREPARATION</fullName>
+                <default>false</default>
+                <label>TENDER PREPARATION</label>
+            </value>
+            <value>
+                <fullName>MISCELLANEOUS SERVICES</fullName>
+                <default>false</default>
+                <label>MISCELLANEOUS SERVICES</label>
+            </value>
+            <value>
+                <fullName>INSTRUMENT CARE</fullName>
+                <default>false</default>
+                <label>INSTRUMENT CARE</label>
+            </value>
+            <value>
+                <fullName>MAINTENANCE ETD2</fullName>
+                <default>false</default>
+                <label>MAINTENANCE ETD2</label>
+            </value>
+            <value>
+                <fullName>OLYMPUS REMEDIATION</fullName>
+                <default>false</default>
+                <label>OLYMPUS REMEDIATION</label>
+            </value>
+            <value>
+                <fullName>NEED SDS</fullName>
+                <default>false</default>
+                <label>NEED SDS</label>
+            </value>
+            <value>
+                <fullName>NEW LEAD</fullName>
+                <default>false</default>
+                <label>NEW LEAD</label>
+            </value>
+            <value>
+                <fullName>OUT OF BUSINESS</fullName>
+                <default>false</default>
+                <label>OUT OF BUSINESS</label>
+            </value>
+            <value>
+                <fullName>P/U DISH MACHINE</fullName>
+                <default>false</default>
+                <label>P/U DISH MACHINE</label>
+            </value>
+            <value>
+                <fullName>P/U EQUIPMENT</fullName>
+                <default>false</default>
+                <label>P/U EQUIPMENT</label>
+            </value>
+            <value>
+                <fullName>PERIODICALLY EXCHANGE</fullName>
+                <default>false</default>
+                <label>PERIODICALLY EXCHANGE</label>
+            </value>
+            <value>
+                <fullName>PLACE ORDER</fullName>
+                <default>false</default>
+                <label>PLACE ORDER</label>
+            </value>
+            <value>
+                <fullName>QUALITY ISSUE</fullName>
+                <default>false</default>
+                <label>QUALITY ISSUE</label>
+            </value>
+            <value>
+                <fullName>SAFETY INSPECTIONS</fullName>
+                <default>false</default>
+                <label>SAFETY INSPECTIONS</label>
+            </value>
+            <value>
+                <fullName>TM DID NOT SHOW</fullName>
+                <default>false</default>
+                <label>TM DID NOT SHOW</label>
+            </value>
+            <value>
+                <fullName>UPSET</fullName>
+                <default>false</default>
+                <label>UPSET</label>
+            </value>
+            <value>
+                <fullName>WARRANTY</fullName>
+                <default>false</default>
+                <label>WARRANTY</label>
+            </value>
+            <value>
+                <fullName>RODENT PROBLEM</fullName>
+                <default>false</default>
+                <label>RODENT PROBLEM</label>
+            </value>
+            <value>
+                <fullName>COCKROACH PROBLEM</fullName>
+                <default>false</default>
+                <label>COCKROACH PROBLEM</label>
+            </value>
+            <value>
+                <fullName>FLY PROBLEM</fullName>
+                <default>false</default>
+                <label>FLY PROBLEM</label>
+            </value>
+            <value>
+                <fullName>OTHERS</fullName>
+                <default>false</default>
+                <label>OTHERS</label>
+            </value>
+            <value>
+                <fullName>DISPENSER PROBLEM</fullName>
+                <default>false</default>
+                <label>DISPENSER PROBLEM</label>
+            </value>
+            <value>
+                <fullName>FOLLOW UP REPAIR</fullName>
+                <default>false</default>
+                <label>FOLLOW UP REPAIR</label>
+            </value>
+            <value>
+                <fullName>NEW SERVICE REQUEST</fullName>
+                <default>false</default>
+                <label>NEW SERVICE REQUEST</label>
+            </value>
+            <value>
+                <fullName>PLEASE CALL - NO MESSAGE</fullName>
+                <default>false</default>
+                <label>PLEASE CALL - NO MESSAGE</label>
+            </value>
+            <value>
+                <fullName>EQUIPMENT NOT WORKING</fullName>
+                <default>false</default>
+                <label>EQUIPMENT NOT WORKING</label>
+            </value>
+            <value>
+                <fullName>TECHNICAL ISSUE</fullName>
+                <default>false</default>
+                <label>TECHNICAL ISSUE</label>
+            </value>
+            <value>
+                <fullName>NEW PROGRAM / NEW SERVICE REQUEST</fullName>
+                <default>false</default>
+                <label>NEW PROGRAM / NEW SERVICE REQUEST</label>
+            </value>
+            <value>
+                <fullName>AUDIT FAILURE</fullName>
+                <default>false</default>
+                <label>AUDIT FAILURE</label>
+            </value>
+            <value>
+                <fullName>ACCIDENT / INJURY / CHEMICAL EXPLOSION</fullName>
+                <default>false</default>
+                <label>ACCIDENT / INJURY / CHEMICAL EXPLOSION</label>
+            </value>
+            <value>
+                <fullName>INSTALL NEW EQUIPMENT</fullName>
+                <default>false</default>
+                <label>INSTALL NEW EQUIPMENT</label>
+            </value>
+            <value>
+                <fullName>NEED CERTITICATE OF ANALYSIS</fullName>
+                <default>false</default>
+                <label>NEED CERTITICATE OF ANALYSIS</label>
+            </value>
+            <value>
+                <fullName>MAINTENANCE ETD3</fullName>
+                <default>false</default>
+                <label>MAINTENANCE ETD3</label>
+            </value>
+            <value>
+                <fullName>NEED CERTIFICATE OF ANALYSIS</fullName>
+                <default>false</default>
+                <label>NEED CERTIFICATE OF ANALYSIS</label>
+            </value>
+            <value>
+                <fullName>LAUNDRY MACHINE PROBLEM</fullName>
+                <default>false</default>
+                <label>LAUNDRY MACHINE PROBLEM</label>
+            </value>
+            <value>
+                <fullName>MACHINE PROBLEM</fullName>
+                <default>false</default>
+                <label>MACHINE PROBLEM</label>
+            </value>
+            <value>
+                <fullName>MULT/REPEAT CALL</fullName>
+                <default>false</default>
+                <label>MULT/REPEAT CALL</label>
+            </value>
+            <value>
+                <fullName>DEMONSTRATION</fullName>
+                <default>false</default>
+                <label>DEMONSTRATION</label>
+            </value>
+            <value>
+                <fullName>HEALTH INSPECTOR</fullName>
+                <default>false</default>
+                <label>HEALTH INSPECTOR</label>
+            </value>
+            <value>
+                <fullName>LEAVING ECOLAB</fullName>
+                <default>false</default>
+                <label>LEAVING ECOLAB</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+            <valueName>OUT OF PRODUCT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+            <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>WPS</controllingFieldValue>
+            <valueName>INSTALLATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+            <controllingFieldValue>PEST ELIMINATION</controllingFieldValue>
+            <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>WPS</controllingFieldValue>
+            <valueName>TRAINING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+            <valueName>OTHER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+            <valueName>NEED MSDS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+            <controllingFieldValue>WPS</controllingFieldValue>
+            <valueName>DELIVERY ISSUE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+            <valueName>PRICING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+            <valueName>CREDIT ISSUE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+            <valueName>RETURN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+            <controllingFieldValue>WPS</controllingFieldValue>
+            <valueName>INFORMATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>REPAIR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>WPS</controllingFieldValue>
+            <valueName>MAINTENANCE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>DE-INSTALLATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>REBUILDING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>PRODUCT CHANGE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>COMMISIONING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>CONCENTRATION CHANGE/CHECK</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>REMEDIATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>TENDER PREPARATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>MISCELLANEOUS SERVICES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>INSTRUMENT CARE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>MAINTENANCE ETD2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>OLYMPUS REMEDIATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+            <valueName>PLACE ORDER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+            <valueName>QUALITY ISSUE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+            <controllingFieldValue>WPS</controllingFieldValue>
+            <valueName>DISPENSER PROBLEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+            <valueName>PLEASE CALL - NO MESSAGE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+            <valueName>TECHNICAL ISSUE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>MACHINE PROBLEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+            <valueName>MACHINE PROBLEM - DISH</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+            <valueName>MACHINE PROBLEM - DISPENSER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+            <valueName>MACHINE PROBLEM - LAUNDRY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+            <valueName>GLASS WASHER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+            <valueName>CONVEYOR BELT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+            <valueName>PRERINSE SPRAYER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+            <valueName>CANCEL SERVICE REQUEST</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PEST ELIMINATION</controllingFieldValue>
+            <valueName>RODENT PROBLEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PEST ELIMINATION</controllingFieldValue>
+            <valueName>COCKROACH PROBLEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PEST ELIMINATION</controllingFieldValue>
+            <valueName>FLY PROBLEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PEST ELIMINATION</controllingFieldValue>
+            <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>WPS</controllingFieldValue>
+            <valueName>OTHERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+            <controllingFieldValue>WPS</controllingFieldValue>
+            <valueName>FOLLOW UP REPAIR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+            <controllingFieldValue>WPS</controllingFieldValue>
+            <valueName>NEW SERVICE REQUEST</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>EQUIPMENT NOT WORKING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>NEW PROGRAM / NEW SERVICE REQUEST</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>AUDIT FAILURE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>ACCIDENT / INJURY / CHEMICAL EXPLOSION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>INSTALL NEW EQUIPMENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>NEED CERTIFICATE OF ANALYSIS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>NEED CERTITICATE OF ANALYSIS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+            <valueName>MAINTENANCE ETD3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+            <valueName>LAUNDRY MACHINE PROBLEM</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

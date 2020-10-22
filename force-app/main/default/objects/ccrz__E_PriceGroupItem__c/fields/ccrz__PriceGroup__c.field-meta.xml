@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__PriceGroup__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>CC Price Group</label>
+    <referenceTo>ccrz__E_PriceGroup__c</referenceTo>
+    <relationshipLabel>CC Price Group Items</relationshipLabel>
+    <relationshipName>PriceGroupItems</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

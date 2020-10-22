@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__InvoiceAppliedTo__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Invoice this payment was applied to (optional).  This is the invoice that the payment was applied to.  In a summary invoice case this will be the child invoice the sub-payment was applied to.  For a non-summary case this will be the same as the applied for field.</description>
+    <externalId>false</externalId>
+    <label>Invoice Applied To</label>
+    <referenceTo>ccrz__E_Invoice__c</referenceTo>
+    <relationshipLabel>CC Transaction Payments To</relationshipLabel>
+    <relationshipName>TransactionPaymentsTo</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

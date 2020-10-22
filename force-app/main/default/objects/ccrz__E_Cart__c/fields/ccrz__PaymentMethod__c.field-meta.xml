@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__PaymentMethod__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The payment method defined in E_PaymentDetail__c.Payment_Method__c.</description>
+    <externalId>false</externalId>
+    <label>Payment Method</label>
+    <length>50</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Lbs</label>
+    <protected>false</protected>
+    <values>
+        <field>Maximum_Quantity__c</field>
+        <value xsi:type="xsd:double">45000.0</value>
+    </values>
+    <values>
+        <field>Maximum_quantity_message__c</field>
+        <value xsi:type="xsd:string">Maximum quantity of 45,000 lbs has been exceeded.</value>
+    </values>
+    <values>
+        <field>Minimum_Quantity__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Minimum_quantity_message__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>UOM__c</field>
+        <value xsi:type="xsd:string">Lbs</value>
+    </values>
+</CustomMetadata>

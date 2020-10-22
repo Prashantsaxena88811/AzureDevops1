@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Display Style --></label>
+    <name>ccrz__DisplayStyle__c</name>
+    <picklistValues>
+        <masterLabel>2-Column Grid</masterLabel>
+        <translation>2 列グリッド</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>3-Column Grid</masterLabel>
+        <translation>3 列グリッド</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>List</masterLabel>
+        <translation>リスト</translation>
+    </picklistValues>
+</CustomFieldTranslation>

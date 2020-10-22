@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>この価格の測定単位。この項目と商品を組み合わせることで、UOM に特定の価格設定を指定できます。この項目は省略可能で、UOM とは無関係に商品の一般的な価格を設定できます。</help>
+    <label><!-- Unit Of Measure --></label>
+    <name>ccrz__UnitOfMeasure__c</name>
+</CustomFieldTranslation>

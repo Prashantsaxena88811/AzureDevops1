@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- For modifier terms, specify the CC Sub Prod Term this is modifying --></help>
+    <label><!-- CC SubProdTerm --></label>
+    <name>ccrz__CCSubProdTerm__c</name>
+    <relationshipLabel><!-- CC SubProdTerms --></relationshipLabel>
+</CustomFieldTranslation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CC 注文配送品目</value>
+    </caseValues>
+    <layouts>
+        <layout>CC Order Shipment Item Layout</layout>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>CC 注文配送品目名</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,1197 @@
+/*Order Review Styles*/
+.revCouponSec {
+  display: inline-block;
+  text-align: left;
+  padding-right: 307px;
+  padding-left: 698px;
+  float: left;
+}
+.revCouponAddedText {
+  top: -5px;
+  position: relative;
+  left: 4px;
+}
+
+.revCouponBox {
+  width: 309px;
+  height: 42px;
+  border-radius: 2px;
+  border: solid 1px #5b8f22;
+  background-color: #ffffff;
+  margin-bottom: 11px;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: bold;
+  color: #373737;
+  padding-left: 16px;
+  padding-top: 12px;
+}
+.revCouponAdded {
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: normal;
+  color: #5b8f22;
+}
+.revPromoCode {
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: normal;
+  color: #4d4f53;
+  margin-bottom: 6px;
+}
+.panel-heading.cc_heading {
+  border-bottom: solid 1px #d9d9d9;
+}
+.cc_terms-conditions {
+  text-align: right;
+  height: 16px;
+  font-family: arial;
+  font-size: 14px;
+  letter-spacing: 0.13px;
+  color: #4d4f53;
+  margin-bottom: 20px;
+}
+.cc_coso_ship_notes {
+  display: block;
+  clear: left;
+  float: left;
+  width: 55%;
+  padding-top: 15px;
+  margin-bottom: 0;
+}
+.cc_coso_ship_notes .cc_shipnotes_label {
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+.cc_shipping_delivery_section.shipping_comments{
+  clear: both;
+  max-width: 100%;
+  word-break: break-word;
+  padding-top: 15px;
+}
+.coso_ship_notes textarea#shippingNotes{
+  font-size: 16px;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+  border: solid 1px #d9d9d9;
+}
+.coso_ship_notes #textCount {
+  text-align: right;
+  padding: 5px 0
+}
+.request-wrapper {
+  width: 50%;
+  float: left;
+}
+.revpo {
+  padding-bottom: 5px;
+  font-size: 16px;
+}
+.revpoval {
+  font-size: 16px;
+}
+.attnrevdiv {
+  display: inline-block;
+}
+.attnrevnumdiv {
+  display: inline-block;
+  padding-left: 275px;
+}
+
+.cc_ext_name {
+  font-weight: normal !important;
+}
+
+.cc_terms-conditions .cc_terms-link,
+.cc_terms-conditions a {
+  color: #4d4f53;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.pl-0 {
+  padding-left: 0px;
+}
+.cc_checkout_review .cc_process_review {
+  float: right;
+  border-radius: 2px;
+  background-color: #007ac9;
+  color: #ffffff;
+  font-family: arial;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+
+.cc_order_review .panel {
+  margin-bottom: 0px;
+}
+
+.or-detail,
+.or-address-section {
+  border: 1px solid #d9d9d9;
+}
+
+
+.cc_order_review {
+  background: #fff;
+}
+
+.cc_checkout_review .panel-body {
+  padding: 24px 25px;
+}
+
+.or-info-label,
+.or-info-val {
+  font-size: 16px;
+  color: #4d4f53;
+}
+
+.or-info-val {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.or-address-section {
+  margin-top: 16px;
+}
+
+.or-address-section .cc_checkout_review {
+  width: 50%;
+  float: left;
+}
+
+.or-address-section .or-address-section-shipping {
+  border-right: 1px solid #d9d9d9;
+}
+
+.or-prod-info {
+  margin-top: 24px;
+}
+
+.or-prod-table {
+  table-layout: fixed;
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  border-spacing: 0px 4px;
+  border-collapse: separate;
+}
+
+.or-prod-table h2 {
+  font-weight: normal;
+}
+
+.or-sku-wrapper {
+  font-size: 14px;
+  color: #4d4f53;
+  border-right: 1px solid #d9d9d9;
+  padding-right: 16px;
+  margin-top: 12px;
+  margin-bottom: 38px;
+}
+
+.or-uom-wrapper {
+  font-size: 14px;
+  color: #005172;
+  margin-top: 12px;
+  margin-bottom: 38px;
+}
+
+.or-prod-table .cc_price,
+.or-prod-table .cc_total {
+  font-size: 24px;
+  letter-spacing: 0.13px;
+  color: #005172;
+}
+
+.or-prod-table .or-qty {
+  color: #4d4f53;
+}
+
+.or-detail-date {
+  margin-top: 24px;
+}
+
+.lh28 {
+  line-height: 28px;
+}
+
+table.or-prod-table,
+.or-prod-table th,
+.or-prod-table td {
+  border: 1px solid #d9d9d9;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.or-prod-table thead {
+  height: 49px;
+  line-height: 49px;
+}
+
+.or-prod-table th:first-child,
+.or-prod-table td:first-child {
+  border-left: 1px solid #d9d9d9;
+}
+
+.or-prod-table th:last-child,
+.or-prod-table td:last-child {
+  border-right: 1px solid #d9d9d9;
+}
+
+.or-uom-wrapper {
+  padding-left: 7.5px;
+}
+
+.or-prod-table .cc_tr {
+  background: #f7f7f7;
+}
+
+.top-back-to {
+  color: #007ac9;
+  font-size: 14px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.top-back-to i {
+  vertical-align: middle;
+}
+
+.or-total-section {
+  background: #f7f7f7;
+  border: 1px solid #d9d9d9;
+  margin: 4px 0px;
+  padding: 30px 40px;
+  text-align: right;
+  font-size: 14px;
+  color: #4d4f53;
+}
+
+.or-total-section .or-price-vals {
+  color: #005172;
+  font-size: 24px;
+  letter-spacing: 0.13px;
+}
+
+.or-total-section .cc_subTotal-wrapper {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.grand-total-wrapper {
+  border-top: 1px solid #d9d9d9;
+  padding-top: 16px;
+}
+
+.or-total-section .total-right {
+  width: 21%;
+}
+
+.price-wrap-dec {
+  font-size: 14px;
+}
+
+.prodbox {
+  border-top: solid 1px #d9d9d9;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+}
+
+.alerticonrev {
+	position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.deltextmsg {
+	color: #e00034;
+	font-size: 14px;
+	position: relative;
+	width: calc(100% - 255px);
+	float: left;
+	padding-left: 20px;
+	padding-bottom: 10px;
+}
+.material-icons.alert-info-icon {
+  font-size: 15px;
+}
+
+.cc_shipping_delivery_section {
+  float: left;
+  margin-right: 44px;
+}
+
+.info-col {
+  font-size: 14px;
+}
+
+.cart_info {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  border: 1px solid #007ac9;
+  margin-bottom: 12px;
+  width: 100%;
+  margin-left: 0px;
+}
+.cart_info_table {
+  border-bottom: 1px solid transparent;
+}
+
+.go-to-order-complete {
+  width: 150px;
+  padding: 0px;
+  height: 42px;
+}
+
+.cc_terms-conditions {
+  margin-bottom: 48px;
+}
+
+.tnc {
+  margin-bottom: 20px;
+}
+
+.panel.panel-default.cc_panel.cc_checkout_review.or-detail.or-detail-date {
+  padding-bottom: 30px;
+}
+
+.date-label.fwb {
+  padding-bottom: 5px;
+}
+
+.revship {
+  padding-top: 2px;
+}
+
+.revaddbody {
+  padding-top: 15px;
+}
+
+.panel.panel-default.cc_panel.cc_checkout_review.revpanel {
+  padding-bottom: 0px !important;
+  border: 1px solid #d9d9d9;
+}
+
+.material-icons.info_outline:before {
+  content: "\e88f";
+}
+.blue-color {
+  color: #007ac9 !important;
+}
+.vmiddle {
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 767px) {
+  .revCouponSec {
+    padding-left: 0px;
+    float: none;
+  }
+  .cc_coso_ship_notes {
+    width: 100%;
+  }
+  .revCouponBox {
+    width: 278px;
+    font-size: 14px;
+    padding-left: 12px;
+    padding-top: 13px;
+  }
+  .revPromoCode {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .revCouponAdded {
+    font-size: 12px;
+    margin-bottom: 22px;
+  }
+  .request-wrapper {
+    width: 100%;
+  }
+
+  .revpaywrap {
+    margin-top: 16px;
+  }
+  .revpo,
+  .revpoval {
+    font-size: 14px;
+  }
+  .revpaypotop {
+    padding-bottom: 24px;
+  }
+  .revpayccbott {
+    padding-bottom: 16px;
+  }
+  .attnrevdiv {
+    font-size: 14px;
+    display: block;
+  }
+  .attnrevnumdiv {
+    font-size: 14px;
+    display: block;
+    padding-left: 0px;
+    padding-top: 16px;
+  }
+  .checkoutContent {
+    padding: 16px 21px !important;
+  }
+  .total.cc_total.or-total-section.clearfix {
+    margin-left: -21px;
+    margin-right: -21px;
+  }
+  .info-icon-col {
+    width: 20%;
+    vertical-align: top;
+  }
+  .info-col {
+    width: 80%;
+    font-size: 13px !important;
+  }
+  .tooltipp {
+    right: 150%;
+    top: -235% !important;
+  }
+
+  a.tip span {
+    left: unset;
+  }
+
+  a.tip span:before,
+  a.tip span:after {
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
+    left: 179px;
+    top: 35px;
+  }
+
+  a.tip span:before {
+    border-left: 8px solid #e17000;
+    margin-left: 0px;
+  }
+
+  a.tip span:after {
+    border-left: 8px solid white;
+    margin-left: -2px;
+    margin-top: -1px;
+  }
+
+  .hover-tooltip:active ~ .tooltipp,
+  .hover-tooltip:focus ~ .tooltipp {
+    display: block !important;
+  }
+
+  .revinfolabel {
+    font-size: 14px;
+  }
+
+  .tncdiv {
+    margin-bottom: 28px !important;
+  }
+
+  .revbody {
+    padding-top: 15px !important;
+  }
+  .or-info-val {
+    margin-top: 5px;
+    margin-bottom: 18px;
+  }
+
+  .or-address-section .or-address-section-shipping {
+    border-right: none;
+  }
+  .shipbilladd {
+    width: 100% !important;
+  }
+  .billrevaddborder {
+    border-top: solid 1px #d9d9d9;
+  }
+
+	
+  .mobdaterev.shippingcomments {
+    background: none;
+    border: none;
+    height: auto;
+  }
+  .cc_shipping_delivery_date {
+    font-size: 14px;
+  }
+
+  .date-label.fwb {
+    font-size: 14px;
+    font-weight: normal;
+    padding-bottom: 2px;
+  }
+
+  .tnc {
+    margin-bottom: 24px !important;
+    text-align: left;
+    font-size: 13px;
+  }
+  .go-to-order-complete {
+    width: 100% !important;
+  }
+
+  .cart_info {
+    padding: 5px !important;
+  }
+
+  .deltextmsg {
+    font-size: 13px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  .material-icons.alert-info-icon {
+    min-height: 55px;
+  }
+
+  .cc_shipping_delivery_section {
+    float: none !important;
+    margin-right: 0px !important;
+  }
+
+  .scmb {
+    padding-bottom: 20px;
+  }
+
+   /* totalsec   */
+  .total.cc_total.or-total-section.clearfix {
+    padding-left: 21px;
+    padding-right: 21px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+
+  .total-right.pull-right {
+    width: 100%;
+  }
+
+  .or-price-vals.pull-right > .price-wrap > .price-wrap-num {
+    font-size: 18px;
+  }
+  .or-price-vals.pull-right > .price-wrap > .price-wrap-dec {
+    font-size: 12px;
+  }
+  .cc_subTotal.cc_subTotal-wrapper.clearfix {
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+  .shipping-charge.pb-10 {
+    padding-bottom: 16px;
+  }
+
+   /* table   */
+   .ec-prod-details {
+    padding: 16px 15px;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    border: 1px solid #d9d9d9;
+    margin-bottom: 16px;
+  }
+
+  .ec-prod-image-box {
+    width: 75%;
+    height: 110px;
+    margin: 20px auto;
+  }
+
+  .ec-prod-image-box img {
+    width: 82.8px;
+    height: 100% !important;
+  }
+
+  .ec-prod-name {
+    padding-top: 10px;
+    padding-bottom: 4px;
+  }
+
+  .cc_ext_name {
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #373737;
+  }
+
+  .ec-desc {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0px;
+    color: #005172;
+  }
+
+  .or-sku-wrapper {
+    padding: 0 0 4px 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.09px;
+    border: none;
+  }
+  .or-sku-wrapper .cc_ext_sku,
+  .or-sku-wrapper .cc_checkout_sku {
+    font-weight: bold;
+  }
+
+  .ec-item_price {
+    padding-bottom: 12px;
+  }
+  .ec-price {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.27px;
+    color: #005172;
+    padding-bottom: 17px;
+  }
+
+  .ec-long-desc-label {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.09px;
+  }
+
+  .or-qty {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.09px;
+    padding-bottom: 8px;
+  }
+  .ec-item-total .price-wrap-num {
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.11px;
+    color: #005172;
+  }
+  .ec-item-total .price-wrap-dec {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.11px;
+    color: #005172;
+  }
+  .cc_terms-conditions {
+    margin-bottom: 135px;
+  }
+}
+
+/* Tablet CSS */
+@media only screen and (max-width: 767px) {
+  .displaymob_none {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  .displaylarge_none {
+    display: none;
+  }
+  .cc_payment_section, .cc_shipping_delivery_section, .coso_ship_notes {
+    padding-left: 15px;
+  }
+  .request-wrapper:first-child {
+    margin-right: -1px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1365px) {
+  .revCouponSec {
+    padding-right: 0px;
+    padding-left: 270px;
+    float: none;
+  }
+  .revCouponBox {
+    width: 285px !important;
+  }
+  .revCouponAdded {
+    margin-bottom: 34px;
+    font-size: 12px;
+  }
+  .revpo,
+  .revpoval {
+    font-size: 14px;
+  }
+  .revpaywrap {
+    margin-top: 16px;
+  }
+  .request-wrapper {
+    width: 100%;
+  }
+  .attnrevdiv {
+    display: block;
+    font-size: 14px;
+  }
+  .attnrevnumdiv {
+    display: block;
+    padding-left: 0px;
+    padding-top: 16px;
+    font-size: 14px;
+  }
+  .tooltipp {
+    right: 150%;
+    top: -235% !important;
+  }
+
+  a.tip span {
+    left: unset;
+  }
+
+  a.tip span:before,
+  a.tip span:after {
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
+    left: 179px;
+    top: 35px;
+  }
+
+  a.tip span:before {
+    border-left: 8px solid #e17000;
+    margin-left: 0px;
+  }
+
+  a.tip span:after {
+    border-left: 8px solid white;
+    margin-left: -2px;
+    margin-top: -1px;
+  }
+
+  .hover-tooltip:active ~ .tooltipp,
+  .hover-tooltip:focus ~ .tooltipp {
+    display: block !important;
+  }
+
+  .displaytab_none {
+    display: none;
+  }
+  .prod-details-col {
+    width: 50%;
+  }
+  .desc-col {
+    width: 105%;
+    word-break: break-word;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  h2.cc_ext_name {
+    font-size: 20px;
+    font-weight: normal;
+  }
+  .table > thead > tr > th,
+  .table > tbody > tr > th,
+  .table > tfoot > tr > th,
+  .table > thead > tr > td,
+  .table > tbody > tr > td,
+  .table > tfoot > tr > td,
+  td {
+    padding: 16px;
+  }
+  .vbottom {
+    vertical-align: bottom;
+  }
+  .total-right {
+    width: 45% !important;
+  }
+  .or-total-section {
+    padding: 24px 16px;
+  }
+  .shipping-charge {
+    padding-bottom: 20px;
+  }
+  .tab-table-last-col {
+    border-right: 1px solid #dadada !important;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .div-height-11 {
+    height: 11px;
+  }
+  .or-sku-wrapper,
+  .or-uom-wrapper {
+    margin-bottom: 0px;
+  }
+  .or-sku-wrapper {
+    font-size: 13px;
+  }
+  .date-label {
+    font-size: 14px;
+  }
+  .tooltipp {
+    right: 150%;
+    top: -235% !important;
+  }
+  a.tip span {
+    left: unset;
+  }
+  a.tip span:before,
+  a.tip span:after {
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
+    left: 179px;
+    top: 35px;
+  }
+  a.tip span:before {
+    border-left: 8px solid #e17000;
+    margin-left: 0px;
+  }
+  a.tip span:after {
+    border-left: 8px solid white;
+    margin-left: -2px;
+    margin-top: -1px;
+  }
+  .hover-tooltip:active ~ .tooltipp,
+  .hover-tooltip:focus ~ .tooltipp {
+    display: block !important;
+  }
+  .cc_shipping_delivery_section {
+    margin-right: 15px;
+  }
+  .tnc {
+    font-size: 12px;
+  }
+  .price-wrap-num {
+    font-size: 20px;
+  }
+  .or-uom-wrapper {
+    margin-top: 11px;
+  }
+  .tab-font {
+    font-size: 14px;
+  }
+}
+.request-wrapper {
+  border: 1px solid #d9d9d9;
+}
+.or-border-none {
+  border: none !important;
+}
+.panel.panel-default.cc_panel.cc_checkout_review.or-detail.or-detail-date {
+  padding-bottom: 0px;
+}
+.ucase {
+  text-transform: uppercase;
+}
+/* flat fee messaging */
+.flatFeeMessage {
+  font-size: 18px;
+  border-radius: 2px;
+  border: solid 1px #e17000;
+  margin-bottom: 8px;
+  padding: 16px;
+  font-weight: bold;
+}
+.flatFeeMessage .info_outline {
+  font-size: 45px;
+  min-height: 45px;
+}
+.flatFeeMessage .flatFeeLabel p {
+  display: inline-block;       
+}
+.flatFeeMessage .flatFeeLabel {
+  display:table-cell;
+  vertical-align:middle;
+}
+.flatFeeMessage .outerFlatFeeLabel {
+  display:table;
+  min-height: 45px;
+}
+/*styles for unloading and tank number*/
+.h-left {
+	text-align: left
+}
+
+.m-left-110 {
+	float: right;
+}
+
+@media only screen and (max-width: 1365px) and (min-width: 768px) {
+	.prod-details-col-tab {
+		width: 40%;
+	}
+	.tank-tab-align>span, .unload-tab-align>span {
+		display: table;
+		float: left;
+		white-space: normal;
+		word-break: break-all;
+	}
+	.tank-tab-align, .unload-tab-align {
+		clear: both;
+	}
+	.h-left .cc_quantity {
+		margin-left: 15px;
+	}
+	.h-left .m-left-25 {
+		margin-left: 25px;
+	}
+	.h-left .m-top-0 {
+		margin-top: 0;
+	}
+}
+.mob-tank-font, .mob-unload-font {
+	font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.09px;
+    padding-bottom: 4px;
+}
+@media (max-width: 767px) {
+	.ec-long-desc {
+		margin-bottom: 15px;
+	}
+}
+@media only screen and (max-width: 1365px) and (min-width: 768px) {
+	.tank-tab-align>.tank-text, .unload-tab-align>.unload-text {
+		width: 110px !important;
+	}
+	.h-left .cc_total {
+		float: left;
+	}
+}
+@media only screen and (min-width: 1365px) {
+  .panel.panel-default.cc_panel.cc_checkout_review.or-detail.or-detail-date {
+      display: flex;
+  }
+  .cc_coso_ship_notes .cc_shipnotes_label {
+	  font-size: 16px;
+	  padding-bottom: 10px;
+	}
+}
+.add-shipid {
+	word-break: break-word;
+}
+@media only screen and (max-width: 767px) {
+  .or-detail-date.or-detail-date .panel-title {
+    margin-left: -1px;
+  }
+  .or-detail-date.or-detail-date .panel-body {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .or-detail-date.or-detail-date .revpay {
+    margin-left: 0px;
+  }
+}
+/*Ship to alignment starts*/
+.width-left {
+  display: table;
+  width: 165px;
+  float: left;
+}
+.width-right {
+  display: table;
+  width: 70%;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) { 
+  .width-right {
+      width: 53%;
+      padding-left:0 
+  }
+  .width-left {
+      width: 150px;
+  }
+}
+@media only screen and (max-width: 1365px) and (min-width: 1024px) { 
+  .width-right {
+      width: 65%;
+      padding-left: 0;
+  }
+  .width-left {
+      width: 150px;
+  }
+}
+/*Ship to alignment ends*/
+/*UOM price changes starts*/
+.nalco-disp-none {
+	display: none;
+}
+.one-uom {
+	font-weight: bold;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    color: #4d4f53;
+}
+.second-price {
+	letter-spacing: 0px;
+    color: #4d4f53;
+	font-size: 14px;
+}
+.second-price .price-wrap-num,.second-price .price-wrap-dec {
+	color: #4d4f53;
+}
+.second-price .cc_price {
+	color: #4d4f53 !important;
+}
+.second-price .price-wrap-num {
+	font-size: 14px;
+}
+.second-price {
+	margin-top: -8px
+}
+@media (min-width: 768px) and (max-width: 1365px) { 
+	.one-uom {
+		font-size: 10px;
+	}
+	.second-price, .second-price .price, .second-price .price-wrap-dec, .second-price .price-wrap-num {
+		font-size: 12px !important;
+	}
+	.first-price {
+		margin-top: 10px;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.second-price, .second-price .price, .second-price .price-wrap-dec, .second-price .price-wrap-num {
+		font-size: 14px !important;
+	}
+	.first-price .price-wrap {
+		color: #005172;
+	}
+	.second-price {
+		margin-top: 5px;
+	}
+}
+.nalco-uom {
+  font-weight: bold;
+  color: #4d4f53;
+}
+.or-sku-wrapper, .or-uom-wrapper {
+	margin-bottom: 0;
+	margin-top:0;
+}
+.or-sku-wrapper {
+	border-right: none;
+}
+.or-uom-wrapper {
+	padding-left: 0;
+}
+.nalco-uom {
+	color: #4d4f53;
+	font-weight: bold;
+}
+/*Ends UOM price changes*/
+/*starts responsive styles*/
+.visible-hidden {
+	display: none;
+}
+@media only screen and (min-width: 1366px) {
+	.inlarge-align-center {
+		text-align: left;
+	}
+	.prod-details-col {
+		padding-right: 30px;
+	}
+	.prod-details-col .cc_ext_name {
+		margin-bottom: 4px;
+	}
+	.prod-details-col .or-sku-wrapper {
+		margin-bottom: 4px;
+	}
+	.prod-details-col .or-uom-wrapper {
+		margin-bottom: 12px;
+	}
+	.reviewCartSection .second-price {
+		margin-top: -10px;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 1365px) {
+	.or-prod-table td {
+		vertical-align: top;
+	}
+	.or-prod-table td:first-child {
+		vertical-align: middle;
+	}
+	.visible-hidden {
+		display: block;
+	}
+	.prod-details-col .cc_ext_name, .visible-hidden .cc_ext_name{
+		position: relative;
+		padding-bottom: 11px;
+	}
+	.prod-details-col .cc_ext_name {
+		width: 245%;
+	}
+	.visible-hidden .cc_ext_name {
+		width: 174%;
+	}
+	.visible-hidden .cc_ext_name {
+		visibility: hidden;
+	}
+	.review-page-sku .or-sku-wrapper {
+		margin-bottom: 4px;
+	}
+	.order-review-nalco .first-price {
+		margin-top: 25px;
+	}
+	.prod-details-col-tab {
+		width: 25%;
+	}
+	.second-price {
+		line-height: 1;
+	}
+	.div-height-11 {
+		height: 5px;
+	}
+	.h-left .cc_total {
+		line-height: 0.9;
+		margin-left: 70px;
+	}
+	.review-tot-price {
+		clear: both;
+		padding-top: 13px;
+	}
+	.total-label {
+		float: left;
+	}
+	.tab-table-last-col {
+		white-space: initial;
+	}
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+	.tank-tab-align>span, .unload-tab-align>span {
+		width: 64%;
+	}
+}
+@media only screen and (max-width: 1365px) and (min-width: 1024px) {
+	.tank-tab-align>span, .unload-tab-align>span {
+		width: 75%;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.mob-unload-font {
+		padding-bottom: 12px;
+	}
+	.ec-prod-name {
+		 padding-top: 0px;
+	}
+	.or-qty {
+		padding-bottom: 4px;
+	}
+}
+/*Ends responsive styles*/
+.go-to-user-info-screen i {
+  margin-left: -8px;
+}

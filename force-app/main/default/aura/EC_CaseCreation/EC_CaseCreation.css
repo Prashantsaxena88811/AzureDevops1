@@ -1,0 +1,502 @@
+.THIS {
+    margin-top: 24px;
+    margin-bottom: 72px;
+}
+
+.THIS .accounts-wrapper {
+    background-color: #ffffff;
+    padding: 24px 40px 32px 40px;
+    width:100%;
+}
+
+.THIS .case-creation-success-msg{
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+    border: solid 1px #5b8f22;
+    background-color: #ffffff;
+    display:flex;
+    margin: 0;
+    flex-direction: column;
+}
+
+.THIS .case-creation-success-msg i{
+    width: 71px;
+    object-fit: contain;
+    margin-top:18px;
+    
+}
+
+.THIS .case-creation-success-msg i{
+    color: #5b8f22;
+    font-size:72px;
+}
+
+.THIS .accounts-wrapper .case-creation-success-msg .registration-succesfull .thank_msg
+{
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #005172;
+}
+
+.THIS .accounts-wrapper .case-creation-success-msg .registration-succesfull .small_msg
+{
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4d4f53;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    
+    .THIS {
+        margin-top:16px;
+        margin-left:0px;
+        margin-right:0px;
+    }
+    .THIS .accounts-wrapper{
+        padding: 0px 21px;
+    }
+    
+    .THIS .case-creation-success-msg i{
+        color: #5b8f22;
+        font-size: 48px;
+    }
+    
+    /* portal access */
+    .THIS  .portal-access .wrapper .choose-your-profile .slds-box.midBox{
+        padding:16px 19px;
+    }
+    .THIS  .portal-access .wrapper .choose-your-profile .profile-details{
+        display:inline;
+    }
+    .THIS  .portal-access .wrapper .choose-your-profile .profile-details .profile{
+        width:287px;
+        height:auto;
+    }
+    .THIS  .portal-access .wrapper .choose-your-profile .profile-details .profile .user{
+        width:81px;
+        height:80px;
+    }
+    .THIS  .portal-access .wrapper .choose-your-profile .slds-box.midBox{
+        padding:16px 19px;
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.29;
+        letter-spacing: 0px;
+        text-align: center;
+        color: #4d4f53;
+    }
+    .THIS  .portal-access .wrapper .profile .ec_btn_secondary{
+        width: 230px;
+        height:42px;
+    }
+    .THIS .portal-access .wrapper .profile .profile-name{
+        margin: 16px 0 8px 0;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .THIS .portal-access .wrapper .btn-container button{
+        width: 278px;
+        height: 42px;
+        border-radius: 2px;
+    }
+    .THIS .portal-access .wrapper .choose-your-profile .profile-details .profile .profile-content{
+        margin-bottom: 25px;
+    }
+    .THIS .portal-access .wrapper .btn-container{
+        display:inline;
+    }
+    .THIS .slds-button+.slds-button{
+        margin-left:0px;
+    }
+    .THIS .portal-access .wrapper .btn-container button:first-child{
+        margin-bottom:16px;
+    }
+    .THIS .accounts-section .self_cover .account-second .btn-group button.add{
+        margin-bottom:10px;
+    }
+    .THIS .accounts-section .slds-tabs--default__item{
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.29;
+        letter-spacing: normal;
+        text-align: center;
+        color: #4d4f53;
+        width:122px;
+        padding-bottom:6px;
+    }
+    .THIS .accounts-section .slds-tabs--default__item:last-child{
+        margin-left:15px;
+    }
+    .THIS .accounts-section .slds-tabs--default__link{
+        overflow: initial;
+        display: inline-block;
+        height: auto;
+        white-space: normal;
+        line-height: normal;
+        font-size: 14px;
+        letter-spacing: normal;
+        text-align: center;
+        text-decoration:none;
+    }
+    .THIS .accounts-section  .slds-tabs--default__item.slds-active .slds-tabs--default__link{
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        text-align: center;
+        color:#007ac9;
+    }
+    
+    .THIS .accounts-wrapper .accounts-section .value{
+        border:none;
+        background-color: #ffffff;
+        padding: 25px 0px 26px 0px;
+        display: flex;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        width:100%;
+    }
+    .THIS .accounts-wrapper .accounts-section .value .search-wrapper{
+        margin-bottom:16px;
+        width:100%;
+    }
+    .THIS .accounts-wrapper .accounts-section .value .search-wrapper button{
+        height:39px;
+    }
+    .THIS .accounts-wrapper .accounts-section .value .search-wrapper input{
+        width:100%;
+        height: 42px;
+        border-radius: 2px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+        border: solid 1px #d9d9d9;
+        background-color: #ffffff;
+    }
+    .THIS .accounts-wrapper .accounts-section .support_message{
+        border: solid 1px #d9d9d9;
+        background-color: #f7f7f7;
+        height: auto;
+    }
+    .THIS .accounts-wrapper .accounts-section .support_message .message_text{
+        padding: 9px 16px 8px 16px;
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.38;
+        letter-spacing: 0px;
+        color: #4d4f53;
+    }
+    .THIS .accounts-wrapper .accounts-section .account-details-section .left{
+        width:100%;
+    }
+    .THIS .account-details-section .left h3{
+        display:flex;
+        justify-content: space-between;
+    }
+    .THIS .opacity-layer{
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        overflow-x: hidden;
+        transition: .5s;
+        opacity: .85;
+        background-color: #4d4f53;
+        position: fixed;
+    }
+    .THIS .sidenav {
+        height: 100%;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        width: 80%;
+        border-radius: 2px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+        border: solid 1px #d9d9d9;
+        background-color: #ffffff;
+        transition: all 0.25s;
+        -webkit-transition: all 0.25s;
+    }
+    .THIS .sidenav a {
+        padding:16px 0px 16px 11px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    .THIS .sidenav a:hover {
+        color: #f1f1f1;
+    }
+    .THIS .sidenav .heading{
+        background-color: #ffffff;
+        font-size: 18px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        color: #005172;
+        border-top: 1px solid #d9d9d9;
+        width: 100%;
+    }
+    .THIS .sidenav .accounts-section .support_message{
+        padding: 16px 21px 16px 16px;
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.38;
+        letter-spacing: 0px;
+        color: #4d4f53;
+        border-left: none;
+        border-right: none;
+    }
+    .THIS .sidenav .ship-to-details{
+        margin:16px 16px 0px 16px;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.43;
+        letter-spacing: 0.09px;
+        color: #4d4f53;
+        border-bottom: solid 1px #d9d9d9;
+        padding-bottom:15px;
+    }
+    .THIS .sidenav .ship-to-details .label-name{
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.43;
+        letter-spacing: 0px;
+        color: #4d4f53;
+        margin-bottom:4px;
+        display:block;
+        
+    }
+    .THIS .sidenav .ship-to-details .state-info{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+        width: 70%;
+    }
+    .THIS .sidenav .closebtn{
+        font-size:24px;
+        color:#4d4f53;
+        padding:16px 0px 16px 11px;
+        display:block;
+    }
+    .THIS .parentPop{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .THIS .modalHeader{
+        border:0px;
+        padding:0px;
+    }
+    .THIS .contentContainer .orangeBox{
+        padding:0px;
+    }
+    .THIS .modalHeader .modalHeading{
+        font-size: 22px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.18;
+        letter-spacing: normal;
+        color: #005172;
+        padding-bottom: 24px;
+        padding-left: 16px;
+    }
+    .THIS  .modalHeader .closeButton{
+        color: #000000;
+        top: 12px;
+        right: 10px;
+        height: 24px;
+        margin:0px;
+    }
+    .THIS .slds-modal .contentContainer{
+        padding: 0 16px 0 16px;
+        background-color: #FFF;
+        border: 0;
+    }
+    .THIS .contentContainer .orangeBox .error{
+        font-size: 32px;
+        color: #e17000;
+        margin: 21px 0px;
+    }
+    .THIS .bodyHeading {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.5px;
+        text-align: center;
+        color: #005172;
+        padding: 7px 7px 21px 7px;
+    }
+    .THIS .modalFooter{
+        padding: 24px 0px;
+        text-align: center;
+    }
+    .THIS .choose-your-profile .profile-details .right-spacer{
+        margin:0px;
+    }
+    .THIS.portal-access .wrapper .choose-your-profile .profile-details .profile{
+        width:100%;
+    }
+    
+    .THIS .accounts-wrapper .case-creation-success-msg .registration-succesfull .thank_msg
+    {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: center;
+        color: #005172;
+    }
+    
+    .THIS .accounts-wrapper .case-creation-success-msg .registration-succesfull .small_msg
+    {
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: center;
+        color: #4d4f53;
+    }
+}
+
+@media (max-width: 1365px) and (min-width: 768px)
+    {
+    .THIS {
+        margin-top:16px;
+        margin-left:32px;
+        margin-right:32px;
+    }
+    .THIS .accounts-wrapper{
+        padding: 16px;
+    }
+    
+    .THIS .midBox
+    {
+        margin-top: 0px;
+        margin-bottom: 16px;
+    }
+    
+    .THIS .choose-your-profile .profile-details .right-spacer{
+        margin: 0 20px 16px 0;
+    }
+    
+    .THIS .choose-your-profile .profile-details .right-spacer:nth-child(2n)
+    {
+        margin-right: 0px;
+    }
+    
+    
+    .THIS .portal-access .wrapper .choose-your-profile .profile-details .profile{
+        padding: 16px 0 24px 0;
+        width: 326px;
+        height: 301px;
+        margin: 0px;
+    }
+    
+    .THIS .portal-access .wrapper .choose-your-profile .profile-details .profile .user{
+        width: 99px;
+        height:99px;
+    }
+    .THIS .portal-access .wrapper .profile .profile-name{
+        margin: 16px 0 8px 0;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    
+    .THIS .portal-access .wrapper .choose-your-profile .profile-details .profile .profile-content{
+        width: 87.731%;;
+        text-align:center;
+        margin-bottom: 16px;
+        font-size: 14px;
+        line-height: 1.43;
+        letter-spacing: 0.1px;
+    }
+    
+    .THIS .portal-access .wrapper .profile .ec_btn_secondary{
+        width: 91.305%;
+        height: 42px;
+        padding: 12px 0px 14px 0px;
+    }
+    
+    .THIS .selected_btn{
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.4px;
+        text-align: center;
+        width: 90.185%;
+        height: 42px;
+        border-radius: 4px;
+        border: solid 1px #007ac9;
+        background-color: #ffffff;
+        padding: 12px 0px 14px 0px;
+    }
+    .THIS .selected_btn p{
+        margin-right: 0px;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.4px;
+        text-align: center;
+        color: #007ac9;
+        padding-top:0px;
+    }
+    .THIS .selected_btn .doneIcon{
+        color:#5b8f22;
+        float:left;
+        padding-left: 16.4px;
+        padding-top: 0px;
+    }
+    
+    .THIS .accounts-wrapper .choose-your-profile
+    {
+        margin-top:24px;
+        margin-bottom:16px;
+    }
+}

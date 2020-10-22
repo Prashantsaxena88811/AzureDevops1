@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Page Name --></label>
+    <name>ccrz__PageName__c</name>
+    <picklistValues>
+        <masterLabel>Cart</masterLabel>
+        <translation><!-- Cart --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CheckoutNew</masterLabel>
+        <translation><!-- CheckoutNew --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HomePage</masterLabel>
+        <translation><!-- HomePage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MyAccount</masterLabel>
+        <translation><!-- MyAccount --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OrderConfirmation</masterLabel>
+        <translation><!-- OrderConfirmation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OrderView</masterLabel>
+        <translation><!-- OrderView --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ProductDetails</masterLabel>
+        <translation><!-- ProductDetails --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Products</masterLabel>
+        <translation><!-- Products --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>この商品のサブスクリプション期間 (月)。静的期間として機能します。ユーザがカート/商品詳細ページで期間を選択できない場合、B2B Commerce はこの項目を使用してサブスクリプションの継続期間を決定します。</help>
+    <label><!-- Subscription Duration --></label>
+    <name>ccrz__Subscription_Duration__c</name>
+</CustomFieldTranslation>

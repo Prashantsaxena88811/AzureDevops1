@@ -1,0 +1,246 @@
+<!--
+  @Component Name     : EC_RegistrationPage.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Vijay Kumar         21/06/2019         User registers his details by entering 
+                                            all the necessary information.
+-->
+<!-- add implements="forceCommunity:availableForAllPageTypes" to surface the component in community builder -->
+<aura:component controller="EC_LightningSelfRegisterController" implements="forceCommunity:availableForAllPageTypes"
+    access="global">
+    <aura:attribute name="accountId" type="String" required="false" description="accountId for creating the user. If not specified, it will create a PersonAccount if possible for B2C scenario. Or otherwise if it's in a community, the community's self-registration accountId will be used." />
+    <aura:attribute name="regConfirmUrl" type="String" required="true" />
+    <aura:attribute name="startUrl" type="String" required="false" description="The url you go to after a successful login" />
+    <aura:method name="triggerValidateFields" action="{!c.validateFields}"></aura:method>
+    <aura:attribute name="showError" type="Boolean" required="true" description="" default="false" access="private" />
+    <aura:attribute name="errorMessage" type="String" required="false" description="" access="private" />
+    <aura:attribute name="firstnameLabel" type="String" required="false" default="First Name" />
+    <aura:attribute name="lastnameLabel" type="String" required="false" default="Last Name" />
+    <aura:attribute name="emailLabel" type="String" required="false" default="Email" />
+    <aura:attribute name="passwordLabel" type="String" required="false" default="Create Password" />
+    <aura:attribute name="confirmPasswordLabel" type="String" required="false" default="Confirm Password" />
+    <aura:attribute name="submitButtonLabel" type="String" required="false" default="Sign Up" />
+    <aura:attribute name="includePasswordField" type="Boolean" required="false" default="false" description="Whether to include password" />
+    <aura:attribute name="extraFieldsFieldSet" type="String" required="false" description="A field set name whose fields are desired for user registration" />
+    <aura:attribute name="extraFields" type="list" required="false" description="A field set name whose fields are desired for user registration" />
+    <aura:attribute name="registerBtn" type="Boolean" default="true" />
+    <aura:attribute name="RegistrationMap" type="Map" default="" />
+    <aura:attribute name="firstName" type="String" default="" />
+    <aura:attribute name="lastName" type="String" default="" />
+    <aura:attribute name="emailAdd" type="String" default="" />
+    <aura:attribute name="phoneNumber" type="String" default="" />
+    <aura:attribute name="country" type="String" default="" />
+    <aura:attribute name="accountNo" type="String" default="" />
+    <aura:attribute name="salesRep" type="String" default="" />
+    <aura:attribute name="captchaStatus" type="String" description="This holds the verification status of captcha" />
+    <aura:attribute name="isCaptchaVerified" type="boolean" default="false" />
+    <!-- for the modal -->
+    <aura:attribute name="isOpen" type="Boolean" default="false" />
+    <aura:attribute name="errorFlag" type="boolean" default="false" />
+    
+    <aura:attribute name="statusForPop" type="string" />
+     <aura:attribute name="labelForPop" type="string" />
+    <aura:attribute name="messageForPop" type="string" />
+    <!-- 110622 redemption url change -->
+    <aura:attribute name="redemptionUrl" type="string" default="" />
+    <aura:registerevent name="sitePropagatedStartUrl" type="c:setStartUrl" />
+    <aura:handler name="init" value="{!this}" action="{!c.initialize}" />
+    <aura:dependency resource="c:setStartUrl" type="EVENT" />
+    <aura:handler event="c:setStartUrl" action="{!c.setStartUrl}" />
+	<aura:attribute name="showSpinner" type="Boolean" default="true"/>
+
+   <aura:if isTrue="{!v.showSpinner}" >
+        <div class="slds-spinner_container">
+          <div role="status" class="slds-spinner slds-spinner--medium">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+         </div>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!!v.showSpinner}" > 
+    <div aura:id="registrationPageSpinner" class="slds-spinner_container slds-hide">
+        <div role="status" class="slds-spinner slds-spinner--large">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </div>
+    
+    <div class="registration-wrapper">
+        <div class="slds-grid form-container">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12 slds-show_large">
+
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_8-of-12 register-container">
+                <div class="reg slds-m-top_large slds-m-bottom_large">{!$Label.c.EC_Registration_Title}</div>
+                <div class="blueBox slds-col slds-box slds-size_12-of-12">
+                    <p class="page-heading heading">{!$Label.c.EC_Registration_PageHeadingText}</p>
+                </div>
+                <div class="bigBox slds-box slds-size_12-of-12">
+                    <div class="help-text">{!$Label.c.EC_Registration_MandatoryFields}</div>
+                    <div class="personal-info">
+                        <div class="subheading slds-m-bottom_medium">{!$Label.c.EC_Registration_PersonalInformation}
+                        </div>
+                        <div class="slds-grid slds-gutters slds-wrap">
+                            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_6-of-12 input-pad-remove first-name-input">
+                                <lightning:input aura:id="fName" label="{!$Label.c.EC_Registration_Fname}"
+                                    class="{!v.firstName.length ? 'text-filled custom-input-field' : 'custom-input-field'}"
+                                    value="{!v.firstName}" required="true"
+                                    onblur="{!c.isEmptyFieldValidation}"
+                                    onchange="{!c.validateFields}"
+                                    messageWhenValueMissing="{!$Label.c.EC_Registration_ErrorMsgFirstName}" />
+                            </div>
+                            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_6-of-12 input-pad-remove">
+                                <lightning:input aura:id="lName" label="{!$Label.c.EC_Registration_Lname}"
+                                    class="{!v.lastName.length ? 'text-filled custom-input-field' : 'custom-input-field'}"
+                                    onblur="{!c.isEmptyFieldValidation}"
+                                    value="{!v.lastName}" required="true" onchange="{!c.validateFields}"
+                                    messageWhenValueMissing="{!$Label.c.EC_Registration_ErrorMsgLastName}" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="login-info slds-m-top_xx-large">
+                        <div class="subheading slds-m-bottom_medium">{!$Label.c.EC_Registration_LoginInformation}</div>
+                        <div class="slds-grid slds-gutters slds-wrap">
+                            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-is-relative input-pad-remove">
+                                <span class="information slds-is-absolute">
+                                    <span class="tooltip">{!$Label.c.EC_Registration_ErrorMsgSalesRep}</span>
+                                </span>
+                                <lightning:input aura:id="email" type="email" label="Email Address"
+                                    class="{!v.emailAdd.length ? 'text-filled custom-input-field' : 'custom-input-field'}"
+                                    value="{!v.emailAdd}" required="true" onchange="{!c.validateFields}"
+                                    pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                                    messageWhenValueMissing="{!$Label.c.EC_Registration_ErrorMsgSalesRep}" 
+                                    messageWhenPatternMismatch="{!$Label.c.EC_Registration_ErrorMsgEmail}" />
+                            </div>
+                            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12 input-pad-remove"></div>
+                        </div>
+                    </div>
+                    <div class="contact-info slds-m-top_xx-large">
+                        <div class="subheading slds-m-bottom_medium">{!$Label.c.EC_Registration_ContactInformation}
+                        </div>
+                        <div class="slds-grid slds-gutters slds-wrap">
+                            <div class="country-code slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_6-of-12 input-pad-remove country-code-input">
+                                <lightning:select name="select1" aura:id="country"
+                                    label="{!$Label.c.EC_Registration_CountryCode}"
+                                    class="{!v.country.length ? 'text-filled custom-input-field' : 'custom-input-field'}"
+                                    value='' required="true" onchange="{!c.validateFields}"
+                                    messageWhenValueMissing="{!$Label.c.EC_Registration_ErrorMsgCountry}">
+                                    <option value="" selected="selected">{!$Label.c.EC_Registration_EnterCountryCode}</option>
+                                    <option value="1">{!$Label.c.EC_Registration_CountryCodeUS}</option>
+                                    <option value="2">{!$Label.c.EC_Registration_CountryCodeCA}</option>
+                                </lightning:select>
+                            </div>
+                            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_6-of-12 input-pad-remove">
+                                <lightning:input aura:id="phone" type="tel"
+                                    class="{!v.phoneNumber.length ? 'text-filled custom-input-field' : 'custom-input-field'}"
+                                    value="{!v.phoneNumber}" maxlength="10" label="{!$Label.c.EC_Registration_Phone}"
+                                    onblur="{!c.formatPhoneNumber}" required="true" onfocus="{!c.showOriginalFormat}" onchange="{!c.validateFields}"
+                                    pattern="^\d{10}$"
+                                    messageWhenPatternMismatch="{!$Label.c.EC_Registration_ErrorMsgPhone}"
+                                    messageWhenValueMissing="{!$Label.c.EC_Registration_ErrorMsgPhone}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account-security slds-m-top_xx-large slds-m-bottom_large">
+                        <div class="subheading slds-m-bottom_medium">{!$Label.c.EC_Registration_AccountSecurity}</div>
+                        <div class="slds-grid slds-gutters slds-wrap">
+                            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-is-relative input-pad-remove account-number-input">
+                                <span class="information slds-is-absolute">
+                                    <span class="tooltip">{!$Label.c.EC_Registration_ErrorMsgAcc}</span>
+                                </span>
+                                <lightning:input aura:id="accountNo" class="custom-input-field"
+                                    label="{!$Label.c.EC_Registration_AccountNumber}" required="true"
+                                    onchange="{!c.validateFields}" value="{!v.accountNo}"
+                                    messageWhenValueMissing="{!$Label.c.EC_Registration_ErrorMsgAcc}" />
+                            </div>
+                            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_6-of-12 input-pad-remove">
+                                <lightning:input aura:id="salesRep" class="{!v.salesRep.length ? 'text-filled custom-input-field' : 'custom-input-field'}" 
+                                    label="{!$Label.c.EC_Registration_SalesRepEmailId}" required="true" type="email"
+                                    onchange="{!c.validateFields}" value="{!v.salesRep}"
+                                    pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                                    messageWhenValueMissing="{!$Label.c.EC_Registration_MissingMsgEmail}" 
+                                    messageWhenPatternMismatch="{!$Label.c.EC_Registration_ErrorMsgEmail}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="captcha-box" aura:id="captcha-box">
+                        <iframe id="iframe_captcha" aura:id="iframe_captcha" src="{! '/apex/EC_RegPageCaptcha' }"
+                            width="100%" height="100%" frameBorder="0" scrolling="no" allowtransparency="true" /></div>
+                    <aura:if isTrue="{!v.captchaStatus ==  'Verified'}">
+						<aura:set attribute="else">
+                            <div class="captcha-error-message slds-hide" id="captchaErrorMsg">
+                                {!$Label.c.EC_CaptchaCannotbeBlank}
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                    <div class="slds-m-top_xx-large">
+                        <lightning:button label="{!$Label.c.EC_Registration_Register}" aura:id="registerUser"
+                            onclick="{! c.register }" class="slds-m-bottom_x-large ec_btn_primary"
+                            disabled="{!v.registerBtn}" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12 slds-show_large">
+
+            </div>
+        </div>
+        
+    </div>
+
+
+    <!-- pop-up modal -->
+    <aura:if isTrue="{!v.isOpen}">
+
+        <!--###### MODAL BOX Start######-->
+        <div class="popUpPrime">
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_medium"
+                aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+                <div class="slds-modal__container slds-col slds-size_6-of-12">
+
+                    <!-- ###### MODAL BOX HEADER Start ######-->
+                    <div class="slds-modal__header modalHeader">
+                        <h1 id="modal-heading-01"
+                            class="slds-text-heading_medium slds-hyphenate slds-float_left modalHeading">Modal Header
+                        </h1>
+                        <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                            alternativeText="close" variant="bare" class="slds-modal__close closeButton" />
+                        <span class="slds-assistive-text">Close</span>
+                    </div>
+
+                    <!--###### MODAL BOX BODY Part Start######-->
+                    <div class="contentContainer">
+                        <div class="slds-modal__content slds-p-around_medium slds-box orangeBox"
+                            id="modal-content-id-1">
+                            <i class="material-icons error">
+                                error
+                            </i>
+                            <h2 class="bodyHeading">
+                                Modal Body Heading Text Goes Here.
+                            </h2>
+                            <p>{!$Label.c.EC_CorrectSalesRepEmail}</p>
+                        </div>
+                    </div>
+
+                    <!--###### MODAL BOX FOOTER Part Start ######-->
+                    <footer class="slds-modal__footer modalFooter">
+                        <lightning:button class="slds-button slds-button_brand okButton" label="OK"
+                            onclick="{! c.closeModel }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+
+    </aura:if>
+    <aura:if isTrue="{!v.errorFlag}">
+                    <c:EC_SelfAlignmentPopups status="{!v.statusForPop}" label="{!v.labelForPop}" message="{!v.messageForPop}" isOpen="{!v.errorFlag}"/>
+   
+    </aura:if>   
+    </aura:if>  
+</aura:component>

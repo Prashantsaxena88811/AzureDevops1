@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Indicates the status of the associated Product Index records. Possible values are Current, Not Current and Pending. This field is primarily used by the Product Index batch process. --></help>
+    <label><!-- Product Index Status --></label>
+    <name>ccrz__ProductIndexStatus__c</name>
+</CustomFieldTranslation>

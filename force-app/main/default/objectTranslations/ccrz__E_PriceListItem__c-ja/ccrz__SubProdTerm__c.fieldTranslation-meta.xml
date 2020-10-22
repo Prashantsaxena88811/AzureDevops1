@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>この価格が関連付けられたサブスクリプション期間を入力します。</help>
+    <label><!-- SubProdTerm --></label>
+    <name>ccrz__SubProdTerm__c</name>
+    <relationshipLabel><!-- CC Price List Items --></relationshipLabel>
+</CustomFieldTranslation>

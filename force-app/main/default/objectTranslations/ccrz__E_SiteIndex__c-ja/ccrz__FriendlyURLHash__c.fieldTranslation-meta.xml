@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>フレンドリー URL のインデックス付き MD 5 ハッシュ。</help>
+    <label><!-- Friendly URL Hash --></label>
+    <name>ccrz__FriendlyURLHash__c</name>
+</CustomFieldTranslation>

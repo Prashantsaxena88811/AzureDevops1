@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>単一のスペースで区切られた、商品が属する CC 価格リスト SFID の完全なリスト。</help>
+    <label><!-- Price Lists --></label>
+    <name>ccrz__PriceLists__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_For_Commerce_User__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This is used to track if this is mandatory for a commerce user to see portal</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Required For Commerce User</label>
+    <type>Checkbox</type>
+</CustomField>

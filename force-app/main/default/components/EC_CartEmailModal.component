@@ -1,0 +1,123 @@
+<apex:component allowDML="true" controller="EC_EmailCartController">
+    <script id="EC-emailModalTemplate" type="text/template">
+            <div id="ec-cart-thankyou" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-header cc_modal_header">
+                        <button type="button" class="close cc_close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-content cc_modal_content">
+                        <div class="modal-body">
+                            <div class="text-center">
+                                <div class="material-icons check_circle md-36"></div>
+                                <div class="email-thankyou-success">{{pageLabelMap 'EC_CartSentSuccess'}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           	</div>
+            <div id="ec-cart-not-sent" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-header cc_modal_header">
+                        <button type="button" class="close cc_close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-content cc_modal_content">
+                        <div class="modal-body">
+                            <div class="text-center">
+                                <div class="material-icons error md-36"></div>
+                                <div class="email-thankyou-error">{{pageLabelMap 'EC_CartSentError'}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           	</div>
+            <div id="emailModal" class="modal fade cc_modal cc_cart_additional_info_modal" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="CartEmailLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content cc_modal_content">
+                        <div class="modal-header cc_modal_header">
+                            <button type="button" class="close cc_close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#215;</span></button>
+                            <h4 class="modal-title cc_modal_title" id="CartEmailLabel">{{pageLabelMap 'CartOrderEmailer_Header'}}</h4>
+                        </div>
+                        <div class="modal-body cc_modal_body">
+                            <form id="emailForm" class="cc_cart_email_form">
+                                <div class="row">
+                                    <div class="form-group field1 col-xs-12 col-sm-6">
+                                        <label for="email_to">{{pageLabelMap 'CartOrderEmailer_ToEmail'}}</label>
+                                        <input id="email_to" type="email" class="form-control cc_email_to" name="toEmailAddress">
+                                    </div>
+                                    <div class="form-group field2 col-xs-12 col-sm-6">
+                                        <label for="email_cc">{{pageLabelMap 'CartOrderEmailer_CcEmail'}}</label>
+                                        <input id="email_cc" type="email" class="form-control cc_email_cc" name="ccEmailAddress">
+                                    </div>                                
+                                    <div class="form-group col-xs-12 col-sm-12">
+                                        <label for="subject">{{pageLabelMap 'CartOrderEmailer_Subject'}}</label>
+                                        <input id="subject" type="text" class="form-control cc_subject" name="subject">
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-12">
+                                        <label for="description">{{pageLabelMap 'CartOrderEmailer_Description'}}</label>
+                                        <textarea id="description" rows="10" type="text" class="form-control cc_description" name="description"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer cc_modal_footer">
+                            <button id="sendEmailBtn-cust" type="button" class="btn btn-default btn-sm cc_send_email ec-btn-primary">{{pageLabelMap 'Send'}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+    <script type="text/javascript">
+        jQuery(function ($) {   
+            CCRZ.uiProperties.CartDetailView.partials.emailModal = '#EC-emailModalTemplate';  
+            var remoteActionCalls = _.extend(CCRZ.RemoteInvocation, {
+                className: 'EC_EmailCartController'
+            });
+            
+            CCRZ.pubSub.on('view:CartDetailView:refresh', function (viewInstance) {
+                setCartDetails(CCRZ.views.CartDetailView.prototype, viewInstance);
+                viewInstance.setElement(viewInstance.$el);
+            });
+            
+            var setCartDetails = function (cartView, viewIn) {
+                
+                 $('#emailModal').on('hide.bs.modal', function(){
+                	if($('.qlnotification').length)
+                    	$('.qlnotification').remove();
+            	});
+                
+                var events = cartView.events;
+                events["click #sendEmailBtn-cust"] = "sendMail"; 
+                cartView.sendMail = function (event) {
+                    console.log("Send Mail");
+                    var emailToAddress = $('#email_to').val();
+                    var emailCcAddress =$('#email_cc').val();
+                    var subject =$('#subject').val();
+                    var description =$('#description').val();
+                    var remoteActionCallSendMail = _.extend(CCRZ.RemoteInvocation, {
+                        className: 'EC_EmailCartController'
+                    });
+                    remoteActionCallSendMail.invokeCtx('sendMailCart', emailToAddress, emailCcAddress, subject, description,
+                        function (resp) {
+                            if(resp.success && resp.data){
+                                $('#emailModal').modal('hide');
+                                $("#ec-cart-thankyou").modal('show');
+                            }  else {
+                                $('#emailModal').modal('hide');
+                                $("#ec-cart-not-sent").modal('show');
+                                //$('.modal-dialog').append('<div class="qlnotification"><i class="material-icons tickmessage done"></i>'+resp.data+'</div>');
+                            }
+                        }, {
+                            buffer: false, escape: false, nmsp: false
+
+                        }
+                    );
+                }
+             }   
+           
+        });
+    </script>
+</apex:component>

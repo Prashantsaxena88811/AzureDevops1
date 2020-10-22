@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This field will be utilized in implementations where a user can order for multiple accounts inclusive or exclusive of their own. The effective account is used to control the entitlements, pricing, integrations etc that drive the site experience. --></help>
+    <label><!-- Effective Account ID --></label>
+    <name>ccrz__EffectiveAccountID__c</name>
+</CustomFieldTranslation>

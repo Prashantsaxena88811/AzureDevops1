@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Identifier of this CC Attribute object used as a key in the JSON pricing object and as a reference internally by B2B Commerce --></help>
+    <label><!-- Attribute ID --></label>
+    <name>ccrz__AttributeID__c</name>
+</CustomFieldTranslation>

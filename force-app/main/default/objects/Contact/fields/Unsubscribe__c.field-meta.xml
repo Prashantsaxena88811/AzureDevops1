@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unsubscribe__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is used to check if the user has opted out of Abandoned Cart emails</description>
+    <externalId>false</externalId>
+    <label>Unsubscribe</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

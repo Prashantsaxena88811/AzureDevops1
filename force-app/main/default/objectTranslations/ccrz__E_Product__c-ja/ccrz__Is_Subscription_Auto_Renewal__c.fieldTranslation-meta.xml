@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>この商品がサブスクリプションで、自動更新に設定されている場合は true に設定します。それ以外の場合は false に設定します。</help>
+    <label><!-- Is Subscription Auto Renewal --></label>
+    <name>ccrz__Is_Subscription_Auto_Renewal__c</name>
+</CustomFieldTranslation>

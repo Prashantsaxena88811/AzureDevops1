@@ -1,0 +1,34 @@
+/*EC_CheckoutAddress */
+
+.addcontainer.addsec {
+    margin-bottom: 8px;
+}
+
+.editdiv {
+    height: 50px;
+    width: 150px;
+    border: solid 1px #d9d9d9;
+    background-color: #f7f7f7;
+}
+
+.addcontainer {
+    margin-bottom: 4px;
+}
+
+.shipid {
+    padding-bottom: 20px;
+}
+
+.cc_main_content_col form {
+    margin: 8px 0;
+}
+
+.additionalinfo {
+    border: solid 1px #d9d9d9;
+}
+
+@media only screen and (max-width: 767px) {
+    .addcontainer {
+        margin-bottom: 14px !important;
+    }
+}

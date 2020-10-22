@@ -1,0 +1,7 @@
+<messaging:emailTemplate subject="{!relatedTo.EC_Cart_Email_Subject__c}" recipientType="Contact" relatedToType="ccrz__E_Cart__c">
+<messaging:htmlEmailBody >
+<c:EC_EmailCartDetails cartSFId="{!relatedTo.Id}" ></c:EC_EmailCartDetails>
+<!--{!relatedTo.Id} -->
+</messaging:htmlEmailBody>
+
+</messaging:emailTemplate>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Tertiary Attribute --></label>
+    <name>ccrz__TertiaryAttr__c</name>
+    <relationshipLabel><!-- CC Order Items (Tertiary Attribute) --></relationshipLabel>
+</CustomFieldTranslation>

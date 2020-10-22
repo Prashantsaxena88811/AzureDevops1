@@ -1,0 +1,28 @@
+public with sharing class ContactController {
+    
+    public Contact c { get; set; }
+    
+    public List<Contact> samepage { get; set; }
+    
+    public ContactController(){
+        c=new Contact();
+        c.LastName='Smith';
+        Account a = [select Id from Account limit 1];
+    }
+    
+    public PageReference save() {
+        insert c ;  
+        samepage= [select id,FirstName,LastName,Email,Birthdate from Contact where id=:c.id];
+        c = new Contact();
+        Account a = new Account();
+        a.Name = 'Test'; 
+        insert a;
+        Opportunity op = new Opportunity();
+        op.AccountId = a.Id;
+        return null;
+        
+
+    }
+    
+    
+}

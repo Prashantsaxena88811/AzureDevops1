@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__InventoryType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Describes the high level product types (in terms if inventory control) that need to be handled in the availability API. The implementations themselves will vary per requirements, such as whether or not the data is handled locally or is only read via an external service. This field could also be useful in terms of price display and calculations, such as pricing that differs for purchase vs. monthly rental.
+
+NA - Not Applicable
+STANDARD - &quot;off the shelf&quot; item.
+RENTAL - Rented item.
+CLASS - Seats in a class, conference, etc.
+SOFTWARE - Downloaded item that is controlled by licensing rather than physical volume.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Selects how this product&apos;s inventory is managed.</inlineHelpText>
+    <label>InventoryType</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>STANDARD</fullName>
+                <default>true</default>
+                <label>STANDARD</label>
+            </value>
+            <value>
+                <fullName>RENTAL</fullName>
+                <default>false</default>
+                <label>RENTAL</label>
+            </value>
+            <value>
+                <fullName>CLASS</fullName>
+                <default>false</default>
+                <label>CLASS</label>
+            </value>
+            <value>
+                <fullName>DOWNLOAD</fullName>
+                <default>false</default>
+                <label>DOWNLOAD</label>
+            </value>
+            <value>
+                <fullName>ONSITE CLASS</fullName>
+                <default>false</default>
+                <label>ONSITE CLASS</label>
+            </value>
+            <value>
+                <fullName>NA</fullName>
+                <default>false</default>
+                <label>NA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

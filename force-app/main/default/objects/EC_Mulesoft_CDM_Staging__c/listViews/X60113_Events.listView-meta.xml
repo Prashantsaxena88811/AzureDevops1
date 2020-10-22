@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X60113_Events</fullName>
+    <columns>NAME</columns>
+    <columns>EC_User__c</columns>
+    <columns>EC_User_Key__c</columns>
+    <columns>EC_Source_Table__c</columns>
+    <columns>EC_Action__c</columns>
+    <columns>EC_IsProcessed__c</columns>
+    <columns>EC_Account_Key__c</columns>
+    <columns>EC_FederationIdentifier__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>EC_User_Key__c</field>
+        <operation>contains</operation>
+        <value>60113</value>
+    </filters>
+    <label>60113 - Events</label>
+    <language>en_US</language>
+</ListView>

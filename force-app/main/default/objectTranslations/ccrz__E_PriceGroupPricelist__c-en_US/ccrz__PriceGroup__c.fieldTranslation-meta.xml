@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Mapping to the price group for this entry. --></help>
+    <label><!-- CC Price Group --></label>
+    <name>ccrz__PriceGroup__c</name>
+    <relationshipLabel><!-- CC Price Group Pricelists --></relationshipLabel>
+</CustomFieldTranslation>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Industry --></label>
+    <name>ccrz__Industry__c</name>
+    <picklistValues>
+        <masterLabel>Aerospace</masterLabel>
+        <translation>航空宇宙</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chemical</masterLabel>
+        <translation>化学薬品</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Construction</masterLabel>
+        <translation>建設業</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DOD</masterLabel>
+        <translation>DOD</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DOE</masterLabel>
+        <translation>DOE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Electric Utility</masterLabel>
+        <translation>電気事業</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Energy</masterLabel>
+        <translation>エネルギー</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Engineering</masterLabel>
+        <translation>エンジニアリング</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Government</masterLabel>
+        <translation>政府機関</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hydro Energy</masterLabel>
+        <translation>水力エネルギー</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manufacturing</masterLabel>
+        <translation>製造業</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maritime</masterLabel>
+        <translation>海上</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mining</masterLabel>
+        <translation>炭鉱業</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nuclear Energy</masterLabel>
+        <translation>核エネルギー</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Oil &amp; Gas</masterLabel>
+        <translation>石油 &amp; ガス</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>その他</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pulp &amp; Paper</masterLabel>
+        <translation>パルプ &amp; 紙</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Railroad</masterLabel>
+        <translation>鉄道業</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shipbuilding</masterLabel>
+        <translation>造船</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Telecommunication</masterLabel>
+        <translation>電気通信業</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transportation</masterLabel>
+        <translation>輸送</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Utilities</masterLabel>
+        <translation>公益事業</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wind Energy</masterLabel>
+        <translation>風力エネルギー</translation>
+    </picklistValues>
+</CustomFieldTranslation>

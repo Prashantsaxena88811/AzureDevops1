@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Flag this Category as the Canonical Path for the Product. This is used for determining SEO Friendly URLs. --></help>
+    <label><!-- Canonical Path --></label>
+    <name>ccrz__IsCanonicalPath__c</name>
+</CustomFieldTranslation>

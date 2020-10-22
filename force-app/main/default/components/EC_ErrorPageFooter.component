@@ -1,0 +1,107 @@
+<apex:component >
+    <apex:slds />
+    <footer>
+        <section class="footer-wrapper cEC_footer">
+            <div class="slds-grid footer-sub-sections slds-p-vertical_large slds-wrap">
+                <div class="slds-col slds-size_12-of-12 slds-large-size_5-of-12">
+                    <h4 class="slds-p-bottom_x-small subsection-heading">{!$Label.EC_Footer_AboutEcoLabHeader}</h4>
+                    <div class="content">{!$Label.EC_Footer_AboutEcolabContent}</div>
+                </div>
+                <div class="slds-col slds-size_1-of-12 slds-show_medium">&nbsp;</div>
+                <div class="slds-col slds-size_12-of-12 slds-large-size_3-of-12 social-media">
+                    <h4 class="slds-p-bottom_x-small subsection-heading">{!$Label.EC_Footer_MediaLinksHeader}</h4>
+                    <div class="icons">
+                        <ul class="slds-list_horizontal">
+                            <li>
+                                <a href="{!$Label.EC_Footer_MediaLinksFacebook}" target="_blank">
+                                    <div id="facebook-image" class="contact-image"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{!$Label.EC_Footer_MediaLinksInstagram}" target="_blank">
+                                    <div id="instagram-image" class="contact-image"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{!$Label.EC_Footer_MediaLinksLinkedIn}" target="_blank">
+                                    <div id="linkedin-image" class="contact-image"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{!$Label.EC_Footer_MediaLinksTwitter}" target="_blank">
+                                    <div id="twitter-image" class="contact-image"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{!$Label.EC_Footer_MediaLinksYoutube}" target="_blank">
+                                    <div id="youtube-image" class="contact-image"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-12 slds-show_medium">&nbsp;</div>
+                <div class="slds-col slds-size_12-of-12 visit-website slds-p-left_medium slds-large-size_2-of-12">
+                    <h4 class="slds-p-bottom_x-small subsection-heading">
+                        {!$Label.EC_Footer_VisitWebsiteHeader}
+                    </h4>
+                    <div>
+                        <a href="{!$Label.EC_Footer_VisitWebsiteLink}" target="_blank">
+                            <span class="slds-p-left_xxx-small">{!$Label.EC_Footer_VisitWebsiteContent}</span>
+                            <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-clearfix thin-separator">&nbsp;</div>
+
+
+            <div class="copyright-section">
+                <section class="slds-grid slds-p-vertical_medium content-left-spacer slds-wrap">
+                    <div class="slds-col slds-large-size_7-of-12 slds-size_12-of-12 parent">
+                        <span>{!$Label.EC_Footer_CopyrightContent}</span>
+                    </div>
+                    <!-- show medium -->
+                    <div class="slds-col slds-large-size_5-of-12 slds-size_12-of-12 slds-show_medium">
+                        <ul class="slds-list_horizontal slds-float_right">
+                            <li>
+                                <a href="https://en-in.ecolab.com/sds" target="_blank">{!$Label.EC_Footer_SDSDocumentsTitle}
+                                    <i class="material-icons">open_in_new</i>
+                                </a>
+                                <span class="slds-p-horizontal_large diversion">|</span>
+                            </li>
+                            <li>
+                                <a href="https://en-in.ecolab.com/terms-of-use" target="_blank">{!$Label.EC_Footer_TermsOfUseTitle}
+                                    <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                                </a>
+                                <span class="slds-p-horizontal_large diversion">|</span>
+                            </li>
+                            <li>
+                                <a href="https://en-in.ecolab.com/privacy-policy" target="_blank">{!$Label.EC_Footer_PrivacyPolicyTitle}
+                                    <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- hide medium -->
+                    <div class="slds-col slds-size_12-of-12 slds-hide_medium parent">
+                        <a class="footer_links" href="https://en-in.ecolab.com/sds" target="_blank">{!$Label.EC_Footer_SDSDocumentsTitle}
+                            <i class="material-icons">open_in_new</i>
+                        </a>
+                        <a class="footer_links terms" href="https://en-in.ecolab.com/terms-of-use" target="_blank">{!$Label.EC_Footer_TermsOfUseTitle}
+                            <i class="material-icons">open_in_new</i>
+                        </a>
+                    </div>
+                    <div class="slds-col slds-size_12-of-12 slds-hide_medium parent">
+                        <a class="footer_links" href="https://en-in.ecolab.com/privacy-policy" target="_blank">{!$Label.EC_Footer_PrivacyPolicyTitle}
+                            <i class="material-icons">open_in_new</i>
+                        </a>
+                    </div>
+
+                </section>
+            </div>
+
+        </section>
+    </footer>
+</apex:component>

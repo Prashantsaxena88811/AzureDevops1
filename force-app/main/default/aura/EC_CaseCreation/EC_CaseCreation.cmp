@@ -1,0 +1,57 @@
+<!--
+  
+  @Component Name     : EC_CustomLogin.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  VijayKumar          03/07/2019         As a registered customer he wants to view and select the portal 
+           access role best suited for him.
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" controller="EC_CaseCreationController" access="global">
+    <aura:attribute name="caseCreationResponse" type="String" description="" default="false" access="private"/>
+    <aura:attribute name="roles" type="List" />
+    <aura:attribute name="currentRole" type="String" />
+    <aura:attribute name="selectRoleName" type="String" />
+    <aura:attribute name="confirmBtn" type="Boolean" default="true"/>
+    <aura:attribute name="cancelBtn" type="Boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.initialize}"/>
+     <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+
+   <aura:if isTrue="{!v.showSpinner}" >
+        <div class="slds-spinner_container">
+        <div role="status" class="slds-spinner slds-spinner--medium">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!!v.showSpinner}" >
+    <div class="slds-grid">
+        <div class="accounts-wrapper">
+            <div class="case-creation-success-msg slds-grid">
+                <div class="image">
+                    <a href="/product">
+                        <i class="material-icons">
+                            check_circle
+                        </i>
+                    </a>
+                </div>
+                <div class="registration-succesfull slds-m-top_medium slds-p-bottom_medium">
+                    <div class="thank_msg">{!$Label.c.EC_CaseCreation_ThanksForRegistration}</div>
+                    <div class="small_msg">{!$Label.c.EC_CaseCreation_PortalAccessRegistration}</div>
+                </div>
+            </div>
+            <div class="choose-your-profile slds-m-top_xx-large">
+                <h2>{!$Label.c.EC_CaseCreation_ChooseProfileType}</h2>
+            </div>
+                
+            <c:EC_RequestForPortalAccess  caseCreation="{!v.cancelBtn}" />
+            
+        </div>
+    </div>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Electronic payments are easy</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
+    <style type="text/css">
+    html,
+    body {
+        margin: 0 auto !important;
+        padding: 0 !important;
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    .ec_mainHeading {
+        font-family: Arial;
+        font-size: 22px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.09;
+        letter-spacing: normal;
+        color: #007ac9;
+    }
+
+    .ec_mainParagraph {
+        font-family: Arial;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.43;
+        letter-spacing: normal;
+        color: #4d4f53;
+		padding-left: 21px;
+    }
+    </style>
+</head>
+
+<body class="ec_body" style="margin:0px; padding:0px;">
+    <table valign="top" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="center">
+        <tbody>
+            <tr>
+                <td valign="top" align="center">
+                    <table class="ec_main_table" style="max-width:550px;" width="100%" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#f5f7fa">
+                        <tbody>
+                            <!--Header section-->
+                            <tr>
+                                <td valign="top" align="left">
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <img class="ec_header" src="{!$Label.org_Url}servlet/servlet.ImageServer?id={!$Label.payment_portal_hero}&oid={!$Label.payment_portal_ord_id}&lastMod=1563978209000" alt="Ecolab Logo" />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!--/Header section-->
+                            <!--body section-->
+                            <tr>
+                                <td valign="top" align="left">
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+                                        <tbody>
+                                            <!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:31px;" height="31">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" align="center" class="ec_mainHeading">
+                                                    Pay Electronically
+                                                </td>
+                                            </tr>
+                                            <!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:24px;" height="24">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" class="ec_mainParagraph">
+													You are now ready to use the Payment Portal. A new way to securely submit your ACH payment online.
+                                                </td>
+                                            </tr>
+                                            <!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:10px;" height="10">&nbsp;</td>
+                                            </tr>
+											<tr>
+												<td class="ec_mainParagraph">Next time a payment is due take these steps:</td>
+											</tr>
+											<!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:10px;" height="10">&nbsp;</td>
+                                            </tr>
+											<tr>
+												<td class="ec_mainParagraph">1. Go to 
+													<a class="ec_link" href="https://connect.ecolab.com/" target="_blank">
+                                                        connect.Ecolab.com
+                                                    </a>
+												</td>
+											</tr>
+											<!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:10px;" height="10">&nbsp;</td>
+                                            </tr>
+											<tr>
+												<td class="ec_mainParagraph">2. Click on Orders</td>
+											</tr>
+											<!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:10px;" height="10">&nbsp;</td>
+                                            </tr>
+											<tr>
+												<td class="ec_mainParagraph">
+													<img src="{!$Label.org_Url}servlet/servlet.ImageServer?id={!$Label.payment_portal_visual}&oid={!$Label.payment_portal_ord_id}&lastMod=1574241544000" alt="Ecolab orders" />
+												</td>
+											</tr>
+											<!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:10px;" height="10">&nbsp;</td>
+                                            </tr>
+											<tr>
+												<td class="ec_mainParagraph">3. Then locate the Payment Portal button</td>
+											</tr>
+											<!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:10px;" height="10">&nbsp;</td>
+                                            </tr>
+											<tr>
+												<td class="ec_mainParagraph">
+													<img src="{!$Label.org_Url}servlet/servlet.ImageServer?id={!$Label.payment_portal_button}&oid={!$Label.payment_portal_ord_id}&lastMod=1574241498000" alt="Ecolab payment portal button" />
+												</td>
+											</tr>
+                                            <!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:20px;" height="20">&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!--/body section-->
+                            <!--footer section-->
+                            <tr bgcolor="#007ac9">
+                                <td valign="top" align="left" style="font-family:Arial; font-size:13px;">
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+                                        <tbody>
+                                            <!--footer top border-->
+                                            <tr>
+                                                <td bgcolor="#5b8f22" style="font-size:0px; line-height:0px; height:7px;" height="7">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <img class="ec_logo" src="{!$Label.org_Url}servlet/servlet.ImageServer?id={!$Label.payment_portal_footer}&oid={!$Label.payment_portal_ord_id}&lastMod=1574416417000" alt="Ecolab Logo" />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!--/footer section-->
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

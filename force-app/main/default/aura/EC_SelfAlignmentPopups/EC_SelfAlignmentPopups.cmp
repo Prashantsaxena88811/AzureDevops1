@@ -1,0 +1,56 @@
+<!--
+
+  @Component Name     : EC_SelfAlignmentPopups.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Soumick               11/26/2019        Component for self alignment popups
+
+-->
+
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+<aura:attribute name="message" type="String"  />
+<aura:attribute name="status" type="String"   />
+<aura:attribute name="label" type="String"   />
+<aura:attribute name="isOpen" type="Boolean" default="true"  />    
+  
+     <aura:if isTrue="{!v.isOpen}"> 
+        <div class = "popUpPrime">
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_medium" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+                <div class="slds-modal__container slds-col slds-size_6-of-12 parentPop">
+                    <div class="slds-modal__header modalHeader">
+                        <h1 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate slds-float_left modalHeading">
+                         {!v.label}
+                        </h1>
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModel }"
+                                              alternativeText="close"
+                                              variant="bare"
+                                              class="slds-modal__close closeButton"/>
+                        <span class="slds-assistive-text">Close</span>
+                    </div>
+                    <div class = "contentContainer" >
+                        <div class="{!'slds-modal__content slds-p-around_medium slds-box' + ' ' +  (v.status != '1001' ? 'orangeBox' : 'greenBox')}"  id="modal-content-id-1">
+                          
+                            <i class="{!'material-icons' + ' ' +  (v.status != '1001' ? 'error' : 'check_circle')}" >
+                                
+                            </i>
+                              
+                            
+                            <h2 class = "bodyHeading">
+                           		
+                           {!v.message}   
+                            </h2>
+                            
+                        </div>
+                    </div>
+                    <footer class="slds-modal__footer modalFooter">
+                        <lightning:button class="ec_btn_primary" label="{!$Label.c.EC_General_OK_Label}" onclick="{! c.closeModel }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </aura:if>
+</aura:component>

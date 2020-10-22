@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Language__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The locale for this translation.  Must be in the form of a standard locale identifier, e.g. en_US, fr, fr_CA, etc.</description>
+    <externalId>true</externalId>
+    <label>Language</label>
+    <length>5</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

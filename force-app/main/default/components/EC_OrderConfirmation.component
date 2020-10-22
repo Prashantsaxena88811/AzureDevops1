@@ -1,0 +1,1068 @@
+<!--
+
+  @Component Name     : EC_OrderConfirmation
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Sai Kiran Pidugu     6/06/2019         Checkout step three order confirmation.
+
+-->
+
+<apex:component controller="EC_CheckoutController">
+
+    <script id="EC-OrderDetails-View-Desktop" type="text/template">
+        <div class="cc_order_details order-ackn-container">
+            <div class="checkoutNavContainer">
+                <div class="checkout-mobile visible-xs">
+                    <ul class="nav nav-pills nav-justified thumbnail checkout-nav-ul mobile-ul">
+                        
+                        <div class="circle-wrapper cc_checkoutStep cc_checkoutStep1 done-item">
+                            <div class="mob-circle">
+                                <span class="nav-header-title">{{pageLabelMap 'CheckOut_InfoStep'}}</span>
+                            </div>
+                            <div class="mob-line"></div> 
+                        </div>
+                        <div class="circle-wrapper cc_checkoutStep cc_checkoutStep2 done-item">
+                            <div class="mob-circle">
+                                <span class="nav-header-title">{{pageLabelMap 'CheckOut_OrderReview'}}</span>
+                            </div>
+                            <div class="mob-line"></div> 
+                        </div>
+                        
+                        <div class="circle-wrapper active cc_checkoutStepOrderConfirmation cc_checkoutStep">
+                            <div class="mob-circle">
+                                <span class="nav-header-title">{{pageLabelMap 'CheckOut_OrderConfirmationStep'}}</span>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <ul class="nav nav-pills nav-justified thumbnail checkout-nav-ul hidden-xs">
+                    <li class="cc_checkoutStep cc_checkoutStep1 done-item">
+                        <span class="nav-header-title">{{pageLabelMap 'CheckOut_InfoStep'}}</span>
+                    </li>
+                    <li class="cc_checkoutStep cc_checkoutStep2 done-item">
+                        <span class="nav-header-title">{{pageLabelMap 'CheckOut_OrderReview'}}</span>
+                    </li>
+                    <li class="cc_checkoutStepOrderConfirmation cc_checkoutStep active">
+                        <span class="nav-header-title">{{pageLabelMap 'CheckOut_OrderConfirmationStep'}}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix">            
+                <button  id="continue_click" class="btn btn-default btn-sm continueShoppingButton cc_continue_shopping_button ec-btn-primary shop_btn_style pull-right mgb20" name="" type="button" >{{pageLabelMap 'CartInc_ContinueShopping'}}</button>
+            </div>
+            {{#if this.isConfirmation}}
+                <div class="ackn_msg">
+                    <div class="material-icons check_circle icon-green">
+                    </div>
+                    <div class="msg_details">
+                        <div class=line-one>{{pageLabelMap 'EC_orderSuccess'}}
+                        </div>
+                        <div class="line-two">{{pageLabelMap 'EC_orderSuccessLtwo'}} {{this.buyerEmail}} 
+                        </div>
+                    </div>
+                </div>
+            {{else}}
+                <div class="panel panel-default cc_panel cc_order_information">
+                    <div class="panel-heading cc_heading">
+                        <h3 class="panel-title cc_title">{{pageLabelMap 'OrderInformation'}}</h3>
+                    </div>
+                    <div class="panel-body cc_body">
+                        <p class="cc_order_information_number">
+                            <span class="cc_order_number">{{pageLabelMap 'OrderView_OrderNumber'}}&#58;&#160;</span>
+                            <span class="cc_order_name">{{this.name}}</span>
+                            {{#ifDisplay 'OD.DsplExtOrderNumber'}}
+                                <span class="cc_order_ext_number">{{pageLabelMap 'ExternalOrderID'}}&#58;&#160;</span>
+                                <span class="cc_order_ext_id">{{this.externalOrderId}}</span>
+                            {{/ifDisplay}}
+                        </p>
+                        <p class="cc_order_information_date">
+                            <span class="cc_order_date_label">{{pageLabelMap 'MyOrdersInc_OrderDate'}}&#58;&#160;</span>
+                            <span class="cc_order_date">{{this.orderDateStr}}</span>
+                        </p>
+                        <p class="cc_order_information_status">
+                            <span class="cc_order_status_label">{{pageLabelMap 'MyOrdersInc_Status'}}&#160;</span>
+                            <span class="cc_order_status">{{pageLabelMap this.status}}</span>
+                        </p>
+                        <p class="pull-right">
+                            <a href="#" class="orderHistory cc_order_history">{{pageLabelMap 'OrderConfirmation_OrderHistory'}}</a>
+                        </p>
+                        <div class="cc_order_information_payments">
+                            {{#each this.payments}}
+                                {{#ifEquals paymentMethod "PO Number"}}
+                                    <p class="cc_order_information_payment">{{pageLabelMap 'CheckOut_POGuidingText'}}</p>
+                                {{/ifEquals}}
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            {{/if}}                    
+                        
+            <div class="cc_well cc_order_review">
+                <div class="panel panel-default cc_panel cc_checkout_review or-detail ec-ack-panel">
+                    <div class="panel-heading cc_heading">
+                        <h3 class="panel-title cc_title">{{pageLabelMap 'EC_CustomerInfo'}}</h3>
+                    </div>
+                    <div class="panel-body cc_body ec-ack-panel-body">
+                        <div class="row">
+                            <div class="col-md-2 col-xs-12 col-sm-4 titlenames ec-contact-infor">
+                                <div class="or-info-label">{{pageLabelMap 'EC_NameOnOrderReview'}}</div>
+                                <div class="or-info-val">{{this.buyerFirstName}} {{this.buyerLastName}}</div>
+                            </div>
+                            <div class="col-md-3 col-xs-12 col-sm-4 titlenames ec-contact-infor">
+                                <div class="or-info-label">{{pageLabelMap 'EC_EmailID'}}</div>
+                                <div class="or-info-val">{{this.buyerEmail}}</div>
+                            </div>
+                            <div class="col-md-2 col-xs-12 col-sm-4 titlenames ec-contact-infor ec-ack-contact-infor">
+                                <div class="or-info-label">{{pageLabelMap 'EC_PhoneNo'}}</div>
+                                <div class="or-info-val">{{this.buyerPhone}}</div>
+                            </div>
+                            <div class="col-md-2 col-xs-12 col-sm-4 titlenames ec-contact-infor ec-no-margin">
+                                <div class="or-info-label">{{pageLabelMap 'EC_Ecolab_Account_Number'}}</div>
+                                <div class="or-info-val ecolabAccNo"></div>
+                            </div>
+                            <div class="col-md-3 col-xs-12 col-sm-4 titlenames ec-contact-infor ec-no-margin">
+                                <div class="or-info-label">{{pageLabelMap 'EC_AccName'}}</div>
+                                <div class="or-info-val ecolabAccName"></div>
+                            </div>    
+                        </div>                                    
+                    </div>
+                </div>                
+                <div class="or-address-section clearfix">
+                            <div class="panel panel-default cc_panel cc_checkout_review or-address-section-shipping ec-ack-panel">
+                                <div class="panel-heading cc_heading">
+                                    <h3 class="panel-title cc_title">{{pageLabelMap 'EC_ShippingAddress'}}
+                                    </h3>
+                                </div>
+                                <div class="panel-body cc_body ec-ack-addr-panel-body">                            
+                                    <span class="cc_shipping_address">{{> addressDisplay this.shippingAddress}}</span>                            
+                                </div>
+                            </div>
+                            <div class="panel panel-default cc_panel cc_checkout_review or-address-section-billing ec-ack-panel">
+                                <div class="panel-heading cc_heading">
+                                    <h3 class="panel-title cc_title">{{pageLabelMap 'EC_BillingAddress'}}
+                                    
+                                    </h3>
+                                </div>
+                                <div class="panel-body cc_body ec-ack-addr-panel-body">
+                                    <span class="cc_billing_address">{{> addressDisplay this.billingAddress}}</span>                                   
+                                </div>
+                            </div>
+                </div>
+            </div>                
+            {{#if this.requestedDateStr}}
+                        <div class="panel panel-default cc_panel cc_checkout_review or-detail or-detail-date ec-ack-panel clearfix">
+                            <div class="conf-wrapper">
+                            <div class="panel-heading cc_heading">
+                                <h3 class="panel-title cc_title ucase ec-shipping-info-title">{{pageLabelMap 'EC_ShippingInfo'}}</h3>
+                            </div>
+                            <div class="panel-body cc_body ec-ack-date-panel-body conf-left">
+                                <div class="cc_shipping_delivery_section">
+                                    <div class="date-label fwb">{{pageLabelMap 'Checkout_RequestedDeliveryDt'}}:</div>
+                                    <div class="mobdaterev ec-date"><span class="cc_shipping_delivery_date">{{this.requestedDateStr}}</span></div>                             
+                                </div> 
+                                {{#ifEquals this.originatedCartR.ECIsRequestedDateValid false}}
+                                
+                                <span class="deltextmsg"><span class="alerticonrev"><i class="material-icons alert-info-icon error"></i></span>
+                               {{pageLabelMap 'EC_AlertDelivery'}}</span>
+                                  
+                                {{/ifEquals}}  
+                                {{#if this.shippingInst}}
+                                    {{#ifEquals '{!isFBUser}' 'true' }}
+                                        <div class="cc_shipping_delivery_section shipping_comments">
+                                            <div class="date-label fwb">{{pageLabelMap 'CheckOut_ShippingNotes'}}:</div>
+                                            <div class="mobdaterev ec-date shippingcomments"><span class="cc_shipping_delivery_date">{{this.shippingInst}}</span></div>                             
+                                        </div> 
+                                    {{/ifEquals}}
+                                {{/if}}  
+                                                                     
+                            </div>
+                            </div>
+                            <div class="conf-wrapper conf-pay-wrap">
+                                <div class="panel-heading cc_heading">
+                                    <h3 class="panel-title cc_title ucase ec-shipping-info-title">{{pageLabelMap 'EC_PaymentInfo'}}</h3>
+                                </div>
+                                <div class="panel-body cc_body ec-ack-date-panel-body">
+                                    {{#if (checkpaymentmethod)}}
+                                        <div class="revpay col-xs-12 col-sm-5 revpayccbott col-md-5">
+                                            <div class="revpo fwb">{{pageLabelMap 'EC_POVal'}}</div>
+                                                <div class="revpoval">{{this.PONumber}}</div>
+                                            </div>
+                                    {{else}}
+                           
+                                        {{#if this.PONumber}}
+                                            <div class="revpay col-xs-12 col-sm-5 revpaypotop col-md-5">
+                                                <div class="revpo fwb">{{pageLabelMap 'EC_POVal'}}</div>
+                                                <div class="revpoval">{{this.PONumber}}</div>
+                                            </div>
+                                        {{/if}}
+                                        <div class="revpay col-xs-12 col-sm-4 revpayccbott col-md-4">
+                                            <div class="revpo fwb">{{pageLabelMap 'EC_PrimaryPaymentType'}}</div>
+                                            <div class="revpoval revccvalpo"></div>
+                                        </div>
+                                   {{/if}}
+                                </div>
+                            </div>
+                        </div>
+            {{/if}}                                    
+            {{> orderItemsDesktop}}
+            <div class="cc_totals_section">
+                {{> totalsSection}}
+            </div>
+            {{#if this.shipments}}
+                <table class="shopping_cart orderShipments cc_order_shipments_table">
+                    <tr class="cc_tr">
+                        <th class="cc_th_tracking_url">&#160;</th>
+                        <th class="cc_th_date">{{pageLabelMap 'OrderShipment_ShipmentDate'}}</th>
+                        <th class="cc_th_carrier">{{pageLabelMap 'OrderShipment_Carrier'}}</th>
+                        <th class="cc_th_method">{{pageLabelMap 'OrderShipment_ShipmentMethod'}}</th>
+                        <th class="cc_th_tracking_num">{{pageLabelMap 'OrderShipment_TrackingNumber'}}</th>
+                        <th class="cc_th_deliver_date">{{pageLabelMap 'OrderShipment_DeliveryDate'}}</th>
+                    </tr>
+                    {{#each this.shipments}}
+                        <tr class="cc_tr_values {{sfid}}">
+                            <td class="cc_td_tracking_url"><a target="shiptracking"
+                                    href="{{{trackingUrl}}}">{{pageLabelMap 'OrderShipment_Track'}}</a></td>
+                            <td class="cc_td_date">{{shipmentDateStr}}</td>
+                            <td class="cc_td_carrier">{{carrier}}</td>
+                            <td class="cc_td_method">{{shippingMethod}}</td>
+                            <td class="cc_td_tracking_num">{{trackingNo}}</td>
+                            <td class="cc_td_deliver_date">{{deliveryDateStr}}</td>
+                        </tr>
+                        {{#each this.items}}
+                            <tr class="cc_tr_details">
+                                <td ></td>
+                                <td colspan="5" class="cc_td_detail_line {{sfid}}">
+                                    <span class="cc_sku_label">{{pageLabelMap 'CartInc_SKU'}}</span>&#58;&#160;<span
+                                        class="cc_sku_value">{{sku}}</span>,
+                                    <span class="cc_qty_label">{{pageLabelMap 'CartInc_Qty'}}</span>&#58;&#160;<span
+                                        class="cc_qty">{{quantity}}</span>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    {{/each}}
+                </table>
+            {{/if}}
+            <button  id="continue_click" class=" mgt20 btn btn-default btn-sm continueShoppingButton cc_continue_shopping_button ec-btn-primary shop_btn_style pull-right ec-continue_shopping_button-bottom" name="" type="button" >{{pageLabelMap 'CartInc_ContinueShopping'}}</button>        
+            </div>
+            <div class="col-md-12 ref ec-ref-no">{{pageLabelMap 'EC_Reference'}}{{orderNumber}}</div>
+        </div>
+    </script>
+    <script id="EC-TotalSection" type="text/template">
+        <div class="total cc_total or-total-section clearfix mgt31">
+            {{#if this.couponName}}
+                <div class="CouponCodeSection">
+                    <p class="revPromoCode">{{pageLabelMap 'EC_PromoCode'}}</p>
+                    <div class="revCouponBox">{{this.couponName}}</div>
+                    <p class="revCouponAdded"><i class="material-icons">done</i><span class="revCouponAddedText">{{pageLabelMap 'EC_PromoCodeAdded'}}<span></p>
+                </div>
+            {{/if}} 
+            <div class="total-right pull-right">
+                <p class="cc_subTotal cc_subTotal-wrapper border-transp clearfix ec-subTotal-wrapper-tab">
+                    <span class="cc_subTotal_label pull-left lh28 ec-subtotal-tab">{{pageLabelMap 'CartInc_Subtotal'}}</span>
+                    <span class="cc_subTotal or-price-vals pull-right ec-or-price-vals-tab">{{{formatUSD (price this.subTotal this.currencyCode)}}}</span>
+                    <div class="sub-qty cc_quantity fwb ec-sub-qty-tab">({{totalsum}} {{pageLabelMap 'EC_items'}})</div>
+                </p>                
+                <div class="shipping-charge pb-10 ec-pd5 ec-pd20">
+                    <span class="cc_tax_label pull-left">{{pageLabelMap 'CartInc_Shipping'}}</span>
+                    <span class="cc_tax">{{pageLabelMap 'EC_NotCalc'}} </span>                        
+                    <a class="tip"><i class="material-icons info_outline md-18 blue-color hover-tooltip vmiddle"></i><span class="tooltipp">{{pageLabelMap 'EC_Tooltip'}}</span> </a>                       
+                </div>              
+                <div class="shipping-charge pb-10 ec-pd20">
+                    <span class="cc_tax_label pull-left">{{pageLabelMap 'CheckOut_EstimatedTax'}}</span>
+                    <span class="cc_tax">{{pageLabelMap 'EC_NotCalc'}} </span>    
+                    <a class="tip"><i class="material-icons info_outline md-18 blue-color hover-tooltip vmiddle"></i><span class="tooltipp">{{pageLabelMap 'EC_Tooltip'}}</span> </a> 
+                </div>                        
+                <p class="cc_grand_total grand-total-wrapper clearfix">
+                    <span class="cc_total_label fwb pull-left lh28">{{pageLabelMap 'CartInc_GrandTotal'}}:</span>
+                    <span class="cc_total_amount or-price-vals pull-right">{{{formatUSD (sum this.subTotal this.tax this.shippingCharge this.adjustment this.surchargeAmount this.currencyCode)}}}</span>
+                </p>
+            </div>
+        </div>
+    </script>
+    <script id="EC-AddressDisplay" type="text/template">
+        <div class="{{classPrefix}} address_selection_display">
+        <!-- {{#ifDisplay 'SO.DsplAddrName'}}
+            {{#if this.firstName }}
+                <p class="cc_addr_name">
+                    <span class="cc_firstname">{{this.firstName}}&#160;</span>
+                    {{#if this.lastName }}
+                        <p class="cc_addr_name">
+                            <span class="cc_lastname">{{this.lastName}}</span>
+                        </p>
+                    {{/if}}
+                </p>
+            {{else}}
+                {{#if this.lastName }}
+                    <p class="cc_addr_name">
+                        <span class="cc_lastname">{{this.lastName}}</span>
+                    </p>
+                {{/if}}
+            {{/if}}
+        {{/ifDisplay}} -->
+        {{#ifDisplay 'SO.DsplAddrCompany'}}
+            {{#if this.companyName}}
+            <div class="form-group addcontainer row addsec">
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                    <div class="cc_addr_company infoval">{{pageLabelMap 'EC_CheckoutCompany'}}</div>
+                </div>
+                <div class="col-md-9 col-sm-8 col-xs-12">
+                    <div class="cc_addr_company">{{this.companyName}}</div>
+                </div>
+            </div>
+            {{/if}}
+        {{/ifDisplay}}
+        {{#if (checknalcoConfirm)}}
+            {{#if this.shipToName}}
+            <div class="form-group addcontainer row addsec">
+                <div class="col-md-4 col-sm-6 col-xs-12 width-left">
+                    <div class="add-shipid infoval">{{pageLabelMap 'EC_CheckoutShipToNameID'}}</div>
+                </div>
+                <div class="col-md-8 col-sm-6 col-xs-12 width-right width-right-ack">
+                    <div class="add-shipid">{{this.shipToName}} / <span class="addrval"></span></div>
+                </div>
+            </div>
+            {{/if}}
+        {{/if}}
+        <div class="form-group addcontainer row addsec">
+            <div class="col-md-3 col-sm-4 col-xs-12 width-left">
+                <div class="addr_line1 infoval">{{pageLabelMap 'EC_CheckoutAddress'}}</div>
+            </div>
+            <div class="col-md-9 col-sm-8 col-xs-12 width-right">
+                {{#if this.address1}}
+                    <div class="addr_line1 cc_addr_line">{{this.address1}}</div>
+                {{else}}
+                    {{#if this.addressFirstline}}
+                        <div class="addr_line1 cc_addr_line infoval">{{this.addressFirstline}}</div>
+                    {{/if}}
+                {{/if}}
+                {{#if this.address2}}
+                    <div class="addr_line2 cc_addr_line">{{this.address2}}</div>
+                {{else}}
+                    {{#if this.addressSecondline}}
+                        <div class="addr_line1 cc_addr_line">{{this.addressSecondline}}</div>
+                    {{/if}}
+                {{/if}}
+                <!-- {{#if this.address3}}
+                    <div class="addr_line3 cc_addr_line">{{this.address3}}</div>
+                {{else}}
+                    {{#if this.addressThirdline}}
+                        <div class="addr_line1 cc_addr_line">{{this.addressThirdline}}</div>
+                    {{/if}}
+                {{/if}} -->
+            </div>
+        </div>
+        <div class="form-group addcontainer row addsec">
+            <div class="col-md-3 col-sm-4 col-xs-12 width-left">
+                <div class="cc_addr_city infoval">{{pageLabelMap 'EC_CheckoutCity'}}</div>
+            </div>
+            <div class="col-md-9 col-sm-8 col-xs-12 width-right">
+                <div class="cc_addr_city">{{this.city}}</div>
+            </div>
+        </div>
+        <div class="form-group addcontainer row addsec">
+            <div class="col-md-3 col-sm-4 col-xs-12 width-left">
+                <div class="cc_addr_state infoval">{{pageLabelMap 'EC_CheckoutState'}}</div>
+            </div>
+            <div class="col-md-9 col-sm-8 col-xs-12 width-right">
+            {{#if this.state}}
+                <div class="cc_addr_state">{{this.state}}&#160;</div>
+            {{else}}
+                {{#if this.stateCode}}
+                    <div class="cc_addr_state">{{this.stateCode}}&#160;</div>
+                {{else}}
+                    {{#if this.stateISOCode}}
+                        <div class="cc_addr_state">{{this.stateISOCode}}&#160;</div>
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+            </div>
+        </div>
+        <!-- <div class="cc_addr_country addsec">{{this.country}}</div>
+        <div class="cc_addr_extId addsec">{{this.partnerId}}</div>-->
+        <div class="form-group addcontainer row addsec ec-ack-zip-code">
+            <div class="col-md-3 col-sm-4 col-xs-12 width-left">
+                <div class="cc_addr_postal infoval">{{pageLabelMap 'EC_Zipcode'}}</div>
+            </div>
+            <div class="col-md-9 col-sm-8 col-xs-12 width-right">
+                <div class="cc_addr_postal">{{this.postalCode}}</div>
+            </div>
+        </div>
+        <!-- <div class="shipid"><span class="addrlabel"></span> &nbsp;&nbsp;<span class="addrval"></span></div> -->
+        <!-- <div class="shipid"><span class="addrlabel">{{pageLabelMap 'EC_EcolabAccNo'}}</span>&nbsp;&nbsp; {{this.ECAccountNumber}}</div>-->
+            <div class="form-group addcontainer row attndiv">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <p class="cc_attention_to ec-attention-container attnrevdiv infoval">
+                        <span >{{pageLabelMap 'EC_AttentionTo'}}&nbsp;&nbsp;<span class="attn-append attention-val"></span></span>
+                    </p>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <p class="cc_attention_to ec-attention-container attnrevdiv infoval">
+                        <span >{{pageLabelMap 'EC_Attention_To'}}&nbsp;&nbsp;<span class="attn-append attentionnumber-val"></span></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="EC-OrderItems-Desktop" type="text/template">
+        <div class="panel panel-default cc_panel cc_order_item_list or-prod-info">
+            <div class="panel-heading cc_heading ec-prod-panel-heading">
+                <h3 class="panel-title cc_title">{{pageLabelMap 'EC_ProductInformation'}}</h3>
+            </div>
+                 <table class="or-prod-table ec-or-prod-table hidden-xs" >
+                    <thead class="cc_thead ec-displaynone-tab">
+                        {{#if (checknalcoConfirm)}}
+                            <tr class="cc_tr">
+                                <th width="10%"></th>
+                                <th width="30%">{{pageLabelMap 'EC_ProductDetailsTabOnOrderReview'}}</th>
+                                <th width="10%">{{pageLabelMap 'EC_TotalQuantity'}}</th>
+                                <th width="11%">{{pageLabelMap 'EC_TankNumber'}}</th>
+                                <th width="17%">{{pageLabelMap 'EC_UnloadPoint'}}</th>
+                                <th width="16%">{{pageLabelMap 'EC_TotalTabOnOrderReview'}}</th>
+                            </tr>
+                            {{else}}
+                            <tr class="cc_tr">
+                                <th width="10%"></th>
+                                <th width="30%">{{pageLabelMap 'EC_ProductDetailsTabOnOrderReview'}}</th>
+                                <th width="30%">{{pageLabelMap 'EC_DescriptionTabOnOrderReview'}}</th>
+                                <th width="15%">{{pageLabelMap 'EC_TotalQuantity'}}</th>
+                                <th width="15%">{{pageLabelMap 'EC_TotalTabOnOrderReview'}}</th>
+                            </tr>
+                            {{/if}}
+                    </thead>                            
+                    <tbody class="cc_tbody"> 
+                    {{#each this.orderItems}}
+                <!--<div class="panel-body {{this.itemID}} row cc_body">-->
+                    {{#ifNotEquals this.itemType 'Coupon'}}
+                        <tr>
+                       <!-- <div class="col-md-2">-->
+                       <td id="ec-prod-image" class="ec-tab-td1">
+                            <div class="ec-prod-image-box">
+                            {{#if this.mediaWrapper}}
+                                {{productImageNoLink this.mockProduct 'cc_order_prod_link' image=(displayImage this.mediaWrapper 'orderDetail img-responsive' onerror="this.onerror=null;this.src='{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.jpg'}'" alt=this.mockProduct.name dataId=this.mockProduct.sku)}}
+                            {{else}}    
+                                <img class="carouselImg cc_alternate img-responsive thumbnail img-size" src="{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.jpg'}" alt="{{this.mockProduct.name}}"/>
+                            {{/if}} 
+                            </div>
+                        </td>
+                       <!-- </div>-->
+                       <!-- <div class="col-md-6">-->
+                           <td class="ec-table-cell-padding pl-0 ec-tab-td2 {{#if (checknalcoConfirm)}}width-40{{/if}}">
+                            <div class="cc_item_title">
+                                {{#ifEquals this.pricingType 'external'}}
+                                    {{#if this.extName}}
+                             <h2 class="cc_ext_name">  {{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.extName)}}</h2>
+                                    {{else}}
+                                        {{#if this.itemLabel}}
+                                        <h2 class="cc_ext_name"> {{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.itemLabel)}}</h2>
+                                        {{else}}
+                                         <h2 class="cc_ext_name">   {{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.translatedProductName)}}</h2>
+                                        {{/if}}
+                                    {{/if}}
+                                    {{else}}
+                                        {{#if this.itemLabel}}
+                                        <h2 class="cc_ext_name"> {{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.itemLabel)}}</h2>
+                                        {{else}}
+                                         <h2 class="cc_ext_name">{{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.translatedProductName)}}</h2>
+                                        {{/if}}
+                                {{/ifEquals}}
+                                <div class="clearfix ec-custom-md ec-displaynone-tab">
+                                                <div class="pull-left or-sku-wrapper">
+                                                    <span>{{pageLabelMap 'EC_ProductCode'}}</span>
+                                                    {{#ifEquals this.pricingType 'external'}}
+                                                        {{#if this.extName}}                                                           
+                                                            <span class="cc_ext_sku feb">{{this.extSKU}}</span>
+                                                        {{else}}                                                            
+                                                            <span class="cc_checkout_sku fwb">{{this.mockProduct.sku}}</span>
+                                                        {{/if}}
+                                                    {{else}}                                                            
+                                                         <span class="cc_checkout_sku fwb">{{this.mockProduct.sku}}</span>
+                                                    {{/ifEquals}}
+                                                </div>
+                                                <!--<div class="pull-left or-uom-wrapper">
+                                                    <span class="cc_checkout_sku ">{{this.mockProduct.UnitOfMeasure}}</span>
+                                                </div>-->
+                                </div>
+                                <div class="clearfix ec-custom-lg">
+                                                <div class="pull-left or-sku-wrapper">
+                                                    <span>{{pageLabelMap 'EC_ProductCode'}}</span>
+                                                    {{#ifEquals this.pricingType 'external'}}
+                                                        {{#if this.extName}}                                                           
+                                                            <span class="cc_ext_sku feb">{{this.extSKU}}</span>
+                                                        {{else}}                                                            
+                                                            <span class="cc_checkout_sku fwb">{{this.mockProduct.sku}}</span>
+                                                        {{/if}}
+                                                    {{else}}                                                            
+                                                         <span class="cc_checkout_sku fwb">{{this.mockProduct.sku}}</span>
+                                                    {{/ifEquals}}
+                                                     <span class="ec-table-desc">
+                                                       <span class="cc_short_Desc_label">{{this.unitOfMeasure}}</span>
+                                                    </span>
+                                                </div>
+                                                <!--<div class="pull-left or-uom-wrapper">
+                                                    <span class="cc_checkout_sku ">{{this.mockProduct.UnitOfMeasure}}</span>
+                                                </div>-->
+                                </div> 
+                                <div class="ec-table-desc ec-custom-md ec-displaynone-tab">
+                                    <span class="cc_short_Desc_label">{{this.unitOfMeasure}}</span>
+                                </div> 
+								<div class="lt_{{this.mockProduct.id}} ec-long-desc-style pl-0 ec-displaynone-others hidden-xs">
+                                                        
+								</div>                                                    
+                                            {{#if this.price}}
+                                                {{#if (checknalcoConfirm)}}
+                                                    {{#if (taxonomyConfirm this.mockProduct.taxonomy 'Equipment')}}
+                                                    <div class="cc_price price first-price">
+                                                    <span class="cc_price here disptab_none">{{{formatUSD (price this.price)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span></span>
+                                                    </div>
+                                                    {{/if}}
+                                                    {{#if (taxonomyConfirm this.mockProduct.taxonomy 'Chemical')}}
+                                                        {{#if (packageTypeConfirm this.mockProduct.packageTypeUOM 'NonBulk')}}
+                                                            <div class="cc_price price first-price">
+                                                                <span class="cc_price here disptab_none">{{{formatUSD (price this.price)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span></span>
+                                                            </div>
+                                                            {{#if (nonBulkEAConfirm this.mockProduct.packageTypeUOM this.customPricingUOM)}}
+                                                            <div class="cc_price price second-price">
+                                                                <span class="cc_price here disptab_none">{{{formatUSD (price this.customUnitPrice)}}} <span class="price-wrap-dec">{{pageLabelMap 'EC_UOM_Per'}} {{this.customPricingUOM}}</span></span>
+                                                            </div>
+                                                            {{/if}}
+                                                        {{/if}}
+                                                        {{#if (packageTypeConfirm this.mockProduct.packageTypeUOM 'Bulk')}}
+                                                            <div class="cc_price price first-price">
+                                                                <span class="cc_price here disptab_none">{{{formatUSD (price this.customUnitPrice)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{this.customPricingUOM}}</span></span>
+                                                            </div>
+                                                        {{/if}}
+                                                    {{/if}}
+                                                {{else}}
+                                                <span class="cc_price">{{{formatUSD (price this.price)}}}</span>
+                                                {{/if}} 
+                                            {{/if}}
+                                            {{#if this.absoluteDiscount}}
+                                                {{#ifGreater this.absoluteDiscount 0}}
+                                                    <span class="cc_price_label">{{pageLabelMap 'Checkout_YouSave'}}&#58;&#160;</span>
+                                                    <span class="cc_price">{{price this.absoluteDiscount}}</span>
+                                                {{/ifGreater}}
+                                                {{#ifLessThan this.absoluteDiscount 0}}
+                                                    <span class="cc_price_label">{{pageLabelMap 'CartInc_Surcharge'}}&#58;&#160;</span>
+                                                    <span class="cc_price">{{priceAbs this.absoluteDiscount}}</span>
+                                                 {{/ifLessThan}}
+                                            {{/if}}
+                                        
+                                {{#ifContains this.pricingModifierTypes 'tiered'}}
+                                    <div class="cc_prt_tool_tip_div cc_prt_tool_tip_div_od" data-toggle="tooltip" title="{{pageLabelMap 'ProductPricingTiers_VolumeHover'}}">
+                                        <span class="cc_prt_tool_tip_text cc_prt_tool_tip_text_od">{{pageLabelMap 'ProductPricingTiers_VolumePricingApplied'}}</span>
+                                    </div>
+                                {{/ifContains}}
+                                </div>
+                                </td>
+                           <!-- {{#if this.showSubProdTerm}}
+                                <p class="cc_subscription">
+                                    <span class="cc_subscription_details">
+                                        {{insertTokens this.orderDisplayName this.displayName (price this.price) (price this.SubAmount) (price this.recurringPrice) (price this.recurringPriceSubAmount) (pageLabelPrefixMap 'Subscriptions_Frequency_' this.orderFrequencyUOM) (pageLabelPrefixMap 'Subscriptions_Frequency_' this.installmentFrequencyUOM) this.orderFrequency this.installmentFrequency this.installmentCount this.orderCount this.recurringPricePercentage this.upfrontPricePercentage}}
+                                    </span>
+                                </p>
+                            {{/if}}
+                        </div>-->
+                        <!--<div class="col-md-4">
+                            <div class="price cc_price">
+                                {{#ifNotEquals ../isConfirmation true}}
+                                    <p class="cc_order_status">
+                                        <span class="cc_status_label">{{pageLabelMap 'MyOrdersInc_Status'}}&#58;&#160;</span>
+                                        <span class="cc_status">{{pageLabelMap orderLineStatus}}</span>
+                                    </p>
+                                {{/ifNotEquals}}
+                                {{#ifNotEquals this.itemType 'Coupon'}}
+                                    <p class="cc_order_quantity">
+                                        <span class="cc_quantity_label">{{pageLabelMap 'CartInc_Qty'}}&#58;&#160;</span>
+                                        <span class="cc_quantity">{{this.quantity}}</span>
+                                    </p>
+                                {{/ifNotEquals}}
+                                {{#ifNotEquals this.itemType 'Coupon'}}
+                                    <p class="cc_item_price">
+                                        {{#if this.price}}
+                                            <span class="cc_price_label">{{pageLabelMap 'CartInc_Price'}}&#58;&#160;</span>
+                                            <span class="cc_price">{{{price this.price ../currencyCode}}}</span>
+                                        {{/if}}
+                                        {{#if this.absoluteDiscount}}
+                                            {{#ifGreater this.absoluteDiscount 0}}
+                                                <span class="cc_price_label">{{pageLabelMap 'Checkout_YouSave'}}&#58;&#160;</span>
+                                                <span class="cc_price">{{{price this.absoluteDiscount ../currencyCode}}}</span>
+                                            {{/ifGreater}}
+                                            {{#ifLessThan this.absoluteDiscount 0}}
+                                                <span class="cc_price_label">{{pageLabelMap 'CartInc_Surcharge'}}&#58;&#160;</span>
+                                                <span class="cc_price">{{{priceAbs this.absoluteDiscount ../currencyCode}}}</span>
+                                            {{/ifLessThan}}
+                                        {{/if}}
+                                    </p>
+                                {{/ifNotEquals}}
+                                <p class="cc_item_total">
+                                    <span class="cc_total_label">{{pageLabelMap 'CartInc_Total'}}&#58;&#160;</span>
+                                    <span class="cc_total">{{{price this.SubAmount ../currencyCode}}}</span>
+                                </p>
+                                <p class="cc_short_Desc">
+                                    <span class="cc_short_Desc_label ">{{this.mockProduct.shortDesc}}</span>
+                                </p>
+                                <p class="cc_external">
+                                    {{#ifEquals this.pricingType 'external'}}
+                                        {{#if this.extName}}
+                                            <span class="cc_ext_sku_label">{{pageLabelMap 'Checkout_SKU'}}&#58;&#160;</span>
+                                            <span class="cc_ext_sku">{{this.extSKU}}</span>
+                                        {{else}}
+                                            <span class="cc_checkout_sku_label">{{pageLabelMap 'Checkout_SKU'}}&#58;&#160;</span>
+                                            <span class="cc_checkout_sku">{{this.mockProduct.sku}}</span>
+                                        {{/if}}
+                                        {{else}}
+                                            <span class="cc_checkout_sku_label">{{pageLabelMap 'Checkout_SKU'}}&#58;&#160;</span>
+                                            <span class="cc_checkout_sku">{{this.mockProduct.sku}}</span>
+                                    {{/ifEquals}}
+                                </p>
+                                {{#if sellerName}}
+                                    <p class="cc_seller">
+                                        <span class="cc_soldby_label">{{pageLabelMap 'Prod_SoldBy'}}&#58;&#160;</span>
+                                        <span class="cc_soldby">{{sellerName}}</span>
+                                    </p>
+                                {{/if}}
+                                {{#if this.isSubscription}}
+                                    <p class="cc_subscription_summary">
+                                        {{subscriptionSummary 'Order_Subscription_' this.subscriptionFrequency mockProduct.sku itemTotal}}
+                                    </p>
+                                    <p class="cc_subscription_next_date">
+                                        {{pageLabelMap 'Order_Subscription_Next_Payment'}} {{this.nextSubscriptionDateStr}}
+                                    </p>
+                                    {{#if this.isLimitedSubscription}}
+                                        <p class="cc_subscription_summary">
+                                            {{pageLabelMap 'Order_Subscription_End_Date'}} {{this.subscriptionEndDateStr}}
+                                        </p>
+                                    {{/if}}
+                                {{/if}}
+                                {{#each minorLines}}
+                                    {{#if this.isSubscription}}
+                                        <p class="cc_subscription_summary">
+                                            {{subscriptionSummary 'Order_Subscription_' this.subscriptionFrequency mockProduct.sku itemTotal}}
+                                        </p>
+                                        <p class="cc_subscription_next_date">
+                                            {{pageLabelMap 'Order_Subscription_Next_Payment'}} {{this.nextSubscriptionDateStr}}
+                                        </p>
+                                        {{#if this.isLimitedSubscription}}
+                                            <p class="cc_subscription_end_date">
+                                                {{pageLabelMap 'Order_Subscription_End_Date'}} {{this.subscriptionEndDateStr}}
+                                            </p>
+                                        {{/if}}
+                                    {{/if}}
+                                {{/each}}
+                                {{#if this.minorLines }}
+                                    {{#ifNotEquals pricingType "attrGroup" }}
+                                        <p class="cc_included_items">
+                                            <a href="#included_items{{this.itemID}}" id="includedItemsLink" data-toggle="modal" data-id="{{this.itemID}}">{{pageLabelMap 'CheckOut_IncludedItems'}}</a>
+                                        </p>
+                                        {{> includedDisplay}}
+                                    {{/ifNotEquals}}
+                                {{/if}}
+                                {{#ifEquals pricingType "attrGroup" }}
+                                    <p class="cc_cart_attribute_items">
+                                        <a href="#order_attribute_items{{this.itemID}}" id="orderAttributeItemsLink" data-toggle="modal" data-id="{{this.itemID}}">{{pageLabelMap 'CheckOut_AttributeItems'}}</a>
+                                    </p>
+                                    {{> orderAttributesDisplay}}
+                                {{/ifEquals}}
+                            </div>
+                        </div>-->                    
+                     <td width="{{#if (checknalcoConfirm)}}20%{{else}}30%{{/if}}" class="lt_{{this.mockProduct.id}} ec-long-desc-style pl-0 ec-displaynone-tab {{#if (checknalcoConfirm)}} nalco-disp-none {{/if}}"></td>
+                                    <td width="{{#if (checknalcoConfirm)}}10%{{else}}15%{{/if}}" class="or-qty pl-0 ec-tab-td3 {{#if (checknalcoConfirm)}}ec-displaynone-tab inlarge-align-center{{/if}}">
+                                        {{#if (checknalcoConfirm)}}
+                                        {{else}}
+                                        <span class="tab-font">{{pageLabelMap 'EC_TotalQuantity'}}:</span>
+                                        {{/if}}
+                                        <span class="cc_quantity fwb">{{this.quantity}}</span>
+                                        <div class="div-height-11"></div>
+                                        {{#if (checknalcoConfirm)}}
+                                        {{else}}
+                                        <div class="displaylarge_none">
+                                            <span class="cc_total">{{{formatUSD (price this.itemTotal)}}}</span>
+                                        </div>
+                                        {{/if}}
+                                    </td>
+                                    <td width="30%" class="pad-top-25 or-qty pl-0 tab-table-last-col {{#if (checknalcoConfirm)}}prod-details-col-tab{{else}}ec-displaynone-tab{{/if}} displaylarge_none h-left">
+                                        {{#if (checknalcoConfirm)}}
+                                        <div class="visible-hidden-confirm">
+                                        {{#ifEquals this.pricingType 'external'}}
+                                            {{#if this.extName}}
+                                            <h2 class="cc_ext_name">  {{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.extName)}}</h2>
+                                            {{else}}
+                                                {{#if this.itemLabel}}
+                                                <h2 class="cc_ext_name"> {{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.itemLabel)}}</h2>
+                                                {{else}}
+                                                <h2 class="cc_ext_name">   {{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.translatedProductName)}}</h2>
+                                                {{/if}}
+                                            {{/if}}
+                                            {{else}}
+                                                {{#if this.itemLabel}}
+                                                <h2 class="cc_ext_name"> {{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.itemLabel)}}</h2>
+                                                {{else}}
+                                                <h2 class="cc_ext_name">{{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.translatedProductName)}}</h2>
+                                                {{/if}}
+                                        {{/ifEquals}}
+                                        </div>
+                                        {{/if}}
+                                        <div class="nalco-qty">
+                                            <span class="tab-font">{{pageLabelMap 'EC_TotalQuantity'}}:</span>
+                                            <span class="cc_quantity fwb tab-font">{{this.quantity}}</span>
+                                            <div class="div-height-11"></div>
+                                        </div>
+                                        {{#if (checknalcoConfirm)}}
+                                        <div class="tank-tab-align-confirm">
+                                            <span class="tab-font width-39">{{pageLabelMap 'EC_TankNumber'}}:</span>
+                                            <span class="fwb tab-font">{{this.tankNumberR.tankNumber}}</span>
+                                        </div>
+                                        <div class="unload-tab-align-confirm">
+                                            <span class="tab-font width-39">{{pageLabelMap 'EC_UnloadPoint'}}:</span>
+                                            <span class="fwb tab-font">{{this.unloadingPointR.companyName}}</span>
+                                        </div>
+                                        {{/if}}
+                                        {{#if (checknalcoConfirm)}}
+                                        <div class="unload-tab-align-confirm">
+                                            <span class="tab-font width-39 qty-text-label">{{pageLabelMap 'EC_TotalTabOnOrderReview'}}:</span>
+                                            <span class="nal-qty">{{{formatUSD (price this.itemTotal)}}}</span>
+                                        </div>
+                                        {{else}}
+                                        <div>
+                                            <span class="cc_total m-left-110 m-top-10">{{{formatUSD (price this.itemTotal)}}}</span>
+                                        </div>
+                                        {{/if}}
+                                    </td>
+                                    {{#if (checknalcoConfirm)}}
+                                    <td width="12%" class="pl-0 ec-displaynone-tab">
+                                        <span>{{this.tankNumberR.tankNumber}}</span>
+                                    </td>
+                                    <td width="13%" class="pl-0 ec-displaynone-tab">
+                                        <span>{{this.unloadingPointR.companyName}}</span>
+                                    </td>
+                                    {{/if}}
+                                    <td class="pl-0 ec-displaynone-tab"><span class="cc_total">{{{formatUSD (price this.itemTotal)}}}</span></td>
+                                </tr>
+                    <!--{{#ifEquals this.itemType 'Coupon'}}
+                        <p class="item_title coupon_title">
+                            {{{this.mockProduct.name}}}
+                        </p>
+                    {{/ifEquals}}-->
+               <!-- </div>
+                <hr>-->
+                        {{/ifNotEquals}}
+            {{/each}}
+             </tbody>
+                </table>
+            {{#each this.orderItems}}
+            <div class="ec-prod-details visible-xs" style = "margin-bottom:16px;">
+                <div class="ec-prod-image-box">
+                    {{#if this.mediaWrapper}}
+                        {{productImageNoLink this.mockProduct 'cc_order_prod_link' image=(displayImage this.mediaWrapper 'orderDetail img-responsive' onerror="this.onerror=null;this.src='{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.jpg'}'" alt=this.mockProduct.name dataId=this.mockProduct.sku)}}
+                    {{else}}    
+                        <img class="carouselImg cc_alternate img-responsive thumbnail img-size" src="{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.jpg'}" alt="{{this.mockProduct.name}}"/>
+                    {{/if}} 
+                </div>
+                <div class="ec-prod-name">
+                    {{#ifEquals this.pricingType 'external'}}
+                                    {{#if this.extName}}
+                             <h2 class="cc_ext_name">  {{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.extName)}}</h2>
+                                    {{else}}
+                                        {{#if this.itemLabel}}
+                                        <h2 class="cc_ext_name"> {{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.itemLabel)}}</h2>
+                                        {{else}}
+                                         <h2 class="cc_ext_name">   {{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.translatedProductName)}}</h2>
+                                        {{/if}}
+                                    {{/if}}
+                                    {{else}}
+                                        {{#if this.itemLabel}}
+                                        <h2 class="cc_ext_name"> {{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.itemLabel)}}</h2>
+                                        {{else}}
+                                         <h2 class="cc_ext_name">{{productImageNoLink this.mockProduct 'cc_prod_link' text=(displayProductName 'Aggregate_Display' this.translatedParentProductName this.translatedProductName)}}</h2>
+                                        {{/if}}
+                    {{/ifEquals}}              
+                </div> 
+                <div class="or-sku-wrapper">
+                    <span>{{pageLabelMap 'EC_ProductCode'}}</span>
+                        {{#ifEquals this.pricingType 'external'}}
+                            {{#if this.extName}}                                                           
+                                <span class="cc_ext_sku feb">{{this.extSKU}}</span>
+                            {{else}}                                                            
+                                <span class="cc_checkout_sku fwb">{{this.mockProduct.sku}}</span>
+                            {{/if}}
+                        {{else}}                                                            
+                            <span class="cc_checkout_sku fwb">{{this.mockProduct.sku}}</span>
+                        {{/ifEquals}}
+                </div>
+                <p class="ec-desc">
+                    <span class="cc_short_Desc_label">{{this.unitOfMeasure}}</span>
+                </p> 
+               <div class="ec-item_price">
+                    {{#if this.price}}
+                        {{#if (checknalcoConfirm)}}
+                            {{#if (taxonomyConfirm this.mockProduct.taxonomy 'Equipment')}}
+                            <div class="cc_price price first-price">
+                            <span class="cc_price here disptab_none">{{{formatUSD (price this.price)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span></span>
+                            </div>
+                            {{/if}}
+                            {{#if (taxonomyConfirm this.mockProduct.taxonomy 'Chemical')}}
+                                {{#if (packageTypeConfirm this.mockProduct.packageTypeUOM 'NonBulk')}}
+                                    <div class="cc_price price first-price">
+                                        <span class="cc_price here disptab_none">{{{formatUSD (price this.price)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span></span>
+                                    </div>
+                                    {{#if (nonBulkEAConfirm this.mockProduct.packageTypeUOM this.customPricingUOM)}}
+                                    <div class="cc_price price second-price">
+                                        <span class="cc_price here disptab_none">{{{formatUSD (price this.customUnitPrice)}}} <span class="price-wrap-dec">{{pageLabelMap 'EC_UOM_Per'}} {{this.customPricingUOM}}</span></span>
+                                    </div>
+                                    {{/if}}
+                                {{/if}}
+                                {{#if (packageTypeConfirm this.mockProduct.packageTypeUOM 'Bulk')}}
+                                    <div class="cc_price price first-price">
+                                        <span class="cc_price here disptab_none">{{{formatUSD (price this.customUnitPrice)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{this.customPricingUOM}}</span></span>
+                                    </div>
+                                {{/if}}
+                            {{/if}}
+                        {{else}}
+                        <span class="ec-price">{{{formatUSD (price this.price ../currencyCode)}}}</span>
+                        {{/if}} 
+                    {{/if}}
+                </div>
+                {{#if (checknalcoConfirm)}}
+                {{else}}
+                <div class="ec-long-desc">
+                    <div class="ec-long-desc-label">{{this.mockProduct.shortDesc}}
+                        <!--<span class="ec-more">read more</span>-->
+                    </div>
+               </div> 
+                {{/if}}
+               <div class="or-qty">
+                    <span>Total Quantity:</span>
+                    <span class="cc_quantity fwb">{{this.quantity}}</span>
+               </div>
+               {{#if (checknalcoConfirm)}}
+                <div class="mob-tank-font">
+                    <span>{{pageLabelMap 'EC_TankNumber'}}:</span>
+                    <span class="fwb tab-font">{{this.tankNumberR.tankNumber}}</span>
+                    <div class="div-height-11"></div>
+                </div>
+                <div class="mob-unload-font">
+                    <span>{{pageLabelMap 'EC_UnloadPoint'}}:</span>
+                    <span class="fwb tab-font">{{this.unloadingPointR.companyName}}</span>
+                    <div class="div-height-11"></div>
+                </div>
+                {{/if}}
+               <div class="ec-item-total"><span class="cc_total">{{{formatUSD (price this.itemTotal)}}}</span></div>
+            </div>
+            {{/each}}   
+        </div>
+    </script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            CCRZ.uiProperties.OrderDetailView.desktop.tmpl = 'EC-OrderDetails-View-Desktop';
+            CCRZ.uiProperties.OrderDetailView.partial.orderItemsDesktop = '#EC-OrderItems-Desktop';
+            CCRZ.uiProperties.OrderDetailView.partial.addressDisplay = '#EC-AddressDisplay';
+            CCRZ.uiProperties.OrderDetailView.partial.totalsSection = '#EC-TotalSection';
+            CCRZ.pubSub.on('view:OrderDetailView:refresh', function (viewInstance) {
+                setOrderDetail(CCRZ.views.OrderDetailView.prototype, CCRZ.models.OrderDetail.prototype, viewInstance);
+                var attn = '';
+                if(CCRZ.orderDetailModel.attributes.originatedCartR.ECAttentionTo!=undefined){
+                    attn=CCRZ.orderDetailModel.attributes.originatedCartR.ECAttentionTo;
+                }
+                $(".attn-append").text(attn); 
+				var attnnumber = '';
+                if(CCRZ.orderDetailModel.attributes.originatedCartR.ECAttentionToNumber!=undefined){
+                    attnnumber=CCRZ.orderDetailModel.attributes.originatedCartR.ECAttentionToNumber;
+                }
+                if(attnnumber!=null && attnnumber!=""){
+                attnnumber = "("+attnnumber.substring(0, 3)+")"+" "+attnnumber.substring(3, 6)+"-"+attnnumber.substring(6, 10);
+				}
+                $(".attentionnumber-val").text(attnnumber);			  
+                $(".cc_shipping_address .addrlabel").text(CCRZ.pagevars.pageLabels.EC_ShipToId);
+               // $(".cc_billing_address .addrlabel").text(CCRZ.pagevars.pageLabels.EC_EcolabAccNo);
+                //$(".shippp").text(CCRZ.pagevars.pageLabels.EC_ShipToId);
+  
+                //$(".billl").text(CCRZ.pagevars.pageLabels.EC_EcolabAccNo);
+                viewInstance.setElement(viewInstance.$el);
+                var prodIds = [];
+                $.each(CCRZ.orderDetailModel.attributes.orderItems, function (key, value) {
+                    prodIds.push(value.mockProduct.id);
+                });
+				var cardDetails = {};
+                cardDetails.cardType = sessionStorage.cardType;
+                var orderID = CCRZ.orderDetailModel.attributes.sfid;
+                var billingArr = CCRZ.orderDetailModel.attributes.billingAddress;
+                var shippingArr = CCRZ.orderDetailModel.attributes.shippingAddress;
+                billingArr.prefix = 'billing';
+                shippingArr.prefix = 'shipping';
+                CCRZ.orderDetailModel.set(cardDetails);	   
+                CCRZ.orderDetailModel.set(billingArr);
+                CCRZ.orderDetailModel.set(shippingArr);
+                if(CCRZ.orderDetailModel.attributes.cardType=="vi"){
+                    $(".revccvalpo").text(CCRZ.pagevars.pageLabels.EC_Visa);
+                }
+                else{
+                    $(".revccvalpo").text(CCRZ.pagevars.pageLabels.EC_Mastercard);
+                }
+				$(".or-address-section-billing").find(".ec-attention-container").remove();																	 
+                var remoteActionCallForOrderConfirmation = _.extend(CCRZ.RemoteInvocation, { className: 'EC_CheckoutController' });
+                remoteActionCallForOrderConfirmation.invokeCtx('getDataDetails', prodIds, orderID,
+                    function (resp) {
+                        if (resp && resp.success) {
+                            if (resp.data) {
+                                var prodDetailArr = resp.data.prodDetails;
+                                for (i = 0; i < prodDetailArr.length; i++) {
+                                    $(".lt_" + prodDetailArr[i].Id).html(prodDetailArr[i].ccrz__ShortDesc__c);
+                                }
+                                var accountNo = resp.data.orderDetails.ccrz__OriginatedCart__r.EC_Sold_To_Account__r.EC_Account_Number__c;
+                                var accountName = resp.data.orderDetails.ccrz__OriginatedCart__r.EC_Sold_To_Account__r.Name;
+                                var shipaccountNo = resp.data.orderDetails.ccrz__OriginatedCart__r.EC_Ship_To_Account__r.EC_Account_Number__c;
+                                $(".cc_shipping_address .addrval").text(shipaccountNo );
+                                $(".ecolabAccNo").text(accountNo);
+                                $(".ecolabAccName").text(accountName);
+                            }
+                        }
+                    }, {
+                        buffer: false, escape: false, nmsp: false
+                    });
+                    lessAndMoreInProdDesc();
+            });
+            var lessAndMoreInProdDesc = function() {
+                let descElm = '';
+                let showChar = 0;
+                if(window.innerWidth <=767) {
+                    descElm = '.ec-long-desc-label';
+                    showChar = 60;
+                }
+                if (descElm !== '') {
+                    let ellipsestext = "";
+                    let moretext = "read more";
+                    let lesstext = "read less";
+                    if ($(descElm).find('.morecontent').length > 0) {
+                        return;
+                    }
+                    $(descElm).each(function() {
+                        let content = $(this).html();
+
+                        if(content.trim().length > showChar) {
+
+                            let c = content.substr(0, showChar);
+                            let h = content.substr(showChar, content.length - showChar);
+
+                            let html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span style="display:none">' + h + '</span>&nbsp;&nbsp;<span class="morelink" style="color:#007ac9">' + moretext + '</span></span>';
+
+                            $(this).html(html);
+                        }
+
+                    });
+
+                    $(".morelink").click(function(){
+                        if($(this).hasClass("less")) {
+                            $(this).removeClass("less");
+                            $(this).html(moretext);
+                        } else {
+                            $(this).addClass("less");
+                            $(this).html(lesstext);
+                        }
+                        $(this).parent().prev().toggle();
+                        $(this).prev().toggle();
+                        return false;
+                    });
+                }
+            }
+            var setOrderDetail = function (orderView, orderModel, viewIn) {
+
+                var events = orderView.events;
+                
+                events["click .continueShoppingButton"] = "empty_continue_clicked";
+                orderView.empty_continue_clicked = function (event) {
+                    //document.location = "/DefaultStore/ccrz__ProductList?categoryID=" + CCRZ.data.menus[1].linkURL;
+                    document.location = CCRZ.pagevars.sitePrefix+"/ccrz__ProductList?categoryID="+ CCRZ.data.menus[1].linkURL;
+                }
+
+                /*var sum=0;
+            var orderQty = CCRZ.orderModel.attributes.orderItems;
+            for (i = 0; i < orderQty.length; i++) {
+                var sum = sum + orderQty[i].quantity;
+            }
+           $(".total-price").text(sum);*/
+            }
+            //($".cc_shipping_address").text("ship to id:");
+            Handlebars.registerHelper('totalsum', function () {
+                var sum = 0;
+                var orderQty = CCRZ.orderDetailModel.attributes.orderItems;
+                for (i = 0; i < orderQty.length; i++) {
+                    var sum = sum + orderQty[i].quantity;
+                }
+                return (sum);
+
+            });
+
+            Handlebars.registerHelper('orderNumber', function () {
+                var order_number = CCRZ.orderDetailModel.attributes.orderNumber;
+                return (order_number);
+            });
+
+            Handlebars.registerHelper('formatUSD', function (price) {
+                var getPrice = price.toString().split(".");
+                var ab = CCRZ.pagevars.userLocale;
+                var cd = CCRZ.userIsoCode;
+                console.log(cd);
+                var priceHtml = "<span class='price-wrap'><span class='price-wrap-num'>" + getPrice[0] + "</span><span class='price-wrap-dec'>." + getPrice[1] + "&nbsp;" + cd + "</span></span>";
+                return priceHtml;
+            });
+
+            Handlebars.registerHelper('orderedDate', function () {
+                var d = new Date(CCRZ.orderDetailModel.attributes.orderDate);
+                var m = d.getMonth();
+
+                var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                var monthName = months[m - 1 + 1];
+
+                var day = d.getDate();
+                var y = d.getFullYear();
+                var fulldate = day  + " " + monthName + " " + y;
+                return (fulldate);
+            });
+            
+            Handlebars.registerHelper('shortDescription', function (desc) {
+                var desc = desc;
+                if(desc)
+                    desc = desc.substring(0, 50) + "..."
+                console.log(desc);
+                return desc;
+            });
+
+             Handlebars.registerHelper('checkpaymentmethod', function() {
+                if(sessionStorage.paymentMethod=="PO"){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    } 
+            });
+            Handlebars.registerHelper('checknalcoConfirm', function() {
+                if(CCRZ.orderDetailModel.attributes.ECDivision && CCRZ.pagevars.pageLabels.EC_NALCO.includes(CCRZ.orderDetailModel.attributes.ECDivision.toLowerCase())) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+            Handlebars.registerHelper('taxonomyConfirm', function (taxonomy, type) {
+                if (taxonomy && CCRZ.pagevars.pageLabels['EC_Taxonomy_'+type].includes(taxonomy.toLowerCase())) {
+                    return true;
+                }
+                return false;
+            })
+            Handlebars.registerHelper('packageTypeConfirm', function (packageType, type) {
+                if (packageType && CCRZ.pagevars.pageLabels['EC_PackageType_'+type] === packageType.toLowerCase() ) {
+                    return true;
+                }
+                return false;
+            })
+            Handlebars.registerHelper('nonBulkEAConfirm', function(type, uom) {
+                if (CCRZ.pagevars.pageLabels.EC_PackageType_NonBulk === type.toLowerCase()
+                 && uom && uom.toLowerCase() !== CCRZ.pagevars.pageLabels.EC_UOM_EA.toLowerCase()) {
+                    return true;
+                }
+                return false;
+            })
+        });
+    </script>
+</apex:component>

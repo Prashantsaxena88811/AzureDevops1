@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>このカート品目の価格設定に影響する修飾子種別のセミコロン区切りのリスト</help>
+    <label><!-- Pricing Modifier Types --></label>
+    <name>ccrz__PricingModifierTypes__c</name>
+</CustomFieldTranslation>

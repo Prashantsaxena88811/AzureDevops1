@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The localized Product Short Description. Used for performing SOSL search against a product. --></help>
+    <label><!-- Short Description --></label>
+    <name>ccrz__ShortDescription__c</name>
+</CustomFieldTranslation>

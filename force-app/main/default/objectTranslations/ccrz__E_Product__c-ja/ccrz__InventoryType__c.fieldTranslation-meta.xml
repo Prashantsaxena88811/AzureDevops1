@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>この商品の在庫が管理される方法を選択します。</help>
+    <label><!-- InventoryType --></label>
+    <name>ccrz__InventoryType__c</name>
+    <picklistValues>
+        <masterLabel>CLASS</masterLabel>
+        <translation>クラス</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DOWNLOAD</masterLabel>
+        <translation>ダウンロード</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NA</masterLabel>
+        <translation>なし</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ONSITE CLASS</masterLabel>
+        <translation>オンサイトクラス</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RENTAL</masterLabel>
+        <translation>レンタル</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>STANDARD</masterLabel>
+        <translation>標準</translation>
+    </picklistValues>
+</CustomFieldTranslation>

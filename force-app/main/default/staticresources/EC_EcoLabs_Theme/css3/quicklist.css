@@ -1,0 +1,344 @@
+.ql-dropdown .createTemplate {
+    margin: 0;
+    min-width: 156px;
+    color: #007ac9;
+    min-height: 36px;
+}
+.quickSave.ec-btn-primary {
+    left: -55px;
+}
+.ql-dropdown {
+  padding: 16px;
+  min-width: 250px;
+  right: 0;
+  left: auto;
+}
+.ql-item-name {
+  padding-left: 0px !important;
+  color: #007ac9 !important;
+  font-size: 16px !important;
+}
+.add-icon,
+.rem-icon {
+  cursor: pointer;
+}
+.ql-dropdown-icon {
+  border-radius: 4px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+.ql-dropdown-icon .rem-icon,
+.ql-dropdown-icon[aria-expanded="false"] .rem-icon {
+  display: none;
+}
+.ql-dropdown-icon[aria-expanded="false"] .add-icon,
+.ql-dropdown-icon[aria-expanded="true"] .rem-icon {
+  display: inline;
+}
+.ql-dropdown-icon[aria-expanded="true"] .add-icon {
+  display: none;
+}
+.pickWish {
+  color: #007ac9;
+  font-size: 12px;
+  padding-left: 5px;
+}
+.ql-name {
+  font-size: 14px;
+  color: #4d4f53;
+  font-weight: normal;
+}
+.newListName {
+  color: #007ac9;
+  margin-top: 15px;
+  border: 1px solid #007ac9;
+  margin-bottom: 32px;
+}
+.ql-head {
+  color: #005172;
+  font-size: 16px;
+  line-height: 48px;        
+  text-transform: uppercase;
+  font-weight: bold; 
+  border-bottom: 1px solid #d9d9d9
+}
+.pickWish.ec-btn-primary {
+  font-size: 14px;
+  padding: 6px;
+  color: #fff;
+  width: 140px;
+}
+.pickWish.ec-btn-primary:hover {
+  background-color: #0166a7;
+  color: #fff !important;
+}
+
+.createTemplate {
+  width: 140px;
+  height: 36px;
+  color: #007ac9;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding-top: 9px;
+  font-family: Arial;
+  font-weight: bold;
+}
+.createTemplate.ec-btn-secondary {
+  color: #007ac9;
+  padding: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding-top: 9px;
+  font-family: Arial;
+  font-weight: bold;
+}
+.createTemplate.ec-btn-secondary:hover {
+  background-color: #fff;
+  color: #005172;
+  border: 1px solid #005172;
+}
+.ec-btn-primary.quickSave:disabled {
+  background-color: #adafaf;
+  cursor: not-allowed;
+}
+.quickSave.ec-btn-primary {
+  font-size: 14px;
+  padding: 7px;
+  color: #fff;
+  width: 140px;
+  position: relative;
+  float: right;
+  height: 36px;
+  top: -36px;
+  left: -70px;
+}
+.quickSave.ec-btn-secondary:hover {
+  background-color: #007ac9 !important;
+  color: #ffffff !important;
+}
+.pickWish.quickSave.ec-btn-primary {
+  font-size: 14px;
+  padding: 7px;
+  color: #fff;
+  width: 140px;
+  position: relative;
+  float: right;
+  height: 36px;
+  top: -36px;
+  left: -70px;
+}
+.pickWish.quickSave.ec-btn-secondary:hover {
+  background-color: #007ac9 !important;
+  color: #ffffff !important;
+}
+.ql-dropdown {
+  width: 400px;
+}
+.ql-dropdown li.ql-radio-item:hover{
+  background-color: rgba(94, 182, 228, 0.2);
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+}
+}
+.ql-head {
+  padding-bottom: 15px;
+  font-size: 16px;
+  color: #005172;
+  font-weight: bold;
+  font-style: normal;
+  border-bottom: 1px solid #d9d9d9;
+  text-transform: uppercase;
+}
+.ql-radio {
+  position: relative;
+  top: 14px;
+}
+.rdo-name {
+  position: relative;
+  top: -14px;
+  padding-left: 15px;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: normal;
+  color: #4d4f53;
+}
+.newListName {
+  height: 42px !important;
+  border: 1px solid #d9d9d9;
+  margin-top: 23px;
+}
+.savebtn {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.closeql {
+  float: right;
+  color: #007ac9;
+  background-color: white;
+  border: none;
+}
+
+.ql-dropdown-icon[aria-expanded="false"] .add-icon {
+  display: inline;
+}
+.ql-dropdown-icon[aria-expanded="true"] .add-icon {
+  display: inline;
+}
+
+.qlnotification {
+  min-width: 30%;
+  min-height: 72px;
+  padding-right:5px;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 81, 114, 0.2);
+  background-color: #005172;
+  left: 34%;
+  position: absolute;
+  top: 100px;
+  text-align: center;
+  color: #fff;
+  line-height: 72px;
+  z-index: 100;
+}
+.messagetext {
+  color: white;
+  padding-top: 14px;
+}
+.tickmessage {
+  padding-right: 17px;
+  position: relative;
+  top: 6px;
+}
+
+div.qlnotification {
+  overflow: show;
+  -webkit-animation: seconds 0.1s forwards;
+  animation: seconds 0.1s forwards;
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+@-webkit-keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.qltext {
+  color: #007ac9;
+  font-size: 12px;
+}
+.qldrpdwn.open .ql-dropdown-icon{
+  display: none
+}
+@media (max-width: 767px) {
+  .qlnotification {
+    min-width:auto;
+    width:80%;
+    left:10%;
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:10px;
+    min-height:60px;
+    line-height:1.6;
+    word-break: break-word;
+    z-index:1000;
+
+  }
+  .tickmessage {
+    min-height:40px;
+  }
+  
+  .quickSave.ec-btn-primary {
+		top: 8px;
+		left: 0px;
+		width: 100%;
+		margin-bottom: 25px;
+	}
+	.createTemplate.ec-btn-secondary {
+		width: 100%;
+		margin-bottom: 21px;
+	}
+	.qldrpdwn {
+		width: 100%;
+		text-align: right;
+		position: relative;
+		padding-right: 0px;
+	}
+	.ql-dropdown {
+		right: 0;
+		width: 300px;
+	}
+	.rdo-name {
+		font-size: 13px;
+		word-break: break-word;
+	}
+}
+.qldrpdwn {
+        padding-right: 1.7%;
+        white-space:nowrap;
+}
+.li-container{
+  height:250px;
+  overflow-y: auto;
+  overflow-x:hidden;
+  padding-left:10px;
+  
+}
+
+@media (min-width: 768px) and (max-width: 1365px){
+  .ql-dropdown {
+    width: 350px;
+  }
+  .quickSave{
+    left:0px !important;
+  }
+  .qlnotification {
+    min-width:auto;
+    left:5%;
+    width:90%;
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:10px;
+    padding-top:10px;
+    line-height:1.6;
+    min-height:50px;
+    word-break: break-word;
+    z-index:1000;
+  }
+}
+@media only screen and (min-width:1366px) {
+  .quickSave{
+    left:-55px !important;
+  }
+}
+  
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+  .ql-radio, .rdo-name{
+      top:0px;
+  }
+  .ql-radio-item{
+      height:43px;
+      padding-top:10px;
+  }
+} 

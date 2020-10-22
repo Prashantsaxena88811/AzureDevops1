@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The localized Product Name. Used for sort order and performing SOSL search against a product. --></help>
+    <label><!-- Product Name --></label>
+    <name>ccrz__ProductName__c</name>
+</CustomFieldTranslation>

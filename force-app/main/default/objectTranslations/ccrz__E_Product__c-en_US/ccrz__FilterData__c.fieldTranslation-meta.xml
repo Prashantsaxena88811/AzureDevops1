@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The combination of the product spec key and spec values into single text field value. The Filter Data field is auto-populated when the Product Spec Index is refreshed. --></help>
+    <label><!-- Filter Data --></label>
+    <name>ccrz__FilterData__c</name>
+</CustomFieldTranslation>

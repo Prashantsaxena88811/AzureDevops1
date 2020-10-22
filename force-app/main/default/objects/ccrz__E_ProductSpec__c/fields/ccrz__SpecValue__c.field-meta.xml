@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__SpecValue__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The value that we are associating to this pairing. For example, if the specification is Processor Speed, the value might be 2.4GHz</description>
+    <externalId>false</externalId>
+    <label>SpecValue</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

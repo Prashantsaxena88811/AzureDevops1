@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>ccrz__E_Order__c.ccrz__OrderDate__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>ccrz__E_Order__c.ccrz__TotalAmount__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$Account.EC_Account_Number__c</field>
+    </columns>
+    <columns>
+        <field>ccrz__E_Order__c.ccrz__BuyerFirstName__c</field>
+    </columns>
+    <columns>
+        <field>ccrz__E_Order__c.ccrz__BuyerLastName__c</field>
+    </columns>
+    <columns>
+        <field>ccrz__E_Order__c.ccrz__BuyerEmail__c</field>
+    </columns>
+    <columns>
+        <field>ccrz__E_Order__c.ccrz__OrderId__c</field>
+    </columns>
+    <columns>
+        <field>ccrz__E_Order__c.ccrz__OrderStatus__c</field>
+    </columns>
+    <description>This report contains all Orders where Account:Division = &quot;FOOD &amp; BEVERAGE&quot;</description>
+    <filter>
+        <criteriaItems>
+            <column>FK_$Account.EC_Division__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>FOOD &amp; BEVERAGE</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>All F&amp;B Orders on Connect</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$ccrz__E_Order__c@ccrz__E_Order__c.ccrz__Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CUST_NAME</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>ccrz__E_Order__c.ccrz__OrderDate__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

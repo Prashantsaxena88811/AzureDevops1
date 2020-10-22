@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- target site for image click --></help>
+    <label><!-- Image CTA URL --></label>
+    <name>Image_CTA_URL__c</name>
+</CustomFieldTranslation>

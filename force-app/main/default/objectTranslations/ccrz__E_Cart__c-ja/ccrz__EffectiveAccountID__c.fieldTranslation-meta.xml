@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>この項目は、ユーザが独自の取引先を含めたり除外したりして複数の取引先に注文できる実装で使用されます。有効取引先は、サイトで実行されるエンタイトルメント、価格設定、インテグレーションなどを制御するために使用されます。</help>
+    <label><!-- Effective Account ID --></label>
+    <name>ccrz__EffectiveAccountID__c</name>
+</CustomFieldTranslation>

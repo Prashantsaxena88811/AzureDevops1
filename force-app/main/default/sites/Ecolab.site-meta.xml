@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomSite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowHomePage>false</allowHomePage>
+    <allowStandardAnswersPages>false</allowStandardAnswersPages>
+    <allowStandardIdeasPages>false</allowStandardIdeasPages>
+    <allowStandardLookups>false</allowStandardLookups>
+    <allowStandardPortalPages>true</allowStandardPortalPages>
+    <allowStandardSearch>false</allowStandardSearch>
+    <authorizationRequiredPage>CommunitiesLogin</authorizationRequiredPage>
+    <bandwidthExceededPage>EC_CustomBandwidthExceeded</bandwidthExceededPage>
+    <browserXssProtection>true</browserXssProtection>
+    <clickjackProtectionLevel>AllowAllFraming</clickjackProtectionLevel>
+    <contentSniffingProtection>true</contentSniffingProtection>
+    <cspUpgradeInsecureRequests>true</cspUpgradeInsecureRequests>
+    <customWebAddresses>
+        <certificate>ConnectDomainCert</certificate>
+        <domainName>connect.ecolab.com</domainName>
+        <primary>true</primary>
+    </customWebAddresses>
+    <enableAuraRequests>true</enableAuraRequests>
+    <fileNotFoundPage>EC_CustomFileNotFound</fileNotFoundPage>
+    <genericErrorPage>EC_CustomGenericError</genericErrorPage>
+    <inMaintenancePage>EC_CustomMaintenance</inMaintenancePage>
+    <indexPage>ccrz__HomePage</indexPage>
+    <masterLabel>Ecolab</masterLabel>
+    <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
+    <requireHttps>true</requireHttps>
+    <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
+    <selfRegPage>CommunitiesSelfReg</selfRegPage>
+    <serverIsDown>EC_OutageProtocol</serverIsDown>
+    <siteAdmin>vijaykumar.madival@connect.ecolab.com</siteAdmin>
+    <siteGuestRecordDefaultOwner>vijaykumar.madival@connect.ecolab.com</siteGuestRecordDefaultOwner>
+    <siteType>ChatterNetwork</siteType>
+    <subdomain>ecolabconnect</subdomain>
+</CustomSite>

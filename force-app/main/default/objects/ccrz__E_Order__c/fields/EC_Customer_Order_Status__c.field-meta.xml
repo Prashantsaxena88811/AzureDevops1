@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC_Customer_Order_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(ccrz__OrderStatus__c,&apos;Order Submitted&apos;) || (NOT(ISNULL(EC_Submission_Failure_Count__c)) &amp;&amp; EC_Submission_Failure_Count__c &lt; 5 &amp;&amp; ISPICKVAL(ccrz__OrderStatus__c,&apos;Failed&apos;)),&apos;In Progress&apos;,IF( NOT(ISNULL(EC_Submission_Failure_Count__c))  &amp;&amp;   EC_Submission_Failure_Count__c &gt;=5 &amp;&amp; ISPICKVAL(ccrz__OrderStatus__c,&apos;Failed&apos;),&apos;Submitted&apos;,
+IF(ISPICKVAL(ccrz__OrderStatus__c,&apos;Pending&apos;), &apos;Confirmed&apos;, TEXT(ccrz__OrderStatus__c))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Customer Order Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

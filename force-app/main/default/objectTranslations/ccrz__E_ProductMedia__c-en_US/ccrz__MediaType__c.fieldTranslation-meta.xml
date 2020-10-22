@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Media Type --></label>
+    <name>ccrz__MediaType__c</name>
+    <picklistValues>
+        <masterLabel>Alternate Images</masterLabel>
+        <translation><!-- Alternate Images --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Alternate Thumbnails</masterLabel>
+        <translation><!-- Alternate Thumbnails --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Analytical Procedures</masterLabel>
+        <translation><!-- Analytical Procedures --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assembly Guides</masterLabel>
+        <translation><!-- Assembly Guides --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Catalog Sheets</masterLabel>
+        <translation><!-- Catalog Sheets --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Datasheets</masterLabel>
+        <translation><!-- Datasheets --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flash Files</masterLabel>
+        <translation><!-- Flash Files --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JPG Image</masterLabel>
+        <translation><!-- JPG Image --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Label 1s</masterLabel>
+        <translation><!-- Label 1s --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Label 2s</masterLabel>
+        <translation><!-- Label 2s --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Media</masterLabel>
+        <translation><!-- Media --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Operating Manuals</masterLabel>
+        <translation><!-- Operating Manuals --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Owner&apos;s Manuals</masterLabel>
+        <translation><!-- Owner&apos;s Manuals --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Bulletins</masterLabel>
+        <translation><!-- Product Bulletins --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Image</masterLabel>
+        <translation><!-- Product Image --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Image Thumbnail</masterLabel>
+        <translation><!-- Product Image Thumbnail --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Search Image</masterLabel>
+        <translation><!-- Product Search Image --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SDS Documents</masterLabel>
+        <translation><!-- SDS Documents --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SVG Interactive Diagram</masterLabel>
+        <translation><!-- SVG Interactive Diagram --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Safety Documents</masterLabel>
+        <translation><!-- Safety Documents --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales Brochures</masterLabel>
+        <translation><!-- Sales Brochures --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Specification Sheets</masterLabel>
+        <translation><!-- Specification Sheets --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

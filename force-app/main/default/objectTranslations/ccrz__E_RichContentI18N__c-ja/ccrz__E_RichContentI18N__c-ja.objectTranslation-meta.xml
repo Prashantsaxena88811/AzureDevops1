@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CC リッチコンテンツ I18N</value>
+    </caseValues>
+    <nameFieldLabel>CC リッチコンテンツ I18N 名</nameFieldLabel>
+</CustomObjectTranslation>

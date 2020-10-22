@@ -1,0 +1,339 @@
+.cc_right_col .quick-order,
+.quick-order .panel {
+  margin-bottom: 0px;
+}
+.quick-order h3,
+.minicart h3 {
+  font-size: 16px;
+  color: #005172;
+}
+.minicart h3, .minicart .panel{
+  padding-top: 0px !important;
+}
+.custom-class {
+  display: inline-block;
+}
+.custom-inputClass {
+  display: inline-block;
+  width: 30%;
+  position: relative;
+  margin-left: 26px;
+  margin-bottom: 0px;
+  padding-right: 5px;
+  padding-left: 8px;
+}
+.custom-divClass {
+  padding-left: 0px;
+  padding-right: 5px;
+}
+
+.rowitems-cart {
+  border-top: 1px solid transparent;
+  border-bottom:1px solid #ccc;
+  padding-bottom: 8px;
+}
+.rowitems {
+  border-top:1px solid #ccc;
+   padding-bottom: 8px;
+}
+
+.MiniCart {
+  background-color: white !important;
+}
+.minititle {
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: bold;
+  color: #005172;
+}
+.minicartprodname {
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+.minicartprodname > a {
+  font-family: Arial;
+  font-size: 14px;
+
+  color: #4d4f53;
+  font-weight: normal;
+}
+
+.minisum {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: normal;
+  color: #4d4f53;
+}
+.minisubtotal {
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: normal;
+  color: #005172;
+}
+.minibtn {
+  width: 50%;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 30px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.rowsum {
+  padding-top: 16px;
+}
+.rowbtn {
+  padding-top: 29px;
+}
+.minisummaryrow {
+  padding-top: 0px !important;
+}
+.minitoggle[aria-expanded="true"] .menu-expand {
+  display: none;
+}
+
+.minitoggle[aria-expanded="true"] .menu-collapse {
+  display: inline;
+}
+
+.minitoggle[aria-expanded="false"] .menu-collapse,
+.minitoggle .menu-collapse {
+  display: none;
+}
+.minitgle {
+  color: #007ac9;
+}
+.noitemsmini {
+  border-top: 1px solid #ccc;
+  padding-top: 16px;
+}
+.minicart .minitoggle {
+  margin-top: -6px;
+  display: inline-block;
+  padding-right:15px;
+}
+.panel.panel-default.cc_mini_cart{
+  padding: 10px 16px;
+}
+
+.mc-button-wrapper{
+  margin-left: -15px;
+  margin-right: -15px
+}
+.summary.cc_summary {
+  margin-top:0px;
+  border-top:1px solid transparent !important;
+}
+
+.mc-button-wrapper{
+  margin-left: -15px;
+  margin-right: -15px
+}
+.input-group .plp-input {
+  background: #fff;  
+  border: 1px solid #ccc;
+  border-left: 0;
+  border-right: 0;
+  text-align: center;
+  width: 45px;
+  font-size: 16px;
+  color: #4d4f53;
+  height: 32px;
+}
+
+.cc_input_group_btn {
+  display: inline-block;
+  float: left;
+}
+
+.form-control[readonly] {
+  background-color: #fff;
+}
+
+.input-group-sm>.form-control,
+.input-group-sm>.input-group-addon,
+.input-group-sm>.input-group-btn>.btn {
+  height: 32px;
+}
+
+.cc_plus {
+  border-left: 0px;
+  height: 32px;
+}
+
+.cc_minus {
+  border-right: 0px;
+  height: 32px;
+}
+
+.form-control:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: #ccc;
+  
+}
+
+.cust-min {
+  height: 32px;
+  /*width: 32px;*/
+}
+.minus, .plus {
+  font-size: 16px;
+}
+.minicart .plp-input{
+  padding: 0px;
+}
+.plus:hover, .minus:hover, .plus:active, .minus:active, .plus:focus, .minus:focus {
+  background: #fff;
+  outline: none;
+  border-color: #ccc;
+}
+@media only screen and (max-width: 1919px) {
+  .updateCartButton, .loggedInAction{
+    width: 100% !important;
+    margin-top: 8px;
+  }
+  .minicart .price-wrap-num{
+    font-size: 20px;
+  }
+}
+@media and (min-width: 1920px){
+  .mc-button-wrapper{
+      margin-left: -15px;
+      margin-right: -15px;
+  }
+}
+@media (min-width:768px) and (max-width:1365px){
+  .modal.right .modal-dialog{
+    width: 40% !important;
+  }
+}
+@media (max-width: 1365px){
+    .updateCartButton, .loggedInAction{
+      width: 49% !important
+    }
+    .mc-button-wrapper{
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+}
+/*starts Min and Max quantity changes*/
+.warn-message-align .cc_quantity .minus{
+	border: solid 1px #e00034;
+	border-right: 0;
+}
+
+.warn-message-align .cc_quantity .plus{
+	border: solid 1px #e00034;
+	border-left: 0;
+}
+.warn-message-align .cc_quantity .plp-input {
+	border: solid 1px #e00034;
+	border-left: 0;
+	border-right: 0;
+}
+	
+.min-max-warn {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #e00034;
+}
+.min-max-warn {
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+@media only screen and (min-width: 1366px) {
+	.min-max-warn {
+		margin-top: -8px;
+		margin-bottom: 12px;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.min-max-warn {
+		margin-top: -8px;
+		margin-bottom: 12px;
+		float: left;
+		width: 100%;
+		display: block;
+		margin-top: -8px;
+		margin-bottom: 5px;
+	}
+}
+@media (max-width: 767px) {
+	.input-group .cc_minus, .cust-min {
+		width: 24px;
+	}
+	.input-group .plp-input {
+		font-size: 14px;
+		width: 41px;
+	}
+	.uom-price-mob .nalco-uom {
+		margin-left: 3px;
+		margin-top: 8px;
+		font-size: 10px;
+		color: #4d4f53;
+		font-weight: bold;
+	}
+	.uom-price-mob {
+		width: 110px;
+	}
+	.cc_quantity>span, .line-unload-section .disp-inline>span {
+		font-size: 14px;
+	}
+	.input-group .cc_plus {
+		width: 21px;
+	}
+}
+@media (max-width: 320px){
+	.line-tank {
+		width: 45.7%;
+	}
+}
+@media only screen and (max-width: 359px) and (min-width: 321px) {
+	.line-tank {
+		width: 55.7%;
+	}
+}
+
+@media only screen and (max-width: 767px) and (min-width: 360px) {
+	.line-tank {
+		width: 53.7%;
+	}
+}
+.nalco-uom {
+	color: #4d4f53;
+	font-weight: bold;
+}
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+	.nalco.m-r-0 .pludisbtn, .nalco.m-r-0 .custom-minus, .nalco.m-r-0 .cust-min  {
+		width: 35px;
+  }
+  .qtyIncrDecrBtn .cust-min, .qtyIncrDecrBtn .cc_minus, .qtyIncrDecrBtn .cc_input_group_btn, .qtyIncrDecrBtn .cc_plus  {
+		width: 31px;
+	}
+}
+@media only screen and (min-width: 1366px) {
+	.min-max-warn {
+		margin-top: 0px;
+		margin-bottom: 12px;
+		width: 143px;
+	}
+	.cart_quicklist .qldrpdwn {
+		margin-bottom: 2px;
+	}
+	.uom-align .cc_quantity {
+		padding-top: 2px;
+	}
+}
+
+@media only screen and (min-width: 1920px) {
+	.min-max-warn {
+		width: 180px;
+	}
+}
+
+/* Ends Min and Max quantity changes*/

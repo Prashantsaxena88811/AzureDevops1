@@ -1,0 +1,1 @@
+A request for Payment Portal access by {!Case.Contact} has exceeded the maximum time a request is allowed to be in pending. Please follow up on this request and grant access if the user meets the criteria for Payment Portal access. The Salesforce Case Number for this request is {!Case.CaseNumber}.

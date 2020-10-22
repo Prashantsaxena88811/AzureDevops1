@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The product long description. By default, the index uses the LongDescRT__c field on the CC Product object. If the LongDescRT__c field is empty, then the index will use the LongDesc__c field instead. --></help>
+    <label><!-- Long Description --></label>
+    <name>ccrz__LongDescription__c</name>
+</CustomFieldTranslation>

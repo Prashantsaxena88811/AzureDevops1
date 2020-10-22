@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Unit of Measure for Installment Frequency. Possible values are Daily, Weekly, Monthly, Yearly. Capitalization is taken into account. --></help>
+    <label><!-- Installment Frequency UOM --></label>
+    <name>ccrz__InstallmentFrequencyUOM__c</name>
+</CustomFieldTranslation>

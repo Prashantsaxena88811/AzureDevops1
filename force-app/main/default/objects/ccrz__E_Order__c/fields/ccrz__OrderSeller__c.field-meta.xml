@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__OrderSeller__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Typically used in split order scenarios.  This field will represent, for a split order, the seller to which this order belongs.</description>
+    <externalId>false</externalId>
+    <label>Order Seller</label>
+    <referenceTo>ccrz__E_Seller__c</referenceTo>
+    <relationshipLabel>Seller Orders</relationshipLabel>
+    <relationshipName>SellerOrders</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Image Source --></label>
+    <name>ccrz__ImageSource__c</name>
+    <picklistValues>
+        <masterLabel>Attachment</masterLabel>
+        <translation>添付ファイル</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Override Static Resource</masterLabel>
+        <translation>上書き静的リソース</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Splash Override Static Resource</masterLabel>
+        <translation>スプラッシュ上書き静的リソース</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Splash Static Resources</masterLabel>
+        <translation>スプラッシュ静的リソース</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Static Resource</masterLabel>
+        <translation>静的リソース</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>URI</masterLabel>
+        <translation>URI</translation>
+    </picklistValues>
+</CustomFieldTranslation>

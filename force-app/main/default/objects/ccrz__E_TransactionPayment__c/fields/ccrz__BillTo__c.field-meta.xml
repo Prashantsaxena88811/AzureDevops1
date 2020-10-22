@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__BillTo__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Account against which this transaction payment applies, e.g. the Bill To of the invoice.</description>
+    <externalId>false</externalId>
+    <label>Bill To</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Bill To Transaction Payments</relationshipLabel>
+    <relationshipName>BillToTransactionPayments</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

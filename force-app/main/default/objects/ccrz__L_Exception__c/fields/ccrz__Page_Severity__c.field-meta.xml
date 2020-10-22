@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Page_Severity__c</fullName>
+    <deprecated>false</deprecated>
+    <description>List the page severity of the apex message to be displayed to the end user.</description>
+    <externalId>false</externalId>
+    <label>Page Severity</label>
+    <length>25</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

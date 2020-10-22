@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CC 商品タブ</value>
+    </caseValues>
+    <layouts>
+        <layout>CC Product Tab Layout</layout>
+        <sections>
+            <label>コンテンツ</label>
+            <section>Content</section>
+        </sections>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>商品タブ番号</nameFieldLabel>
+</CustomObjectTranslation>

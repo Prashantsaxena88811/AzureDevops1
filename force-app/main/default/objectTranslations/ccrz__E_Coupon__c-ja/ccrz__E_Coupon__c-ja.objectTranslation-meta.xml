@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CC クーポン</value>
+    </caseValues>
+    <layouts>
+        <layout>CC Coupon Layout</layout>
+        <sections>
+            <label>カートの合計クーポン</label>
+            <section>Cart Total Coupon</section>
+        </sections>
+        <sections>
+            <label>クーポンソース</label>
+            <section>Coupon Source</section>
+        </sections>
+        <sections>
+            <label>クーポン対象</label>
+            <section>Coupon Target</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>クーポン自動採番</nameFieldLabel>
+</CustomObjectTranslation>

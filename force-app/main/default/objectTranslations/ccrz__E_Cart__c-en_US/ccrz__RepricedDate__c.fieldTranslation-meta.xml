@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The date and time that B2B Commerce most recently priced the cart items. --></help>
+    <label><!-- Repriced Date --></label>
+    <name>ccrz__RepricedDate__c</name>
+</CustomFieldTranslation>

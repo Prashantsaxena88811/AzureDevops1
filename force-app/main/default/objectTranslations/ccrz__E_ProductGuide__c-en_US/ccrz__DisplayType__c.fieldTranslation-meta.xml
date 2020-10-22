@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Display Type --></label>
+    <name>ccrz__DisplayType__c</name>
+    <picklistValues>
+        <masterLabel>Image-Select</masterLabel>
+        <translation><!-- Image-Select --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Image-Select Quantity</masterLabel>
+        <translation><!-- Image-Select Quantity --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multi-Select</masterLabel>
+        <translation><!-- Multi-Select --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multi-Select Quantity</masterLabel>
+        <translation><!-- Multi-Select Quantity --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Single-Select</masterLabel>
+        <translation><!-- Single-Select --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Single-Select Quantity</masterLabel>
+        <translation><!-- Single-Select Quantity --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

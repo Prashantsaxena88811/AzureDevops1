@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__SearchTokens__c</fullName>
+    <defaultValue>&quot;all&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Searchable text in addition to the other text fields on the Seller object. This can be used to tweak the search results. The text &quot;all&quot; should always be included in this field to allow searches for nearby Sellers without specifying any search key words (e.g. leaving the name field blank when searching for nearby sellers).</description>
+    <externalId>false</externalId>
+    <label>Search Tokens</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

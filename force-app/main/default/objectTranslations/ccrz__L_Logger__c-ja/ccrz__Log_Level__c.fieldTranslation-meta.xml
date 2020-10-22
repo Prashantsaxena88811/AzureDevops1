@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Salesforce で使用可能なさまざまなログレベルを表します</help>
+    <label><!-- Log Level --></label>
+    <name>ccrz__Log_Level__c</name>
+    <picklistValues>
+        <masterLabel>DEBUG</masterLabel>
+        <translation>デバッグ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ERROR</masterLabel>
+        <translation>エラー</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FINE</masterLabel>
+        <translation>詳細</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FINER</masterLabel>
+        <translation>より詳細</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FINEST</masterLabel>
+        <translation>最も詳細</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INFO</masterLabel>
+        <translation>情報</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WARN</masterLabel>
+        <translation>警告</translation>
+    </picklistValues>
+</CustomFieldTranslation>

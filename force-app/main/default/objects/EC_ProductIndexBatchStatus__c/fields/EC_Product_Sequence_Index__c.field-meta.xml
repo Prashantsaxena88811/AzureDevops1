@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC_Product_Sequence_Index__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>EC Product Sequence Index</description>
+    <externalId>false</externalId>
+    <label>EC Product Sequence Index</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

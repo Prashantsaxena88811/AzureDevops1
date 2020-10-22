@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__All1</fullName>
+    <columns>NAME</columns>
+    <columns>ccrz__Account__c</columns>
+    <columns>ccrz__AccountId__c</columns>
+    <columns>ccrz__AddressType__c</columns>
+    <columns>ccrz__E_ContactAddress__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ccrz__Account__c</field>
+        <operation>contains</operation>
+        <value>UNIV OF WASHINGTON</value>
+    </filters>
+    <filters>
+        <field>ccrz__AddressBookId__c</field>
+        <operation>contains</operation>
+        <value>0150348211_150060867</value>
+    </filters>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Is_Subscription_Auto_Renewal__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Set to true if this product is a subscription and is set to auto renew.  Set to false if otherwise.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Set to true if this product is a subscription and is set to auto renew.  Set to false if otherwise.</inlineHelpText>
+    <label>Is Subscription Auto Renewal</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

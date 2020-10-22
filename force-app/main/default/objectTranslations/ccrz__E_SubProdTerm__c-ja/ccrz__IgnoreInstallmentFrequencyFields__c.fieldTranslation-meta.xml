@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>注文頻度により分割払い頻度を決定する場合にオンにします。</help>
+    <label><!-- Ignore Installment Frequency Fields --></label>
+    <name>ccrz__IgnoreInstallmentFrequencyFields__c</name>
+</CustomFieldTranslation>

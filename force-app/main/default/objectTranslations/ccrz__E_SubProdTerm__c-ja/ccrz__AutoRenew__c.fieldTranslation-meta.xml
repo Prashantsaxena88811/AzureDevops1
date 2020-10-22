@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>サブスクリプションを自動更新する場合にオンにします。</help>
+    <label><!-- Auto Renew --></label>
+    <name>ccrz__AutoRenew__c</name>
+</CustomFieldTranslation>

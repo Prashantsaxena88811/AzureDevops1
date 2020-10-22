@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__HtmlType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Specifies which type of HTML this is for</description>
+    <externalId>false</externalId>
+    <label>HTML Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Category Tree</fullName>
+                <default>false</default>
+                <label>Category Tree</label>
+            </value>
+            <value>
+                <fullName>Top Menu</fullName>
+                <default>false</default>
+                <label>Top Menu</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

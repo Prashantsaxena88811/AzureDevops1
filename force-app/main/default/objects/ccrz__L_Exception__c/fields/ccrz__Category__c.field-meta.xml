@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Category__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Defines the exception category. &quot;Business&quot; and &quot;Technical&quot; are the current defined categories.</description>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <length>64</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>この注文品目がサブスクリプションの場合、新しい注文が行われる頻度を月数で決定します。</help>
+    <label><!-- Subscription Frequency --></label>
+    <name>ccrz__Subscription_Frequency__c</name>
+</CustomFieldTranslation>

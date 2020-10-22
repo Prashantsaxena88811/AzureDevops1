@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__CCRichContent__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The rich content object that this translated content belongs to</description>
+    <externalId>false</externalId>
+    <label>CC Rich Content</label>
+    <referenceTo>ccrz__E_RichContent__c</referenceTo>
+    <relationshipLabel>CC Rich Content I18Ns</relationshipLabel>
+    <relationshipName>CCRichContentI18Ns</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Cat 2_8 Chars --></label>
+    <name>Cat_2_8_Chars__c</name>
+</CustomFieldTranslation>

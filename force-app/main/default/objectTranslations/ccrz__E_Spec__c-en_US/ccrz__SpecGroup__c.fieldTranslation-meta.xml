@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- SpecGroup --></label>
+    <name>ccrz__SpecGroup__c</name>
+    <picklistValues>
+        <masterLabel>Cache Memory</masterLabel>
+        <translation><!-- Cache Memory --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coupon</masterLabel>
+        <translation><!-- Coupon --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Environmental Parameters</masterLabel>
+        <translation><!-- Environmental Parameters --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>General</masterLabel>
+        <translation><!-- General --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Networking</masterLabel>
+        <translation><!-- Networking --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Processor</masterLabel>
+        <translation><!-- Processor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Test</masterLabel>
+        <translation><!-- Test --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

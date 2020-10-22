@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Graphic Type --></label>
+    <name>ccrz__Graphic_Type__c</name>
+    <picklistValues>
+        <masterLabel>image</masterLabel>
+        <translation>画像</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>slider</masterLabel>
+        <translation>スライダ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>swf</masterLabel>
+        <translation>swf</translation>
+    </picklistValues>
+</CustomFieldTranslation>

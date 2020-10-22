@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PaginationSize</fullName>
+    <inlineHelpText>Sets the number of products to show on each search results page.</inlineHelpText>
+</CustomField>

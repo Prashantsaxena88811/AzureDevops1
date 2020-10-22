@@ -1,0 +1,13 @@
+<apex:component allowDML="true" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- header -->
+    <header class="header-wrapper">
+        <div class="slds-grid">
+            <div class="ecolab slds-col">
+                <a href="/s/">
+                    <img class="logo" src="{!$Resource.EC_Branding_Theme+'/images/logo_white.png'}"/>
+                </a>
+            </div>
+        </div>
+    </header>
+</apex:component>

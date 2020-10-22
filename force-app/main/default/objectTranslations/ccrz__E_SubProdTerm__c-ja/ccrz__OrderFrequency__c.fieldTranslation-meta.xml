@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>UOM と組み合わせて使用される注文頻度は、サービス/商品が実行/送信される頻度です。整数にしてください。</help>
+    <label><!-- Order Frequency --></label>
+    <name>ccrz__OrderFrequency__c</name>
+</CustomFieldTranslation>

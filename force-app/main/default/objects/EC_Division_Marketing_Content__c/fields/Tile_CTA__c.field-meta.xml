@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tile_CTA__c</fullName>
+    <description>Marketing Tile CTA Button text</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Marketing Tile CTA Button text</inlineHelpText>
+    <label>Tile CTA</label>
+    <length>80</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>この注文品目がサブスクリプションかどうかを示す true または false の値。</help>
+    <label><!-- Is Subscription --></label>
+    <name>ccrz__Is_Subscription__c</name>
+</CustomFieldTranslation>

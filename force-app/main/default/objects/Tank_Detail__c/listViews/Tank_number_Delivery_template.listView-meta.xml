@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tank_number_Delivery_template</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Delivery_Template_Code__c</columns>
+    <columns>Tank_Number__c</columns>
+    <columns>Material_Delivery_Code__c</columns>
+    <columns>Material_Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account__c</field>
+        <operation>equals</operation>
+        <value>INTERNATIONAL PAPER CO ShipTo</value>
+    </filters>
+    <filters>
+        <field>Material_Description__c</field>
+        <operation>equals</operation>
+        <value>8103 PLUS</value>
+    </filters>
+    <label>Tank number &amp; Delivery template</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>インデックスの種別。使用できる値は SEARCH、CATEGORY (Base 64 でエンコード) です。</help>
+    <label><!-- Index Type --></label>
+    <name>ccrz__IndexType__c</name>
+</CustomFieldTranslation>

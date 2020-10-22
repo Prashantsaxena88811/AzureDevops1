@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Rule Type --></label>
+    <name>ccrz__RuleType__c</name>
+    <picklistValues>
+        <masterLabel>CartTotal</masterLabel>
+        <translation><!-- CartTotal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Combination</masterLabel>
+        <translation><!-- Combination --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>General</masterLabel>
+        <translation><!-- General --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shipping</masterLabel>
+        <translation><!-- Shipping --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stepped</masterLabel>
+        <translation><!-- Stepped --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SteppedHistory</masterLabel>
+        <translation><!-- SteppedHistory --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tiered</masterLabel>
+        <translation><!-- Tiered --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TieredHistory</masterLabel>
+        <translation><!-- TieredHistory --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

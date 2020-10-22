@@ -1,0 +1,40 @@
+<!--
+
+  @Component Name     : EC_Home_Adtiles.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Soumick               11/26/2019        Component for ad tiles 
+
+--> 
+
+<aura:component controller="EC_Adtiles_Content_Controller" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">	    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>     
+    <aura:attribute name="contents" type="list"/>
+    <div class="slds-grid slds-wrap">
+        <aura:iteration items="{!v.contents}" var="content">
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_4-of-12">
+                <div class="ad-tiles">
+                    <aura:if isTrue="{!content.Image_CTA_URL__c}">
+                        <a href="{!content.Image_CTA_URL__c}" target="{!content.Open_In_NewTab__c  ? '_blank' : ''}">                                                                
+                            <lightning:formattedRichText value="{!content.EC_Content__c}"/>
+                            <div class="overlay-box">
+                                <p class="m-ad-bodytext"><lightning:formattedText value="{!content.Body_Text__c}" /></p>
+                                <p class="m-ad-cta"><lightning:formattedText value="{!content.Tile_CTA__c}" /></p>
+                            </div>
+                        </a>                
+                        <aura:set attribute="else">
+                            <lightning:formattedRichText value="{!content.EC_Content__c}"/>
+                            <div class="overlay-box">
+                                <p class="m-ad-bodytext"><lightning:formattedText value="{!content.Body_Text__c}" /></p>
+                                <p class="m-ad-cta"><lightning:formattedText value="{!content.Tile_CTA__c}" /></p>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </div>
+            </div>
+        </aura:iteration>
+    </div>
+    <c:EC_CovidTwitter />
+</aura:component>

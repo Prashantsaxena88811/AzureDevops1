@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Unloading_Point__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Field to indicate the default unloading point for an account.</description>
+    <externalId>false</externalId>
+    <label>Primary Unloading Point</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

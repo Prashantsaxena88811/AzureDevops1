@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The frequency of this subscription in days.  If not selected via the UI, then this value defaults to the Product&apos;s subscription frequency. --></help>
+    <label><!-- Subscription Frequency --></label>
+    <name>ccrz__Subscription_Frequency__c</name>
+</CustomFieldTranslation>

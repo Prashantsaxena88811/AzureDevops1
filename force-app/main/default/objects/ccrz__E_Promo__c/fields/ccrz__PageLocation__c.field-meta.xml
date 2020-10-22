@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__PageLocation__c</fullName>
+    <deprecated>false</deprecated>
+    <description>One of Landing Page, Product Detail, Shopping Cart, Order Review, Order Confirmation, Product List Page, Category Landing Page, All Pages. Indicates on which page the promotion should appear.</description>
+    <externalId>false</externalId>
+    <label>Page Location</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Landing Page</fullName>
+                <default>false</default>
+                <label>Landing Page</label>
+            </value>
+            <value>
+                <fullName>Product Detail</fullName>
+                <default>false</default>
+                <label>Product Detail</label>
+            </value>
+            <value>
+                <fullName>Shopping Cart</fullName>
+                <default>false</default>
+                <label>Shopping Cart</label>
+            </value>
+            <value>
+                <fullName>Order Review</fullName>
+                <default>false</default>
+                <label>Order Review</label>
+            </value>
+            <value>
+                <fullName>Order Confirmation</fullName>
+                <default>false</default>
+                <label>Order Confirmation</label>
+            </value>
+            <value>
+                <fullName>Product List Page</fullName>
+                <default>false</default>
+                <label>Product List Page</label>
+            </value>
+            <value>
+                <fullName>Category Landing Page</fullName>
+                <default>false</default>
+                <label>Category Landing Page</label>
+            </value>
+            <value>
+                <fullName>All Pages</fullName>
+                <default>false</default>
+                <label>All Pages</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

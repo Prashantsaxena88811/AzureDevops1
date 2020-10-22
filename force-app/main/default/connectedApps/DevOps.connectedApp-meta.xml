@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>Prashant@graytitude.com</contactEmail>
+    <label>DevOps</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:1717/OauthRedirect</callbackUrl>
+        <certificate>MIIDpzCCAo8CFEQCpUb5A3G22KJck89WYDWFnyuxMA0GCSqGSIb3DQEBCwUAMIGPMQswCQYDVQQGEwJJTjELMAkGA1UECAwCVVAxEjAQBgNVBAcMCU1vcmFkYWJhZDEYMBYGA1UECgwPQ2xvdWQgU29sdXRpb25zMQswCQYDVQQLDAJJVDERMA8GA1UEAwwIUHJhc2hhbnQxJTAjBgkqhkiG9w0BCQEWFlByYXNoYW50c3huOEBnbWFpbC5jb20wHhcNMjAwNjAzMTYwNzMwWhcNMjEwNjAzMTYwNzMwWjCBjzELMAkGA1UEBhMCSU4xCzAJBgNVBAgMAlVQMRIwEAYDVQQHDAlNb3JhZGFiYWQxGDAWBgNVBAoMD0Nsb3VkIFNvbHV0aW9uczELMAkGA1UECwwCSVQxETAPBgNVBAMMCFByYXNoYW50MSUwIwYJKoZIhvcNAQkBFhZQcmFzaGFudHN4bjhAZ21haWwuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsjgHvcnY78VPbL7wizrSp3lNwDDMr3oKPMGYejn+76hiOGZELjFa6C5anyDGf7BiqsWzidy7lZ7VggtycubVvuSOa5uE/TVqcIlAS+P9te8iWU4TseinTtcXNtj32hlfKB7gcDmVTwfkGs4uKI+VOSHuFEZHJSHyuE1v1oUGEVvu9bAWMfED5fbVijhKKGB8ywZEuKSbE42nT4Pu4Z8Zs+rNWQxL3DFynH9JXsTERvDNH5wwcJb5UxBGTM/32F2Bq8XgTtWTtdff/zPqm9m12KsG5s/3S67qzebYcj6/e51zJItQ8l6lRrv0HvC7qmEHp9JYsyO14M4EFaMpjJJehwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBjxLZGZmGhBEC54vsz2R6Fs5rqdmXJulx78YXXUkgb0ZThELbJfegVAbcdK3nj2mIhp2bnOLUQxy59Gm3vD0WMkr2nnDJPGoJe5yK2MSYUJpU1viYFb+z10i9jmJdGYpshdjD900v4ZZrAZZqlcK7O+Cj7xEr38xRp7kf2oZDAdJId+NmESue14raeech4DW7MJO+7qI15rkhxVLD/jiJzyFKeT1IoPBorVUSi4Nj04FqyKCoAvqKtm7JJLwZvnGNu1KrmLWLh99SLRd5tWmMpLg42chRx61QKcQxGXC5badXU7cmQByasFeV2AlKiJUPnN/WeflCFG4jj2rqIbUX7</certificate>
+       <!-- <consumerKey>3MVG9jBOyAOWY5bWTUrnsc3Cvb4FPnCIBT2Z19a3_wCRkLwmVdiBGRjFWqfustY_.ojSEa_2KfejlHi8pqKW5</consumerKey>
+        --><isAdminApproved>true</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <permissionSetName>DevOps</permissionSetName>
+</ConnectedApp>

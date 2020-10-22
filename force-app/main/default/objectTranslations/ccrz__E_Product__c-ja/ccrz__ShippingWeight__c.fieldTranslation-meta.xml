@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>これは、B2B Commerce で購入ユーザに配送オプション (Fedex) を表示できるようにする場合に必要です。</help>
+    <label><!-- Shipping Weight(lbs) --></label>
+    <name>ccrz__ShippingWeight__c</name>
+</CustomFieldTranslation>

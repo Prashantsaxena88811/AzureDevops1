@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>関連付けられた商品インデックスレコードの状況を示します。使用できる値は [最新]、[最新ではない]、[待機中] です。この項目は主に、商品インデックスの一括処理で使用されます。</help>
+    <label><!-- Product Index Status --></label>
+    <name>ccrz__ProductIndexStatus__c</name>
+</CustomFieldTranslation>

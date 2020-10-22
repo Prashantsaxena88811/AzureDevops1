@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Section Filter --></label>
+    <name>ccrz__SectionFilter__c</name>
+    <picklistValues>
+        <masterLabel>Accessories</masterLabel>
+        <translation>アクセサリ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Analytical Procedures</masterLabel>
+        <translation><!-- Analytical Procedures --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assembly Guides</masterLabel>
+        <translation>アセンブリガイド</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Catalog Sheets</masterLabel>
+        <translation><!-- Catalog Sheets --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Competitive</masterLabel>
+        <translation>競合</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Complementary</masterLabel>
+        <translation>補完</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CrossSell</masterLabel>
+        <translation>クロスセル</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Datasheets</masterLabel>
+        <translation>データシート</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Description</masterLabel>
+        <translation>説明</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flash Files</masterLabel>
+        <translation>Flash ファイル</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Label 1s</masterLabel>
+        <translation><!-- Label 1s --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Label 2s</masterLabel>
+        <translation><!-- Label 2s --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Media</masterLabel>
+        <translation>メディア</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Operating Manuals</masterLabel>
+        <translation><!-- Operating Manuals --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Owner&apos;s Manuals</masterLabel>
+        <translation>オーナーズマニュアル</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Bulletins</masterLabel>
+        <translation><!-- Product Bulletins --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Related</masterLabel>
+        <translation>関連</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SDS Documents</masterLabel>
+        <translation><!-- SDS Documents --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Safety Documents</masterLabel>
+        <translation>安全に関するドキュメント</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales Brochures</masterLabel>
+        <translation>販売パンプレット</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Specification Sheets</masterLabel>
+        <translation><!-- Specification Sheets --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UpSell</masterLabel>
+        <translation>アップセル</translation>
+    </picklistValues>
+</CustomFieldTranslation>

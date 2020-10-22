@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- A flat JSON Breadcrumb structure containing the Category and all parent Categories. --></help>
+    <label><!-- Breadcrumb --></label>
+    <name>ccrz__Breadcrumb__c</name>
+</CustomFieldTranslation>

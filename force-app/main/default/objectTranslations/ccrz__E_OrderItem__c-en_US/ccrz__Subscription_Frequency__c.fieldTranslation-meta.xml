@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Determines how often a new order is placed, in months, if this Order Item is a subscription. --></help>
+    <label><!-- Subscription Frequency --></label>
+    <name>ccrz__Subscription_Frequency__c</name>
+</CustomFieldTranslation>

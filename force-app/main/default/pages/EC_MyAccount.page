@@ -1,0 +1,17 @@
+<!--/*******************************************************************************************************
+* @Class Name       eComm_CartDetails
+* @description      Page to extend the Cart page
+* @Created By       Venkatesh
+* @Created On       2019-06-06
+********************************************************************************************************
+* Modification Log: 
+* ------------------------------------------------------------------------------------------------------
+* Developer                Date                         Description 
+* ------------------------------------------------------------------------------------------------------
+* Venkatesh       6th Jun 19                 Created the page
+Prathyusha
+********************************************************************************************************/-->
+<apex:page docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" cache="false" applyHtmlTag="false">
+    <c:EC_QuicklistLV />
+    <c:EC_QuickListDetail />
+</apex:page>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>検索エンジンの最適化を促進するために商品詳細ページのメタタグ内で使用されるテキスト。</help>
+    <label><!-- SEO Keywords --></label>
+    <name>ccrz__SEOKeywords__c</name>
+</CustomFieldTranslation>

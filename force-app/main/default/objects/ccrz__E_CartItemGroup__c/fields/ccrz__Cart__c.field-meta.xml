@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Cart__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The Cart that the Cart Item Group is associated with.</description>
+    <externalId>false</externalId>
+    <label>CC Cart</label>
+    <referenceTo>ccrz__E_Cart__c</referenceTo>
+    <relationshipLabel>Cart Item Groups</relationshipLabel>
+    <relationshipName>E_CartItemGroups</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

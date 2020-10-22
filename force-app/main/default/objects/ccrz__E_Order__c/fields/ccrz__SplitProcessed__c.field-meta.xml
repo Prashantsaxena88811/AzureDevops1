@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__SplitProcessed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The split processed flag is used to indicate that the order has been processed for splitting.  When set to TRUE, this means that any process which is responsible for splitting orders will ignore this order.</description>
+    <externalId>false</externalId>
+    <label>Split Processed</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

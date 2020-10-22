@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This is the field to indicate whether an account is tax exempt. --></help>
+    <label><!-- TaxExemptAccount --></label>
+    <name>ccrz__TaxExemptAccount__c</name>
+</CustomFieldTranslation>

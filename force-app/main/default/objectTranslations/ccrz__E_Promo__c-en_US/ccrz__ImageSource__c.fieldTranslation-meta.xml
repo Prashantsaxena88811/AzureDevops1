@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Image Source --></label>
+    <name>ccrz__ImageSource__c</name>
+    <picklistValues>
+        <masterLabel>Attachment</masterLabel>
+        <translation><!-- Attachment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Override Static Resource</masterLabel>
+        <translation><!-- Override Static Resource --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Splash Override Static Resource</masterLabel>
+        <translation><!-- Splash Override Static Resource --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Splash Static Resources</masterLabel>
+        <translation><!-- Splash Static Resources --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Static Resource</masterLabel>
+        <translation><!-- Static Resource --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>URI</masterLabel>
+        <translation><!-- URI --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Electronic Payment are Easy</name>
+    <style>none</style>
+    <subject>Pay your invoices online</subject>
+    <textOnly>Electronic payments are easy
+
+Pay Electronically
+You are now ready to use the Payment Portal. A new way to securely submit your ACH payment online.
+Next time a payment is due take these steps:
+1. Go to  connect.Ecolab.com
+2. Click on Orders
+3. Then locate the Payment Portal button</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

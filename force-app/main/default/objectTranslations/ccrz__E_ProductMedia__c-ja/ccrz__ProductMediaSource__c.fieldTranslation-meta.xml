@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Product Media Source --></label>
+    <name>ccrz__ProductMediaSource__c</name>
+    <picklistValues>
+        <masterLabel>Attachment</masterLabel>
+        <translation>添付ファイル</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Static Resource</masterLabel>
+        <translation>静的リソース</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>URI</masterLabel>
+        <translation>URI</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Scratch Org Infos and Active Scratch Orgs Access.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Portal - Dev Hub Scratch Org</label>
+</PermissionSet>

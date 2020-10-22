@@ -1,0 +1,98 @@
+<!--
+
+  @Component Name     : EC_QuickList.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Soumick               11/26/2019        Component for displaying quicklist
+
+-->
+
+<aura:component controller="EC_GlobalSearchController"
+    implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute type="List" name="QuickList" />
+    <aura:attribute name="emptyQuickList" type="Boolean" default="false" />
+    <aura:attribute name="quickListCount" type="String" />
+    <aura:attribute name="SearchTextField" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:registerEvent name="setAttribute" type="c:setAttributeEvent" />
+
+    <div class="quick-list-wrapper">
+        <aura:if isTrue="{!v.emptyQuickList}">
+            <div class="quicklist-container">
+                <aura:iteration items="{!v.QuickList}" var="quickItems">
+                    <div class="quicklist-item">
+                        <div class="quicklist-header">
+                            <h3>{!quickItems.value[0].cartInfo.ccrz__Name__c}</h3>
+                            <div class="last-updated">
+                                <span class="lbl-name">Last updated</span> : <span class="lbl-value">
+                                    <lightning:formattedDateTime
+                                        value="{!quickItems.value[0].cartInfo.LastModifiedDate}" /></span>
+                            </div>
+                        </div>
+                        <div class="quicklist-data">
+                            <div class="quicklist-information">
+                                <aura:iteration items="{!quickItems.value}" var="product" indexVar="index">
+                                    <div
+                                        class="{!lessthan(index,quickItems.classLength)? 'custom-border custom-product-wrapper' : 'custom-product-wrapper' }">
+                                        <div class="purchased-productSection">
+                                            <div class="product-info">
+                                                <div class="image">
+                                                    <a href="{!product.pdpUrl}">
+                                                        <aura:if isTrue="{!product.prodImg != null}">
+                                                            <img src="{!product.prodImg}" />
+                                                            <aura:set attribute="else">
+                                                                <img
+                                                                    src="{!$Resource.EC_Branding_Theme + '/images/product.png'}" />
+                                                            </aura:set>
+                                                        </aura:if>
+                                                    </a>
+                                                </div>
+                                                <div class="text">
+                                                    <label class="productName">
+                                                        <lightning:formattedUrl value="{!product.pdpUrl}"
+                                                            label="{!product.Name}" /></label>
+                                                    <div class="description">{!product.productDesc}</div>
+                                                    <div class="product-data">
+                                                        <span class="code-description">
+                                                            <label
+                                                                class="code">{!$Label.c.EC_Home_PurchasedProduct_ProductCode}&nbsp;
+                                                                <label class="value">
+                                                                    <lightning:formattedUrl value="{!product.pdpUrl}"
+                                                                        label="{!product.Sku}" /></label>
+                                                            </label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aura:iteration>
+                            </div>
+                        </div>
+
+                        <div class="view-all">
+                            <span> <a href="{!quickItems.value[0].quickUrl}">View Complete List </a></span>
+                        </div>
+                    </div>
+                </aura:iteration>
+            </div>
+            <aura:set attribute="else">
+                <div class="no-documents slds-hide" aura:id="quickListDocument">
+                    <div class="image slds-m-top_x-large">
+                        <i class="material-icons">
+                            info_outline
+                        </i>
+                    </div>
+                    <div class="search-result slds-m-top_large slds-p-bottom_xx-large">
+                        <span>{!$Label.c.EC_SearchEmpty}</span>
+                        <span class="searchedValue slds-p-horizontal_xx-small">'{!v.SearchTextField}'</span>
+                        <span>{!$Label.c.EC_NotMatchedQuicklist}</span>
+                        <div>{!$Label.c.EC_SelectAnotherCategory}</div>
+                    </div>
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+</aura:component>

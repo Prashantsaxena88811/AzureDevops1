@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Exception_Message_Required</fullName>
+    <active>true</active>
+    <description>The exception message with details is required</description>
+    <errorConditionFormula>OR(
+       ISBLANK( ccrz__Message__c ) 
+    , ISNULL(ccrz__Message__c )
+)</errorConditionFormula>
+    <errorDisplayField>ccrz__Message__c</errorDisplayField>
+    <errorMessage>Exception Message is required.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Abandoned Cart Email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Abandoned Cart Email</name>
+    <style>none</style>
+    <subject>Abandoned Cart - {!ccrz__E_Cart__c.ccrz__Contact__c}</subject>
+    <textOnly>Ecolab - Items left in your cart.
+
+Hi {!ccrz__E_Cart__c.ccrz__Contact__c}, you have items left in your cart
+You have {!ccrz__E_Cart__c.ccrz__TotalQuantity__c} items left in your cart awaiting check out. Continue to your cart and finish shopping now.
+
+VIEW CART
+
+ECOLAB Global Headquarters 1 Ecolab Place, St. Paul MN 55102 Ecolab.com
+Privacy Policy
+© 2019 Ecolab Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

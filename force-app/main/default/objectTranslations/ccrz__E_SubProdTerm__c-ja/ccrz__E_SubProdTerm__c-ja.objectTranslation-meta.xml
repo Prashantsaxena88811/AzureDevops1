@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CC SubProdTerm</value>
+    </caseValues>
+    <layouts>
+        <layout>CC SubProdTerm Layout</layout>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>表示</label>
+            <section>Display</section>
+        </sections>
+        <sections>
+            <label>分割払い頻度 (請求)</label>
+            <section>Installment Frequency (Billing)</section>
+        </sections>
+        <sections>
+            <label>注文頻度 (配送)</label>
+            <section>Order Frequency (Shipping)</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>CC SubProdTerm 名</nameFieldLabel>
+</CustomObjectTranslation>

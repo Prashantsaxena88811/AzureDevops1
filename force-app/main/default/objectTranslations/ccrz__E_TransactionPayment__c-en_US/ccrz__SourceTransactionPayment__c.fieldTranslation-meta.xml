@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Source Transaction Payment --></label>
+    <name>ccrz__SourceTransactionPayment__c</name>
+    <relationshipLabel><!-- Sourced Transaction Payments --></relationshipLabel>
+</CustomFieldTranslation>

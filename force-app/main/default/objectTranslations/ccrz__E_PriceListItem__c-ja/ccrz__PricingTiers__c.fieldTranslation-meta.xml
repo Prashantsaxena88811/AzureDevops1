@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>使用可能な価格設定階層とそれらの価格修飾子を定義する JSON 構造を保持します</help>
+    <label><!-- Pricing Tiers --></label>
+    <name>ccrz__PricingTiers__c</name>
+</CustomFieldTranslation>

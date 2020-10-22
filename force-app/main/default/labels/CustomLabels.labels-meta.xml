@@ -1,0 +1,3582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Attention_phone_should_10_digits</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Attention phone should 10 digits</shortDescription>
+        <value>Please enter a 10 digit phone number</value>
+    </labels>
+    <labels>
+        <fullName>DropOff</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DropOff</shortDescription>
+        <value>Drop-Off</value>
+    </labels>
+    <labels>
+        <fullName>EC_AccountSettingsRedirect</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AccountSettingsRedirect</shortDescription>
+        <value>/s/account-settings</value>
+    </labels>
+    <labels>
+        <fullName>EC_AccountSettings_AccInfo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AccountSettings_AccInfo</shortDescription>
+        <value>Account Information</value>
+    </labels>
+    <labels>
+        <fullName>EC_AccountSettings_AccountAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AccountSettings_AccountAddress</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>EC_AccountSettings_AddAccount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AccountSettings_AddAccount</shortDescription>
+        <value>Add Ecolab Account</value>
+    </labels>
+    <labels>
+        <fullName>EC_AccountSettings_PortalAccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AccountSettings_PortalAccess</shortDescription>
+        <value>Request Portal Access</value>
+    </labels>
+    <labels>
+        <fullName>EC_Account_Corporate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Account_Corporate</shortDescription>
+        <value>Corporate</value>
+    </labels>
+    <labels>
+        <fullName>EC_Account_FoodAndBeverage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Account_FoodAndBeverage</shortDescription>
+        <value>FOOD &amp; BEVERAGE</value>
+    </labels>
+    <labels>
+        <fullName>EC_Account_Institutional</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account Institutional</shortDescription>
+        <value>institutional</value>
+    </labels>
+    <labels>
+        <fullName>EC_Account_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account Number</shortDescription>
+        <value>Ecolab Account Number</value>
+    </labels>
+    <labels>
+        <fullName>EC_Account_ShipTo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Account_ShipTo</shortDescription>
+        <value>Ship To</value>
+    </labels>
+    <labels>
+        <fullName>EC_Account_SoldTo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Account_SoldTo</shortDescription>
+        <value>Sold To</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_AccountInfo_Info_1</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_AccountInfo_Info_1</shortDescription>
+        <value>Your</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_AccountInfo_Info_2</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_AccountInfo_Info_2</shortDescription>
+        <value>linked to your Profile</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_AccountInfo_Info_3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_AccountInfo_Info_3</shortDescription>
+        <value>Ecolab Accounts</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_AccountInformationHeader</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_AccountInformationHeader</shortDescription>
+        <value>Account Information</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_AccountNameLabel</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_AccountNameLabel</shortDescription>
+        <value>Account Name :</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_AccountNumberLabel</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_AccountNumberLabel</shortDescription>
+        <value>Ecolab Account Number</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_ContactInformationHeader</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_ContactInformationHeader</shortDescription>
+        <value>User Information</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_Contact_EmailLabel</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_Contact_EmailLabel</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_Contact_NameLabel</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_Contact_NameLabel</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_Contact_PhoneLabel</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_Contact_PhoneLabel</shortDescription>
+        <value>Phone Number</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_Header</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_Header</shortDescription>
+        <value>User Settings</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_SalesRepresentativeLabel</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_SalesRepresentativeLabel</shortDescription>
+        <value>Ecolab  Representative Name</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_ShipToAddress_Header</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_ShipToAddress_Header</shortDescription>
+        <value>Ship to Address</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_ShipTo_Header</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_ShipTo_Header</shortDescription>
+        <value>Ecolab Account</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_ShipTo_TableHeader_Address</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_ShipTo_TableHeader_Address</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_ShipTo_TableHeader_City</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_ShipTo_TableHeader_City</shortDescription>
+        <value>City</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_ShipTo_TableHeader_ID</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_ShipTo_TableHeader_ID</shortDescription>
+        <value>Ship to ID</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_ShipTo_TableHeader_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ship To Name</shortDescription>
+        <value>Ship to Name and ID</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_ShipTo_TableHeader_State</fullName>
+        <categories>Accounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Accounts_ShipTo_TableHeader_State</shortDescription>
+        <value>State</value>
+    </labels>
+    <labels>
+        <fullName>EC_Add</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add</shortDescription>
+        <value>ADD</value>
+    </labels>
+    <labels>
+        <fullName>EC_Add_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add Account</shortDescription>
+        <value>ADD ACCOUNT</value>
+    </labels>
+    <labels>
+        <fullName>EC_Align_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Align Account</shortDescription>
+        <value>Add Ecolab Account</value>
+    </labels>
+    <labels>
+        <fullName>EC_Approved</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Approved</shortDescription>
+        <value>Approved</value>
+    </labels>
+    <labels>
+        <fullName>EC_AthenaOrderStatus_CommercialIssues</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AthenaOrderStatus_CommercialIssues</shortDescription>
+        <value>Order Processing</value>
+    </labels>
+    <labels>
+        <fullName>EC_AthenaOrderStatus_Delivered</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AthenaOrderStatus_Delivered</shortDescription>
+        <value>Delivered</value>
+    </labels>
+    <labels>
+        <fullName>EC_AthenaOrderStatus_InProgress</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AthenaOrderStatus_InProgress</shortDescription>
+        <value>In Progress</value>
+    </labels>
+    <labels>
+        <fullName>EC_AthenaOrderStatus_InTransit</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AthenaOrderStatus_InTransit</shortDescription>
+        <value>In Transit</value>
+    </labels>
+    <labels>
+        <fullName>EC_AthenaOrderStatus_LineOrderManagement</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AthenaOrderStatus_LineOrderManagement</shortDescription>
+        <value>Submitted</value>
+    </labels>
+    <labels>
+        <fullName>EC_AthenaOrderStatus_OrderManagement</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AthenaOrderStatus_OrderManagement</shortDescription>
+        <value>Order Submitted</value>
+    </labels>
+    <labels>
+        <fullName>EC_AthenaOrderStatus_OrderProcessing</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AthenaOrderStatus_OrderProcessing</shortDescription>
+        <value>Order Processing</value>
+    </labels>
+    <labels>
+        <fullName>EC_AthenaOrderStatus_PreparingToShip</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AthenaOrderStatus_PreparingToShip</shortDescription>
+        <value>Preparing to Ship</value>
+    </labels>
+    <labels>
+        <fullName>EC_AthenaOrderStatus_StatusNotAvailable</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AthenaOrderStatus_StatusNotAvailable</shortDescription>
+        <value>Status Not Available</value>
+    </labels>
+    <labels>
+        <fullName>EC_AthenaOrderStatus_StockAvailability</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_AthenaOrderStatus_StockAvailability</shortDescription>
+        <value>Order Processing</value>
+    </labels>
+    <labels>
+        <fullName>EC_Bandwidth_Limit_Exceeded</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Bandwidth_Limit_Exceeded</shortDescription>
+        <value>Bandwidth Limit Exceeded</value>
+    </labels>
+    <labels>
+        <fullName>EC_Bandwidth_Limit_Exceeded_Heading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Bandwidth_Limit_Exceeded_Heading</shortDescription>
+        <value>509 Error! Bandwidth Limit Exceeded</value>
+    </labels>
+    <labels>
+        <fullName>EC_Bandwidth_Limit_Exceeded_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Bandwidth_Limit_Exceeded_Text</shortDescription>
+        <value>This link has generated too much traffic and has automatically been disabled. Please come back later.</value>
+    </labels>
+    <labels>
+        <fullName>EC_BaseURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_BaseURL</shortDescription>
+        <value>https://connect.ecolab.com</value>
+    </labels>
+    <labels>
+        <fullName>EC_Basic</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Basic</shortDescription>
+        <value>Basic</value>
+    </labels>
+    <labels>
+        <fullName>EC_BasicPlus</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Basic+</shortDescription>
+        <value>Basic+</value>
+    </labels>
+    <labels>
+        <fullName>EC_BasicPlusSetID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_BasicPlusSet</shortDescription>
+        <value>EC_BasicPlusSet</value>
+    </labels>
+    <labels>
+        <fullName>EC_BasicSetID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_BasicSet</shortDescription>
+        <value>EC_BasicSet</value>
+    </labels>
+    <labels>
+        <fullName>EC_Bulk</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bulk</shortDescription>
+        <value>Bulk</value>
+    </labels>
+    <labels>
+        <fullName>EC_Business_Days</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Business_Days</shortDescription>
+        <value>Business</value>
+    </labels>
+    <labels>
+        <fullName>EC_Buy_Online</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Buy Online</shortDescription>
+        <value>Buy Online</value>
+    </labels>
+    <labels>
+        <fullName>EC_Buyer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Buyer</shortDescription>
+        <value>Buyer</value>
+    </labels>
+    <labels>
+        <fullName>EC_BuyerPlus</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Buyer+</shortDescription>
+        <value>Buyer+</value>
+    </labels>
+    <labels>
+        <fullName>EC_BuyerPlusSet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_BuyerPlusSet</shortDescription>
+        <value>EC_BuyerPlusSet</value>
+    </labels>
+    <labels>
+        <fullName>EC_BuyerSet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_BuyerSet</shortDescription>
+        <value>EC_BuyerSet</value>
+    </labels>
+    <labels>
+        <fullName>EC_CATEGORIES_ALLPRODUCTS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CATEGORIES_ALLPRODUCTS</shortDescription>
+        <value>0</value>
+    </labels>
+    <labels>
+        <fullName>EC_CCProfileName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CCProfileName</shortDescription>
+        <value>B2B Commerce Customer Community</value>
+    </labels>
+    <labels>
+        <fullName>EC_CONTENT_TYPE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CONTENT_TYPE</shortDescription>
+        <value>Content-Type</value>
+    </labels>
+    <labels>
+        <fullName>EC_CONTENT_TYPE_VALUE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CONTENT_TYPE_VALUE</shortDescription>
+        <value>application/json</value>
+    </labels>
+    <labels>
+        <fullName>EC_CSR_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR Email</shortDescription>
+        <value>customerservice.ecommerce.us@ecolab.com</value>
+    </labels>
+    <labels>
+        <fullName>EC_CSR_Email_CAD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR Email CAD</shortDescription>
+        <value>custserv.ca@nalco.com</value>
+    </labels>
+    <labels>
+        <fullName>EC_CVV</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CVV</shortDescription>
+        <value>CVV</value>
+    </labels>
+    <labels>
+        <fullName>EC_CachePartionKey</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CachePartitionKey</shortDescription>
+        <value>UserInfo1</value>
+    </labels>
+    <labels>
+        <fullName>EC_CachePartition</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CachePartitionName</shortDescription>
+        <value>local.UserCache</value>
+    </labels>
+    <labels>
+        <fullName>EC_CanadaLocale</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Canada Locale</shortDescription>
+        <value>Canada,CAN</value>
+    </labels>
+    <labels>
+        <fullName>EC_Cancel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel</shortDescription>
+        <value>CANCEL</value>
+    </labels>
+    <labels>
+        <fullName>EC_CaptchaCannotbeBlank</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CaptchaCannotbeBlank</shortDescription>
+        <value>Captcha cannot be blank</value>
+    </labels>
+    <labels>
+        <fullName>EC_Card_Expiration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Card Expiration</shortDescription>
+        <value>Card Expiration</value>
+    </labels>
+    <labels>
+        <fullName>EC_Card_Holder_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Card Holder Name</shortDescription>
+        <value>Card Holder Name</value>
+    </labels>
+    <labels>
+        <fullName>EC_Card_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Card Type</shortDescription>
+        <value>Card Type</value>
+    </labels>
+    <labels>
+        <fullName>EC_CartId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CartId</shortDescription>
+        <value>cartId=</value>
+    </labels>
+    <labels>
+        <fullName>EC_CartStatus_Open</fullName>
+        <categories>CC Cart</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CartStatus_Open</shortDescription>
+        <value>Open</value>
+    </labels>
+    <labels>
+        <fullName>EC_CartType_Cart</fullName>
+        <categories>CC Cart</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CartType_Cart</shortDescription>
+        <value>Cart</value>
+    </labels>
+    <labels>
+        <fullName>EC_CaseCreation_BtnSelect</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CaseCreation_BtnSelect</shortDescription>
+        <value>SELECT</value>
+    </labels>
+    <labels>
+        <fullName>EC_CaseCreation_ChooseProfileType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CaseCreation_ChooseProfileType</shortDescription>
+        <value>Relevant User Type</value>
+    </labels>
+    <labels>
+        <fullName>EC_CaseCreation_PortalAccessRegistration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CaseCreation_PortalAccessRegistration</shortDescription>
+        <value>Now choose your User Type</value>
+    </labels>
+    <labels>
+        <fullName>EC_CaseCreation_Select</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CaseCreation_Select</shortDescription>
+        <value>SELECT</value>
+    </labels>
+    <labels>
+        <fullName>EC_CaseCreation_ThanksForRegistration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CaseCreation_ThanksForRegistration</shortDescription>
+        <value>Thank you for registering.</value>
+    </labels>
+    <labels>
+        <fullName>EC_CaseOriginWeb</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CaseOriginWeb</shortDescription>
+        <value>web</value>
+    </labels>
+    <labels>
+        <fullName>EC_CaseOwnerId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Putting Id of the Sys Admin</shortDescription>
+        <value>0054P0000097oyQ</value>
+    </labels>
+    <labels>
+        <fullName>EC_CaseType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CaseTypeAccess</shortDescription>
+        <value>Access Request</value>
+    </labels>
+    <labels>
+        <fullName>EC_CategoryTreeStoreFront</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CategoryTreeStoreFront</shortDescription>
+        <value>commerce</value>
+    </labels>
+    <labels>
+        <fullName>EC_ChemicalCategory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC ChemicalCategory</shortDescription>
+        <value>99999.N1009</value>
+    </labels>
+    <labels>
+        <fullName>EC_Chemical_Taxonomy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Chemical Taxonomy</shortDescription>
+        <value>Chemical</value>
+    </labels>
+    <labels>
+        <fullName>EC_Chemistry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>chemistry</shortDescription>
+        <value>Chemical</value>
+    </labels>
+    <labels>
+        <fullName>EC_ClickHere</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ClickHere</shortDescription>
+        <value>click here</value>
+    </labels>
+    <labels>
+        <fullName>EC_CommerceURLStorefron</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CommerceURLStorefron</shortDescription>
+        <value>commerce</value>
+    </labels>
+    <labels>
+        <fullName>EC_CommunityLicense</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CommunityLicense</shortDescription>
+        <value>Customer Community Plus</value>
+    </labels>
+    <labels>
+        <fullName>EC_CommunityProfileID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CommunityProfileID</shortDescription>
+        <value>Ecolab Customer Community Plus Users</value>
+    </labels>
+    <labels>
+        <fullName>EC_Completed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Completed</shortDescription>
+        <value>Completed</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_AccountError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_AccountError</shortDescription>
+        <value>Please select an Account</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_AccountName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_AccountName</shortDescription>
+        <value>Account Name:</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_AccountNo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_AccountNo</shortDescription>
+        <value>Ecolab Account #</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_AttachFiles</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_AttachFiles</shortDescription>
+        <value>Attach Files</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_Attachments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_Attachments</shortDescription>
+        <value>Attachments</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_CANCEL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_CANCEL</shortDescription>
+        <value>CANCEL</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_Call</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_Call</shortDescription>
+        <value>CALL</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_Category</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_Category</shortDescription>
+        <value>Category</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_CategoryError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_CategoryError</shortDescription>
+        <value>Please select Category</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_CategoryValue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_CategoryValue</shortDescription>
+        <value>Category:</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_ContactInformation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_ContactInformation</shortDescription>
+        <value>Contact Information</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_ContactName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_ContactName</shortDescription>
+        <value>Contact Name</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_ContactNameError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_ContactNameError</shortDescription>
+        <value>Please Enter Contact Name</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_Description</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_DescriptionError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_DescriptionError</shortDescription>
+        <value>A maximum of 250 characters are allowed in notes.</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_EcolabAccount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_EcolabAccount</shortDescription>
+        <value>Ecolab Account</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_EmailAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_EmailAddress</shortDescription>
+        <value>Email Address</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_EmailError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_EmailError</shortDescription>
+        <value>Please Enter Email Address</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_EmailId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_EmailId</shortDescription>
+        <value>Email:</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_NewService</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_NewService</shortDescription>
+        <value>Start new Service Request</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_Notes</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_Notes</shortDescription>
+        <value>Notes:</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_PhoneNo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_PhoneNo</shortDescription>
+        <value>Phone #</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_PhoneNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_PhoneNumber</shortDescription>
+        <value>Phone Number</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_Representative</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_Representative</shortDescription>
+        <value>Your Ecolab Representative will be in contact with you shortly.</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_RequestError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_RequestError</shortDescription>
+        <value>Please select Request Type</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_RequestReceived</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_RequestReceived</shortDescription>
+        <value>Your Service Request was received.</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_RequestService</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_RequestService</shortDescription>
+        <value>REQUEST SERVICE</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_RequestType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_RequestType</shortDescription>
+        <value>Request Type</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_Requested</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_Requested</shortDescription>
+        <value>Requested:</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_RequiredFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_RequiredFields</shortDescription>
+        <value>* Required Fields</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_ResourceType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_ResourceType</shortDescription>
+        <value>Resource Type:</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_SUBMIT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_SUBMIT</shortDescription>
+        <value>SUBMIT</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_ServiceInfo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_ServiceInfo</shortDescription>
+        <value>SERVICE INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_ServiceRepresentative</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_ServiceRepresentative</shortDescription>
+        <value>REQUEST A VISIT FROM YOUR ECOLAB SERVICE REPRESENTATIVE</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_ServiceRequest</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_ServiceRequest</shortDescription>
+        <value>Service Request</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_TechNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_TechNumber</shortDescription>
+        <value>866-851-8670</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_TechSupport</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_TechSupport</shortDescription>
+        <value>Customer Support</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_Upload</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_Upload</shortDescription>
+        <value>UPLOAD</value>
+    </labels>
+    <labels>
+        <fullName>EC_ContactUs_UploadFiles</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ContactUs_UploadFiles</shortDescription>
+        <value>Upload files in .jpg or .pdf or .png format up to 5MB</value>
+    </labels>
+    <labels>
+        <fullName>EC_CorrectSalesRepEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CorrectSalesRepEmail</shortDescription>
+        <value>Please enter the correct Sales Representative email address with the account number.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Covid_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Covid_Link</shortDescription>
+        <value>Click here for more information</value>
+    </labels>
+    <labels>
+        <fullName>EC_Covid_Link_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Covid_Link_URL</shortDescription>
+        <value>https://www.ecolab.com/pages/coronavirus</value>
+    </labels>
+    <labels>
+        <fullName>EC_Covid_Text1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Covid_Text1</shortDescription>
+        <value>As part of our company-wide commitment to making your business – and the world – cleaner, safer and healthier, Ecolab will work with you to find solutions to help solve your food safety and contamination issues.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Covid_Text2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Covid_Text2</shortDescription>
+        <value>Ecolab is following the coronavirus (COVID-19) outbreak closely and providing guidance to help reduce the risk of infection.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Covid_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Covid_Title</shortDescription>
+        <value>ECOLAB GUIDANCE ON NOVEL CORONAVIRUS (COVID-19)</value>
+    </labels>
+    <labels>
+        <fullName>EC_Credit_Card_CardCVV</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Credit Card CardCVV</shortDescription>
+        <value>CVV</value>
+    </labels>
+    <labels>
+        <fullName>EC_Credit_Card_CardType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Credit Card CardType</shortDescription>
+        <value>Card Type</value>
+    </labels>
+    <labels>
+        <fullName>EC_Credit_Card_EnterCardNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Credit Card EnterCardNumber</shortDescription>
+        <value>Please enter Card Number</value>
+    </labels>
+    <labels>
+        <fullName>EC_Credit_Card_EnterName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Credit Card EnterName</shortDescription>
+        <value>Enter your name as on Card</value>
+    </labels>
+    <labels>
+        <fullName>EC_Credit_Card_ExpirationDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Credit Card ExpirationDate</shortDescription>
+        <value>Expiration Date</value>
+    </labels>
+    <labels>
+        <fullName>EC_Credit_Card_InvalidNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Credit Card InvalidNumber</shortDescription>
+        <value>Invalid card number</value>
+    </labels>
+    <labels>
+        <fullName>EC_Credit_Card_Month</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Credit Card Month</shortDescription>
+        <value>Month</value>
+    </labels>
+    <labels>
+        <fullName>EC_Credit_Card_NameOnCard</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Credit Card NameOnCard</shortDescription>
+        <value>Name on Card</value>
+    </labels>
+    <labels>
+        <fullName>EC_Credit_Card_SelectCard</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Credit Card SelectCard</shortDescription>
+        <value>Select Card</value>
+    </labels>
+    <labels>
+        <fullName>EC_Credit_Card_SelectCardType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Credit_Card_SelectCardType</shortDescription>
+        <value>Please select the Card Type</value>
+    </labels>
+    <labels>
+        <fullName>EC_Credit_Card_Year</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Credit Card Year</shortDescription>
+        <value>Year</value>
+    </labels>
+    <labels>
+        <fullName>EC_Credit_Card_validCVV</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Credit Card validCVV</shortDescription>
+        <value>Enter valid CVV</value>
+    </labels>
+    <labels>
+        <fullName>EC_Credit_Card_validExpirationDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Credit Card validExpirationDate</shortDescription>
+        <value>Enter valid Expiration Date</value>
+    </labels>
+    <labels>
+        <fullName>EC_CurrencyCode_ISO</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_CurrencyCode_ISO</shortDescription>
+        <value>USD</value>
+    </labels>
+    <labels>
+        <fullName>EC_DefaultAmount</fullName>
+        <categories>Value</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DefaultAmount</shortDescription>
+        <value>0.00</value>
+    </labels>
+    <labels>
+        <fullName>EC_DefaultLandingTab</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DefaultLandingTab</shortDescription>
+        <value>pAccess</value>
+    </labels>
+    <labels>
+        <fullName>EC_DefaultLocale</fullName>
+        <categories>Value</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DefaultLocale</shortDescription>
+        <value>en_US</value>
+    </labels>
+    <labels>
+        <fullName>EC_Default_Image</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Default Image</shortDescription>
+        <value>https://ecolabconnect--c.documentforce.com/servlet/servlet.ImageServer?id=0154P000007WuHB&amp;oid=00D2h0000008c2r&amp;lastMod=1572504157000</value>
+    </labels>
+    <labels>
+        <fullName>EC_DeliveryPriority_7</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DeliveryPriority_7</shortDescription>
+        <value>7</value>
+    </labels>
+    <labels>
+        <fullName>EC_DisplayName</fullName>
+        <categories>Value</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DisplayName</shortDescription>
+        <value>displayName</value>
+    </labels>
+    <labels>
+        <fullName>EC_Division</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Division</shortDescription>
+        <value>NALCO</value>
+    </labels>
+    <labels>
+        <fullName>EC_DivisionValueInsitituional</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DivisionValueInsitituional</shortDescription>
+        <value>INSTITUTIONAL</value>
+    </labels>
+    <labels>
+        <fullName>EC_DivisionValueNACLO</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DivisionValueNACLO</shortDescription>
+        <value>WATER,PAPER,ENERGY</value>
+    </labels>
+    <labels>
+        <fullName>EC_Dollar</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dollar</shortDescription>
+        <value>$</value>
+    </labels>
+    <labels>
+        <fullName>EC_DummyPurchaseDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DummyPurchaseDate</shortDescription>
+        <value>August 5,1900</value>
+    </labels>
+    <labels>
+        <fullName>EC_Duplicate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Duplicate</shortDescription>
+        <value>Duplicate</value>
+    </labels>
+    <labels>
+        <fullName>EC_ECOLAB</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ECOLAB</shortDescription>
+        <value>Ecolab</value>
+    </labels>
+    <labels>
+        <fullName>EC_ERROR</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ERROR</shortDescription>
+        <value>ERROR</value>
+    </labels>
+    <labels>
+        <fullName>EC_Ecolab_Logo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Ecolab Logo</shortDescription>
+        <value>https://ecolabconnect--c.documentforce.com/servlet/servlet.ImageServer?id=0154P000007WmJP&amp;oid=00D2h0000008c2r&amp;lastMod=1567509394000</value>
+    </labels>
+    <labels>
+        <fullName>EC_EcolabiBuyUser</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_EcolabiBuyUser</shortDescription>
+        <value>Ecolab Connect iBuy CCP User</value>
+    </labels>
+    <labels>
+        <fullName>EC_EffectiveAccountId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_EffectiveAccountId</shortDescription>
+        <value>effectiveAccount=</value>
+    </labels>
+    <labels>
+        <fullName>EC_EmailUser</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_EmailUser</shortDescription>
+        <value>User does not exist</value>
+    </labels>
+    <labels>
+        <fullName>EC_Email_Extension</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Extension</shortDescription>
+        <value>.prodec</value>
+    </labels>
+    <labels>
+        <fullName>EC_Employee</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Employee</shortDescription>
+        <value>Employee</value>
+    </labels>
+    <labels>
+        <fullName>EC_Equipment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Equipment</shortDescription>
+        <value>Equipment</value>
+    </labels>
+    <labels>
+        <fullName>EC_Error509_Heading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Error509_Heading</shortDescription>
+        <value>509 Error!</value>
+    </labels>
+    <labels>
+        <fullName>EC_ErrorURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ErrorURL</shortDescription>
+        <value>/apex/EC_CustomFileNotFoundIBuy</value>
+    </labels>
+    <labels>
+        <fullName>EC_Error_Back_To_Homepage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Error_Back_To_Homepage</shortDescription>
+        <value>BACK TO HOMEPAGE</value>
+    </labels>
+    <labels>
+        <fullName>EC_File_Not_Found</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_File_Not_Found</shortDescription>
+        <value>Page Not Found</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_AboutEcoLabHeader</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_AboutEcoLabHeader</shortDescription>
+        <value>ABOUT</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_AboutEcolabContent</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_AboutEcolabContent</shortDescription>
+        <value>Ecolab is the global leader in water, hygiene and energy technologies and services. Everyday, we help make the world cleaner, safer and healthier - protecting people and vital resources.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_CopyrightContent</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_CopyrightContent</shortDescription>
+        <value>© 2019 Ecolab Inc. All rights reserved.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_MediaLinksFacebook</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_MediaLinksFacebook</shortDescription>
+        <value>https://www.facebook.com/ecolab</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_MediaLinksHeader</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_MediaLinksHeader</shortDescription>
+        <value>CONNECT</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_MediaLinksInstagram</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_MediaLinksInstagram</shortDescription>
+        <value>https://instagram.com/ecolab_inc/</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_MediaLinksLinkedIn</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_MediaLinksLinkedIn</shortDescription>
+        <value>https://www.linkedin.com/company/ecolab</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_MediaLinksTwitter</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_MediaLinksTwitter</shortDescription>
+        <value>https://twitter.com/Ecolab</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_MediaLinksYoutube</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_MediaLinksYoutube</shortDescription>
+        <value>https://www.youtube.com/user/everywhereitmatters</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_PrivacyPolicyLink</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_PrivacyPolicyLink</shortDescription>
+        <value>https://www.ecolab.com/privacy-policy</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_PrivacyPolicyTitle</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_PrivacyPolicyTitle</shortDescription>
+        <value>Privacy Policy</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_SDSDocumentsLink</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_SDSDocumentsLink</shortDescription>
+        <value>https://www.ecolab.com/sds</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_SDSDocumentsTitle</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_SDSDocumentsTitle</shortDescription>
+        <value>Safety Data Sheets</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_TermsOfUseLink</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_TermsOfUseLink</shortDescription>
+        <value>https://www.ecolab.com/terms-of-use</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_TermsOfUseTitle</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_TermsOfUseTitle</shortDescription>
+        <value>Terms of Use</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_VisitWebsiteContent</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_VisitWebsiteContent</shortDescription>
+        <value>Ecolab.com</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_VisitWebsiteHeader</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_VisitWebsiteHeader</shortDescription>
+        <value>VISIT</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_VisitWebsiteLink</fullName>
+        <categories>Footer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_VisitWebsiteLink</shortDescription>
+        <value>https://www.ecolab.com/</value>
+    </labels>
+    <labels>
+        <fullName>EC_GET</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_GET</shortDescription>
+        <value>GET</value>
+    </labels>
+    <labels>
+        <fullName>EC_General_OK_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_General_OK_Label</shortDescription>
+        <value>OK</value>
+    </labels>
+    <labels>
+        <fullName>EC_Generic_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Generic_Error</shortDescription>
+        <value>Page Not Found</value>
+    </labels>
+    <labels>
+        <fullName>EC_Generic_Error_Heading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Generic_Error_Heading</shortDescription>
+        <value>Page Not Found</value>
+    </labels>
+    <labels>
+        <fullName>EC_Generic_Error_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Generic_Error_Text</shortDescription>
+        <value>The page you are looking for is under maintenance or down due to some error or due to some intermittent connectivity issue.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_marriot</shortDescription>
+        <value>Marriot Information</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_Cart_Single_Unit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_Cart_Single_Unit</shortDescription>
+        <value>Item(s)</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_Dashboards</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_Dashboards</shortDescription>
+        <value>Dashboards</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_Documents</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_Documents</shortDescription>
+        <value>Documents</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_Help</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_Help</shortDescription>
+        <value>Help</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_Home</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_Home</shortDescription>
+        <value>Home</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_Orders</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_Orders</shortDescription>
+        <value>Orders</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_Products</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_Products</shortDescription>
+        <value>Products</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_accountInfo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_accountSettings</shortDescription>
+        <value>User Settings</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_cartVal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_cartVal</shortDescription>
+        <value>0</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_cartValueUnits</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_cartValueUnits</shortDescription>
+        <value>Item(s)</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_locationID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_locationID</shortDescription>
+        <value>BBLPH7896</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_logOut</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_logOut</shortDescription>
+        <value>Logout</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_ocationTo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_locationTo</shortDescription>
+        <value>John Doe</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_quicklist</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_quicklist</shortDescription>
+        <value>Quicklist</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_shipping</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_shipping</shortDescription>
+        <value>Shipping to:</value>
+    </labels>
+    <labels>
+        <fullName>EC_Home_ProductDescription</fullName>
+        <categories>HomePage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Home_ProductDescription</shortDescription>
+        <value>1 Pack contains a gallon bottle</value>
+    </labels>
+    <labels>
+        <fullName>EC_Home_PurchasedProduct</fullName>
+        <categories>HomePage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Home_PurchasedProduct_ProductCode</shortDescription>
+        <value>Product Code:</value>
+    </labels>
+    <labels>
+        <fullName>EC_Home_PurchasedProduct_AddToCartButton</fullName>
+        <categories>HomePage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Home_PurchasedProduct_AddToCartButton</shortDescription>
+        <value>ADD TO CART</value>
+    </labels>
+    <labels>
+        <fullName>EC_Home_PurchasedProduct_Heading</fullName>
+        <categories>HomePage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Home_PurchasedProduct_Heading</shortDescription>
+        <value>RECENT PURCHASED PRODUCTS</value>
+    </labels>
+    <labels>
+        <fullName>EC_Home_PurchasedProduct_NoOrders</fullName>
+        <categories>HomePage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Home_PurchasedProduct_OrderLabel</shortDescription>
+        <value>No recently purchased products.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Home_PurchasedProduct_NoOrdersDesc</fullName>
+        <categories>HomePage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Home_PurchasedProduct_OrderLabel</shortDescription>
+        <value>To see your recently purchased items here and track your order status, purchase a product from the product catalog.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Home_PurchasedProduct_OrderLabel</fullName>
+        <categories>HomePage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Home_PurchasedProduct_OrderLabel</shortDescription>
+        <value>Order #</value>
+    </labels>
+    <labels>
+        <fullName>EC_Home_PurchasedProduct_ProductCode</fullName>
+        <categories>HomePage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Home_PurchasedProduct_ProductCode</shortDescription>
+        <value>Product Code:</value>
+    </labels>
+    <labels>
+        <fullName>EC_Home_PurchasedProduct_PurchasedOn</fullName>
+        <categories>HomePage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Home_PurchasedProduct_PurchasedOn</shortDescription>
+        <value>Purchased On</value>
+    </labels>
+    <labels>
+        <fullName>EC_Home_PurchasedProduct_ShippedToLabel</fullName>
+        <categories>HomePage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Home_PurchasedProduct_ShippedToLabel</shortDescription>
+        <value>Shipped to:</value>
+    </labels>
+    <labels>
+        <fullName>EC_Home_PurchasedProduct_ViewAllOrdersButton</fullName>
+        <categories>HomePage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Home_PurchasedProduct_ViewAllOrdersButton</shortDescription>
+        <value>VIEW ALL ORDERS</value>
+    </labels>
+    <labels>
+        <fullName>EC_HostNameForIframe</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HostNameForIframe</shortDescription>
+        <value>https://connect.ecolab.com</value>
+    </labels>
+    <labels>
+        <fullName>EC_IBuyError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_IBuyError</shortDescription>
+        <value>Your current session with iBuyEfficient has unexpectedly terminated. Please login again from iBuyEfficient.</value>
+    </labels>
+    <labels>
+        <fullName>EC_IBuyMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_IBuyMsg</shortDescription>
+        <value>Do not close or navigate away from this window while you are shopping on Ecolab to avoid disconnection. The session will automatically timeout after 60 mins of inactivity.</value>
+    </labels>
+    <labels>
+        <fullName>EC_IBuyPLP1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_IBuyPLP1</shortDescription>
+        <value>/commerce/ccrz__ProductList?viewState=ListView&amp;isIBEUser=true&amp;categoryId=</value>
+    </labels>
+    <labels>
+        <fullName>EC_IBuyPLP2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_IBuyPLP2</shortDescription>
+        <value>&amp;effectiveAccountId=</value>
+    </labels>
+    <labels>
+        <fullName>EC_IBuyPLP3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_IBuyPLP3</shortDescription>
+        <value>&amp;cartId=</value>
+    </labels>
+    <labels>
+        <fullName>EC_IBuyURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_IBuyURL</shortDescription>
+        <value>https://www.ibuyefficient.com</value>
+    </labels>
+    <labels>
+        <fullName>EC_INSTITUTIONALBUSINESSUNITNAME</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_INSTITUTIONALBUSINESSUNITNAME</shortDescription>
+        <value>INSTITUTIONAL</value>
+    </labels>
+    <labels>
+        <fullName>EC_IbuyRedirectMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_IbuyRedirectMsg</shortDescription>
+        <value>if Ecolab does not open automatically in a new tab.</value>
+    </labels>
+    <labels>
+        <fullName>EC_InactivePLSequence</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_InactivePLSequence</shortDescription>
+        <value>100,200,300,400,500</value>
+    </labels>
+    <labels>
+        <fullName>EC_InactivePriceListType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_InactivePriceListType</shortDescription>
+        <value>SBA,Customer Group,Customer Price Group,Industry Code,Sales Org,Contract</value>
+    </labels>
+    <labels>
+        <fullName>EC_InstanceAddnURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>label for iframe page to post transfer cart event message</shortDescription>
+        <value>/commerce/IFrameCustomPage</value>
+    </labels>
+    <labels>
+        <fullName>EC_InstanceBaseURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_InstanceBaseURL</shortDescription>
+        <value>https://connect.ecolab.com</value>
+    </labels>
+    <labels>
+        <fullName>EC_Institutional_Accounts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Institutional Accounts</shortDescription>
+        <value>institutional,food &amp; beverage</value>
+    </labels>
+    <labels>
+        <fullName>EC_Internal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Internal</shortDescription>
+        <value>Internal</value>
+    </labels>
+    <labels>
+        <fullName>EC_LandingPageParam</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_LandingPageParam</shortDescription>
+        <value>c__landing</value>
+    </labels>
+    <labels>
+        <fullName>EC_LinkUrl</fullName>
+        <categories>Value</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_LinkUrl</shortDescription>
+        <value>linkURL</value>
+    </labels>
+    <labels>
+        <fullName>EC_Loading_text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Loading_text</shortDescription>
+        <value>Loading</value>
+    </labels>
+    <labels>
+        <fullName>EC_Login_LoginButton</fullName>
+        <categories>Login</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Login_LoginButton</shortDescription>
+        <value>Continue with Microsoft</value>
+    </labels>
+    <labels>
+        <fullName>EC_Login_RegisterHeading</fullName>
+        <categories>Login</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Login_RegisterHeading</shortDescription>
+        <value>Don’t have an account?</value>
+    </labels>
+    <labels>
+        <fullName>EC_Login_SectionHeading</fullName>
+        <categories>Login</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Login_SectionHeading</shortDescription>
+        <value>Manage your programs and gain insight on your business.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Login_SectionSubHeading</fullName>
+        <categories>Login</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Login_SectionSubHeading</shortDescription>
+        <value>Continue to Ecolab Portal</value>
+    </labels>
+    <labels>
+        <fullName>EC_Login_SignUp</fullName>
+        <categories>Login</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Login_SignUp</shortDescription>
+        <value>Sign Up</value>
+    </labels>
+    <labels>
+        <fullName>EC_LogoutURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_LogoutURL</shortDescription>
+        <value>https://ecolabconnect.force.com/commerce/services/auth/sp/saml2/logout</value>
+    </labels>
+    <labels>
+        <fullName>EC_MaintainenceText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MaintainenceText</shortDescription>
+        <value>Currently creating something fantastic for you.</value>
+    </labels>
+    <labels>
+        <fullName>EC_MaintainenceText2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_MaintainenceText2</shortDescription>
+        <value>Apologies for any inconvenience. Please try again soon.</value>
+    </labels>
+    <labels>
+        <fullName>EC_MarketingBannerBottom</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_MarketingBannerBottom</shortDescription>
+        <value>Ecolab works with customers in more than 40 industries to help ensure operational efficiency, safety, sustainability, product quality and guest satisfaction.</value>
+    </labels>
+    <labels>
+        <fullName>EC_MarketingBannerHead</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_MarketingBannerHead</shortDescription>
+        <value>EVERYWHERE IT MATTERS.™</value>
+    </labels>
+    <labels>
+        <fullName>EC_MyCartUrl</fullName>
+        <categories>EC_MyCart</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_MyCartUrl</shortDescription>
+        <value>https://cloudcrazetraining-1665f2b59-16a74a1e949.force.com</value>
+    </labels>
+    <labels>
+        <fullName>EC_MyCart_LogoutUrl</fullName>
+        <categories>Url</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_MyCart_LogoutUrl</shortDescription>
+        <value>/secur/logout.jsp?retUrl=</value>
+    </labels>
+    <labels>
+        <fullName>EC_MyCart_MyAccountUrl</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_MyCart_MyAccountUrl</shortDescription>
+        <value>/commerce/ccrz__MyAccount?viewState=myWishlists</value>
+    </labels>
+    <labels>
+        <fullName>EC_MyCart_ProdListUrl</fullName>
+        <categories>EC_MyCart</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_MyCart_ProdListUrl</shortDescription>
+        <value>/commerce/ccrz__ProductList?categoryID=</value>
+    </labels>
+    <labels>
+        <fullName>EC_NALCOBUSINESSUNITNAME</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_NALCOBUSINESSUNITNAME</shortDescription>
+        <value>HEAVY INDUSTRY,LIGHT INDUSTRY,MINING,OTHER WATER,CTG,WATER SERVICES,ENERGY,PAPER,PAPER INDUSTRY</value>
+    </labels>
+    <labels>
+        <fullName>EC_NarrowSearchOnOrders</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NarrowSearchOnOrders</shortDescription>
+        <value>Apply one or more filter options to narrow your search results.</value>
+    </labels>
+    <labels>
+        <fullName>EC_NonBulk</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Non Bulk</shortDescription>
+        <value>NonBulk</value>
+    </labels>
+    <labels>
+        <fullName>EC_NotMatchedOrders</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_NotMatchedOrders</shortDescription>
+        <value>did not match any Orders.</value>
+    </labels>
+    <labels>
+        <fullName>EC_NotMatchedQuicklist</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_NotMatchedQuicklist</shortDescription>
+        <value>did not match any Quicklist.</value>
+    </labels>
+    <labels>
+        <fullName>EC_OrderAckCheckMark</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderAckCheckMark</shortDescription>
+        <value>https://ecolabconnect--devec1--c.documentforce.com/servlet/servlet.ImageServer?id=0155C0000006TAa&amp;oid=00D5C000000DPuX&amp;lastMod=1569570197000</value>
+    </labels>
+    <labels>
+        <fullName>EC_OrderAckErrorImage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderAckErrorImage</shortDescription>
+        <value>https://ecolabconnect--c.documentforce.com/servlet/servlet.ImageServer?id=0154P000007WmIl&amp;oid=00D2h0000008c2r&amp;lastMod=1567506884000</value>
+    </labels>
+    <labels>
+        <fullName>EC_OrderDetails_BillingAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderDetails_BillingAddress</shortDescription>
+        <value>Billing Address</value>
+    </labels>
+    <labels>
+        <fullName>EC_OrderDetails_Price</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderDetails_Price</shortDescription>
+        <value>Price</value>
+    </labels>
+    <labels>
+        <fullName>EC_OrderDetails_ProductCode</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderDetails_ProductCode</shortDescription>
+        <value>Product Code</value>
+    </labels>
+    <labels>
+        <fullName>EC_OrderDetails_ShipToName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderDetails_ShipToName</shortDescription>
+        <value>Ship to Name / ID</value>
+    </labels>
+    <labels>
+        <fullName>EC_OrderDetails_ShippedOn</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderDetails_ShippedOn</shortDescription>
+        <value>Shipped on</value>
+    </labels>
+    <labels>
+        <fullName>EC_OrderDetails_ShippingAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderDetails_ShippingAddress</shortDescription>
+        <value>Shipping Address</value>
+    </labels>
+    <labels>
+        <fullName>EC_OrderDetails_TotalQuantity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderDetails_TotalQuantity</shortDescription>
+        <value>Total Quantity</value>
+    </labels>
+    <labels>
+        <fullName>EC_OrderDetails_TrackShipment</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderDetails_TrackShipment</shortDescription>
+        <value>Track Shipment</value>
+    </labels>
+    <labels>
+        <fullName>EC_OrderSubmissionDivision</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderSubmissionDivision</shortDescription>
+        <value>INSTITUTIONAL,Institutional,FOOD &amp; BEVERAGE,food &amp; beverage</value>
+    </labels>
+    <labels>
+        <fullName>EC_OrderSubmitEmailImage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderSubmitEmailImage</shortDescription>
+        <value>https://ecolabconnect--c.documentforce.com/servlet/servlet.ImageServer?id=0154P000007WmJK&amp;oid=00D2h0000008c2r&amp;lastMod=1567509131000</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_Ack_Mail_Footer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order Ack Mail Footer</shortDescription>
+        <value>Please do not reply to this email. This mailbox is not monitored and you will not receive a response.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_FiltersAccountNumber</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_FiltersAccountNumber</shortDescription>
+        <value>Ecolab Account Number</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_FiltersFromDate</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_FiltersFromDate</shortDescription>
+        <value>From Date</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_FiltersHeading</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_FiltersHeading</shortDescription>
+        <value>Filter Orders</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_FiltersOrderStatus</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_FiltersOrderStatus</shortDescription>
+        <value>Order Status</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_FiltersPONumber</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_FiltersPONumber</shortDescription>
+        <value>PO Number</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_FiltersToDate</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_FiltersToDate</shortDescription>
+        <value>To Date</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_Heading</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_Heading</shortDescription>
+        <value>Orders</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_NoOrders</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Orders_NoOrders</shortDescription>
+        <value>No recently purchased products.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_NoOrdersSubHeading</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_NoOrdersSubHeading</shortDescription>
+        <value>To see your recently purchased items here and track your order status, purchase a product from the product catalog.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderNumber</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderNumber</shortDescription>
+        <value>Enter order number</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderPaymentPortalButton</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderPaymentPortalButton</shortDescription>
+        <value>Online Payment</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderSearchButton</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSearchButton</shortDescription>
+        <value>SEARCH</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderSection_AccountNoLabel</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSection_AccountNoLabel</shortDescription>
+        <value>Ecolab Account #</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderSection_DateLabel</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSection_DateLabel</shortDescription>
+        <value>Order Date:</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderSection_ItemsLabel</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSection_ItemsLabel</shortDescription>
+        <value>Items:</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderSection_LineStatusLabel</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSection_LineStatusLabel</shortDescription>
+        <value>Item Status</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderSection_OrderNoLabel</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSection_OrderNoLabel</shortDescription>
+        <value>Order #</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderSection_POLabel</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSection_POLabel</shortDescription>
+        <value>PO #</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderSection_PlacedByLabel</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSection_PlacedByLabel</shortDescription>
+        <value>Placed by:</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderSection_PriceLabel</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSection_PriceLabel</shortDescription>
+        <value>Total Price:</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderSection_ReorderButton</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSection_ReorderButton</shortDescription>
+        <value>REORDER</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderSection_StatusLabel</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSection_StatusLabel</shortDescription>
+        <value>Order Status</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderSection_ViewInvoiceButton</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSection_ViewInvoiceButton</shortDescription>
+        <value>View Invoice</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderSection_ViewMoreButton</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSection_ViewMoreButton</shortDescription>
+        <value>View more</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderSection_ViewShipmentsButton</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSection_ViewShipmentsButton</shortDescription>
+        <value>View Shipments</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_Results_OutOf</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_Results_OutOf</shortDescription>
+        <value>out of</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_Results_Results</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_Results_Results</shortDescription>
+        <value>results</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_Results_Showing</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_Results_Showing</shortDescription>
+        <value>Showing</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_SearchBy</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_SearchBy</shortDescription>
+        <value>Search By</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_SortBy</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_SortBy</shortDescription>
+        <value>Sort by</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_SortByOption</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_SortByOption</shortDescription>
+        <value>Last Purchased</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_submit_mail_SecondLine</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order submit mail second Line</shortDescription>
+        <value>Please process and provide an order confirmation to the requestor.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_submit_mail_firstLine</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order submit mail-firstLine</shortDescription>
+        <value>The order below has been placed through the Nalco Water eCommerce channel.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Orders_NoOrdersMatch</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Orders_NoOrdersMatch</shortDescription>
+        <value>No Results Found category</value>
+    </labels>
+    <labels>
+        <fullName>EC_Orders_NoOrdersMatchCaption</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Orders_NoOrdersMatchCaption</shortDescription>
+        <value>Please try different search information category</value>
+    </labels>
+    <labels>
+        <fullName>EC_OrganisationURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrganisationURL</shortDescription>
+        <value>https://testec1-ecolabconnect--testec1.cs62.force.com</value>
+    </labels>
+    <labels>
+        <fullName>EC_Origin_Online_Registration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Origin_Online_Registration</shortDescription>
+        <value>Online registration</value>
+    </labels>
+    <labels>
+        <fullName>EC_Origin_Portal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Origin_Portal</shortDescription>
+        <value>Portal</value>
+    </labels>
+    <labels>
+        <fullName>EC_OutageRedirect</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OutageRedirect</shortDescription>
+        <value>/s/outage</value>
+    </labels>
+    <labels>
+        <fullName>EC_PDPTemplateUrl</fullName>
+        <categories>URL</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_PDPTemplateUrl</shortDescription>
+        <value>/commerce/ccrz__ProductDetails?viewState=DetailView&amp;cclcl=userLocale&amp;sku=productSKU</value>
+    </labels>
+    <labels>
+        <fullName>EC_POST</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_POST</shortDescription>
+        <value>POST</value>
+    </labels>
+    <labels>
+        <fullName>EC_Page_NotFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Page_NotFound</shortDescription>
+        <value>Page Not Found</value>
+    </labels>
+    <labels>
+        <fullName>EC_Page_NotFound_Heading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Page_NotFound_Heading</shortDescription>
+        <value>404 Error! Page Not Found</value>
+    </labels>
+    <labels>
+        <fullName>EC_Page_NotFound_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Page_NotFound_Text</shortDescription>
+        <value>We could not authenticate your credentials to view this page, please go back to iBuy Portal.</value>
+    </labels>
+    <labels>
+        <fullName>EC_PayerSet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_PayerSet</shortDescription>
+        <value>EC_PayerSet</value>
+    </labels>
+    <labels>
+        <fullName>EC_Payment_Mode_BOTH</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Payment Mode BOTH</shortDescription>
+        <value>BOTH</value>
+    </labels>
+    <labels>
+        <fullName>EC_Payment_Mode_CC</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Payment Mode CC</shortDescription>
+        <value>CC</value>
+    </labels>
+    <labels>
+        <fullName>EC_Payment_Mode_PO</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Payment Mode PO</shortDescription>
+        <value>PO</value>
+    </labels>
+    <labels>
+        <fullName>EC_PaymetPortalLink</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_PaymetPortalLink</shortDescription>
+        <value>https://myapps.microsoft.com/signin/Pay My Bills/bdbda867-2732-42c8-98f5-03126130e4c2?tenantId=c1eb5112-7946-4c9d-bc57-40040cfe3a91</value>
+    </labels>
+    <labels>
+        <fullName>EC_Per</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Per Each</shortDescription>
+        <value>Per</value>
+    </labels>
+    <labels>
+        <fullName>EC_Please</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Please</shortDescription>
+        <value>Please</value>
+    </labels>
+    <labels>
+        <fullName>EC_Price_Each</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Price Each</shortDescription>
+        <value>EA</value>
+    </labels>
+    <labels>
+        <fullName>EC_PrimaryRepLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_PrimaryRepLabel</shortDescription>
+        <value>Sales Rep</value>
+    </labels>
+    <labels>
+        <fullName>EC_ProductIndexCurrent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ProductIndexCurrent</shortDescription>
+        <value>Current</value>
+    </labels>
+    <labels>
+        <fullName>EC_ProductIndexPending</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ProductIndexPending</shortDescription>
+        <value>Pending</value>
+    </labels>
+    <labels>
+        <fullName>EC_ProductStatusFilter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ProductStatusFilter</shortDescription>
+        <value>Released;Not Orderable</value>
+    </labels>
+    <labels>
+        <fullName>EC_ProductsNotMatched</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ProductsNotMatched</shortDescription>
+        <value>did not match any Products.</value>
+    </labels>
+    <labels>
+        <fullName>EC_PunchOut_CXMLPrefix</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_PunchOut_CXMLPrefix</shortDescription>
+        <value>cxml-urlencoded=&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;!DOCTYPE cXML SYSTEM &quot;http://xml.cXML.org/schemas/cXML/1.2.011/cXML.dtd&quot;&gt;</value>
+    </labels>
+    <labels>
+        <fullName>EC_PunchOut_LoginURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_PunchOut_LoginURL</shortDescription>
+        <value>s/login</value>
+    </labels>
+    <labels>
+        <fullName>EC_PunchinUrl</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_PunchinUrl</shortDescription>
+        <value>https://connect.ecolab.com</value>
+    </labels>
+    <labels>
+        <fullName>EC_PunchoutCartReturnUrl</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_PunchoutCartReturnUrl</shortDescription>
+        <value>https://www.ibuyefficient.com/Buyer/Catalog/PunchoutWait?catalogID=4614266667</value>
+    </labels>
+    <labels>
+        <fullName>EC_PunchoutUrlMiddle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_PunchoutUrlMiddle</shortDescription>
+        <value>/commerce/EC_PunchoutLogin?</value>
+    </labels>
+    <labels>
+        <fullName>EC_Punchout_IFrameCustonUrl1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Punchout_IFrameCustonUrl1</shortDescription>
+        <value>/EC_IFrameCustomPage?CartId=xyz&amp;retUrl=ccrz_ProductList?viewState=ListView&amp;categoryId=</value>
+    </labels>
+    <labels>
+        <fullName>EC_QuickListTemplateUrl</fullName>
+        <categories>URL</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_QuickListTemplateUrl</shortDescription>
+        <value>/commerce/ccrz__MyAccount?cclcl=userLocale&amp;quicklistid=quickID</value>
+    </labels>
+    <labels>
+        <fullName>EC_RegCaptchaSiteKey</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_RegCaptchaSiteKey</shortDescription>
+        <value>6LcD3xAUAAAAAJ4227eQPBUVAzPkxnodLT6ygZrH</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_AccountNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_AccountNumber</shortDescription>
+        <value>Ecolab Account Number</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_AccountSecurity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_AccountSecurity</shortDescription>
+        <value>ACCOUNT AND SECURITY</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_ContactInformation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_ContactInformation</shortDescription>
+        <value>CONTACT INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_CountryCode</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_CountryCode</shortDescription>
+        <value>Country Code</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_CountryCodeCA</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_CountryCodeCA</shortDescription>
+        <value>CA (+1)</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_CountryCodeUS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_CountryCodeUS</shortDescription>
+        <value>US (+1)</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_EmailAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_EmailAddress</shortDescription>
+        <value>Email Address</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_EnterCountryCode</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_EnterCountryCode</shortDescription>
+        <value>Enter country code</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_ErrorMsgAcc</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_ErrorMsgAcc</shortDescription>
+        <value>Enter an Ecolab account number</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_ErrorMsgCountry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_ErrorMsgCountry</shortDescription>
+        <value>This is a required field</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_ErrorMsgEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_ErrorMsgEmail</shortDescription>
+        <value>Enter a valid email address</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_ErrorMsgFirstName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_ErrorMsgFirstName</shortDescription>
+        <value>This is a required field</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_ErrorMsgLastName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_ErrorMsgLastName</shortDescription>
+        <value>This is a required field</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_ErrorMsgPhone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_ErrorMsgPhone</shortDescription>
+        <value>Enter a valid contact number</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_ErrorMsgSalesRep</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_ErrorMsgSalesRep</shortDescription>
+        <value>Enter your work Email address</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_Fname</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_Fname</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_Lname</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_Lname</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_LoginInformation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_LoginInformation</shortDescription>
+        <value>LOGIN INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_MandatoryFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_MandatoryFields</shortDescription>
+        <value>Register with your Ecolab Account Number</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_MissingMsgEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_MissingMsgEmail</shortDescription>
+        <value>Enter Ecolab Representative Email Address.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_PageHeadingText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_PageHeadingText</shortDescription>
+        <value>REGISTER TO GAIN ACCESS TO MANAGE YOUR PROGRAM(S) ONLINE</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_PersonalInformation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_PersonalInformation</shortDescription>
+        <value>SIGN IN INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_Phone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_Phone</shortDescription>
+        <value>Phone Number</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_Register</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_Register</shortDescription>
+        <value>REGISTER</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_RegisterHeading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_RegisterHeading</shortDescription>
+        <value>Register</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_SalesRepEmailId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_SalesRepEmailId</shortDescription>
+        <value>Sales Representative Email Address</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_Title</shortDescription>
+        <value>Register Now</value>
+    </labels>
+    <labels>
+        <fullName>EC_Rejected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Rejected</shortDescription>
+        <value>Rejected</value>
+    </labels>
+    <labels>
+        <fullName>EC_RequestPortalAccess_AccessInfo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_RequestPortalAccess_AccessInfo</shortDescription>
+        <value>Select a User Type that aligns best with your account. An email notification will be sent to your Ecolab Representative with your selection to inform them of your registration.</value>
+    </labels>
+    <labels>
+        <fullName>EC_RequestPortalAccess_Cancel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_RequestPortalAccess_Cancel</shortDescription>
+        <value>CANCEL</value>
+    </labels>
+    <labels>
+        <fullName>EC_RequestPortalAccess_Confirm</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_RequestPortalAccess_Confirm</shortDescription>
+        <value>CONFIRM</value>
+    </labels>
+    <labels>
+        <fullName>EC_RequestPortalAccess_CurrentProfile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_RequestPortalAccess_CurrentProfile</shortDescription>
+        <value>CURRENT PROFILE</value>
+    </labels>
+    <labels>
+        <fullName>EC_RequestPortalAccess_ProfileDesc</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_RequestPortalAccess_ProfileDesc</shortDescription>
+        <value>My role is general and I won&apos;t need to view our intelligence dashboards and nor will I place any online orders myself</value>
+    </labels>
+    <labels>
+        <fullName>EC_RequestPortalAccess_ProfileDesc_Buyer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_RequestPortalAccess_ProfileDesc_Buyer</shortDescription>
+        <value>My role is to place online orders and I won&apos;t have any intelligence to view for my company.</value>
+    </labels>
+    <labels>
+        <fullName>EC_RequestPortalAccess_Selected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_RequestPortalAccess_Selected</shortDescription>
+        <value>SELECTED</value>
+    </labels>
+    <labels>
+        <fullName>EC_RequestProtalAccess_ChooseProfile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_RequestPortalAccess_ChooseProfile</shortDescription>
+        <value>Please choose a profile type suitable for your account. After you select a new profile, an Email notification will be sent to your sales representative, once you update your profile.</value>
+    </labels>
+    <labels>
+        <fullName>EC_RequestProtalAccess_CurrentProfile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_RequestPortalAccess_CurrentProfile</shortDescription>
+        <value>CURRENT PROFILE</value>
+    </labels>
+    <labels>
+        <fullName>EC_RequestProtalAccess_ProfileContent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_RequestPortalAccess_ProfileContent</shortDescription>
+        <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl ante,  rutrumid blandit in, porta a sapien. Fusce vitae lectus nisl.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Run_BillingAddress_JobName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Run BillingAddress Job Name</shortDescription>
+        <value>INFORMATICA LOADS COMPLETED FOR BILLING ADDRESS INACTIVATION</value>
+    </labels>
+    <labels>
+        <fullName>EC_Run_Product_Index_JobName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Run Product Index JobName</shortDescription>
+        <value>INFORMATICA LOADS COMPLETED TO RUN PRODUCT INDEXES</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Acc_City</fullName>
+        <categories>Connect</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Acc City</shortDescription>
+        <value>City</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Acc_State</fullName>
+        <categories>Connect</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Acc State</shortDescription>
+        <value>State</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Acc_address</fullName>
+        <categories>Connect</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Acc address</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Account_Name</fullName>
+        <categories>Connect</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Account Name</shortDescription>
+        <value>Account Name</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Account_Number</fullName>
+        <categories>Connect</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Account Number</shortDescription>
+        <value>Ecolab Account Number</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Account_Picker_Account</fullName>
+        <categories>Connect</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Account Picker Account</shortDescription>
+        <value>Ecolab Account</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Account_Picker_Header</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Account Picker Header</shortDescription>
+        <value>Select an Account</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Account_Picker_Info</fullName>
+        <categories>Connect</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Account Picker Info</shortDescription>
+        <value>Account Information</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Account_Picker_No_Results</fullName>
+        <categories>Connect</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Account Picker No Results</shortDescription>
+        <value>No search results found</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Account_ShiptTo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Account ShiptTo</shortDescription>
+        <value>Ship to Name and ID</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Continue_button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Continue button</shortDescription>
+        <value>SELECT</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Ecolab_accs</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Ecolab accs</shortDescription>
+        <value>Accounts linked to your Profile</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_ShipTo_address</fullName>
+        <categories>Connect</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR ShipTo address</shortDescription>
+        <value>Ship to Address</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Show</fullName>
+        <categories>Connect</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Show</shortDescription>
+        <value>Showing</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Showing_Results</fullName>
+        <categories>Connect</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Showing Results</shortDescription>
+        <value>in Search Results</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Your</fullName>
+        <categories>Connect</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Your</shortDescription>
+        <value>Your</value>
+    </labels>
+    <labels>
+        <fullName>EC_SSO_Developer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SSO Developer</shortDescription>
+        <value>Ecolab</value>
+    </labels>
+    <labels>
+        <fullName>EC_SUCCESS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_SUCCESS</shortDescription>
+        <value>SUCCESS</value>
+    </labels>
+    <labels>
+        <fullName>EC_Sales_Rep_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Rep Email</shortDescription>
+        <value>Ecolab Representative Email Address</value>
+    </labels>
+    <labels>
+        <fullName>EC_Search</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search</shortDescription>
+        <value>search</value>
+    </labels>
+    <labels>
+        <fullName>EC_SearchEmpty</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_SearchEmpty</shortDescription>
+        <value>Your search</value>
+    </labels>
+    <labels>
+        <fullName>EC_SearchPlaceholder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_SearchPlaceholder</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>EC_SearchResults_itemsTxt</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_SearchResults_itemsTxt</shortDescription>
+        <value>items</value>
+    </labels>
+    <labels>
+        <fullName>EC_Search_Except_Quicklist</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search_Quicklist</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>EC_SelectAnotherCategory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_SelectAnotherCategory</shortDescription>
+        <value>Please try a new search.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Service_Unavailable</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Service_Unavailable</shortDescription>
+        <value>Service Unavailable</value>
+    </labels>
+    <labels>
+        <fullName>EC_Service_Unavailable_Heading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Service_Unavailable_Heading</shortDescription>
+        <value>500 Error! Service Unavailable</value>
+    </labels>
+    <labels>
+        <fullName>EC_Service_Unavailable_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Service_Unavailable_Text</shortDescription>
+        <value>Looks like we are having server issues to process the request. Please go back and try again later.</value>
+    </labels>
+    <labels>
+        <fullName>EC_SessionTimeOutDuration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>label for session time out duration</shortDescription>
+        <value>60</value>
+    </labels>
+    <labels>
+        <fullName>EC_StagingLogRecordsLife</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_StagingLogRecordsLife</shortDescription>
+        <value>-30</value>
+    </labels>
+    <labels>
+        <fullName>EC_Status_Failed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Status_Failed</shortDescription>
+        <value>Message Failed</value>
+    </labels>
+    <labels>
+        <fullName>EC_Status_New</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Status_New</shortDescription>
+        <value>New</value>
+    </labels>
+    <labels>
+        <fullName>EC_Status_Sent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Status_Sent</shortDescription>
+        <value>Message Sent</value>
+    </labels>
+    <labels>
+        <fullName>EC_StoreFront</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_StoreFront</shortDescription>
+        <value>Connect</value>
+    </labels>
+    <labels>
+        <fullName>EC_Storefront_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Storefront Name</shortDescription>
+        <value>commerce</value>
+    </labels>
+    <labels>
+        <fullName>EC_Support_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Support Email</shortDescription>
+        <value>eCDSConnectIntegrationNotifications@ecolab.com</value>
+    </labels>
+    <labels>
+        <fullName>EC_Support_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Support Number</shortDescription>
+        <value>866-851-8670</value>
+    </labels>
+    <labels>
+        <fullName>EC_Support_text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Support text</shortDescription>
+        <value>If any changes are needed on your Ecolab Account information, please contact Customer Support at</value>
+    </labels>
+    <labels>
+        <fullName>EC_TIMEOUT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_TIMEOUT</shortDescription>
+        <value>120000</value>
+    </labels>
+    <labels>
+        <fullName>EC_Tokenized_Card</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tokenized Card</shortDescription>
+        <value>Tokenized Card</value>
+    </labels>
+    <labels>
+        <fullName>EC_Twitter_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Twitter_Text</shortDescription>
+        <value>Tweets by Ecolab</value>
+    </labels>
+    <labels>
+        <fullName>EC_Twitter_Timeline</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Twitter_Timeline</shortDescription>
+        <value>https://twitter.com/Ecolab?ref_src=twsrc%5Etfw</value>
+    </labels>
+    <labels>
+        <fullName>EC_Twitter_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Twitter_Title</shortDescription>
+        <value>JOIN OUR CONVERSATION</value>
+    </labels>
+    <labels>
+        <fullName>EC_Type_Request_Service</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Type_Request_Service</shortDescription>
+        <value>Request Service</value>
+    </labels>
+    <labels>
+        <fullName>EC_URLPostFixCommerce</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_URLPostFixCommerce</shortDescription>
+        <value>commerce</value>
+    </labels>
+    <labels>
+        <fullName>EC_USD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_USD</shortDescription>
+        <value>USD</value>
+    </labels>
+    <labels>
+        <fullName>EC_USERNAME</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_USERNAME</shortDescription>
+        <value>.devec1</value>
+    </labels>
+    <labels>
+        <fullName>EC_UnitedStates</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>US locale</shortDescription>
+        <value>United States,US,USA</value>
+    </labels>
+    <labels>
+        <fullName>EC_UrlFooter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_UrlFooter</shortDescription>
+        <value>&amp;cclcl=</value>
+    </labels>
+    <labels>
+        <fullName>EC_UrlHeader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_UrlHeader</shortDescription>
+        <value>/commerce/ccrz__Cart?cartId=</value>
+    </labels>
+    <labels>
+        <fullName>EC_UrlMiddle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_UrlMiddle</shortDescription>
+        <value>&amp;viewState=ListView&amp;portalUser=&amp;store=&amp;effectiveAccount=</value>
+    </labels>
+    <labels>
+        <fullName>EC_UserEmailEncodingKey</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserEmailEncodingKey</shortDescription>
+        <value>UTF-8</value>
+    </labels>
+    <labels>
+        <fullName>EC_UserLanguageLocaleKey</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserLanguageLocaleKey</shortDescription>
+        <value>en_US</value>
+    </labels>
+    <labels>
+        <fullName>EC_UserLocaleSidKey</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserLocaleSidKey</shortDescription>
+        <value>en_US</value>
+    </labels>
+    <labels>
+        <fullName>EC_UserProfile_iBuy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC UserProfile iBuy</shortDescription>
+        <value>Ecolab Connect iBuy CCP User</value>
+    </labels>
+    <labels>
+        <fullName>EC_UserRoleApproval_Subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_UserRoleApproval_Subject</shortDescription>
+        <value>Customer update on connect.ecolab.com</value>
+    </labels>
+    <labels>
+        <fullName>EC_UserTimeZoneSidKey</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserTimeZoneSidKey</shortDescription>
+        <value>America/Chicago</value>
+    </labels>
+    <labels>
+        <fullName>EC_UserType_Internal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC UserType Internal</shortDescription>
+        <value>Internal</value>
+    </labels>
+    <labels>
+        <fullName>EC_User_Profile_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC User Profile Name</shortDescription>
+        <value>Sales Rep</value>
+    </labels>
+    <labels>
+        <fullName>EC_View_Dashboard</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View Dashboard</shortDescription>
+        <value>View Dashboard</value>
+    </labels>
+    <labels>
+        <fullName>EC_View_Invoices</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View Invoices</shortDescription>
+        <value>View Invoices</value>
+    </labels>
+    <labels>
+        <fullName>EC_View_Price</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View Price</shortDescription>
+        <value>View Price</value>
+    </labels>
+    <labels>
+        <fullName>EC_cookie_link_text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>cookie link text</shortDescription>
+        <value>cookie policies</value>
+    </labels>
+    <labels>
+        <fullName>EC_cookie_link_text_2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>cookie link text 2</shortDescription>
+        <value>Cookies Policy</value>
+    </labels>
+    <labels>
+        <fullName>EC_cookie_link_text_5</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>cookie link text 5</shortDescription>
+        <value>Privacy Policy</value>
+    </labels>
+    <labels>
+        <fullName>EC_documentsNotMatched</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_documentsNotMatched</shortDescription>
+        <value>did not match any Documents.</value>
+    </labels>
+    <labels>
+        <fullName>EC_footer_cookie_link_2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>cookie link 2</shortDescription>
+        <value>https://www.ecolab.com/cookies</value>
+    </labels>
+    <labels>
+        <fullName>EC_footer_cookie_link_5</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>cookie link 5</shortDescription>
+        <value>https://www.ecolab.com/privacy-policy</value>
+    </labels>
+    <labels>
+        <fullName>EC_footer_cookie_text_2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>cookie text 2</shortDescription>
+        <value>Ecolab respects your privacy and security, so we&apos;ve updated our Privacy Policy to comply with the EU General Data Protection Regulation (GDPR) effective May 25, 2018. We encourage you to review our</value>
+    </labels>
+    <labels>
+        <fullName>EC_footer_cookie_text_3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>cookie text 3</shortDescription>
+        <value>Connect.Ecolab.com uses cookies to give you the best possible experience. By using Connect.Ecolab.com, you consent to our use of cookies. If you do not wish to receive our cookies, adjust your browser settings. Read our</value>
+    </labels>
+    <labels>
+        <fullName>EC_footer_cookie_text_4</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>cookie text 4</shortDescription>
+        <value>to learn more.</value>
+    </labels>
+    <labels>
+        <fullName>EC_logoutRedirect</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_logoutRedirect</shortDescription>
+        <value>https://ecolabconnect.force.com/s/login</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_DelContactNamePhone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - DelContactNamePhone</shortDescription>
+        <value>Delivery Contact Name and Phone (Carrier/Haulier Text field):</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_billToNbr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - billToNbr</shortDescription>
+        <value>Bill To Number (Payer):</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_ccOrderNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - ccOrderNumber</shortDescription>
+        <value>Salesforce CC Order Number:</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_locationAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - locationAddress</shortDescription>
+        <value>Location Address:</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_notes</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - notes</shortDescription>
+        <value>Special Shipping Notes:</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_po</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - po</shortDescription>
+        <value>PONumber (External Reference):</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_product</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - product</shortDescription>
+        <value>Product and Package Code (Product):</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_qty</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - qty</shortDescription>
+        <value>Quantity:</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_reqDelDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - reqDelDate</shortDescription>
+        <value>Requested Delivery Date (Requested Date):</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_requestorEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - requestorEmail</shortDescription>
+        <value>Requestor E-mail Address (Relationship Partner):</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_shipToNbr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - shipToNbr</shortDescription>
+        <value>Ship To Number (Ship To Number):</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_soldToName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - soldToName</shortDescription>
+        <value>Sold To Name (Business Partner 1):</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_soldToNbr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - soldToNbr</shortDescription>
+        <value>Sold To Number (Partner):</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_spaNbr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - spaNbr</shortDescription>
+        <value>SPA Number:</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - subject</shortDescription>
+        <value>ECOMMERCE</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_token</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - token</shortDescription>
+        <value>Credit Card Token #:</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_uom</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order submit mail - UOM</shortDescription>
+        <value>UOM:</value>
+    </labels>
+    <labels>
+        <fullName>EC_rush_order_submit_mail_subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RUSH order submit mail</shortDescription>
+        <value>RUSH ECOMMERCE</value>
+    </labels>
+    <labels>
+        <fullName>Ec_Continue_Shopping</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ec Continue Shopping</shortDescription>
+        <value>&lt; Continue Shopping</value>
+    </labels>
+    <labels>
+        <fullName>NonBulk</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Non Bulk</shortDescription>
+        <value>Non Bulk</value>
+    </labels>
+    <labels>
+        <fullName>Payer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payer</shortDescription>
+        <value>Payer</value>
+    </labels>
+    <labels>
+        <fullName>Payer_Permission</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payer Permission</shortDescription>
+        <value>Payer Permission</value>
+    </labels>
+    <labels>
+        <fullName>Payer_Request_Complete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payer Request Complete</shortDescription>
+        <value>Request Complete</value>
+    </labels>
+    <labels>
+        <fullName>Please_enter_First_and_Last_name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please enter First and Last name</shortDescription>
+        <value>Please enter First and Last name</value>
+    </labels>
+    <labels>
+        <fullName>RequestPortalAccess_PayerPermission</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RequestPortalAccess_PayerPermission</shortDescription>
+        <value>Provides additional access to your current profile so that you may view and pay your invoices through Payment Portal</value>
+    </labels>
+    <labels>
+        <fullName>Request_Payer_Permission</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Request Payer Permission</shortDescription>
+        <value>Request Payer Permission</value>
+    </labels>
+    <labels>
+        <fullName>Request_Sent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Request Sent</shortDescription>
+        <value>Request Sent</value>
+    </labels>
+    <labels>
+        <fullName>StoreNameForIFrame</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StoreNameForIFrame</shortDescription>
+        <value>Connect</value>
+    </labels>
+    <labels>
+        <fullName>order_submit_mail_Multiple_Orders_Needed</fullName>
+        <categories>order submit mail</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - Multiple Orders Needed</shortDescription>
+        <value>MultipleOrdersNeeded</value>
+    </labels>
+    <labels>
+        <fullName>order_submit_mail_Tank_Number</fullName>
+        <categories>order submit mail</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - Tank Number</shortDescription>
+        <value>Tank Number:</value>
+    </labels>
+    <labels>
+        <fullName>order_submit_mail_Unloading_Point</fullName>
+        <categories>order submit mail</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - Unloading Point</shortDescription>
+        <value>Unloading Point:</value>
+    </labels>
+    <labels>
+        <fullName>org_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>org_Url</shortDescription>
+        <value>https://ecolabconnect.my.salesforce.com/</value>
+    </labels>
+    <labels>
+        <fullName>payment_portal_button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>payment-portal-button</shortDescription>
+        <value>0154P000007X0kE</value>
+    </labels>
+    <labels>
+        <fullName>payment_portal_footer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>payment-portal-footer</shortDescription>
+        <value>0154P000007X0kF</value>
+    </labels>
+    <labels>
+        <fullName>payment_portal_hero</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>payment-portal-hero</shortDescription>
+        <value>0154P000007X0kG</value>
+    </labels>
+    <labels>
+        <fullName>payment_portal_ord_id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>payment_portal_ord_id</shortDescription>
+        <value>00D2h0000008c2r</value>
+    </labels>
+    <labels>
+        <fullName>payment_portal_visual</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>payment-portal-visual</shortDescription>
+        <value>0154P000007X0kH</value>
+    </labels>
+</CustomLabels>

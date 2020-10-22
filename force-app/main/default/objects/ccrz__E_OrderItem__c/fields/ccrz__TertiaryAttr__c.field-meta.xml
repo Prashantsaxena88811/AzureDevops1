@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__TertiaryAttr__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The Tertiary Attribute selected for the Cart Item&apos;s Related Product</description>
+    <externalId>false</externalId>
+    <label>Tertiary Attribute</label>
+    <referenceTo>ccrz__E_Attribute__c</referenceTo>
+    <relationshipLabel>CC Order Items (Tertiary Attribute)</relationshipLabel>
+    <relationshipName>ccOrderItemsTert</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

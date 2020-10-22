@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>注目商品と主要商品の商品イメージの横に表示される、最大 255 文字の簡単な説明を入力します。</help>
+    <label><!-- Promotion Description --></label>
+    <name>ccrz__Description__c</name>
+</CustomFieldTranslation>

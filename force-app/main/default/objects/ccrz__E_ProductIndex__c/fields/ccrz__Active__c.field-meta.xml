@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Active__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Only Active Product Index records will be used. This allows for new records to be created, while leaving the old ones in place until the index batch job is complete.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Only Active Product Index records will be used. This allows for new records to be created, while leaving the old ones in place until the index batch job is complete.</inlineHelpText>
+    <label>Active</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

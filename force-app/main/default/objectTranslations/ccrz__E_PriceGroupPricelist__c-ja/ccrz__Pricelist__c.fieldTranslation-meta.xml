@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>このエントリの価格リストへの対応付け。</help>
+    <label><!-- CC Price List --></label>
+    <name>ccrz__Pricelist__c</name>
+    <relationshipLabel><!-- CC Price Group Pricelists --></relationshipLabel>
+</CustomFieldTranslation>

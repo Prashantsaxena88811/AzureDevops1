@@ -1,0 +1,187 @@
+<!--
+
+  @Component Name     : EC_HomePurchasedProducts.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Rahul               26/06/2019         This component will show last purchased products.
+
+-->
+<aura:component controller="EC_OrderInfo"
+    implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <!-- Attributes -->
+    <aura:attribute type="List" name="productsList" />
+    <aura:attribute name="DefaultImage" type="String" />
+    <aura:attribute name="buyOnline" type="Boolean" />
+    <aura:attribute name="viewPrice" type="Boolean" />
+    <aura:attribute name="Spinner" type="boolean" default="false"/>
+    <aura:attribute name="ordersRetrieved" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.fetchOrders}" />
+    <!-- Markup -->
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+
+   <aura:if isTrue="{!v.showSpinner}" >
+        <div class="slds-spinner_container">
+          <div role="status" class="slds-spinner slds-spinner--medium">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+         </div>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!!v.showSpinner}" > 
+    <div aura:id="homePageSpinner" class="slds-spinner_container">
+        <div role="status" class="slds-spinner slds-spinner--medium">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </div>
+    <div class="home-purchased-wrapper">
+        
+        <div class="slds-grid heading-wrapper">
+            <div class="slds-col slds-size_12-of-12">
+                <label class="heading">{!$Label.c.EC_Home_PurchasedProduct_Heading}</label></div>
+        </div>
+        <aura:if isTrue="{!and(empty(v.productsList), v.ordersRetrieved)}">
+            <div class="slds-grid">
+                <div class="slds-col slds-size_12-of-12">
+                    <div class="noOrders">
+                        <span><img src="{!$Resource.EC_Branding_Theme + '/images/outline-image.svg'}" class="icon_image" /></span>
+                        <span class="msg">
+                            <label class="heading">{!$Label.c.EC_Home_PurchasedProduct_NoOrders}</label>
+                            <label class="desc">{!$Label.c.EC_Home_PurchasedProduct_NoOrdersDesc}</label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </aura:if>
+        <lightning:layout horizontalAlign="left" verticalAlign="center" multipleRows="true">
+
+            <aura:iteration items="{!v.productsList}" var="item" indexVar="index">
+                <div class="slds-col slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-size_1-of-1">
+                    <div class="purchased-productSection">
+                        <div class="product-info">
+                            <div class="image">
+                                <a href="{!item.PDPUrl}">
+                                    <img src="{!item.image}" onerror="{!c.imageError}" />
+                                    <!--  <img src="{!$Resource.EC_Branding_Theme + '/images/product.png'}" />-->
+                                </a>
+                            </div>
+                            <div class="text">
+                                <div class="prodName_code">
+                                    <label class="productName">
+                                        <lightning:formattedUrl value="{!item.PDPUrl}" label="{!item.productName}" />
+                                    </label>
+                                    <span class="code-description">
+                                        <label class="code">{!$Label.c.EC_Home_PurchasedProduct_ProductCode}&nbsp;
+                                            <label class="value">
+                                                <lightning:formattedUrl value="{!item.PDPUrl}"
+                                                                        label="{!item.productCode}" /></label>
+                                        </label>
+                                        <span class="line"></span>
+                                        <label class="description">{!item.productUnitMeasure}</label>
+                                    </span>
+                                <span class="mobile-code-description">
+                                    <label class="mobile-description">{!item.productUnitMeasure}</label>
+                                    <span class="mobile-line"></span>
+                                        <label class="mobile-code">{!$Label.c.EC_Home_PurchasedProduct_ProductCode}&nbsp;
+                                            <label class="mobile-value">
+                                                <lightning:formattedUrl value="{!item.PDPUrl}"
+                                                                        label="{!item.productCode}" /></label>
+                                        </label>
+                                         </span>
+                                </div>
+                                <div class="price-button">
+                                    <aura:if isTrue="{!v.viewPrice}">
+                                        <aura:if isTrue="{!item.taxonomy == $Label.c.EC_Equipment }" >
+			                             <span class="price-info">
+                                          <label class="dollar">
+                                                   {!$Label.c.EC_Dollar} <lightning:formattedNumber value="{!item.Dollars}"/>
+					                      </label>
+                                          <label class="cent">
+					                               {!item.Cents}<span> {!$Label.c.EC_USD}</span>
+                                          </label>
+                                          <label class="Per-EA">
+                                                  <span>&nbsp;{!$Label.c.EC_Per}&nbsp;{!$Label.c.EC_Price_Each}</span>
+                                          </label>
+                                         </span>     
+                                        </aura:if>
+                                        
+                   <aura:if isTrue="{!item.taxonomy == $Label.c.EC_Chemistry }" >
+                    <aura:if isTrue="{!item.chemicalProductType != $Label.c.EC_Bulk }" >
+                        <div>
+                        <span class="price-info">
+                                <label class="dollar">
+                                    {!$Label.c.EC_Dollar} <lightning:formattedNumber value="{!item.Dollars}"/>
+								</label>
+                                <label class="cent">
+								    {!item.Cents}<span>{!$Label.c.EC_USD}</span>
+                                </label>
+								<label class="Per-EA">
+                                    <span>&nbsp;{!$Label.c.EC_Per}&nbsp;{!$Label.c.EC_Price_Each}</span>
+                                </label>
+                            </span>
+                        <aura:if isTrue="{!item.uom != $Label.c.EC_Price_Each }" >
+                             <span class="price-info">
+                                  <label class="Unit-Price">
+                                      {!$Label.c.EC_Dollar}{!item.unitPrice}<span class="unit-usd"> {!$Label.c.EC_USD}</span>
+					              </label>
+                               
+                                  <label class="Unit-Price">
+                                    <span>&nbsp;{!$Label.c.EC_Per}&nbsp;<lightning:formattedText value="{!item.uom}" /> </span>
+                                  </label>
+                              </span>
+                        </aura:if>
+                        </div>
+                    </aura:if>
+                       <aura:if isTrue="{!item.chemicalProductType == $Label.c.EC_Bulk }" >
+			                         <span class="price-info">
+                                          <label class="dollar">
+                                                    {!$Label.c.EC_Dollar} <lightning:formattedNumber value="{!item.Dollars}"/>
+					                      </label>
+                                          <label class="cent">
+					                                 {!item.Cents}<span>{!$Label.c.EC_USD}</span>
+                                          </label>
+                                         
+                                          <label class="Per-EA">
+                                                      <span>&nbsp;{!$Label.c.EC_Per}&nbsp;<lightning:formattedText value="{!item.uom}" /> </span>
+                                          </label>
+                                      </span>
+                                  </aura:if>
+                         </aura:if>
+                                    </aura:if>
+                                    <aura:if isTrue="{!v.buyOnline}">
+                                        <lightning:button class="ga-addtocart ec_btn_secondary"
+                                            label="{!$Label.c.EC_Home_PurchasedProduct_AddToCartButton}"
+                                            title="{!$Label.c.EC_Home_PurchasedProduct_AddToCartButton}"
+                                            onclick="{!c.addItemToCart}" value="{!item.orderItemId}" />
+                                    </aura:if>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="additional-info">
+                            <span class="order">{!$Label.c.EC_Home_PurchasedProduct_OrderLabel}&nbsp;
+                                <label>{!item.orderId}</label>
+                            </span>
+
+                            <span
+                                class="ship"><label>{!$Label.c.EC_Home_PurchasedProduct_ShippedToLabel}&nbsp;{!item.shippedTo}</label></span>
+                        </div>
+                        <span
+                            class='publishedOn'><label>{!$Label.c.EC_Home_PurchasedProduct_PurchasedOn}&nbsp;{!item.purchasedOn}</label></span>
+                    </div>
+                </div>
+            </aura:iteration>
+        </lightning:layout>
+        <aura:if isTrue="{!not(empty(v.productsList))}">
+            <div class="showAll">
+                <lightning:button class="ec_btn_secondary"
+                    label="{!$Label.c.EC_Home_PurchasedProduct_ViewAllOrdersButton}"
+                    title="{!$Label.c.EC_Home_PurchasedProduct_ViewAllOrdersButton}" onclick="{!c.viewAllOrders}" />
+            </div>
+        </aura:if>
+    </div>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Employment Level --></label>
+    <name>ccrz__Employment_Level__c</name>
+    <picklistValues>
+        <masterLabel>Director</masterLabel>
+        <translation>取締役</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Executive</masterLabel>
+        <translation>エグゼクティブ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Foreman</masterLabel>
+        <translation>現場監督</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manager</masterLabel>
+        <translation>マネージャ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Owner</masterLabel>
+        <translation>所有者</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Staff/Union Member</masterLabel>
+        <translation>スタッフ/組合員</translation>
+    </picklistValues>
+</CustomFieldTranslation>

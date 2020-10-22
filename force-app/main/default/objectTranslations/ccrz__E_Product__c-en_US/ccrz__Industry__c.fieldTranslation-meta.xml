@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Industry --></label>
+    <name>ccrz__Industry__c</name>
+    <picklistValues>
+        <masterLabel>Aerospace</masterLabel>
+        <translation><!-- Aerospace --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chemical</masterLabel>
+        <translation><!-- Chemical --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Construction</masterLabel>
+        <translation><!-- Construction --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DOD</masterLabel>
+        <translation><!-- DOD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DOE</masterLabel>
+        <translation><!-- DOE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Electric Utility</masterLabel>
+        <translation><!-- Electric Utility --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Energy</masterLabel>
+        <translation><!-- Energy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Engineering</masterLabel>
+        <translation><!-- Engineering --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Government</masterLabel>
+        <translation><!-- Government --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hydro Energy</masterLabel>
+        <translation><!-- Hydro Energy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manufacturing</masterLabel>
+        <translation><!-- Manufacturing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maritime</masterLabel>
+        <translation><!-- Maritime --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mining</masterLabel>
+        <translation><!-- Mining --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nuclear Energy</masterLabel>
+        <translation><!-- Nuclear Energy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Oil &amp; Gas</masterLabel>
+        <translation><!-- Oil &amp; Gas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pulp &amp; Paper</masterLabel>
+        <translation><!-- Pulp &amp; Paper --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Railroad</masterLabel>
+        <translation><!-- Railroad --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shipbuilding</masterLabel>
+        <translation><!-- Shipbuilding --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Telecommunication</masterLabel>
+        <translation><!-- Telecommunication --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transportation</masterLabel>
+        <translation><!-- Transportation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Utilities</masterLabel>
+        <translation><!-- Utilities --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wind Energy</masterLabel>
+        <translation><!-- Wind Energy --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

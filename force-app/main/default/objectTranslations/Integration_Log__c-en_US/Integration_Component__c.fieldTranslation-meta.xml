@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- integration component - for eg Service Request, Order Submit etc --></help>
+    <label><!-- Integration Component --></label>
+    <name>Integration_Component__c</name>
+    <picklistValues>
+        <masterLabel>Service Request</masterLabel>
+        <translation><!-- Service Request --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

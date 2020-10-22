@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>EC_ExceptionMessage__c</columns>
+    <columns>EC_MethodName__c</columns>
+    <columns>EC_ClassName__c</columns>
+    <columns>EC_SourceTable__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>EC_MethodName__c</field>
+        <operation>equals</operation>
+        <value>userInsert</value>
+    </filters>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

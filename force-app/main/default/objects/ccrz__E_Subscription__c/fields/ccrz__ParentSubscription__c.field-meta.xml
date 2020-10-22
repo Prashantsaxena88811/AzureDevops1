@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__ParentSubscription__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>If this subscription has a parent subscription, this will point to it</description>
+    <externalId>false</externalId>
+    <label>Parent Subscription</label>
+    <referenceTo>ccrz__E_Subscription__c</referenceTo>
+    <relationshipLabel>CC Subscriptions</relationshipLabel>
+    <relationshipName>CCSubscriptions</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

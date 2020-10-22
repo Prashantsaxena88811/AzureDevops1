@@ -1,0 +1,120 @@
+<!--
+  
+  @Component Name     : EC_RequestForPortalAccess.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  VijayKumar          03/07/2019         As a registered customer he wants to view and select the portal 
+           								 access role best suited for him.
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" controller="EC_CaseCreationController" access="global">
+    <aura:attribute name="caseCreationResponse" type="String" description="" default="false" />
+    <aura:attribute name="roles" type="List" />
+    <aura:attribute name="currentRole" type="String" />
+    <aura:attribute name="selectRoleName" type="String" />
+    <aura:attribute name="requestBtn" type="Boolean" default="false"/>
+    <aura:attribute name="confirmBtn" type="Boolean" default="true"/>
+    <aura:attribute name="cancelBtn" type="Boolean" default="true"/>
+    <aura:attribute name="caseCreation" type="Boolean" default="true"/>
+    <aura:attribute name="payerportalpermission" type="Boolean" default="false" />
+     <aura:attribute name="caseType" type="Boolean" default="false"/>
+     <aura:attribute name="caseStatus" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.initialize}"/> 
+    <div class="portal-access">
+        <div class ="wrapper">
+            <div class="choose-your-profile">
+                <div class="slds-box midBox">{!$Label.c.EC_RequestPortalAccess_AccessInfo}</div>
+                <div class="profile-details">
+                    <aura:iteration items="{!v.roles}" var="role" indexVar="index">
+                        <div class="{!role.roleName == $Label.c.Payer ? 'slds-hide right-spacer':'right-spacer'}">
+                            <div class="{!role.isCurrent ? 'profile active_btn' : 'profile'}">
+                                <div class="user">
+                                    <aura:if isTrue="{!role.roleName == $Label.c.EC_Basic}">
+                                        <img src="{!$Resource.EC_Branding_Theme + '/images/icons/account_circle.svg'}" />
+                                    <aura:set attribute="else">
+                                        <img src="{!$Resource.EC_Branding_Theme + '/images/icons/supervisor_account.svg'}" />
+                                    </aura:set>    
+                                    </aura:if>
+                                </div>
+                                <div class="profile-name">{!role.roleName}</div>     
+                                <div class="profile-content">{!role.roleName == $Label.c.EC_Basic?$Label.c.EC_RequestPortalAccess_ProfileDesc:$Label.c.EC_RequestPortalAccess_ProfileDesc_Buyer} </div>
+                            
+                                    <aura:if isTrue="{!role.isCurrent}">
+                                    <lightning:button  aura:id="selectButton"  name="{!role.roleName}" class="ec_btn_secondary"
+                                                    label="{!$Label.c.EC_RequestPortalAccess_CurrentProfile}"
+                                                    title="{!$Label.c.EC_RequestPortalAccess_CurrentProfile}" disabled="{!v.caseCreation}" onclick="{!c.selectRole}" />
+                                    <div class="selected_btn"
+                                        onclick="{!c.selectRole}">
+                                        <i class="material-icons doneIcon">
+                                            done
+                                        </i>
+                                        <p>{!$Label.c.EC_RequestPortalAccess_CurrentProfile}</p>
+                                    </div>
+                                    <aura:set attribute="else">
+                                        
+                                        <lightning:button  aura:id="selectButton"  name="{!role.roleName}" class="ec_btn_secondary"
+                                                        label="{!$Label.c.EC_CaseCreation_Select}"
+                                                        title="{!$Label.c.EC_CaseCreation_Select}" onclick="{!c.selectRole}" />
+                                        <div  class="selected_btn"
+                                            onclick="{!c.selectRole}">
+                                            <i class="material-icons doneIcon">
+                                                done
+                                            </i>
+                                            <p>{!$Label.c.EC_RequestPortalAccess_Selected}</p>
+                                        </div>
+                                    </aura:set>
+                                </aura:if>
+                                
+                            </div>
+                        </div>
+                    </aura:iteration>
+                    <aura:if isTrue ="{!v.payerportalpermission}">
+                        <div class="right-spacer">
+                            <div class="{!v.caseType ? 'profile payer-permission request_success' : 'profile payer-permission'}" id="{!v.caseStatus ? 'request_success' : ''}">
+                                <div class="user">
+                                    <aura:if isTrue="{!v.caseStatus}">
+                                        <i class="material-icons check-icon">check_circle</i>                                
+                                        <aura:set attribute="else">
+                                            <aura:if isTrue="{!v.caseType}">
+                                                <i class="material-icons check-icon">check_circle</i>
+                                            <aura:set attribute="else">
+                                                <i class="material-icons key-icon">vpn_key</i>
+                                            </aura:set>    
+                                            </aura:if>
+                                        </aura:set>    
+                                    </aura:if>
+                                </div>
+                                
+                                <div class="profile-name">{!$Label.c.Payer_Permission}</div>     
+                                <div class="profile-content">{!$Label.c.RequestPortalAccess_PayerPermission}</div>
+                                <aura:if isTrue="{!v.caseStatus}">
+                                    <lightning:button class="ec_btn_primary request_sent" label="{!$Label.c.Payer_Request_Complete}" title="{!$Label.c.Payer_Request_Complete}" disabled="true"/>
+                                    <aura:set attribute="else">
+                                        <aura:if isTrue="{!v.caseType}">
+                                            <lightning:button class="ec_btn_primary request_sent" label="{!$Label.c.Request_Sent}" title="{!$Label.c.Request_Sent}" disabled="true"/>
+                                            <aura:set attribute="else">
+                                                <lightning:button  aura:id="selectButton1"  name="{!$Label.c.Request_Payer_Permission}" class="ec_btn_primary payer_rquest"
+                                                              label="{!$Label.c.Request_Payer_Permission}"
+                                                              title="{!$Label.c.Request_Payer_Permission}"  onclick="{!c.createCasePayer}" disabled="{!v.requestBtn}"/>
+                                            </aura:set>    
+                                        </aura:if>
+                                    </aura:set>    
+                                </aura:if>
+                            </div>
+                        </div>
+                	</aura:if>      
+                </div>
+            </div>
+			<div class="btn-container">
+                <lightning:button name = "{!role}" class="ec_btn_primary" label="{!$Label.c.EC_RequestPortalAccess_Confirm}" title="{!$Label.c.EC_CaseCreation_Select}" onclick="{!c.createCase}" disabled="{!v.confirmBtn}"/>
+                <aura:if isTrue="{!v.caseCreation}">
+                <lightning:button name = "{!role}" class="ec_btn_secondary" label="{!$Label.c.EC_RequestPortalAccess_Cancel}" title="CANCEL"  onclick="{!c.cancelCase}"/>
+                </aura:if>
+            </div>
+            
+            
+        </div>
+    </div>
+</aura:component>

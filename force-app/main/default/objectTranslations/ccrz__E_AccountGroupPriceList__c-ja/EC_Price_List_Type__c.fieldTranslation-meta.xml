@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Price List Type --></label>
+    <name>EC_Price_List_Type__c</name>
+    <picklistValues>
+        <masterLabel>Z1CP</masterLabel>
+        <translation><!-- Z1CP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z1GP</masterLabel>
+        <translation><!-- Z1GP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z1LS</masterLabel>
+        <translation><!-- Z1LS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z1MP</masterLabel>
+        <translation><!-- Z1MP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZF00</masterLabel>
+        <translation><!-- ZF00 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZFCP</masterLabel>
+        <translation><!-- ZFCP --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

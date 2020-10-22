@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>この商品の測定単位の表示ラベル。可能なパラメータとして積み上げ価格設定表示に使用されます。</help>
+    <label><!-- Unit Of Measure Label --></label>
+    <name>ccrz__UnitOfMeasureLabel__c</name>
+</CustomFieldTranslation>

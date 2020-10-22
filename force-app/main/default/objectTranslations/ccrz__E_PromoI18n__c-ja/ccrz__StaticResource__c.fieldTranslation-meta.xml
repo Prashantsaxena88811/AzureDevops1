@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>1. 登録者組織で定義された静的リソースには「c__」のプレフィックスを使用します
+2. プレフィックスのない StaticResource は、管理パッケージ内の静的リソースを参照します</help>
+    <label><!-- Static Resource --></label>
+    <name>ccrz__StaticResource__c</name>
+</CustomFieldTranslation>

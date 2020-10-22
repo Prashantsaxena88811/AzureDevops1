@@ -1,0 +1,2 @@
+<apex:page controller="EC_PunchoutController" action="{!redirectToPunchoutLogin}" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" cache="false" applyHtmlTag="false">
+</apex:page>

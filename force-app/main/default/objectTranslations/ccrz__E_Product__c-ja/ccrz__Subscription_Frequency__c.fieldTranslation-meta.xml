@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>この商品の注文品目に対して注文が行われる頻度を日数で決定します (7 = 毎週、14 = 隔週、30 = 毎月、60 = 隔月、365 = 毎年)</help>
+    <label><!-- Subscription Frequency --></label>
+    <name>ccrz__Subscription_Frequency__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__SplitSource__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>When an order is split this field represents the source order item from which this order item originated.</description>
+    <externalId>false</externalId>
+    <label>Split Source</label>
+    <referenceTo>ccrz__E_OrderItem__c</referenceTo>
+    <relationshipLabel>Split Items</relationshipLabel>
+    <relationshipName>ItemSplits</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

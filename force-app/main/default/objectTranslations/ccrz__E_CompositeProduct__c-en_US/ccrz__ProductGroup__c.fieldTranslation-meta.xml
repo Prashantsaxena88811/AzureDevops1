@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Maps this component to a related product grouping.  This is primarily utilized in the case of dynamic kits, where the composite products are grouped together into separate steps or sections. --></help>
+    <label><!-- Product Group --></label>
+    <name>ccrz__ProductGroup__c</name>
+    <relationshipLabel><!-- CC Composite Products --></relationshipLabel>
+</CustomFieldTranslation>

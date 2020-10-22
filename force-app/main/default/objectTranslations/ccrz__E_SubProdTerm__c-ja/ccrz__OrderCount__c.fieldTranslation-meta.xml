@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>このサブスクリプションの一部として発注/配送する注文の数。</help>
+    <label><!-- Order Count --></label>
+    <name>ccrz__OrderCount__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>価格グループの分類。契約、アップグレードなどの値が含まれます。</help>
+    <label><!-- Group Type --></label>
+    <name>ccrz__GroupType__c</name>
+</CustomFieldTranslation>

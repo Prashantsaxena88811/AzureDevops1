@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Retry Batch Class --></help>
+    <label><!-- Retry Batch Class --></label>
+    <name>Retry_Batch_Class__c</name>
+</CustomFieldTranslation>

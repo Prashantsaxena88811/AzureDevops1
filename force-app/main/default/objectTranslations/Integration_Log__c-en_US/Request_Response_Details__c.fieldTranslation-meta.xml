@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Request Response Details --></help>
+    <label><!-- Request Response Details --></label>
+    <name>Request_Response_Details__c</name>
+    <relationshipLabel><!-- Integration Logs --></relationshipLabel>
+</CustomFieldTranslation>

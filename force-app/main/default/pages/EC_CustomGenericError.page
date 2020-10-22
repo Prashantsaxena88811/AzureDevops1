@@ -1,0 +1,33 @@
+<apex:page id="EC_CustomGenericError" title="{!$Label.EC_Generic_Error}" sidebar="false" showHeader="false" docType="html-5.0" standardStylesheets="false" applyHtmlTag="false">
+    <apex:slds />
+    <apex:stylesheet value="{!URLFOR($Resource.EC_EcoLabs_Theme, 'css3/ecolab-styles.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.EC_EcoLabs_Theme, 'css3/footer.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.EC_Branding_Theme, 'css/theme.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.EC_ErrorPages, 'css3/styles.css')}"/>
+      
+    <div class="EC_ErrorPage slds-scope">
+        <!-- header -->
+        <c:EC_ErrorPageHeader />
+        <!-- error content -->
+        <div class="slds-grid error-wrapper">
+            <div class="slds-col slds-size_12-of-12">
+                <div class="errorFound">
+                    <div class="image slds-m-top_x-large">
+                        <span class="icon-wrapper">
+                            <i class="material-icons">info</i>
+                            <div class="errorHeading">{!$Label.EC_Generic_Error_Heading}</div>
+                            <div class="errorText">{!$Label.EC_Generic_Error_Text}</div>
+                        </span>
+                    </div>
+                </div>
+                <!-- back to home button -->
+                <div class="slds-size_1-of-1 slds-text-align_center"> 
+                    <a class="slds-button slds-button-max-size slds-button_brand slds-var-p-around_x-small slds-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_2-of-12 " href="/s/">{!$Label.EC_Error_Back_To_Homepage}</a>
+                </div>
+
+            </div>
+        </div>
+    <!-- footer -->
+    <c:EC_ErrorPageFooter />
+    </div>
+</apex:page>

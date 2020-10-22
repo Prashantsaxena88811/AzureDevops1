@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ship_To_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+        NOT(ISNULL(Account_Name2__c)|| ISBLANK(Account_Name2__c)) &amp;&amp;
+        NOT(ISNULL(Account_Name3__c) || ISBLANK(Account_Name3__c)) &amp;&amp;
+        NOT(ISNULL(Account_Name4__c) || ISBLANK(Account_Name4__c) ),
+        Account_Name2__c+&apos;, &apos;+Account_Name3__c+&apos;, &apos;+Account_Name4__c,
+                    IF( (ISNULL(Account_Name2__c)|| ISBLANK(Account_Name2__c)) &amp;&amp; (ISNULL(Account_Name3__c) || ISBLANK(Account_Name3__c)),
+                                 Account_Name4__c,
+                                  IF(( ISNULL(Account_Name3__c)|| ISBLANK(Account_Name3__c)) &amp;&amp; (ISNULL(Account_Name4__c) || ISBLANK(Account_Name4__c)),
+                                                    Account_Name2__c,
+                                                     IF((ISNULL(Account_Name4__c)|| ISBLANK(Account_Name4__c)) &amp;&amp; (ISNULL(Account_Name2__c) || ISBLANK(Account_Name2__c)),
+                                                                    Account_Name3__c,
+                                                                     IF(ISNULL(Account_Name2__c)||ISBLANK(Account_Name2__c),
+                                                                                Account_Name3__c+&apos;, &apos;+Account_Name4__c,
+                                                                                     IF(ISNULL(Account_Name3__c) || ISBLANK(Account_Name3__c),
+                                                                                                    Account_Name2__c+&apos;, &apos;+Account_Name4__c,
+                                                                                                     IF(ISNULL(Account_Name4__c) || ISBLANK(Account_Name4__c),
+                                                                                                                    Account_Name2__c+&apos;, &apos;+Account_Name3__c,&apos;&apos;
+                                                                                                          )
+                                                                                          )
+                                                                                    )
+                                                          )
+                                          )
+                      )
+            )</formula>
+    <label>Ship To Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

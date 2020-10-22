@@ -1,0 +1,86 @@
+<messaging:emailTemplate subject="{!$Label.EC_UserRoleApproval_Subject}" renderUsingSystemContextWithoutSharing="True" recipientType="User" relatedToType="Case">
+<messaging:htmlEmailBody >
+
+<html>
+<head>
+
+<meta charset="UTF-8" />
+
+
+</head>
+<body>
+
+<table width="600" style="font-family: Arial; font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.43; letter-spacing: normal; border-collapse: collapse; border-spacing: 0; margin: auto;max-width: 600px; width: 100%">
+<tr height="72">
+<td bgcolor="#007ac9" style="padding-left: 40px; padding-right: 20px;">
+<apex:image id="Logo" value="{!$Label.EC_Ecolab_Logo}" />
+</td>
+</tr>
+
+<tr class="mid_row" bgcolor="#f8f8f8" height="57">
+
+<td style="font-size: 24px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: normal; color: #005172; padding: 31px 20px 34px 40px;">Hi {!relatedTo.EC_SalesRepName__c},<br/>There has been an update to your customer account using connect.ecolab.com</td>
+</tr>
+<tr bgcolor="#f8f8f8" height="40" class="otherdetails">
+<td style="text-align:left;padding-bottom: 15px;padding-left: 6%;">The individual below has registered on connect.ecolab.com as a buyer on one of your accounts, which means they will be able to make purchases for that account.
+</td>
+</tr>
+<tr bgcolor="#f8f8f8" class="otherdetails">
+<td class="userdetails" style="padding: 0px 0px 24px;">
+<table class="inner_table" height="136" width="395" align="center" style="font-family: Arial; font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.43; letter-spacing: normal; border-collapse: collapse; border-spacing: 0; margin: auto; border: 1px solid #007ac9; width: 395px" bgcolor="#fff">
+<tr class="inner_first">
+<td class="first_column" style="padding: 16px 0px 24px 23px;display:inline-block;"><b>User Name:</b></td>
+<td style="color: #007ac9; padding: 16px 0px 24px 8px;display:inline-block;">{!relatedTo.EC_User__r.Name}</td>
+</tr>
+<tr>
+<td class="first_column" style="padding: 0px 0px 24px 23px;display:inline-block;"><b>User Email:</b></td>
+<td style="color: #007ac9; padding: 0px 0px 24px 8px;display:inline-block;">{!relatedTo.ContactEmail}</td>
+</tr>
+<tr>
+<td class="first_column" style="padding: 0px 0px 24px 23px;display:inline-block;"><b>Account Name:</b></td>
+<td style="color: #007ac9; padding: 0px 0px 24px 8px;display:inline-block;">{!relatedTo.Account.Name}</td>
+</tr>
+<tr>
+<td class="first_column" style="padding: 0px 0px 24px 23px;display:inline-block;"><b>Account Number:</b></td>
+<td style="color: #007ac9; padding: 0px 0px 24px 8px;display:inline-block;">{!relatedTo.Account.EC_Account_Number__c}</td>
+</tr>
+<tr class="inner_last">
+<td class="first_column" style="padding: 0px 0px 24px 23px;display:inline-block;"><b>Profile Type:</b></td>
+<td style="color: #007ac9; padding: 0px 0px 24px 8px;display:inline-block;">{!relatedTo.EC_PortalAccessRole__c}</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr bgcolor="#f8f8f8" class="otherdetails_below">
+<td style="padding-left: 40px; padding-right: 20px; padding-bottom: 28px;">If you need to remove or modify this user, <a href="https://ecolab.service-now.com/sp/" target="_blank" style="color: #007ac9;">open a ticket in IT Help Center</a> and include: "Adjust user on Connect.Ecolab.com”. Or call Digital Support 1-866-851-8670.
+</td>
+</tr>
+<tr class="green_hr" style="width: 596px; height: 7px;" bgcolor="#5b8f22">
+<td style="padding-left: 40px; padding-right: 20px;"></td>
+</tr>
+<tr bgcolor="#007ac9" class="footer_row">
+<td style="padding-left: 20px; padding-right: 20px;padding-top: 16px; ;color: #ffffff; font-size: 14px;" align="center"><b>ECOLAB</b></td>
+</tr>
+<tr bgcolor="#007ac9" class="footer_row">
+<td style="padding-left: 20px; padding-right: 20px; color: #ffffff; font-size: 14px;" align="center">Global Headquarters</td>
+</tr>
+<tr bgcolor="#007ac9" class="footer_row">
+<td style="padding-left: 20px; padding-right: 20px; color: #ffffff; font-size: 14px;" align="center">1 Ecolab Place, St. Paul MN 55102</td>
+</tr>
+<tr bgcolor="#007ac9" class="footer_row">
+<td style="padding-left: 20px; padding-right: 20px; color: #ffffff; font-size: 14px;" align="center">{!$Label.EC_Footer_VisitWebsiteContent}</td>
+</tr>
+<tr bgcolor="#007ac9" class="footer_second">
+<td style="padding-left: 20px; padding-right: 20px; padding-top: 16px; font-size: 12px; color: #ffffff;" align="center">
+<a href="mailto:" style="color: #ffffff;">Forward Email</a> | <a href="https://en-in.ecolab.com/privacy-policy" target="_blank" style="color: #ffffff;">Privacy Policy</a>
+</td>
+</tr>
+<tr bgcolor="#007ac9" class="footer_third" style="font-size: 12px; color: #ffffff;" align="center">
+<td style="padding-left: 20px; padding-right: 20px;padding-bottom: 24px;">{!$Label.EC_Footer_CopyrightContent}</td>
+</tr>
+
+</table>
+</body>
+</html>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

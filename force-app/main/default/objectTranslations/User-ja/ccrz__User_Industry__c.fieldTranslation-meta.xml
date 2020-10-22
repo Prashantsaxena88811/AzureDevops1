@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- User Industry --></label>
+    <name>ccrz__User_Industry__c</name>
+    <picklistValues>
+        <masterLabel>Academic research</masterLabel>
+        <translation>学術研究</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OEM-Reseller</masterLabel>
+        <translation>OEM 再販業者</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>commercial</masterLabel>
+        <translation>商業</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>government</masterLabel>
+        <translation>政府機関</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>other</masterLabel>
+        <translation>その他</translation>
+    </picklistValues>
+</CustomFieldTranslation>

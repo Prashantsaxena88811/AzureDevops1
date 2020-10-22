@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Determines when the subscription ends, or if the this subscription is set to auto renew, then the subscription end date is extended. --></help>
+    <label><!-- Subscription End Date --></label>
+    <name>ccrz__Subscription_End_Date__c</name>
+</CustomFieldTranslation>

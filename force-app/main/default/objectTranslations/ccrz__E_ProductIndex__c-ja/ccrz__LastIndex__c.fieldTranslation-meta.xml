@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>この項目は、一括処理ジョブの作成中に追跡目的でのみ使用されます。</help>
+    <label><!-- Last Index --></label>
+    <name>ccrz__LastIndex__c</name>
+</CustomFieldTranslation>

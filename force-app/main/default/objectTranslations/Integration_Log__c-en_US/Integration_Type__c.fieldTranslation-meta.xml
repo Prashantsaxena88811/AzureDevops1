@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Integration from and To --></help>
+    <label><!-- Integration Type --></label>
+    <name>Integration_Type__c</name>
+    <picklistValues>
+        <masterLabel>SFDC_To_TIBCO</masterLabel>
+        <translation><!-- SFDC_To_TIBCO --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

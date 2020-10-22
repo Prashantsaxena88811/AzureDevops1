@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Spec__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Reference to the specification object</description>
+    <externalId>false</externalId>
+    <label>Spec</label>
+    <referenceTo>ccrz__E_Spec__c</referenceTo>
+    <relationshipLabel>Product Specs</relationshipLabel>
+    <relationshipName>Product_Specs</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

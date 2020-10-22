@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__PageName__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Name of the page to which this section corresponds</description>
+    <externalId>false</externalId>
+    <label>Page Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cart</fullName>
+                <default>false</default>
+                <label>Cart</label>
+            </value>
+            <value>
+                <fullName>CheckoutNew</fullName>
+                <default>false</default>
+                <label>CheckoutNew</label>
+            </value>
+            <value>
+                <fullName>HomePage</fullName>
+                <default>false</default>
+                <label>HomePage</label>
+            </value>
+            <value>
+                <fullName>MyAccount</fullName>
+                <default>false</default>
+                <label>MyAccount</label>
+            </value>
+            <value>
+                <fullName>OrderConfirmation</fullName>
+                <default>false</default>
+                <label>OrderConfirmation</label>
+            </value>
+            <value>
+                <fullName>OrderView</fullName>
+                <default>false</default>
+                <label>OrderView</label>
+            </value>
+            <value>
+                <fullName>ProductDetails</fullName>
+                <default>false</default>
+                <label>ProductDetails</label>
+            </value>
+            <value>
+                <fullName>Products</fullName>
+                <default>false</default>
+                <label>Products</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

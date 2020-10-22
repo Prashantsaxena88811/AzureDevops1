@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Selected Unloading Point --></label>
+    <name>Default_Unloading_Point__c</name>
+    <relationshipLabel><!-- CC Carts (Default Unloading Point) --></relationshipLabel>
+</CustomFieldTranslation>

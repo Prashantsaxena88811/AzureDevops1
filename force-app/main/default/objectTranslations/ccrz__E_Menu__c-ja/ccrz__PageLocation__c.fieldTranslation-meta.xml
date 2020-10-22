@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Page Location --></label>
+    <name>ccrz__PageLocation__c</name>
+    <picklistValues>
+        <masterLabel>All Pages</masterLabel>
+        <translation>すべてのページ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Category Landing Page</masterLabel>
+        <translation>カテゴリランディングページ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Landing Page</masterLabel>
+        <translation>ランディングページ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order Confirmation</masterLabel>
+        <translation>注文確認</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order Review</masterLabel>
+        <translation>注文の確認</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Detail</masterLabel>
+        <translation>商品詳細</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product List Page</masterLabel>
+        <translation>商品リストページ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shopping Cart</masterLabel>
+        <translation>ショッピングカート</translation>
+    </picklistValues>
+</CustomFieldTranslation>

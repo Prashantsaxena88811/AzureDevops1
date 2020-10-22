@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Determines if this product is available as a subscription --></help>
+    <label><!-- Is Subscription Available --></label>
+    <name>ccrz__Is_Subscription_Available__c</name>
+</CustomFieldTranslation>

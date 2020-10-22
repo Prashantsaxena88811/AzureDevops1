@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Set to true if this product is a subscription and is set to auto renew.  Set to false if otherwise. --></help>
+    <label><!-- Is Subscription Auto Renewal --></label>
+    <name>ccrz__Is_Subscription_Auto_Renewal__c</name>
+</CustomFieldTranslation>

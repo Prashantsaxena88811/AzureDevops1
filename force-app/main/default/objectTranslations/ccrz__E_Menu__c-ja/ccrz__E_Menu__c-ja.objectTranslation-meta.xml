@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CC メニュー</value>
+    </caseValues>
+    <layouts>
+        <layout>CC Menu Layout</layout>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>リンク</label>
+            <section>Link</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>CC メニュー自動採番</nameFieldLabel>
+</CustomObjectTranslation>

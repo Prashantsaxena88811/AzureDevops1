@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Tab --></label>
+    <name>ccrz__Tab__c</name>
+    <picklistValues>
+        <masterLabel>Additional Information</masterLabel>
+        <translation>追加情報</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Items Included</masterLabel>
+        <translation>含まれる品目</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ItemsIncluded</masterLabel>
+        <translation>ItemsIncluded</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Info</masterLabel>
+        <translation>商品情報</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Resources</masterLabel>
+        <translation>リソース</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Resources and Additional Information</masterLabel>
+        <translation>リソースおよび追加情報</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shipping Info</masterLabel>
+        <translation>配送情報</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ShippingInfo</masterLabel>
+        <translation>ShippingInfo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Specifications</masterLabel>
+        <translation>仕様</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Why Buy This</masterLabel>
+        <translation>この購入理由</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Why Buy this Product</masterLabel>
+        <translation>この商品の購入理由</translation>
+    </picklistValues>
+</CustomFieldTranslation>

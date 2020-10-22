@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- External Id &amp; Unique Identifier to uniquely identify Site Index records. --></help>
+    <label><!-- Site Index Id --></label>
+    <name>ccrz__SiteIndexId__c</name>
+</CustomFieldTranslation>

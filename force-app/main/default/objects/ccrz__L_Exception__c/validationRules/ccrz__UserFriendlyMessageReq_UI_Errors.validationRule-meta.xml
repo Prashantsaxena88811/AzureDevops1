@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__UserFriendlyMessageReq_UI_Errors</fullName>
+    <active>true</active>
+    <description>A user friendly message is required, when the message needs to be displayed in the UI</description>
+    <errorConditionFormula>AND ( ccrz__Show_EndUser__c , 
+            OR (
+                      ISBLANK( ccrz__User_Friendly_Message__c )
+                    , ISNULL( ccrz__User_Friendly_Message__c )
+                 )
+   )</errorConditionFormula>
+    <errorDisplayField>ccrz__User_Friendly_Message__c</errorDisplayField>
+    <errorMessage>User friendly message is required, if show end user flag is set to true</errorMessage>
+</ValidationRule>

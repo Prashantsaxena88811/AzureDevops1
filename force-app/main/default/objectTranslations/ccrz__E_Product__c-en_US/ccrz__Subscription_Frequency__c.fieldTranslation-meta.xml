@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Determines the frequency of orders placed for any order items of this product in days.  (7 = Weekly, 14 = bi-weekly, 30 = monthly, 60 = bi-monthly, 365 = annually) --></help>
+    <label><!-- Subscription Frequency --></label>
+    <name>ccrz__Subscription_Frequency__c</name>
+</CustomFieldTranslation>

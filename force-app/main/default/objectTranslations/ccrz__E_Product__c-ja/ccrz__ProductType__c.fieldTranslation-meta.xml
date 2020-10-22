@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Product Type --></label>
+    <name>ccrz__ProductType__c</name>
+    <picklistValues>
+        <masterLabel>Accessories</masterLabel>
+        <translation>アクセサリ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Aggregated</masterLabel>
+        <translation>集約</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assembly</masterLabel>
+        <translation>アセンブリ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bundle</masterLabel>
+        <translation>バンドル</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Configurable</masterLabel>
+        <translation>設定可能</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coupon</masterLabel>
+        <translation>クーポン</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dynamic Kit</masterLabel>
+        <translation>動的キット</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kit</masterLabel>
+        <translation>キット</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plan</masterLabel>
+        <translation>計画</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PlanOptions</masterLabel>
+        <translation>PlanOptions</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product</masterLabel>
+        <translation>商品</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Training</masterLabel>
+        <translation>トレーニング</translation>
+    </picklistValues>
+</CustomFieldTranslation>

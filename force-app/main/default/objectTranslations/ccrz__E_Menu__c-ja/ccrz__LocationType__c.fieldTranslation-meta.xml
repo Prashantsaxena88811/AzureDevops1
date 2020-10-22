@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Location Type --></label>
+    <name>ccrz__LocationType__c</name>
+    <picklistValues>
+        <masterLabel>Footer</masterLabel>
+        <translation>フッター</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Header</masterLabel>
+        <translation>ヘッダー</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Left Nav</masterLabel>
+        <translation>左ナビゲーション</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Right Nav</masterLabel>
+        <translation>右ナビゲーション</translation>
+    </picklistValues>
+</CustomFieldTranslation>

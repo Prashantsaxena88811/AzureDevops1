@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The text used within meta tags on the product detail page to help drive search engine optimization. --></help>
+    <label><!-- SEO Keywords --></label>
+    <name>ccrz__SEOKeywords__c</name>
+</CustomFieldTranslation>

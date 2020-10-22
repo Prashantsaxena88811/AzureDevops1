@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Pricelist__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Mapping to the price list for this entry.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Mapping to the price list for this entry.</inlineHelpText>
+    <label>CC Price List</label>
+    <referenceTo>ccrz__E_PriceList__c</referenceTo>
+    <relationshipLabel>CC Price Group Pricelists</relationshipLabel>
+    <relationshipName>PriceGroupPricelists</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

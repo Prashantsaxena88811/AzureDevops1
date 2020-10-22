@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CC トランザクション支払</value>
+    </caseValues>
+    <layouts>
+        <layout>CC Transaction Payment Layout</layout>
+        <sections>
+            <label>請求書データ</label>
+            <section>Invoice Data</section>
+        </sections>
+        <sections>
+            <label>注文データ</label>
+            <section>Order Data</section>
+        </sections>
+        <sections>
+            <label>支払者データ</label>
+            <section>Payer Data</section>
+        </sections>
+        <sections>
+            <label>関連支払</label>
+            <section>Related Payments</section>
+        </sections>
+        <sections>
+            <label>サブスクリプションデータ</label>
+            <section>Subscription Data</section>
+        </sections>
+        <sections>
+            <label>トランザクションコメント</label>
+            <section>Transaction Comments</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>CC トランザクション支払名</nameFieldLabel>
+</CustomObjectTranslation>

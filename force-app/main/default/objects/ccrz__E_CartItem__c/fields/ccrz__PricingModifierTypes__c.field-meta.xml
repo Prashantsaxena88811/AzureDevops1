@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__PricingModifierTypes__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Semi-Colon delimited List of Modifier types that are affecting the pricing of this Cart Item</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Semi-Colon delimited List of Modifier types that are affecting the pricing of this Cart Item</inlineHelpText>
+    <label>Pricing Modifier Types</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Number of installments/payments billed for this subscription. --></help>
+    <label><!-- Installment Count --></label>
+    <name>ccrz__InstallmentCount__c</name>
+</CustomFieldTranslation>

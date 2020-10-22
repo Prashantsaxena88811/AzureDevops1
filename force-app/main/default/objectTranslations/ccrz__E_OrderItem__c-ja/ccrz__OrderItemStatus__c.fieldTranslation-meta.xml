@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Order Item Status --></label>
+    <name>ccrz__OrderItemStatus__c</name>
+    <picklistValues>
+        <masterLabel>Cancel Submitted</masterLabel>
+        <translation>キャンセル登録済み</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cancelled</masterLabel>
+        <translation>キャンセル</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>In Process</masterLabel>
+        <translation>処理中</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On Hold</masterLabel>
+        <translation>保留中</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order Submitted</masterLabel>
+        <translation>注文登録済み</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Partial Shipped</masterLabel>
+        <translation>一部発送済み</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Return Submitted</masterLabel>
+        <translation>返品登録済み</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Returned</masterLabel>
+        <translation>返品</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shipped</masterLabel>
+        <translation>発送済み</translation>
+    </picklistValues>
+</CustomFieldTranslation>

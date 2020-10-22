@@ -1,0 +1,688 @@
+<!--
+  @Component Name     : EC_AthenaOrderDetails.cmp
+  @Description        :
+  @Author             : Aravind Tallapaka
+  @Group              :
+  @Last Modified By   : Aravind Tallapaka
+  @Last Modified On   : 18/10/2019, 3:26:59 PM
+  @Modification Log   :
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    18/10/2019, 2:55:58 PM   	  Aravind Tallapaka              This page is used to show all the list of Athena orders
+                                      Raghu Varma             and products inside.
+-->
+<aura:component controller="EC_PastOrders"
+    implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable"
+    access="global">
+    <aura:attribute name="loaded" type="Boolean" default="true" />
+    <aura:attribute name="searchTypeOptions" type="List" access="PRIVATE" />
+    <aura:attribute name="searchTypeOrderNumber" type="String" access="PRIVATE" />
+    <aura:attribute name="sortByOptions" type="List" access="PRIVATE" />
+    <aura:attribute name="sortBy" type="String" access="PRIVATE" />
+    <aura:attribute name="searchType" type="String" access="PRIVATE" />
+    <aura:attribute name="Orders" type="List" access="PRIVATE" />
+    <aura:attribute name="OrderDetail" type="List" />
+    <aura:attribute name="ProductImage" type="Map" />
+    <aura:attribute name="DefaultImage" type="String" />
+    <aura:attribute name="order" type="Map" />
+    <aura:attribute name="invoice" type="Boolean" />
+    <aura:attribute name="showTabView" type="Boolean" default="false" />
+    <aura:attribute name="showDesktopView" type="Boolean" default="true" />
+    <aura:attribute name="showMobileView" type="Boolean" default="false" />
+    <aura:attribute name="viewMorestatus" type="Boolean" default="false" />
+    <aura:attribute name="isOnline" type="Boolean" />
+    <aura:attribute name="viewPrice" type="Boolean" />
+    <aura:attribute name="currentProductURL" type="String" />
+    <aura:attribute name="orderLineStatuses" type="List" />
+    <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:if isTrue="{!v.showDesktopView}">
+        <div class="order-wrapper">
+            <div class="summary1">
+                <table style="width:100%">
+                    <tr class="date-items-status">
+                        <td colspan="2">
+                            <label class="date">{!$Label.c.EC_Order_OrderSection_DateLabel}&nbsp;
+                                <!-- <span class="value">{!v.order.orderCreationDate}</span> -->
+                                <span class="order-date-format">
+                                    <lightning:formattedDateTime value="{!v.order.orderCreationDate}" timeZone="UTC" year="numeric" month="long" day="2-digit"/>
+                                </span>
+                            </label>
+                        </td>
+                        <td>
+                            <label class="itemCount">{!$Label.c.EC_Order_OrderSection_ItemsLabel}&nbsp;
+                                <span class="value">{!v.order.orderLineCount}</span>
+                            </label>
+                        </td>
+                        <td colspan="2">
+                            <label class="status">{!$Label.c.EC_Order_OrderSection_StatusLabel}</label>
+                        </td>
+                    </tr>
+                    <tr class="numbers-collabpsable">
+                        <td width="394px">
+                            <label class="orderNo">{!$Label.c.EC_Order_OrderSection_OrderNoLabel}&nbsp;
+                                <span class="value">{!v.order.orderNum}</span>
+                            </label>
+                        </td>
+                        <td width="385px">
+                            <label class="accountNo">{!$Label.c.EC_Order_OrderSection_AccountNoLabel}&nbsp;
+                                <span class="value">{!v.order.orderShipToNumber}</span>
+                            </label>
+                        </td>
+
+                        <td width="405px">
+                            <!--<aura:if isTrue="{!v.viewPrice}">
+                                <label class="accountNo">{!$Label.c.EC_Order_OrderSection_PriceLabel}&nbsp;
+                                    <span class="value">${!v.order.totalPrice}</span>
+                                </label>
+                            </aura:if>-->
+                        </td>
+
+                        <td width="340px">
+                            <div class="{!'status ' + v.order.orderStage}">{!v.order.orderStage}</div>
+                        </td>
+                        <td class="viewMore" id="{!v.viewMorestatus}" data-row="{!idx}">
+                            <lightning:button onclick="{!c.showProducts}"
+                                label="{!$Label.c.EC_Order_OrderSection_ViewMoreButton}" value="{!v.order}" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="summary2">
+                <div class="left">
+                    <!--<label class="placedBy">{!$Label.c.EC_Order_OrderSection_PlacedByLabel}&nbsp;
+                        <span class="value">{!v.order.placedBy}</span>
+                    </label>-->
+                    <label class="poNumber">{!$Label.c.EC_Order_OrderSection_POLabel}&nbsp;
+                        <span class="value">{!v.order.orderCustomerPO}</span>
+                    </label>
+                </div>
+                <div class="right">
+
+                    <!--   <aura:if isTrue="{!v.invoice}">
+                    <label class="invoice" data-order="{!v.order.orderId}" onclick="{!c.viewInvoice}"><i class="material-icons">file_copy</i>{!$Label.c.EC_Order_OrderSection_ViewInvoiceButton}</label>
+                    </aura:if>
+                     <label class="shipment"><i class="material-icons">local_shipping</i>{!$Label.c.EC_Order_OrderSection_ViewShipmentsButton}</label>  -->
+                    <!--Commented For Salesrep User -->
+                    <aura:if isTrue="{!v.isOnline}">
+                    <lightning:button class="ec_btn_primary" label="{!$Label.c.EC_Order_OrderSection_ReorderButton}"
+                        title="{!$Label.c.EC_Order_OrderSection_ReorderButton}" onclick="{!c.addItemToCart}"
+                        value="{!v.order}" />
+
+                        </aura:if>
+                </div>
+            </div>
+
+            <div id="{!v.order.orderNum}" class="productList slds-hide">
+                <div class="slds-grid">
+                    <div class="productlist-container">
+                        <div class="shipping-billing-address">
+
+                            <div class="empty-columns-spacer">
+
+                            </div>
+                            <div class="shipping-address">
+                                <div class="address-heading">
+                                    <span>
+                                        <i class="material-icons icon-color">room</i>
+                                    </span>
+                                   {!$Label.c.EC_OrderDetails_ShippingAddress}:
+                                </div>
+                                    
+                                <div class="value"> 
+                                    <div class="shipToName">{!$Label.c.EC_OrderDetails_ShipToName}:
+                                        <span class="val">{!v.order.orderShipToName}/{!v.order.orderShipToNumber}</span>
+                                    </div>
+                                    <aura:unescapedHtml value="{!v.order.shipToAddress}" />
+                                </div>
+                            </div>
+                            <!--<div class="billing-address">
+                                <div class="address-heading">
+                                    <span>
+                                        <i class="material-icons icon-color">file_copy</i>
+                                    </span>
+
+                                    	{!$Label.c.EC_OrderDetails_BillingAddress}:
+
+                                </div>
+                                <div class="value">
+                                    <aura:unescapedHtml value="{!v.order.billToAddress}" />
+                                </div>
+                            </div>-->
+                        </div>
+
+
+                        <aura:iteration items="{!v.order.orderLineItems}" var="orderDtl" indexVar="indx">
+
+                            <div class="product-list-data">
+                                <div class="image">
+                                    <aura:if isTrue="{!orderDtl.ProdImg}">
+                                        <img src="{!orderDtl.ProdImg}" onerror="{!c.imageError}" />
+                                        <aura:set attribute="else">
+                                            <img src="{!$Resource.EC_Branding_Theme + '/images/product.png'}" />
+                                        </aura:set>
+                                    </aura:if>
+
+                                </div>
+                                <div class="product-data">
+                                    <div class="product-details">
+                                        <div class="product-name"><a href="{!orderDtl.PrdDetUrl}"
+                                                target="_blank">{!orderDtl.orderLineMaterialName}</a></div>
+                                        <div class="prod-desc">
+                                            <span>{!$Label.c.EC_OrderDetails_ProductCode}:</span> <span class="value">{!orderDtl.orderLineMaterialNum}</span>
+
+                                            <span class="spacer">|</span> <span
+                                                class="no-of-products">{!orderDtl.orderLineMaterialUoM}</span>
+                                            <aura:if isTrue="{!v.viewPrice}">
+                                                <div class="price">
+                                                    <!--<label class="dollar">{!$Label.c.EC_Dollar}{!orderDtl.Dollars}</label>-->
+                                                     <label class="cent">{!orderDtl.Cents}</label>
+                                                  <!--  ${!orderDtl.UnitPrice} -->
+                                                </div>
+                                            </aura:if>
+                                        </div>
+                                    </div>
+                                    <div class="shipped-on slds-hide">
+                                        <span class="spacer">|</span>
+                                        <span>{!$Label.c.EC_OrderDetails_ShippedOn}:</span> <span class="shipped-date">Jan24, 2019</span>
+                                    </div>
+                                    <div class="quantity-value">
+                                        <div>{!$Label.c.EC_OrderDetails_TotalQuantity}: <span class="value"><ui:outPutNumber aura:id="myNumberFormat" format="0" value="{!orderDtl.orderLineQuantity}"/></span>
+                                        </div>
+                                        <aura:if isTrue="{!v.viewPrice}">
+                                            <!--<div class="slds-m-top_small">{!$Label.c.EC_OrderDetails_Price}: <span
+                                                    class="value">${!orderDtl.totalPrice} </span></div>-->
+                                        </aura:if>
+                                    </div>
+                                    <aura:iteration items="{!v.orderLineStatuses}" var="lineStatus" indexVar="lineStatusInd">
+                                        <aura:if isTrue="{!lineStatusInd == indx}">
+                                            <div class="inline-status">
+                                                <label>{!$Label.c.EC_Order_OrderSection_LineStatusLabel}: </label>
+                                                <div class="{!'statusvalue ' + lineStatus}">{!lineStatus}</div>
+
+                                                <!--fourkites shipment tracking-->
+                                                <aura:if isTrue="{!orderDtl.deliveryExist == 'Y'}">
+                                                    <aura:if isTrue="{!and(orderDtl.deliveries != null,orderDtl.deliveries.length != 0)}">
+                                                        <aura:if isTrue="{!orderDtl.deliveries[0].trackUrl != null}">
+                                                            <div class="tracking">
+                                                            <div class="track-shipment">
+                                                                <img src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-local-shipping.svg'}" alt="icon" width="24" height="24"/>
+                                                                <lightning:button variant="base"
+                                                                                  label="{!$Label.c.EC_OrderDetails_TrackShipment}"
+                                                                                  title="{!$Label.c.EC_OrderDetails_TrackShipment}"
+                                                                                  onclick="{! c.openModel }" />
+                                                            </div>
+                                                            
+                                                            <!--Use aura:if tag to display/hide popup based on isModalOpen value-->  
+                                                            <aura:if isTrue="{!v.isModalOpen}">
+                                                                 
+                                                                <!-- Modal/Popup Box starts here-->
+                                                                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" 
+                                                                         class="slds-modal slds-fade-in-open slds-modal_medium">
+                                                                    <div class="slds-modal__container">
+                                                                        <!-- Modal/Popup Box Header Starts here-->
+                                                                        <header class="slds-modal__header">
+                                                                            <lightning:buttonIcon iconName="utility:close"
+                                                                                                  onclick="{! c.closeModel }"
+                                                                                                  alternativeText="close"
+                                                                                                  variant="bare-inverse"
+                                                                                                  class="slds-modal__close"/>
+                                                                        </header>
+                                                                        <!--Modal/Popup Box Body Starts here-->
+                                                                        <iframe src="{!orderDtl.deliveries[0].trackUrl}" width="100%" height="85%" frameBorder="0"/>
+                                                                    </div>
+                                                                </section>
+                                                                <div class="slds-backdrop slds-backdrop_open"></div>
+                                                            </aura:if>
+                                                        </div>
+                                                        </aura:if>
+                                                    </aura:if>
+                                                </aura:if>
+                                            </div>
+                                        </aura:if>
+                                    </aura:iteration>
+                                    <aura:if isTrue="{!not(empty(orderDtl.ProdSDSURI))}">
+                                        <div class="document-container slds-m-top_x-large">
+                                            <aura:iteration items="{!orderDtl.ProdSDSURI}" var="sdsURI" indexVar="indx">
+                                                <div class="doc-info slds-float_right slds-m-bottom_xxx-small">
+                                                    <span class="doc-name slds-m-right_x-small">SDS Document</span>
+                                                    <span class="doc-url">
+                                                        <i class="material-icons">
+                                                            <a href="{!sdsURI}" target="_blank">open_in_new</a>
+                                                        </i>
+                                                    </span>
+                                                </div>
+                                            </aura:iteration>
+                                        </div>
+                                    </aura:if>
+                                </div>
+
+                            </div>
+                        </aura:iteration>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!v.showTabView}">
+        <div class="order-wrapper">
+            <div class="summary1">
+                <table style="width:100%">
+                    <tr class="date-items-status">
+                        <td>
+                            <label class="date">{!$Label.c.EC_Order_OrderSection_DateLabel}&nbsp;
+                                <!-- <span class="value">{!v.order.orderCreationDate}</span> -->
+                                <span class="order-date-format">
+                                    <lightning:formattedDateTime value="{!v.order.orderCreationDate}" timeZone="UTC" year="numeric" month="long" day="2-digit"/>
+                                </span>
+                            </label>
+                        </td>
+                        <td>
+                            <label class="accountNo">{!$Label.c.EC_Order_OrderSection_AccountNoLabel}&nbsp;
+                                <span class="value">{!v.order.orderShipToNumber}</span>
+                            </label>
+                        </td>
+                        <td class="right">
+                            <!--<aura:if isTrue="{!v.viewPrice}">1111
+                                <label class="accountNo">{!$Label.c.EC_Order_OrderSection_PriceLabel}&nbsp;
+                                    <span class="value">${!v.order.totalPrice}</span>
+                                </label>
+                            </aura:if>-->
+                        </td>
+
+                    </tr>
+                    <tr class="numbers-collabpsable">
+                        <td>
+                            <label class="orderNo">{!$Label.c.EC_Order_OrderSection_OrderNoLabel}&nbsp;
+                                <span class="value">{!v.order.orderNum}</span>
+                            </label>
+                        </td>
+                        <td colspan="2">
+                            <label class="itemCount">{!$Label.c.EC_Order_OrderSection_ItemsLabel}&nbsp;
+                                <span class="value">{!v.order.orderLineCount}</span>
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+                <span class="seperator"></span>
+                <div class="viewmore-price">
+                    <span class="status">
+                        <label>{!$Label.c.EC_Order_OrderSection_StatusLabel}</label>
+                        <span class="{!'value ' + v.order.orderStage}">{!v.order.orderStage}</span>
+                    </span>
+                    <span class="viewMore" id="{!v.viewMorestatus}" data-row="{!idx}">
+                        <lightning:button onclick="{!c.showProducts}"
+                            label="{!$Label.c.EC_Order_OrderSection_ViewMoreButton}" value="{!v.order}" />
+                    </span>
+                </div>
+            </div>
+            <div class="summary2">
+                <div class="left">
+                    <!--<label class="placedBy">{!$Label.c.EC_Order_OrderSection_PlacedByLabel}&nbsp;
+                        <span class="value">{!v.order.placedBy}</span>
+                    </label>-->
+                    <label class="poNumber">{!$Label.c.EC_Order_OrderSection_POLabel}&nbsp;
+                        <span class="value">{!v.order.orderCustomerPO}</span>
+                    </label>
+                </div>
+                <div class="right">
+
+                    <!--   <aura:if isTrue="{!v.invoice}">
+                        <label class="invoice" data-order="{!v.order.orderId}" onclick="{!c.viewInvoice}"><i class="material-icons">file_copy</i>{!$Label.c.EC_Order_OrderSection_ViewInvoiceButton}</label>
+                        </aura:if>
+                         <label class="shipment"><i class="material-icons">local_shipping</i>{!$Label.c.EC_Order_OrderSection_ViewShipmentsButton}</label>  -->
+                    <aura:if isTrue="{!v.isOnline}">
+                    <lightning:button class="ec_btn_primary" label="{!$Label.c.EC_Order_OrderSection_ReorderButton}"
+                        title="{!$Label.c.EC_Order_OrderSection_ReorderButton}" onclick="{!c.addItemToCart}"
+                        value="{!v.order}" />
+
+                         </aura:if>
+                </div>
+            </div>
+            <div id="{!v.order.orderNum}" class="productList slds-hide">
+                <div class="slds-grid">
+                    <div class="productlist-container">
+                        <div class="shipping-billing-address">
+
+                            <div class="empty-columns-spacer">
+
+                            </div>
+                            <div class="shipping-address">
+                                <div class="address-heading">
+                                    <span>
+
+                                    <i class="material-icons icon-color">room</i>
+                                    </span>
+                                    {!$Label.c.EC_OrderDetails_ShippingAddress}:
+                                </div>
+                                <div class="value">
+                                    <div class="shipToName">{!$Label.c.EC_OrderDetails_ShipToName}:
+                                        <span class="val">{!v.order.orderShipToName}/{!v.order.orderShipToNumber}</span>
+                                    </div>
+                                    <aura:unescapedHtml value="{!v.order.shipToAddress}" />
+                                </div>
+                            </div>
+                            <!--<div class="billing-address">
+                                <div class="address-heading">
+                                    <span>
+                                    <i class="material-icons icon-color">file_copy</i>
+                                    </span>
+                                    {!$Label.c.EC_OrderDetails_BillingAddress}:
+                                </div>
+                                <div class="value">
+                                    <aura:unescapedHtml value="{!v.order.billToAddress}" />
+                                </div>
+                            </div>-->
+                        </div>
+                        <aura:iteration items="{!v.order.orderLineItems}" var="orderDtl" indexVar="indx">
+                            <div class="product-list-data">
+                                <div class="image-details">
+                                    <div class="image">
+                                        <aura:if isTrue="{!orderDtl.ProdImg}">
+                                           		<img src="{!orderDtl.ProdImg}" onerror="{!c.imageError}" />
+                                        	<aura:set attribute="else">
+                                                 <img src="{!$Resource.EC_Branding_Theme + '/images/product.png'}" />
+                                            </aura:set>
+                                        </aura:if>
+                                    </div>
+                                    <div class="product-data">
+                                        <div class="product-details">
+                                            <div class="product-name"><a href="{!orderDtl.PrdDetUrl}"
+                                                    target="_blank">{!orderDtl.orderLineMaterialName}</a></div>
+                                            <div class="prod-desc">
+                                                <span>{!$Label.c.EC_OrderDetails_ProductCode}:</span>
+                                                <span class="value">{!orderDtl.orderLineMaterialNum}</span>
+
+                                                <span class="spacer">|</span> <span
+                                                    class="no-of-products">{!orderDtl.orderLineMaterialUoM}</span>
+                                                <aura:if isTrue="{!v.viewPrice}">
+                                                    <div class="price">
+                                                        <!--<label class="dollar">{!$Label.c.EC_Dollar}{!orderDtl.Dollars}</label>-->
+                                                        <label class="cent">{!orderDtl.Cents}</label>
+                                                    </div>
+                                                </aura:if>
+                                            </div>
+                                        </div>
+                                        <div class="shipped-on slds-hide">
+                                            <span class="spacer">|</span>
+                                            <span>{!$Label.c.EC_OrderDetails_ShippedOn}:</span> <span class="shipped-date">Jan24, 2019</span>
+                                        </div>
+                                        <div class="quantity-value">
+                                            <div class="qunty">{!$Label.c.EC_OrderDetails_TotalQuantity}:
+                                                <span class="value">
+                                                    <ui:outPutNumber aura:id="myNumberFormat" format="0" value="{!orderDtl.orderLineQuantity}"/>
+                                                </span>
+                                            </div>
+                                            <aura:if isTrue="{!v.viewPrice}">
+                                                <!--<div class="slds-m-top_small price">{!$Label.c.EC_OrderDetails_Price}:
+                                                    <span class="value">{!$Label.c.EC_Dollar}{!orderDtl.totalPrice} </span></div>-->
+                                            </aura:if>
+
+                                            <!--fourkites shipment tracking-->
+                                            <aura:if isTrue="{!orderDtl.deliveryExist == 'Y'}">
+                                                <aura:if isTrue="{!and(orderDtl.deliveries != null,orderDtl.deliveries.length != 0)}">
+                                                    <aura:if isTrue="{!orderDtl.deliveries[0].trackUrl != null}">
+                                                        <div class="tracking">
+                                                        <div class="track-shipment">
+                                                            <img src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-local-shipping.svg'}" alt="icon"/>
+                                                            <lightning:button variant="base"
+                                                                              label="{!$Label.c.EC_OrderDetails_TrackShipment}"
+                                                                              title="{!$Label.c.EC_OrderDetails_TrackShipment}"
+                                                                              onclick="{! c.openModel }" />
+                                                        </div>
+                                                        
+                                                        <!--Use aura:if tag to display/hide popup based on isModalOpen value-->  
+                                                        <aura:if isTrue="{!v.isModalOpen}">
+                                                             
+                                                            <!-- Modal/Popup Box starts here-->
+                                                            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" 
+                                                                     class="slds-modal slds-fade-in-open slds-modal_medium">
+                                                                <div class="slds-modal__container">
+                                                                    <!-- Modal/Popup Box Header Starts here-->
+                                                                    <header class="slds-modal__header">
+                                                                        <lightning:buttonIcon iconName="utility:close"
+                                                                                              onclick="{! c.closeModel }"
+                                                                                              alternativeText="close"
+                                                                                              variant="bare-inverse"
+                                                                                              class="slds-modal__close"/>
+                                                                    </header>
+                                                                    <!--Modal/Popup Box Body Starts here-->
+                                                                    <iframe src="{!orderDtl.deliveries[0].trackUrl}" width="100%" height="85%" frameBorder="0"/>
+                                                                </div>
+                                                            </section>
+                                                            <div class="slds-backdrop slds-backdrop_open"></div>
+                                                        </aura:if>
+                                                    </div>
+                                                    </aura:if>
+                                                </aura:if>
+                                            </aura:if>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <aura:iteration items="{!v.orderLineStatuses}" var="lineStatus" indexVar="lineStatusInd">
+                                    <aura:if isTrue="{!lineStatusInd == indx}">
+                                        <div class="inline-status">
+                                            <label>{!$Label.c.EC_Order_OrderSection_LineStatusLabel}: </label>
+                                            <div class="{!'statusvalue ' + lineStatus}">{!lineStatus}</div>
+                                        </div>
+                                    </aura:if>
+                                </aura:iteration>
+                                <aura:if isTrue="{!not(empty(orderDtl.ProdSDSURI))}">
+                                    <div class="document-container">
+                                        <aura:iteration items="{!orderDtl.ProdSDSURI}" var="sdsURI" indexVar="indx">
+                                            <div class="doc-info slds-grid slds-grid_vertical-align-center">
+                                                <span class="doc-name slds-m-right_small">SDS Document</span>
+                                                <span class="doc-url">
+                                                    <i class="material-icons">
+                                                        <a href="{!sdsURI}" target="_blank">open_in_new</a>
+                                                    </i>
+                                                </span>
+                                            </div>
+                                        </aura:iteration>
+                                    </div>
+                                </aura:if>
+                            </div>
+                        </aura:iteration>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </aura:if>
+
+    <aura:if isTrue="{!v.showMobileView}">
+        <div class="productList">
+            <div class="order-summary">
+                <div class="order-details">
+                    <div class="order-info">
+                        <div class="order-date">
+                            <label class="date">{!$Label.c.EC_Order_OrderSection_DateLabel}</label>
+                            <!-- <span class="lbl-value">{!v.order.orderDate}</span> -->
+                            <span class="order-date-mobile">
+                                <lightning:formattedDateTime value="{!v.order.orderCreationDate}" timeZone="UTC" year="numeric" month="long" day="2-digit"/>
+                            </span>
+                        </div>
+                        <div class="order-number">
+                            <label class="orderNo">{!$Label.c.EC_Order_OrderSection_OrderNoLabel}</label>
+                            <span class="value">{!v.order.orderNum}</span>
+                        </div>
+                        <div class="account">
+                            <label class="accountNo">{!$Label.c.EC_Order_OrderSection_AccountNoLabel}</label>
+                            <span class="value">{!v.order.orderShipToNumber}</span>
+                        </div>
+                        <div class="items">
+                            <label class="itemCount">{!$Label.c.EC_Order_OrderSection_ItemsLabel}</label>
+                            <span class="lbl-value">{!v.order.orderLineCount}</span>
+                        </div>
+                        <!--<div class="total-price">
+                            <label class="itemCount"> {!$Label.c.EC_Order_OrderSection_PriceLabel}&nbsp; </label>
+                            <span class="value">${!v.order.totalPrice}</span>
+                        </div>-->
+                    </div>
+                    <div class="status-details">
+                        <div class="order-status">
+                            <label class="status">{!$Label.c.EC_Order_OrderSection_StatusLabel}</label>
+                            <span class="{!'product-status '+ v.order.orderStage}">{!v.order.orderStage}</span>
+                        </div>
+                        <div class="viewMore" id="{!v.viewMorestatus}">
+                            <lightning:button onclick="{!c.showProducts}"
+                                label="{!$Label.c.EC_Order_OrderSection_ViewMoreButton}" value="{!v.order}" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="placed-by">
+                    <div><label class="lbl-name">{!$Label.c.EC_Order_OrderSection_POLabel}</label><label
+                            class="lbl-value"> {!v.order.orderCustomerPO}</label></div>
+                </div>
+
+                <aura:if isTrue="{!v.isOnline}">
+                    <div class="btn-container">
+                        <lightning:button class="ec_btn_primary" label="{!$Label.c.EC_Order_OrderSection_ReorderButton}"
+                            title="{!$Label.c.EC_Order_OrderSection_ReorderButton}" onclick="{!c.addItemToCart}"
+                            value="{!v.order}" />
+                    </div>
+                </aura:if>
+
+                <div class="list slds-hide" id="{!v.order.orderNum}">
+                    <div class="shipping-address">
+                        <div class="address-heading">
+                            <span>
+                                <i class="material-icons icon-color">room</i>
+                            </span>
+                            <span class="left-spacer"> {!$Label.c.EC_OrderDetails_ShippingAddress}: </span>
+                        </div>
+                            
+                        <div class="value">
+                            <div class="shipToName">{!$Label.c.EC_OrderDetails_ShipToName}:
+                                <span class="val">{!v.order.orderShipToName}/{!v.order.orderShipToNumber}</span>
+                            </div>
+                            <aura:unescapedHtml value="{!v.order.shipToAddress}" />
+                        </div>
+                    </div>
+                    <!--<div class="billing-address">
+                        <div class="address-heading">
+                            <span>
+                                <i class="material-icons icon-color">file_copy</i>
+                            </span>
+                            <span class="left-spacer"> {!$Label.c.EC_OrderDetails_BillingAddress}: </span>
+                        </div>
+                        <div class="value">
+                            <aura:unescapedHtml value="{!v.order.billToAddress}" />
+
+                        </div>
+                    </div>-->
+                    <aura:iteration items="{!v.order.orderLineItems}" var="orderDtl" indexVar="indx">
+
+                        <div class="product-list">
+                            <div class="product-details">
+                                <div class="image">
+                                    <aura:if isTrue="{!orderDtl.ProdImg}">
+                                        <img src="{!orderDtl.ProdImg}" onerror="{!c.imageError}" />
+                                        <aura:set attribute="else">
+                                            <img src="{!$Resource.EC_Branding_Theme + '/images/product.png'}" />
+                                        </aura:set>
+                                    </aura:if>
+                                </div>
+                                <div class="product-details-info">
+                                    <div class="product-list-info">
+                                        <div class="product-name">
+                                            <a href="{!orderDtl.PrdDetUrl}" target="_blank">{!orderDtl.orderLineMaterialName}</a>
+                                        </div>
+                                        <div class="prod-desc">
+                                            <span>{!$Label.c.EC_OrderDetails_ProductCode}:</span> <span class="value">{!orderDtl.orderLineMaterialNum}</span>
+                                            <span class="no-of-products">{!orderDtl.orderLineMaterialUoM}</span>
+                                            <aura:if isTrue="{!v.viewPrice}">
+                                                <div class="price">
+                                                    <!--<label class="dollar">{!$Label.c.EC_Dollar}{!orderDtl.Dollars}</label>-->
+                                                    <label class="cent">{!orderDtl.Cents}</label>
+                                                </div>
+                                            </aura:if>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="price-quantity-info">
+                                <div>
+                                    <label class="lbl-name">{!$Label.c.EC_OrderDetails_TotalQuantity}: </label>
+                                    <label class="lbl-value"><ui:outPutNumber aura:id="myNumberFormat" format="0" value="{!orderDtl.orderLineQuantity}"/></label>
+                                </div>
+                                <!--<div>
+                                    <label class="lbl-name">{!$Label.c.EC_OrderDetails_Price}: </label>
+                                    <label class="lbl-value">${!orderDtl.UnitPrice} </label>
+                                </div>-->
+                                <aura:iteration items="{!v.orderLineStatuses}" var="lineStatus" indexVar="lineStatusInd">
+                                    <aura:if isTrue="{!lineStatusInd == indx}">
+                                        <div class="inline-status">
+                                            <label>{!$Label.c.EC_Order_OrderSection_LineStatusLabel}: </label>
+                                            <div class="{!'statusvalue ' + lineStatus}">{!lineStatus}</div>
+                                        </div>
+                                    </aura:if>
+                                </aura:iteration>
+                            </div>
+
+                            <!--fourkites shipment tracking-->
+                            <aura:if isTrue="{!orderDtl.deliveryExist == 'Y'}">
+                                <aura:if isTrue="{!and(orderDtl.deliveries != null,orderDtl.deliveries.length != 0)}">
+                                    <aura:if isTrue="{!orderDtl.deliveries[0].trackUrl != null}">
+                                        <div class="tracking">
+                                            <div class="track-shipment">
+                                                <img src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-local-shipping.svg'}" alt="icon"/>
+                                                <lightning:button variant="base"
+                                                                  label="{!$Label.c.EC_OrderDetails_TrackShipment}"
+                                                                  title="{!$Label.c.EC_OrderDetails_TrackShipment}"
+                                                                  onclick="{! c.openModel }" />
+                                            </div>
+                                            
+                                            <!--Use aura:if tag to display/hide popup based on isModalOpen value-->  
+                                            <aura:if isTrue="{!v.isModalOpen}">
+                                                
+                                                <!-- Modal/Popup Box starts here-->
+                                                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" 
+                                                         class="slds-modal slds-fade-in-open slds-modal_medium">
+                                                    <div class="slds-modal__container">
+                                                        <!-- Modal/Popup Box Header Starts here-->
+                                                        <header class="slds-modal__header">
+                                                            <lightning:buttonIcon iconName="utility:close"
+                                                                                  onclick="{! c.closeModel }"
+                                                                                  alternativeText="close"
+                                                                                  variant="bare-inverse"
+                                                                                  class="slds-modal__close"/>
+                                                        </header>
+                                                        <!--Modal/Popup Box Body Starts here-->
+                                                        <iframe src="{!orderDtl.deliveries[0].trackUrl}" width="100%" height="85%" frameBorder="0"/>
+                                                    </div>
+                                                </section>
+                                                <div class="slds-backdrop slds-backdrop_open"></div>
+                                            </aura:if>
+                                        </div>
+                                    </aura:if>
+                                </aura:if>
+                            </aura:if>
+
+                            <aura:iteration items="{!orderDtl.ProdSDSURI}" var="sdsURI" indexVar="indx">
+                                <div class="document-name">
+                                    <span>SDS Document 1</span>
+                                    <span class="doc-url">
+                                        <i class="material-icons">
+                                            <a href="{!sdsURI}" target="_blank">open_in_new</a>
+                                        </i>
+                                    </span>
+                                </div>
+                            </aura:iteration>
+                        </div>
+                    </aura:iteration>
+                </div>
+
+            </div>
+        </div>
+    </aura:if>
+</aura:component>

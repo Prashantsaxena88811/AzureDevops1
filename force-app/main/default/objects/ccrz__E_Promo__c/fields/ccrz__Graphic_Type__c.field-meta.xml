@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Graphic_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>One of image, slider, or swf. NOT CURRENTLY USED.</description>
+    <externalId>false</externalId>
+    <label>Graphic Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>image</fullName>
+                <default>true</default>
+                <label>image</label>
+            </value>
+            <value>
+                <fullName>slider</fullName>
+                <default>false</default>
+                <label>slider</label>
+            </value>
+            <value>
+                <fullName>swf</fullName>
+                <default>false</default>
+                <label>swf</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

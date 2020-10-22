@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__SourceTransactionPayment__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Reference to another transaction payment that was used as the source for this transaction.  E.g. in a AUTH, later CAPTURE scenario the AUTH would be the source transaction payment for the CAPTURE.  This allows the chaining of transactional data.</description>
+    <externalId>false</externalId>
+    <label>Source Transaction Payment</label>
+    <referenceTo>ccrz__E_TransactionPayment__c</referenceTo>
+    <relationshipLabel>Sourced Transaction Payments</relationshipLabel>
+    <relationshipName>SourcedTransactionPayments</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

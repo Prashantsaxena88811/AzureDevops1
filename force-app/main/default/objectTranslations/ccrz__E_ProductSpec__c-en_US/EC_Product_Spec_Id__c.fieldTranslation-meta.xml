@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This field serves as an external Id for product specs records and gives ability to upsert --></help>
+    <label><!-- Product Spec Id --></label>
+    <name>EC_Product_Spec_Id__c</name>
+</CustomFieldTranslation>

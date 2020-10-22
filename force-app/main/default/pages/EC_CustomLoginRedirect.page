@@ -1,0 +1,2 @@
+<apex:page controller="EC_CustomLoginRedirectController" action="{!redirectToCommunity}" sidebar="false" showHeader="false" standardStylesheets="false" cache="false" applyHtmlTag="false">
+</apex:page>

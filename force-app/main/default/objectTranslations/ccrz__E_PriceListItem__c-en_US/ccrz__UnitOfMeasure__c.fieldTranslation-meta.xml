@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Unit of Measure for this price.  This field in combination with the product can give UOM specific pricing.  This field is optional, and allows for general pricing for a product independent of UOM. --></help>
+    <label><!-- Unit Of Measure --></label>
+    <name>ccrz__UnitOfMeasure__c</name>
+</CustomFieldTranslation>

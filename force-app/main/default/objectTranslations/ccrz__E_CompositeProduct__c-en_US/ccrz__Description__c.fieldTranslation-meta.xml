@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Holds any informational text describing the composite&apos;s relationship with its parent product. --></help>
+    <label><!-- Description --></label>
+    <name>ccrz__Description__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC_Price_List_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Price List Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Z1CP</fullName>
+                <default>false</default>
+                <label>Z1CP</label>
+            </value>
+            <value>
+                <fullName>Z1GP</fullName>
+                <default>false</default>
+                <label>Z1GP</label>
+            </value>
+            <value>
+                <fullName>Z1MP</fullName>
+                <default>false</default>
+                <label>Z1MP</label>
+            </value>
+            <value>
+                <fullName>ZFCP</fullName>
+                <default>false</default>
+                <label>ZFCP</label>
+            </value>
+            <value>
+                <fullName>ZF00</fullName>
+                <default>false</default>
+                <label>ZF00</label>
+            </value>
+            <value>
+                <fullName>Z1LS</fullName>
+                <default>false</default>
+                <label>Z1LS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

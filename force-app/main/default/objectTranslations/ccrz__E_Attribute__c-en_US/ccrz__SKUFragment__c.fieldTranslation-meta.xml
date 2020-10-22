@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Optional text used to dynamically create an Item SKU when the CC Attribute is selected on the Storefront --></help>
+    <label><!-- SKU Fragment --></label>
+    <name>ccrz__SKUFragment__c</name>
+</CustomFieldTranslation>

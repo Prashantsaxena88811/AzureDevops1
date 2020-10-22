@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>クーポンで何が提供されるかの説明を入力してください</help>
+    <label><!-- Coupon Notes --></label>
+    <name>ccrz__Coupon_Notes__c</name>
+</CustomFieldTranslation>

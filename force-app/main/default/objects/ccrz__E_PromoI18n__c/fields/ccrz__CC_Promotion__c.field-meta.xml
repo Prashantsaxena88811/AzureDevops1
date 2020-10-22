@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__CC_Promotion__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Reference to the CC Promotion record that is being localized.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Parent Promotion</inlineHelpText>
+    <label>CC Promotion</label>
+    <referenceTo>ccrz__E_Promo__c</referenceTo>
+    <relationshipLabel>CC Promotions i18n</relationshipLabel>
+    <relationshipName>CC_Promotions_i18n</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>カテゴリの短縮名。フレンドリー URL を作成するときに使用されます。</help>
+    <label><!-- SEO Id --></label>
+    <name>ccrz__SEOId__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,27 @@
+<!--
+
+  @Component Name     : EC_OutageProtocol.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Soumick               11/26/2019        Component for outage protocol and maintainence texts
+
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <div class="outage-wrapper">
+        <div class="outer-box">
+            <div class="inner-box">
+                <div class="round slds-align_absolute-center"></div>
+                <div class="maintainence-text slds-align_absolute-center">
+                    {!$Label.c.EC_MaintainenceText}
+                </div>
+                <div class="apology-text slds-align_absolute-center">
+                    {!$Label.c.EC_MaintainenceText2}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</aura:component>

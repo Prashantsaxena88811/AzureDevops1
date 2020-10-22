@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>このコンポーネントを関連商品グループに対応付けます。これは主に、複合商品が個別のステップまたはセクションにグループ化されている動的キットの場合に使用されます。</help>
+    <label><!-- Product Group --></label>
+    <name>ccrz__ProductGroup__c</name>
+    <relationshipLabel><!-- CC Composite Products --></relationshipLabel>
+</CustomFieldTranslation>

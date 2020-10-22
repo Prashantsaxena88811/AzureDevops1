@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>月単位のサブスクリプション期間。この項目が空白の場合、このカート品目はサブスクリプション品目ではありません。</help>
+    <label><!-- Subscription Duration (In Months) --></label>
+    <name>ccrz__Subscription_Duration__c</name>
+</CustomFieldTranslation>

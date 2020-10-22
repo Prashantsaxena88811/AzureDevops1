@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>対応する通貨コード。インデックスレコードの一括作成を支援するためにのみ使用されます。注意:「マスタ価格リスト」を使用する場合、この値は GLOBAL に設定され、通貨を無視します。</help>
+    <label><!-- Index Currency --></label>
+    <name>ccrz__IndexCurrency__c</name>
+</CustomFieldTranslation>

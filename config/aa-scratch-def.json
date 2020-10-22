@@ -1,0 +1,96 @@
+{
+  "edition": "enterprise",
+  "features": [
+    "chatbot",
+    "chatteranswersuser",
+    "cloudtocloud",
+    "communities",
+    "contractapprovals",
+    "crmuser",
+    "custobjchangeowneremail",
+    "customercommunity",
+    "customercommunitylogin",
+    "developmentwave",
+    "devhubappdevelopment",
+    "employeeexperience",
+    "entitlements",
+    "eventlogfile",
+    "fieldaudittrail",
+    "fieldservicedispatcheruser:1",
+    "fieldservicemobileuser:1",
+    "fieldserviceschedulinguser:1",
+    "flowsites",
+    "forcecomplatform",
+    "interaction",
+    "knowledge",
+    "legacyliveagentrouting",
+    "lightningdomainspropagated",
+    "liveagent",
+    "macros",
+    "mobileuser",
+    "pardotgrowth",
+    "pardotplus",
+    "partnercommunity",
+    "platformconnect",
+    "platformencryption",
+    "salesconsoleuser",
+    "salesforcecontentuser",
+    "servicecloud",
+    "serviceuser",
+    "siteforcecontributor",
+    "siteforcepublisher",
+    "workperform"
+  ],
+  "settings": {
+    "analyticsSettings": {
+      "enableInsights": true,
+      "enableWaveIndexMVDim": true
+    },
+    "apexSettings": {
+      "enableAuraApexCtrlGuestUserAccessCheckPref": true
+    },
+    "chatterSettings": {
+      "enableInviteCsnUsers": true
+    },
+    "devHubSettings": {
+      "enableScratchOrgManagementPref": true,
+      "enableShapeExportPref": true
+    },
+    "emailIntegrationSettings": {
+      "doesGmailStayConnectedToSalesforce": true
+    },
+    "fieldServiceSettings": {
+      "fieldServiceOrgPref": true
+    },
+    "flowSettings": {
+      "enableFlowFieldFilterEnabled": true
+    },
+    "leadConfigSettings": {
+      "enableOrgWideMergeAndDelete": true
+    },
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "securitySettings": {
+      "passwordPolicies": {
+        "enableSetPasswordInApi": true
+      },
+      "sessionSettings": {
+        "requireHttps": true
+      }
+    },
+    "sharingSettings": {
+      "enableCommunityUserVisibility": true,
+      "enablePortalUserVisibility": true
+    },
+    "surveySettings": {
+      "enableSurvey": true
+    },
+    "userEngagementSettings": {
+      "enableScheduledSwitcher": true
+    },
+    "userInterfaceSettings": {
+      "enableProfileCustomTabsets": true
+    }
+  }
+}

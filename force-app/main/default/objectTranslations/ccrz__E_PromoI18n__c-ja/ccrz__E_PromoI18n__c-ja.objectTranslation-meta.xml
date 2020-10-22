@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CC プロモーション i18n</value>
+    </caseValues>
+    <layouts>
+        <layout>CC Promotion i18n Layout</layout>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>プロモーション i18n 名</nameFieldLabel>
+</CustomObjectTranslation>

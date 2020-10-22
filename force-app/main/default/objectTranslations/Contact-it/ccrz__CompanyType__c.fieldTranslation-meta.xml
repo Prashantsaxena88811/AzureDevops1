@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- CompanyType --></label>
+    <name>ccrz__CompanyType__c</name>
+    <picklistValues>
+        <masterLabel>Type1</masterLabel>
+        <translation><!-- Type1 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Type2</masterLabel>
+        <translation><!-- Type2 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Type3</masterLabel>
+        <translation><!-- Type3 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Type4</masterLabel>
+        <translation><!-- Type4 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Type5</masterLabel>
+        <translation><!-- Type5 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

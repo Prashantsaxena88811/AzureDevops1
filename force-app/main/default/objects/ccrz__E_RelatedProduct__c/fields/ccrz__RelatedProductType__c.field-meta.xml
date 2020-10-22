@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__RelatedProductType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates how the related product ties to the primary product. Includes: Competitive, Related, CrossSell, UpSell, Complementary, Accessories, but can contain custom values.</description>
+    <externalId>false</externalId>
+    <label>Related Product Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Competitive</fullName>
+                <default>false</default>
+                <label>Competitive</label>
+            </value>
+            <value>
+                <fullName>Related</fullName>
+                <default>false</default>
+                <label>Related</label>
+            </value>
+            <value>
+                <fullName>RequiredItem</fullName>
+                <default>false</default>
+                <label>RequiredItem</label>
+            </value>
+            <value>
+                <fullName>CrossSell</fullName>
+                <default>false</default>
+                <label>CrossSell</label>
+            </value>
+            <value>
+                <fullName>UpSell</fullName>
+                <default>false</default>
+                <label>UpSell</label>
+            </value>
+            <value>
+                <fullName>Complementary</fullName>
+                <default>false</default>
+                <label>Complementary</label>
+            </value>
+            <value>
+                <fullName>Accessories</fullName>
+                <default>false</default>
+                <label>Accessories</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

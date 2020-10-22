@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Image URI pointing to image hosted in external site --></help>
+    <label><!-- ImageURI --></label>
+    <name>ccrz__ImageURI__c</name>
+</CustomFieldTranslation>

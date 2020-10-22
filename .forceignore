@@ -1,0 +1,181 @@
+
+# List files or directories below to ignore them when running force:source:push, force:source:pull, and force:source:status
+# More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
+#
+
+
+# **/default/classes
+# **/default/triggers
+# **/default/permissionsets
+# **/default/customPermissions
+# **/default/aura
+# **/default/flows
+# **/default/components
+# **/default/staticresources
+# **/main/default/roles
+# **/default/pages
+# **/default/customMetadata
+# **/default/sharingRules
+# **/default/objects
+# **/default/reports
+# **/default/reportTypes
+# **/default/tabs
+# **/default/quickActions
+# **/default/flexipages
+package.xml
+
+# LWC configuration files
+**/jsconfig.json
+**/.eslintrc.json
+
+# LWC Jest
+**/__tests__/**
+**/default/sharingRules1
+**/reportTypes1
+**/flows1
+**/main/default/roles1
+**/default/workflows1
+**/reports1
+**/translations1
+**/default/documents1
+#
+**/profiles
+**/profiles/Admin.profile-meta.xml
+**/objectTranslations
+**/siteDotComSites
+**/default/sites
+**/reports
+**/main/default/roles
+**/default/assignmentRules
+#
+**/flowDefinitions
+**/default/applications
+**/default/cachePartitions
+**/default/settings
+**/settings/MapsAndLocation.settings-meta.xml
+**/settings/CaseClassification.settings-meta.xml
+**/default/networks
+**/main/default/installedPackages
+**/default/SurveySettings
+**/default/communities
+**/default/documents
+**/default/workflows
+#Standard value set that does not contain any standard value tag
+**/CampaignMemberStatus.standardValueSet-meta.xml
+**/FiscalYearPeriodName.standardValueSet-meta.xml
+**/OpportunityCompetitor.standardValueSet-meta.xml
+**/OrderType.standardValueSet-meta.xml
+**/SocialPostReviewedStatus.standardValueSet-meta.xml
+
+# objects that doesnot exit 
+**/objects/MLModel
+**/objects/MLModelFactor
+**/objects/MLModelFactorComponent
+**/objects/SignupRequest
+**/objects/StreamActivityAccess
+**/objects/Site
+
+
+
+#beacuse language field does not exit
+**/objects/Case/fields/Language.field-meta.xml
+
+
+**/layouts/SignupRequest-Signup Request Layout.layout-meta.xml
+
+**/listViews/All_Buyer_Accounts.listView-meta.xml
+**/listViews/My_Buyer_Accounts.listView-meta.xml 
+
+**/sharingRules/SignupRequest.sharingRules-meta.xml
+**/sharingRules/SiqUserBlacklist.sharingRules-meta.xml
+**/sharingRules/StreamActivityAccess.sharingRules-meta.xml
+**default/sharingRules/RequestsForAccessSIQ.sharingRules-meta.xml
+
+
+**/default/objects/Case/listViews/Q1_Case.listView-meta.xml
+**/layouts/DuplicateRecordSet-Duplicate Record Set Layout.layout-meta.xml
+**/User/listViews/Inactive_Users.listView-meta.xml
+**/User/listViews/User_Search.listView-meta.xml
+**/objects/DuplicateRecordSet/fields/ParentId.field-meta.xml
+**/default/objects/PaymentGroup/listViews/PaymentGroup.listView-meta.xml
+
+**/quickActions/GuestCommunityCase.quickAction-meta.xml
+**/quickActions/NewCommunityCase.quickAction-meta.xml
+
+**/objects/StreamingChannel/StreamingChannel.object-meta.xml
+**/objects/PendingServiceRouting/PendingServiceRouting.object-meta.xml
+**/flows/EC_Order_Acknowledgement_Email.flow-meta.xml
+**/flows/EC_Order_Submit.flow-meta.xml
+
+**default/permissionsets\EcolabB2BCommerceAdmin1.permissionset-meta.xml 
+**/default/translations/en_US.translation-meta.xml
+
+
+
+################objects not availabe only on this org##########################
+
+**\objects\BuyerAccount
+
+**\default\objects\BuyerGroup
+
+**\default\objects\BuyerGroupMember
+
+**\default\objects\BuyerGroupPricebook
+
+**\default\objects\CartItem
+
+**\default\objects\CartCheckoutSession
+**\default\objects\CartDeliveryGroup
+**\default\objects\ProductCatalog
+**\default\objects\CartValidationOutput
+**\default\objects\CartRelatedItem
+
+**\default\objects\CartTax
+
+**\default\objects\CommerceEntitlementBuyerGroup
+
+**\default\objects\CommerceEntitlementPolicy
+
+**\default\objects\CommerceEntitlementProduct
+
+**\default\objects\DelegatedAccount
+**\default\objects\ElectronicMediaGroup
+**\default\objects\BuyerGroup\BuyerGroup.object-meta.xml 
+**\default\objects\ElectronicMediaUse
+**\default\objects\ProductCategory\
+**\default\objects\ProductCategoryMedia
+**\default\objects\ProductCategoryProduct
+**\default\objects\ProductMedia
+**\default\objects\SalesStore
+**\default\objects\WebCart
+**\default\objects\WebStore
+**\default\objects\WebStoreBuyerGroup\WebStoreBuyerGroup.object-meta.xml 
+**\default\objects\WebStoreCatalog\WebStoreCatalog.object-meta.xml 
+**\default\objects\WebStoreNetwork\WebStoreNetwork.object-meta.xml
+**\default\objects\WebStorePricebook\WebStorePricebook.object-meta.xml
+**\default\objects\WebStoreSearchProdSettings\WebStoreSearchProdSettings.object-meta.xml  
+**\default\objects\Wishlist
+**\default\objects\WishlistItem\WishlistItem.object-meta.xml 
+
+**\default\objects\Account\fields\IsBuyer.field-meta.xml 
+
+**sharingRules\BuyerGroup.sharingRules-meta.xml
+**sharingRules\CommerceEntitlementPolicy.sharingRules-meta.xml
+**\sharingRules\DelegatedAccount.sharingRules-meta.xml
+**\sharingRules\ElectronicMediaGroup.sharingRules-meta.xml
+**\sharingRules\Wishlist.sharingRules-meta.xml
+**\sharingRules\ProductCatalog.sharingRules-meta.xml
+**\sharingRules\ProductMedia.sharingRules-meta.xml
+**\sharingRules\WebCart.sharingRules-meta.xml
+**\sharingRules\PriceAdjustmentSchedule.sharingRules-meta.xml
+
+**\objects\Pricebook2\fields\ValidFrom.field-meta.xml
+**\objects\Pricebook2\fields\ValidTo.field-meta.xml
+**\objects\PricebookEntry\fields\ActivePriceAdjustmentQuantity.field-meta.xml
+**\default\layouts\BuyerAccount-Buyer Account Layout.layout-meta.xml
+**\default\layouts\Campaign-Campaign Layout.layout-meta.xml
+**\default\layouts\DelegatedAccount-External Managed Account Layout.layout-meta.xml
+**\default\layouts\Pricebook2-Price Book Layout.layout-meta.xml
+**\default\layouts\WebStore-Store Layout.layout-meta.xml
+
+

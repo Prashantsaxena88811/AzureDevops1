@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__CCSubProdTerm__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The parent subscription for which this is a modifier.  For top level subscription data this field should be null.  Allows for adding Modifier CC Sub Prod Terms to a main CC SubProdTerm.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For modifier terms, specify the CC Sub Prod Term this is modifying</inlineHelpText>
+    <label>CC SubProdTerm</label>
+    <referenceTo>ccrz__E_SubProdTerm__c</referenceTo>
+    <relationshipLabel>CC SubProdTerms</relationshipLabel>
+    <relationshipName>CCSubProdTerms</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

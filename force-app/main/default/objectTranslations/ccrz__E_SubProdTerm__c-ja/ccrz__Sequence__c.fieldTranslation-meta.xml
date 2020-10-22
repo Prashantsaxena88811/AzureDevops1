@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>サブスクリプションオプションがストアに表示される順序を決定します。低い順に表示されます。</help>
+    <label><!-- Sequence --></label>
+    <name>ccrz__Sequence__c</name>
+</CustomFieldTranslation>

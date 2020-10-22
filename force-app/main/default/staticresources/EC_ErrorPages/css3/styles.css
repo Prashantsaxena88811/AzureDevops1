@@ -1,0 +1,278 @@
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+* html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+body {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.1px;
+}
+
+.EC_ErrorPage.slds-scope {
+    background-color: #f7f7f7;
+}
+
+/* header */
+.EC_ErrorPage .header-wrapper {
+    background-color: #007ac9;
+}
+
+.EC_ErrorPage .header-wrapper .logo {
+    margin-bottom: 1.05rem;
+    margin-top: 1.05rem;
+    height: 25.4px;
+}
+
+/* error content */
+.EC_ErrorPage .error-wrapper {
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+    padding: 16px 20px 4rem 20px;
+    margin-top: 24px;
+    margin-bottom: 4rem;
+}
+
+.EC_ErrorPage .errorFound {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4d4f53;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+    border: solid 1px #e17000;
+    background-color: #ffffff;
+    padding: 4rem;
+    margin-top: 0;
+    margin-bottom: 19px;
+    position: relative;
+    font-family: Arial;
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+}
+
+.EC_ErrorPage .errorFound i {
+    font-size: 54px;
+    color: #e17000;
+}
+
+.EC_ErrorPage .errorHeading {
+    font-family: Arial;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #005172;
+}
+
+.EC_ErrorPage .errorText {
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.09px;
+    text-align: center;
+    color: #4d4f53;
+}
+
+.EC_ErrorPage .subsection-heading {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: .3px;
+    color: #005172;
+}
+
+.EC_ErrorPage .copyright-section {
+    background: #017ac9;
+    color: #fff;
+}
+
+.EC_ErrorPage .copyright-section li a {
+    color: #fff;
+}
+
+.EC_ErrorPage .copyright-section .slds-list_horizontal li i {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.EC_ErrorPage .icons .slds-list_horizontal li {
+    margin-right: 20px;
+    list-style: none;
+}
+
+.EC_ErrorPage .visit-website img {
+    width: 16px;
+    height: 16px;
+}
+
+.slds-scope .slds-button_brand,
+.slds-scope .slds-button_brand:hover {
+    background-color: #007ac9;
+    border-color: #007ac9;
+    min-width: 12rem;
+}
+
+/* footer */
+.EC_ErrorPage footer {
+    background-color: #ffffff;
+    position: absolute !important;
+    bottom: 0 !important;
+    width: 100% !important;
+}
+
+.EC_ErrorPage .footer-wrapper,
+.EC_ErrorPage .footer-wrapper a {    
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.93;
+    letter-spacing: .27px;
+    color: #373737;
+    font-family: Arial;
+}
+
+.EC_ErrorPage .thin-separator {
+    height: 8px;
+    background-color: #5b8f22;
+}
+
+#instagram-image,
+#linkedin-image,
+#twitter-image,
+#youtube-image {
+    margin-left: 1px;
+}
+
+.EC_ErrorPage .visit-website .material-icons {
+    color: #007ac9;
+}
+
+.EC_ErrorPage .footer-wrapper a:hover {
+    text-decoration: none;
+}
+
+.EC_ErrorPage .footer-wrapper .copyright-section .content-left-spacer .footer_links {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.69;
+    letter-spacing: .37px;
+    text-align: right;
+    color: #ffffff;
+}
+
+.EC_ErrorPage .footer-wrapper .copyright-section .content-left-spacer .footer_links .material-icons {
+    font-size: 12px;
+}
+
+.EC_ErrorPage .footer-wrapper .copyright-section .content-left-spacer .terms {
+    margin-left: 30px;
+}
+
+/* desktop 1024px */
+@media (max-width: 1366px) and (min-width: 1024px) {
+
+    .EC_ErrorPage .footer-wrapper .diversion {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* transition between desktop and tablet */
+@media (max-width: 1365px) and (min-width: 768px) {
+
+    .EC_ErrorPage .icons .slds-list_horizontal #facebook-image,
+    .EC_ErrorPage .icons .slds-list_horizontal #instagram-image,
+    .EC_ErrorPage .icons .slds-list_horizontal #linkedin-image,
+    .EC_ErrorPage .icons .slds-list_horizontal #twitter-image,
+    .EC_ErrorPage .icons .slds-list_horizontal #youtube-image {
+        width: 27.7px;
+        height: 27.7px;
+    }
+
+    .EC_ErrorPage .icons .slds-list_horizontal li {
+        margin-right: 22.3px;
+        margin-bottom: 21.6px;
+    }
+
+    .EC_ErrorPage .icons .slds-list_horizontal {
+        flex-wrap: wrap;
+    }
+    .EC_ErrorPage .copyright-section li a {
+        font-size: 10px;
+
+    }
+    .EC_ErrorPage .copyright-section .slds-list_horizontal li i {
+        font-size: 10.5px;
+        vertical-align: middle;
+    }
+    .EC_ErrorPage .copyright-section .content-left-spacer .diversion {
+        padding-left: 5px;
+        padding-right: 30px;
+    }
+}
+
+/* tablet 768px */
+@media (max-width: 48em) {
+
+    .EC_ErrorPage .subsection-heading {
+        font-size: 14px;
+    }
+
+    .EC_ErrorPage .footer-wrapper .social-media,
+    .EC_ErrorPage .footer-wrapper .visit-website {
+        padding-top: 32px;
+    }
+
+    .EC_ErrorPage .visit-website .material-icons {
+        font-size: 12px;
+    }
+
+    .EC_ErrorPage .footer-wrapper .copyright-section .content-left-spacer .parent {
+        height: 22px;
+        margin-bottom: 9px;
+    }
+}
+
+/* mobile 480px */
+@media (max-width: 30em) {
+
+    .EC_ErrorPage .error-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .EC_ErrorPage .errorFound {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .EC_ErrorPage .header-wrapper .logo {
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+    }
+}

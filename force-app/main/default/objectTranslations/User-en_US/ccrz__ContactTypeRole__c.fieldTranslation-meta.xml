@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Contact Type Role --></label>
+    <name>ccrz__ContactTypeRole__c</name>
+    <picklistValues>
+        <masterLabel>Department Chair</masterLabel>
+        <translation><!-- Department Chair --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lab Manager</masterLabel>
+        <translation><!-- Lab Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Principal Investigator</masterLabel>
+        <translation><!-- Principal Investigator --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Purchasing Agent</masterLabel>
+        <translation><!-- Purchasing Agent --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Researcher/Post Doc</masterLabel>
+        <translation><!-- Researcher/Post Doc --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Student</masterLabel>
+        <translation><!-- Student --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

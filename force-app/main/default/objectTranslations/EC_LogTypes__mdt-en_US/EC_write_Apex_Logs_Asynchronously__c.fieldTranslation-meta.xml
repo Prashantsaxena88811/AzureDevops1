@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- write Apex Logs Asynchronously --></label>
+    <name>EC_write_Apex_Logs_Asynchronously__c</name>
+</CustomFieldTranslation>

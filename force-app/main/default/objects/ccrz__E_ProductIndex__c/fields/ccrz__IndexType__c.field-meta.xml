@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__IndexType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The type of index, possible values SEARCH, CATEGORY (Base 64 Encoded). Necessary for unique filtering on SOSL searches.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The type of index, possible values SEARCH, CATEGORY (Base 64 Encoded)</inlineHelpText>
+    <label>Index Type</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

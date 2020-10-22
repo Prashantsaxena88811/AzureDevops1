@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__Seller__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Seller this localization applies to.</description>
+    <externalId>false</externalId>
+    <label>CC Seller</label>
+    <referenceTo>ccrz__E_Seller__c</referenceTo>
+    <relationshipLabel>CC Seller I18Ns</relationshipLabel>
+    <relationshipName>E_SellerI18Ns</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

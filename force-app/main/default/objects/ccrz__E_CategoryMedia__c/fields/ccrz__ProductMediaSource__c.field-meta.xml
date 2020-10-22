@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__ProductMediaSource__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Source of the image. Values are &quot;URL&quot;, &quot;Static Resource&quot; and &quot;Attachment&quot;</description>
+    <externalId>false</externalId>
+    <label>Category Media Source</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Attachment</fullName>
+                <default>false</default>
+                <label>Attachment</label>
+            </value>
+            <value>
+                <fullName>Static Resource</fullName>
+                <default>false</default>
+                <label>Static Resource</label>
+            </value>
+            <value>
+                <fullName>URI</fullName>
+                <default>false</default>
+                <label>URI</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

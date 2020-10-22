@@ -1,0 +1,1916 @@
+<!--/*******************************************************************************************************
+* @Class Name       eComm_CartItemDetailView
+* @description      Component to overide the Cart page components
+* @Created By       Sai Kiran Pidugu 
+* @Created On       2019-06-06
+********************************************************************************************************
+* Modification Log: 
+* ------------------------------------------------------------------------------------------------------
+* Developer                Date                         Description 
+* ------------------------------------------------------------------------------------------------------
+* Sai Kiran Pidugu       6th Jun 19                 Created the component
+********************************************************************************************************/-->
+<apex:component allowDML="true" controller="EC_CartDetailController">
+    <script id="EC-CartDetail-View-Desktop" type="text/template">
+        <div class="panel panel-default cc_panel cc_panel_shopping_cart cc_cart2 panel_cart">
+            <div class="pdlr-15 cc_body">
+                {{#ifNotEquals this.ECartItemsS.length 0}}
+                    <button class="continueShoppingButton continue_cart pull-left mt-25 mb-11 ml--10" name="" type="button"><i
+                    class="material-icons keyboard_arrow_left vmiddle"></i>{{pageLabelMap 'EC_cart_continue_small'}}</button>
+                {{/ifNotEquals}}
+                <div class="row ">
+                    <div class="col-xs-12">
+                        <h2 class="title cc_title shop_title ">{{pageLabelMap 'CartInc_ShoppingCart'}}</h2>
+                        <div class="modified_date">
+                            <span class="modDate">{{pageLabelMap 'EC_LastUpdatedDate'}}
+                                <span class="month_upd">{{lastUpdatedDate}}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                {{#ifNotEquals this.ECartItemsS.length 0}}
+                    <div class="flatFeeMessage pull-right hide">
+                        <div class="row">
+                            <div class="col-xs-2 col-sm-1">
+                                <i class="material-icons info_outline orange-color vmiddle pull-right"></i>
+                            </div>
+                            <div class="col-xs-10 col-sm-11 col-lg-10 outerFlatFeeLabel">
+                                <span class="flatFeeLabel">{{pageLabelMap 'EC_FlatFee_Message'}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bulk Ordering Messaging for FOOD & BEVERAGE only -->
+                    <div class="bulkOrderMessage pull-right hide">
+                        <div class="row">
+                            <div class="col-xs-2 col-sm-1">
+                                <i class="material-icons info_outline orange-color vmiddle pull-right"></i>
+                            </div>
+                            <div class="col-xs-10 col-sm-11 col-lg-10 outerBulkOrderLabel">
+                                <span class="bulkOrderLabel">{{pageLabelMap 'EC_BulkOrdering_Message'}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="proceed_checkout pull-right">
+                        {{#if (checknalco)}}
+                        <span class="order-unload-section">
+                            <span class="unld-point">
+                                <span class="cc-unload-text">{{pageLabelMap 'EC_UnloadPoint'}}</span>
+                                <select class="order-unload" id="def_unload_point">
+                                    {{#unloadingdata}}
+                                    {{#each this}}
+                                    <option value="{{this.Id}}" {{#ifEquals (defaultUnloadPoint) this.Id}} selected {{/ifEquals}}>
+                                    {{this.ccrz__CompanyName__c}}
+                                    </option>
+                                    {{/each}}
+                                    {{/unloadingdata}}
+                                </select>
+                            </span>
+                            <span class="unload-help-text">{{pageLabelMap 'EC_DefUnloadHelpText'}}</span>
+                        </span>
+                        {{/if}}
+                        <div class="total_items align-tab">
+                        <span class="price-mob">
+                            <span class="cc_label disptab_none dispmob_none">{{pageLabelMap 'CartInc_Subtotal'}}</span>
+                            <span class="cc_value pr-10">{{{formatUSD (price this.subtotalAmount)}}}</span>
+                        </span>
+                        <span class=" cc_quantity fwb pr-10 mob-qty">({{totalsum}} {{pageLabelMap 'EC_total_items'}})</span>
+                        </div>
+                        {{#ifEquals (stopCheckout this.preventCheckout this.tankValidation this.minMaxErrorStatus this.noTankNums) true}}
+                            <button type="button" class="btn btn-default btn-sm checkOutBtn cc_checkout_btn ec-btn-primary check-disable mob-button mgr--30">{{pageLabelMap 'EC_Proceed_Checkout'}}</button>
+                        {{else}}
+                            <button type="button" class="btn btn-default btn-sm checkOutBtn cc_checkout_btn ec-btn-primary mob-button mgr--30">{{pageLabelMap 'EC_Proceed_Checkout'}}</button>
+                        {{/ifEquals}}
+                        {{#if (checknalco)}}
+                        <span class="checkout-help-text">{{pageLabelMap 'EC_CheckoutHelpText'}}</span>
+                        {{/if}}
+                    </div>
+                    <table class="or-prod-table mgr-head disp_none disptab_none">
+                        <thead class="cc_thead">
+                            {{#if (checknalco)}}
+                            <tr class="cc_tr">
+                                <th width="8%"></th>
+                                <th width="27%">{{pageLabelMap 'EC_ProductDetailsTabOnOrderReview'}}</th>
+                                <th width="11%">{{pageLabelMap 'EC_QuantityTabOnOrderReview'}}</th>
+                                <th width="10%">{{pageLabelMap 'EC_TankNumber'}}</th>
+                                <th width="13%">{{pageLabelMap 'EC_UnloadPoint'}}</th>
+                                <th width="12%">{{pageLabelMap 'EC_TotalTabOnOrderReview'}}</th>
+                            </tr>
+                            {{else}}
+                            <tr class="cc_tr">
+                                <th width="10%"></th>
+                                <th width="30%">{{pageLabelMap 'EC_ProductDetailsTabOnOrderReview'}}</th>
+                                <th width="30%">{{pageLabelMap 'EC_DescriptionTabOnOrderReview'}}</th>
+                                <th width="15%">{{pageLabelMap 'EC_QuantityTabOnOrderReview'}}</th>
+                                <th width="15%">{{pageLabelMap 'EC_TotalTabOnOrderReview'}}</th>
+                            </tr>
+                            {{/if}}
+                        </thead>
+                    </table>
+                {{/ifNotEquals}}
+                <div class="co">
+                    <div id="cart_items_container" class="cc_cart_item_container">
+                        {{> headerSection}}
+                        <div class="cart_item_list cc_cart_item_list">
+                            {{#if this.ECartItemsS}}
+                                {{#each this.ECartItemsS.models}}                                   
+                                    <div class=" {{this.attributes.sfid}} cc_cart_item  "
+                                        data-sku="{{this.attributes.product.SKU}}">
+                                        {{> cartItemsDesktop}}
+                                    </div>
+                                {{else}}
+                                    <div class="col-md-12 msg_wrapper">
+                                        <div class="empty_msg">
+                                            <div class="material-icons error md-48 orange"></div>
+                                            <div class="msg_fline">{{pageLabelMap 'is_empty'}}</div>
+                                            <div class="col-md-2"></div>
+                                            <div class="msg_slines col-md-8"><!--{{pageLabelMap 'is_empty_SecondPara'}}--></div>
+                                            <div class="col-md-2"></div>
+                                        </div>
+                                    </div>
+                                    <div class="empty_cart_continue"><button class="btn btn-default btn-sm continueShoppingButton ec-btn-primary empty-continue mt-25 " name="" type="button">{{pageLabelMap 'CartInc_ContinueShopping'}}</button></div>
+                                {{/each}}
+                            {{/if}}        
+                        </div>        
+                    </div> 
+                                 
+                    {{#ifNotEquals this.ECartItemsS.length 0}}
+                        {{> emailModal}}
+                        {{> actionsTotals}}
+                    {{/ifNotEquals}}
+                </div>       
+            </div>
+        </div>                
+    </script>
+    <script id="EC-CartItemDetail-View-Desktop" type="text/template">
+        {{#with this.attributes}}
+            {{#ifEquals itemStatus 'Invalid'}}
+                <table class="or-prod-table mgr-head invalid-row {{#ifNotEquals (minQtyProduct this) ''}} warn-message-align 
+                {{else}} {{#ifNotEquals (maxQtyProduct this) ''}} warn-message-align {{/ifNotEquals}}{{/ifNotEquals}}">
+                    <tbody class="cc_tbody">
+                        <tr class="displaylarge_none disp_none">
+                            <td width="10%" class="img-col pb-0"></td>
+                            <td width="{{#if (checknalco)}}40%{{else}}50%{{/if}}" class="prod-details-col pb-0 prod-details-col-tab"></td>
+                            <td width="{{#if (checknalco)}}50%{{else}}30%{{/if}}" class="{{#if (checknalco)}}{{else}}img-col{{/if}} pb-0">
+                             <div class=" wrapper talign-right">
+                                        <button type="button" class="btn btn-default btn-sm deleteItem removeItemButton cc_remove_item_button blue-color del_btn del_btn_invalid"
+                                            data-dismiss="modal" aria-hidden="true" data-id="{{sfid}}"><img
+                                                src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-delete-outline.svg')}"
+                                                class="del"></img>{{pageLabelMap 'EC_DeleteIcon'}}</button>
+                                    </div>                                     
+                            </td>
+                        </tr>
+                        {{#if (checknalco)}}
+                        <tr class="displaylarge_none disp_none">
+                            <td width="10%" class="img-col pb-0"></td>
+                            <td colspan="2" class="img-col pb-0 tab-pad-0">
+                                {{#ifEquals pricingType 'external'}}
+                                    {{#if extName}}
+                                        <h2 class="cc_ext_name title-link">
+                                            {{displayProductName 'Aggregate_Display' displayProduct.sfdcName extName }}
+                                        </h2>
+                                    {{else}}
+                                        <h2 class="cc_ext_name title-link">
+                                            {{displayProductName 'Aggregate_Display' displayProduct.sfdcName this.product.sfdcName }}
+                                        </h2>
+                                    {{/if}}
+                                    {{else}}
+                                        <h2 class="cc_ext_name title-link">
+                                            {{displayProductName 'Aggregate_Display' displayProduct.sfdcName this.product.sfdcName}}
+                                        </h2>
+                                {{/ifEquals}}
+                                <div class="pull-left or-sku-wrapper no_display">
+                                    {{#ifEquals this.pricingType 'external'}}
+                                        {{#if this.extName}}
+                                            <span class="cc_ext_sku feb">{{extSKU}}</span>
+                                        {{else}}
+                                            <span class="cc_checkout_sku fwb">{{product.SKU}}</span>
+                                        {{/if}}
+                                    {{else}}
+                                        <span class="cc_checkout_sku fwb">{{product.SKU}}</span>
+                                    {{/ifEquals}}
+                                </div>
+                            </td>
+                        </tr>
+                        {{/if}}
+                        <tr>
+                            <td class="img-col pt-0" width="{{#if (checknalco)}}8%{{else}}10%{{/if}}">
+                                {{#if product.EProductMediasS.[0]}}
+                                    {{productLink product 'cc_product_name_img' image=(displayImage this 'orderDetail img-responsive' src=(displayEProductMedia this.product.EProductMediasS.[0]) onerror="this.onerror=null;this.src='{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.jpg'}'" alt=this.product.sfdcName dataId=this.product.SKU)}}
+                                {{else}}
+                                    {{productLink product 'cc_product_name_img' image=(displayImage this 'carouselImg cc_alternate img-responsive thumbnail img-size' src="{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.jpg'}" onerror="this.onerror=null;this.src='{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.jpg'}'" alt=this.product.sfdcName dataId=this.product.SKU)}}
+                                {{/if}}
+                            </td>
+                            <td class="quicklist-mob display_inlarge">                                    
+                                                    <button type="button"
+                                                        class="btn btn-default btn-sm deleteItem removeItemButton cc_remove_item_button blue-color del_btn"
+                                                        data-dismiss="modal" aria-hidden="true" data-id="{{sfid}}"><img
+                                                            src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-delete-outline.svg')}"
+                                                            class="del"></img>{{pageLabelMap 'EC_DeleteIcon'}}</button>
+                                                </div>
+                            </td>
+                            <td class="prod-details-col pl-0 pt-0 {{#if (checknalco)}}pos-rel prod-name-disp-tab-none{{/if}}" width="{{#if (checknalco)}}27%{{else}}30%{{/if}}">                            
+                                {{#ifEquals pricingType 'external'}}
+                                    {{#if extName}}
+                                        <h2 class="cc_ext_name title-link">
+                                            {{displayProductName 'Aggregate_Display' displayProduct.sfdcName extName }}
+                                        </h2>
+                                    {{else}}
+                                        <h2 class="cc_ext_name title-link">
+                                            {{displayProductName 'Aggregate_Display' displayProduct.sfdcName this.product.sfdcName }}
+                                        </h2>
+                                    {{/if}}
+                                    {{else}}
+                                        <h2 class="cc_ext_name title-link">
+                                            {{displayProductName 'Aggregate_Display' displayProduct.sfdcName this.product.sfdcName}}
+                                        </h2>
+                                {{/ifEquals}}
+                                <div class="clearfix">
+                                    <div class="pull-left or-uom-wrapper displaylarge_none">
+                                        <span class="cc_checkout_sku ">{{unitOfMeasure}}</span>
+                                    </div>
+                                    <div class="pull-left or-sku-wrapper">
+                                        <span>{{pageLabelMap 'EC_ProductCode'}}</span>
+                                        {{#ifEquals this.pricingType 'external'}}
+                                            {{#if this.extName}}
+                                                <span class="cc_ext_sku feb">{{extSKU}}</span>
+                                            {{else}}
+                                                <span class="cc_checkout_sku fwb">{{product.SKU}}</span>
+                                            {{/if}}
+                                            {{else}}
+                                                <span class="cc_checkout_sku fwb">{{product.SKU}}</span>
+                                        {{/ifEquals}}
+                                    </div>
+                                    <div class="pull-left or-uom-wrapper disptab_none disp_none">
+                                        <span class="cc_checkout_sku ">{{unitOfMeasure}}</span>
+                                    </div>
+                                </div>
+                                <div class="desc-col pl-0 displaylarge_none disp_none {{#if (checknalco)}}desc-col-tab nalco-disp-none{{/if}}">{{this.product.shortDesc}}</div>
+                                {{#if this.price}}
+                                    <span class="cc_price here disptab_none">{{{formatUSD (price this.price)}}}</span>
+                                {{/if}}       
+                                {{#if this.absoluteDiscount}}
+                                    {{#ifGreater this.absoluteDiscount 0}}
+                                        <span
+                                            class="cc_price_label">{{pageLabelMap 'Checkout_YouSave'}}&#58;&#160;</span>
+                                        <span class="cc_price">{{{formatUSD (price this.absoluteDiscount)}}}</span>
+                                    {{/ifGreater}}
+                                    {{#ifLessThan this.absoluteDiscount 0}}
+                                        <span
+                                            class="cc_price_label">{{pageLabelMap 'CartInc_Surcharge'}}&#58;&#160;</span>
+                                        <span class="cc_price">{{{formatUSD (price this.absoluteDiscount)}}}</span>
+                                    {{/ifLessThan}}
+                                {{/if}}
+                                
+                                {{#ifContains this.pricingModifierTypes 'tiered'}}
+                                    <div class="cc_prt_tool_tip_div cc_prt_tool_tip_div_or" data-toggle="tooltip"
+                                        title="{{pageLabelMap 'ProductPricingTiers_VolumeHover'}}">
+                                        <span class="cc_prt_tool_tip_text cc_prt_tool_tip_text_or">{{pageLabelMap 'ProductPricingTiers_VolumePricingApplied'}}</span>
+                                    </div>
+                                {{/ifContains}}
+                            </td>
+                            
+                            <td width="{{#if (checknalco)}}20%{{else}}30%{{/if}}" class="lt_{{this.mockProduct.id}} desc-col pl-0 disptab_none mob-desk-desc {{#if (checknalco)}} nalco-disp-none {{/if}}">{{{this.productR.shortDesc}}}</td>
+                            <td width="{{#if (checknalco)}}11%{{else}}15%{{/if}}" class="or-qty pl-0 pt-0 vbottom {{#if (checknalco)}}disptab_none uom-align max-min-nalco{{/if}}">
+                                <div class="quantity cc_quantity" data-id="{{sfid}}">
+                                    {{#ifNotEquals cartItemType 'Coupon'}}
+                                        <div class="plus_minus cc_plus-minus gp_quantity_block" data-id="{{sfid}}">
+                                            {{> cartItemsQty}}
+                                        </div>
+                                        {{#if (checknalco)}}
+                                        <span class='nalco-uom'>
+                                            {{#if (packageTypeCart this.product.packageTypeUOM 'Bulk')}}
+                                                {{this.customPricingUOM}}
+                                            {{else}}
+                                            {{pageLabelMap 'EC_UOM_EA'}}
+                                            {{/if}}
+                                        </span>
+                                        {{/if}}
+                                    {{/ifNotEquals}}
+                                </div>
+                                {{#if (checknalco)}}
+                                {{#ifNotEquals cartItemType 'Coupon'}}
+                                <div class="min-max-warn">
+                                {{{minQtyProduct this}}}
+                                {{{maxQtyProduct this}}}
+                                </div>
+                                {{/ifNotEquals}}
+                                {{/if}}
+                                <div class=" wrapper disp_none disptab_none">
+                                    <button type="button"
+                                        class="btn btn-default btn-sm deleteItem removeItemButton cc_remove_item_button del_btn blue-color"
+                                        data-dismiss="modal" aria-hidden="true" data-id="{{sfid}}">
+                                        <img src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-delete-outline.svg')}"
+                                            class="del"></img>
+                                        {{pageLabelMap 'EC_DeleteIcon'}}
+                                    </button>
+                                </div>
+                            </td>
+                            {{#if (checknalco)}}
+                                            <td width="23%" class="pl-0 line-unload-section">
+                                                <div class="quantity cc_quantity dispmob_show max-min-nalco uom-price-mob" data-id="{{sfid}}">
+                                                    <span>{{pageLabelMap 'EC_QuantityTabOnOrderReview'}}</span>
+                                                    {{#ifNotEquals cartItemType 'Coupon'}}
+                                                        <div class="plus_minus cc_plus-minus gp_quantity_block"
+                                                            data-id="{{sfid}}">
+                                                            {{> cartItemsQty}}
+                                                            <span class='nalco-uom'>
+                                                                {{#if (packageTypeCart this.product.packageTypeUOM 'Bulk')}}
+                                                                    {{this.customPricingUOM}}
+                                                                {{else}}
+                                                                {{pageLabelMap 'EC_UOM_EA'}}
+                                                                {{/if}}
+                                                            </span>
+                                                        </div>
+                                                    {{/ifNotEquals}}
+                                                </div>
+                                                <div class="disp-inline">
+                                                    <span class="displaylarge_none tank-label">{{pageLabelMap 'EC_TankNumber'}}</span>
+                                                    <select data-id="{{sfid}}" {{#ifEquals (bulkORportafeed this.product.packageTypeTank) false}} disabled {{/ifEquals}} 
+                                                    class="line-tank {{#if (processErrorMsg this 'tanknumber')}} err-border-red {{/if}}">
+                                                        <option value="">-</option>
+                                                        {{#each this.product.TankNumbers}}
+                                                        {{#if (showDropOff ../product.SKU this)}}
+                                                        <option value="{{this.Id}}" {{#ifEquals ../tankNumber this.Id}} selected {{/ifEquals}}>
+                                                        {{this.Tank_Number__c}}
+                                                        </option>
+                                                        {{/if}}
+                                                        {{/each}}
+                                                    </select>
+                                                    <span class="displaylarge_none">
+                                                        <span class="tank-err-msg {{#if (processErrorMsg this 'tanknumber')}} error-show {{/if}}">
+                                                            {{pageLabelMap 'EC_TankErr'}}
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                {{#ifNotEquals cartItemType 'Coupon'}}
+                                                <div class="min-max-warn dispmob_show">
+                                                {{{minQtyProduct this}}}
+                                                {{{maxQtyProduct this}}}
+                                                </div>
+                                                {{/ifNotEquals}}
+                                                <div class="disp-inline mob-line-unload">
+                                                    <span class="displaylarge_none unload-label">{{pageLabelMap 'EC_UnloadPoint'}}</span>
+                                                    <select id="line_unload{{sfid}}" {{#ifEquals (bulkORportafeed this.product.packageTypeTank) true}} disabled {{/ifEquals}} data-id="{{sfid}}" 
+                                                    class="line-unload {{#if (processErrorMsg this 'unloadpoint')}} err-border-red {{/if}}">
+                                                        <option value="">-</option>
+                                                        {{#each this.product.UnloadingPoints}}
+                                                        <option value="{{this.Id}}" {{#ifEquals (checkNewItem ../sfid) this.Id}} selected {{/ifEquals}}>
+                                                        {{this.ccrz__CompanyName__c}}
+                                                        </option>
+                                                        {{/each}}
+                                                    </select>
+                                                    <span class="displaylarge_none">
+                                                        <span class="unload-err-msg {{#if (processErrorMsg this 'unloadpoint')}} error-show {{/if}}">
+                                                            {{pageLabelMap 'EC_UnloadErr'}}
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <div class="tank-warn-message-section">
+                                                    <div class="tank-warn-message {{#ifEquals tankWarnStatus true}} warn-show {{/ifEquals}}">{{pageLabelMap 'EC_TankNumberWarning'}}</div>
+                                                    {{#ifEquals this.product.noTankNums true}}
+                                                        <div class="no-tank-err-msg">{{pageLabelMap 'EC_NoTankErr'}}</div>
+                                                    {{/ifEquals}}
+                                                    <div class="disptab_none dispmob_none">
+                                                        <span class="tank-err-msg {{#if (processErrorMsg this 'tanknumber')}} error-show {{/if}}">
+                                                            {{pageLabelMap 'EC_TankErr'}}
+                                                        </span>
+                                                        <span class="unload-err-msg {{#if (processErrorMsg this 'unloadpoint')}} error-show {{/if}}">
+                                                            {{pageLabelMap 'EC_UnloadErr'}}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            {{/if}}
+                            <td class="total-col pl-0 disptab_none" width="{{#if (checknalco)}}12%{{else}}15%{{/if}}">
+                                <div class="error-box">
+                                    <div>
+                                        <i class="material-icons alert-info-icon error"></i>
+                                    </div>
+                                    <span>{{pageLabelMap 'EC_Cart_Error'}}<span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="displaylarge_none disp_none">
+                            <td></td>
+                            <td colspan="2" class="pl-0">
+                                <div class="cc_total col-xs-3">
+                                {{#if (checknalco)}}
+                                    {{#if (taxonomyCart this.product.taxonomy 'Equipment')}}
+                                    <div class="cc_price price first-price disptab_none">
+                                        <span class="cc_price here">{{{formatUSD (price this.price)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span></span>
+                                    </div>
+                                    {{/if}}
+                                    {{#if (taxonomyCart this.product.taxonomy 'Chemical')}}
+                                        {{#if (packageTypeCart this.product.packageTypeUOM 'NonBulk')}}
+                                            <div class="cc_price price first-price">
+                                                <span class="cc_price here disptab_none">{{{formatUSD (price this.price)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span></span>
+                                            </div>
+                                            {{#if (nonBulkEACart this.product.packageTypeUOM this.customPricingUOM)}}
+                                            <div class="cc_price price second-price">
+                                                <span class="cc_price here disptab_none">{{{formatUSD (price this.customUnitPrice)}}} <span class="price-wrap-dec">{{pageLabelMap 'EC_UOM_Per'}} {{this.customPricingUOM}}</span></span>
+                                            </div>
+                                            {{/if}}
+                                        {{/if}}
+                                        {{#if (packageTypeCart this.product.packageTypeUOM 'Bulk')}}
+                                            <div class="cc_price price first-price">
+                                                <span class="cc_price here disptab_none">{{{formatUSD (price this.customUnitPrice)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{this.customPricingUOM}}</span></span>
+                                            </div>
+                                        {{/if}}
+                                    {{/if}}
+                                {{/if}} 
+                                {{{formatUSD (price itemTotal)}}}  
+                                {{#if (checknalco)}}
+                                <div class="uom-align">
+                                <div class="quantity cc_quantity" data-id="{{sfid}}">
+                                    {{#ifNotEquals cartItemType 'Coupon'}}
+                                        <div class="plus_minus cc_plus-minus gp_quantity_block max-min-nalco" data-id="{{sfid}}">
+                                            {{> cartItemsQty}}
+                                        </div>
+                                        {{#if (checknalco)}}
+                                        <span class='nalco-uom'>
+                                            {{#if (packageTypeCart this.product.packageTypeUOM 'Bulk')}}
+                                                {{this.customPricingUOM}}
+                                            {{else}}
+                                            {{pageLabelMap 'EC_UOM_EA'}}
+                                            {{/if}}
+                                        </span>
+                                        {{/if}}
+                                    {{/ifNotEquals}}
+                                </div>
+                                {{#ifNotEquals cartItemType 'Coupon'}}
+                                <div class="min-max-warn">
+                                {{{minQtyProduct this}}}
+                                {{{maxQtyProduct this}}}
+                                </div>
+                                {{/ifNotEquals}}
+                                </div>
+                                {{/if}} 
+                                </div>                             
+                                <div class="error-box col-xs-8">
+                                    <table class="table-error-box">
+                                        <tr>
+                                            <td>
+                                                <i class="material-icons alert-info-icon error"></i>
+                                            </td>                                                           
+                                            <td>
+                                                <span>{{pageLabelMap 'EC_Cart_Error'}}<span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>                       
+                         </tr>
+                    </tbody>
+                </table>            
+                {{#ifContains this.pricingModifierTypes 'tiered'}}
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-2">
+                            <div id="cc_prt_overflow_collapse_{{sfid}}"
+                                class="collapse cc_prt_div_outer cc_prt_div_cart_collapse_{{sfid}}"></div>
+                        </div>
+                    </div>
+                {{/ifContains}}     
+            {{else}}
+                <div class="mgr-head  co {{#ifNotEquals (minQtyProduct this) ''}} warn-message-align {{else}} 
+                {{#ifNotEquals (maxQtyProduct this) ''}} warn-message-align {{/ifNotEquals}}{{/ifNotEquals}}">
+                    {{#ifEquals this.cartItemType 'Coupon'}}
+                        <div class="col-md-8">
+                            <p class="item_title coupon_title cc_coupon_title">
+                                <span class="cc_label">{{pageLabelMap 'CartInc_AppliedCoupon'}}</span>
+                                <span class="cc_value">{{this.productR.SKU}}</span>
+                            </p>
+                            {{else}}
+                                <table class="or-prod-table">
+                                    <tbody class="cc_tbody">
+                                        <tr class="displaylarge_none disp_none">
+                                            <td width="10%" class="img-col pb-0"></td>
+                                            <td width="{{#if (checknalco)}}40%{{else}}50%{{/if}}" class="prod-details-col pb-0 {{#if (checknalco)}}prod-details-col-tab{{/if}}"></td>
+                                            <td width="{{#if (checknalco)}}50%{{else}}30%{{/if}}" class="pb-0">
+                                            <div class=" wrapper talign-right">
+                                                        <button type="button"
+                                                            class="btn btn-default btn-sm deleteItem removeItemButton cc_remove_item_button blue-color del_btn"
+                                                            data-dismiss="modal" aria-hidden="true" data-id="{{sfid}}"><img
+                                                                src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-delete-outline.svg')}"
+                                                                class="del"></img>{{pageLabelMap 'EC_DeleteIcon'}}</button>
+                                                        <div class="delimiter"></div>
+                                                        {{#unless sptMap}}
+                                                            <div class="wishFinder cc_wish_finder" data-sku="{{product.SKU}}">
+                                                                <div class="wishButtons cc_wish_buttons cart_quicklist mob-qty">
+                                                                    {{pageLabelMap 'EC_QuicklistIcon'}}
+                                                                </div>
+                                                            </div>
+                                                        {{/unless}}
+                                                    </div>                                     
+                                            </td>
+                                        </tr>
+                                        {{#if (checknalco)}}
+                                        <tr class="displaylarge_none disp_none">
+                                            <td width="10%" class="img-col pb-0"></td>
+                                            <td colspan="2" class="img-col pb-0 tab-pad-0">
+                                                {{#ifEquals pricingType 'external'}}
+                                                    {{#if extName}}
+                                                        <h2 class="cc_ext_name title-link">
+                                                            {{displayProductName 'Aggregate_Display' displayProduct.sfdcName extName }}
+                                                        </h2>
+                                                    {{else}}
+                                                        <h2 class="cc_ext_name title-link">
+                                                            {{displayProductName 'Aggregate_Display' displayProduct.sfdcName this.product.sfdcName }}
+                                                        </h2>
+                                                    {{/if}}
+                                                    {{else}}
+                                                        <h2 class="cc_ext_name title-link">
+                                                            {{displayProductName 'Aggregate_Display' displayProduct.sfdcName this.product.sfdcName}}
+                                                        </h2>
+                                                {{/ifEquals}}
+                                                <div class="pull-left or-sku-wrapper no_display">
+                                                    {{#ifEquals this.pricingType 'external'}}
+                                                        {{#if this.extName}}
+                                                            <span class="cc_ext_sku feb">{{extSKU}}</span>
+                                                        {{else}}
+                                                            <span class="cc_checkout_sku fwb">{{product.SKU}}</span>
+                                                        {{/if}}
+                                                    {{else}}
+                                                        <span class="cc_checkout_sku fwb">{{product.SKU}}</span>
+                                                    {{/ifEquals}}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {{/if}}
+                                        <tr>
+                                            <td class="img-col pt-0" width="{{#if (checknalco)}}8%{{else}}10%{{/if}}">
+                                                {{#if product.EProductMediasS.[0]}}
+                                                    {{productLink product 'cc_product_name_img' image=(displayImage this 'orderDetail img-responsive' src=(displayEProductMedia this.product.EProductMediasS.[0]) onerror="this.onerror=null;this.src='{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.jpg'}'" alt=this.product.sfdcName dataId=this.product.SKU)}}
+                                                {{else}}
+                                                    {{productLink product 'cc_product_name_img' image=(displayImage this 'carouselImg cc_alternate img-responsive thumbnail img-size' src="{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.jpg'}" onerror="this.onerror=null;this.src='{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.jpg'}'" alt=this.product.sfdcName dataId=this.product.SKU)}}
+                                                {{/if}}
+                                            </td>
+                                            <td class="quicklist-mob display_inlarge">
+                                                <div class=" wrapper">
+                                                    {{#unless sptMap}}
+                                                        <div class="wishFinder cc_wish_finder" data-sku="{{product.SKU}}">
+                                                            <div class="wishButtons cc_wish_buttons cart_quicklist mob-qty">
+                                                                {{pageLabelMap 'EC_QuicklistIcon'}}
+                                                            </div>
+                                                        </div>
+                                                    {{/unless}}
+                                                    <button type="button"
+                                                        class="btn btn-default btn-sm deleteItem removeItemButton cc_remove_item_button blue-color del_btn"
+                                                        data-dismiss="modal" aria-hidden="true" data-id="{{sfid}}"><img
+                                                            src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-delete-outline.svg')}"
+                                                            class="del"></img>{{pageLabelMap 'EC_DeleteIcon'}}</button>
+                                                </div>
+                                            </td>
+                                            <td class="prod-details-col pt-0 pl-0 {{#if (checknalco)}}pos-rel prod-name-disp-tab-none{{/if}}" width="{{#if (checknalco)}}27%{{else}}30%{{/if}}">
+                                                
+                                                {{#ifEquals pricingType 'external'}}
+                                                    {{#if extName}}
+                                                        <h2 class="cc_ext_name title-link">
+                                                            {{displayProductName 'Aggregate_Display' displayProduct.sfdcName extName }}
+                                                        </h2>
+                                                    {{else}}
+                                                        <h2 class="cc_ext_name title-link">
+                                                            {{displayProductName 'Aggregate_Display' displayProduct.sfdcName this.product.sfdcName }}
+                                                        </h2>
+                                                    {{/if}}
+                                                    {{else}}
+                                                        <h2 class="cc_ext_name title-link">
+                                                            {{displayProductName 'Aggregate_Display' displayProduct.sfdcName this.product.sfdcName}}
+                                                        </h2>
+                                                {{/ifEquals}}
+                                                <div class="clearfix">
+                                                    <div class="pull-left or-sku-wrapper">
+                                                        <span>{{pageLabelMap 'EC_ProductCode'}}</span>
+                                                        {{#ifEquals this.pricingType 'external'}}
+                                                            {{#if this.extName}}
+                                                                <span class="cc_ext_sku feb">{{extSKU}}</span>
+                                                            {{else}}
+                                                                <span class="cc_checkout_sku fwb">{{product.SKU}}</span>
+                                                            {{/if}}
+                                                            {{else}}
+                                                                <span
+                                                                    class="cc_checkout_sku fwb">{{product.SKU}}</span>
+                                                        {{/ifEquals}}
+                                                    </div>
+                                                    <div class="pull-left or-uom-wrapper">
+                                                        <span class="cc_checkout_sku">{{unitOfMeasure}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="desc-col pl-0 displaylarge_none disp_none {{#if (checknalco)}}desc-col-tab nalco-disp-none{{/if}}">{{this.product.shortDesc}}</div>
+                                                {{#if this.price}}
+                                                {{#if (checknalco)}}
+                                                    {{#if (taxonomyCart this.product.taxonomy 'Equipment')}}
+                                                    <div class="cc_price price first-price disptab_none">
+                                                        <span class="cc_price here">{{{formatUSD (price this.price)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span></span>
+                                                    </div>
+                                                    {{/if}}
+                                                    {{#if (taxonomyCart this.product.taxonomy 'Chemical')}}
+                                                        {{#if (packageTypeCart this.product.packageTypeUOM 'NonBulk')}}
+                                                            <div class="cc_price price first-price disptab_none">
+                                                                <span class="cc_price here">{{{formatUSD (price this.price)}}} <span class="price-wrap-dec one-uom">
+                                                                {{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span></span>
+                                                            </div>
+                                                            {{#if (nonBulkEACart this.product.packageTypeUOM this.customPricingUOM)}}
+                                                            <div class="cc_price price second-price disptab_none">
+                                                                <span class="cc_price here">{{{formatUSD (price this.customUnitPrice)}}} <span class="price-wrap-dec">
+                                                                {{pageLabelMap 'EC_UOM_Per'}} {{this.customPricingUOM}}</span></span>
+                                                            </div>
+                                                            {{/if}}
+                                                        {{/if}}
+                                                        {{#if (packageTypeCart this.product.packageTypeUOM 'Bulk')}}
+                                                            <div class="cc_price price first-price disptab_none">
+                                                                <span class="cc_price here">{{{formatUSD (price this.customUnitPrice)}}} <span class="price-wrap-dec one-uom">
+                                                                {{pageLabelMap 'EC_UOM_Per'}} {{this.customPricingUOM}}</span></span>
+                                                            </div>
+                                                        {{/if}}
+                                                    {{/if}}
+                                                {{else}}
+                                                    <span class="cc_price here disptab_none">{{{formatUSD (price this.price)}}}</span>
+                                                {{/if}}
+                                                {{/if}}
+                                                {{#if this.absoluteDiscount}}
+                                                    {{#ifGreater this.absoluteDiscount 0}}
+                                                        <span class="cc_price_label">{{pageLabelMap 'Checkout_YouSave'}}&#58;&#160;</span>
+                                                        <span class="cc_price">{{{formatUSD (price this.absoluteDiscount)}}}</span>
+                                                    {{/ifGreater}}
+                                                    {{#ifLessThan this.absoluteDiscount 0}}
+                                                        <span class="cc_price_label">{{pageLabelMap 'CartInc_Surcharge'}}&#58;&#160;</span>
+                                                        <span class="cc_price disptab_none">{{{formatUSD (price this.absoluteDiscount)}}}</span>
+                                                    {{/ifLessThan}}
+                                                {{/if}}
+                                                
+                                                {{#ifContains this.pricingModifierTypes 'tiered'}}
+                                                    <div class="cc_prt_tool_tip_div cc_prt_tool_tip_div_or"
+                                                        data-toggle="tooltip"
+                                                        title="{{pageLabelMap 'ProductPricingTiers_VolumeHover'}}">
+                                                        <span class="cc_prt_tool_tip_text cc_prt_tool_tip_text_or">{{pageLabelMap 'ProductPricingTiers_VolumePricingApplied'}}</span>
+                                                    </div>
+                                                {{/ifContains}}
+                                                {{#if (checknalco)}}
+                                                <div class="displaylarge_none disp_none">
+                                                    {{#if (checknalco)}}
+                                                                {{#if (taxonomyCart this.product.taxonomy 'Equipment')}}
+                                                                <div class="cc_price price first-price">
+                                                                    <span class="cc_total"> {{{formatUSD (price price)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span></span>
+                                                                </div>
+                                                                {{/if}}
+                                                                {{#if (taxonomyCart this.product.taxonomy 'Chemical')}}
+                                                                    {{#if (packageTypeCart this.product.packageTypeUOM 'NonBulk')}}
+                                                                        <div class="cc_price price first-price">
+                                                                            <span class="cc_total"> {{{formatUSD (price price)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span></span>
+                                                                        </div>
+                                                                        {{#if (nonBulkEACart this.product.packageTypeUOM this.customPricingUOM)}}
+                                                                        <div class="cc_price price second-price">
+                                                                            <span class="cc_total">{{{formatUSD (price this.customUnitPrice)}}} <span class="price-wrap-dec">{{pageLabelMap 'EC_UOM_Per'}} {{this.customPricingUOM}}</span></span>
+                                                                        </div>
+                                                                        {{/if}}
+                                                                    {{/if}}
+                                                                    {{#if (packageTypeCart this.product.packageTypeUOM 'Bulk')}}
+                                                                        <div class="cc_price price first-price">
+                                                                            <span class="cc_total">{{{formatUSD (price this.customUnitPrice)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{this.customPricingUOM}}</span></span>
+                                                                        </div>
+                                                                    {{/if}}
+                                                                {{/if}}
+                                                            {{else}}
+                                                            <span class="cc_total"> {{{formatUSD (price price)}}}</span>
+                                                            {{/if}}
+                                                            {{#if (checknalco)}}
+                                                            <div class="quantity cc_quantity displaylarge_none {{#if (checknalco)}}nalco-qty-float uom-align{{/if}}" data-id="{{sfid}}">
+                                                                {{#ifNotEquals cartItemType 'Coupon'}}
+                                                                    <div class="plus_minus cc_plus-minus gp_quantity_block max-min-nalco"
+                                                                        data-id="{{sfid}}">
+                                                                        {{> cartItemsQty}}
+                                                                    </div>
+                                                                    <span class='nalco-uom'>
+                                                                        {{#if (packageTypeCart this.product.packageTypeUOM 'Bulk')}}
+                                                                            {{this.customPricingUOM}}
+                                                                        {{else}}
+                                                                        {{pageLabelMap 'EC_UOM_EA'}}
+                                                                        {{/if}}
+                                                                    </span>
+                                                                {{/ifNotEquals}}
+                                                            </div>
+                                                            {{#ifNotEquals cartItemType 'Coupon'}}
+                                                            <div class="min-max-warn">
+                                                            {{{minQtyProduct this}}}
+                                                            {{{maxQtyProduct this}}}
+                                                            </div>
+                                                            {{/ifNotEquals}}
+                                                            <div class="cc_total">
+                                                                <span class="fwb total">{{pageLabelMap 'EC_TotalTabOnOrderReview'}}</span>
+                                                                <span>{{{formatUSD (price itemTotal)}}}</span>
+                                                            </div>
+                                                            {{/if}}
+                                                </div>
+                                                {{/if}}
+                                            </td>
+                                            <td width="{{#if (checknalco)}}20%{{else}}30%{{/if}}" class="lt_{{this.mockProduct.id}} desc-col pl-0 disptab_none mob-desk-desc {{#if (checknalco)}} nalco-disp-none {{/if}}">
+                                                {{{this.productR.shortDesc}}}</td>
+                                            <td width="{{#if (checknalco)}}11%{{else}}15%{{/if}}" class=" pt-0 or-qty pl-0 {{#if (checknalco)}}disptab_none dispmob_none uom-align max-min-nalco {{else}}vbottom{{/if}}">
+                                                <div class="quantity cc_quantity" data-id="{{sfid}}">
+                                                    {{#ifNotEquals cartItemType 'Coupon'}}
+                                                        <div class="plus_minus cc_plus-minus gp_quantity_block"
+                                                            data-id="{{sfid}}">
+                                                            {{> cartItemsQty}}
+                                                        </div>
+                                                        {{#if (checknalco)}}
+                                                        <span class='nalco-uom'>
+                                                            {{#if (packageTypeCart this.product.packageTypeUOM 'Bulk')}}
+                                                                {{this.customPricingUOM}}
+                                                            {{else}}
+                                                            {{pageLabelMap 'EC_UOM_EA'}}
+                                                            {{/if}}
+                                                        </span>
+                                                        {{/if}}
+                                                    {{/ifNotEquals}}
+                                                </div>
+                                                {{#if (checknalco)}}
+                                                {{#ifNotEquals cartItemType 'Coupon'}}
+                                                <div class="min-max-warn">
+                                                {{{minQtyProduct this}}}
+                                                {{{maxQtyProduct this}}}
+                                                </div>
+                                                {{/ifNotEquals}}
+                                                {{/if}}
+                                                <div class="wrapper disp_none disptab_none">
+                                                    {{#unless sptMap}}
+                                                        <div class="wishFinder cc_wish_finder" data-sku="{{product.SKU}}">
+                                                            <div class="wishButtons cc_wish_buttons cart_quicklist">
+                                                                {{pageLabelMap 'EC_QuicklistIcon'}}
+                                                            </div>
+                                                        </div>
+                                                    {{/unless}}
+                                                    <button type="button"
+                                                        class="btn btn-default btn-sm deleteItem removeItemButton cc_remove_item_button blue-color del_btn"
+                                                        data-dismiss="modal" aria-hidden="true" data-id="{{sfid}}"><img
+                                                            src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-delete-outline.svg')}"
+                                                            class="del"></img>{{pageLabelMap 'EC_DeleteIcon'}}</button>
+                                                </div>
+                                            </td>
+                                            {{#if (checknalco)}}
+                                            <td width="23%" class="pl-0 line-unload-section">
+                                                <div class="quantity cc_quantity dispmob_show uom-price-mob" data-id="{{sfid}}">
+                                                    <span>{{pageLabelMap 'EC_QuantityTabOnOrderReview'}}</span>
+                                                    {{#ifNotEquals cartItemType 'Coupon'}}
+                                                        <div class="plus_minus cc_plus-minus gp_quantity_block max-min-nalco"
+                                                            data-id="{{sfid}}">
+                                                            {{> cartItemsQty}}
+                                                            <span class='nalco-uom'>
+                                                                {{#if (packageTypeCart this.product.packageTypeUOM 'Bulk')}}
+                                                                    {{this.customPricingUOM}}
+                                                                {{else}}
+                                                                {{pageLabelMap 'EC_UOM_EA'}}
+                                                                {{/if}}
+                                                            </span>
+                                                        </div>
+                                                    {{/ifNotEquals}}
+                                                </div>
+                                                <div class="disp-inline">
+                                                    <span class="displaylarge_none tank-label">{{pageLabelMap 'EC_TankNumber'}}</span>
+                                                    <select data-id="{{sfid}}" {{#ifEquals (bulkORportafeed this.product.packageTypeTank) false}} disabled {{/ifEquals}} 
+                                                    class="line-tank {{#if (processErrorMsg this 'tanknumber')}} err-border-red {{/if}}">
+                                                        <option value="">-</option>
+                                                        {{#each this.product.TankNumbers}}
+                                                        {{#if (showDropOff ../product.SKU this)}}
+                                                        <option value="{{this.Id}}" {{#ifEquals ../tankNumber this.Id}} selected {{/ifEquals}}>
+                                                        {{this.Tank_Number__c}}
+                                                        </option>
+                                                        {{/if}}
+                                                        {{/each}}
+                                                    </select>
+                                                    <span class="displaylarge_none">
+                                                        <span class="tank-err-msg {{#if (processErrorMsg this 'tanknumber')}} error-show {{/if}}">
+                                                            {{pageLabelMap 'EC_TankErr'}}
+                                                        </span>
+                                                    <span>
+                                                </div>
+                                                {{#ifNotEquals cartItemType 'Coupon'}}
+                                                <div class="min-max-warn dispmob_show">
+                                                {{{minQtyProduct this}}}
+                                                {{{maxQtyProduct this}}}
+                                                </div>
+                                                {{/ifNotEquals}}
+                                                <div class="disp-inline mob-line-unload">
+                                                    <span class="displaylarge_none unload-label">{{pageLabelMap 'EC_UnloadPoint'}}</span>
+                                                    <select id="line_unload{{sfid}}" {{#ifEquals (bulkORportafeed this.product.packageTypeTank) true}} disabled {{/ifEquals}} data-id="{{sfid}}" 
+                                                    class="line-unload {{#if (processErrorMsg this 'unloadpoint')}} err-border-red {{/if}}">
+                                                        <option value="">-</option>
+                                                        {{#each this.product.UnloadingPoints}}
+                                                        <option value="{{this.Id}}" {{#ifEquals (checkNewItem ../sfid) this.Id}} selected {{/ifEquals}}>
+                                                        {{this.ccrz__CompanyName__c}}
+                                                        </option>
+                                                        {{/each}}
+                                                    </select>
+                                                    <span class="displaylarge_none">
+                                                        <span class="unload-err-msg {{#if (processErrorMsg this 'unloadpoint')}} error-show {{/if}}">
+                                                            {{pageLabelMap 'EC_UnloadErr'}}
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <div class="tank-warn-message-section">
+                                                    <div class="tank-warn-message {{#ifEquals tankWarnStatus true}} warn-show {{/ifEquals}}">{{pageLabelMap 'EC_TankNumberWarning'}}</div>
+                                                    {{#ifEquals this.product.noTankNums true}}
+                                                        <div class="no-tank-err-msg">{{pageLabelMap 'EC_NoTankErr'}}</div>
+                                                    {{/ifEquals}}
+                                                    <div class="disptab_none dispmob_none">
+                                                        <span class="tank-err-msg {{#if (processErrorMsg this 'tanknumber')}} error-show {{/if}}">
+                                                            {{pageLabelMap 'EC_TankErr'}}
+                                                        </span>
+                                                        <span class="unload-err-msg {{#if (processErrorMsg this 'unloadpoint')}} error-show {{/if}}">
+                                                            {{pageLabelMap 'EC_UnloadErr'}}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            {{/if}}
+                                            <td class="total-col pl-0 disptab_none disp_none price-inlarge-align" width="{{#if (checknalco)}}12%{{else}}15%{{/if}}"><span
+                                                    class="cc_total disptab_none">{{{formatUSD (price itemTotal)}}}</span><span class="height-85"></span></td>
+                                            <td class="total-col pl-0 disptab_none displaylarge_none" width="15%"><span
+                                            class="cc_total disptab_none"><span class="fwb fsize14">{{pageLabelMap 'EC_TotalTabOnOrderReview'}}&nbsp;</span>{{{formatUSD (price itemTotal)}}}</span></td>
+
+                                        </tr>
+                                        {{#ifNotEquals (checknalco) true}}
+                                       <tr class="displaylarge_none disp_none">
+                                                        <td></td>
+                                                        <td class="pl-0">
+                                                        </td>
+                                                        <td class="pl-0">
+                                                            <span class="cc_total pull-right">
+                                                                <span class="fwb total">{{pageLabelMap 'EC_TotalTabOnOrderReview'}}</span>
+                                                                <span>{{{formatUSD (price itemTotal)}}}</span>
+                                                            </span>
+                                                        </td>    
+                                                        
+                                     </tr>  
+                                     {{/ifNotEquals}}
+                                    </tbody>
+                                </table>
+                                <div class="col-md-4">
+                            {{/ifEquals}}
+                        </div>
+                    </div>
+                    {{#ifContains this.pricingModifierTypes 'tiered'}}
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-2">
+                                <div id="cc_prt_overflow_collapse_{{sfid}}"
+                                    class="collapse cc_prt_div_outer cc_prt_div_cart_collapse_{{sfid}}"></div>
+                            </div>
+                        </div>
+                    {{/ifContains}}                
+            {{/ifEquals}}
+        {{/with}}
+    </script>
+    <script id="EC-CartDetail-ActionTotals-View" type="text/template">
+            <div class="test mgr-head mob-total">                                        
+                <div class="total cc_total or-total-section clearfix mgt31">
+                    <div class="wrap">
+                        <div class="row disc-row couponWrapDiv">
+                            <div class="wrap">
+                            {{#ifStoreSetting 'Display_Cart_Coupon__c'}}
+                                <div class="panel panel-default cc_panel cc_shopping_cart_discount_panel disc ">
+                                    <div class="panel-heading cc_heading">
+                                      <!--  <h3 class="panel-title cc_title">{{pageLabelMap 'CartInc_discountCodes'}}</h3>-->
+                                    </div>
+                                    <div class="cc_myaccount_content panel-body cc_body">
+                                        {{#if this.hasCoupon}}
+                                            <form id="couponClearForm" class="cc_coupon_clear_form">
+                                                <div class="discount_code cc_discount_code">
+                                                    <p class="cc_applied_coupon cc_enter_coupon_code">{{pageLabelMap 'EC_PromoCode'}}</p>
+                                                    <input type="text" id="RemoveCoupon" name="couponId" class="form-control cc_add_coupon_id" />
+                                                    <p class="cc_clear_coupon_code"><button id="clearCouponBtn" type="button" class=" fwb btn btn-default btn-sm cc_clear_coupon remove-coupon-btn"><img
+                                                src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-delete-outline.svg')}"
+                                                class="del-coupon"></img>{{pageLabelMap 'CartInc_ClearCoupon'}}</button></p>    
+                                                        <div class="code-applied"><i class="material-icons">done</i><span class="code-msg">{{pageLabelMap 'EC_PromoCodeAdded'}}</span></div>    
+                                                    
+                                                </div>
+                                            </form>
+                                        {{else}}
+                                            <form id="couponAddForm" class="cc_coupon_add_form">
+                                                <div class="discount_code cc_discount_code">
+                                                    <p id="couponAddError" class="cc_coupon_add_error"></p>
+                                                    <p class="cc_enter_coupon_code">{{pageLabelMap 'EC_PromoCode'}}</p>
+                                                    <div class="form-group coupon-form">
+                                                        <label for="addCouponId" class="sr-only">Add Coupon</label>
+                                                        <input type="text" id="addCouponId" class="add-coupon" name="couponId" class="form-control cc_add_coupon_id" placeholder="Enter valid coupon code" />                                                      
+                                                       <button id="addCouponBtn" type="button" class=" fwb btn btn-default btn-sm cc_add_coupon add-coupon-btn">{{pageLabelMap 'CartInc_ApplyCoupon'}}</button>
+                                                       <button id="clearCouponBtn" class=" fwb clear-coupon-class display_none" type="button" class="btn btn-default btn-sm cc_clear_coupon remove-coupon-btn"><img
+                                                src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-delete-outline.svg')}"
+                                                class="del-coupon"></img>{{pageLabelMap 'CartInc_ClearCoupon'}}</button>
+                                                            <div class="show-error display_none"><i class="material-icons alert-info-icon error-icon error"></i><span class="error-text">{{pageLabelMap 'CouponError_text'}}</span></div>
+                                                        </div>
+                                                    
+                                                </div>
+                                            </form>
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{/ifStoreSetting}}
+                </div>   
+                    </div>
+                                                            
+                    <div class="total-right pull-right mob-price-align">
+                        <p class="cc_subTotal cc_subTotal-wrapper border-transp clearfix">
+                            <span class="cc_subTotal_label pull-left lh28 mt-4 text-uppercase">{{pageLabelMap 'CartInc_Subtotal'}}</span>
+                            <span class="cc_subTotal or-price-vals pull-right ft-18">{{{formatUSD (price this.subtotalAmount)}}}</span>
+                            <div class="sub-qty cc_quantity fwb">({{totalsum}} {{pageLabelMap 'EC_items'}})</div>
+                        </p>                
+                        <div class="shipping-charge pb-10">
+                            <span class="cc_tax_label pull-left">{{pageLabelMap 'CartInc_Shipping'}}</span>
+                            <span class="cc_tax mob-qty">{{pageLabelMap 'EC_NotCalc'}} </span>                        
+                            <a class="tip"><i class="material-icons info_outline md-18 blue-color hover-tooltip vmiddle"></i><span class="tooltipp">{{pageLabelMap 'EC_Tooltip'}}</span> </a>                       
+                       </div>              
+                        <div class="shipping-charge pb-10">
+                            <span class="cc_tax_label pull-left">{{pageLabelMap 'CheckOut_EstimatedTax'}}</span>
+                            <span class="cc_tax">{{pageLabelMap 'EC_NotCalc'}} </span>    
+                            <a class="tip"><i class="material-icons info_outline md-18 blue-color hover-tooltip vmiddle"></i><span class="tooltipp">{{pageLabelMap 'EC_TooltipTax'}}</span> </a> 
+                       </div>                        
+                       <p class="cc_grand_total grand-total-wrapper clearfix">
+                            <span class="cc_total_label fwb pull-left lh28 mt-4 text-uppercase">{{pageLabelMap 'CartInc_GrandTotal'}}</span>
+                            <span class="cc_total_amount or-price-vals pull-right ft-18">{{{formatUSD (sum this.subtotalAmount this.tax this.shippingCharge this.adjustment this.surchargeAmount this.currencyCode)}}}</span>
+                       </p>
+                   </div>
+                </div>
+            </div>                                
+                <div class="total">
+                    <button class="continueShoppingButton continue_cart pull-left mt-25 disp_none" name="" type="button"><i class="material-icons keyboard_arrow_left vmiddle"></i>{{pageLabelMap 'EC_cart_continue_small'}}</button>
+                        {{#if false }}
+                        {{ else }}
+                            {{#ifStoreSetting 'AutoCalcPriceAdjust__c'}}
+                            {{else}}
+                            {{/ifStoreSetting}}
+                            {{#ifDisplay 'WL.PkrOn'}}
+                            {{/ifDisplay}}
+                        {{/if}}
+                        {{#ifEquals (stopCheckout this.preventCheckout this.tankValidation this.minMaxErrorStatus this.noTankNums) true}}
+                            <button type="button" class="tab-proceed btn btn-default  checkOutBtn cc_checkout_btn mt-25 mr-10 ft-14 pull-right ec-btn-primary check-disable mob-button ">{{pageLabelMap 'EC_Proceed_Checkout'}}</button>
+                        {{else}}
+                            <button type="button" class=" tab-proceed btn btn-default checkOutBtn cc_checkout_btn mt-25 mr-10  ft-14 pull-right ec-btn-primary mob-button ">{{pageLabelMap 'EC_Proceed_Checkout'}}</button>
+                        {{/ifEquals}} 
+                        <button class="update_tankno_cart btn btn-default btn-sm updateCartButton cc_update_cart_button ec-btn-secondary fwb update-btn" name="" type="button" >{{pageLabelMap 'CartInc_Update'}}</button>
+                        {{#if false }}
+                            {{#ifDisplay 'C.EmailAnon'}}
+                                <!--<a href="#emailModal" id="emailCartLink" class="cc_email_cart_link" data-toggle="modal"><button class=" remove cc_email_cart_link_button continue_cart uline mr-10 pull-right mt-25 email-mob" type="button">{{pageLabelMap 'CartOrderEmailer_Header'}}</button></a>-->
+                            {{/ifDisplay}}
+                        {{else}}
+                        {{#ifDisplay 'C.EnableEmailCart'}}                          
+                                <a href="#emailModal" id="emailCartLink" class="cc_email_cart_link" data-toggle="modal"> <button class="remove cc_email_cart_link_button continue_cart uline mr-10 pull-right mt-25 email-mob" type="button">{{pageLabelMap 'CartOrderEmailer_Header'}}</button></a>
+                        {{/ifDisplay}}
+                    {{/if}}                                                                   
+                </div>
+            </div>
+        </script>
+        
+        <script id="EC-CartDetail-Header-View" type="text/template">
+            <div class="row">
+                            </div>
+            <div class="row">
+                <div class="col-md-12">
+                   
+                </div>
+            </div>
+            <hr>    
+        </script>
+    <script id="CartItemDetail-Qty-View" type="text/template">
+        {{#ifEquals pricingType 'external'}}
+            {{#ifNotEquals pricingType "attrGroup" }}
+                {{#if qtySkipIncrement}}
+                    <div class="row cc_qty_control_row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="input-group cc_input_group">
+                                    <span class="input-group-btn cc_input_group_btn cust-min">
+                                        <input type="button" value="{{pageLabelMap 'Prod_QtyDecrFF'}}"
+                                            class="btn btn-default btn-sm minusFF cc_minusff">
+                                        <button type="button" value="{{pageLabelMap 'Prod_QtyDecrSingle'}}"
+                                            class="btn btn-default custom-minus minus cc_minus material-icons remove">
+                                    </span>
+                                    <input id="entry_{{sfid}}" type="text" readonly="true" name="qty"
+                                        value="{{quantity}}"
+                                        class="input-text entry plus_minus form-control input-sm cc_entry cart-qty-box plp-input"
+                                        maxlength="7" />
+                                    <span class="input-group-btn cc_input_group_btn pluswidth minus-wrapper">
+                                        <input type="button" value="{{pageLabelMap 'Prod_QtyIncrSingle'}}"
+                                            class="btn btn-default btn-sm plus cc_plus">
+                                        <button type="button" value="{{pageLabelMap 'Prod_QtyIncrFF'}}"
+                                            class="btn btn-default plus pludisbtn plus-width cc_plus material-icons add">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/if}}
+                {{#ifEquals qtyIncrement 1}}
+                    <div class="row cc_qty_control_row">
+                        {{#if primaryAttr}}
+                            <div class="col-md-12">
+                        {{else}}
+                            <div class="col-md-12">
+                        {{/if}}
+                        <div class="form-group">
+                            {{#ifEquals itemStatus 'Invalid'}}
+                            <div class="input-group cc_input_group">
+                                <span class="input-group-btn cc_input_group_btn cust-min">
+                                    <button type="button" value="{{pageLabelMap 'Prod_QtyDecrSingle'}}"
+                                    class="btn btn-default minus cc_minus material-icons remove" disabled></button>
+                                </span>
+                                <input id="entry_{{sfid}}" type="text" name="qty" value="{{quantity}}"
+                                    class="input-text entry plus_minus form-control input-sm cc_entry cart-qty-box plp-input" maxlength="7" disabled />
+                                <span class="input-group-btn cc_input_group_btn">
+                                    <button type="button" value="{{pageLabelMap 'Prod_QtyIncrSingle'}}"
+                                    class="btn btn-default plus cc_plus plus pludisbtn plus-width material-icons add" disabled></button>
+                                </span>
+                            </div>
+                            {{else}}
+                            <div class="input-group cc_input_group">
+                                <span class="input-group-btn cc_input_group_btn cust-min">
+                                    <button type="button" value="{{pageLabelMap 'Prod_QtyDecrSingle'}}"
+                                    class="btn btn-default minus cc_minus material-icons remove"></button>
+                                </span>
+                                <input id="entry_{{sfid}}" type="text" name="qty" value="{{quantity}}"
+                                    class="input-text entry plus_minus form-control input-sm cc_entry cart-qty-box plp-input" maxlength="7" />
+                                <span class="input-group-btn cc_input_group_btn">
+                                    <button type="button" value="{{pageLabelMap 'Prod_QtyIncrSingle'}}"
+                                    class="btn btn-default plus cc_plus plus pludisbtn plus-width material-icons add"></button>
+                                </span>
+                            </div>
+                           {{/ifEquals}} 
+                        </div>
+                    </div>
+                    </div>
+                {{/ifEquals}}
+                <input type="hidden" name="qtyIncrement" value="{{qtyIncrement}}" class="item_qtyIncrement" />
+                <input type="hidden" name="qtySkipIncrement" value="{{qtySkipIncrement}}"
+                    class="item_qtySkipIncrement" />
+                {{else}}
+                    {{#ifEquals pricingType 'attrGroup'}}
+                        <div class="row cc_qty_control_row">
+                            <div class="col-md-3 col-md-offset-9">
+                                <div class="form-group">
+                                    <p class="cc_order_quantity">
+                                        <span class="cc_quantity_label">{{pageLabelMap 'CartInc_Qty'}}&#58;&#160;</span>
+                                        <span class="cc_quantity">{{quantity}}</span>
+                                    </p>
+                                    <!--<div class="input-group cc_input_group">
+                                    <span class="input-group-btn cc_input_group_btn cust-min">
+                                        <input type="button" value="{{pageLabelMap 'Prod_QtyDecrFF'}}"
+                                            class="btn btn-default btn-sm minusFF cc_minusff">
+                                        <button type="button" value="{{pageLabelMap 'Prod_QtyDecrSingle'}}"
+                                            class="btn btn-default custom-minus minus cc_minus material-icons remove">
+                                    </span>
+                                    <input id="entry_{{sfid}}" type="text" readonly="true" name="qty"
+                                        value="{{quantity}}"
+                                        class="input-text entry plus_minus form-control input-sm cc_entry cart-qty-box plp-input"
+                                        maxlength="7" />
+                                    <span class="input-group-btn cc_input_group_btn pluswidth minus-wrapper">
+                                        <input type="button" value="{{pageLabelMap 'Prod_QtyIncrSingle'}}"
+                                            class="btn btn-default btn-sm plus cc_plus">
+                                        <button type="button" value="{{pageLabelMap 'Prod_QtyIncrFF'}}"
+                                            class="btn btn-default plus pludisbtn plus-width cc_plus material-icons add">
+                                    </span>
+                                </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    {{/ifEquals}}
+            {{/ifNotEquals}}
+   
+        {{else}}
+            {{#ifNotEquals pricingType "attrGroup" }}
+                {{#if qtySkipIncrement}}
+                    <div class="row cc_qty_control_row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="input-group cc_input_group">
+                                    <span class="input-group-btn cc_input_group_btn cust-min">
+                                        <input type="button" value="{{pageLabelMap 'Prod_QtyDecrFF'}}"
+                                            class="btn btn-default btn-sm minusFF cc_minusff">
+                                        <button type="button" value="{{pageLabelMap 'Prod_QtyDecrSingle'}}"
+                                            class="btn btn-default custom-minus minus cc_minus material-icons remove">
+                                    </span>
+                                    <input id="entry_{{sfid}}" type="text" readonly="true" name="qty"
+                                        value="{{quantity}}"
+                                        class="input-text entry plus_minus form-control input-sm cc_entry cart-qty-box plp-input"
+                                        maxlength="7" />
+                                    <span class="input-group-btn cc_input_group_btn pluswidth minus-wrapper">
+                                        <input type="button" value="{{pageLabelMap 'Prod_QtyIncrSingle'}}"
+                                            class="btn btn-default btn-sm plus cc_plus">
+                                        <button type="button" value="{{pageLabelMap 'Prod_QtyIncrFF'}}"
+                                            class="btn btn-default plus pludisbtn plus-width cc_plus material-icons add">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/if}}
+                {{#ifEquals qtyIncrement 1}}
+                    <div class="row cc_qty_control_row">
+                        {{#if primaryAttr}}
+                            <div class="col-md-12">
+                        {{else}}
+                            <div class="col-md-12">
+                        {{/if}}
+                        <div class="form-group">
+                            {{#ifEquals itemStatus 'Invalid'}}
+                            <div class="input-group cc_input_group">
+                                <span class="input-group-btn cc_input_group_btn cust-min">
+                                    <button type="button" value="{{pageLabelMap 'Prod_QtyDecrSingle'}}"
+                                    class="btn btn-default minus cc_minus material-icons remove" disabled></button>
+                                </span>
+                                <input id="entry_{{sfid}}" type="text" name="qty" value="{{quantity}}"
+                                    class="input-text entry plus_minus form-control input-sm cc_entry cart-qty-box plp-input" maxlength="7" disabled />
+                                <span class="input-group-btn cc_input_group_btn">
+                                    <button type="button" value="{{pageLabelMap 'Prod_QtyIncrSingle'}}"
+                                    class="btn btn-default plus cc_plus plus pludisbtn plus-width material-icons add" disabled></button>
+                                </span>
+                            </div>
+                            {{else}}
+                            <div class="input-group cc_input_group">
+                                <span class="input-group-btn cc_input_group_btn cust-min">
+                                    <button type="button" value="{{pageLabelMap 'Prod_QtyDecrSingle'}}"
+                                    class="btn btn-default minus cc_minus material-icons remove"></button>
+                                </span>
+                                <input id="entry_{{sfid}}" type="text" name="qty" value="{{quantity}}"
+                                    class="input-text entry plus_minus form-control input-sm cc_entry cart-qty-box plp-input" maxlength="7" />
+                                <span class="input-group-btn cc_input_group_btn">
+                                    <button type="button" value="{{pageLabelMap 'Prod_QtyIncrSingle'}}"
+                                    class="btn btn-default plus cc_plus plus pludisbtn plus-width material-icons add"></button>
+                                </span>
+                            </div>
+                           {{/ifEquals}} 
+                        </div>
+                    </div>
+                    </div>
+                {{/ifEquals}}
+                <input type="hidden" name="qtyIncrement" value="{{qtyIncrement}}" class="item_qtyIncrement" />
+                <input type="hidden" name="qtySkipIncrement" value="{{qtySkipIncrement}}"
+                    class="item_qtySkipIncrement" />
+                {{else}}
+                    {{#ifEquals pricingType 'attrGroup'}}
+                        <div class="row cc_qty_control_row">
+                            <div class="col-md-3 col-md-offset-9">
+                                <div class="form-group">
+                                    <p class="cc_order_quantity">
+                                        <span class="cc_quantity_label">{{pageLabelMap 'CartInc_Qty'}}&#58;&#160;</span>
+                                        <span class="cc_quantity">{{quantity}}</span>
+                                    </p>
+                                    <!--<div class="input-group cc_input_group">
+                                    <span class="input-group-btn cc_input_group_btn cust-min">
+                                        <input type="button" value="{{pageLabelMap 'Prod_QtyDecrFF'}}"
+                                            class="btn btn-default btn-sm minusFF cc_minusff">
+                                        <button type="button" value="{{pageLabelMap 'Prod_QtyDecrSingle'}}"
+                                            class="btn btn-default custom-minus minus cc_minus material-icons remove">
+                                    </span>
+                                    <input id="entry_{{sfid}}" type="text" readonly="true" name="qty"
+                                        value="{{quantity}}"
+                                        class="input-text entry plus_minus form-control input-sm cc_entry cart-qty-box plp-input"
+                                        maxlength="7" />
+                                    <span class="input-group-btn cc_input_group_btn pluswidth minus-wrapper">
+                                        <input type="button" value="{{pageLabelMap 'Prod_QtyIncrSingle'}}"
+                                            class="btn btn-default btn-sm plus cc_plus">
+                                        <button type="button" value="{{pageLabelMap 'Prod_QtyIncrFF'}}"
+                                            class="btn btn-default plus pludisbtn plus-width cc_plus material-icons add">
+                                    </span>
+                                </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    {{/ifEquals}}
+            {{/ifNotEquals}}
+    {{/ifEquals}}
+    </script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            CCRZ.uiProperties.CartDetailView.desktop.tmpl = 'EC-CartDetail-View-Desktop';
+            CCRZ.uiProperties.CartDetailView.partials.cartItemsDesktop = '#EC-CartItemDetail-View-Desktop';
+            CCRZ.uiProperties.CartDetailView.partials.actionsTotals = '#EC-CartDetail-ActionTotals-View';
+            CCRZ.uiProperties.CartDetailView.partials.headerSection = '#EC-CartDetail-Header-View';
+
+            CCRZ.pubSub.on('view:CartDetailView:refresh', function (viewInstance) {
+                setCartDetail(CCRZ.views.CartDetailView.prototype, viewInstance);
+                viewInstance.setElement(viewInstance.$el);
+                if({!viewPrice} == false){
+                    $(".price-mob").hide();
+                    $(".price-wrap").hide();
+                    $(".or-total-section").hide();
+                }
+                if({!buyOnline} == false){
+                    $(".cc_checkout_btn").hide();
+                }
+                if({!isFlatFeeUser} == true){
+                    $(".flatFeeMessage").removeClass('hide');
+                }
+                if(CCRZ.cartDetailModel.attributes && CCRZ.cartDetailModel.attributes.ECShipToAccountR && CCRZ.cartDetailModel.attributes.ECShipToAccountR.ECDivision == 'FOOD & BEVERAGE') {
+                    $(".bulkOrderMessage").removeClass('hide');
+                }
+                if({!isSalesRep} == false || (CCRZ.cartDetailModel.attributes &&  CCRZ.cartDetailModel.attributes.ECShipToAccountR && CCRZ.cartDetailModel.attributes.ECShipToAccountR.ECDivision && !("{!$Label.EC_Account_Institutional}").includes(CCRZ.cartDetailModel.attributes.ECShipToAccountR.ECDivision.toLowerCase()))){
+                    $(".couponWrapDiv").hide();
+                    if($("#RemoveCoupon").size()>0){
+                        $("#clearCouponBtn").trigger("click");
+                    }
+                }   
+                if('{!$Profile.Name}'==CCRZ.pagevars.pageLabels.EC_ProfileNameIBuyUser){
+                    $(".checkOutBtn").html("TRANSFER CART");
+                    $("#emailCartLink").hide();
+                    $('.wishButtons').css("display","none");
+                }
+                if (checkNalcoType()) {
+                        let crtItems = CCRZ.cartDetailModel.get('ECartItemsS');
+                        let noTanks = crtItems.some(item => {
+                            let tankNums = item.get('product').TankNumbers;
+                            let package = item.get('product').packageTypeTank;
+                            if (CCRZ.pagevars.pageLabels.EC_PackageType_Bulk === package.toLowerCase() && (!tankNums || tankNums.length === 0)) {
+                                return true;
+                            }
+                            return false;
+                        })
+                        CCRZ.cartDetailModel.attributes.noTankNums = noTanks;
+                        if (!CCRZ.cartDetailModel.get('unldDataCall') && crtItems && crtItems.length > 0 && !crtItems.first().get('product').UnloadingPoints) {
+                            CCRZ.cartDetailModel.set('unldDataCall', true);
+                            Visualforce.remoting.Manager.invokeAction(
+                                'EC_CartDetailController.getECUnloadingPoints', CCRZ.pagevars.remoteContext,CCRZ.pagevars.effAccountId,
+                                function (resp) {
+                                    if (resp.data) {
+                                        var items = CCRZ.cartDetailModel.get('ECartItemsS');
+                                        if (resp.data.unloadingPoints.length == 0) {
+                                            delete CCRZ.cartDetailModel.attributes.defaultUnloadingPoint
+                                            updateTankValidation(CCRZ.cartDetailView, false, 'success', true);
+                                        } else {
+                                            items.forEach(item => {
+                                                item.get('product').UnloadingPoints = resp.data.unloadingPoints;
+                                                item.get('product').uomRecordMap = resp.data.uomRecordMap;
+                                                let tankNums = item.get('product').TankNumbers;
+                                                let package = item.get('product').packageTypeTank;
+                                                if (CCRZ.pagevars.pageLabels.EC_PackageType_Bulk === package.toLowerCase() && (!tankNums || tankNums.length === 0)) {
+                                                    item.get('product').noTankNums = true;
+                                                }
+                                            });
+                                            validateMinMaxQty();
+                                            CCRZ.cartDetailView.render();
+                                        }
+                                    }
+                                },
+                                { buffer: false, escape: false }
+                            );
+                        }
+                        /*updating default unload point to non bulk items*/
+                        /*if(CCRZ.cartDetailModel.attributes && CCRZ.cartDetailModel.attributes.defaultUnloadingPoint && CCRZ.cartDetailModel.attributes.defaultUnloadingPoint !== '') {
+                            let defUnload = CCRZ.cartDetailModel.get('defaultUnloadingPoint');
+                            let items = CCRZ.cartDetailModel.get('ECartItemsS');
+                            items.forEach(item => {
+                                let package = item.get('product').packageTypeTank;
+                                if (package !== 'Bulk') {
+                                    item.set('unloadingPoint', defUnload)
+                                }
+                            });
+                        }*/
+                        if (CCRZ.cartDetailModel.attributes && !CCRZ.cartDetailModel.attributes.defaultUnloadingPoint && CCRZ.cartDetailModel.attributes.defaultUnloadingPoint !== '') {
+                            $('#def_unload_point').trigger('change');
+                        }
+                        if (CCRZ.cartDetailView.model.attributes) {
+                            let tankValidity = validateUnloadAndTankNums(CCRZ.cartDetailView);
+                            let tankValidation = CCRZ.cartDetailModel.attributes.tankValidation;
+                            if ((!tankValidity && tankValidation === 'success') || !tankValidation || (tankValidity && tankValidation === 'fail')) {
+                                if (!tankValidity && tankValidation === 'success') {
+                                    CCRZ.cartDetailModel.attributes.tankValidation = 'fail';
+                                } else if (tankValidity && tankValidation === 'fail') {
+                                    CCRZ.cartDetailModel.attributes.tankValidation = 'success';
+                                } else if (!tankValidation) {
+                                    if (tankValidity) {
+                                        CCRZ.cartDetailModel.attributes.tankValidation = 'success';
+                                    } else {
+                                        CCRZ.cartDetailModel.attributes.tankValidation = 'fail';
+                                    }
+                                }
+                                CCRZ.cartDetailView.render();
+                            }
+                        }
+                    }
+                lessAndMoreInProdDesc();
+                });
+            var validateMinMaxForSingleProduct = function (item, prdct) {
+                    if (item.get('customPricingUOM') && item.get('customPricingUOM').toLowerCase() === CCRZ.pagevars.pageLabels.EC_UOM_Gal
+                        && prdct.uomRecordMap.Gal && prdct.uomRecordMap.Gal.Minimum_Quantity__c > item.get('quantity')) {
+                        return true;
+                    }
+                    if (item.get('customPricingUOM') && item.get('customPricingUOM').toLowerCase() === CCRZ.pagevars.pageLabels.EC_UOM_Kgs
+                        && prdct.uomRecordMap.Kgs && prdct.uomRecordMap.Kgs.Maximum_Quantity__c < item.get('quantity')) {
+                        return true;
+                    }
+                    if (item.get('customPricingUOM') && item.get('customPricingUOM').toLowerCase() === CCRZ.pagevars.pageLabels.EC_UOM_Lbs
+                        && prdct.uomRecordMap.Lbs && prdct.uomRecordMap.Lbs.Maximum_Quantity__c < item.get('quantity')) {
+                        return true;
+                    }
+                    return false;
+            }
+            var validateMinMaxQty = function () {
+                let items = CCRZ.cartDetailModel.get('ECartItemsS');
+                let status = items.some( item => {
+                    let prdct = item.get('product');
+                    if (CCRZ.pagevars.pageLabels.EC_PackageType_Bulk === prdct.packageTypeUOM.toLowerCase()) {
+                        return validateMinMaxForSingleProduct(item, prdct);
+                    }
+                    return false;
+                })
+                CCRZ.cartDetailModel.set('minMaxErrorStatus', status);
+            }
+            var lessAndMoreInProdDesc = function() {
+                let descElm = '';
+                let showChar = 0;
+                if(window.innerWidth <=767) {
+                    descElm = '.mob-desk-desc';
+                    showChar = 60;
+                } else if (window.innerWidth >=768 && window.innerWidth <=1365) {
+                    descElm = '.desc-col-tab';
+                    showChar = 98;
+                }
+                if (descElm !== '') {
+                    let ellipsestext = "";
+                    let moretext = "read more";
+                    let lesstext = "read less";
+                    if ($(descElm).find('.morecontent').length > 0) {
+                        return;
+                    }
+                    $(descElm).each(function() {
+                        let content = $(this).html();
+
+                        if(content.trim().length > showChar) {
+
+                            let c = content.substr(0, showChar);
+                            let h = content.substr(showChar, content.length - showChar);
+
+                            let html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span style="display:none">' + h + '</span>&nbsp;&nbsp;<span class="morelink" style="color:#007ac9">' + moretext + '</span></span>';
+
+                            $(this).html(html);
+                        }
+
+                    });
+
+                    $(".morelink").click(function(){
+                        if($(this).hasClass("less")) {
+                            $(this).removeClass("less");
+                            $(this).html(moretext);
+                        } else {
+                            $(this).addClass("less");
+                            $(this).html(lesstext);
+                        }
+                        $(this).parent().prev().toggle();
+                        $(this).prev().toggle();
+                        return false;
+                    });
+                }
+            }
+            
+            var sendTankNumToController = function (view) {
+                    //saving unload point and cart number
+                    if (CCRZ.cartDetailModel.attributes.ECShipToAccountR && CCRZ.cartDetailModel.attributes.ECShipToAccountR.ECDivision && CCRZ.pagevars.pageLabels.EC_NALCO.includes(CCRZ.cartDetailModel.attributes.ECShipToAccountR.ECDivision.toLowerCase())) {
+                        let unloadData = [];
+                        var accId = CCRZ.cartDetailModel.attributes.sfid;
+                        var items = view.model.get('ECartItemsS');
+                        items.forEach(item => {
+                            unloadData.push({ sfid: item.get('sfid'), unloadpoint: item.get('unloadingPoint'), tanknumber: item.get('tankNumber') });
+                        });
+                        let defUnloadPoint = view.model.get('defaultUnloadingPoint');
+                        Visualforce.remoting.Manager.invokeAction(
+                            'EC_CartDetailController.saveUnloadingPoints', CCRZ.pagevars.remoteContext, accId, unloadData, defUnloadPoint,
+                            function (resp) {
+                                if (resp.success) {
+                                    console.log('success');
+                                } else {
+                                    console.log('Error');
+                                }
+                            },
+                            { buffer: false, escape: false }
+                        );
+                    }
+                }
+
+            var validateUnloadAndTankNums = function(view) {
+                let validity = false;
+                let items = view.model.get('ECartItemsS');
+                if (!view.model.get('defaultUnloadingPoint') || view.model.get('defaultUnloadingPoint') === '') {
+                    return validity
+                } else {
+                    validity = true;
+                }
+                validity = items.every(item => {
+                    let package = item.get('product').packageTypeTank;
+                    if (package === 'Bulk' || package === 'PORTAFEED') {
+                        if (!item.get('tankNumber') || item.get('tankNumber') === '' || !item.get('unloadingPoint') || item.get('unloadingPoint') === '') {
+                            return false
+                        }
+                        return true
+                    } else {
+                        if (!item.get('unloadingPoint') || item.get('unloadingPoint') === '') {
+                            return false
+                        }
+                        return true
+                    }
+                });
+                return validity;
+            }
+
+            let dispTankWarnMessage = function(matchItem, unload1, unload2, elm, emptyTankNum=false) {
+                if (emptyTankNum) {
+                    elm.closest('.line-unload-section').find('.tank-warn-message').hide();
+                    matchItem.set('tankWarnStatus', false);
+                    return;
+                }
+                if (unload1 !== unload2) {
+                    elm.closest('.line-unload-section').find('.tank-warn-message').show();
+                    matchItem.set('tankWarnStatus', true);
+                } else {
+                    elm.closest('.line-unload-section').find('.tank-warn-message').hide();
+                    matchItem.set('tankWarnStatus', false);
+                }
+            }
+
+            let updateTankValidation = function(view, validity, tankValidation, always=false) {
+                if ((validity &&  tankValidation === 'fail') || (!validity &&  tankValidation === 'success')) {
+                    if (validity) {
+                        view.model.set('tankValidation', 'success');
+                    } else {
+                        view.model.set('tankValidation', 'fail');
+                    }
+                    view.render();
+                } else if (always) {
+                    view.render();
+                }
+            }
+
+            var setCartDetail = function (cartView, viewIn) {
+                
+                var events = cartView.events;
+                var email  = $("#email_to").val();
+                events["click .continueShoppingButton"] = "empty_continue_clicked";
+                events["click .title-link"] = "redirectToPdp";
+                events["click remove-coupon-btn"]="Remove_Coupon_Code";
+                events["click #addCouponBtn"]="Apply_Coupon_Code";
+                events["keyup #addCouponId"]="Activate_Apply_Coupon";
+                events["click .checkOutBtn"]="goToCheckoutCustom";
+                events["change .order-unload"]="updateUnloadPoint";
+                events["change .line-tank"]="updateTankNumber";
+                events["change .line-unload"]="updateLineUnload"
+                events["click .update_tankno_cart"]="updateTankNumToCart";
+                events["keyup .max-min-nalco .plp-input"]="minMaxValidation";
+                events["click .max-min-nalco .minus"]="minMaxValidation";
+                events["click .max-min-nalco .plus"]="minMaxValidation";
+                events["click .cc_remove_item_button"]="removeItm"
+                if($("#addCouponId").val()=="")
+                    {
+                     $("#addCouponBtn").attr("disabled", "disabled");
+                     $("#addCouponId").removeClass("border-green");
+                    }
+               
+                cartView.updateTankNumToCart = function(event) {
+                    CCRZ.cartDetailModel.attributes.unldDataCall=false;
+                    sendTankNumToController(this);
+                }
+                cartView.removeItm = function(event) {
+                    CCRZ.cartDetailModel.set('unldDataCall', false);
+                }
+                cartView.minMaxValidation = function() {
+                    let prevMinMaxStatus = CCRZ.cartDetailModel.get('minMaxErrorStatus');
+                    let elm = $(event.target).closest(".gp_quantity_block");
+                    let elmId = elm.data('id');
+                    let qtyElm = elm.find(".entry");
+                    let newQty = 0;
+                    if (qtyElm.val() != '') {
+                        newQty = parseInt(qtyElm.val());
+                    }
+                    let items = CCRZ.cartDetailModel.get('ECartItemsS');
+                    let matchItems = items.where({'sfid': elmId });
+                    if (matchItems && matchItems.length > 0) {
+                        if (CCRZ.pagevars.pageLabels.EC_PackageType_Bulk !== matchItems[0].get('product').packageTypeUOM.toLowerCase()) {
+                            return;
+                        }
+                        matchItems[0].set('quantity', newQty);
+                        let prodStatus = validateMinMaxForSingleProduct(matchItems[0], matchItems[0].get('product'));
+                        validateMinMaxQty();
+                        let newMinMaxStatus = CCRZ.cartDetailModel.get('minMaxErrorStatus');
+                        let warnMsgLength = $(event.target).closest("td").find('.qty-warn-message');
+                        if ((prodStatus && warnMsgLength.length === 0) || (!prodStatus && warnMsgLength.length > 0)) {
+                            prodStatus = true;
+                        } else {
+                            prodStatus = false;
+                        }
+                        if (prevMinMaxStatus !== newMinMaxStatus || prodStatus) {
+                            this.render();
+                        }
+                    }
+                }
+                cartView.updateLineUnload = function(event) {
+                    let view = this;
+                    let elem = $(event.currentTarget)
+                    let elmId = elem.data('id');
+                    let unloadPoint = event.target.value;
+                    let items = view.model.get('ECartItemsS');
+                    let matchItems = items.where({'sfid': elmId });
+                    if (matchItems && matchItems.length > 0) {
+                        matchItems[0].set('unloadingPoint', unloadPoint);
+                    }
+                    toggleTankUnloadErrors('.unload-err-msg', unloadPoint);
+                    let validity = validateUnloadAndTankNums(this);
+                    let tankValidation = CCRZ.cartDetailModel.attributes.tankValidation;
+                    updateTankValidation(view, validity, tankValidation);
+                }
+                cartView.updateUnloadPoint = function(event) {
+                    var view = this;
+                    var unloadpoint = event.target.value;
+                    if (unloadpoint !== '') {
+                        view.model.set('defaultUnloadingPoint', unloadpoint);
+                        var items = view.model.get('ECartItemsS');
+                        items.forEach(item => {
+                            let package = item.get('product').packageTypeTank;
+                            if (package === 'Bulk' || package === 'PORTAFEED') {
+                                if (!item.get('tankNumber') || item.get('tankNumber') === '') {
+                                    item.set('unloadingPoint', unloadpoint)
+                                } else {
+                                    item.get('product').TankNumbers.some(tank => {
+                                        if (tank.Id === item.get('tankNumber')) {
+                                            if (tank.Tank_Number__c.toLowerCase() === CCRZ.pagevars.pageLabels.EC_DropOff.toLowerCase()) {
+                                                item.set('unloadingPoint', unloadpoint);
+                                            }
+                                            return true;
+                                        }
+                                        return false;
+                                    })
+                                }
+                            } else {
+                                item.set('unloadingPoint', unloadpoint)
+                            }
+                        });
+                        let validity = validateUnloadAndTankNums(this);
+                        let tankValidation = CCRZ.cartDetailModel.attributes.tankValidation;
+                        updateTankValidation(view, validity, tankValidation, true);
+                    }
+                }
+                cartView.updateTankNumber = function(event) {
+                    var view = this;
+                    var elem = $(event.currentTarget)
+                    var elmId = elem.data('id');
+                    var tanknumber = event.target.value;
+                    var items = view.model.get('ECartItemsS');
+                    var matchItems = items.where({'sfid': elmId });
+                    if (matchItems && matchItems.length > 0) {
+                        matchItems[0].set('tankNumber', tanknumber);
+                    }
+            		toggleTankUnloadErrors('.tank-err-msg', tanknumber);
+                    matchItems[0].get('product').TankNumbers.some(tank => {
+                        if (tanknumber === '') {
+                            dispTankWarnMessage(matchItems[0], '', '', $(event.currentTarget), true);
+                            return true;
+                        }
+                        if (tank.Id === tanknumber) {
+                            if (tank.Tank_Number__c.toLowerCase() === CCRZ.pagevars.pageLabels.EC_DropOff.toLowerCase()) {
+                                dispTankWarnMessage(matchItems[0], matchItems[0].get('unloadingPoint'), view.model.get('defaultUnloadingPoint'), $(event.currentTarget));
+                                matchItems[0].set('unloadingPoint', view.model.get('defaultUnloadingPoint'));
+                                $('#line_unload'+elmId).val(view.model.get('defaultUnloadingPoint'));
+                            } else {
+                                dispTankWarnMessage(matchItems[0], matchItems[0].get('unloadingPoint'), tank.Unloading_Point__r.Id, $(event.currentTarget));
+                                matchItems[0].set('unloadingPoint', tank.Unloading_Point__r.Id);
+                                $('#line_unload'+elmId).val(tank.Unloading_Point__r.Id);
+                            }
+                            return true;
+                        }
+                        return false;
+                    })
+                    let validity = validateUnloadAndTankNums(this);
+                    let tankValidation = CCRZ.cartDetailModel.attributes.tankValidation;
+                    updateTankValidation(view, validity, tankValidation);
+                }
+                cartView.Activate_Apply_Coupon=function(event){
+                    if($("#addCouponId").val()=="")
+                    {
+                     $("#addCouponBtn").attr("disabled", "disabled");
+                     $("#addCouponId").removeClass("border-green");
+                    }
+                    else {
+                    $("#addCouponBtn").removeAttr('disabled');
+                    $("#addCouponId").addClass("border-green");
+                    } 
+               }
+
+                cartView.goToCheckoutCustom =  function(event) {
+                    if (CCRZ.cartDetailModel.attributes.tankValidation === 'fail') {
+                        CCRZ.cartDetailModel.attributes.checkoutClicked = true;
+                        this.render();
+                        return;
+                    }
+                    var isIBEUser = CCRZ.getQueryParam('isIBuyUser');
+                   if('{!$Profile.Name}'==CCRZ.pagevars.pageLabels.EC_ProfileNameIBuyUser){
+                        //ashish 
+                        //call remote action
+                        var cartID = CCRZ.cartDetailModel.attributes.encryptedId;
+                        console.log(cartID);
+                        
+                        console.log('Sending cartId to IFrameCustomPage');
+                        //window.opener.postMessage(cartID, 'https://devec1-ecolabconnect--devec1.cs62.force.com/DefaultStore/IFrameCustomPage');
+                        window.opener.postMessage(cartID, '{!$Label.EC_InstanceBaseURL}'+'{!$Label.EC_InstanceAddnURL}');
+
+                        //window.postMessage(cartID, 'http://localhost:8000');
+                        console.log('CartId posted'+cartID);
+                        //return false;
+                         setTimeout (window.close, 3000);
+                    }else{
+                        var view = this;
+                        sendTankNumToController(view);
+                        if (view.params.hasChanged) {
+                            if(CCRZ.pagevars.pageConfig.isTrue('c.noqty') && CCRZ.pagevars.pageConfig.isTrue('c.vernoqty')) {
+                                //we need to popup the conf dialog
+                                //find any items in the model with quantity 0
+                                var items = view.model.get('ECartItemsS');
+                                var zeroValues = items.models.filter(function(item){return ( item.get('quantity') === 0 || item.get('quantity') === '0'); });
+                                
+                                //if we found an 0 quantites, then open the modal
+                                if(zeroValues.length > 0){
+                                    //popup the modal
+                                    this.openRemoveModal( event, zeroValues, true);
+                                    //else just go ahead and save the changes to the model
+                                }else{
+                                    this.saveAndCheckout(event);
+                                }
+                            }else{
+                                this.saveAndCheckout(event);
+                            }
+                        }
+                        else {
+                            if(view.model.attributes.allowCheckout && !view.model.attributes.preventCheckout) {
+                                view.model.saveAndProcess(view.params.skipAutoCalc, function(response) {
+                                    if (response.success) {
+                                        view.determineCOFlow(event);
+                                    }
+                                    CCRZ.pubSub.trigger("pageMessage", response);
+                                });
+                            }
+                        }
+                        
+                    }
+                },
+
+                cartView.Apply_Coupon_Code= function(event){
+                var view = this;
+                    this.model.applyCoupon($('#addCouponId').val(), this.params.skipAutoCalc, function(response){
+                        if (response.success) {                                                      
+                            view.render();
+                            CCRZ.headerView.update();                           
+                        }
+                        else {
+                            response.clearInclSectionsOnly = true;
+                            //CCRZ.pubSub.trigger("pageMessage", response);
+                            $(".show-error").removeClass("display_none");
+                            $("#addCouponId").removeClass("border-green");
+                            $("#addCouponId").addClass("border-red");
+                            $("#addCouponBtn").addClass("display_none");
+                            $(".clear-coupon-class").removeClass("display_none");
+                            $("#addCouponId").attr("disabled", "disabled"); 
+                            
+                        }
+                    });
+                }
+                
+                
+                $("#RemoveCoupon").val(CCRZ.cartDetailModel.attributes.couponName);
+                $("#RemoveCoupon").attr("disabled", "disabled"); 
+                $("#RemoveCoupon").addClass("border-green");
+                cartView.Remove_Coupon_Code = function (event) {                     
+                         var view = this;
+                    this.model.clearCoupon(this.params.skipAutoCalc, function(response){
+                        if (response.success) {
+                            var remoteActionCallRemoveCoupon = _.extend(CCRZ.RemoteInvocation, {
+                            className: 'EC_CartDetailController'
+                            });
+                            remoteActionCallRemoveCoupon.invokeCtx('removeCoupon',CCRZ.pagevars.currentCartID,
+                            function (resp) {
+                                if (resp != null && resp.success) {
+                                    console.log("success removing coupon code"); 
+                                }
+                            });
+                            view.render();
+                            CCRZ.headerView.update();
+                            
+                        }
+                        else
+                            response.clearInclSectionsOnly = true;
+                            CCRZ.pubSub.trigger("pageMessage", response);
+                    });
+                     
+                }    
+                
+
+                cartView.redirectToPdp = function (event) {
+                    var skucode=$(event.currentTarget).parent().find(".fwb").html();
+                    productDetails(skucode);
+                }
+                cartView.empty_continue_clicked = function (event) {
+                    document.location =  CCRZ.pagevars.sitePrefix+"/ccrz__ProductList?categoryID="+ CCRZ.data.menus[1].linkURL;
+                }
+                cartView.verifyEmail = function (event) {
+                    alert(email);
+                }
+            } 
+            
+            var toggleTankUnloadErrors = function(elm, val) {
+            	if (CCRZ.cartDetailModel.attributes.checkoutClicked) {
+                        let msgElm = $(event.target).closest("td").find(elm);
+                    	if (val === '') {
+                        	msgElm.addClass('error-show');
+                            $(event.target).addClass('err-border-red');
+                        } else {
+                        	msgElm.removeClass('error-show');
+                            $(event.target).removeClass('err-border-red');
+                        }
+                    }
+            }
+            
+            var checkNalcoType = function () {
+                let accountR = CCRZ.cartDetailModel.attributes.ECShipToAccountR;
+                if (accountR && accountR.ECDivision && CCRZ.pagevars.pageLabels.EC_NALCO.includes(accountR.ECDivision.toLowerCase())) {
+                    return true;
+                }
+                return false;
+            }
+
+            Handlebars.registerHelper('formatUSD', function (price) {
+                var getPrice = price.toString().split(".");
+                var ab = CCRZ.pagevars.userLocale;
+                var cd = CCRZ.userIsoCode;
+                console.log(cd);
+                var priceHtml = "<span class='price-wrap price-blue'><span class='price-wrap-num'>" + getPrice[0] + "</span><span class='price-wrap-dec'>." + getPrice[1] + "&nbsp;" + cd + "</span></span>";
+                return priceHtml;
+            });
+            Handlebars.registerHelper('totalsum', function () {
+                items = CCRZ.cartDetailModel.attributes.totalQuantity;
+                return (items);
+
+            });
+            Handlebars.registerHelper('bulkORportafeed', function(packageType) {
+                if (packageType === 'Bulk' || packageType === 'PORTAFEED') {
+                    return true;
+                }
+                return false;
+            })
+            Handlebars.registerHelper('stopCheckout', function(val1,val2, val3, notanks) {
+                let checkoutClicked = CCRZ.cartDetailModel.attributes.checkoutClicked;
+                if (checkNalcoType()) {
+                    if (val1 || (val2 === 'fail' && checkoutClicked) || val3 || notanks) {
+                        return true;
+                    }
+                    return false;
+                } else {
+                    return val1;
+                }
+            })
+            Handlebars.registerHelper('checknalco', function() {
+                if(checkNalcoType()) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+            Handlebars.registerHelper('taxonomyCart', function (taxonomy, type) {
+                if (taxonomy && CCRZ.pagevars.pageLabels['EC_Taxonomy_'+type].includes(taxonomy.toLowerCase())) {
+                    return true;
+                }
+                return false;
+            })
+            Handlebars.registerHelper('packageTypeCart', function (packageType, type) {
+                if (packageType && CCRZ.pagevars.pageLabels['EC_PackageType_'+type] === packageType.toLowerCase() ) {
+                    return true;
+                }
+                return false;
+            })
+            Handlebars.registerHelper('nonBulkEACart', function(type, uom) {
+                if (CCRZ.pagevars.pageLabels.EC_PackageType_NonBulk === type.toLowerCase()
+                 && uom && uom.toLowerCase() !== CCRZ.pagevars.pageLabels.EC_UOM_EA.toLowerCase()) {
+                    return true;
+                }
+                return false;
+            })
+            Handlebars.registerHelper('minQtyProduct', function(item) {
+                let minQtyTemplate = '';
+                if (item && CCRZ.pagevars.pageLabels.EC_PackageType_Bulk === item.product.packageTypeUOM.toLowerCase()) {
+                    if (item.customPricingUOM && item.customPricingUOM.toLowerCase() === CCRZ.pagevars.pageLabels.EC_UOM_Gal 
+                    && item.product.uomRecordMap && item.product.uomRecordMap.Gal && item.product.uomRecordMap.Gal.Minimum_Quantity__c > item.quantity) {
+                        minQtyTemplate = "<div class='qty-warn-message'>"+item.product.uomRecordMap.Gal.Minimum_quantity_message__c+"</div>";
+                    }
+                }
+                return minQtyTemplate;
+            })
+            Handlebars.registerHelper('maxQtyProduct', function(item) {
+                let maxQtyTemplate = '';
+                if (item && CCRZ.pagevars.pageLabels.EC_PackageType_Bulk === item.product.packageTypeUOM.toLowerCase()) {
+                    if (item.customPricingUOM && item.customPricingUOM.toLowerCase() === CCRZ.pagevars.pageLabels.EC_UOM_Kgs 
+                        && item.product.uomRecordMap && item.product.uomRecordMap.Kgs && item.product.uomRecordMap.Kgs.Maximum_Quantity__c < item.quantity) {
+                        maxQtyTemplate = "<div class='qty-warn-message'>"+item.product.uomRecordMap.Kgs.Maximum_quantity_message__c+"</div>";
+                    } else if (item.customPricingUOM && item.customPricingUOM.toLowerCase() === CCRZ.pagevars.pageLabels.EC_UOM_Lbs 
+                        && item.product.uomRecordMap && item.product.uomRecordMap.Lbs && item.product.uomRecordMap.Lbs.Maximum_Quantity__c < item.quantity) {
+                        maxQtyTemplate = "<div class='qty-warn-message'>"+item.product.uomRecordMap.Lbs.Maximum_quantity_message__c+"</div>";
+                    }
+                }
+                return maxQtyTemplate;
+            })
+            Handlebars.registerHelper('showDropOff', function(sku, tank){
+                let show = true;
+                if (CCRZ.pagevars.pageLabels.EC_dropOff_SKU.toLowerCase() !== 'all' && 
+                    tank.Tank_Number__c.toLowerCase() === CCRZ.pagevars.pageLabels.EC_DropOff.toLowerCase()) {
+                    let dropOffSKU = CCRZ.pagevars.pageLabels.EC_dropOff_SKU.split(',');
+                    show = false;
+                    dropOffSKU.some(code => {
+                        if (sku.includes(code)) {
+                            show = true;
+                            return true;
+                        }
+                        return false;
+                    })
+                }
+                return show;
+            });
+            Handlebars.registerHelper('checkNewItem', function(sfid){
+                let items = CCRZ.cartDetailModel.get('ECartItemsS');
+                let matchItems = items.where({'sfid': sfid });
+                let defUnloadPoint = CCRZ.cartDetailModel.get('defaultUnloadingPoint');
+                if (matchItems && matchItems.length > 0) {
+                    if (matchItems[0].get('unloadingPoint') || matchItems[0].get('unloadingPoint') === '') {
+                        return matchItems[0].get('unloadingPoint');
+                    } else {
+                        matchItems[0].set('unloadingPoint', defUnloadPoint);
+                    }
+                }
+                return defUnloadPoint;
+
+            })
+            Handlebars.registerHelper('defaultUnloadPoint', function() {
+                let defUnload = '';
+                if (CCRZ.cartDetailModel.get('defaultUnloadingPoint') && CCRZ.cartDetailModel.get('defaultUnloadingPoint') !== '') {
+                    return CCRZ.cartDetailModel.get('defaultUnloadingPoint');
+                }
+                var cartItems = CCRZ.cartDetailModel.get('ECartItemsS');
+                let unloadPointsData = [];
+                if (cartItems && cartItems.length > 0) {
+                    unloadPointsData = cartItems.first().get('product').UnloadingPoints;
+                }
+                unloadPointsData.some((unldPoint) => {
+                    if (unldPoint.Primary_Unloading_Point__c) {
+                        defUnload = unldPoint.Id;
+                        return true;
+                    }
+                    return false;
+                })
+                return defUnload;
+            })
+            Handlebars.registerHelper('unloadingdata', function (options) {
+                var cartItems = CCRZ.cartDetailModel.get('ECartItemsS');
+                var unloadPoints = [];
+                if (cartItems && cartItems.length > 0) {
+                    unloadPoints = cartItems.first().get('product').UnloadingPoints;
+                }
+                return options.fn(unloadPoints);
+            });
+            Handlebars.registerHelper('processErrorMsg', function(item, type) {
+                let package = item.product.packageTypeTank;
+                if (CCRZ.cartDetailModel.attributes.checkoutClicked) {
+                    if (type === 'unloadpoint') {
+                        if (!item.unloadingPoint || item.unloadingPoint === '') {
+                            return true
+                        }
+                    } else if (type === 'tanknumber') {
+                        if (CCRZ.pagevars.pageLabels.EC_PackageType_Bulk === package.toLowerCase()) {
+                            if (!item.tankNumber || item.tankNumber === '') {
+                                return true
+                            }
+                        }
+                    }
+                }
+                return false;
+            })
+            Handlebars.registerHelper('short-desc', function () {
+                var short_description = "";
+                return (short_description);
+            });
+
+            Handlebars.registerHelper('lastUpdatedDate', function () {
+                if (CCRZ.cartDetailModel.attributes.lastModifiedDate != null && CCRZ.cartDetailModel.attributes.lastModifiedDate != 'undefined') {
+                    var d = new Date(CCRZ.cartDetailModel.attributes.lastModifiedDate);
+                    var m = d.getMonth();
+                    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                    var monthName = months[m - 1 + 1];
+                    var day = d.getDate();
+                    var y = d.getFullYear();
+                    var fulldate = monthName + " " + day + ", " + y;
+                    return (fulldate);
+                }
+                else {
+                    var date = new Date();
+                    var m = date.getMonth();
+                    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                    var monthName = months[m - 1 + 1];
+                    var modDate = monthName  + " " + date.getDate() + "," + " " + date.getFullYear();
+                    return (modDate);
+                }
+
+            })
+        });
+        
+    </script>
+</apex:component>

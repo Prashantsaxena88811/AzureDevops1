@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>CC Transaction Payment Layout</layout>
+        <sections>
+            <label><!-- Invoice Data --></label>
+            <section>Invoice Data</section>
+        </sections>
+        <sections>
+            <label><!-- Order Data --></label>
+            <section>Order Data</section>
+        </sections>
+        <sections>
+            <label><!-- Payer Data --></label>
+            <section>Payer Data</section>
+        </sections>
+        <sections>
+            <label><!-- Related Payments --></label>
+            <section>Related Payments</section>
+        </sections>
+        <sections>
+            <label><!-- Subscription Data --></label>
+            <section>Subscription Data</section>
+        </sections>
+        <sections>
+            <label><!-- Transaction Comments --></label>
+            <section>Transaction Comments</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

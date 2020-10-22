@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Parent order, which originally submitted the subscription for this order, if applicable --></help>
+    <label><!-- Order --></label>
+    <name>ccrz__Order__c</name>
+    <relationshipLabel><!-- Children Orders --></relationshipLabel>
+</CustomFieldTranslation>

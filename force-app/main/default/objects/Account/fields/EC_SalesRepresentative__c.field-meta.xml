@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC_SalesRepresentative__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Harsha:07/09/19:The Sales Rep user related to the Sold to Account</description>
+    <externalId>false</externalId>
+    <label>Sales Representative</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Accounts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

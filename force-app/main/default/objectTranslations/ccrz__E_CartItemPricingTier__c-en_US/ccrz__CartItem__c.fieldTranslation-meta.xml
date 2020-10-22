@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Cart Item --></label>
+    <name>ccrz__CartItem__c</name>
+    <relationshipLabel><!-- CC Cart Item Pricing Tiers --></relationshipLabel>
+</CustomFieldTranslation>

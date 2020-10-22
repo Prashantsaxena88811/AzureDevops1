@@ -1,0 +1,165 @@
+<!--
+
+  @Component Name     : EC_Header.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Soumick               11/26/2019        Component for header for communities
+
+--> 
+
+<aura:component controller="EC_MyCart" implements="forceCommunity:availableForAllPageTypes" access="global">
+    
+    <aura:handler name="init" action="{!c.init}" value="this" />
+    <aura:attribute name="headerMenuItems" type="List" />
+    <aura:attribute name="pageName" type="String" />
+    <aura:attribute name = "Contact" type = "String"/>
+     <aura:attribute name = "RedirectUrl" type = "String"/>
+    <aura:attribute name = "QuickListURL" type = "String"/>
+    <aura:attribute name = "CartQuant" type = "String"/>
+    <aura:attribute name = "cartURL" type = "String"/>
+    <aura:attribute name="buyOnline" type="Boolean" default="false" />
+    <aura:attribute name="showCross" type="Boolean" default="false" />
+    <aura:attribute name="userId" type="String" /> 
+    <aura:attribute name="isEligibleForPaymentPortal" type="Boolean" />
+    <aura:attribute name = "BillTrustURL" type = "String"/>
+    <header class="global-header-wrapper fixed-top">
+        <div class="shipping-account-details">
+            <div class="slds-grid">
+               
+                <div class="list">
+                <!---->
+                    <aura:if isTrue="{!v.isEligibleForPaymentPortal}">
+                        <a href="{!v.BillTrustURL}" target="_blank" class="bookmark">
+                             $
+                            <span class="quick-list slds-show_large">{!$Label.c.EC_Order_OrderPaymentPortalButton}</span>
+                            <span class="spacer slds-show_medium">|</span>
+                        </a>
+                    </aura:if>
+                    <!---->
+                    <a href="{!v.QuickListURL}" class="bookmark">
+                        <i class="material-icons">
+                            bookmark_border
+                        </i>
+                        <span class="ga-quicklist quick-list slds-show_large">{!$Label.c.EC_Header_quicklist}</span>
+                        <span id="userid" class="slds-hide username">{!v.userId}</span>
+                    </a>
+                    <aura:if isTrue="{!v.buyOnline}">
+                    <span class="spacer slds-show_medium">|</span>
+                    <a href="{!v.cartURL}" class="cart">
+                        <img src="{!$Resource.EC_Branding_Theme + '/images/icons/cart-white.svg'}" />
+                       
+                        <span class="cart-value slds-show_large">Cart: 
+                        <a href="{!v.cartURL}">{!v.CartQuant}&nbsp;
+                        <aura:if isTrue="{!v.CartQuant > 1}">    
+                        {!$Label.c.EC_Header_cartValueUnits}
+                        <aura:set attribute="else">
+                         {!$Label.c.EC_Header_Cart_Single_Unit}
+                        </aura:set>   
+                         </aura:if>        
+                        </a></span>
+                        <span class="cart-value-mobile slds-hide_large">{!v.CartQuant}</span>
+                    </a>
+                    </aura:if>
+                    <span class="account-information slds-is-relative" aura:id = "dropDown" onclick="{!c.showProducts}">
+                        <!--<i class="material-icons slds-p-right_xx-small">
+                            account_circle
+                        </i>-->
+                        <img src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-account-circle.svg'}" />
+                        
+                        <span class="slds-p-right_small slds-show_medium">{!v.Contact}</span>                         
+                        <span class="not-active slds-show_medium"> 
+                            <i class="material-icons slds-p-top_xxx-small" id ="iconChange">
+                                expand_more
+                            </i>
+                        </span>
+                        <div aura:id = "AccountInfo" class="account-dropdown slds-is-absolute slds-hide">
+                            <ul>
+                                <li onclick="{!c.accountSettings}">
+                                    <a href="#">
+                                        <span class="slds-p-right_small">{!$Label.c.EC_Header_accountInfo}</span>
+                                        <span>
+                                            <i class="material-icons">
+                                                settings
+                                            </i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{!v.RedirectUrl}">
+                                        <span class="slds-p-right_small">{!$Label.c.EC_Header_logOut}</span>
+                                        <span>
+                                            <i class="material-icons">
+                                                logout
+                                            </i>
+                                        </span>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </span> 
+                    
+                </div>
+            </div>
+        </div>
+        <div class="search-nav">
+            <div class="slds-grid">
+                <span class="slds-hide_medium hamburger-menu-ham" aura:id="hamburger-menu-ham">
+                <lightning:icon  iconName="utility:rows" alternativeText="ham"
+                    onclick="{!c.showMobMenu}"  />
+                
+            </span>
+                <div class="ecolab slds-col" aura:id="logo">
+                    
+                    <a href="/s/" >
+                        <img class="gt-ecolab logo-image" src="{!$Resource.EC_Branding_Theme+'/images/logo.png'}"/>
+                    </a>
+                </div>
+                <div class="nav-menu ">
+                    <ul class="slds-list_horizontal slds-show_medium">
+                        <aura:iteration items="{!v.headerMenuItems}"  var="menuItem">
+                            <li class="{!menuItem.displayName}" onclick="{!c.highlightThis}">
+                                <a class="{!menuItem.class + ' nav-link'}" href="{!menuItem.url}">{!menuItem.displayName}</a>
+                               </li>
+                           
+                            
+                        </aura:iteration>
+                    </ul>
+                    <div class="slds-clearfix header-items  slds-hide_medium slds-hide"  aura:id="hamburger_menu">
+            
+                        <ul>
+                        <aura:iteration items="{!v.headerMenuItems}"  var="menuItem">
+                            <li class="{!menuItem.displayName}" onclick="{!c.highlightThis}">
+                                <a class="{!menuItem.class + ' nav-link'}" href="{!menuItem.url}">{!menuItem.displayName}</a>
+                               </li>
+                           
+                            
+                        </aura:iteration>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="search-bar" aura:id="toExpand" >
+                    <c:EC_GlobalSearch toShow="{!v.showCross}" />
+                   <aura:if isTrue="{!v.showCross}">
+                   
+                <ui:button class="slds-button slds-button--brand slds-align-middle closeit" press="{!c.shrinkDiv}">
+            <span class="slds-icon_container slds-icon-utility-search search-button-icon slds-button__icon forceIcon display-icon">
+                        <lightning:icon iconName="utility:close" />
+                    </span>
+                </ui:button>
+               </aura:if>
+               <aura:if isTrue="{!!v.showCross}">
+              <ui:button class="slds-button slds-button--brand slds-align-middle  openit" press="{!c.expandDiv}">
+            <span class="slds-icon_container slds-icon-utility-search search-button-icon slds-button__icon forceIcon display-icon">
+                        <lightning:icon iconName="utility:search" />
+                    </span>
+                </ui:button>         
+                </aura:if>
+                </div>
+        </div>
+        </div>
+    </header>
+</aura:component>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Display Type --></label>
+    <name>ccrz__DisplayType__c</name>
+    <picklistValues>
+        <masterLabel>Image-Select</masterLabel>
+        <translation>画像選択</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Image-Select Quantity</masterLabel>
+        <translation>画像選択数量</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multi-Select</masterLabel>
+        <translation>複数選択</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multi-Select Quantity</masterLabel>
+        <translation>複数選択数量</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Single-Select</masterLabel>
+        <translation>単一選択</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Single-Select Quantity</masterLabel>
+        <translation>単一選択数量</translation>
+    </picklistValues>
+</CustomFieldTranslation>

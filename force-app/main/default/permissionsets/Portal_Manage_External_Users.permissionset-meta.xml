@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allow users to Log in as Community user. Users also need read/write access to Accounts which contains the Contacts that are Community Users.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Portal - Manage External Users</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManagePartners</name>
+    </userPermissions>
+</PermissionSet>

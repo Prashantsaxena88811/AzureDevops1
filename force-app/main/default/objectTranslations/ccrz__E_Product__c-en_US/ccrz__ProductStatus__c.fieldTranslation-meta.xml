@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Product Status --></label>
+    <name>ccrz__ProductStatus__c</name>
+    <picklistValues>
+        <masterLabel>Blocked</masterLabel>
+        <translation><!-- Blocked --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>In Creation</masterLabel>
+        <translation><!-- In Creation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Orderable</masterLabel>
+        <translation><!-- Not Orderable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Released</masterLabel>
+        <translation><!-- Released --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

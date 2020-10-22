@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Cart Type --></label>
+    <name>ccrz__CartType__c</name>
+    <picklistValues>
+        <masterLabel>Cart</masterLabel>
+        <translation><!-- Cart --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Read-Only WishList</masterLabel>
+        <translation><!-- Read-Only WishList --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WishList</masterLabel>
+        <translation><!-- WishList --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

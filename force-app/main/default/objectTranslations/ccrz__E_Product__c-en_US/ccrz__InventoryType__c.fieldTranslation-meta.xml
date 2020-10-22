@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Selects how this product&apos;s inventory is managed. --></help>
+    <label><!-- InventoryType --></label>
+    <name>ccrz__InventoryType__c</name>
+    <picklistValues>
+        <masterLabel>CLASS</masterLabel>
+        <translation><!-- CLASS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DOWNLOAD</masterLabel>
+        <translation><!-- DOWNLOAD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NA</masterLabel>
+        <translation><!-- NA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ONSITE CLASS</masterLabel>
+        <translation><!-- ONSITE CLASS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RENTAL</masterLabel>
+        <translation><!-- RENTAL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>STANDARD</masterLabel>
+        <translation><!-- STANDARD --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

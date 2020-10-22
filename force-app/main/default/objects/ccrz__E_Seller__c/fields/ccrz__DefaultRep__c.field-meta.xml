@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ccrz__DefaultRep__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>When set, any orders that are split orders as applied to a specific seller will be set such that the owner of the split order will be this user.</description>
+    <externalId>false</externalId>
+    <label>Default Representative</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>SellerReps</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

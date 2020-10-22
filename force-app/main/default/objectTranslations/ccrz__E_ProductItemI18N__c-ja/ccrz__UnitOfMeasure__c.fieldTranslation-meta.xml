@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Unit Of Measure --></label>
+    <name>ccrz__UnitOfMeasure__c</name>
+    <picklistValues>
+        <masterLabel>Each</masterLabel>
+        <translation>各</translation>
+    </picklistValues>
+</CustomFieldTranslation>

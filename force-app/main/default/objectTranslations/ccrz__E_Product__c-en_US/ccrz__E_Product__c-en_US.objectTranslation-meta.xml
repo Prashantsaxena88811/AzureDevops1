@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>CC Product Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- SEO --></label>
+            <section>SEO</section>
+        </sections>
+        <sections>
+            <label><!-- Shipping --></label>
+            <section>Shipping</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- Product Type Assembly --></description>
+        <label><!-- ProductType_Assembly --></label>
+        <name>ccrz__ProductType_Assembly</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Product Type Configuration --></description>
+        <label><!-- ProductType_Config --></label>
+        <name>ccrz__ProductType_Config</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Product Type Normal --></description>
+        <label><!-- ProductType_Normal --></label>
+        <name>ccrz__ProductType_Normal</name>
+    </recordTypes>
+</CustomObjectTranslation>
