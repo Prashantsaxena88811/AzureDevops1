@@ -1,0 +1,298 @@
+<!--
+
+  @Component Name     : EC_Categories
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Shinsi               19/06/2019         Component for categories
+
+--> 
+
+<apex:component >
+    <script id="EC-Category-Container-Template-Mobile" type="text/template">        
+        <div class="full-btn col-xs-12 ec-clickable" data-toggle="modal" data-target="#categories-modal">
+            <span class="pull-left">{{pageLabelMap 'CATEGORIES'}}</span>
+            <span class="pull-right material-icons keyboard_arrow_right lh-16"></span>
+        </div> 
+        
+        <div class="modal fade right MobileNav" id="categories-modal" tabindex="-1" role="dialog" style="display:none;">
+            <div class="modal-dialog modal-sm modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close cc_close" data-dismiss="modal" aria-label="Close">
+                            <span class="visible-xs" aria-hidden="true">&times</span>
+                            <span class="hidden-xs modal-back-link blue-color fz-14"><span class="material-icons arrow_back vmiddle"></span>{{pageLabelMap 'EC_Back'}}</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="panel-group cc_categories_side_container accordion_specs" id="category-accordion-mobile" role="tablist" aria-multiselectable="true">
+                            <div class="pt-19 blue head pb-8">{{pageLabelMap 'EC_CATEGORIES'}}</div>
+                            {{#each .}}
+                                <div class="panel panel-default cc_panel cc_category_tree">
+                                    <div class="panel-heading cc_heading padding_heading" role="tab" id="{{sfid}}">
+                                        {{#if children}}
+                                            <h5 class="panel-title cc_title cat_title pl-5">
+                                                <span class="icon-toggle cc_icon_toggle pull-left" role="button" data-toggle="collapse" data-target="#collapse-mobile-{{sfid}}" aria-controls="collapse-mobile-{{sfid}}">
+                                                    
+                                                    <i class="material-icons md-18 category-expand add"></i>
+                                                    <i class="material-icons md-18 category-collapse remove"></i>
+                                                </span>
+                                                {{categoryLink this 'cc_cat_name'}}  
+                                                
+                                            </h5>
+                                        {{else}}
+                                            <h5 class="panel-title cc_title cat_title pl-35">
+                                                {{categoryLink this 'cc_cat_name'}}
+                                            </h5>
+                                        {{/if}}
+                                    </div>
+                                    {{#if children}}
+                                        <div id="collapse-mobile-{{sfid}}" class="panel-collapse collapse cc_collapse" role="tabpanel" aria-labelledby="heading-{{sfid}}">
+                                            <div class="panel-body cc_body">
+                                                {{#each children}}
+                                                    <div class="cc_heading padding_heading" role="tab" id="mobile-{{sfid}}">
+                                                        {{#if children}}
+                                                            <h5 class="panel-title cc_title subcat_title pl-15 ">
+                                                                <span class="icon-toggle cc_icon_toggle pull-left" role="button" data-toggle="collapse" data-target="#collapse-mobile-{{sfid}}" aria-controls="collapse-mobile-{{sfid}}">                                                     
+                                                                   
+                                                                    <i class="material-icons md-18 category-expand">add</i>
+                                                                    <i class="material-icons md-18 category-collapse">remove</i>
+                                                                </span>
+                                                                {{categoryLink this 'cc_cat_name'}}
+                                                                
+                                                            </h5>
+                                                        {{else}}
+                                                            <h5 class="panel-title cc_title subcat_title pl-35">{{categoryLink this 'cc_cat_name'}}</h5>
+                                                        {{/if}}
+                                                    </div>
+                                                    {{#if children}}
+                                                        <div id="collapse-mobile-{{sfid}}" class="panel-collapse collapse cc_collapse" role="tabpanel" aria-labelledby="heading-{{sfid}}">
+                                                            <div class="panel-body cc_body">
+                                                                {{#each children}}
+                                                                    <div class="cc_heading padding_heading" role="tab" id="mobile-{{sfid}}">
+                                                                        <h5 class="panel-title cc_title subcat_title pl-60">{{categoryLink this 'cc_cat_name'}}</h5>
+                                                                    </div>
+                                                                {{/each}}
+                                                            </div>
+                                                        </div>
+                                                    {{/if}}
+                                                {{/each}}
+                                           </div>
+                                        </div>
+                                    {{/if}}
+                                </div>
+                            {{/each}}
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    
+    <script id="EC-Category-Container-Template" type="text/template">
+        <div class="panel-group cc_categories_side_container accordion_specs hidden-xs" id="category-accordion" role="tablist" aria-multiselectable="true">
+            <div class="pt-19 blue head pb-8">{{pageLabelMap 'EC_CATEGORIES'}}</div>
+            {{#each .}}
+                <div class="panel panel-default cc_panel cc_category_tree">
+                    <div class="panel-heading cc_heading padding_heading" role="tab" id="{{sfid}}">
+                        {{#if children}}
+                            <h5 class="panel-title cc_title cat_title pl-5">
+                                <span class="icon-toggle cc_icon_toggle pull-left" role="button" data-toggle="collapse" data-target="#collapse-{{sfid}}" aria-controls="collapse-{{sfid}}">
+                                    
+                                    <i class="material-icons md-18 category-expand add"></i>
+                                    <i class="material-icons md-18 category-collapse remove"></i>
+                                </span>
+                                {{categoryLink this 'cc_cat_name'}}  
+                                
+                            </h5>
+                        {{else}}
+                            <h5 class="panel-title cc_title cat_title pl-35">
+                                {{categoryLink this 'cc_cat_name'}}
+                            </h5>
+                        {{/if}}
+                    </div>
+                    {{#if children}}
+                        <div id="collapse-{{sfid}}" class="panel-collapse collapse cc_collapse" role="tabpanel" aria-labelledby="heading-{{sfid}}">
+                            <div class="panel-body cc_body">
+                                {{#each children}}
+                                    <div class="cc_heading padding_heading" role="tab" id="{{sfid}}">
+                                        {{#if children}}
+                                            <h5 class="panel-title cc_title subcat_title pl-15 ">
+                                                <span class="icon-toggle cc_icon_toggle pull-left" role="button" data-toggle="collapse" data-target="#collapse-{{sfid}}" aria-controls="collapse-{{sfid}}">                                                     
+                                                    
+                                                    <i class="material-icons md-18 category-expand">add</i>
+                                                    <i class="material-icons md-18 category-collapse">remove</i>
+                                                </span>
+                                                {{categoryLink this 'cc_cat_name'}}
+                                                
+                                            </h5>
+                                        {{else}}
+                                            <h5 class="panel-title cc_title subcat_title pl-35">{{categoryLink this 'cc_cat_name'}}</h5>
+                                        {{/if}}
+                                    </div>
+                                    {{#if children}}
+                                        <div id="collapse-{{sfid}}" class="panel-collapse collapse cc_collapse" role="tabpanel" aria-labelledby="heading-{{sfid}}">
+                                            <div class="panel-body cc_body">
+                                                {{#each children}}
+                                                    <div class="cc_heading padding_heading" role="tab" id="{{sfid}}">
+                                                        <h5 class="panel-title cc_title subcat_title pl-60">{{categoryLink this 'cc_cat_name'}}</h5>
+                                                    </div>
+                                                {{/each}}
+                                            </div>
+                                        </div>
+                                    {{/if}}
+                                {{/each}}
+                           </div>
+                        </div>
+                    {{/if}}
+                </div>
+            {{/each}}
+        </div>
+    </script>
+    
+    <script id="EC-Spec-Group-View" type="text/template">
+        <div class="cc_spec_grouping filter_box">
+            <h5 class="panel-title cc_title cc_spec_header filter_title subcat_title pl-30 pb-8">
+                <a href="#collapse{{sfid}}" class="cc_collapse_group icon-toggle" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{sfid}}">                                     
+                    <i class="material-icons md-18  category-expand add"></i>
+                    <i class="material-icons md-18  pull-left category-collapse remove"></i> 
+                    {{this.name}}
+               </a>    
+            </h5>
+            <hr />
+            <div id="collapse{{sfid}}" class="collapse {{#ifEquals collapsed true}} in {{/ifEquals}} cc_spec_values_container" aria-expanded="false">
+                {{#ifEquals this.filterType 'Checkbox'}}
+                    <ul class="list-group mb-0">
+                        {{#each_upto specValues.models renderCount}}
+                            {{#with this.attributes}}
+                                <li class="list-group-item list-item subcat_title p-27 filter_title cc_spec_filter_option {{#ifEquals enabled false}} disabled hide {{/ifEquals}}">
+                                    <div class="checkboxx {{#ifEquals enabled false}}disabled{{/ifEquals}}">
+                                        <label class="center-block">
+                                             {{#ifDisplay 'FF.ShowValueCount'}}
+                                                
+                                             {{/ifDisplay}}
+                                            <input type="checkbox" class="cc_filter_checkbox cc_checkbox ch_box" {{#ifEquals enabled false}} disabled {{/ifEquals}} data-specid="{{../../this.sfid}}"
+                                                data-spec="{{../../this.name}}" data-value="{{value}}" {{#if selected}} checked {{/if}}
+                                            />
+                                                <span class="cc_filter_value" data-spec="" data-id="">{{value}}&nbsp;{{#if count includeZero=true}}({{/if}}{{count}}{{#if count includeZero=true}}){{/if}}</span>
+                                            
+                                        </label>
+                                    </div>
+                                </li>
+                            {{/with}}
+                        {{/each_upto}}
+                        {{#if viewMoreBtn}}
+                            <li class="list-group-item text-center cc_filter_buttons">
+                                <!-- <button type="button" class="btn btn-default btn-sm cc_show_more ec-btn-primary">{{pageLabelMap 'ProductList_ViewMoreFilters' this.listSize}}</button> -->
+                                <button type="button" class="btn btn-default btn-sm cc_show_all ec-btn-primary">{{pageLabelMap 'ProductList_ViewAllFilters' this.listSize}}</button>
+                            </li>
+                        {{/if}}
+                    </ul>
+                {{/ifEquals}}
+                {{#ifEquals this.filterType 'Slider'}}
+                    <div class="spec spec_slider_container col-md-12">
+                        <p class="slider_{{this.sfid}} cc_slider"></p>
+                        <p class="lowerDisp lower_{{this.sfid}} cc_lower_disp"></p>
+                        <p class="upperDisp higher_{{this.sfid}} cc_upper_disp"></p>
+                    </div>
+                    <div class="clearfix"></div>
+                {{/ifEquals}}
+            </div>
+        </div>    
+    </script>
+    <script id="EC-Product-List-Filter" type="text/template">               
+        <div class="panel panel-default center-block cc_filter_container hidden-xs">
+            <div class="panel-heading cc_heading bb-none">
+                <h3 class="panel-title cc_title head md-18 pl-15 blue ">
+                    {{pageLabelMap 'ProductList_FilterTitle'}}
+                    <span class="pull-right pl-15">
+                     
+                    </span>
+                    </span>
+                </h3>
+            </div>
+            <div id="collapseFilters" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="specGroupContent cc_filter_options"></div>
+                </div>
+            </div>
+        </div>        
+    </script>
+    <script id="EC-Product-List-Filter-Mobile" type="text/template">
+        <div class="full-btn col-xs-12 ec-clickable" data-toggle="modal" data-target="#filter-modal">
+            <span class="pull-left">{{pageLabelMap 'ProductList_FilterTitle'}}</span>
+            <span class="pull-right material-icons keyboard_arrow_right lh-16"></span>
+        </div>        
+        
+        <div class="modal fade right MobileNav" id="filter-modal" tabindex="-1" role="dialog" style="display:none;">
+            <div class="modal-dialog modal-sm modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close cc_close" data-dismiss="modal" aria-label="Close">
+                            <span class="visible-xs" aria-hidden="true">&times</span>
+                            <span class="hidden-xs modal-back-link blue-color fz-14"><span class="material-icons arrow_back vmiddle"></span>{{pageLabelMap 'EC_Back'}}</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="panel panel-default center-block cc_filter_container">
+                            <div class="panel-heading cc_heading bb-none">
+                                <h3 class="panel-title cc_title head md-18 pl-15 blue ">
+                                    {{pageLabelMap 'ProductList_FilterTitle'}}
+                                    <span class="pull-right pl-15">
+                                     
+                                    </span>
+                                    </span>
+                                </h3>
+                            </div>
+                            <div id="collapseFilters" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <div class="specGroupContent cc_filter_options"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script>
+        jQuery(function ($) {
+            
+            CCRZ.uiProperties.productListFilterView.ItemView.tmpl= 'EC-Spec-Group-View';
+            
+            if(window.innerWidth <=1365) { //for mobile               
+                CCRZ.uiProperties.productListFilterView.desktop.tmpl='EC-Product-List-Filter-Mobile'; 
+                CCRZ.uiProperties.CategoryTree.tmpl = 'EC-Category-Container-Template-Mobile';
+            } else { // for desktop
+                CCRZ.uiProperties.productListFilterView.desktop.tmpl='EC-Product-List-Filter';
+                CCRZ.uiProperties.CategoryTree.tmpl = 'EC-Category-Container-Template';
+            }
+            
+            Handlebars.registerHelper("test", function (data) {
+                
+                return '';
+            });
+            Handlebars.registerHelper("isMobile", function() {
+                return window.innerWidth <=767;
+            });
+            CCRZ.pubSub.on('view:CategoryTree:refresh', function (viewInstance) {    
+                if(CCRZ.pagevars.queryParams.categoryId){
+                    var currCat = CCRZ.pagevars.queryParams.categoryId;
+                    $("#"+currCat).parents("[id^='collapse-']").collapse("show");
+                    $("#mobile-"+currCat).parents("[id^='collapse-']").collapse("show");
+                    $("#"+currCat).children("h5").addClass("blue-color");
+                    $("#mobile-"+currCat).children("h5").addClass("blue-color")
+                }
+            });
+            CCRZ.pubSub.on('view:specGroupView:refresh', function (viewInstance) {
+				if (viewInstance.$el.find('.cc_spec_values_container').hasClass('in')) {
+                	 viewInstance.$el.find('.icon-toggle').attr("aria-expanded","true");
+                }
+                if (viewInstance.$el.find('ul li.disabled').length == viewInstance.$el.find('ul li').length) { 
+                    viewInstance.$el.hide(); 
+                }
+            });
+        });
+    </script>
+</apex:component>

@@ -1,0 +1,88 @@
+<apex:page controller="EC_PunchoutController" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" cache="false" applyHtmlTag="false">
+    <apex:includeScript value="{!$Resource.jQuery}"/>
+    
+    <script type="text/javascript">
+    
+        var stringCXML;
+        var str;
+        (function($){
+            $(document).ready(function() {
+                openLinkNewWindow();
+            });
+        })(jQuery)
+        
+        function openLinkNewWindow(){
+            mywindow = window.open('{!$Label.EC_IBuyPLP1}'+'{!$CurrentPage.parameters.categoryId}'+'{!$Label.EC_IBuyPLP2}'+'{!$CurrentPage.parameters.effectiveAccount}'+'{!$Label.EC_IBuyPLP3}'+'{!$CurrentPage.parameters.cartId}','workTab');
+            window.onbeforeunload = function () {
+                mywindow.close();
+            }; 
+        }
+        window.addEventListener("message", function(event){
+            if(event.origin=='{!$Label.EC_PunchinUrl}')
+            {
+                str = event.data;
+                var cartID = str;
+                var errorMsg = '';
+                console.log('cartID--> '+cartID);
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.EC_PunchoutController.generateCXMLWithCart}',
+                    cartID, 
+                    function(result, event){
+                        if (event.status) {
+                            try{
+                                //throw "Parameter is not a number!";
+                            var finalStr = result.cxmlString;
+                            var finalStrdecoded = $('<textarea/>').html(finalStr).text();
+                            var datEnc = finalStrdecoded;
+                            var dataToSend = finalStrdecoded;
+                            var callbackURL = result.punchOutCallbackURL;
+                            //PBI 117667
+                            callbackURL = callbackURL.replace(/amp;/g, "");
+                            console.log('CallbackUrl--->' + callbackURL);
+                            document.forms['procurementForm'].action = callbackURL;
+                            $('#formcxmlinputtag').val(dataToSend );
+                            document.getElementById('procurementForm').submit();
+                                }
+                            catch(err){
+                                console.error(err);
+                                window.close();
+                                
+                              var plb= '{!$Label.EC_IBuyError}';
+                                
+                                           var contErriFrame ='<div class="inner-wrapper-iframe-error" style="margin: 12.5% auto;background-color: #ffffff;padding: 30px 0;width: 598.5px;">'+
+                                               '<div class="iframe-error" style="background-color: #ffffff;border-radius: 1.4px;border: solid 0.7px #e17000;width: 532px;margin: auto;">'+
+                                               '<div class="image-wrapper" style="width: 34px;margin: auto;padding-top: 30px;">'+
+                                               '<img id="msg-img" style="height: 34px;width: 34px;" src="{!$Resource.EC_EcoLabs_Theme+'/images/outline-error2.png'}"/>'+
+                                                   '</div>'+
+                                                   '<div id="main-text" style="padding: 15px 7.0%;">'+
+                                                   '<div class="text-content" style="font-family: Arial;font-size: 14px;font-weight: bold;font-stretch: normal;font-style: normal;line-height: normal;letter-spacing: normal;text-align: center;color: #005172;">'+
+                                                   plb+
+                                                   '</div>'+
+                                                   
+                                                   '</div>'+
+                                                   
+                                                   '</div>'+
+                                                   
+                                                   '</div>';
+                                         $("body").html(contErriFrame);
+                                
+                                       
+                            }
+                        }
+                    }, 
+                    {escape: true}
+                );
+                
+            }
+            
+        }, false);
+        
+    </script>
+    
+    <c:EC_IFrameCustomPage_UI />
+    
+    <form id="procurementForm" method="post" action='{!punchOutCallbackURL}' >
+        <input id="formcxmlinputtag" type="hidden" name="cXML-urlencoded" value="{!cXMLStr}"/>
+    </form> 
+    
+</apex:page>

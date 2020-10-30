@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send notification to customer whenever case comment is created.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Case Comment Notification to Customer</name>
+    <style>none</style>
+    <subject>Comment to Ecolab Case {!Case.CaseNumber}</subject>
+    <textOnly>Hello {!Contact.Name},
+
+This message is to inform you that a new comment has been made on your case {!Case.CaseNumber} regarding {!Case.Subject} : {!Case.Last_Case_Comment}.
+
+To reply to the comment, please click the following link:
+
+{!$Label.Ecolab_Community_URL}{!Case.Id}
+
+If you are unable to click the above link, please copy and paste it into your browser&apos;s address bar.
+
+Thank you for being an Ecolab customer.
+
+Best,
+
+Ecolab Support Team
+
+-----
+
+Please do not reply to this email.  This is a system generated email to inform you of updates to your Ecolab Case.  This message was generated from https://connect.ecolab.com.
+
+ECOLAB
+Global Headquarters
+1 Ecolab Place, St. Paul MN 55102
+Ecolab.com
+Privacy Policy
+© 2020 Ecolab Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

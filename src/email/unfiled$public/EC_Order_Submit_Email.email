@@ -1,0 +1,5 @@
+<messaging:emailTemplate subject="{!If(relatedTo.OrderRushEmail__c==True, $Label.EC_rush_order_submit_mail_subject,$Label.EC_order_submit_mail_subject)} {!relatedTo.Name}" recipientType="User" relatedToType="ccrz__E_Order__c">
+<messaging:plainTextEmailBody >
+    <c:EC_OrderSubmitEmail orderId="{!relatedTo.Id}"/>
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

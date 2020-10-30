@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>EC_Batch_End_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Batch End Time</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>EC_Batch_Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Batch Start Time</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>CategoryTreeBatchStartEndTimeLine</label>
+    <visibility>Public</visibility>
+</CustomObject>

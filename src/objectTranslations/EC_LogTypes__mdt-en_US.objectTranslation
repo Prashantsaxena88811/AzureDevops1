@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>LogType</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>LogTypes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Write Apex Logs Synchronously --></label>
+        <name>EC_WriteApexLogsSynchronously__c</name>
+    </fields>
+    <fields>
+        <label><!-- write Apex Logs Asynchronously --></label>
+        <name>EC_write_Apex_Logs_Asynchronously__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

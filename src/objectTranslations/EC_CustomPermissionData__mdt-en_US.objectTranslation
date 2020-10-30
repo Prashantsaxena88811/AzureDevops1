@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EC_CustomPermissionData</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EC_CustomPermissions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Required For Commerce User --></label>
+        <name>Required_For_Commerce_User__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

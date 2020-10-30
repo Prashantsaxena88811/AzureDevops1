@@ -1,0 +1,1022 @@
+<!--
+
+  @Component Name     : EC_ProductDetail
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Viraj                 6/06/2019         Product detail page.
+
+-->
+
+
+<apex:component allowDML="true" controller="EC_ProductDetailController">
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script id="EC-ProductDetail-Desktop" type="text/template">
+    {{#ifEquals '{!JSENCODE(IF(indirectStreetBrand,"true","false"))}' "false"}}<!--ww 154870 -->
+        <div class="panel panel-default product_detail_container product_type_standard phoneProductItem cc_panel cc_product_detail_container cc_product_type_standard">
+            <!--<div class="panel-heading cc_heading">
+                <h3 class="panel-title cc_title">{{this.product.prodBean.name}}</h3>
+            </div>-->
+            <div class="panel-body product_detail cc_body cc_product_detail">
+                <div class="messagingSection-Error" role="alert" style="display: none"></div>
+                <div class="messagingAction-Info" role="alert" style="display: none">
+                    <button type="button" class="close cc_close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&#215;</span></button>
+                </div>
+                <div class="row">
+                    {{#if this.product.canAddtoCart}}
+                    <!-- Orderable product -->
+                    <div class="wishFinder" data-sku="{{this.product.prodBean.sku}}">
+                    <div class="wishButtons wishButPdpMob plus_minus cc_plus_minus pull-right"></div>
+                    </div>                                     
+                    {{/if}}  
+                    <div class="col-sm-3 col-xs-12">
+                       <div class="col-sm-2 col-xs-2 arrowBack">
+                            <button class="prevBack">
+                                <i class="material-icons arrow_color keyboard_arrow_left"></i>
+                            </button>
+                        </div>
+                        <div class="col-sm-8 col-xs-8 prod_media cc_prod_media">
+                            {{#if this.product.mediaWrapper }}
+                                <div class='single-item' id="single-item">
+                                    {{#each this.mediaWrappers.[Product Image]}}
+                                        <div class="item customItem mainproductImage">
+                                            <img class="cc_alternate img-responsive tabImage nextImage ga-prodImage" src="{{productImage this}}"  data-id="{{this.uri}}" alt="qwerty"/>
+                                        </div>
+                                    {{/each}}
+            
+                                    {{#each this.mediaWrappers.[Alternate Images]}}
+                                        <div>
+                                            <img class="carouselImg cc_alternate img-responsive thumbnail ga-prodImage" src="{{productImage this}}" data-id="{{this.uri}}" alt="qwerty"  />
+                                        </div>
+                                    {{/each}}                                   
+                                </div>
+                            {{else}}
+                                <img class="carouselImg cc_alternate img-responsive thumbnail ga-prodImage" src="{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.svg'}" alt="{{this.product.prodBean.name}}"/>
+                            {{/if}}
+                        </div>
+                        <div class="col-sm-2 col-xs-2 arrowNext">
+                            <button class="nextNext">
+                                <i class="material-icons arrow_color keyboard_arrow_right"></i>
+                            </button>
+                        </div>    
+                    </div>
+                    <div class="col-sm-9 col-xs-12 ">
+                        <div class="product_detail_item wishFinder cc_wish_finder" data-sku="{{this.product.prodBean.sku}}">                        
+                            <!--QuickList-->
+                            <div class="row quicklist-row">
+                                <h4 class="product_title cc_product_title col-md-9 ga-prodLink">{{this.product.prodBean.name}}</h4>
+                                <div class="col-md-3">                      
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                            {{#ifDisplay 'PD.DsplSku'}}
+                                <div class="sku cc_sku skuuom skuborder">
+                                    <span class="cc_label">{{pageLabelMap 'EC_ProductCode'}}</span>
+                                    <span class="value skuval cc_value ga-prodCode">{{this.product.prodBean.sku}}</span>
+
+                                </div>
+
+                            {{/ifDisplay}}
+                                <div class="uom sku cc_sku cc_uom skuuom">
+                                    <span class="value cc_value">{{pageLabelPrefixMap 'UOM_' this.product.prodBean.UnitOfMeasure}}</span>
+                                </div>
+                            {{#ifDisplay 'PD.DsplAvlb'}}
+                                <div class="inventory  cc_inventory ">
+                                    <span class="cc_label">{{pageLabelMap 'ProductDetails_Availability'}}</span>
+                                    {{#ifStoreSetting 'InventoryCheckFlag__c'}}
+                                        <span class="value cc_value">{{{this.product.inventory}}}</span>
+                                    {{else}}
+                                        <span class="value cc_value">{{{pageLabelMap this.product.availMsg}}}</span>
+                                    {{/ifStoreSetting}}
+                                </div>
+                            {{/ifDisplay}}
+                            {{#ifDisplay 'PR.Enabled'}}
+                                <div id="avgRating" class="rateit  cc_rateit " data-rateit-value="{{this.product.avgRating}}" data-rateit-ispreset="true" data-rateit-readonly="true">
+                                    <span class="cc_label">{{pageLabelMap 'NumberofReviews' this.numberOfReviews }}</span>
+                                </div>
+                            {{/ifDisplay}}
+                            {{#ifDisplay 'PD.DsplSDesc'}}
+                                <div class="shortDesc cc_short_desc ">
+                                    <p class="pblock cc_pblock darkgreyfc">{{{this.product.prodBean.shortDesc}}}</p>
+                                </div>
+                            {{/ifDisplay}}
+                            {{#ifDisplay 'PD.DsplFeatures'}}
+                                <div class="featuresAndBenefits hide">
+                                    {{#if this.product.prodBean.featuresAndBenefits}}
+                                    	<div style="font-weight:700; padding-top: 10px">{{pageLabelMap 'FeaturesandBenefits'}}</div>
+                                    {{/if}}
+                                    {{{this.product.prodBean.featuresAndBenefits}}}
+                                </div>
+                            {{/ifDisplay}}
+                            {{#ifDisplay 'PD.DsplStatement'}}
+                                <div class="statementOfAssurance hide">
+                                    {{{this.product.prodBean.ECStatementOfAssurance}}}
+                                </div>
+                            {{/ifDisplay}}
+                            </div>
+                            <hr>
+                          <div {{#if this.product.canAddtoCart}}{{#ifEquals (checkOr '{!viewPrice}' '{!buyOnline}') true}} class="item-wrapper {{#if (nonBulkEAPD this.product.prodBean)}} nalco-h-115 {{else}}nalco-h-100{{/if}}"{{/ifEquals}}{{/if}}>
+                            <div class="row center">
+                                <div class="{{#if (checknalcoPD)}}col-md-6 col-xs-12 col-sm-5 nalco-price {{else}}col-md-3 col-xs-6 {{/if}} price-row">
+                                  <div class="col-md-12 pricemobcont">
+                                     {{#ifEquals '{!viewPrice}' "true"}}
+                                        {{#if this.product.prodBean.isFlatFeeProduct}}
+                                            <!-- no charge -->
+                                            <span class="noChargeWrap">
+                                                <span class="noChargeLabel">{{pageLabelMap 'EC_NoCharge'}}</span>
+                                                <span class="noCharge">
+                                                    <i class="material-icons info_outline"></i>
+                                                    <span class="noChargeMsg">{{pageLabelMap 'EC_NoChargeMsg'}}</span>
+                                                </span>
+                                            </span>
+                                        {{else}}
+                                            {{#if this.product.showPricing}}
+                                                {{#ifDisplay 'PD.DsplPrc'}}
+                                                    {{#if this.product.price}}
+                                                        {{#if this.product.canAddtoCart}}
+                                                            <div class="price_block cc_price_block">
+                
+                                                        {{/if}}
+                                                            {{#ifDisplay 'PD.DsplListPrc'}}
+                                                                {{#if this.product.basePrice}}
+                                                                    <p class="baseprice cc_baseprice">
+                                                                        <span class="cc_label">{{pageLabelMap 'ProductDetails_ListPrice'}}</span>
+                                                                        <span class="value cc_value">{{price this.product.basePrice}}</span>
+                                                                    </p>
+                                                                {{/if}}
+                                                            {{/ifDisplay}}
+                                                            {{#if this.product.canAddtoCart}}
+                                                            {{#if (checknalcoPD)}}
+                                                                {{#if (taxonomyPD this.product.prodBean.taxonomy 'Equipment')}}
+                                                                    <div class="cc_price price first-price">
+                                                                        <span class="price cc_price">{{{formatUSD (price this.product.price)}}}<span class="price-wrap-dec one-uom"> {{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span></span>
+                                                                    </div>
+                                                                {{/if}}
+                                                                {{#if (taxonomyPD this.product.prodBean.taxonomy 'Chemical')}}
+                                                                    {{#if (packageTypePD this.product.prodBean.packageTypeUOM 'NonBulk')}}
+                                                                        <div class="cc_price price first-price">
+                                                                            <span class="price cc_price">{{{formatUSD (price this.product.price)}}}<span class="price-wrap-dec one-uom"> {{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span></span>
+                                                                        </div>
+                                                                        {{#if (nonBulkEAPD this.product.prodBean)}}
+                                                                        <div class="cc_price price second-price">
+                                                                        <span class="price cc_price">
+                                                                        {{{formatUSD (price this.product.prodBean.CustomUnitPrice)}}}
+                                                                        <span class="price-wrap-dec"> {{pageLabelMap 'EC_UOM_Per'}} {{this.product.prodBean.PricePer}} {{this.product.prodBean.CustomPricingUOM}}
+                                                                        </span>
+                                                                        </span>
+                                                                        </div>
+                                                                        {{/if}}
+                                                                    {{/if}}
+                                                                    {{#if (packageTypePD this.product.prodBean.packageTypeUOM 'Bulk')}}
+                                                                        <div class="cc_price price first-price">
+                                                                        <span class="price cc_price">
+                                                                        {{{formatUSD (price this.product.prodBean.CustomUnitPrice)}}}
+                                                                        <span class="price-wrap-dec one-uom"> {{pageLabelMap 'EC_UOM_Per'}} {{this.product.prodBean.PricePer}} {{this.product.prodBean.CustomPricingUOM}}</span></span>
+                                                                        </div>
+                                                                    {{/if}}
+                                                                {{/if}}
+                                                            {{else}}
+                                                                <p class="price cc_price">
+                                                                    <!--<span class="cc_label">{{pageLabelMap 'Price'}}</span>-->
+                                                                    <span class="value cc_value cc_price{{product.prodBean.id}}">
+                                                                        {{#if this.highAttrPrice}}
+                                                                            {{{formatUSD (price this.lowAttrPrice)}}} - {{{formatUSD (price this.highAttrPrice)}}}
+                                                                        {{else}}
+                                                                            {{{formatUSD (price this.product.price)}}}
+                                                                        {{/if}}
+                                                                    </span>
+                                                                </p>
+                                                            {{/if}}
+                                                            {{/if}}
+                                                            <p class="cc_sold_by">
+                                                                {{#if this.product.sellerID}}
+                                                                    <span class="soldbylabel cc_sold_by_label">{{pageLabelMap 'Prod_SoldBy'}}</span>
+                                                                    <span class="soldbyname cc_sold_by_name">{{pdp-seller-field 'sfdcName' this.product.sellerID this.sellers}}</span>
+                                                                {{/if}}
+                                                            </p>
+                                                            {{#ifDisplay 'PD.DsplSvPrc'}}
+                                                                {{#if this.product.savings}}
+                                                                    <p class="savings">
+                                                                        <span class="cc_label">{{pageLabelMap 'YouSave'}}</span>
+                                                                        <span class="value cc_value">{{price this.product.savings}}</span>
+                                                                    </p>
+                                                                {{/if}}
+                                                                {{/ifDisplay}}
+                                                                {{#if this.isTierPriced}}
+                                                                    <div class="cc_prt_tool_tip_div cc_prt_tool_tip_div_pdp">
+                                                                        <span class="cc_prt_tool_tip_text cc_prt_tool_tip_text_pdp" data-toggle="tooltip" title="{{pageLabelMap 'ProductPricingTiers_VolumeHover'}}">
+                                                                            {{pageLabelMap 'ProductPricingTiers_VolumePricing'}}
+                                                                        </span>
+                                                                    </div>
+                                                                {{/if}}
+                                                            </div>
+                                                            <hr>
+                                                        {{/if}}
+                                                    {{/ifDisplay}}
+                                                {{/if}}
+                                            {{/if}}
+                                        {{/ifEquals}}
+                                    </div>
+                                </div>
+                                                    
+                                {{#if this.product.canAddtoCart}}
+                                    {{#ifEquals '{!buyOnline}' "true"}}
+                                    {{#ifDisplay 'pd.tiersassec'}}
+                                    {{else}}
+                                        <div class="cc_product_pricing_tiers{{this.product.prodBean.sfid}}"></div>
+                                    {{/ifDisplay}}
+                                    {{#unless this.primaryAttr}}
+                                    <!--part of InstSalesEnt pbi-139350 -->
+                                     {{#if this.product.prodBean.isAddToCartShow}}
+                                    <div class="quantity_block gp_quantity_block cc_quantity_block qty-row {{#if (checknalcoPD)}}nalco-align col-sm-3 col-md-4 {{#if {!buyOnline} }} col-lg-5{{else}} col-lg-6 nalco-right {{/if}} {{else}} col-md-2 {{/if}} col-xs-6 col-md-offset-5">
+                                            {{#if this.product.qtySkipIncrement}}
+                                                <div class="row cc_qty_control_row">
+                                                    <div class="col-md-10 col-md-offset-2">
+                                                        <div class="form-group">
+                                                            <div class="input-group cc_input_group">
+                                                                <span class="input-group-btn cc_input_group_btn">
+                                                                    <input type="button" value="{{pageLabelMap 'Prod_QtyDecrFF'}}" class="btn btn-default btn-sm minusFF cc_minusff">
+                                                                    <input type="button" value="{{pageLabelMap 'Prod_QtyDecrSingle'}}" class="btn btn-default btn-sm minus cc_minus">
+                                                                </span>
+                                                                <input type="text" readonly="true" name="qty" value="0" class="entry form-control input-sm cc_entry" maxlength="7" />
+                                                                <span class="input-group-btn cc_input_group_btn">
+                                                                    <input type="button" value="{{pageLabelMap 'Prod_QtyIncrSingle'}}" class="btn btn-default btn-sm plus cc_plus">
+                                                                    <input type="button" value="{{pageLabelMap 'Prod_QtyIncrFF'}}" class="btn btn-default btn-sm plusFF cc_plusff">
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {{else}}
+                                                {{#ifEquals this.product.qtyIncrement 1}}
+                                                <div class="row cc_qty_control_row yo">
+                                                    <div class="col-md-6 col-md-offset-6">
+                                                        <div class="form-group">
+                                                            <div class="input-group cc_input_group">
+                                                                <span class="input-group-btn cc_input_group_btn cust-min">
+                                                                    <button type="button" class="btn btn-default btn-sm minus cc_minus material-icons remove"></button>
+                                                                </span>
+                                                                <input id="qty{{index}}" name="quickadd[{{index}}].qty" value="0" class="qty entry form-control input-sm cc_entry plp-input" maxlength="7"
+                                                                />
+                                                                <span class="input-group-btn cc_input_group_btn">
+                                                                    <button type="button" class="btn btn-default btn-sm plus cc_plus material-icons add"></button>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{else}}
+                                                <div class="row cc_qty_control_row">
+                                                    <div class="col-md-12 qtyblock">
+                                                        <div class="form-horizontal">
+                                                            <div class="form-group">
+                                                                <!--<div class="col-md-2">
+                                                                    <label for="qty" class="col-sm-7 control-label cc_qty">{{pageLabelMap 'Qty'}}</label>
+                                                                </div>-->
+                                                                <div class="qtyIncrDecrBtn input-group cc_input_group">
+                                                                    <span class="input-group-btn cc_input_group_btn min-but cust-min">
+                                                                        <button type="button" id="{{this.itemID}}" class="btn minus-left btn-default btn-sm cc_minus material-icons remove"></button>
+                                                                    </span>                                                               
+                                                                    <input type="number" id="qty" min="1" name="qty" value="1" class="inp-box input-text entry plus_minus cc_entry form-control plp-input" maxlength="7"/>                                                                        
+                                                                    <span class="input-group-btn cc_input_group_btn">
+                                                                        <button type="button" id="{{this.itemID}}" class="btn plus-right btn-default btn-sm plus cc_plus material-icons add"></button>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        {{/ifEquals}}
+                                    {{/if}}
+                                    {{#if (checknalcoPD)}}
+                                    <span class='nalco-uom'>
+                                        {{#if (packageTypePD this.product.prodBean.packageTypeUOM 'Bulk')}}
+                                            {{this.product.prodBean.CustomPricingUOM}}
+                                        {{else}}
+                                        EA
+                                        {{/if}}
+                                    </span>
+                                    {{/if}}
+                                    <input type="hidden" name="qtyIncrement" value="{{this.product.qtySingleIncrement}}" class="item_qtyIncrement cc_item_qty_increment"/>
+                                    <input type="hidden" name="qtySkipIncrement" value="{{this.product.qtySkipIncrement}}" class="item_qtySkipIncrement cc_item_qty_skip_increment"/>
+                                </div>
+                                {{#unless this.showNewSubscriptionSelection}}
+                                    {{#if this.product.prodBean.showSubscriptionSelection}}
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="cc_subscription_selection_div">
+                                                    <p class="subscription_selection cc_subscription_selection">
+                                                        <span class="subscriptionLabel cc_subscription_label">{{pageLabelMap 'Subscribe_And_Save_Label'}}</span>
+                                                        <select class="subscriptionFrequencySelection cc_subscription_frequency_selection" data-subscription="{{this.product.prodBean.sku}}">
+                                                            {{#each this.product.prodBean.subscriptionFrequencies}}
+                                                                <option value="{{safeQuote this}}">{{pageLabelMapMultiString 'Subscribe_And_Save_' this}}</option>
+                                                            {{/each}}
+                                                        </select>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {{/if}}
+                        
+                                    
+                                {{/unless}}
+                                {{/if}}
+                            {{/unless}}
+                            {{/ifEquals}}                                          
+                            {{else}}
+                            <div class="error_box"><div class="error_text">{{pageLabelMap 'Non_orderable_msg'}} 
+                                </div></div> <!--<button class="ec-btn-primary pdp-disabled" type="button" disabled> Add to Cart</button> -->
+                        {{/if}}
+                        {{#ifEquals '{!buyOnline}' "true"}}
+                        {{#if this.product.canAddtoCart}}                 
+                            <!--Cart Module-->
+                            <!--part of InstSalesEnt pbi-139350 -->     
+                             {{#if this.product.prodBean.isAddToCartShow}}                              
+                            <div class="col-md-2 col-xs-12 atcpdp {{#if (checknalcoPD)}}col-sm-3 col-lg-1 nal-pr-16{{/if}}">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <div class="action cc_action">
+                                        <button type="button" class="ga-addtocart btn atcpdpbtn fwb uppercasetrans btn-default  btn-sm add-to-cart-main cc_add_item pull-right ec-btn-primary" data-sku="{{this.product.prodBean.sku}}"
+                                        data-seller="{{this.product.sellerID}}">{{pageLabelMap 'Component_MiniwishList_AddToCart'}}</button>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                            {{else}}
+                              <div style="color: #005172;font-size:14px;text-align:left;font-weight:bold;">{{pageLabelMap 'Sales_Entitlement'}}</div>                             
+                            {{/if}}  
+                        {{/if}}
+                    {{/ifEquals}}
+                </div>
+            </div>
+        </div>
+        {{/ifEquals}} <!--ww 154870 -->
+        <!--ww 154870 -->
+        {{#ifEquals '{!JSENCODE(IF(indirectStreetBrand,"true","false"))}' "true"}}
+          <div style="color: #005172;font-size:14px;text-align:center;font-weight:bold;">{{pageLabelMap 'Indirect_StreetBrand'}}</div>                                
+         {{/ifEquals}}  
+         <!--ww 154870 -->                
+        </div>                                                            
+        </div>                                                                          
+        {{#if this.primaryAttr}}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="cc_product_attributes"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="cc_product_attributes_batch_header">
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+        <div class="row">
+            <div class="col-md-7 col-md-offset-5">
+                {{#if this.showNewSubscriptionSelection}}
+                    {{#if this.product.canAddtoCart}}
+                        <div class="cc_subscription_selection_div">
+                            <h4>{{pageLabelMap 'Subscribe_And_Save_Label'}}</h4>
+                            {{#each this.subProdTerms}}
+                                {{#if this.CC_NO_SUBSCRIPTION}}
+                                    <div class="cc_item_container">
+                                        <div class="radio cc_radio">
+                                            <label class="cc_radio_name">
+                                                <input value="nosuboption" data-nme="nosuboption" type="radio" name="subOptionGuider{{this.productSKU}}" {{this.checked}}
+                                                  /> {{pageLabelMap 'Prod_NoSubscriptionOption' (price this.productPrice)}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    {{else}}
+                                        <div class="cc_item_container">
+                                            <div class="radio cc_radio">
+                                                <label class="cc_radio_name">
+                                                <input value="{{this.sfid}}" data-nme="{{this.name}}" type="radio" name="subOptionGuider{{this.productSKU}}" {{this.checked}}
+                                                />
+                                                {{#if this.modifierSubscriptions}}
+                                                    {{insertTokens this.pdpDisplayName this.displayName (price this.productPrice) (price this.subscriptionPrice) (pageLabelPrefixMap 'Subscriptions_Frequency_' this.orderFrequencyUOM) (pageLabelPrefixMap 'Subscriptions_Frequency_' this.installmentFrequencyUOM) this.orderFrequency this.installmentFrequency this.installmentCount this.orderCount (price this.modifierSubscriptions.[0].productPrice) (price this.modifierSubscriptions.[0].subscriptionPrice) this.modifierSubscriptions.[0].orderCount this.modifierSubscriptions.[0].installmentCount}}
+                                                {{else}}
+                                                    {{insertTokens this.pdpDisplayName this.displayName (price this.productPrice) (price this.subscriptionPrice) (pageLabelPrefixMap 'Subscriptions_Frequency_' this.orderFrequencyUOM) (pageLabelPrefixMap 'Subscriptions_Frequency_' this.installmentFrequencyUOM) this.orderFrequency this.installmentFrequency this.installmentCount this.orderCount}}
+                                                {{/if}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                {{/if}}
+                                {{/each}}
+                                <div class="action pull-right cc_action">
+                                    <button type="button" class="btn btn-default btn-sm add-to-cart-main cc_add_item" data-sku="{{this.product.prodBean.sku}}">{{pageLabelMap 'Component_MiniwishList_AddToCart'}}</button>
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/if}}
+                </div>
+            </div>                                                        
+        </div>
+    </div>
+    <div class="tabSection"></div>
+    <div class="widgetSection"></div>
+    </script>
+    <script id="EC-ProductDetail-TabContainer-Desktop" type="text/template">
+        <div class="panel panel-default cc_panel cc_prod_detail_panel proddetailpanel">
+            <div class="panel-body cc_body accordiondesktop">
+                <div class="tabs_container cc_tabs_container cc_product_detail_container">
+                    <ul class="nav nav-tabs cc_nav-tabs" id="myTab">
+                        {{#each this}}
+                            <li role="presentation" {{#ifEquals @index 0}} class="active cc_li activenormalspacing" {{else}} class="activenormalspacing" {{/ifEquals}}>
+                                <a href="#{{this.sectionID}}_{{this.grouping}}" data-toggle="tab">{{pageLabelMap this.sectionLabel}}</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                    <div class="tab-content cc_tab-content">
+                        {{#each this}}
+                        <div role="tabpanel" class="tab-pane cc_tab-pane {{#ifEquals @index 0}} active {{/ifEquals}}" id="{{this.sectionID}}_{{this.grouping}}"
+                            {{#ifEquals @index 0}} active {{/ifEquals}}>
+                            <p class="{{this.sectionID}} cc_loading">{{pageLabelMap 'EC_LoadingContent'}}...</p>
+                        </div>
+                        {{/each}}
+                        </div>
+                    </div>
+                </div>
+            <div class="container accordionmobile">
+            <div class="panel-group" id="accordion">
+    {{#each this}}
+    <div class="panel panel-default">
+      <div class="panel-heading accordmob">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#{{this.sectionID}}_{{this.grouping}}1">
+          {{pageLabelMap this.sectionLabel}}
+          <span class="pull-right">
+                        <span class="icon-toggle minitoggle cc_filter_icon" role="button" data-toggle="collapse" data-target="#{{this.sectionID}}_{{this.grouping}}1"
+                            aria-expanded="false">
+                            <!-- <i class="fa fa-caret-down" aria-hidden="true"></i> -->
+                            <i class="material-icons  minitgle keyboard_arrow_down menu-expand"></i>
+                            <i class="material-icons  minitgle keyboard_arrow_up menu-collapse"></i>
+                        </span>
+                    </span>
+          </a>
+        </h4>
+      </div>
+      <div id="{{this.sectionID}}_{{this.grouping}}1" class="panel-collapse collapse">
+        <div class="panel-body">
+            <p class="{{this.sectionID}} cc_loading contentmobile">{{pageLabelMap 'EC_LoadingContent'}}...</p>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  </div> 
+        </div>
+    </script>
+    <script id="EC-ProductDetail-MediaSection-Desktop" type="text/template">
+        {{#eachMapEntry this.pageData}}
+        <div class="nvRow nvGroupRow cc_nv_group_row">
+            {{#each this}}
+                    <div class="clearfix col-md-4 desc">
+                        <div class="sds-section col-md-12 desc-col">
+                            <div class="col-xs-6">
+                            {{#ifEquals this.mediaType 'Safety Documents'}}
+                                <span class="name cc_name">{{pageLabelMap 'Safety_Documents'}}</span>
+                             {{/ifEquals}}
+                             {{#ifEquals this.mediaType 'Product Bulletins'}}
+                                <span class="name cc_name">{{pageLabelMap 'Product_Bulletins'}}</span>
+                             {{/ifEquals}}
+                             {{#ifEquals this.mediaType 'Operating Manuals'}}
+                                <span class="name cc_name">{{pageLabelMap 'Operating_Manuals'}}</span>
+                             {{/ifEquals}}
+                             {{#ifEquals this.mediaType 'Specification Sheets'}}
+                                <span class="name cc_name">{{pageLabelMap 'Specification_Sheets'}}</span>
+                             {{/ifEquals}}
+                             {{#ifEquals this.mediaType 'Label 1s'}}
+                                <span class="name cc_name">{{pageLabelMap 'Label_1s'}}</span>
+                             {{/ifEquals}}
+                             {{#ifEquals this.mediaType 'Label 2s'}}
+                                <span class="name cc_name">{{pageLabelMap 'Label_2s'}}</span>
+                             {{/ifEquals}}
+                             {{#ifEquals this.mediaType 'Catalog Sheets'}}
+                                <span class="name cc_name">{{pageLabelMap 'Catalog_Sheets'}}</span>
+                             {{/ifEquals}}
+                             {{#ifEquals this.mediaType 'Analytical Procedures'}}
+                             <span class="name cc_name">{{pageLabelMap 'Analytical_Procedures'}}</span>
+                             {{/ifEquals}}
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <span class="value cc_value"><a href="{{productImage this}}" target="_blank"><i class="material-icons position ecolab-blue md-24">launch</i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                {{/each}}
+            </div>
+        {{/eachMapEntry}}
+    </script>
+    <script id="EC-ProductDetail-NameValueGroupedSection-Desktop" type="text/template">
+        {{#eachMapEntry this.pageData}}
+            <div class="nvRow nvGroupRow cc_nv_group_row">
+                <p class="groupName cc_group_name hidden">{{this.groupName}}</p>
+                <table>
+                    {{#each this}}
+                        <tr class="nvRow cc_nv_row row">
+                            <td class="col-xs-3">
+                                <span class="name cc_name">{{this.name}}</span>
+                            </td>
+                            <td class="col-xs-9">
+                                <span class="value cc_value">{{this.value}}</span>
+                            </td>
+                        </tr>
+                        <tr class="empty-row" height="3">
+                        </tr>
+                    {{/each}}
+                </table>
+            </div>
+        {{/eachMapEntry}}
+    </script>
+    <script>
+    jQuery(function ($) {
+        CCRZ.uiProperties.productDetailView.desktop.tmpl = 'EC-ProductDetail-Desktop';
+        CCRZ.uiProperties.tabSectionView.desktop.tmpl = 'EC-ProductDetail-TabContainer-Desktop';
+        CCRZ.uiProperties.mediaSectionView.desktop.tmpl = 'EC-ProductDetail-MediaSection-Desktop';
+        CCRZ.uiProperties.prodSectionView.desktop.main.tmpl = 'EC-ProductDetail-ProductsSection-Desktop';
+        CCRZ.uiProperties.nameValGroupSectionView.desktop.tmpl = 'EC-ProductDetail-NameValueGroupedSection-Desktop';
+        //CCRZ.uiProperties.nameValSectionView.desktop.tmpl='EC-ProductDetail-NameValueSection-Desktop';        
+        
+        Handlebars.registerHelper('currencyName', function () {
+            return CCRZ.pagevars.currencyData.currencyName;
+        });
+        Handlebars.registerHelper('checknalcoPD', function () {
+            if(CCRZ.productDetailModel.get('product')!=null){
+                let division = CCRZ.productDetailModel.get('product').prodBean.ECDivision;
+                if (division && CCRZ.pagevars.pageLabels.EC_NALCO.includes(division.toLowerCase())) {
+                    return true;
+                }
+            }
+            return false;
+        })
+        Handlebars.registerHelper('nonBulkEAPD', function(product) {
+                if (product.packageTypeUOM && CCRZ.pagevars.pageLabels.EC_PackageType_NonBulk === product.packageTypeUOM.toLowerCase()
+                 && product.CustomPricingUOM !== 'EA') {
+                    return true;
+                }
+                return false;
+        })
+        Handlebars.registerHelper('taxonomyPD', function (taxonomy, type) {
+                if (taxonomy && CCRZ.pagevars.pageLabels['EC_Taxonomy_'+type].includes(taxonomy.toLowerCase())) {
+                    return true;
+                }
+                return false;
+        })
+        Handlebars.registerHelper('packageTypePD', function (packageType, type) {
+                if (packageType && CCRZ.pagevars.pageLabels['EC_PackageType_'+type] === packageType.toLowerCase() ) {
+                    return true;
+                }
+                return false;
+        })
+        
+        CCRZ.pubSub.on('view:productDetailView:refresh', function (viewInstance) {
+            
+            setProductDetail(CCRZ.views.productDetailView.prototype, CCRZ.models.ProductDetailModel.prototype, viewInstance);
+            viewInstance.setElement(viewInstance.$el);
+        });
+        var setProductDetail = function (pdpView, pdpModel, viewIn) {
+    // code for multiple product images carousel
+            $("#single-item").slick({
+                dots: true,
+                prevArrow: $(".prevBack"),
+                nextArrow: $(".nextNext")
+                
+            });
+            $('.responsive').slick({
+                dots: false,
+                infinite: false,
+                slidesToShow: 5,
+                slidesToScroll: 5,
+                prevArrow: $(".sugBack"),
+                nextArrow: $(".sugNext"),
+                responsive: [
+                    {
+                        breakpoint: 1440,
+                        settings: {
+                            dots: false,
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            dots: false,
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            dots: false,
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                    
+                ]
+            });
+            
+            var events = pdpView.events;
+            events["click .minus-left"] = "minusZero";
+            events["click .add-to-cart"] = "addtocartsuggested";
+            events["keydown .inp-box"] = "disableZeropdp";
+            events["click .add-to-cart-main"] = "addtocart";
+            
+            
+            
+            pdpView.disableZeropdp = function (event) {
+                if (event.target.value.length == 0 && event.which == 48) {
+                    return false;
+                }
+            }
+            
+            pdpView.minusZero = function (event) {
+                if (($(".inp-box").val()) && ($(".inp-box").val() > 1)) {
+                    $(".inp-box").val(($(".inp-box").val()) - 1);
+                    $(".inp-box").change();
+                }
+            }
+            // code to add product to cart
+            pdpView.addtocart= function (event) {
+                var productData = [];
+                productData.push({
+                    "sku": $(event.currentTarget).data("sku"),
+                    "quantity": parseInt($("#qty").val()),
+                    "price": $(event.currentTarget).data("price")
+                });
+                var encryID = CCRZ.headerModel.attributes.cartId;
+                
+                var remoteActionCallAddToCart = _.extend(CCRZ.RemoteInvocation, {
+                    className: 'EC_SuggestedProducts'
+                });
+                remoteActionCallAddToCart.invokeCtx('addToCartItems', productData, encryID,
+                                                    function (resp) {
+                                                        if (resp != null && resp.success) {
+                             console.log("success");
+                                                        // CCRZ.pubSub.trigger('action:CartDetailView:refresh', resp.data);
+                                                            var cartId = resp.data;
+                                                            CCRZ.pagevars.currentCartID = cartId;
+                                                            //cart change will update cookie
+                                                            CCRZ.pubSub.trigger('cartChange', cartId);
+                              console.log("Added successfully");
+                                                            window.scroll(0, 0);
+                                                            
+                                                        }
+                                                    }, {
+                                                        buffer: false, escape: false, nmsp: false
+                                                        
+                                                    }
+                                                   );
+            };
+            
+            pdpView.addtocartsuggested = function (event) {
+                var productData = [];
+                productData.push({
+                    "sku": $(event.currentTarget).data("sku"),
+                    "quantity": 1.0,
+                    "price": $(event.currentTarget).data("price")
+                });
+                var encryID = CCRZ.headerModel.attributes.cartId;
+                
+                var remoteActionCallAddToCart = _.extend(CCRZ.RemoteInvocation, {
+                    className: 'EC_SuggestedProducts'
+                });
+                remoteActionCallAddToCart.invokeCtx('addToCartItems', productData, encryID,
+                                                    function (resp) {
+                                                        if (resp != null && resp.success) {
+                                                            var cartId = resp.data;
+                                                            CCRZ.pagevars.currentCartID = cartId;
+                                                            //cart change will update cookie
+                                                            CCRZ.pubSub.trigger('cartChange', cartId);
+                                                            window.scroll(0, 0);
+                                                            
+                                                        }
+                                                    }, {
+                                                        buffer: false, escape: false, nmsp: false
+                                                        
+                                                    }
+                                                   );
+            };
+
+            // features and benefits & statement of assurance
+            $(".featuresAndBenefits, .statementOfAssurance").appendTo($(".secContentDescription")).removeClass("hide");
+            
+            pdpView.renderDocsInDetails = function (event) {
+                for (i = 0; i < CCRZ.pageSectionsList.length; i++) {
+                    var mod = CCRZ.pageSectionsList.at(i);
+                    if (mod.attributes.displayType === 'Tab') {
+                        var detailsTabAvailable = false;
+                        var hasEntries = false;
+                        var hasDataEntries = false;
+                        var breakVal = false;
+                        var docsId;
+                        var contentId;
+                        var pbDocsId;
+                        var opDocsId;
+                        var ssDocsId;
+                        var flDocsId;
+                        var blDocsId;
+                        var csDocsId;
+                        var apDocsId;
+                        var pbDocsIdSectionFilter;
+                        var opDocsIdSectionFilter;
+                        var ssDocsIdSectionFilter;
+                        var flDocsIdSectionFilter;
+                        var blDocsIdSectionFilter;
+                        var csDocsIdSectionFilter;
+                        var apDocsIdSectionFilter;
+                        
+                        for (var j = 0; j < mod.attributes.subSections.length; j++) {
+                            if (!breakVal) {
+                                if (mod.attributes.subSections[j].sectionName == 'Content') {
+                                    contentId = mod.attributes.subSections[j].sectionID;
+                                    if ($("." + contentId).length) {
+                                        detailsTabAvailable = true;
+                                        breakVal = true;
+                                    }
+                                }
+                            }
+                        }
+
+
+                        for (var j = 0; j < mod.attributes.subSections.length; j++) {
+                            if(mod.attributes && mod.attributes.subSections[j] && mod.attributes.subSections[j].sectionOther && CCRZ.productDetailModel.attributes.mediaWrappers) {
+                                if (mod.attributes.subSections[j].sectionName == 'Documents' && mod.attributes.subSections[j].sectionOther == 'SafetyDocuments') {
+                                    if (CCRZ.productDetailModel.attributes.mediaWrappers[mod.attributes.subSections[j].sectionFilter]) {
+                                        docsId = mod.attributes.subSections[j].sectionID;
+                                        hasEntries = true;
+                                    }
+                                }
+                                if (mod.attributes.subSections[j].sectionName == 'Documents' && mod.attributes.subSections[j].sectionOther == 'ProductBulletins') {
+                                    if (CCRZ.productDetailModel.attributes.mediaWrappers[mod.attributes.subSections[j].sectionFilter]) {
+                                        pbDocsId = mod.attributes.subSections[j].sectionID;
+                                        hasDataEntries = true;
+                                        pbDocsIdSectionFilter = mod.attributes.subSections[j].sectionFilter;
+                                    }
+                                } 
+                                if (mod.attributes.subSections[j].sectionName == 'Documents' && mod.attributes.subSections[j].sectionOther == 'OperatingManuals') {
+                                    if (CCRZ.productDetailModel.attributes.mediaWrappers[mod.attributes.subSections[j].sectionFilter]) {
+                                        opDocsId = mod.attributes.subSections[j].sectionID;
+                                        hasDataEntries = true;
+                                        opDocsIdSectionFilter = mod.attributes.subSections[j].sectionFilter;
+                                    }
+                                } 
+                                if (mod.attributes.subSections[j].sectionName == 'Documents' && mod.attributes.subSections[j].sectionOther == 'SpecificationSheets') {
+                                    if (CCRZ.productDetailModel.attributes.mediaWrappers[mod.attributes.subSections[j].sectionFilter]) {
+                                        ssDocsId = mod.attributes.subSections[j].sectionID;
+                                        hasDataEntries = true;
+                                        ssDocsIdSectionFilter = mod.attributes.subSections[j].sectionFilter;
+                                    }
+                                } 
+                                if (mod.attributes.subSections[j].sectionName == 'Documents' && mod.attributes.subSections[j].sectionOther == 'Label1s') {
+                                    if (CCRZ.productDetailModel.attributes.mediaWrappers[mod.attributes.subSections[j].sectionFilter]) {
+                                        flDocsId = mod.attributes.subSections[j].sectionID;
+                                        hasDataEntries = true;
+                                        flDocsIdSectionFilter = mod.attributes.subSections[j].sectionFilter;
+                                    }
+                                } 
+                                if (mod.attributes.subSections[j].sectionName == 'Documents' && mod.attributes.subSections[j].sectionOther == 'Label2s') {
+                                    if (CCRZ.productDetailModel.attributes.mediaWrappers[mod.attributes.subSections[j].sectionFilter]) {
+                                        blDocsId = mod.attributes.subSections[j].sectionID;
+                                        hasDataEntries = true;
+                                        blDocsIdSectionFilter = mod.attributes.subSections[j].sectionFilter;
+                                    }
+                                } 
+                                if (mod.attributes.subSections[j].sectionName == 'Documents' && mod.attributes.subSections[j].sectionOther == 'CatalogSheets') {
+                                    if (CCRZ.productDetailModel.attributes.mediaWrappers[mod.attributes.subSections[j].sectionFilter]) {
+                                        csDocsId = mod.attributes.subSections[j].sectionID;
+                                        hasDataEntries = true;
+                                        csDocsIdSectionFilter = mod.attributes.subSections[j].sectionFilter;
+                                    }
+                                }
+                                if (mod.attributes.subSections[j].sectionName == 'Documents' && mod.attributes.subSections[j].sectionOther == 'AnalyticalProcedures') {
+                                    if (CCRZ.productDetailModel.attributes.mediaWrappers[mod.attributes.subSections[j].sectionFilter]) {
+                                        apDocsId = mod.attributes.subSections[j].sectionID;
+                                        hasDataEntries = true;
+                                        apDocsIdSectionFilter = mod.attributes.subSections[j].sectionFilter;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        if (hasEntries && detailsTabAvailable) {
+
+                            var docSection = $("." + docsId);
+                            var newSection = new Array();
+                            $.each(docSection,function(key,value){
+                                if(!(value.classList.contains("contentmobile"))){
+                                    newSection.push(value);
+                                }
+                            });
+                            docSection = newSection;
+                            var contentSection = $("." + contentId);
+                            $(contentSection).prepend($(docSection).contents())
+                            var getID = $("." + docsId).parent(".cc_tab-pane").attr("id");
+                            $("a[href=#" + getID + "]").parent("li").hide();
+                            $("a[href=#" + getID + "1]").parentsUntil("div.panel.panel-default").hide();
+                            $(contentSection).find(".desc").removeClass("col-md-4");
+                            $(contentSection).find(".desc-col").removeClass("col-md-12");
+                            $(contentSection).find(".desc-col").addClass("col-md-5");
+                        }
+                        
+                        if (hasDataEntries) {
+                            var detailSection;
+                            if (flDocsId) {
+                                detailSection = $("." + flDocsId);
+                            } 
+                            else if (blDocsId) {
+                                detailSection = $("." + blDocsId);
+                            }
+                            else if (csDocsId) {
+                                detailSection = $("." + csDocsId);
+                            }
+                            
+                            else if (pbDocsId) {
+                                detailSection = $("." + pbDocsId);
+                            }
+                            else if (opDocsId) {
+                                detailSection = $("." + opDocsId);
+                            }
+                            else if (ssDocsId) {
+                                detailSection = $("." + ssDocsId);
+                            }
+                            else if (apDocsId) {
+                                detailSection = $("." + apDocsId);
+                            }
+                            var multiple = false;
+                            if (flDocsId) {
+                                var docDetailSection = $("." +flDocsId).contents();
+                                if(docDetailSection.length>0){
+                                    var newSection = new Array();
+                                    $.each(docDetailSection,function(key,value){
+                                        if(!(value.parentElement.classList.contains("contentmobile"))){
+                                            newSection.push(value);
+                                        }
+                                    });
+                                    docDetailSection = newSection;
+                                    $(detailSection).html('<div class="col-md-12 docs">&nbsp;</div>');
+                                    // $(detailSection).append('<div class="docstab-header col-md-12">' + flDocsIdSectionFilter + '</div>');
+                                    $(detailSection).append($(docDetailSection));
+                                    multiple = true;
+                                }
+                            }
+                            if (blDocsId) {
+                                var docDetailSection = $("." + blDocsId).contents();
+                                if(docDetailSection.length>0){
+                                    var newSection = new Array();
+                                    $.each(docDetailSection,function(key,value){
+                                        if(!(value.parentElement.classList.contains("contentmobile"))){
+                                            newSection.push(value);
+                                        }
+                                    });
+                                    docDetailSection = newSection;
+                                    if (multiple == false) {
+                                        $(detailSection).append('<div class="col-md-12 docs">&nbsp;</div>');
+                                        // $(detailSection).html('<div class="docstab-header col-md-12">' + blDocsIdSectionFilter + '</div>');
+                                    } else {
+                                        $(detailSection).append('<div class="col-md-12 docs">&nbsp;</div>');
+                                        // $(detailSection).append('<div class="docstab-header col-md-12">' + blDocsIdSectionFilter + '</div>');
+                                        var getID = $("." + blDocsId).parent(".cc_tab-pane").attr("id");
+                                        $("a[href=#" + getID + "]").parent("li").hide();
+                                        $("a[href=#" + getID + "1]").parentsUntil("div.panel.panel-default").hide();
+                                    }
+                                    $(detailSection).append($(docDetailSection));
+                                    multiple = true;
+                                }
+                            }
+                            if (csDocsId) {
+                                var docDetailSection = $("." + csDocsId).contents();
+                                if(docDetailSection.length>0){
+                                    var newSection = new Array();
+                                    $.each(docDetailSection,function(key,value){
+                                        if(!(value.parentElement.classList.contains("contentmobile"))){
+                                            newSection.push(value);
+                                        }
+                                    });
+                                    docDetailSection = newSection;
+                                    if (multiple == false) {
+                                        $(detailSection).append('<div class="col-md-12 docs">&nbsp;</div>');
+                                        // $(detailSection).html('<div class="docstab-header col-md-12">' + csDocsIdSectionFilter + '</div>');
+                                    } else {
+                                        $(detailSection).append('<div class="col-md-12 docs">&nbsp;</div>');
+                                        // $(detailSection).append('<div class="docstab-header col-md-12">' + csDocsIdSectionFilter + '</div>');
+                                        var getID = $("." + csDocsId).parent(".cc_tab-pane").attr("id");
+                                        $("a[href=#" + getID + "]").parent("li").hide();
+                                        $("a[href=#" + getID + "1]").parentsUntil("div.panel.panel-default").hide();
+                                    }
+                                    $(detailSection).append($(docDetailSection));
+                                    multiple = true;
+                                }
+                            }
+                            if (pbDocsId) {
+                                var docDetailSection = $("." + pbDocsId).contents();
+                                if(docDetailSection.length>0){
+                                    var newSection = new Array();
+                                    $.each(docDetailSection,function(key,value){
+                                        if(!(value.parentElement.classList.contains("contentmobile"))){
+                                            newSection.push(value);
+                                        }
+                                    });
+                                    docDetailSection = newSection;
+                                    if (multiple == false) {
+                                        $(detailSection).html('<div class="col-md-12 docs">&nbsp;</div>');
+                                        // $(detailSection).html('<div class="docstab-header col-md-12">' + pbDocsIdSectionFilter + '</div>');
+                                    } else {
+                                        $(detailSection).append('<div class="col-md-12 docs">&nbsp;</div>');
+                                        // $(detailSection).append('<div class="docstab-header col-md-12">' + pbDocsIdSectionFilter + '</div>');
+                                        var getID = $("." + pbDocsId).parent(".cc_tab-pane").attr("id");
+                                        $("a[href=#" + getID + "]").parent("li").hide();
+                                        $("a[href=#" + getID + "1]").parentsUntil("div.panel.panel-default").hide();
+                                    }
+                                    $(detailSection).append($(docDetailSection));
+                                    multiple = true;
+                                }
+                            }
+                             
+                            if (opDocsId) {
+                                var docDetailSection = $("." + opDocsId).contents();
+                                if(docDetailSection.length>0){
+                                    var newSection = new Array();
+                                    $.each(docDetailSection,function(key,value){
+                                        if(!(value.parentElement.classList.contains("contentmobile"))){
+                                            newSection.push(value);
+                                        }
+                                    });
+                                    docDetailSection = newSection;
+                                    if (multiple == false) {
+                                        $(detailSection).html('<div class="col-md-12 docs">&nbsp;</div>');
+                                        // $(detailSection).html('<div class="docstab-header col-md-12">' + opDocsIdSectionFilter + '</div>');
+                                    } else {
+                                        $(detailSection).append('<div class="col-md-12 docs">&nbsp;</div>');
+                                        // $(detailSection).append('<div class="docstab-header col-md-12">' + opDocsIdSectionFilter + '</div>');
+                                        var getID = $("." + opDocsId).parent(".cc_tab-pane").attr("id");
+                                        $("a[href=#" + getID + "]").parent("li").hide();
+                                        $("a[href=#" + getID + "1]").parentsUntil("div.panel.panel-default").hide();
+                                    }
+                                    $(detailSection).append($(docDetailSection));
+                                    multiple = true;
+                                }
+                            }
+                            if (ssDocsId) {
+                                var docDetailSection = $("." + ssDocsId).contents();
+                                if(docDetailSection.length>0){
+                                    var newSection = new Array();
+                                    $.each(docDetailSection,function(key,value){
+                                        if(!(value.parentElement.classList.contains("contentmobile"))){
+                                            newSection.push(value);
+                                        }
+                                    });
+                                    docDetailSection = newSection;
+                                    if (multiple == false) {
+                                        $(detailSection).html('<div class="col-md-12 docs">&nbsp;</div>');
+                                        // $(detailSection).html('<div class="docstab-header col-md-12">' + ssDocsIdSectionFilter + '</div>');
+                                    } else {
+                                        $(detailSection).append('<div class="col-md-12 docs">&nbsp;</div>');
+                                        // $(detailSection).append('<div class="docstab-header col-md-12">' + ssDocsIdSectionFilter + '</div>');
+                                        var getID = $("." + ssDocsId).parent(".cc_tab-pane").attr("id");
+                                        $("a[href=#" + getID + "]").parent("li").hide();
+                                        $("a[href=#" + getID + "1]").parentsUntil("div.panel.panel-default").hide();
+                                    }
+                                    
+                                    $(detailSection).append($(docDetailSection));
+                                    multiple = true;
+                                }
+                            }
+                            if (apDocsId) {
+                                    var docDetailSection = $("." + apDocsId).contents();
+                                    if(docDetailSection.length>0){
+                                        var newSection = new Array();
+                                        $.each(docDetailSection,function(key,value){
+                                            if(!(value.parentElement.classList.contains("contentmobile"))){
+                                                newSection.push(value);
+                                            }
+                                        });
+                                        docDetailSection = newSection;
+                                        if (multiple == false) {
+                                            $(detailSection).html('<div class="col-md-12 docs">&nbsp;</div>');
+                                            // $(detailSection).html('<div class="docstab-header col-md-12">' + ssDocsIdSectionFilter + '</div>');
+                                        } else {
+                                            $(detailSection).append('<div class="col-md-12 docs">&nbsp;</div>');
+                                            // $(detailSection).append('<div class="docstab-header col-md-12">' + ssDocsIdSectionFilter + '</div>');
+                                            var getID = $("." + apDocsId).parent(".cc_tab-pane").attr("id");
+                                            $("a[href=#" + getID + "]").parent("li").hide();
+                                            $("a[href=#" + getID + "1]").parentsUntil("div.panel.panel-default").hide();
+                                        }
+                                        $(detailSection).append($(docDetailSection));
+                                        multiple = true;
+                                    }
+                            }
+                        }
+                    }
+                }
+            }
+            pdpView.renderDocsInDetails();
+        }
+        });
+    </script>
+</apex:component>

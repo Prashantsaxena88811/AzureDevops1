@@ -1,0 +1,1114 @@
+/*Order info styles */
+.ccspan {
+  position: relative;
+  top: -15px;
+  float: left;
+  left: 10px;
+}
+.donegreentickcc {
+  color: green;
+  position: relative;
+  left: -68px;
+  top: 6px;
+}
+.cc_contact_input_firstname_label {
+  margin-bottom: 5px;
+}
+.bamodaltitle {
+  color: #005172;
+}
+.checkoutContent {
+  padding: 40px;
+  background: #fff;
+}
+.additionalinfo {
+  width: inherit;
+}
+.attndiv {
+  display: inline-block;
+  padding-top: 20px;
+  width: 100%;
+}
+.attndiv sup {
+  font-size: 100%;
+  top: 0;
+}
+.attndivnum {
+  display: inline-block;
+  padding-left: 20px;
+}
+#attention, #attentionnumber, .reqdate {
+  font-size: 16px;
+  height: 42px;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+  border: solid 1px #d9d9d9;
+}
+#requestedDateStr {
+  float: left !important;
+  margin-right: 21px;
+}
+.erriconinfo {
+  float: left;
+}
+
+.noreqdate {
+  display: none;
+}
+.noreqdate {
+  padding-top: 10px;
+  height: 16px;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #e00034;
+}
+
+.material-icons.alert-info-icon {
+  font-size: 15px !important;
+}
+
+.infopanel {
+  border: solid 1px #d9d9d9;
+}
+.headingborder {
+  border-bottom: solid 1px #d9d9d9;
+}
+
+.infoval {
+  font-weight: bold;
+}
+
+.shipadd {
+  width: 50%;
+  float: left;
+}
+
+.billadd {
+  width: 50%;
+  float: left;
+}
+
+.addbody {
+  padding-left: 15px;
+}
+
+.midborder {
+  border-right: none;
+}
+
+.datepicker tbody > tr,
+.datepicker tfoot > tr {
+  border-bottom: none !important;
+}
+
+.datepicker thead > tr {
+  border-bottom: solid 1px #d9d9d9;
+}
+
+.datepicker thead > tr:first-child {
+    border: none;
+}
+
+.datepicker .dow.disabled, 
+.datepicker .dow.disabled + .dow {
+  color: #c9cacb;
+}
+
+.datepicker .dow {
+    font-size: 1px;
+}
+
+.datepicker .dow:first-letter {
+    font-size: 14px;
+}
+
+table.table-condensed {
+  width: 100%;
+}
+
+.datepicker table tr td.active.day,
+.datepicker table tr td.active.day:hover {
+  border-radius: 50%;
+  background-color: #5b8f22;
+}
+
+.day.rush_order,
+.day.non-highlighted-del-dates {
+  font-weight: bold;
+}
+
+.disabled.day,
+.disabled.day:hover, 
+.disabled.day.non-highlighted-del-dates,
+.disabled.day.non-highlighted-del-dates:hover {
+  font-weight: normal;
+  color: #c9cacb;
+}
+
+#poShow {
+  width: 190px;
+  height: 42px;
+}
+
+.poDetails {
+  padding-bottom: 37px;
+  margin-top: 20px;
+  border-bottom: solid 1px #d9d9d9;
+}
+
+.poLabel {
+  font-weight: normal;
+  margin-bottom: 9px;
+}
+
+#po,
+#poCC {
+  width: 244px;
+  height: 42px;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+  border: solid 1px #d9d9d9;
+}
+
+.ec-ccShow-margin {
+  margin-bottom: 20px;
+}
+
+.credbtn {
+  margin-top: 16px;
+  width: 190px;
+  height: 42px;
+}
+
+.iframe-wrapper {
+    position: relative;
+    padding-bottom: 26%; /* 16:9 */
+    padding-top: 48px;
+    height: 0;
+}
+
+.iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} 
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:-moz-read-only {
+  background-color: white !important;
+}
+
+input:read-only {
+  background-color: white !important;
+}
+
+.backtocart {
+  padding: 0px;
+  color: #007ac9;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.backtext {
+  top: -6px;
+  position: relative;
+  font-size: 14px !important;
+}
+
+.reviewbtn {
+  width: 150px;
+  height: 42px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.link_button.cc_link_button {
+  margin-bottom: 60px;
+}
+
+.reqdate {
+  height: 42px;
+  width: 208px;
+  border-radius: 2px 0px 0px;
+  border: solid 1px #d9d9d9;
+  float: left;
+  margin-right: 18px;
+  padding-left: 12px;
+}
+
+.inputField {
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-origin: content-box;
+  background-size: 2.5rem 2.5rem;
+  padding-right: 5px;
+}
+
+.calbtn {
+  border-left: none !important;
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: 2px;
+  background-color: white;
+  border-radius: 0px 0px 2px;
+  border: solid 1px #d9d9d9;
+  padding: 0px;
+}
+
+.delLead {
+  background-color: #d9d9d9;
+}
+
+.pospan {
+  position: relative;
+  top: 5px;
+  float: left;
+  left: 0px;
+}
+
+.uppercasetrans {
+  text-transform: uppercase;
+}
+
+.donegreentick {
+  color: green;
+  position: relative;
+  left: -18px;
+  float: left;
+}
+
+.table-condensed .non-highlighted-del-dates.active.day {
+  border-radius: 50%;
+  background-color: #5b8f22 !important;
+  background-image: none;
+}
+
+.alert-del-text {
+	padding-left: 40px;
+	padding-top: 2px;
+	font-size: 14px;
+	display: inline-block;
+	position: relative;
+}
+.alert-del-text #isRushOrder {
+    position: absolute;
+    left: 0;
+    top: 21px;
+    visibility: hidden;
+}
+
+#isRushOrder + label {
+    position: absolute;
+    left: 0;
+    top: 19px;
+    width: 24px;
+    height: 24px;
+    border-radius: 2px;
+    border: solid 3px #007ac9;
+}
+
+#isRushOrder:checked + label {
+    background-color: #007ac9;
+}
+
+#isRushOrder:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 7px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 
+      2px 0 0 white,
+      4px 0 0 white,
+      4px -2px 0 white,
+      4px -4px 0 white,
+      4px -6px 0 white,
+      4px -8px 0 white;
+    transform: rotate(45deg);
+}
+
+.alert-del-text .rush-error {
+  color: #e00034;
+}
+.alert-del-text .rush-error-msg {
+    line-height: 1.5;
+}
+.alert-info-icon {
+  vertical-align: middle;
+  padding-right: 5px;
+}
+
+.infovalpo {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#po,
+#poCC {
+  font-size: 16px;
+}
+
+#po::-webkit-input-placeholder,
+#poCC::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #4d4f53;
+  font-weight: normal;
+}
+
+#po:-moz-placeholder,
+#poCC:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #4d4f53;
+  opacity: 1;
+  font-weight: normal;
+}
+
+#po::-moz-placeholder,
+#poCC::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #4d4f53;
+  opacity: 1;
+  font-weight: normal;
+}
+
+#po:-ms-input-placeholder,
+#poCC:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #4d4f53;
+  font-weight: normal;
+}
+
+.errmsgPO,
+.errmsgPOCC {
+  display: none;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: normal;
+  color: #e00034;
+}
+
+.errmsgPOtop {
+  display: none;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  color: #e00034;
+}
+
+.errmsgAttn,
+.errmsgAttnNum {
+  padding-top: 3px;
+  display: none;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: normal;
+  color: #e00034;
+}
+
+.errmsgCCFailure {
+  display: none;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: normal;
+  color: #e00034;
+  padding-left: 1%;
+}
+
+.errmsgCCFailure .material-icons.alert-info-icon.error{
+  padding: 0;
+}
+
+.attndiv,
+.attndivnum {
+  vertical-align: top;
+}
+
+#requestedDateStr {
+  padding-left: 12px;
+}
+
+#requestedDateStr::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #4d4f53;
+}
+
+#requestedDateStr:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #4d4f53;
+  opacity: 1;
+}
+
+#requestedDateStr::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #4d4f53;
+  opacity: 1;
+}
+
+#requestedDateStr:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #4d4f53;
+}
+
+.errmsgPO,
+.errmsgPOCC {
+  padding-top: 3px;
+}
+
+.poDetails.dudette {
+  margin-top: 18px;
+  padding-bottom: 20px;
+}
+
+.cc_shipping_delivery_section {
+  margin-bottom: 0px;
+  position: relative;
+}
+
+.infobodypanel {
+  padding-left: 30px;
+}
+
+.infopanel {
+  padding-bottom: 1px;
+}
+.editicon {
+  color: #007ac9;
+  padding-left: 15px;
+  position: relative;
+  top: 5px;
+}
+.baform {
+  width: 60% !important;
+}
+.batable {
+  border: 1px solid #d9d9d9;
+  border-collapse: initial;
+  word-break: break-word;
+}
+.batable thead {
+  background: #f7f7f7;
+  font-size: 16px;
+  color: #373737;
+  height: 49px;
+}
+.batable tbody {
+  color: #4d4f53;
+  font-size: 16px;
+}
+.batable .highlight-row {
+  background: rgba(91, 143, 34, 0.1);
+  font-weight: bold;
+}
+.ba-continue-wrapper button {
+  height: 32px;
+}
+#ec-visa-img {
+  background-image: url("../images/visa.png");
+  margin-left: 20px;
+}
+#ec-mastercard-img {
+  background-image: url("../images/mastercardnew@3x.png");
+  margin-left: 14px;
+}
+.ec-card-img {
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 50px;
+  height: 34px;
+  margin-bottom: -12px;
+  margin-top: 0px;
+}
+
+
+.datepicker {
+    padding: 5px 16px;
+}
+
+.datepicker table tr th, 
+.datepicker table tr td {
+    height: 40px;
+    width: 40px;
+	border-radius:0;
+}
+
+.datepicker table tr td.today, 
+.datepicker table tr td.today.disabled {
+    pointer-events: none;
+    border-radius: 32px;
+    background-color: #007ac9;
+    color: #fff;
+}
+
+.datepicker table tr td.day.hot_shot {
+	position: relative;
+	color: #b9b9b9;
+}
+.datepicker table tr td.today.day.hot_shot {
+    color: #fff;
+}
+td.day.hot_shot:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  left: 0;
+  top: 15%;
+  background: #f3f3f3;
+  z-index: -1;
+}
+
+td.day.rush_order {
+  position: relative;
+}
+
+td.day.rush_order:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  left: 0;
+  top: 15%;
+  background: #fce8ed;
+  z-index: -1;
+}
+
+.datepicker table tr td.active.day.rush_order {
+    background: #e00034;
+}
+
+.datepicker table tr td.active.day.hot_shot,
+.datepicker table tr td.active.day.hot_shot:hover {
+    background: #adafaf;
+	color: #fff;
+}
+
+.cal-alert-box {
+    border-top: solid 1px #d9d9d9;
+    margin: 10px 16px 16px;
+    padding-top: 10px;
+    text-align: left;
+    font-size: 14px;
+    color: #4d4f53;
+}
+
+.hot-shot, .rush-period {
+    font-weight: bold;
+}
+
+.hot-shot:before {
+  content: '';
+  width: 36px;
+  height: 22px;
+  display: inline-block;
+  background-color: #d9d9d9;
+  margin-right: 16px;
+  top: 5px;
+  position: relative;
+}
+
+.rush-period:before {
+  content: '';
+  width: 36px;
+  height: 22px;
+  display: inline-block;
+  background-color: #fce8ed;
+  margin-right: 16px;
+  top: 5px;
+  position: relative;
+}
+.hot-shot-text,
+.rush-period-text {
+    display: none;
+}
+.hotshot-days .hot-shot-text {
+    display: block;
+	line-height: 1.6;
+}
+
+.hotshot-days .rush-period, 
+.hotshot-days .alert-text {
+    display: none;
+}
+
+.rush-days .rush-period-text {
+    display: block;
+}
+
+.rush-days .hot-shot, 
+.rush-days .alert-text {
+    display: none;
+}
+.date-picker-blk {
+	position: absolute;
+	visibility: hidden;
+    left: 228px;
+    background: #fff;
+    width: 315px;
+	border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	z-index: 1;
+}
+.date-picker-blk.view-calendar {
+	visibility: visible;
+}
+#calendar-blk .datepicker {
+    padding: 5px 16px;
+    position: relative;
+    left: 0 !important;
+    top: 0 !important;
+    box-shadow: none;
+    border: none;
+    float: none;
+    z-index: 1 !important;
+}
+
+.datepicker .fa-angle-left:before,
+.datepicker .fa-angle-right:before {
+    font-size: 21px;
+}
+
+.datepicker-dropdown.datepicker-orient-bottom:after,
+.datepicker-dropdown.datepicker-orient-bottom:before {
+	display: none;
+}
+
+/* mobile styles */
+
+@media only screen and (max-width: 767px) {
+  .ccspan {
+    position: relative;
+    top: 7px;
+    float: left;
+    left: 30%;
+  }
+  .donegreentickcc {
+    position: relative;
+    left: -70%;
+    top: 1px;
+    float: none;
+  }
+  .pospan{
+    left: 20%;
+  }
+  .noreqdate {
+    font-size: 13px;
+  }
+  .reqdate {
+    float: none;
+    margin-right: 0px;
+    font-size: 14px;
+    width: 100%;
+  }
+  .date-picker-blk.view-calendar {
+    left: 0;
+    width: 278px;
+  }
+  .datepicker table tr th, 
+  .datepicker table tr td {
+    height: 35px;
+    width: 35px;
+  }
+  .date-picker-blk tr {
+    display: table-row;
+  }
+  .date-picker-blk th,
+  .date-picker-blk td  {
+    display: table-cell;
+  }
+  .attndiv {
+    display: block;
+    font-size: 14px;
+  }
+  .additionalinfo {
+    width: 100%;
+  }
+  .attndivnum {
+    display: block;
+    padding-left: 0px;
+    font-size: 14px;
+    padding-top: 32px;
+  }
+  .alert-del-text {
+    padding-top: 20px;
+    padding-left: 0px;
+  }
+  .alert-del-text #isRushOrder {
+	  top: 75px;
+  }
+  #isRushOrder + label {
+	  top: 75px;
+  }
+  .alert-del-text .rush-error-msg {
+    padding-left: 40px;
+  }
+  .panel-heading .panel-title {
+    font-size: 14px !important;
+    margin-left: -6px;
+  }
+  .cc_contact_input_firstname_label {
+    font-size: 14px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .infoval {
+    margin-bottom: 5px !important;
+  }
+
+  .checkoutContent {
+    padding: 0px;
+  }
+  .titlenames {
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+  }
+
+  .infobodypanel {
+    padding-bottom: 8px !important;
+    padding-left: 15px !important;
+  }
+
+  .infopanel {
+    padding-bottom: 0px !important;
+  }
+
+  .headingborder {
+    padding-left: 21px !important;
+    margin-bottom: 9px !important;
+  }
+
+  .midborder {
+    border-right: solid 1px #d9d9d9;
+  }
+
+  .shipadd,
+  .billadd {
+    width: 100%;
+  }
+  .addbody {
+    padding-left: 1px !important;
+  }
+  .addsec {
+    font-size: 14px !important;
+    margin-bottom: 14px !important;
+  }
+  .shipid {
+    font-size: 14px !important;
+  }
+  .shipid > .fwb {
+    font-weight: normal !important;
+  }
+  .addressForm {
+    margin-top: 0px !important;
+  }
+  .addcontainer {
+    margin-bottom: 2px !important;
+  }
+  .addcontainer.addsec {
+    margin-bottom: 10px !important;
+  }
+  .reqdeldatetitle {
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+  .cc_checkout_review .panel-body {
+    padding: 8px 16px !important;
+  }
+  .cc_shipping_delivery_section {
+    margin-bottom: 0px;
+  }
+
+  #requestedDateStr {
+    width: 100%;
+  }
+  .panel.panel-default.cc_panel.cc_checkout_review.or-detail {
+    padding-bottom: 6px !important;
+  }
+
+  .paymenttitle {
+    font-size: 14px;
+  }
+
+  .paybtn {
+    width: 100% !important;
+  }
+  .payinp {
+    width: 100% !important;
+    height: 36px !important;
+    font-size: 14px !important;
+  }
+
+  .iframe-wrapper {
+        padding-bottom: 37em;
+        padding-top: 38px;
+  }
+  
+  .errmsgPO,
+  .errmsgPOCC {
+    font-size: 13px;
+  }
+
+  .errmsgPOtop {
+    font-size: 13px;
+    font-weight: normal;
+  }
+
+  .errmsgAttn,
+  .errmsgAttnNum {
+    font-size: 13px;
+  }
+
+  .errmsgCCFailure {
+    margin-top: 16px;
+  }
+  
+  .errmsgCCFailure .material-icons.alert-info-icon.error {
+    min-height: auto;
+  }
+
+  .poDetails.dudette {
+    margin-top: 16px;
+  }
+  #ec-visa-img {
+    margin-left: 0px;
+  }
+  .ec-card-img {
+    margin-top: 22px;
+  }
+  .reviewbtn {
+    width: 100%;
+    margin-bottom: 28px;
+    margin-top: 4px;
+  }
+  .contentBody.cc_content_body {
+    background-color: #ffffff;
+  }
+  .baform {
+    width: 85% !important;
+  }
+  .batable thead {
+    display: none;
+  }
+  .ba-continue-wrapper button {
+    width: 100%;
+  }
+  .link_button.cc_link_button {
+    margin-bottom: 135px;
+  }
+  .titlenames .infoval {
+      padding-bottom: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .addressTables {
+    display: flex;
+    margin-bottom: -8px;
+  }
+  .shipadd, .billadd {
+    flex: 1;
+    display: flex;
+  }
+  .shipadd .infopanel, .billadd .infopanel {
+    flex: 1;
+    padding-bottom: 15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1365px) {
+  .reqdate {
+    float: left;
+    margin-right: 8px;
+  }
+  .date-picker-blk.view-calendar {
+    left: 214px;
+  }
+  .baform {
+    width: 95% !important;
+  }
+  .attndivnum {
+    font-size: 14px;
+    padding-left: 8px;
+  }
+  .attndiv {
+    font-size: 14px;
+  }
+  .tooltipp {
+    right: 150%;
+    top: -235% !important;
+  }
+
+  a.tip span {
+    left: unset;
+  }
+
+  a.tip span:before,
+  a.tip span:after {
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
+    left: 179px;
+    top: 35px;
+  }
+
+  a.tip span:before {
+    border-left: 8px solid #e17000;
+    margin-left: 0px;
+  }
+
+  a.tip span:after {
+    border-left: 8px solid white;
+    margin-left: -2px;
+    margin-top: -1px;
+  }
+
+  .hover-tooltip:active ~ .tooltipp,
+  .hover-tooltip:focus ~ .tooltipp {
+    display: block !important;
+  }
+
+  .panel-title {
+    font-size: 14px !important;
+  }
+  .addsec,
+  .shipid {
+    font-size: 14px;
+  }
+  .addbody {
+    padding-left: 1px;
+  }
+  .panelbodytab {
+    padding-top: 10px;
+  }
+  .infoval.reqdeldatetitle {
+    font-size: 14px;
+  }
+
+  #requestedDateStr {
+    width: 246px;
+    height: 36px;
+    font-size: 14px;
+  }
+  .cc_checkout_review .panel-body {
+    padding: 16px 16px !important;
+  }
+
+  .infovalpo {
+    font-size: 14px;
+  }
+  #po,
+  #poCC {
+    width: 244px;
+  }
+
+  .iframe-wrapper {
+        padding-bottom: 55%;
+        padding-top: 38px;
+  }
+
+  .reviewbtn {
+    width: 180px;
+  }
+  .erriconinfo {
+    min-height: 65px;
+    padding-top: 10px;
+  }
+  .cc_contact_input_firstname_label {
+    font-size: 14px;
+  }
+  .infobodypanel {
+    padding-left: 6px;
+  }
+  .titlenames {
+    min-height: 70px;
+  }
+  .infoval,
+  .or-info-val {
+    word-break: break-word;
+  }
+  .infopanel .panel-body {
+    padding-bottom: 0px;
+  }
+}
+@media (min-width: 1365px) {
+  .addbody {
+      padding-left: 25px;
+      padding-right: 25px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.date-picker-blk.view-calendar {
+		left: 214px;
+	}
+	.alert-del-text {
+		padding-top: 0px;
+		margin-top: -21px;
+		margin-left: 11px;
+		width: calc(100% - 235px);
+	}
+	.alert-del-text #isRushOrder {
+		top: 41px;
+	}
+	#isRushOrder + label {
+		top: 39px;
+	}
+}
+.add-shipid {
+	word-break: break-word;
+}
+/*Ship to alignment starts*/
+.width-left {
+  display: table;
+  width: 165px;
+  float: left;
+}
+.width-right {
+  display: table;
+  width: 70%;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) { 
+  .width-right {
+      width: 53%;
+      padding-left:0 
+  }
+  .width-left {
+      width: 150px;
+  }
+}
+@media only screen and (max-width: 1365px) and (min-width: 1024px) { 
+  .width-right {
+      width: 65%;
+      padding-left: 0;
+  }
+  .width-left {
+      width: 150px;
+  }
+}
+/*Ship to alignment ends*/
+.gotoCart i {
+  margin-left: -8px;
+}

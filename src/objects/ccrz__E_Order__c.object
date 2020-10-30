@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The E_Order__c object contains the header data of placed order.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>EC_CSR_Email__c</fullName>
+        <defaultValue>$Label.EC_CSR_Email</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>used for csr email address.</inlineHelpText>
+        <label>CSR Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Customer_Order_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(ccrz__OrderStatus__c,&apos;Order Submitted&apos;) || (NOT(ISNULL(EC_Submission_Failure_Count__c)) &amp;&amp; EC_Submission_Failure_Count__c &lt; 5 &amp;&amp; ISPICKVAL(ccrz__OrderStatus__c,&apos;Failed&apos;)),&apos;In Progress&apos;,IF( NOT(ISNULL(EC_Submission_Failure_Count__c))  &amp;&amp;   EC_Submission_Failure_Count__c &gt;=5 &amp;&amp; ISPICKVAL(ccrz__OrderStatus__c,&apos;Failed&apos;),&apos;Submitted&apos;,
+IF(ISPICKVAL(ccrz__OrderStatus__c,&apos;Pending&apos;), &apos;Confirmed&apos;, TEXT(ccrz__OrderStatus__c))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Order Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_ERP_Order_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL(ccrz__OrderId__c) || ccrz__OrderId__c == &apos;&apos; , &apos;See Order Confirmation&apos;,  ccrz__OrderId__c)</formula>
+        <label>ERP Order Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Order_Submission_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Submission Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>shopecolab</fullName>
+                    <default>false</default>
+                    <label>shopecolab</label>
+                </value>
+                <value>
+                    <fullName>Equipment Ordering</fullName>
+                    <default>false</default>
+                    <label>Equipment Ordering</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EC_OrdersCount__c</fullName>
+        <description>BUG:91697:Raghav:Used in Orders Reports to count total number of orders.</description>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>EC_OrdersCount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Related_Products__c</fullName>
+        <externalId>false</externalId>
+        <label>EC Related Products</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EC_Submission_Failure_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Submission Failure Count</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Support_Email_Nalco__c</fullName>
+        <defaultValue>$Label.EC_SupportEmail_Nalco</defaultValue>
+        <description>This field stores the support email for Nalco division.</description>
+        <externalId>false</externalId>
+        <label>Support Email Nalco</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Support_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Support Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_TotalQuantity__c</fullName>
+        <description>US-762712: Raghav: This field is created to roll up the quantity field on related order items.</description>
+        <externalId>false</externalId>
+        <label>EC_TotalQuantity</label>
+        <summarizedField>ccrz__E_OrderItem__c.ccrz__Quantity__c</summarizedField>
+        <summaryForeignKey>ccrz__E_OrderItem__c.ccrz__Order__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the Account of the User that this order was placed for.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>E_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__AdjustmentAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Post order placement adjustment amount that can be used by back-end processing to adjust an order total without adjusting other fields.</description>
+        <externalId>false</externalId>
+        <label>Adjustment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__AdjustmentReason__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional reason text for the Adjustment Amount field.</description>
+        <externalId>false</externalId>
+        <label>Adjustment Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__BillTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to a CC Contact Address object that contains the bill to address data. This will be a unique copy of the address information captured during checkout.</description>
+        <externalId>false</externalId>
+        <label>Bill To</label>
+        <referenceTo>ccrz__E_ContactAddr__c</referenceTo>
+        <relationshipName>E_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__BuyerCompanyName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Company Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__BuyerEmail__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Email address captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__BuyerFirstName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>First name captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__BuyerLastName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Last name captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__BuyerMobilePhone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Mobile Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__BuyerPhone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Phone number captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__CCEmailAddress__c</fullName>
+        <deprecated>false</deprecated>
+        <description>List of whitespace separated email addresses. Should only be used in low volume order implementations. Contains the list of email addresses that the order confirmation was sent to.</description>
+        <externalId>false</externalId>
+        <label>CCEmailAddress</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccrz__CCSubscription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The subscription this order belongs to</description>
+        <externalId>false</externalId>
+        <label>CCSubscription</label>
+        <referenceTo>ccrz__E_Subscription__c</referenceTo>
+        <relationshipLabel>CC Orders</relationshipLabel>
+        <relationshipName>CCOrders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the Contact of the User that this order was placed for.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>CC Orders</relationshipLabel>
+        <relationshipName>CC_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__ContractId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Contract ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__CurrencyISOCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The currency that the order was place in.</description>
+        <externalId>false</externalId>
+        <label>Currency ISO Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__EffectiveAccountID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Holds the effective account for this order.  This field will be utilized in implementations where a user can order for multiple accounts inclusive or exclusive of their own.  The effective account is used to control the entitlements, pricing, integrations etc that drive the site experience.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be utilized in implementations where a user can order for multiple accounts inclusive or exclusive of their own.  The effective account is used to control the entitlements, pricing, integrations etc that drive the site experience.</inlineHelpText>
+        <label>Effective Account ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Division__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(ccrz__OriginatedCart__r.EC_Ship_To_Account__r.EC_Division__c)</formula>
+        <label>Division</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__EncryptedId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Semi-random id used to refer to the order in URLs.</description>
+        <externalId>false</externalId>
+        <label>Encrypted Id</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__ExtCarrier__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Ext Carrier</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__ExtShipTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Ext ShipTo</label>
+        <referenceTo>ccrz__E_ContactAddr__c</referenceTo>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__ExtShipTrackNo__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Ext ShipTrack No</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__IsAnonymous__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>To indicate if this is an anonymous checkout</description>
+        <externalId>false</externalId>
+        <label>Is Anonymous</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Carried over from the cart name that was used to place this order.</description>
+        <externalId>false</externalId>
+        <label>Order Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__Note__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Note</description>
+        <externalId>false</externalId>
+        <label>Note</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccrz__OrderDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date of the order.</description>
+        <externalId>false</externalId>
+        <label>Order Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__OrderId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External id reference.</description>
+        <externalId>true</externalId>
+        <label>Order Id</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__OrderName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field to grab the standard name from the Order object.
+This field was created due to a defect in Salesforce returning Name__c instead of Name in email templates.</description>
+        <externalId>false</externalId>
+        <formula>Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Name (Duplicated)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__OrderNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Derived from the SFDC Name field as the digit portion of the order Name + 1000000.</description>
+        <externalId>false</externalId>
+        <label>Order Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__OrderSeller__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Typically used in split order scenarios.  This field will represent, for a split order, the seller to which this order belongs.</description>
+        <externalId>false</externalId>
+        <label>Order Seller</label>
+        <referenceTo>ccrz__E_Seller__c</referenceTo>
+        <relationshipLabel>Seller Orders</relationshipLabel>
+        <relationshipName>SellerOrders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__OrderStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Displayed order status. Orders initially placed are all in Order Submitted status. All other statuses may be implementation specific.</description>
+        <externalId>false</externalId>
+        <label>Order Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>false</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>Order Submitted</fullName>
+                    <default>false</default>
+                    <label>Order Submitted</label>
+                </value>
+                <value>
+                    <fullName>Cancel Submitted</fullName>
+                    <default>false</default>
+                    <label>Cancel Submitted</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Shipped</fullName>
+                    <default>false</default>
+                    <label>Shipped</label>
+                </value>
+                <value>
+                    <fullName>Return Submitted</fullName>
+                    <default>false</default>
+                    <label>Return Submitted</label>
+                </value>
+                <value>
+                    <fullName>Returned</fullName>
+                    <default>false</default>
+                    <label>Returned</label>
+                </value>
+                <value>
+                    <fullName>In Process</fullName>
+                    <default>false</default>
+                    <label>In Process</label>
+                </value>
+                <value>
+                    <fullName>Partial Shipped</fullName>
+                    <default>false</default>
+                    <label>Partial Shipped</label>
+                </value>
+                <value>
+                    <fullName>Bill Of Material</fullName>
+                    <default>false</default>
+                    <label>Bill Of Material</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                    <label>Failed</label>
+                </value>
+                <value>
+                    <fullName>Pending Approval</fullName>
+                    <default>false</default>
+                    <label>Pending Approval</label>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ccrz__Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Parent order, which originally submitted the subscription for this order, if applicable</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Parent order, which originally submitted the subscription for this order, if applicable</inlineHelpText>
+        <label>Order</label>
+        <referenceTo>ccrz__E_Order__c</referenceTo>
+        <relationshipLabel>Children Orders</relationshipLabel>
+        <relationshipName>E_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__OriginatedCart__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the CC Cart object used to create this order.</description>
+        <externalId>false</externalId>
+        <label>Originated Cart</label>
+        <referenceTo>ccrz__E_Cart__c</referenceTo>
+        <relationshipName>E_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__PONumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>PO Number</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__PaymentMethod__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The payment method defined in E_PaymentDetail__c.Payment_Method__c.</description>
+        <externalId>false</externalId>
+        <label>PaymentMethod</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__RequestDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Request date captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>Request Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__ShipAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Order shipment charges.</description>
+        <externalId>false</externalId>
+        <label>Ship Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__ShipComplete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Ship complete indicator captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>Ship Complete</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__ShipDiscountAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Post order placement offset that can be used to adjust the shipment amount.</description>
+        <externalId>false</externalId>
+        <label>Ship Discount Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__ShipMethod__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Shipment method captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>Ship Method</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__ShipStructure__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Designates the shipping data structure used for this order.  Valid values are empty or lli but will be expanded in the future.</description>
+        <externalId>false</externalId>
+        <label>Ship Structure</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__ShipTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to a CC Contact Address object that contains the ship to address data. This will be a unique copy of the address information captured during checkout.</description>
+        <externalId>false</externalId>
+        <label>Ship To</label>
+        <referenceTo>ccrz__E_ContactAddr__c</referenceTo>
+        <relationshipName>E_Orders1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__SkipTax__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked if the tax calculation was skipped during checkout.</description>
+        <externalId>false</externalId>
+        <label>Skip Tax Calculation</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__SplitParentOrder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>When an order is split into one or more child orders this field references the source order that this child was split from.</description>
+        <externalId>false</externalId>
+        <label>Split Parent Order</label>
+        <referenceTo>ccrz__E_Order__c</referenceTo>
+        <relationshipLabel>CC Orders (Split Parent Order)</relationshipLabel>
+        <relationshipName>OrderSplits</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__SplitProcessed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The split processed flag is used to indicate that the order has been processed for splitting.  When set to TRUE, this means that any process which is responsible for splitting orders will ignore this order.</description>
+        <externalId>false</externalId>
+        <label>Split Processed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__Storefront__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The storefront under which the order was placed.</description>
+        <externalId>false</externalId>
+        <label>Storefront</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__SubtotalAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sum of CC Orer Item : Item Total</description>
+        <externalId>false</externalId>
+        <label>Subtotal Amount</label>
+        <summarizedField>ccrz__E_OrderItem__c.ccrz__ItemTotal__c</summarizedField>
+        <summaryForeignKey>ccrz__E_OrderItem__c.ccrz__Order__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__TaxAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Tax amount captured during order placement.</description>
+        <externalId>false</externalId>
+        <label>Tax Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__TaxExemptFlag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Flag indicating if the order was tax exempt. Copied from the cart during order placement.</description>
+        <externalId>false</externalId>
+        <label>Tax Exempt Flag</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__TaxSubTotalAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sum of CC Orer Item : Item Total</description>
+        <externalId>false</externalId>
+        <label>Tax SubTotal Amount</label>
+        <summarizedField>ccrz__E_OrderItem__c.ccrz__ItemTotal__c</summarizedField>
+        <summaryForeignKey>ccrz__E_OrderItem__c.ccrz__Order__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__TotalAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ShipAmount__c + SubtotalAmount__c + TaxAmount__c + AdjustmentAmount__c + ShipDiscountAmount__c + TotalSurcharge__c</description>
+        <externalId>false</externalId>
+        <formula>ccrz__ShipAmount__c + ccrz__SubtotalAmount__c + ccrz__TaxAmount__c +  ccrz__AdjustmentAmount__c  +  ccrz__ShipDiscountAmount__c + ccrz__TotalSurcharge__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__TotalDiscount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total discount as copied from the Cart.</description>
+        <externalId>false</externalId>
+        <label>Total Discount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__TotalSurcharge__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Surcharge captured during order placement.</description>
+        <externalId>false</externalId>
+        <label>Total Surcharge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the User that this order was placed for.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>E_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__VerifyExemptionFlag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>VerifyExemptionFlag</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderRushEmail__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Whenever the Order type is Rush,we can show this field in order email</description>
+        <externalId>false</externalId>
+        <label>Rush</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>CC Order</label>
+    <listViews>
+        <fullName>ccrz__All</fullName>
+        <columns>OWNER.ALIAS</columns>
+        <columns>ccrz__Account__c</columns>
+        <columns>NAME</columns>
+        <columns>ccrz__OrderId__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>ccrz__OrderDate__c</columns>
+        <columns>ccrz__OrderStatus__c</columns>
+        <columns>ccrz__SubtotalAmount__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Connect Order</label>
+    </listViews>
+    <listViews>
+        <fullName>ccrz__DefaultStore</fullName>
+        <columns>NAME</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>ccrz__OrderDate__c</columns>
+        <columns>ccrz__OrderStatus__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ccrz__Storefront__c</field>
+            <operation>equals</operation>
+            <value>DefaultStore</value>
+        </filters>
+        <label>DefaultStore</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>O-{0000000000}</displayFormat>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Orders</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>OWNER.ALIAS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ccrz__OrderDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ccrz__OrderStatus__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>ccrz__Account__c</searchFilterFields>
+        <searchFilterFields>OWNER.ALIAS</searchFilterFields>
+        <searchFilterFields>OWNER.FIRST_NAME</searchFilterFields>
+        <searchFilterFields>OWNER.LAST_NAME</searchFilterFields>
+        <searchFilterFields>ccrz__EncryptedId__c</searchFilterFields>
+        <searchResultsAdditionalFields>ccrz__Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ccrz__OrderDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ccrz__User__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.LAST_NAME</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

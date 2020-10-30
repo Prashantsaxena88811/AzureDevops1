@@ -1,0 +1,31 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <ltng:require scripts="{!$Resource.EC_Branding_Theme  + '/js/widgets.js'}" />
+	<div class="slds-grid slds-wrap marketing-wrapper">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 twitter-sec home-tile-wrapper">
+            <label class="heading">{!$Label.c.EC_Twitter_Title}</label>
+            <div class="twitter-sec-in">
+            	<a class="twitter-timeline" 
+                   data-width="1200" 
+                   data-tweet-limit="1" 
+                   data-chrome="noheader nofooter noborders" 
+                   href="{!$Label.c.EC_Twitter_Timeline}">
+                    {!$Label.c.EC_Twitter_Text}
+                </a>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 home-tile-wrapper">
+            <label class="heading">{!$Label.c.EC_HomeTile_Browser_Title}</label>
+            <div class="home-tile">
+            	<div class="home-tile-logo">
+                	<img class="logo-image" alt="chrome" src="{!$Resource.EC_Branding_Theme+'/images/chrome-icon.jpg'}"/>
+                </div>
+                <div class="home-tile-text">
+                	<p>{!$Label.c.EC_HomeTile_Browser_Text1}&nbsp;<a target="blank" href="https://www.google.com/chrome/">{!$Label.c.EC_HomeTile_Browser_Chrome}</a>.</p>
+                    <p class="browsers-list">{!$Label.c.EC_HomeTile_Browser_Text2}&nbsp;<a target="blank" href="https://support.apple.com/downloads/safari">{!$Label.c.EC_HomeTile_Browser_Safari}</a>,&nbsp;
+                        <a target="blank" href="https://www.mozilla.org/en-US/firefox/new/">{!$Label.c.EC_HomeTile_Browser_Firefox}</a> and&nbsp;
+                        <a target="blank" href="https://www.microsoft.com/en-us/edge">{!$Label.c.EC_HomeTile_Browser_Edge}</a>&nbsp;{!$Label.c.EC_HomeTile_Browser_Text3}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

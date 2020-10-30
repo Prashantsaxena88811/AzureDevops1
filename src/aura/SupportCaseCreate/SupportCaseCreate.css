@@ -1,0 +1,51 @@
+.THIS.case-form-container{
+    margin: auto;
+}
+.THIS.case-form-container h1{
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #003660;
+}
+.THIS.case-form-container h1 .headerlabel{
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+.THIS .slds-form-element__label{
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+.THIS textarea{
+    height: 100px;
+}
+.THIS.model-box-hide{
+    display: none;
+}
+.THIS.case-redirection-hide{
+    display: none;
+}
+.THIS.case-redirection-show{
+    display: block;
+}
+.THIS .slds-spinner_container{
+    position: fixed;
+}
+.THIS.contactsupport div{
+    display: inline-flex;
+    padding-right: 1rem;
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: .34px;
+    padding-top: 1rem;
+}

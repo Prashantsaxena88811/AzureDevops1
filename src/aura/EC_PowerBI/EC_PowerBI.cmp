@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable" controller="EC_PowerBIController" access="global" >
+    <ltng:require scripts="{!$Resource.PBINEWJS}"/>
+    <aura:attribute name="reportDetails" type="Connect_Dashboard__mdt[]"/>  
+    <aura:attribute name="groupId" type="String" access="private"/>
+    <aura:attribute name="reportId" type="String" access="private"/>
+    <aura:attribute name="role" type="String" access="private"/>
+    <aura:attribute name="datasetId" type="String" access="private"/>
+    <aura:attribute name="dataSetResponse" type="String" access="private"/>
+    <aura:attribute name="localLanguage" type="String" access="private"/>
+    <aura:attribute name="accountCount" type="String" default="0" />
+    <aura:attribute name="accountName" type="String"/>
+    <aura:attribute name="accountNumber" type="String"/>
+    <aura:attribute name="accountDivision" type="String"/>
+    <aura:attribute name="clientCredAccessToken" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.getOauthClientCredential}" />    
+    <div id="reportContainer" class="extendedHeight"/>
+</aura:component>

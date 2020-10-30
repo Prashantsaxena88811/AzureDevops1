@@ -1,0 +1,145 @@
+<!--
+  
+  @Component Name     : EC_footer.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Vijay Kumar          21/06/2019         Footer will show the necessary information
+                                          regarding Ecolab.
+-->
+
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <ltng:require styles="{!$Resource.EC_Branding_Theme  + '/css/theme.css'}" />
+    <aura:attribute name="isLogin" type="Boolean" default="true" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <aura:if isTrue="{!v.isLogin}">
+    <section class="cookie_popup">
+    <div class="slds-grid cookie_grid">
+        <div class="slds-col slds-size_11-of-12 slds-large-size_11-of-12 slds-p-right_none">    
+            <!--<p class="cookie_text">{!$Label.c.EC_footer_cookie_text} 
+                <a href="{!$Label.c.EC_footer_cookie_link}" class="cookie_link slds-p-horizontal_xx-small">{!$Label.c.EC_cookie_link_text}</a>.
+            </p>-->
+            <p class="cookie_text">{!$Label.c.EC_footer_cookie_text_2}
+            	<a href="{!$Label.c.EC_footer_cookie_link_5}"  target="_blank" class="cookie_link slds-p-horizontal_xx-small">{!$Label.c.EC_cookie_link_text_5}</a>
+            	{!$Label.c.EC_footer_cookie_text_3}
+            	<a href="{!$Label.c.EC_footer_cookie_link_2}" target="_blank"  class="cookie_link slds-p-horizontal_xx-small">{!$Label.c.EC_cookie_link_text_2}</a>
+            	{!$Label.c.EC_footer_cookie_text_4}
+            </p>
+        </div>
+        <div class="slds-col slds-size_1-of-12 slds-large-size_1-of-12 slds-p-left_none slds-p-right_none">
+            <lightning:buttonIcon iconName="utility:close"
+                                  onclick="{! c.closeModal}"
+                                  alternativeText="close"
+                                  class="close_button"
+                                  />
+        </div>
+        
+    </div>    
+    </section>
+    </aura:if>
+    
+    <section class="footer-wrapper">
+        <!--<div id="img"><img src="{!$Resource.EC_Branding_Theme + '/images/login_background.jpg'}" /></div>-->
+        <div class="slds-grid footer-sub-sections slds-p-vertical_large slds-wrap">
+            <div class="slds-col slds-size_12-of-12 slds-large-size_5-of-12 slds-medium-size_4-of-12">
+                <h4 class="slds-p-bottom_x-small subsection-heading">{!$Label.c.EC_Footer_AboutEcoLabHeader}</h4>
+                <div class="content">{!$Label.c.EC_Footer_AboutEcolabContent}
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-12 slds-show_medium">&nbsp;</div>
+            <div class="slds-col slds-size_12-of-12 slds-large-size_3-of-12 slds-medium-size_3-of-12 social-media">
+                <h4 class="slds-p-bottom_x-small subsection-heading">{!$Label.c.EC_Footer_MediaLinksHeader}</h4>
+                <div class="icons">
+                    <ul class="slds-list_horizontal social_icons">
+                        <li>
+                            <a href="{!$Label.c.EC_Footer_MediaLinksFacebook}" target="_blank">
+                            	<img src="{!$Resource.EC_Branding_Theme + '/images/icons/facebook.png'}"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{!$Label.c.EC_Footer_MediaLinksInstagram}" target="_blank">
+                            	<img src="{!$Resource.EC_Branding_Theme + '/images/icons/instagram.png'}"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{!$Label.c.EC_Footer_MediaLinksLinkedIn}" target="_blank">
+                            	<img src="{!$Resource.EC_Branding_Theme + '/images/icons/linkedIn.png'}"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{!$Label.c.EC_Footer_MediaLinksTwitter}" target="_blank">
+                            	<img src="{!$Resource.EC_Branding_Theme + '/images/icons/twitter.png'}"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{!$Label.c.EC_Footer_MediaLinksYoutube}" target="_blank">
+                            	<img src="{!$Resource.EC_Branding_Theme + '/images/icons/youtube.png'}"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slds-col slds-size_12-of-12 visit-website slds-p-left_medium slds-large-size_2-of-12 slds-medium-size_3-of-12">
+                <h4 class="slds-p-bottom_x-small subsection-heading AlignmentIssue">{!$Label.c.EC_Footer_VisitWebsiteHeader}</h4>
+                <div>
+                	<a href="{!$Label.c.EC_Footer_VisitWebsiteLink}" target="_blank" class ="AlignmentIssue">{!$Label.c.EC_Footer_VisitWebsiteContent} 
+                       <span class="slds-p-left_xxx-small"> 
+                       <!--<img src="{!$Resource.EC_Branding_Theme + '/images/icons/copy.png'}"/>-->
+                       <i class="material-icons slds-p-left_x-small">open_in_new</i>    
+                       </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="slds-clearfix thin-separator">
+            &nbsp;
+        </div>
+        <div class="copyright-section">
+            <section class="slds-grid slds-p-vertical_medium content-left-spacer slds-wrap">
+                <div class="slds-col slds-large-size_7-of-12 slds-medium-size_4-of-12  slds-size_12-of-12 parent">
+                    <span>{!$Label.c.EC_Footer_CopyrightContent}</span>
+                </div>
+                <div class="slds-col slds-large-size_5-of-12 slds-medium-size_8-of-12 slds-size_12-of-12 slds-show_medium">
+                    <ul class="slds-list_horizontal slds-float_right">
+                        <li>
+                            <a href="{!$Label.c.EC_Footer_SDSDocumentsLink}" target="_blank" >{!$Label.c.EC_Footer_SDSDocumentsTitle} 
+                                <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                            </a> 
+                            <span class="slds-p-horizontal_large diversion"> |</span>
+                        </li>
+                        <li>
+                            <a href="{!$Label.c.EC_Footer_TermsOfUseLink}" target="_blank">{!$Label.c.EC_Footer_TermsOfUseTitle}
+                                <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                            </a>
+                            <span class="slds-p-horizontal_large diversion">|</span>
+                        </li>
+                        <li>
+                            <a href="{!$Label.c.EC_Footer_PrivacyPolicyLink}" target="_blank">{!$Label.c.EC_Footer_PrivacyPolicyTitle}
+                                <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                            </a>
+                        </li>
+                    </ul>
+                    </div>
+                    
+                    <div class="slds-col slds-size_12-of-12 slds-hide_medium parent">
+                    <a href="{!$Label.c.EC_Footer_SDSDocumentsLink}" target="_blank" class="footer_links">{!$Label.c.EC_Footer_SDSDocumentsTitle} 
+                                <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                    </a>
+                     <a href="{!$Label.c.EC_Footer_TermsOfUseLink}" target="_blank" class="footer_links terms">{!$Label.c.EC_Footer_TermsOfUseTitle}
+                                <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                    </a>   
+                    </div>
+                        
+                    <div class="slds-col slds-size_12-of-12 slds-hide_medium parent">
+                    <a href="{!$Label.c.EC_Footer_PrivacyPolicyLink}" target="_blank" class="footer_links">{!$Label.c.EC_Footer_PrivacyPolicyTitle}
+                                <i class="material-icons slds-p-left_x-small">open_in_new</i>
+                            </a>
+                    </div>
+                    
+            </section>
+        </div>
+        
+    </section>
+</aura:component>

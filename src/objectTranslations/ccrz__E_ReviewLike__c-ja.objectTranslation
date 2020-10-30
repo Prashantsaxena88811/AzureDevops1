@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CC レビューのいいね!</value>
+    </caseValues>
+    <nameFieldLabel>参考になったレビュー名</nameFieldLabel>
+</CustomObjectTranslation>

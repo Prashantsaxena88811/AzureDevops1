@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EscalationRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <escalationRule>
+        <fullName>Case Escalation  for request access</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <businessHours>Default</businessHours>
+            <businessHoursSource>Static</businessHoursSource>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>Pending</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Access Request</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.EC_PortalAccessRole__c</field>
+                <operation>equals</operation>
+                <value>Payer</value>
+            </criteriaItems>
+            <escalationAction>
+                <minutesToEscalation>2880</minutesToEscalation>
+                <notifyCaseOwner>false</notifyCaseOwner>
+                <notifyEmail>jill.ferguson@ecolab.com</notifyEmail>
+                <notifyTo>connect_admin@ecolab.com</notifyTo>
+                <notifyToTemplate>unfiled$public/Case_escalation</notifyToTemplate>
+            </escalationAction>
+            <escalationStartTime>CaseCreation</escalationStartTime>
+        </ruleEntry>
+    </escalationRule>
+</EscalationRules>

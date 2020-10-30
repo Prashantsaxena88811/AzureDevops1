@@ -1,0 +1,251 @@
+/* Class Name       :EC_ccServiceProduct
+* Description      :Service Product Related inherited cloud craze interface
+* Created By       :Ashish Kr. 
+* Created On       :07-08-2019
+
+* Modification Log:
+* ------------------------------------------------------------------------------------------------------------------
+* Developer                Date            Modification ID         Description
+* ------------------------------------------------------------------------------------------------------------------
+* Ashish Kr.               07-08-2019                              Initial version (log modification)
+*
+*
+*/
+
+global without sharing class EC_ccServiceProduct extends ccrz.ccServiceProduct{
+    
+    /***************************************************************************************************************************************
+    Method Name : fetch
+    Description : Sets the lastPurchaseDate field in the product bean
+    Return type : Map<String, Object>
+    *************************************************************************************************************************************/
+ global override Map<String, Object> fetch(Map<String, Object> inputData){
+        ID ownerId = UserInfo.getUserId();
+        Map<String,ccrz__E_CartItem__c> cartItemMap = new Map<String,ccrz__E_CartItem__c>();
+        for(ccrz__E_Cart__c wishCart : [Select Name,OwnerId,EC_PurchasedWishlist__c, (Select Id,ccrz__Product__c,EC_Last_Purchased_Date__c,EC_LastPurchasedDateFormatted__c from ccrz__E_CartItems__r) from ccrz__E_Cart__c
+                                        Where OwnerId = :ownerId AND ccrz__CartType__c='WishList' AND EC_PurchasedWishlist__c = TRUE Limit 1]){
+                                            for(ccrz__E_CartItem__c cartItem : wishCart.ccrz__E_CartItems__r){
+                                                cartItemMap.put(cartItem.ccrz__Product__c, cartItem);
+                                            }
+                                        }
+        inputData = super.fetch(inputData);
+        if(!inputData.containsKey('includeProductIndex') || !(Boolean)(inputData.get('includeProductIndex'))) {
+            List<Chemical_Product_Type__c> pkgTypes = new List<Chemical_Product_Type__c>();
+            pkgTypes = Chemical_Product_Type__c.getall().values();
+            Set<String> pkgCodeSet = new Set<String>();
+            if(!pkgTypes.isEmpty()) {
+                for (Chemical_Product_Type__c pkgType : pkgTypes) {
+                    if(pkgType.Active__c == true) {
+                        pkgCodeSet.add(pkgType.Package_Code__c);
+                    }
+                }
+            }
+            ccrz.cclog.log('pkgCodeSet-->' + pkgCodeSet);
+            if(inputData.containsKey('productList')){
+                List<Map<String,Object>> prodList = (List<Map<String,Object>>) inputData.get('productList');                
+                // Tank Number & unloading point Logic
+               String effAccountId = ccrz.cc_CallContext.effAccountId;
+               List<Account> effAccountList = [Select Id,EC_SalesOrg__c,EC_Division__c,ccrz__E_AccountGroup__c FROM Account WHERE Id=:effAccountId LIMIT 1];
+                set<string> ProdskuSet = new set<string>();
+                //PBI -139350
+                EC_EntitlementCacheDTO lstCacheProducts = EC_EntitlementCacheUtility.getINSTSalesEntitlementCache(effAccountId);
+                List<String> prodIds = new List<String>();
+                if(lstCacheProducts != null && lstCacheProducts.productIds != null){
+                    prodIds = lstCacheProducts.productIds;
+                }
+                // end -PBI -139350
+                //Flatfee-Nocharge logic
+                set<Id> prodIdset = new set<Id>();
+                Map<Id, Boolean> mapPrdctFlatFee = new Map<Id, Boolean>();
+            	Set<Id> acctGrpSet = new Set<Id>();
+                if(!effAccountList.isEmpty()) {
+                    for(Account effAccount: effAccountList) {
+                        acctGrpSet.add(effAccount.ccrz__E_AccountGroup__c);
+                    }
+                }
+                for(Map<String,Object> prod : prodList){
+                    String productID = String.valueOf(prod.get('sfid')); 
+                    prodIdset.add((Id)productID);
+                }
+                system.debug('prodIdset'+prodIdset);
+                if(effAccountList[0].EC_Division__c == EC_Constants.INSTITUTIONAL || effAccountList[0].EC_Division__c == EC_Constants.FOODANDBEVERAGE || effAccountList[0].EC_Division__c == EC_Constants.TEXTILECARE){
+                    mapPrdctFlatFee = EC_QueryUtility.getProdPricelistItems(prodIdset, acctGrpSet);
+                }
+                for(Map<String,Object> prod : prodList){
+                    String productID = String.valueOf(prod.get('sfid')); 
+                    if(mapPrdctFlatFee != null && mapPrdctFlatFee.containsKey((Id)productID)) {
+                        prod.put('isFlatFeeProduct', mapPrdctFlatFee.get((Id)productID));
+                    }
+                    if(!effAccountList.isEmpty()){
+                        prod.put('ECDivision',effAccountList[0].EC_Division__c);
+                    }
+                    ProdskuSet.add(String.valueOf(prod.get('SKU')));
+                    //PBI -139350
+                    String sku = String.valueOf(prod.get('SKU'));
+                    String prodTaxanomy = String.valueOf(prod.get('taxonomy'));
+                    ccrz.cclog.log('rrrr-->' + sku);
+                    ccrz.cclog.log('Taxonomy---->'+prodTaxanomy);
+                    prod.put('isAddToCartShow',true);
+                    if(!prodIds.isEmpty() && prodIds.contains(sku+EC_Constants.ISE_HYBRIDDIRECT)){
+                        prod.put('isAddToCartShow',false);
+                    } else if(!prodIds.isEmpty() && prodIds.contains(effAccountId+EC_Constants.ISE_INDIRECTCORE) && prodTaxanomy ==EC_Constants.TAXONOMY_CHEMICAL){
+                        ccrz.cclog.log('inside the else loop--->');
+                        prod.put('isAddToCartShow',false);
+                    } else if(!prodIds.isEmpty() && prodIds.contains(effAccountId+EC_Constants.ISE_INDIRECTSTREETBRAND)){
+                        prod.put('isAddToCartShow',false);
+                    }
+                    // end -PBI -139350
+
+                    String packageCode = String.valueOf(prod.get('packageCode'));
+                    ccrz.cclog.log('prod Output' + prod);
+                    if(!pkgCodeSet.isEmpty() && pkgCodeSet.contains(packageCode)) {
+                        prod.put('packageTypeUOM','Bulk');
+                    } else {
+                        prod.put('packageTypeUOM','NonBulk');
+                    }
+
+                    if(!cartItemMap.isEmpty() && cartItemMap.containsKey(productID) && cartItemMap.get(productID).EC_Last_Purchased_Date__c != null){
+                        // 4/2/20 | TB | Story 116762 - replaced formatted value with actual value for sorting purposes. Formatting is done on VF component
+                        //prod.put('lastPurchaseDate',(Object)String.valueOf(cartItemMap.get(productID).EC_LastPurchasedDateFormatted__c));
+                        prod.put('lastPurchaseDate',(Object)String.valueOf(cartItemMap.get(productID).EC_Last_Purchased_Date__c));
+                    }
+                }              
+                ccrz.cclog.log('CCTXX: ' ,'super fetch--->' + inputData);
+                
+                // TankNumber & Delivery Point Logic :
+                if(ccrz.cc_CallContext.currPageName =='ccrz__Cart') {
+                    set<string> deliverTmpltMaterialSet = new set<string>();
+                    Map<String,List<String>> packageCodeDelTemplMap = new Map<String,List<String>>();
+                    Map<String,List<String>> packageCodeMaterialListMap = new Map<String,List<String>>();
+                    Map<String,boolean> isTankNumberApplicableMap = new Map<String,Boolean>();
+                    for(Map<String,Object> prod : prodList){
+                        String packageCode = String.valueOf(prod.get('packageCode'));
+                        String material = String.valueOf(prod.get('materialDescription'));
+                        packageCodeDelTemplMap.put(packageCode,new List<String>());
+                        if(packageCodeMaterialListMap.containsKey(packageCode)){
+                            packageCodeMaterialListMap.get(packageCode).add(material);
+                        }else{
+                            packageCodeMaterialListMap.put(packageCode,new List<String>{material});
+                        }
+                    }
+                    String salesOrg='';
+                    if(!effAccountList.isEmpty()){
+                        salesOrg = effAccountList[0].EC_SalesOrg__c;
+                    }
+                    ccrz.cclog.log('packageCodeDelTemplMap--->' + packageCodeDelTemplMap);
+                    if(!packageCodeDelTemplMap.isEmpty()) {
+                        isTankNumberApplicableMap = EC_ProductDetailController.isTankNumberApplicable(packageCodeDelTemplMap.keySet(),salesOrg);
+                        ccrz.cclog.log('isTankNumberApplicableMap--->' + isTankNumberApplicableMap);
+                        packageCodeDelTemplMap = EC_ProductDetailController.getDeliveryTemplateCode(isTankNumberApplicableMap.keySet(),salesOrg);
+                        ccrz.cclog.log('packageCodeDelTemplMap--->' + packageCodeDelTemplMap);
+                    }
+                    if(!packageCodeDelTemplMap.isEmpty() && !packageCodeMaterialListMap.isEmpty()) {
+                        for(String packageCode : packageCodeMaterialListMap.keySet()){
+                            for(String material : packageCodeMaterialListMap.get(packageCode)){
+                                if(!packageCodeDelTemplMap.isEmpty() && packageCodeDelTemplMap.containsKey(packageCode)){
+                                    for(String delTemp : packageCodeDelTemplMap.get(packageCode)){
+                                        String material_DeliveryTempCode = material+ '.'+delTemp;
+                                        deliverTmpltMaterialSet.add(material_DeliveryTempCode);
+                                    }
+                                }
+                            }
+                        }
+                        ccrz.cclog.log('deliverTmpltMaterialSet keyset--->' + deliverTmpltMaterialSet);
+                    }
+                    
+                    Map<String,Set<Tank_Detail__c>> materialDelTemplTankList = new Map<String,Set<Tank_Detail__c>>();
+                    materialDelTemplTankList  = EC_CartDetailController.getTankNumbersbytmpltCodes(deliverTmpltMaterialSet);
+                    ccrz.cclog.log('materialDelTemplTankList--->' + materialDelTemplTankList);
+
+                    //Drop-off Logic
+                    Map<String,List<Tank_Detail__c>> packageCodeTankMap = EC_CartDetailController.getDropOffTanks(salesOrg);
+
+                    for(Map<String,Object> prod : prodList) {
+                        List<Tank_Detail__c> TankNumbers = new List<Tank_Detail__c>();
+                        String packageCode = String.valueOf(prod.get('packageCode'));
+                        String material = String.valueOf(prod.get('materialDescription'));
+                        if(!packageCodeDelTemplMap.isEmpty() && packageCodeDelTemplMap.containsKey(packageCode) && !materialDelTemplTankList.isEmpty()){
+                            for(String delTemp : packageCodeDelTemplMap.get(packageCode)){
+                                String material_DeliveryTempCode = material+ '.'+delTemp;
+                                if(materialDelTemplTankList.containsKey(material_DeliveryTempCode)){
+                                    TankNumbers.addAll(materialDelTemplTankList.get(material_DeliveryTempCode));
+                                }
+                            }
+                        }
+                        //DropOff New Logic
+                        if(!packageCodeTankMap.isEmpty() && packageCodeTankMap.containsKey(packageCode) && packageCode!=null) {
+                            TankNumbers.addAll(packageCodeTankMap.get(packageCode));
+                        }
+                        // End of DropOff Logic
+                        if(TankNumbers != null) {
+                            prod.put('TankNumbers',TankNumbers);
+                            
+                        }
+                        
+                        if(!isTankNumberApplicableMap.isEmpty() && isTankNumberApplicableMap.containsKey(packageCode)){
+                             prod.put('packageTypeTank','Bulk');
+                        }else{
+                            prod.put('packageTypeTank','NonBulk'); 
+                        }
+                        // Unstamp TankNumber if not Entitled.
+                        EC_CartDetailController.unStampTankNumber(TankNumbers,String.valueOf(prod.get('sfid')));
+                        ccrz.cclog.log('TankNumbers--->' + TankNumbers);
+                    }
+                    //*************** Billing Arrangement - Logic *****************************//
+                        Map<String,List<ccrz__E_Pricelist__c>> productLineBAMap = EC_ProductDetailController.productLineBASetMap(effAccountList[0].ccrz__E_AccountGroup__c,ProdskuSet);
+                        ccrz.cclog.log('productLineBAMap--->' + productLineBAMap);
+                        Map<id,Set<ccrz__E_Pricelist__c>> productToApplicableBAMap = new Map<id,Set<ccrz__E_Pricelist__c>>();
+                        Map<String,Set<ccrz__E_Pricelist__c>> prodBAsetMap = new Map<String,Set<ccrz__E_Pricelist__c>>();
+                        for(Map<String,Object> prod : prodList){
+                            Set<ccrz__E_Pricelist__c> baSet = new Set<ccrz__E_Pricelist__c>();
+                            String sku = String.valueOf(prod.get('SKU'));
+                            String taxonomy = String.valueOf(prod.get('taxonomy')); 
+                            String GenEquipment = System.label.GEN_EQUIPMENT; 
+                            String GenChemical = System.label.GEN_CHEMICAL; 
+                            //3 rule logic
+                            if(taxonomy == System.label.EC_Chemistry && productLineBAMap.containsKey(GenChemical)){
+                                baSet.AddAll(productLineBAMap.get(GenChemical));
+                            }
+                            if(taxonomy == System.label.EC_Equipment && productLineBAMap.containsKey(GenEquipment)){
+                                baSet.AddAll(productLineBAMap.get(GenEquipment));
+                            }
+                            if(productLineBAMap.containsKey(sku)){
+                                baSet.AddAll(productLineBAMap.get(sku)); 
+                            }
+                            if(baSet != null) {
+                                prod.put('skuBAset',baSet);
+                                prodBAsetMap.put(String.valueOf(prod.get('sfid')), baSet);
+                            }
+                            ccrz.cclog.log('skuBAset--->' + baSet);
+                            // Unstamp BAs if not Entitled.
+                            if(baSet.isEmpty()) {
+                                prod.put('BAunStamped',true);
+                            }
+                            productToApplicableBAMap.put(String.valueOf(prod.get('sfid')),baSet);
+
+                        }
+                        ccrz.cclog.log('productToApplicableBAMap--->' + productToApplicableBAMap);
+                        List<ccrz__E_CartItem__c> updateCartItems = EC_ProductDetailController.unstampBillingArrangement(productToApplicableBAMap,prodBAsetMap);
+                        if(ccrz__E_CartItem__c.sObjectType.getDescribe().isAccessible() && !updateCartItems.isEmpty()) {
+                        update updateCartItems;
+                        }
+                        //************** End of BA Logic ******************//
+                }
+            }
+        }
+        return inputData;
+    }
+
+    /***************************************************************************************************************************************
+    Method Name : getFieldsMap
+    Description : used to include object fields in the model on front end
+    Return type : Returns Map<String,Object>
+    **************************************************************************************************************************************/
+    global override Map<String, Object> getFieldsMap(Map<String, Object> inputData){
+        inputData = super.getFieldsMap(inputData);
+        String objectFields = (String)inputData.get(ccrz.ccService.OBJECTFIELDS);
+        objectFields += ',Biocide_Disclaimer__c,Package_Code__c,Taxonomy__c,Material_Description__c,FeaturesAndBenefits__c,EC_Statement_Of_Assurance__c,ERP_Product_Description__c';
+        inputData.put(ccrz.ccService.OBJECTFIELDS, objectFields);
+        return inputData;
+    }
+}

@@ -1,0 +1,30 @@
+<aura:component implements="lightningsnapin:prechatUI" controller="PreChatFormController">
+	
+    <aura:attribute name="userId" type="String"/>
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    <aura:attribute name="prechatFields" type="List"/>
+    
+	<!-- Contains methods for getting pre-chat fields, starting a chat, and validating fields -->
+	<lightningsnapin:prechatAPI aura:id="prechatAPI"/>
+    
+	<!--
+    <force:recordData aura:id="contactRecordLoader"
+                      recordId="{!v.userId}"
+                      targetFields="{!v.record}"
+                      targetError="{!v.recordError}"
+                      fields="Id,ContactId,Contact.FirstName,Contact.LastName" 
+                      recordUpdated="{!c.handleRecordUpdated}"
+                      />   
+    -->
+    
+	<!-- After this component has rendered, call the controller's onRender function -->
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	    
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            {!v.recordError}</div>
+    </aura:if>
+    
+
+</aura:component>

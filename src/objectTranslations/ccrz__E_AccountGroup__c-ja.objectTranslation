@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CC 取引先グループ</value>
+    </caseValues>
+    <fields>
+        <label><!-- EBS agreed price req --></label>
+        <name>EC_EBS_agreed_price_req__c</name>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Yes Check</masterLabel>
+            <translation><!-- Not Yes Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes Check</masterLabel>
+            <translation><!-- Yes Check --></translation>
+        </picklistValues>
+    </fields>
+    <nameFieldLabel>取引先グループ名</nameFieldLabel>
+</CustomObjectTranslation>

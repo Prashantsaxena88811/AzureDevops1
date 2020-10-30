@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>PriceList Category Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PriceList Category Mappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Category --></label>
+        <name>EC_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency --></label>
+        <name>EC_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Locale --></label>
+        <name>EC_Locale__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price List --></label>
+        <name>EC_PriceList__c</name>
+        <relationshipLabel><!-- PriceList Category Mappings --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

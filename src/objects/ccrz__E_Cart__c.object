@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The shopping cart header</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>ContactEmail__c</fullName>
+        <externalId>false</externalId>
+        <formula>ccrz__Contact__r.Email</formula>
+        <label>Contact Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContactId__c</fullName>
+        <externalId>false</externalId>
+        <formula>ccrz__Contact__r.Id</formula>
+        <label>ContactId</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_AttentionTo__c</fullName>
+        <description>Attention To Field - to capture comments on Order Info Page</description>
+        <externalId>false</externalId>
+        <label>Attention To</label>
+        <length>55</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Attention_To_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Attention To Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Cart_Email_Subject__c</fullName>
+        <externalId>false</externalId>
+        <label>Cart Email Subject</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Delivery_Lead_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Delivery Lead Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Is_Requested_Date_Valid__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Requested Date Valid</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EC_PunchOut_CallBack_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Back URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>EC_Punchout_Buyer_Cookie__c</fullName>
+        <externalId>false</externalId>
+        <label>Buyer Cookie</label>
+        <length>90</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_PurchasedWishlist__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Purchased Wishlist</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EC_Ship_To_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Ship To Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>CC Carts (Ship To Account)</relationshipLabel>
+        <relationshipName>CC_Carts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EC_Sold_To_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SoldTo Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>CC Carts (SoldTo Account)</relationshipLabel>
+        <relationshipName>CC_Carts1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EC_User_Comments__c</fullName>
+        <description>This field will be used to store user comments while emailing the cart</description>
+        <externalId>false</externalId>
+        <label>User Comments</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccrz__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the Account of the User that this cart was created for.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Carts</relationshipLabel>
+        <relationshipName>E_Carts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__ActiveCart__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When a new Cart is created, the cart is active by default. Whenever, we want to make anyother cart active, the current active cart should be deactivated</description>
+        <externalId>false</externalId>
+        <label>Active Cart</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__AdjustmentAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Post order placement adjustment amount that can be used by back-end processing to adjust an order total without adjusting other fields. This information is captured here and transferred to order during place-order call.</description>
+        <externalId>false</externalId>
+        <label>Adjustment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+        <fields>
+        <fullName>Default_Unloading_Point__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Selected Unloading Point</label>
+        <referenceTo>ccrz__E_ContactAddr__c</referenceTo>
+        <relationshipLabel>CC Carts (Default Unloading Point)</relationshipLabel>
+        <relationshipName>CC_Carts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__AdjustmentReason__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional reason text for the Adjustment Amount field. This information is captured here and transferred to order during place-order call.</description>
+        <externalId>false</externalId>
+        <label>Adjustment Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__AnonymousId__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checks if the user is anonymous or not.
+If true the user is anonymous or not logged in
+if false he is logged in. Will be used in merging of an anonymous cart with a logged in users cart.</description>
+        <externalId>false</externalId>
+        <label>Anonymous Id</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__BillTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to a CC Contact Address object that contains the bill to address data. This will be a unique copy of the address information captured during checkout.</description>
+        <externalId>false</externalId>
+        <label>Bill To</label>
+        <referenceTo>ccrz__E_ContactAddr__c</referenceTo>
+        <relationshipLabel>Carts (BillToID)</relationshipLabel>
+        <relationshipName>E_Carts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__BuyerCompanyName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Company Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__BuyerEmail__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Buyer&apos;s email address</description>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__BuyerFirstName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Buyer&apos;s first name</description>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__BuyerLastName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Buyer&apos;s last name</description>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__BuyerMobilePhone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Buyer&apos;s mobile phone number</description>
+        <externalId>false</externalId>
+        <label>Mobile Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__BuyerPhone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Buyer&apos;s phone number</description>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__CCEmailAddress__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>CCEmailAddress</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccrz__CartId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>This is an external Id for data loading.</description>
+        <externalId>true</externalId>
+        <label>Cart Id</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__CartStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Cart Status: Every cart is created with a &quot;Open&quot; state, and set to &quot;Closed&quot; state after a corresponding order is placed.</description>
+        <externalId>false</externalId>
+        <label>Cart Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Abandoned</fullName>
+                    <default>false</default>
+                    <label>Abandoned</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>false</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>Expired</fullName>
+                    <default>false</default>
+                    <label>Expired</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ccrz__CartType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Cart type &quot;WishList&quot; can be used to keep track of items users want.</description>
+        <externalId>false</externalId>
+        <label>Cart Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Read-Only WishList</fullName>
+                    <default>false</default>
+                    <label>Read-Only WishList</label>
+                </value>
+                <value>
+                    <fullName>WishList</fullName>
+                    <default>false</default>
+                    <label>WishList</label>
+                </value>
+                <value>
+                    <fullName>Cart</fullName>
+                    <default>false</default>
+                    <label>Cart</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ccrz__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the Contact of the User that this cart was created for.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>CC Carts</relationshipLabel>
+        <relationshipName>CC_Carts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__ContractId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This holds the Contract Id,if payment method is Contract</description>
+        <externalId>false</externalId>
+        <label>Contract ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__CurrencyISOCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The currency that this cart was created in.</description>
+        <externalId>false</externalId>
+        <label>Currency ISO Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__EffectiveAccountID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Holds the effective account for this cart.  This field will be utilized in implementations where a user can order for multiple accounts inclusive or exclusive of their own.  The effective account is used to control the entitlements, pricing, integrations etc that drive the site experience.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be utilized in implementations where a user can order for multiple accounts inclusive or exclusive of their own.  The effective account is used to control the entitlements, pricing, integrations etc that drive the site experience.</inlineHelpText>
+        <label>Effective Account ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__EncryptedId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Semi-random UUID used to refer to the order in URLs.</description>
+        <externalId>false</externalId>
+        <label>Encrypted Id</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__Name__c</fullName>
+        <defaultValue>&quot;Shopping Cart&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Cart&apos;s Name</description>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>255</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__Note__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Note</description>
+        <externalId>false</externalId>
+        <label>Note</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccrz__PONumber__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>PO Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__PaymentMethod__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The payment method defined in E_PaymentDetail__c.Payment_Method__c.</description>
+        <externalId>false</externalId>
+        <label>Payment Method</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__RepricedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date and time that B2B Commerce most recently priced the cart items. By default, this value is the date and time the cart was created. B2B Commerce compares this value against the Valid Prices Date storefront setting to determine whether to reprice items in the cart.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date and time that B2B Commerce most recently priced the cart items.</inlineHelpText>
+        <label>Repriced Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__RequestDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Request date captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>Request Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__SessionId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>SFDC current user&apos;s session id.(Deprecated)</description>
+        <externalId>false</externalId>
+        <label>Session Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__ShipAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Order shipment charges. This information is captured here and transferred to order during place-order call.</description>
+        <externalId>false</externalId>
+        <label>Ship Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__ShipComplete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Ship complete indicator captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>Ship Complete</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__ShipDiscountAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Post order placement offset that can be used to adjust the shipment amount. This information is captured in cart and transferred to order during place-order call.</description>
+        <externalId>false</externalId>
+        <label>Ship Discount Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__ShipMethod__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Shipment method captured during the checkout process.This information is captured here and transferred to order during place-order call.</description>
+        <externalId>false</externalId>
+        <label>Ship Method</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__ShipStructure__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Designates the shipping data structure used for this cart.  Valid values are empty or lli but will be expanded in the future.</description>
+        <externalId>false</externalId>
+        <label>Ship Structure</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__ShipTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to a CC Contact Address object that contains the ship to address data. This will be a unique copy of the address information captured during checkout.</description>
+        <externalId>false</externalId>
+        <label>Ship To</label>
+        <referenceTo>ccrz__E_ContactAddr__c</referenceTo>
+        <relationshipLabel>Carts (ShipToID)</relationshipLabel>
+        <relationshipName>E_Carts1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__Storefront__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The storefront under which the order was placed.</description>
+        <externalId>false</externalId>
+        <label>Storefront</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccrz__SubtotalAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sum of CC Cart Item : Item Total</description>
+        <externalId>false</externalId>
+        <label>Subtotal Amount</label>
+        <summarizedField>ccrz__E_CartItem__c.ccrz__ItemTotal__c</summarizedField>
+        <summaryForeignKey>ccrz__E_CartItem__c.ccrz__Cart__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__TaxAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Tax amount captured during order placement.</description>
+        <externalId>false</externalId>
+        <label>Tax Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__TaxExemptFlag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Flag indicating if the order was tax exempt. This information is captured in cart and transferred to order during place-order call.</description>
+        <externalId>false</externalId>
+        <label>TaxExemptFlag</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__TaxSubTotalAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sum of CC Cart Item : Item Total</description>
+        <externalId>false</externalId>
+        <label>Tax SubTotal Amount</label>
+        <summarizedField>ccrz__E_CartItem__c.ccrz__ItemTotal__c</summarizedField>
+        <summaryForeignKey>ccrz__E_CartItem__c.ccrz__Cart__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__TotalAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>ccrz__ShipAmount__c + ccrz__SubtotalAmount__c + ccrz__TaxAmount__c +  ccrz__ShipDiscountAmount__c  +  ccrz__AdjustmentAmount__c + ccrz__TotalSurcharge__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__TotalDiscount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total Discount</description>
+        <externalId>false</externalId>
+        <label>Total Discount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__TotalQuantity__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Total Quantity</label>
+        <summarizedField>ccrz__E_CartItem__c.ccrz__Quantity__c</summarizedField>
+        <summaryForeignKey>ccrz__E_CartItem__c.ccrz__Cart__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__TotalSurcharge__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Misc. Charges applied to the cart.  Not taxes and not shipping.</description>
+        <externalId>false</externalId>
+        <label>Total Surcharge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the User that this order was placed for.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>E_Carts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccrz__ValidationStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the validation status for the cart.  Keeping as a free text field for flexibility in use with remote actions.</description>
+        <externalId>false</externalId>
+        <label>Validation Status</label>
+        <length>75</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderRushEmail__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Whenever the Order type is Rush,we can show this field in order email</description>
+        <externalId>false</externalId>
+        <label>Rush</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>CC Cart</label>
+    <listViews>
+        <fullName>ccrz__All</fullName>
+        <columns>NAME</columns>
+        <columns>ccrz__EncryptedId__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>ccrz__CartStatus__c</columns>
+        <columns>ccrz__ActiveCart__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>ccrz__CurrencyISOCode__c</columns>
+        <columns>ccrz__CartType__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>ccrz__Matt_Portal</fullName>
+        <columns>NAME</columns>
+        <columns>ccrz__BillTo__c</columns>
+        <columns>ccrz__ShipTo__c</columns>
+        <columns>ccrz__ShipAmount__c</columns>
+        <columns>ccrz__TaxAmount__c</columns>
+        <columns>ccrz__ActiveCart__c</columns>
+        <columns>ccrz__EncryptedId__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER.FIRST_NAME</field>
+            <operation>equals</operation>
+            <value>Matt</value>
+        </filters>
+        <label>Matt Portal</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{00000000}</displayFormat>
+        <label>Cart Auto Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Carts</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>OWNER.ALIAS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ccrz__CartStatus__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ccrz__ActiveCart__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ccrz__TotalDiscount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>ccrz__View_in_Storefront</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>View in Storefront</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/Cart?cartId={!ccrz__E_Cart__c.ccrz__EncryptedId__c}</url>
+    </webLinks>
+</CustomObject>

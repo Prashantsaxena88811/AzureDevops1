@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Access_Token_Endpoint__c</fullName>
+        <externalId>false</externalId>
+        <label>Access Token Endpoint</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Ajax_Endpoint__c</fullName>
+        <externalId>false</externalId>
+        <label>Ajax Endpoint</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>EndPoint__c</fullName>
+        <externalId>false</externalId>
+        <label>Tokenization Endpoint</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>MerchantGUID__c</fullName>
+        <externalId>false</externalId>
+        <label>Merchant GUID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PreAuthAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Pre Auth Amount</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pre_Auth_Only__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Pre-Auth Only</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RedirectURL__c</fullName>
+        <externalId>false</externalId>
+        <label>Redirect URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Response_Packet_Endpoint__c</fullName>
+        <externalId>false</externalId>
+        <label>Response Packet Endpoint</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>SharedKey__c</fullName>
+        <externalId>false</externalId>
+        <label>Shared Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>XiPayEndpoint__c</fullName>
+        <externalId>false</externalId>
+        <label>XiPay Endpoint</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>XiPayMerchantID__c</fullName>
+        <externalId>false</externalId>
+        <label>XiPay Merchant ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>XiPayPassword__c</fullName>
+        <externalId>false</externalId>
+        <label>XiPay Password</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>XiPaySoapaction__c</fullName>
+        <externalId>false</externalId>
+        <label>XiPay Soapaction</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>XiPayUsername__c</fullName>
+        <externalId>false</externalId>
+        <label>XiPay Username</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>EC Paymetric Payment Setting</label>
+    <visibility>Public</visibility>
+</CustomObject>

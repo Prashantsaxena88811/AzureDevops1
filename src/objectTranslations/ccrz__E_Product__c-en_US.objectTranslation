@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit__c</name>
+        <picklistValues>
+            <masterLabel>EU Institutional</masterLabel>
+            <translation><!-- EU Institutional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecolab NA DSE</masterLabel>
+            <translation><!-- Ecolab NA DSE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecolab NA EGV Equip Design</masterLabel>
+            <translation><!-- Ecolab NA EGV Equip Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecolab NA F&amp;B Eng Beloit</masterLabel>
+            <translation><!-- Ecolab NA F&amp;B Eng Beloit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecolab NA F&amp;B Equip Design</masterLabel>
+            <translation><!-- Ecolab NA F&amp;B Equip Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecolab NA Kay Equip Design</masterLabel>
+            <translation><!-- Ecolab NA Kay Equip Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food Retail</masterLabel>
+            <translation><!-- Food Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INTL Institutional</masterLabel>
+            <translation><!-- INTL Institutional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA Food &amp; Beverage</masterLabel>
+            <translation><!-- NA Food &amp; Beverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA Healthcare</masterLabel>
+            <translation><!-- NA Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA Institutional</masterLabel>
+            <translation><!-- NA Institutional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA PureForce</masterLabel>
+            <translation><!-- NA PureForce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA Textile Care</masterLabel>
+            <translation><!-- NA Textile Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nalco Water</masterLabel>
+            <translation><!-- Nalco Water --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Distributor Equivalent --></label>
+        <name>Distributor_Equivalent__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Display SKU --></label>
+        <name>EC_Display_SKU__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC Product Media Url --></label>
+        <name>EC_Product_Media_Url__c</name>
+        <relationshipLabel><!-- CC Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- StatementOfAssurance --></label>
+        <name>EC_Statement_Of_Assurance__c</name>
+    </fields>
+    <fields>
+        <label><!-- FeaturesAndBenefits --></label>
+        <name>FeaturesAndBenefits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Use Type --></label>
+        <name>Use_Type__c</name>
+        <picklistValues>
+            <masterLabel>Dispensed</masterLabel>
+            <translation><!-- Dispensed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready to Use</masterLabel>
+            <translation><!-- Ready to Use --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

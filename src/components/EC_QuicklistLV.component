@@ -1,0 +1,156 @@
+<!--
+
+  @Component Name     : EC_QuicklistLV
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Srishti               7/29/2019         Quicklist page
+
+--> 
+
+<apex:component controller="EC_QuickListController">
+    
+    <script id="EC-MyAccount-MyWishlist-Desktop" type="text/template">
+        <div class="panel panel-default cc_panel cc_myaccount_mywishlist">
+            <div class="cc_heading ql-left-top">
+                    <h3 class="cc_title_template">{{pageLabelMap 'MyAccount_MyWishlist'}} <span class="selListLength"></span> </h3>
+                    <p class="cc_create_wishlist">
+                        <button type="button" class="btn btn-default btn-sm createTemplate cc_create_template ec-btn-primary" data-id="" >{{pageLabelMap 'Action_CreateWishlist'}}</button>
+                    </p>
+            </div>
+            <div class="panel-body cc_body cc_myaccount_content">
+                
+                <div class="orderPaginationSec" />
+                <div class="ql-container">
+                    <div id="cartTable" class="table table-hover cc_table cc_mywishlist_table">
+                        <!-- <tr class="cc_table_header_row">
+                            <th class="cc_table_header nameheader">
+                                <span class="cc_table_header_name table_header_item">{{pageLabelMap 'MyAccount_Name'}}</span>
+                            </th>
+                            <th class="cc_table_header lastupdateheader">
+                                <span class="cc_table_header_date table_header_item">{{pageLabelMap 'MyCartsInc_LastUpdate'}}</span>
+                            </th>
+                            <th class="cc_table_header">
+                                <span class="cc_table_header_active table_header_item">{{pageLabelMap 'Heading_Active'}}</span>
+                            </th>
+                            <th class="cc_table_header">
+                                <span class="cc_table_header_actions table_header_item ec-actions">{{pageLabelMap 'MyCartsInc_Actions'}}</span>
+                            </th>
+                        </tr> -->
+                        {{#each this}}
+                            <div class="cc_table_row">
+                                <div class="cc_table_col ec-wishlist-name ec-wishlist-sfid" data-id="{{sfid}}">
+                                    <div class="ql-top">
+                                        <div class="cc_col_name">
+                                            <!--**********************************************************-->
+                                            <a href="#" data-id="{{sfid}}" class="gotoDetails cc_goto_details">
+                                                <span class="toggle-ql">
+                                                    <span class="material-icons add-ql">add</span>
+                                                    <span class="material-icons remove-ql">remove</span>
+                                                </span>
+                                                {{name}}
+                                            </a>
+                                        </div>
+                                            
+                                        <span class="cc_col_date">
+                                            <span class="ql-label">Updated on<span class="hidein-mob">:</span> </span>{{lastModifiedDateStr}} <span class="hidein-mob">|</span> 
+                                        </span>
+                                        
+                                        <span class="cc_col_active">
+                                            <span class="ql-label">Default<span class="hidein-mob">:</span> </span>
+                                            {{#if isActive}}
+                                                {{pageLabelMap 'EC_Yes'}}
+                                            {{else}}
+                                                {{pageLabelMap 'EC_No'}} 
+                                            {{/if}}
+                                        </span>
+
+                                        <div class="button-group cc_button_group ql-action-btns">
+                                            <span class="ql-action-icon">
+                                                <span class="material-icons">file_copy</span>
+                                                <input type="button" class="clone cc_clone" data-id="{{sfid}}" value="{{pageLabelMap 'Action_Clone'}}"/> 
+                                            </span
+                                            {{#if isRO}}
+                                                &#160;
+                                            {{else}}
+                                                <span> 
+                                                    <span class="ql-action-icon">
+                                                        <span class="material-icons">create</span>
+                                                        <input type="button" class="openModal cc_edit" data-id="{{sfid}}" value="{{pageLabelMap 'Action_Edit'}}"/>
+                                                    </span>
+                                                </span>
+                                            {{/if}}
+                                                
+                                            {{#if isActive}}
+                                                &#160;
+                                            {{else}}
+                                                {{#if isRO}}
+                                                &#160;
+                                                {{else}}
+                                                <span class="ql-action-icon">
+                                                    <span class="material-icons">delete</span>
+                                                    <input type="button" class="delete cc_delete" data-id="{{sfid}}" value="{{pageLabelMap 'Action_Delete'}}"/>
+                                                </span>
+                                                
+                                                {{/if}}
+                                            {{/if}}
+                                        </div>
+
+                                    </div>
+                                    <div class="detail_item_view ql-detail-view_{{sfid}}"></div>
+                                </div>
+                            </div>
+                        {{/each}}
+                        </div>
+                </div>
+                <div id="modalSec"></div>
+            </div>
+        </div>
+    </script>
+    <script type="text/javascript">
+        jQuery(function($) {
+            var selList = 0;
+            CCRZ.uiProperties.myWishlistsView.desktop.tmpl = 'EC-MyAccount-MyWishlist-Desktop';
+            CCRZ.pubSub.on("view:myWishlistsView:refresh", function(viewInstance) {
+                var selList = 0;
+                if(viewInstance.detailsView.pickerView.coll.models){
+                    selList = viewInstance.detailsView.pickerView.coll.models.length
+                };
+                $('.selListLength').text("("+selList+")");
+                var viewPrototype = Object.getPrototypeOf(viewInstance);
+                viewPrototype.gotoDetails = function (event) {
+                    event.preventDefault();
+                    var objLink = $(event.target);
+                    var selectedId = objLink.data("id");
+                    objLink.closest('.cc_table_row').toggleClass('selected-list');
+                    objLink.closest('.cc_table_row').siblings().removeClass('selected-list');
+                    if(CCRZ.views.myWishlistsView.prototype.currentWishlist != selectedId) {
+                        var selList = this.wishlistData.get(selectedId);
+                        $('.detail_item_view').text('');
+                        viewInstance.detailsView.generateDisplay(selList, viewInstance.$el.find('.ql-detail-view_'+selectedId));
+                        CCRZ.views.myWishlistsView.prototype.currentWishlist = selectedId;
+                    }
+                }
+                if (viewInstance.wishlistData != null && $(window).width() > 1365) {
+                    var selectedId = $('.cc_table_row .ec-wishlist-sfid:first').data('id');
+                    var selList = viewInstance.wishlistData.get(selectedId);
+                    if(selList != null) {
+                        $('.detail_item_view').text('');
+                        viewInstance.detailsView.generateDisplay(selList, viewInstance.$el.find('.ql-detail-view_'+selectedId));
+                        CCRZ.views.myWishlistsView.prototype.currentWishlist = selectedId;
+                        $('.cc_table_row:first').addClass('selected-list');
+                    }
+                }
+            });
+        });
+    	Handlebars.registerHelper('totalProducts', function(count) {
+            if(count == undefined || count == null) {
+                return 0;
+            } else {
+                return count;
+            }
+        });
+    </script>
+  
+</apex:component>

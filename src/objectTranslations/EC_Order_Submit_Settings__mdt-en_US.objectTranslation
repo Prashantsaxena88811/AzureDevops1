@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Submit Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order Submit Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Storefront --></label>
+        <name>Storefront__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trading Partner Id --></label>
+        <name>Trading_Partner_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

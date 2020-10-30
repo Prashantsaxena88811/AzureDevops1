@@ -1,0 +1,740 @@
+<!--
+
+  @Component Name     : EC_Header
+
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Sai Kiran Pidugu     6/7/2019         Component for header.
+  lgcarrier@Coveo      28/9/2020        Coveo to replace ootb Product List Page.
+  lgcarrier@Coveo      29/9/2020        Coveo to replace standalone search box.
+  lgcarrier@Coveo      14/10/2020       Handle multiple standalone search box.
+-->
+
+<apex:component allowDML="true" controller="EC_HeaderController">
+    <!-- COVEO START -->
+    <CoveoV2:JsSearch searchHub="EcolabProductSearch" filter="{!coveoUserFilters}" debug="false" stylesheet="CoveoFullSearchNewDesign.css"/>
+    <!-- Coveo custom resources for Ecolab Connect -->
+
+    <apex:stylesheet value="{!URLFOR($Resource.EC_CoveoProductList_bundle_assets, '/css/EC_CoveoProductList.css')}" />
+    <apex:includeScript value="{!URLFOR($Resource.EC_CoveoProductList_bundle_assets + '/js/EC_CoveoProductList.js')}" />
+    <!-- COVEO END -->
+
+    <!-- WalkMe Header Code -->
+    <!--<script src="/commerce/resource/WalkMeCommunity"></script>-->
+
+    <script id="EC-HeaderDesktop" type="text/template">
+        <div class="navbar-inverse cc_navbar-inverse header-desktop">
+            <div class="container cc_container custom-footer-2">
+                <div class="row cc_navbar_row">
+                    <small>
+                        <div class="col-md-4 col-xs-12 cc_navbar_col_misc">
+                            <span id="userid" class="hide username">{!$User.Id}</span>
+                             <span id="division_type" class="hide">{!userDivision}</span>
+                            <p class="header-spacer visible-md-* cc_header_spacer"></p>
+                            <div class="navbar-header pull-left cc_navbar-header">
+                                <span class="misc-function cc_misc_function" />
+                                <span class="lssec cc_lssec"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-xs-12 cc_navbar_col_acct">
+                            <p class="header-spacer visible-md-* cc_header_spacer"></p>
+                            <div class="navbar-header pull-right cc_navbar-header">
+                                <ul class="list-inline navbar-nav cc_list-inline">
+                                    {{#ifEquals '{!JSENCODE(IF(isEligible,"true","false"))}' "true"}}
+                                     <li class="qlheader">
+                                     	<a target="_blank" href="{!$Label.EC_PaymetPortalLink}">
+                                     		<span style="font-size:13pt;" class="ga-onlinePay">$</span>
+                                     		<span class="headerfonts ga-onlinePay">&#160;{!$Label.EC_Order_OrderPaymentPortalButton}</span>
+                                    	</a>
+                                     </li>
+                                     <span class="pull-left separator">|</span>
+                                    {{/ifEquals}}
+                                    {{#ifEquals '{!JSENCODE(hasNalcoAccount)}' "true"}}
+                                     <li class="ba-header">
+                                        <a class="ba-nav" href="{{getBAPageURL}}">
+                                     <img class="ba-icon" src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/BaIcon.png')}"></img>
+                                            <span class="headerfonts">&#160;{{pageLabelMap 'EC_BA_BackLabel'}}</span>
+                                        </a>
+                                    </li>
+                                     <span class="pull-left separator ba-seperator">|</span>
+                                     {{/ifEquals}}
+                                    <li class="qlheader">
+                                        <a class="ga-quicklist" href="{{getWishListURL}}">
+                                            <i class="material-icons bookmark_border qlicon"></i><span class="headerfonts">&#160;{{pageLabelMap 'EC_Quicklist'}}</span>
+                                        </a>
+                                    </li>
+                                    {{#ifEquals '{!buyOnline}' "true"}}
+                                        <span class="pull-left separator">|</span>
+                                        <li class="cc_my_chead"><a href="#" id="cartHeader" class="chead cartHeaderLink"></a></li>
+                                   {{/ifEquals}}
+                                    <li class="loginoutsec cc_loginoutsec"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-12 pull-right cc_col_search ec-hide-tab">
+                            <ul class="nav cc_nav">
+                                <li>
+                                    <div class="search_form cc_search_form" />
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="searchSidenavTab" class="right-sidenav-tab col-md-4 col-xs-12">
+                            <div class="cc_col_search">
+                            <ul class="nav cc_nav">
+                                <li>
+                                    <div class="search_form cc_search_form" id="input-tab-search"/>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-inverse cc_navbar-inverse header-phone">
+            <div class="container cc_container custom-footer-2">
+                <div class="row cc_navbar_row">
+                    <small>
+                        <div class="cc_navbar_col_misc">
+                            <p class="header-spacer visible-md-* cc_header_spacer"></p>
+                            <div class="navbar-header pull-left cc_navbar-header">
+                                <span class="misc-function-mob cc_misc_function" />
+                                <span class="lssec cc_lssec"></span>
+                            </div>
+                        </div>
+                        <div class="cc_navbar_col_acct">
+                            <p class="header-spacer visible-md-* cc_header_spacer"></p>
+                            <div class="navbar-header pull-right cc_navbar-header">
+                                <ul class="list-inline navbar-nav cc_list-inline">
+                                {{#ifEquals '{!JSENCODE(IF(isEligible,"true","false"))}' "true"}}
+                                     <li class="qlheader">
+                                     	<a href="{!$Label.EC_PaymetPortalLink}">
+                                     		<span style="font-size:13pt;" class="ga-onlinePay">$</span>
+                                    	</a>
+                                     </li>
+                                    {{/ifEquals}}
+                                    {{#ifEquals '{!JSENCODE(hasNalcoAccount)}' "true"}}
+                                     <li class="ba-header">
+                                        <a class="ba-nav" href="{{getBAPageURL}}">
+                                     <img class="ba-icon-phone" src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/BaIcon.png')}"></img>
+                                        </a>
+                                    </li>
+                                     {{/ifEquals}}
+                                    <li class="qlheader">
+                                        <a class="ga-quicklist" href="{{getWishListURL}}">
+                                            <i class="material-icons bookmark_border qlicon"></i>
+                                        </a>
+                                    </li>
+                                    <li class="cc_my_chead">
+                                        <a href="#" id="cartHeader" class="chead cartHeaderLink">
+                                            <!--<i class="material-icons qlicon">shopping_cart</i>-->
+                                            <img src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-shopping-cart-white.svg')}"></img>
+                                            <span class="cart-count"></span>
+                                        </a>
+                                    </li>
+                                    <li class="loginoutsec cc_loginoutsec">
+                                    {{#if this}}
+                                        {{#ifEquals this.UserType 'Guest'}}
+                                            <a href="#login" class="goToLogin cc_goto_login"><i class="fa fa-pencil" aria-hidden="true"></i>&#160;{{pageLabelMap 'Component_SiteHeader_Login'}}</a>
+                                        {{else}}
+
+                                            <a data-toggle="collapse" href="#header-collapse" aria-expanded="false" aria-controls="header-collpase" class="headercollapse">
+                                                <!--<i class="material-icons qlicon account_circle user-icon"></i>-->
+                                                <img src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-account-circle.svg')}"></img>
+                                            </a>
+                                            <div class="collapse header-collapse-div" id="header-collapse">
+                                                <a href="{{accs-page}}" id="goToAccount" class="accsetting">
+                                            <span>&#160;{{pageLabelMap 'EC_Account Settings'}}</span>
+                                            <img src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-settings.svg')}"
+                                                class="settingnonhover"></img>
+                                            <img src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-settings-hover.svg')}"
+                                                class="settinghover"></img>
+                                        </a>
+                                                <a href="{!LogoutURL}" class="doLogout cc_do_logout">
+                                                    <span>{{pageLabelMap 'Component_SiteHeader_Logout'}}</span>
+                                                    <i class="material-icons qlicon logout" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+
+                                        {{/ifEquals}}
+                                    {{else}}
+                                        <a href="#login" class="cc_login"><i class="fa fa-pencil" aria-hidden="true"></i>&#160;{{pageLabelMap 'Component_SiteHeader_Login'}}</a>
+                                    {{/if}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="searchSidenav" class="right-sidenav">
+                            <div class="cc_col_search">
+                            <ul class="nav cc_nav">
+                                <li>
+                                    <div class="search_form cc_search_form" id="input-mobile-search"/>
+                                </li>
+                            </ul>
+                        </div>
+                        </div>
+                    </small>
+                </div>
+            </div>
+        </div>
+
+    </script>
+
+    <script id="EC-menu-desktop-template" type="text/template">
+
+        <div id="secnav cc_secnav" class="sec-nav menu-desktop">
+            <nav class="navbar navbar-default navbar-static-top cc_navbar">
+                <div class="container cc_container">
+                    <div class="navbar-header cc_navbar_header">
+                        <button type="button" class="navbar-toggle collapsed cc_navbar_toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                            aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--***********-->
+                            <span class="icon-bar cc_icon-bar"></span>
+                            <span class="icon-bar cc_icon-bar"></span>
+                            <span class="icon-bar cc_icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse cc_navbar_collapse">
+                        <ul class="nav navbar-nav cc_navbar-nav">
+                            <li class="phone-logo-wrapper">{{goHome this 'cc_phone_logo' 'phoneLogo' icon=(displayIcon 'home')}}<span class="sr-only">Home</span></li>
+                            <a href="{{homePage}}" id="logoUrl"><div id="cc_store_logo_img" class="gt-ecolab cc_store_logo_img center-block"></div></a>
+                            {{#each .}}
+                             {{#ifEquals (isPermittedMenu this) true}}
+                                {{#if children}}
+                                    <li class="dropdown cc_dropdown">
+                                        <a href="{{linkURL}}" class="dropdown-toggle cc_dropdown_toggle" data-toggle="dropdown" data-menuid="{{menuId}}" {{linkTarget openInNewWindow}}
+                                            role="button" aria-haspopup="true" aria-expanded="false">{{displayName}}<span
+                                                class="caret"></span></a>
+                                        <ul class="dropdown-menu cc_dropdown-menu">
+                                            {{> subMenuItem}}
+                                        </ul>
+                                    </li>
+                                {{else}}
+                                    {{#ifEquals mType 'Category'}}
+                                        <li class="dropdown cc_dropdown {{displayName}}">{{categoryLink this 'cc_category' text=displayName}}</li>
+                                    {{/ifEquals}}
+                                    {{#ifEquals mType 'Product'}}
+                                        <li class="dropdown cc_dropdown">{{productLink this 'cc_product' text=displayName}}</li>
+                                    {{/ifEquals}}
+                                    {{#ifEquals mType 'URL'}}
+                                        {{#ifEquals '{!enableIntelligence}' "true"}}
+                                            <li class="dropdown cc_dropdown {{displayName}}"><a class="menuTypeURL cc_menu_type_url" href="{{#ifEquals displayName 'Home'}}{{homePage}}{{else}}{{linkURL}}{{/ifEquals}}"
+                                                data-href="{{#ifEquals displayName 'Home'}}{{homePage}}{{else}}{{linkURL}}{{/ifEquals}}" data-menuid="{{menuId}}" {{linkTarget openInNewWindow}}>{{displayName}}</a></li>
+                                        {{else}}
+                                            {{#ifNotEquals displayName 'Intelligence'}}
+                                                <!-- COVEO START -->
+                                                <li class="dropdown cc_dropdown {{displayName}}" id="menu_{{menuId}}"><a class="menuTypeURL cc_menu_type_url"
+                                                	href="{{#ifEquals displayName 'Home'}}{{homePage}}{{else}}{{linkURL}}{{/ifEquals}}"
+                                                    data-href="{{#ifEquals displayName 'Home'}}{{homePage}}{{else}}{{linkURL}}{{/ifEquals}}"
+                                                    data-menuid="{{menuId}}" {{linkTarget openInNewWindow}}>{{displayName}}</a></li>
+                                                <!-- COVEO END -->
+                                            {{/ifNotEquals}}
+                                        {{/ifEquals}}
+                                    {{/ifEquals}}
+                                    {{#ifEquals mType 'None'}}
+                                        <li class="dropdown cc_dropdown"><a href="javascript:void(0);" class="cc_display_name" data-menuid="{{menuId}}">{{displayName}}</a></li>
+                                    {{/ifEquals}}
+                                {{/if}}
+                              {{/ifEquals}}
+                            {{/each}}
+                        </ul>
+                        <span class="ec-display-tab">
+                            <i class="material-icons menu-search-tab open-search" onclick="toggleSearchTab(event)">search</i>
+                        </span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div id="secnav cc_secnav" class="sec-nav menu-phone">
+            <nav class="navbar navbar-default navbar-static-top cc_navbar">
+                <div class="container cc_container">
+                    <div id="mySidenav" class="sidenav">
+                      {{#each .}}
+                                {{#if children}}
+                                    <li class="dropdown cc_dropdown">
+                                        <a href="{{linkURL}}" class="dropdown-toggle cc_dropdown_toggle" data-toggle="dropdown" data-menuid="{{menuId}}" {{linkTarget openInNewWindow}}
+                                            role="button" aria-haspopup="true" aria-expanded="false">{{displayName}}<span
+                                                class="caret"></span></a>
+                                        <ul class="dropdown-menu cc_dropdown-menu">
+                                            {{> subMenuItem}}
+                                        </ul>
+                                    </li>
+                                {{else}}
+                                    {{#ifEquals mType 'Category'}}
+                                        {{categoryLink this 'cc_category' text=displayName}}
+                                    {{/ifEquals}}
+                                    {{#ifEquals mType 'Product'}}
+                                        {{productLink this 'cc_product' text=displayName}}
+                                    {{/ifEquals}}
+                                    {{#ifEquals mType 'URL'}}
+                                        {{#ifEquals '{!enableIntelligence}' "true"}}
+                                            <a class="menuTypeURL cc_menu_type_url" href="{{#ifEquals displayName 'Home'}}{{homePage}}{{else}}{{linkURL}}{{/ifEquals}}"
+                                                data-href="{{#ifEquals displayName 'Home'}}{{homePage}}{{else}}{{linkURL}}{{/ifEquals}}" data-menuid="{{menuId}}" {{linkTarget openInNewWindow}}>{{displayName}}</a>
+                                        {{else}}
+                                            {{#ifNotEquals displayName 'Intelligence'}}
+                                                <a class="menuTypeURL cc_menu_type_url" href="{{#ifEquals displayName 'Home'}}{{homePage}}{{else}}{{linkURL}}{{/ifEquals}}"
+                                                    data-href="{{#ifEquals displayName 'Home'}}{{homePage}}{{else}}{{linkURL}}{{/ifEquals}}" data-menuid="{{menuId}}" {{linkTarget openInNewWindow}}>{{displayName}}</a>
+                                            {{/ifNotEquals}}
+                                        {{/ifEquals}}
+                                    {{/ifEquals}}
+                                    {{#ifEquals mType 'None'}}
+                                        <a href="javascript:void(0);" class="cc_display_name" data-menuid="{{menuId}}">{{displayName}}</a>
+                                    {{/ifEquals}}
+                                {{/if}}
+                            {{/each}}
+                    </div>
+                    <div>
+                        <i class="material-icons menu-mobile open-nav" onclick="toggleNav(event)">menu</i>
+                        <a href="{{homePage}}" id="logoUrl"><span id="cc_store_logo_img" class="cc_store_logo_img center-block cc_store_logo_img_phone"></span></a>
+                        <i class="material-icons menu-search open-search" onclick="toggleSearch(event)">search</i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </script>
+
+    <script id="EC-MyAccount-Desktop" type="text/template">
+        {{#if this}}
+            {{#ifEquals this.UserType 'Guest'}}
+                <a href="#login" class="goToLogin cc_goto_login"><i class="fa fa-pencil" aria-hidden="true"></i>&#160;{{pageLabelMap 'Component_SiteHeader_Login'}}</a>
+            {{else}}
+
+                <a data-toggle="collapse" href="#header-collpase" aria-expanded="false" aria-controls="header-collpase" class="headercollapse">
+                    <img src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-account-circle.svg')}"></img>
+                    <span class="user-name headerfonts">{{{this.FirstName}}} {{{this.LastName}}}</span>
+                    <i class="material-icons qlicon keyboard_arrow_down menu-expand ec-tab-keyboard_arrow_down"></i>
+                    <i class="material-icons qlicon keyboard_arrow_up menu-collapse"></i>
+                </a>
+                <div class="collapse" id="header-collpase">
+                    <a href="{{accs-page}}" id="goToAccount" class="accsetting">
+                <span>&#160;{{pageLabelMap 'EC_Account Settings'}}</span>
+                <img src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-settings.svg')}"
+                    class="settingnonhover"></img>
+                <img src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-settings-hover.svg')}"
+                    class="settinghover"></img>
+            </a>
+                    <a href="{!LogoutURL}" class="doLogout cc_do_logout">
+                        <span>{{pageLabelMap 'Component_SiteHeader_Logout'}}</span>
+                        <i class="material-icons qlicon logout" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+            {{/ifEquals}}
+        {{else}}
+            <a href="#login" class="cc_login"><i class="fa fa-pencil" aria-hidden="true"></i>&#160;{{pageLabelMap 'Component_SiteHeader_Login'}}</a>
+        {{/if}}
+    </script>
+    <script id="EC-CartHeaderBrowser" type="text/template">
+        <img src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-shopping-cart-white.svg')}"></img>
+        <span class="headerfonts"><span class="headerfonts">{{pageLabelMap 'EC_CartNew'}}:</span>
+            <span class="c_line headerfonts">
+                {{#ifEquals this.cartCount 1}}
+                    {{this.cartCount}}&#160;{{pageLabelMap 'EC_Unit'}}
+                {{else}}
+                    {{this.cartCount}}&#160;{{pageLabelMap 'EC_Units'}}
+                {{/ifEquals}}
+            </span>
+        </span>
+        <span class="count-mob">{{this.cartCount}}</span>
+    </script>
+    <!-- COVEO START -->
+    <script id="EC-productSearchTemplateDesktop" type="text/template">
+        {{#ifDisplay 'H.DisplSearch'}}
+            <c:EC_CoveoStandaloneSearchBox />
+        {{/ifDisplay}}
+    </script>
+    <!-- COVEO END -->
+
+   <script type="text/javascript">
+
+        (function($){
+
+            $.fn.outside = function(ename, cb){
+              return this.each(function(){
+                  var $this = $(this),
+                      self = this;
+
+                  $(document).bind(ename, function tempo(e){
+                      if(e.target !== self && !$.contains(self, e.target)){
+                          cb.apply(self, [e]);
+                          if(!self.parentNode) $(document.body).unbind(ename, tempo);
+                      }
+                  });
+              });
+            };
+
+            //session timeout code starts
+            //Increment the idle time counter every minute.
+            var idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+        	var idleTime = 0;
+            //Zero the idle timer on mouse movement.
+            $(this).mousemove(function (e) {
+                 idleTime = 0;
+                });
+                $(this).keypress(function (e) {
+                     idleTime = 0;
+                });
+            function timerIncrement() {
+                idleTime = idleTime + 1;
+                var timeOutDuration = '{!$Label.EC_SessionTimeOutDuration}';
+                var profileName = '{!$Profile.Name}';
+                if (idleTime == parseInt(timeOutDuration) && profileName == CCRZ.pagevars.pageLabels.EC_ProfileNameIBuyUser) {
+                    if(window.opener){
+                        //window.opener.postMessage('LogoutSession', '{!$Label.EC_InstanceBaseURL}'+'{!$Label.EC_InstanceAddnURL}');
+                        window.close();
+                    }
+                }
+            }
+
+        }(jQuery));
+
+        // for hamburger menu click
+        function toggleNav(event) {
+            if($(".menu-mobile").hasClass("open-nav")){
+                document.getElementById("mySidenav").style.width = "154px";
+                document.getElementById("mySidenav").style.padding = "24px 8px 8px 21px";
+                $(".menu-mobile").removeClass("open-nav").addClass("close-nav");
+            }else if($(".menu-mobile").hasClass("close-nav")){
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("mySidenav").style.padding = "24px 0px 8px 0px";
+                $(".menu-mobile").removeClass("close-nav").addClass("open-nav");
+            }
+            event.stopPropagation();
+        }
+        function toggleSearch(event) {
+            if($(".menu-search").hasClass("open-search")){
+                document.getElementById("searchSidenav").style.width = "100%";
+                $(".menu-search").removeClass("open-search").addClass("close-search");
+                $(".right-sidenav").removeClass("open-search").addClass("close-search");
+            }else if($(".menu-search").hasClass("close-search")){
+                document.getElementById("searchSidenav").style.width = "0%";
+                $(".menu-search").removeClass("close-search").addClass("open-search");
+                $(".right-sidenav").removeClass("close-search").addClass("open-search");
+            }
+            event.stopPropagation();
+        }
+
+        $('html').click(function(e) {
+            $('#input-mobile-search').outside('click', function(e) {
+              //Hide the menus if visible
+              if(!$(e.target).hasClass("ui-menu-item-wrapper")) {
+                if($(".menu-search").hasClass("close-search")){
+                    document.getElementById("searchSidenav").style.width = "0%";
+                    $(".menu-search").removeClass("close-search").addClass("open-search");
+                    $(".right-sidenav").removeClass("close-search").addClass("open-search");
+                }
+                if($(".menu-mobile").hasClass("close-nav")){
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("mySidenav").style.padding = "24px 0px 8px 0px";
+                    $(".menu-mobile").removeClass("close-nav").addClass("open-nav");
+                }
+              }
+            });
+            $('#input-tab-search').outside('click', function(e) {
+             if(!$(e.target).hasClass("ui-menu-item-wrapper")) {
+                if($(".menu-search-tab").hasClass("close-search")){
+                    document.getElementById("searchSidenavTab").style.width = "0%";
+                    //$("#searchSidenavTab").css("display","none");
+                    $(".menu-search-tab").removeClass("close-search").addClass("open-search");
+                    $(".right-sidenav-tab").removeClass("close-search").addClass("open-search");
+                }
+             }
+            });
+
+        });
+
+        function toggleSearchTab(event) {
+            if($(".menu-search-tab").hasClass("open-search")){
+                document.getElementById("searchSidenavTab").style.width = "100%";
+                $(".menu-search-tab").removeClass("open-search").addClass("close-search");
+                $(".right-sidenav-tab").removeClass("open-search").addClass("close-search");
+            }else if($(".menu-search-tab").hasClass("close-search")){
+                document.getElementById("searchSidenavTab").style.width = "0%";
+                $(".menu-search-tab").removeClass("close-search").addClass("open-search");
+                $(".right-sidenav-tab").removeClass("close-search").addClass("open-search");
+            }
+            event.stopPropagation();
+        }
+
+
+        jQuery(function ($) {
+            /*var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            if('{!$Profile.Name}'!=CCRZ.pagevars.pageLabels.EC_ProfileNameIBuyUser) {
+               	script.src = '/commerce/resource/WalkMeCommunity';
+            }
+            head.appendChild(script); */
+
+            CCRZ.uiProperties.headerView.desktop.tmpl = 'EC-HeaderDesktop';
+            CCRZ.uiProperties.Menu.desktop.tmpl = 'EC-menu-desktop-template';
+            CCRZ.uiProperties.myAccountHeaderView.desktop.tmpl = 'EC-MyAccount-Desktop';
+            CCRZ.uiProperties.cartHeaderView.desktop.tmpl = 'EC-CartHeaderBrowser';
+            CCRZ.uiProperties.productSearchView.desktop.tmpl= 'EC-productSearchTemplateDesktop';
+            $('head').append('<link rel="shortcut icon" href="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/favicon.ico')}">');
+            document.title = 'Ecolab';
+            Handlebars.registerHelper('homePage', function() {
+                return CCRZ.pagevars.storeSettings.Site_Secure_Domain__c;
+            });
+            Handlebars.registerHelper('accs-page', function(){
+                return CCRZ.pagevars.storeSettings.Site_Secure_Domain__c+'/s/account-settings';
+            });
+            Handlebars.registerHelper('checkOr', function(par1,par2){
+                if(par1 == "true" || par2 == "true"){
+                    return true;
+                }else{
+                    return false;
+                }
+            });
+            Handlebars.registerHelper('isPermittedMenu', function(menuItem){
+                   if(menuItem.displayName == 'Dashboards'){
+                       if('{!viewDashboard}' == 'true'){
+                           return true;
+                       }else{
+                           return false;
+                       }
+                   }
+                   return true;
+            });
+            Handlebars.registerHelper('formatUSD', function (price) {
+                var getPrice = price.toString().split(".");
+                var currency= CCRZ.userIsoCode;
+                var priceHtml = "<span class='price-wrap'><span class='price-wrap-num'>"+getPrice[0]+"</span><span class='price-wrap-dec'>."+getPrice[1]+" "+currency+"</span></span>";
+                return priceHtml;
+            })
+
+            Handlebars.registerHelper('productImageNoLink', function(product, styleClass, options) {
+                var SKU = '';
+                if (!_.isUndefined(product)) {
+                    if (product.linkURL) {
+                        SKU = product.linkURL;
+                    } else if (product.sku) {
+                        SKU = product.sku;
+                    } else if (product.SKU) {
+                        SKU = product.SKU;
+                    } else if (product.productSKU) {
+                        SKU = product.productSKU;
+                    }
+                    var linkObj = {
+                        'name': product.name,
+                        'SKU': SKU,
+                        'friendlyUrl': product.friendlyUrl,
+                        'openInNewWindow': product.openInNewWindow
+                    };
+                    var productJSON = _.escape(JSON.stringify(linkObj));
+                }
+                var content = '';
+                if (product && product.name) {
+                    content = _.escape(product.name);
+                }
+                if (options && options.hash['image'])
+                    content = options.hash['image'];
+                if (options && options.hash['text']) {
+                    content = _.escape(_.unescape(options.hash['text']));
+                }
+                var href = CCRZ.goToPDP(null, product);
+                if (product.openInNewWindow || product.isNewWindow) {
+                    return new Handlebars.SafeString(content )
+                } else {
+                    return new Handlebars.SafeString(content);
+                }
+            });
+
+            Handlebars.registerHelper('getJSONEncoded', function (value) {
+                return "{!JSENCODE("+value+")}";
+            });
+
+            Handlebars.registerHelper('getWishListURL', function (value) {
+                return CCRZ.pagevars.currSiteURL + 'ccrz__MyAccount?viewState=myWishlists'+ getCSRQueryString();
+            });
+            Handlebars.registerHelper('getBAPageURL', function (value) {
+                return CCRZ.pagevars.currSiteURL + 'ccrz__CCPage?pageKey=badp';
+            });
+
+            //Highlight Menu
+            CCRZ.pubSub.on("view:Menu:refresh", function(viewInstance) {
+                if(CCRZ.pagevars.currentPageName == "ccrz__ProductList" || CCRZ.pagevars.currentPageName == "ccrz__ProductDetails"){
+                    $("li.Products a").addClass("menu-highlight");
+                    $(".navbar-default .cc_category").addClass("ham-menu-highlight");
+                }
+                if(CCRZ.pagevars.currentPageName == "ccrz__Cart"){
+                    $("#cartHeader").addClass("highlight_cart");
+                }
+                if(CCRZ.pagevars.currentPageName == "ccrz__CCPage"){
+                    // COVEO START
+                    if (CCRZ.pagevars.queryParams.pageKey == "coveo") {
+                    	$("li#menu_coveoProductSearch a").addClass("menu-highlight");
+                    	$(".navbar-default .cc_category").addClass("ham-menu-highlight");
+                    }
+                    // COVEO END
+                    else {
+                        $("li.Billing.Arrangements a").addClass("menu-highlight");
+                    }
+                }
+               if('{!$Profile.Name}'==CCRZ.pagevars.pageLabels.EC_ProfileNameIBuyUser) {
+                    $(".dropdown").hide();
+                    $('.loginoutsec').find("a .user-name").parent("a").attr("href", "");
+                    $('.loginoutsec').find('.keyboard_arrow_down').hide();
+                    $('.navbar-inverse .navbar-nav>li.loginoutsec>a').css("cursor", "default");
+                    $("#logoUrl").css("pointer-events","none");
+                    document.addEventListener('contextmenu', event => event.preventDefault()); //Right click disabled
+                }
+            });
+
+            CCRZ.pubSub.on("view:headerView:refresh", function(viewInstance) {
+                if({!isCommunityActive} == false){
+                    document.location = CCRZ.pagevars.currSiteURL.substr(0,CCRZ.pagevars.currSiteURL.length - CCRZ.pagevars.sitePrefix.length) + 's/outage';
+                }
+                if((CCRZ.pagevars.currentPageName.toLowerCase() == "ccrz__cart" || CCRZ.pagevars.currentPageName.toLowerCase() == "ccrz__checkoutnew" || CCRZ.pagevars.currentPageName.toLowerCase() == "ccrz__orderconfirmation") && ('{!viewPrice}' != "true" || '{!buyOnline}' != "true")){
+                    document.location = CCRZ.pagevars.currSiteURL.substr(0,CCRZ.pagevars.currSiteURL.length - CCRZ.pagevars.sitePrefix.length)
+                }
+                setHeaderViewData(CCRZ.models.headerModel.prototype, CCRZ.views.headerView.prototype, viewInstance);
+                let baUser = '{!JSENCODE(BAUser)}';
+                let buyerPerm = '{!JSENCODE(buyerPerm)}';
+                viewInstance.model.attributes.BAUser = baUser === 'true' ? true : false;
+                viewInstance.model.attributes.buyerPerm = buyerPerm === 'true' ? true : false;
+                viewInstance.setElement(viewInstance.$el);
+
+
+            });
+
+            CCRZ.pubSub.on("view:myAccountHeaderView:refresh", function(viewInstance) {
+                if(CCRZ.views.EffAccountSelView && jQuery.isEmptyObject(CCRZ.effSelectorView.dataSet) && CCRZ.pagevars.currentCartID=="" && CCRZ.pagevars.currentPageName.toLowerCase() != "ccrz__orderconfirmation"){
+                 CCRZ.effSelectorView = new CCRZ.views.EffAccountSelView();
+                }
+            });
+
+            CCRZ.pubSub.on("view:cartHeaderView:refresh", function(viewInstance) {
+                $('.cart-count').html($('.count-mob').html());
+            });
+
+            var setHeaderViewData = function(headerModel, headerView, thisView) {
+                thisView.setElement(thisView.$el);
+                var events = headerView.events;
+                headerView.changeLocale = function(event){
+                    CCRZ.localeSwitcherView.switchLocale(Event);
+                    CCRZ.localeSwitcherView.closeModal(Event)
+                    var country = event.currentTarget.dataset.id;
+                    var locale;
+                    if(country== 'JP'){
+                        locale='ja_JP'
+                    } else if(country=='CA'){
+                        locale='en_CA'
+                    }
+                    else{
+                        locale='en_US'
+                    }
+                    $('tr[data-id="'+locale+'"]').addClass("active");
+                    CCRZ.localeSwitcherView.setLocale(Event)
+                }
+            }
+
+            CCRZ.pubSub.on('view:productSearchView:refresh', function (viewInstance) {
+                setProductSearch(CCRZ.views.productSearchView.prototype, CCRZ.models.productSearchModel.prototype, viewInstance);
+                viewInstance.setElement(viewInstance.$el);
+                // COVEO START
+                var coveoStandaloneSearchBoxRoot = document.querySelector('#coveoStandaloneSearchBox-wrapper');
+                if (coveoStandaloneSearchBoxRoot) {
+                    _.each(document.querySelectorAll('#coveoStandaloneSearchBox-wrapper'), function (standaloneSearchBoxRoot) {
+                        Coveo.initSearchbox(
+                            standaloneSearchBoxRoot,
+                            CCRZ.pagevars.currSiteURL +'ccrz__CCPage?pageKey=coveo',
+                            {
+                                CommerceQuery: {
+                                    listing: '{!coveoCommerceQueryListing}' || 'All'
+                                }
+                            }
+                        );
+                    });
+                }
+                // COVEO END
+            });
+            var setProductSearch = function (psView, psModel, viewIn) {
+                var events = psView.events;
+                events["click .search_button"] = "doSearch";
+                events["keyup #searchText"] = "enterPress";
+                psView.doSearch = function(event){
+                    if(this.validateSearchInput()){
+                        if(true){
+                    		var ccid = CCRZ.pagevars.currentCartID || '';
+                            var storeName = CCRZ.pagevars.storefrontName || '';
+                            if(window.innerWidth <=767) {
+                                var url = encodeURIComponent($.trim($("#input-mobile-search #searchText").val()));
+                            } else if (window.innerWidth >=768 && window.innerWidth <=1365) {
+                                var url = encodeURIComponent($.trim($("#searchSidenavTab #searchText").val()));
+                            } else {
+                                var url = encodeURIComponent($.trim($("#searchText").val()));
+                            }
+                            var encodedStr = '';
+                            var encodeChars = ["(", ")", "~", "!", "*", "'"];
+                            for(var i = 0, len = url.length; i < len; i++) {
+                                if (encodeChars.indexOf(url[i]) >= 0) {
+
+                                    encodedStr += '\\' + url[i];
+                                }
+                                else {
+                                    encodedStr += url[i];
+                                }
+                            }
+                            window.location = CCRZ.pageUrls.productList + "?cartID="+ccid+getCSRQueryString()+"&operation=quickSearch&searchText="+encodedStr;
+                    	}else{
+                        	if(window.innerWidth <=767) {
+                                var searchText = encodeURIComponent($.trim($("#input-mobile-search #searchText").val()));
+                            } else if (window.innerWidth >=768 && window.innerWidth <=1365) {
+                                var searchText = encodeURIComponent($.trim($("#searchSidenavTab #searchText").val()));
+                            } else {
+                                var searchText = encodeURIComponent($.trim($("#searchText").val()));
+                            }
+                            if(searchText.length>2){
+                                var URL =CCRZ.pagevars.storeSettings.Site_Secure_Domain__c+'/s/search-results?term='+searchText;
+                                window.location.href = URL;
+                            }
+                        }
+                    }
+                };
+
+				psView.validateSearchInput = function() {
+                    var v = this;
+                    if(window.innerWidth <=767) {
+                     	var srchInput = $('#input-mobile-search #searchText');
+                	} else if (window.innerWidth >=768 && window.innerWidth <=1365) {
+                    	var srchInput = $('#searchSidenavTab #searchText');
+                    } else {
+                    	var srchInput = $('#searchText');
+                    }
+                     var srchVal = false || (srchInput.val()?srchInput.val().trim():false);
+
+                     if(srchVal && srchVal.length > 1 ){
+                      $('.searchBoxWidgetError').toggle(false);
+                      return true;
+                     } else {
+                      if(CCRZ.disableAdaptive) {
+                       $('#cc_search_error').popover('show');
+                      } else {
+                       $('.searchBoxWidgetError').text(CCRZ.pagevars.pageLabels['ProductSearch_Tooltip']);
+                       $('.searchBoxWidgetError').toggle(true);
+                      }
+                      return false;
+                     }
+                };
+                psView.enterPress = function(e){
+                    var code = e.which; // recommended to use e.which, it's normalized across browsers
+                    if(code==13)e.preventDefault();
+                    /*if(CCRZ.disableAdaptive) {
+                        $('#cc_search_error').popover('hide');
+                    }*/
+                    if(code==13){
+                        this.doSearch(e);
+                    }
+                };
+            }
+        });
+    </script>
+</apex:component>

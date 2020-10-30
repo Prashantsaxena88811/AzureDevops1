@@ -1,0 +1,123 @@
+<table class="ec_main_table" style="max-width:700px;" width="100%" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#f5f7fa">
+                        <tbody>
+                            <!--Header section-->
+                            <tr bgcolor="#007ac9">
+                                <td valign="top" align="left">
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+                                        <tbody>
+                                            <!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:2px;" height="2">&nbsp;</td>
+                                            </tr>
+                                            <!--logo-->
+                                            <tr>
+                                                <td>
+                                                    <img class="ec_logo" src="https://ecolabconnect--c.documentforce.com/servlet/servlet.ImageServer?id=0154P000007Wpav&oid=00D4P000000hPa6&lastMod=1569255218000" alt="Ecolab Logo" />
+                                                </td>
+                                            </tr>
+                                            <!--/logo-->
+                                            <!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:2px;" height="2">&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!--/Header section-->
+                            <!--body section-->
+                            <tr>
+                                <td valign="top" align="left" style="padding:30px;line-height: 1.5rem;">
+Hello {!Case.Contact},<br/><br/>
+
+Thank you for contacting the Ecolab Support Team. This message is to confirm that we have closed your case {!Case.CaseNumber} regarding {!Case.Subject} with the following resolution: {!Case.Resolution_Description__c}<br/><br/>
+
+To review the resolution and, if necessary, request that your case be reopened, please click the VIEW CASE button below:<br/><br/>
+ <a style="color: white;background-color: #007ac9;padding: 3px 5px;border-radius: 5px;text-decoration: none;" href="{!$Label.Ecolab_Community_URL}{!Case.Id}">VIEW CASE</a><br/><br/>
+
+If you are unable to click the VIEW CASE button above, please copy and paste the following URL into your browser's address bar:<br/>
+<a href="{!$Label.Ecolab_Community_URL}{!Case.Id}" target="_blank">{!$Label.Ecolab_Community_URL}{!Case.Id}</a><br/><br/>
+
+Thank you for being an Ecolab customer.<br/><br/>
+
+Best,<br/><br/>
+
+Ecolab Support Team<br/><br/>
+
+-----<br/><br/>
+
+Please do not reply to this email.  This is a system generated email to inform you of updates to your Ecolab Case.  This message was generated from <a href="https://connect.ecolab.com" target="_blank">https://connect.ecolab.com.</a>
+
+
+
+                                </td>
+                            </tr>
+                            <!--/body section-->
+                            <!--footer section-->
+                            <tr bgcolor="#007ac9">
+                                <td valign="top" align="left" style="font-family:Arial; font-size:13px;">
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+                                        <tbody>
+                                            <!--footer top border-->
+                                            <tr>
+                                                <td bgcolor="#5b8f22" style="font-size:0px; line-height:0px; height:7px;" height="7">&nbsp;</td>
+                                            </tr>
+                                            <!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:15px;" height="15">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" align="center" style="font-size: 16px; line-height: 18px; font-family: Arial, sans-serif; color: #ffffff;">
+                                                    <b style="font:weight:bold">ECOLAB</b></br>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" align="center" style="font-size: 14px; line-height: 18px; font-family: Arial, sans-serif; color: #ffffff;">
+                                                    Global Headquarters
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" align="center" style="font-size: 14px; line-height: 18px; font-family: Arial, sans-serif; color: #ffffff;">
+                                                    1 Ecolab Place, St. Paul MN 55102
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" align="center" style="font-size: 12px; line-height: 18px; font-family: Arial, sans-serif; color: #ffffff;">
+                                                    <span class="ec_small" style="letter-spacing: 0.34px;">Ecolab.com</span>
+                                                </td>
+                                            </tr>
+                                            <!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:15px;" height="15">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ec_links" valign="top" align="center" style="color:#fffffe;">
+                                                    <a class="ec_link" href="https://www.ecolab.com/privacy-policy" target="_blank" style="font-size: 12px; font-family: Arial, sans-serif; color:#fffff1;">
+                                                        <span style="color:#fffff1;">
+                                                            <font color="#fffff1">
+                                                                Privacy Policy
+                                                            </font>
+                                                        </span>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:15px;" height="15">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" align="center" style="font-size: 12px; font-family: Arial; color: #ffffff;">
+                                                    &copy; 2020 Ecolab Inc. All rights reserved.
+                                                </td>
+                                            </tr>
+                                            <!--spacing-->
+                                            <tr>
+                                                <td style="font-size:0px; line-height:0px; height:15px;" height="15">&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!--/footer section-->
+                        </tbody>
+                    </table>

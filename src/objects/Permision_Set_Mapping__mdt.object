@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Is_DashBoard__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag to differentiate Dashboard Permission set</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Is DashBoard?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Active_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag to identify Active permission sets</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Is Active Required?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Permission_Set_Name__c</fullName>
+        <description>Salesforce PermissionSet name</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Permission Set Name</label>
+        <length>25</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Permision Set Mapping</label>
+    <pluralLabel>Permision Set Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

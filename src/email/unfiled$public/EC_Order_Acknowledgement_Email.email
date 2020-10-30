@@ -1,0 +1,5 @@
+<messaging:emailTemplate subject="Thank you For Your Order" recipientType="Contact" relatedToType="ccrz__E_Order__c">
+<messaging:htmlEmailBody >
+<c:EC_OrderAcknowledgementEmail orderId="{!relatedTo.Id}"/>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

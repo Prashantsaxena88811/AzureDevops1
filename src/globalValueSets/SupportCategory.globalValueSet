@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Checkout</fullName>
+        <default>false</default>
+        <label>Checkout</label>
+    </customValue>
+    <customValue>
+        <fullName>General</fullName>
+        <default>false</default>
+        <label>General</label>
+    </customValue>
+    <customValue>
+        <fullName>Login</fullName>
+        <default>false</default>
+        <label>Login</label>
+    </customValue>
+    <customValue>
+        <fullName>Orders</fullName>
+        <default>false</default>
+        <label>Orders</label>
+    </customValue>
+    <customValue>
+        <fullName>Payment</fullName>
+        <default>false</default>
+        <label>Payment</label>
+    </customValue>
+    <customValue>
+        <fullName>Products</fullName>
+        <default>false</default>
+        <label>Products</label>
+    </customValue>
+    <customValue>
+        <fullName>Quicklist</fullName>
+        <default>false</default>
+        <label>Quicklist</label>
+    </customValue>
+    <customValue>
+        <fullName>Self-Service Register</fullName>
+        <default>false</default>
+        <label>Self-Service Register</label>
+    </customValue>
+    <customValue>
+        <fullName>Service</fullName>
+        <default>false</default>
+        <label>Service</label>
+    </customValue>
+    <customValue>
+        <fullName>User</fullName>
+        <default>false</default>
+        <label>User</label>
+    </customValue>
+    <description>Common picklist values on case and Chat bot routing object for Ecolab Project.</description>
+    <masterLabel>Category</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

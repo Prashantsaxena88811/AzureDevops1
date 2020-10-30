@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send notification to an agent whenever case comment is created.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Case Comment Notification to Agent</name>
+    <style>none</style>
+    <subject>Case Comment on Case {!Case.CaseNumber}</subject>
+    <textOnly>Hello {!Case.OwnerFullName},
+
+A new case comment created by {!Case.Contact} on {!Case.CaseNumber}. Please take a look.
+
+Case : {!$Label.Agent_URL}{!Case.Id}/view
+
+Thank you
+Ecolab Team</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

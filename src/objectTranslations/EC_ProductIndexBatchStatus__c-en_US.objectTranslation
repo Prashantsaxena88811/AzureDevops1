@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Index Batch Status</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Index Batch Status</value>
+    </caseValues>
+    <fields>
+        <help><!-- checkbox to enable/disable Pricelist Inactivation Batch --></help>
+        <label><!-- Add Product to Master Pricelist Batch --></label>
+        <name>EC_Add_Product_to_Master_Pricelist_Batch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category Batch Schedule Interval --></label>
+        <name>EC_Category_Batch_Schedule_Interval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category Index Switch --></label>
+        <name>EC_Category_Index_Switch__c</name>
+    </fields>
+    <fields>
+        <help><!-- checkbox to enable/disable PricelistItem Inactivation Batch --></help>
+        <label><!-- InActive AccountGroupPriceList Batch --></label>
+        <name>EC_InActive_AccountGroupPriceList_Batch__c</name>
+    </fields>
+    <fields>
+        <help><!-- checkbox to enable/disable PricelistItem Inactivation Batch --></help>
+        <label><!-- InActive PriceListItem Batch --></label>
+        <name>EC_InActive_PriceListItem_Batch__c</name>
+    </fields>
+    <fields>
+        <help><!-- checkbox to enable/disable Pricelist Inactivation Batch --></help>
+        <label><!-- InActive PriceList Batch --></label>
+        <name>EC_InActive_PriceList_Batch__c</name>
+    </fields>
+    <fields>
+        <help><!-- flag to enable/disable ProductMedia Inactivation Batch --></help>
+        <label><!-- InActive ProductMedia Batch --></label>
+        <name>EC_InActive_ProductMedia_Batch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inactive Billing Address Flag --></label>
+        <name>EC_Inactive_Billing_Address_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Index Locale --></label>
+        <name>EC_ProductIndexLocale__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Index Batch Last Run --></label>
+        <name>EC_Product_Index_Batch_Last_Run__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Index Interval --></label>
+        <name>EC_Product_Index_Interval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Index Switch --></label>
+        <name>EC_Product_Index_Switch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Spec Index Switch --></label>
+        <name>EC_Spec_Index_Switch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Index Batch Start Time --></label>
+        <name>Index_Batch_Start_Time__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

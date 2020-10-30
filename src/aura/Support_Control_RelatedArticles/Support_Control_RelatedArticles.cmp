@@ -1,0 +1,22 @@
+<aura:component controller="Support_Control_RelatedArticlesCtrl" implements="forceCommunity:availableForAllPageTypes" access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="dataCategory" type="String" description="A simplified view record object to be displayed"/>
+    
+    <aura:html tag="style">
+        .cb-section_row .cb-section_column:nth-child(2) .ui-widget{ display:none; }
+    </aura:html>
+    <aura:if isTrue="{!v.dataCategory=='Login'}">
+        <aura:html tag="style">
+            .cb-section_row .cb-section_column:nth-child(2) .ui-widget:nth-of-type(2){ display:block; }
+        </aura:html>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.dataCategory=='Self_Service_Register'}">
+        <aura:html tag="style">
+            .cb-section_row .cb-section_column:nth-child(2) .ui-widget:nth-of-type(3){ display:block; }
+        </aura:html>
+    </aura:if>
+    
+    
+    
+</aura:component>

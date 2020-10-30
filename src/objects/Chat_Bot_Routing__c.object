@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used in routing for chat bot in Ecolab project.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Chat Bot Routing</label>
+    <nameField>
+        <displayFormat>CBR-{0000}</displayFormat>
+        <label>Chat Bot Routing Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Chat Bot Routings</pluralLabel>
+    <!--<profileSearchLayouts>
+        <fields>NAME</fields>
+        <fields>Category__c</fields>
+        <fields>Sub_Category__c</fields>
+        <fields>Division__c</fields>
+        <fields>Show_Walkme__c</fields>
+        <fields>Show_Article__c</fields>
+        <fields>Transfer_to_Agent__c</fields>
+        <fields>Create_Case__c</fields>
+        <profileName>System Administrator</profileName>
+    </profileSearchLayouts>-->
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>SupportCategory</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Create_Case__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Create Case</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All</fullName>
+                    <default>false</default>
+                    <label>All</label>
+                </value>
+                <value>
+                    <fullName>INSTITUTIONAL</fullName>
+                    <default>false</default>
+                    <label>INSTITUTIONAL</label>
+                </value>
+                <value>
+                    <fullName>WATER</fullName>
+                    <default>false</default>
+                    <label>WATER</label>
+                </value>
+                <value>
+                    <fullName>PAPER</fullName>
+                    <default>false</default>
+                    <label>PAPER</label>
+                </value>
+                <value>
+                    <fullName>ENERGY</fullName>
+                    <default>false</default>
+                    <label>ENERGY</label>
+                </value>
+                <value>
+                    <fullName>FOOD &amp; BEVERAGE</fullName>
+                    <default>false</default>
+                    <label>FOOD &amp; BEVERAGE</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Show_Article__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Show Article</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Show_Walkme__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Show Walkme</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Category</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Category__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetName>SupportSubCategory</valueSetName>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>Cannot Checkout Rush Order</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>Credit Card Error</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>Credit Card Not Available</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>How to Checkout</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>How to Specify Unloading Point &amp; Tank Numbers</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>Missing Unloading Point or Tank Number</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>Order Acknowledgement Not Received</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>Order Confirmation Not Received</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>Tax and Freight Not Calculated</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>General</controllingFieldValue>
+                <valueName>Unsupported Browser</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>Forgot Password (Local Account)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>Forgot Password (Work Account)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>Forgot Username</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>How to Login</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>How to Logout</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>How to Reset / Change Password (Local Account)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>How to Reset / Change Password (Work Account)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>Single Sign On Error (Work Account)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Orders</controllingFieldValue>
+                <valueName>How to Re-Order from Order History</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Orders</controllingFieldValue>
+                <valueName>How to Track Shipments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Orders</controllingFieldValue>
+                <valueName>How to View Order History</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Orders</controllingFieldValue>
+                <valueName>Order Missing From History</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Orders</controllingFieldValue>
+                <valueName>Order Not Received</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>Cannot Settle Invoices via Credit Card</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>Dispute Invoice</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>How to Settle Invoices via ACH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>How to Update ACH Information</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>How to View / Download Invoice</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>How to View Open / Closed Payments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>How to View Payment History</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>Missing / Incorrect Payment Accounts</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>Missing Payment Portal Access</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>How to Browse Product Categories</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>How to Download Safety Data Sheets (SDS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>How to Re-Order Previous Purchased Product</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>How to Search for Products</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>How to View Product Details</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>How to View Suggested Products</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>Incorrect Product Entitlements</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>Incorrect Product Pricing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>Missing Safety Data Sheet (SDS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Quicklist</controllingFieldValue>
+                <valueName>How to Create / Edit / Delete Quicklists</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Quicklist</controllingFieldValue>
+                <valueName>How to Reorder from Quicklist</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Service Register</controllingFieldValue>
+                <valueName>How to Register</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Service Register</controllingFieldValue>
+                <valueName>Missing Account Number</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Service Register</controllingFieldValue>
+                <valueName>Missing Local Account Option</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Service Register</controllingFieldValue>
+                <valueName>Missing Rep&apos;s Email Address</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Service Register</controllingFieldValue>
+                <valueName>Missing Verification Email</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Service Register</controllingFieldValue>
+                <valueName>Missing Work Account Option</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Service Register</controllingFieldValue>
+                <valueName>Work Account Failure</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Service</controllingFieldValue>
+                <valueName>How to Request Service</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Service</controllingFieldValue>
+                <valueName>Service Not Completed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Service</controllingFieldValue>
+                <valueName>Status of Service Request</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>User</controllingFieldValue>
+                <valueName>How to Add Account Alignments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>User</controllingFieldValue>
+                <valueName>How to Request Additional Permissions</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>User</controllingFieldValue>
+                <valueName>Incorrect Account Alignments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>User</controllingFieldValue>
+                <valueName>Incorrect Permissions</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Transfer_to_Agent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Transfer to Agent</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Work Instruction</fullName>
+                    <default>false</default>
+                    <label>Work Instruction</label>
+                </value>
+                <value>
+                    <fullName>Issue</fullName>
+                    <default>false</default>
+                    <label>Issue</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Category__c</columns>
+        <columns>Sub_Category__c</columns>
+        <columns>Division__c</columns>
+        <columns>Show_Walkme__c</columns>
+        <columns>Show_Article__c</columns>
+        <columns>Transfer_to_Agent__c</columns>
+        <columns>Create_Case__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Routings</label>
+        <language>en_US</language>
+    </listViews>
+</CustomObject>

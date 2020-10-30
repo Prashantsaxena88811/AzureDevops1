@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Staging Exception Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Staging Exception Logs</value>
+    </caseValues>
+    <fields>
+        <label><!-- EC_Account_key --></label>
+        <name>EC_Account_key__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_Action --></label>
+        <name>EC_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_ClassName --></label>
+        <name>EC_ClassName__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_Division --></label>
+        <name>EC_Division__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_Email --></label>
+        <name>EC_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_ExceptionMessage --></label>
+        <name>EC_ExceptionMessage__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_MethodName --></label>
+        <name>EC_MethodName__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_StageId --></label>
+        <name>EC_MuleStageId__c</name>
+        <relationshipLabel><!-- Staging Exception Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- EC_ParentAccountKey --></label>
+        <name>EC_ParentAccountKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_PartnerFunction --></label>
+        <name>EC_PartnerFunction__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_PermissionCode --></label>
+        <name>EC_PermissionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_SourceTable --></label>
+        <name>EC_SourceTable__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_UserKey --></label>
+        <name>EC_UserKey__c</name>
+    </fields>
+    <layouts>
+        <layout>Staging Exception Log Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

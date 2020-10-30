@@ -1,0 +1,1 @@
+{"userKey":1234,"addedRoles":["ExampleRole2"],"removedRoles":[]}

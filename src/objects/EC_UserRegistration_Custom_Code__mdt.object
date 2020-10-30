@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>US:76262:Raghav:This holds the mapping for Custom Codes and associated labels for Mulesoft integeration with salesforce for User Registration.</description>
+    <fields>
+        <fullName>EC_CustomCodes__c</fullName>
+        <description>US:76262:Raghav:This field holds the Custom Code.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>EC_CustomCodes</label>
+        <length>20</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Message__c</fullName>
+        <description>US:76262:Raghav:This field holds the message for customcode</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>EC_Message</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Popup_Label__c</fullName>
+        <description>US:76262:Raghav:This field holds the popup label used on UI.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>EC_Popup Label</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>EC_UserRegistration_Custom_Code</label>
+    <pluralLabel>EC_UserRegistration_Custom_Codes</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Cannot Checkout Rush Order</fullName>
+        <default>false</default>
+        <label>Cannot Checkout Rush Order</label>
+    </customValue>
+    <customValue>
+        <fullName>Cannot Settle Invoices via Credit Card</fullName>
+        <default>false</default>
+        <label>Cannot Settle Invoices via Credit Card</label>
+    </customValue>
+    <customValue>
+        <fullName>Credit Card Error</fullName>
+        <default>false</default>
+        <label>Credit Card Error</label>
+    </customValue>
+    <customValue>
+        <fullName>Credit Card Not Available</fullName>
+        <default>false</default>
+        <label>Credit Card Not Available</label>
+    </customValue>
+    <customValue>
+        <fullName>Dispute Invoice</fullName>
+        <default>false</default>
+        <label>Dispute Invoice</label>
+    </customValue>
+    <customValue>
+        <fullName>Forgot Password (Local Account)</fullName>
+        <default>false</default>
+        <label>Forgot Password (Local Account)</label>
+    </customValue>
+    <customValue>
+        <fullName>Forgot Password (Work Account)</fullName>
+        <default>false</default>
+        <label>Forgot Password (Work Account)</label>
+    </customValue>
+    <customValue>
+        <fullName>Forgot Username</fullName>
+        <default>false</default>
+        <label>Forgot Username</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Add Account Alignments</fullName>
+        <default>false</default>
+        <label>How to Add Account Alignments</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Browse Product Categories</fullName>
+        <default>false</default>
+        <label>How to Browse Product Categories</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Checkout</fullName>
+        <default>false</default>
+        <label>How to Checkout</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Create / Edit / Delete Quicklists</fullName>
+        <default>false</default>
+        <label>How to Create / Edit / Delete Quicklists</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Download Safety Data Sheets (SDS)</fullName>
+        <default>false</default>
+        <label>How to Download Safety Data Sheets (SDS)</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Login</fullName>
+        <default>false</default>
+        <label>How to Login</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Logout</fullName>
+        <default>false</default>
+        <label>How to Logout</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Register</fullName>
+        <default>false</default>
+        <label>How to Register</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Re-Order from Order History</fullName>
+        <default>false</default>
+        <label>How to Re-Order from Order History</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Reorder from Quicklist</fullName>
+        <default>false</default>
+        <label>How to Reorder from Quicklist</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Re-Order Previous Purchased Product</fullName>
+        <default>false</default>
+        <label>How to Re-Order Previous Purchased Product</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Request Additional Permissions</fullName>
+        <default>false</default>
+        <label>How to Request Additional Permissions</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Request Service</fullName>
+        <default>false</default>
+        <label>How to Request Service</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Reset / Change Password (Local Account)</fullName>
+        <default>false</default>
+        <label>How to Reset / Change Password (Local Account)</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Reset / Change Password (Work Account)</fullName>
+        <default>false</default>
+        <label>How to Reset / Change Password (Work Account)</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Search for Products</fullName>
+        <default>false</default>
+        <label>How to Search for Products</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Settle Invoices via ACH</fullName>
+        <default>false</default>
+        <label>How to Settle Invoices via ACH</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Specify Unloading Point &amp; Tank Numbers</fullName>
+        <default>false</default>
+        <label>How to Specify Unloading Point &amp; Tank Numbers</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Track Shipments</fullName>
+        <default>false</default>
+        <label>How to Track Shipments</label>
+    </customValue>
+    <customValue>
+        <fullName>How to Update ACH Information</fullName>
+        <default>false</default>
+        <label>How to Update ACH Information</label>
+    </customValue>
+    <customValue>
+        <fullName>How to View / Download Invoice</fullName>
+        <default>false</default>
+        <label>How to View / Download Invoice</label>
+    </customValue>
+    <customValue>
+        <fullName>How to View Open / Closed Payments</fullName>
+        <default>false</default>
+        <label>How to View Open / Closed Payments</label>
+    </customValue>
+    <customValue>
+        <fullName>How to View Order History</fullName>
+        <default>false</default>
+        <label>How to View Order History</label>
+    </customValue>
+    <customValue>
+        <fullName>How to View Payment History</fullName>
+        <default>false</default>
+        <label>How to View Payment History</label>
+    </customValue>
+    <customValue>
+        <fullName>How to View Product Details</fullName>
+        <default>false</default>
+        <label>How to View Product Details</label>
+    </customValue>
+    <customValue>
+        <fullName>How to View Suggested Products</fullName>
+        <default>false</default>
+        <label>How to View Suggested Products</label>
+    </customValue>
+    <customValue>
+        <fullName>Incorrect Account Alignments</fullName>
+        <default>false</default>
+        <label>Incorrect Account Alignments</label>
+    </customValue>
+    <customValue>
+        <fullName>Incorrect Permissions</fullName>
+        <default>false</default>
+        <label>Incorrect Permissions</label>
+    </customValue>
+    <customValue>
+        <fullName>Incorrect Product Entitlements</fullName>
+        <default>false</default>
+        <label>Incorrect Product Entitlements</label>
+    </customValue>
+    <customValue>
+        <fullName>Incorrect Product Pricing</fullName>
+        <default>false</default>
+        <label>Incorrect Product Pricing</label>
+    </customValue>
+    <customValue>
+        <fullName>Missing / Incorrect Payment Accounts</fullName>
+        <default>false</default>
+        <label>Missing / Incorrect Payment Accounts</label>
+    </customValue>
+    <customValue>
+        <fullName>Missing Account Number</fullName>
+        <default>false</default>
+        <label>Missing Account Number</label>
+    </customValue>
+    <customValue>
+        <fullName>Missing Local Account Option</fullName>
+        <default>false</default>
+        <label>Missing Local Account Option</label>
+    </customValue>
+    <customValue>
+        <fullName>Missing Payment Portal Access</fullName>
+        <default>false</default>
+        <label>Missing Payment Portal Access</label>
+    </customValue>
+    <customValue>
+        <fullName>Missing Rep&apos;s Email Address</fullName>
+        <default>false</default>
+        <label>Missing Rep&apos;s Email Address</label>
+    </customValue>
+    <customValue>
+        <fullName>Missing Safety Data Sheet (SDS)</fullName>
+        <default>false</default>
+        <label>Missing Safety Data Sheet (SDS)</label>
+    </customValue>
+    <customValue>
+        <fullName>Missing Unloading Point or Tank Number</fullName>
+        <default>false</default>
+        <label>Missing Unloading Point or Tank Number</label>
+    </customValue>
+    <customValue>
+        <fullName>Missing Verification Email</fullName>
+        <default>false</default>
+        <label>Missing Verification Email</label>
+    </customValue>
+    <customValue>
+        <fullName>Missing Work Account Option</fullName>
+        <default>false</default>
+        <label>Missing Work Account Option</label>
+    </customValue>
+    <customValue>
+        <fullName>Order Acknowledgement Not Received</fullName>
+        <default>false</default>
+        <label>Order Acknowledgement Not Received</label>
+    </customValue>
+    <customValue>
+        <fullName>Order Confirmation Not Received</fullName>
+        <default>false</default>
+        <label>Order Confirmation Not Received</label>
+    </customValue>
+    <customValue>
+        <fullName>Order Missing From History</fullName>
+        <default>false</default>
+        <label>Order Missing From History</label>
+    </customValue>
+    <customValue>
+        <fullName>Order Not Received</fullName>
+        <default>false</default>
+        <label>Order Not Received</label>
+    </customValue>
+    <customValue>
+        <fullName>Service Not Completed</fullName>
+        <default>false</default>
+        <label>Service Not Completed</label>
+    </customValue>
+    <customValue>
+        <fullName>Single Sign On Error (Work Account)</fullName>
+        <default>false</default>
+        <label>Single Sign On Error (Work Account)</label>
+    </customValue>
+    <customValue>
+        <fullName>Status of Service Request</fullName>
+        <default>false</default>
+        <label>Status of Service Request</label>
+    </customValue>
+    <customValue>
+        <fullName>Tax and Freight Not Calculated</fullName>
+        <default>false</default>
+        <label>Tax and Freight Not Calculated</label>
+    </customValue>
+    <customValue>
+        <fullName>Unsupported Browser</fullName>
+        <default>false</default>
+        <label>Unsupported Browser</label>
+    </customValue>
+    <customValue>
+        <fullName>Work Account Failure</fullName>
+        <default>false</default>
+        <label>Work Account Failure</label>
+    </customValue>
+    <description>Common picklist values on case and Chat bot routing object for Ecolab Project.</description>
+    <masterLabel>Sub Category</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

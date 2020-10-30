@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Required_For_Commerce_User__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is used to track if this is mandatory for a commerce user to see portal</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Required For Commerce User</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>EC_CustomPermissionData</label>
+    <pluralLabel>EC_CustomPermissions</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

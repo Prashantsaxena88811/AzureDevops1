@@ -1,0 +1,14 @@
+<!--
+
+  @Page Name     : EC_OrderConfirmation
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Sai Kiran Pidugu      6/6/2019          Order confirmation page
+
+--> 
+
+<apex:page docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" cache="false" applyHtmlTag="false">
+    <c:EC_OrderConfirmation />
+</apex:page>

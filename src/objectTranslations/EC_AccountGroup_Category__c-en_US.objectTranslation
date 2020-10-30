@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Group Category</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Group Categories</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Group --></label>
+        <name>EC_AccountGroup__c</name>
+        <relationshipLabel><!-- Account Group Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>EC_Category__c</name>
+        <relationshipLabel><!-- Account Group Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Currency --></label>
+        <name>EC_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Storefront --></label>
+        <name>EC_Storefront__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

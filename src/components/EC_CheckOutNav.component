@@ -1,0 +1,65 @@
+<!--
+
+  @Component Name     : EC_CheckOutNav
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Sai Kiran Pidugu     6/06/2019         This component will show the navigation for checkout.
+
+-->
+
+<apex:component >    
+    <script id="EC-CheckoutHeader-Desktop" type="text/template">         
+        <div class="checkoutNavContainer">
+            <div class="checkout-mobile visible-xs">
+                <ul class="nav nav-pills nav-justified thumbnail checkout-nav-ul mobile-ul">
+                    {{#each this.views}}
+                        <div class="circle-wrapper {{#ifEquals @index ../index}}active{{else}}disabled{{/ifEquals}} cc_checkoutStep{{@index}} cc_checkoutStep">
+                            <div class="mob-circle">
+                                <span class="nav-header-title">{{{this.title}}}</span>
+                            </div>
+                            <div class="mob-line"></div> 
+                        </div>
+                    {{/each}}
+                    <div class="circle-wrapper disabled cc_checkoutStepOrderConfirmation cc_checkoutStep">
+                        <div class="mob-circle">
+                            <span class="nav-header-title order-ackn-title">{{pageLabelMap 'CheckOut_OrderConfirmationStep'}}</span>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <ul class="nav nav-pills nav-justified thumbnail checkout-nav-ul hidden-xs">
+                {{#each this.views}}
+                    <li class="{{#ifEquals @index ../index}}active{{else}}disabled{{/ifEquals}} cc_checkoutStep{{@index}} cc_checkoutStep">
+                        <span class="nav-header-title">{{{this.title}}}</span>
+                    </li>
+                {{/each}}
+                <li class="disabled cc_checkoutStepOrderConfirmation cc_checkoutStep">
+                    <span class="nav-header-title order-ackn-title">{{pageLabelMap 'CheckOut_OrderConfirmationStep'}}</span>
+                </li>
+            </ul>
+        </div>              
+    </script>
+      <script type="text/javascript">
+        jQuery(function($){
+            CCRZ.uiProperties.CheckoutNav.desktop.tmpl = 'EC-CheckoutHeader-Desktop';
+
+            //Top Navigation to show only 3 steps intead of 5 and highlight the current step
+            CCRZ.pubSub.on('view:cartCheckoutView:refresh', function (viewInstance) {
+                $(".cc_checkoutStep1 .nav-header-title").text(CCRZ.pagevars.pageLabels.CheckOut_InfoStep);
+                //$(".cc_my_chead, .separator , .qlheader ").addClass("hide");
+                $('.cc_checkoutStep0').hide();
+                $('.cc_checkoutStep3').hide();
+                $(".checkoutContent").prepend($(".checkoutNavContainer"));
+                //$(".sec-nav").hide();
+                //$(".cc_col_search").hide();
+                if(CCRZ.cartCheckoutView.currStep == 2){
+                    $(".cc_checkoutStep1").addClass("done-item");
+                }else{
+                    $(".cc_checkoutStep1").removeClass("done-item");
+                }
+            });
+        });
+      </script>
+</apex:component>

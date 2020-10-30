@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send notification once case is assigned to owner (either user or queue)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Case Assign Notification to Owner</name>
+    <style>none</style>
+    <subject>Ecolab Connect {!Case.CaseNumber} Assigned to your Queue</subject>
+    <textOnly>Hello!
+
+You have a new case {!Case.CaseNumber} - {!Case.Subject} that has been assigned to your queue. Please access the case via Salesforce Service Cloud Console within the Service Level Agreement (SLA) for response and resolution time.
+
+Thank you,
+
+Ecolab Support Team
+
+-----
+
+Please do not reply to this email.  This is a system generated email to inform you of an Ecolab Connect Case assigned to your Queue.  This message was generated from https://connect.ecolab.com.
+
+ECOLAB
+Global Headquarters
+1 Ecolab Place, St. Paul MN 55102
+Ecolab.com
+Privacy Policy
+© 2020 Ecolab Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

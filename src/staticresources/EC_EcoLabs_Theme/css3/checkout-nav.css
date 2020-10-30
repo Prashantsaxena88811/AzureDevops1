@@ -1,0 +1,186 @@
+/*CheckOutNav Styles*/
+.checkoutNavContainer {
+  position: relative;
+}
+
+.checkoutNav-logo {
+  position: absolute;
+  top: -30px;
+}
+
+ul.checkout-nav-ul {
+  font-size: 16px;
+  width: 65%;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 50px auto;
+}
+
+ul.checkout-nav-ul li {
+  background: #d9d9d9;
+  color: #4d4f53;
+  display: flex;
+  height: 1px;
+  line-height: 24px;
+  margin: 0;
+  position: relative;
+  text-align: right;
+  z-index: 1000;
+  padding: 0px;
+  font-size: 16px;
+  width: 38%;
+  text-transform: uppercase;
+}
+
+ul.checkout-nav-ul li::before {
+  background: #fff;
+  border: 1px solid #007ac9;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  left: -36px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: -12px;
+  content: "";
+}
+
+ul.checkout-nav-ul li.active::before {
+  border: 13px solid #007ac9;
+  height: 34px;
+  width: 34px;
+  top: -17px;
+  left: -44px;
+}
+
+ul.checkout-nav-ul li.active {
+  background-color: #d9d9d9;
+  font-weight: bold;
+  line-height: 34px;
+}
+
+ul.checkout-nav-ul li.active ~ li {
+  background-color: #d9d9d9;
+}
+
+ul.checkout-nav-ul li.active ~ li::before {
+  background-color: #fff;
+}
+
+ul.checkout-nav-ul li:last-child {
+  flex-basis: 0;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
+.nav-header-title {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 20px;
+  white-space: nowrap;
+  left: -23px;
+}
+
+ul.checkout-nav-ul li.done-item::before {
+  content: "\e876";
+  font-family: "Material Icons";
+  color: #fff;
+  background: #275e37;
+}
+.mobile-ul {
+  display: block !important;
+}
+.checkout-mobile {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.cc_checkoutStep0 + .mob-line,
+.cc_checkoutStep3 + .mob-line {
+  display: none;
+}
+.mob-circle {
+  width: 17px;
+  height: 17px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  position: relative;
+}
+.circle-wrapper.active .mob-circle {
+  border: 6px solid #007ac9;
+}
+.mob-line {
+  width: 2px;
+  height: 20px;
+  background: #d9d9d9;
+  margin-left: 8px;
+}
+.mob-circle .nav-header-title {
+  position: absolute;
+  left: 30px;
+  top: 0px;
+  transform: none;
+}
+
+/* mobile styles */
+@media only screen and (max-width: 767px) {
+  .mobile-ul {
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+    margin-bottom: 30px !important;
+  }
+  .checkoutNav-logo {
+    margin-left: 20px;
+  }
+  .done-item .mob-circle::before {
+    content: "\e876";
+    font-family: "Material Icons";
+    color: #fff;
+    background: #5b8f22;
+    border-radius: 50%;
+  }
+  .checkout-mobile .done-item{
+    line-height: normal;
+  }
+  .checkoutNavContainer .checkout-mobile .done-item .mob-circle:first-child{
+      padding-top: 0px;
+    }
+    .checkoutNavContainer .checkout-mobile .done-item .mob-circle::before{
+      margin: -2px;
+    }
+}
+@media (max-width: 1365px) and (min-width: 768px){
+  .titlenames, .ec-contact-infor{
+    width: 32%
+  }
+  .order-ackn-title{
+    text-align:center;
+  }
+  .ec-contact-infor{
+    display: inline-block;
+    margin-bottom: 32px;
+  }
+  ul.checkout-nav-ul {
+    margin-top: 0px;
+  }
+  ul.checkout-nav-ul li.active .nav-header-title{
+    top: 16px;
+  }
+  ul.checkout-nav-ul{
+    width: 500px;
+  }
+  ul.checkout-nav-ul li{
+    margin-left: 50px;
+  }
+  .nav-header-title{
+    font-size:14px;
+  }
+}
+@media (max-width: 1700px) and (min-width: 1366px){
+  ul.checkout-nav-ul li{
+    margin-left: 25px;
+  }
+}

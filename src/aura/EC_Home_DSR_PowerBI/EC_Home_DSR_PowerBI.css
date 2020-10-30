@@ -1,0 +1,85 @@
+.THIS.marketing-wrapper {
+	align-items: stretch;
+}
+.THIS.marketing-wrapper .home-tile-wrapper {
+	margin-top: 27px;
+}
+.THIS.marketing-wrapper .heading {
+	padding-bottom: 16px;
+	display: block;
+	width: 100%;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 1.5;
+	letter-spacing: .3px;
+	color: #005172;
+}
+.THIS .home-tile {
+	box-shadow: 0 2px 5px 0 rgba(124, 93, 93, .06);
+	box-sizing: border-box;
+	background-color: #ffffff;
+	padding: 20px 30px;
+	display: flex;
+	align-items: center;
+	height: calc(100% - 40px);
+}
+.THIS .home-tile-logo {
+	width: 133px;
+	margin-right: 20px;
+}
+.THIS .home-tile-text {
+	width: calc(100% - 153px);
+}
+.THIS .home-tile-text p {
+	padding-bottom: 17px;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: .3px;
+}
+.THIS .home-tile-text a {
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: .3px;
+	color: #007ac9;
+}
+@media (min-width: 1024px) and (max-width: 1365px) {
+	.THIS.marketing-wrapper .heading {
+		font-size: 14px;
+	}
+}
+@media (min-width: 768px) and (max-width: 1365px) {
+	.THIS .home-tile-logo {
+		width: 103px;
+		margin: 0 14px 0 0;
+	}
+	.THIS .home-tile-text {
+		width: calc(100% - 117px);
+	}
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+	.THIS .home-tile {
+		margin-bottom: 24px;
+	}
+}
+@media screen and (max-width: 767px) {
+	.THIS.marketing-wrapper .heading {
+		font-size: 14px;
+	}
+	.THIS .home-tile {
+		margin-bottom: 16px;
+		padding: 10px 20px;
+	}
+	.THIS .home-tile-logo {
+		display: none;
+	}
+	.THIS .home-tile-text {
+		width: 100%;
+	}
+	.THIS .home-tile-text p {
+		padding-bottom: 14px;
+		font-size: 14px;
+	}
+	.THIS .home-tile-text a {
+		font-size: 14px;
+	}
+}

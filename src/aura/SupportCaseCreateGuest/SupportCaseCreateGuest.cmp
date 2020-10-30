@@ -1,0 +1,100 @@
+<aura:component controller="SupportCaseCreateGuestController" implements="force:appHostable,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="contactId" type="String"  />
+    <aura:attribute name="issueRecordTypeId" type="String"  />
+    <aura:attribute name="options" type="List" access="PRIVATE"/>
+    <aura:attribute name="category" type="String" ></aura:attribute>
+    <aura:attribute name="subCategory" type="String" ></aura:attribute>
+    <aura:attribute name="recordId" type="Id" />
+    
+    <aura:attribute name="captchaStatus" type="String" description="This holds the verification status of captcha" />
+    <aura:attribute name="isCaptchaVerified" type="boolean" default="false" />
+    <aura:attribute name="isSubmitDisabled" type="Boolean" default="true" />
+ 
+    <aura:attribute name="objCase" type="Case" default="{
+		'sobjectType': 'Case', 
+                                                         
+	}" ></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <div>
+        Don’t see what you are looking for ? &nbsp;&nbsp;&nbsp;
+        <button class="slds-button slds-button_brand" onclick="{!c.handleShowModal}" >CONTACT SUPPORT</button>
+    </div>
+    
+    <div aura:id="model-section" class="slds-p-top-xx_large slds-hide">
+        <section  role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal-x_small"  aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick="{!c.handleShowModal}" >
+                        X
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Create Case</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium slds-p-top_none" id="modal-content-id-1">
+                    
+                    
+                    <div  class="slds-container_medium case-form-container">
+                        <lightning:recordEditForm aura:id="caseRecordForm" objectApiName="Case" onsubmit="{!c.handleSubmit}" onsuccess="{!c.handleSuccess}" onerror="{!c.handleError}"  >
+                            <lightning:messages />
+                            
+							<div class="slds-form-element">
+                                <abbr class="slds-required" title="required">* </abbr><label class="slds-form-element__label" for="firstname">First Name</label>
+                                <lightning:inputField aura:id="firstname" fieldName="First_Name__c" variant="label-hidden" required="true"/>
+                            </div>
+                            <div class="slds-form-element">
+                                <abbr class="slds-required" title="required">* </abbr><label class="slds-form-element__label" for="lastname">Last Name</label>
+                                <lightning:inputField aura:id="lastname" fieldName="Last_Name__c" variant="label-hidden" required="true"/>
+                            </div>
+              
+							
+                            <div class="slds-form-element">
+                                <abbr class="slds-required" title="required">* </abbr><label class="slds-form-element__label" for="email">Email</label>
+                                <lightning:inputField aura:id="email" fieldName="Contact_Email__c" variant="label-hidden" required="true"/>
+                            </div>
+                            
+                            <div class="slds-form-element">
+                                <abbr class="slds-required" title="required">* </abbr><label class="slds-form-element__label" for="phone">Phone NO</label>
+                                <lightning:inputField aura:id="phone" fieldName="SuppliedPhone" variant="label-hidden" required="true"/>
+                            </div>
+                            <div class="slds-form-element">
+                                <abbr class="slds-required" title="required">* </abbr><label class="slds-form-element__label" for="company">Company Name</label>
+                                <lightning:inputField aura:id="company" fieldName="Company_Name__c" variant="label-hidden" required="true"/>
+                            </div>
+                            <div class="slds-form-element">
+                                <abbr class="slds-required" title="required">* </abbr><label class="slds-form-element__label" for="subject">Subject</label>
+                                <lightning:inputField aura:id="subject" fieldName="Subject" variant="label-hidden" required="true"/>
+                            </div>
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="description">Description</label>
+                                <lightning:inputField aura:id="description" fieldName="Description" variant="label-hidden"/>
+                            </div>
+                            <!--Captcha-->
+                            <div class="slds-form-element">
+                                <iframe id="iframe_captcha" aura:id="iframe_captcha" src="{! '/apex/EC_RegPageCaptcha' }"
+                                        frameBorder="0" scrolling="no" allowtransparency="true" />
+                                <aura:if isTrue="{!v.captchaStatus ==  'Verified'}">
+                                    <aura:set attribute="else">
+                                        <div class="captcha-error-message slds-hide" id="captchaErrorMsg">
+                                            {!$Label.c.EC_CaptchaCannotbeBlank}
+                                        </div>
+                                    </aura:set>
+                                </aura:if> 
+                            </div>
+                            <div class="submitButtonContainer">
+                                <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="Submit" label="SUBMIT" disabled="{!v.isSubmitDisabled}"/>
+                                <lightning:button class="slds-m-top_small" label="CANCEL" onclick="{!c.handleShowModal}" />
+                            </div>
+                        </lightning:recordEditForm>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <br/><br/>
+    </div>
+    <div aura:id="spinner" class="case-redirection-hide">
+        <lightning:spinner alternativeText="Loading" class="custom-spinner" size="small" />
+    </div>
+    
+</aura:component>

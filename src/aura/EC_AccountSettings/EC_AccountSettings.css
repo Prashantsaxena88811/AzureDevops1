@@ -1,0 +1,1205 @@
+.THIS {
+    margin-top: 24px;
+    margin-bottom: 72px;
+}
+.THIS mark {
+    color: #007ac9;
+    background-color: inherit;
+    font-weight: bold;
+}
+.THIS .accounts-wrapper {
+    background-color: #ffffff;
+    padding: 24px 40px 32px 40px;
+}
+.THIS .accounts-wrapper .heading {
+    border-radius: 2px;
+    border: solid 1px #d9d9d9;
+    background-color: rgba(94, 182, 228, 0.2);
+    padding: 20px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.44px;
+    color: #373737;
+    text-transform: uppercase;
+}
+.THIS .accounts-wrapper label {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4d4f53;
+    position:relative;
+}
+.THIS .account-group abbr{
+    color: #4d4f53;
+    position: absolute;
+    right: -5px;
+}
+
+.THIS .accounts-wrapper label.label-value {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4d4f53;
+}
+.THIS .accounts-wrapper .contact-section {
+    margin-top: 24px;
+}
+.THIS .accounts-wrapper .contact-section .value {
+    border-radius: 2px;
+    border: solid 1px #d9d9d9;
+    background-color: #ffffff;
+    padding: 24px 40px;
+}
+.THIS .accounts-wrapper .contact-section .value .values td {
+    padding-top: 6px;
+}
+.THIS .accounts-wrapper .accounts-section {
+    margin-top: 33px;
+}
+.THIS .accounts-wrapper .accounts-section .value {
+    border-radius: 2px;
+    border: solid 1px #d9d9d9;
+    background-color: #ffffff;
+    padding: 25px 24px 26px 16px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.THIS .accounts-wrapper .accounts-section .value span {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #4d4f53;
+}
+.THIS .accounts-wrapper .accounts-section .value span .count {
+    font-weight: bold;
+    color: #005172;
+}
+.THIS .accounts-wrapper .accounts-section .value .search-wrapper {
+    position: relative;
+}
+.THIS .accounts-wrapper .accounts-section .value .search-wrapper input {
+    width: 724px;
+}
+.THIS .accounts-wrapper .accounts-section .value .search-wrapper button {
+    cursor: pointer;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    padding: 9px 16px;
+    color: #007ac9;
+    background: #fff;
+    border: 0;
+    box-shadow: none;
+    height: 42px;
+}
+
+.THIS .accounts-wrapper .accounts-section .account-details-section {
+    border-radius: 2px;
+    border: solid 1px #d9d9d9;
+    background-color: #ffffff;
+    /*margin-top: 16px;*/
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.THIS .accounts-wrapper .accounts-section .account-details-section .left {
+    min-width: 249px;
+    border-right: solid 1px #d9d9d9;
+    padding-left: 16px;
+    padding-top: 22px;
+    padding-right: 8px;
+    padding-bottom: 32px;
+}
+.THIS .accounts-wrapper .accounts-section .account-details-section .left h3 {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #005172;
+}
+.THIS .accounts-wrapper .accounts-section .account-details-section .left .seperator {
+    width: 49px;
+    height: 2px;
+    background-color: #007ac9;
+    margin-top: 17px;
+    display: block;
+}
+.THIS .accounts-wrapper .accounts-section .account-details-section .left .account-name {
+    margin-top: 14px;
+}
+.THIS .accounts-wrapper .accounts-section .account-details-section .left .account-name span {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #4d4f53;
+    display: block;
+}
+.THIS .accounts-wrapper .accounts-section .account-details-section .left .account-name span.label-value {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #005172;
+}
+.THIS .accounts-wrapper .accounts-section .account-details-section .right {
+    width: 100%;
+}
+.THIS .accounts-wrapper .accounts-section .account-details-section .right .heading {
+    padding: 21px 19px 23px 19px;
+    background-color: inherit;
+    border: none;
+    text-transform: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #005172;
+}
+.THIS .accounts-wrapper .accounts-section .account-details-section .right table {
+    margin-bottom: 12px;
+    table-layout: fixed;
+}
+.THIS .accounts-wrapper .accounts-section .account-details-section .right table th {
+    padding: 16px 20px;
+    background-color: #f7f7f7;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #373737;
+    border-top: solid 1px #d9d9d9;
+    border-bottom: solid 1px #d9d9d9;
+}
+.THIS .accounts-wrapper .accounts-section .account-details-section .right table td {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4d4f53;
+    padding: 20px;
+}
+
+.THIS .accounts-wrapper .accounts-section .account-details-section .left .account-number,
+.THIS .accounts-wrapper .accounts-section .account-details-section .left .account-sales-contact {
+    margin-top: 24px;
+}
+
+.THIS .accounts-wrapper .accounts-section .account-details-section .left .account-number span,
+.THIS .accounts-wrapper .accounts-section .account-details-section .left .account-sales-contact span {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #4d4f53;
+    display: block;
+}
+
+.THIS .accounts-wrapper .accounts-section .account-details-section .left .account-number span.label-value,
+.THIS .accounts-wrapper .accounts-section .account-details-section .left .account-sales-contact span.label-value {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.THIS .accounts-wrapper .accounts-section .support_message
+{
+    height: 71px;
+    border-radius: 2px;
+    border: solid 1px #d9d9d9;
+    background-color: #f7f7f7;
+}
+
+.THIS .accounts-wrapper .accounts-section .support_message .message_text
+{
+    padding: 24px 0px 24px 16px;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.44;
+    letter-spacing: 0.4px;
+    color: #4d4f53;
+}
+
+.THIS .slds-tabs_default__content
+{
+    margin-bottom: 16px;
+    padding: 0px;
+}
+
+.THIS .slds-tabs_default__nav .slds-tabs_default__item
+{
+    height: 2.5em;
+}
+
+
+.THIS .slds-tabs_default__nav li a[role="tab"]{
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4d4f53;
+    height: 20px;
+}
+
+.THIS .slds-tabs_default__nav li[data-label="Request Portal Access"]{
+    margin-left: 46px;
+    width: 254px;
+}
+
+.THIS .slds-tabs_default__nav li[data-label="Account Information"]{
+
+    width: 237px;
+}
+
+
+.THIS .slds-tabs_default__nav .slds-is-active a[role="tab"]
+{
+    font-weight: bold;
+    color: #007ac9 !important;
+    text-decoration: none;
+}
+
+.THIS .account-info
+{
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+}
+.THIS .self_cover .account-info .align_text{
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: 0.4px;
+    color: #4d4f53;
+    align-self: center;
+}
+
+
+.THIS .account-second{
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+    margin-bottom: 23px;
+}
+
+.THIS .slds-tabs_default__content .align_text
+{
+
+    height: 22px;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: 0.4px;
+    color: #4d4f53;
+    padding: 21px 0px 21px 16px;
+}
+
+.THIS .add-account
+{
+    width: 140px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #ffffff;
+    margin:11px 0px;
+}
+
+.THIS .account-input input
+{
+    width: 373px;
+    height: 42px;
+    border-radius: 2px;
+    padding-left: 16px;
+    padding-right: 20px;
+    margin-right:32px;
+    font-size:14px;
+}
+
+.THIS .account-second > div
+{
+    display:flex;
+    justify-content: space-between;
+}
+
+.THIS .cancel
+{
+
+    margin-right: 20px;
+    width: 140px;
+    height: 42px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing:0.4px;
+}
+
+.THIS .btn-group button[disabled]
+{
+    background-color: #adafaf;
+}
+
+.THIS .btn-group .add
+{
+    margin: 0px 4px 0px 0;
+    background-color: #007ac9;
+    width: 140px;
+    height: 42px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing:0.4px;
+}
+
+.THIS .btn-group
+{
+    margin-top: 20px;
+}
+
+.THIS .slds-has-error:after
+{
+    padding-right: 1.5rem;
+}
+
+.THIS .self_cover
+{
+    border: 1px solid #d9d9d9;
+    padding:16px;
+    margin-bottom:16px;
+}
+.THIS .accounts-section .slds-tabs--default__link{
+    overflow: initial;
+    display: inline-block;
+    height: auto;
+    white-space: normal;
+    line-height: normal;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: center;
+    text-decoration:none;
+    width:220px;
+    padding-bottom:10px;
+    font-size: 16px;
+}
+.THIS .accounts-section  .slds-tabs--default__item.slds-active .slds-tabs--default__link{
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color:#007ac9;
+    width:220px;
+}
+.THIS .slds-tabs--default__link:hover{
+    text-decoration: none;
+}
+
+.THIS .contact-us .accounts-wrapper .heading{
+    border-radius: 2px;
+    border: solid 1px #d9d9d9;
+    background-color: rgba(94, 182, 228, 0.2);
+    padding: 16px;
+}
+.THIS .contact-us .user-info{
+    padding: 21px 40px 21px 40px;
+    border: solid 1px #d9d9d9;
+    background-color: #ffffff;
+    display: flex;
+    border-top: 0px;
+    border-radius: 0px;
+}
+.THIS .contact-us .user-info .name,
+.THIS .contact-us .user-info .email-id
+{
+    min-width:20%;
+    margin-right:20px;
+}
+.THIS .contact-us .user-info label{
+    display:block;
+    margin-bottom:6px;
+}
+.THIS .accounts-wrapper .accounts-section .account-details-section .right table th.tbl-header-address{
+  width: 142px;
+}
+.THIS .accounts-wrapper .accounts-section .account-details-section .right table th.tbl-header-city{
+  width: 311px;
+}
+
+@media (max-width: 1365px) and (min-width: 768px)
+{
+    .THIS {
+        margin-top:16px;
+    }
+    .THIS .accounts-wrapper{
+        padding: 0px 16px;
+        margin: 0 10px;
+    }
+
+    .THIS .midBox
+    {
+        margin-top: 0px;
+        margin-bottom: 16px;
+    }
+	.THIS .choose-your-profile .profile-details {
+        flex-wrap: wrap;
+    }
+    .THIS .choose-your-profile .profile-details .right-spacer{
+        margin: 0 0 20px 0;
+        width: 48.5%;
+    }
+	.THIS .choose-your-profile .profile-details .right-spacer:nth-child(odd){
+        margin-right: 3%;
+    }
+    .THIS .portal-access .wrapper .choose-your-profile .profile-details .profile{
+        padding: 16px 0 24px 0;
+        margin: 0px;
+    }
+
+    .THIS .portal-access .wrapper .choose-your-profile .profile-details .profile .user{
+        width: 99px;
+        height:99px;
+    }
+    .THIS .portal-access .wrapper .profile .profile-name{
+        margin: 16px 0 8px 0;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .THIS .portal-access .wrapper .choose-your-profile .profile-details .profile .profile-content{
+        width: 87.731%;
+        min-height: 76px;
+        text-align:center;
+        font-size: 14px;
+        line-height: 1.43;
+        letter-spacing: 0.1px;
+    }
+
+    .THIS .portal-access .wrapper .profile .ec_btn_secondary{
+        height: 42px;
+        padding: 12px 0px 14px 0px;
+    }
+
+    .THIS .selected_btn{
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.4px;
+        text-align: center;
+        width: 90.185%;
+        height: 42px;
+        border-radius: 4px;
+        border: solid 1px #007ac9;
+        background-color: #ffffff;
+        padding: 0 0px 14px 0px;
+    }
+    .THIS .selected_btn p{
+        margin-right: 0px;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.4px;
+        text-align: center;
+        color: #007ac9;
+        padding-top:0px;
+    }
+    .THIS .selected_btn .doneIcon{
+        color:#5b8f22;
+        float:left;
+        padding-left: 16.4px;
+        padding-top: 0px;
+    }
+    .THIS .self_cover{
+        padding:11px 16px;
+    }
+    .THIS .add-account{
+        margin:0px;
+    }
+    .THIS .account-second{
+        border-radius: 2px;
+        display: block;
+        justify-content: space-between;
+        margin-top: 16px;
+        margin-bottom: 23px;
+    }
+    .THIS .account-group{
+        display: flex;
+    }
+    .THIS .account-input input{
+        width: 309px;
+        height: 41px;
+    }
+    .THIS .add-account{
+        margin:0px;
+    }
+    .THIS .btn-group{
+        margin-top: 45px;
+    }
+    .THIS .accounts-wrapper .accounts-section .value .search-wrapper input{
+        width: 235px;
+        padding: 0px 0 0 10px;
+    }
+    .THIS .accounts-wrapper .accounts-section .value span{
+        padding-top: 10px;
+        font-size: 14px;
+    }
+    .THIS .accounts-section .slds-tabs--default__item.slds-active .slds-tabs--default__link,
+    .THIS .accounts-section .slds-tabs--default__link{
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    .THIS .self_cover .account-info .align_text{
+        font-size: 14px;
+    }
+    .THIS .accounts-wrapper label{
+        font-size: 14px;
+    }
+    .THIS .cancel{
+        background: none;
+    }
+    .THIS .accounts-wrapper .accounts-section .value .search-wrapper input
+    {
+        font-size: 14px;
+    }
+    .THIS .accounts-wrapper .accounts-section .support_message .message_text{
+        font-size: 14px;
+        padding:16px 0 15px 16px;
+    }
+    .THIS .accounts-wrapper .accounts-section .account-details-section .left h3 span{
+        font-size: 16px;
+    }
+    .THIS .account-details-section .left .account-details{
+        display: flex;
+    }
+    .THIS .account-details-section .left .account-details > div{
+        margin-right: 25px;
+        min-width:30%;
+    }
+    .THIS .account-details-section .left .account-details > div:last-child{
+        margin-right: 0px;
+    }
+    .THIS .accounts-wrapper .accounts-section .account-details-section .left .account-name span.label-value{
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: #005172;
+    }
+    .THIS .accounts-wrapper .accounts-section .account-details-section .left .account-number span.label-value,
+    .THIS .accounts-wrapper .accounts-section .account-details-section .left .account-sales-contact span.label-value{
+
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.71;
+        letter-spacing: normal;
+        color: #4d4f53;
+    }
+    .THIS .accounts-wrapper .accounts-section .account-details-section .right .heading{
+        display: none;
+    }
+    .THIS .accounts-wrapper .accounts-section .account-details-section .right table td{
+        font-size: 14px;
+    }
+    .THIS .accounts-wrapper .accounts-section .account-details-section{
+        flex-direction:column;
+        display:flex;
+        margin-bottom:20px;
+    }
+    .THIS .accounts-wrapper .accounts-section .account-details-section .left .account-number,
+    .THIS .accounts-wrapper .accounts-section .account-details-section .left .account-sales-contact{
+        margin-top:15px;
+    }
+    .THIS .accounts-wrapper .accounts-section .account-details-section .right table th.tbl-header-address{
+        width: 100px;
+    }
+    .THIS .accounts-wrapper .accounts-section .account-details-section .right table th.tbl-header-city{
+        width: 170px;
+    }
+    .THIS .accounts-wrapper{
+        padding:16px;
+    }
+    .THIS .contact-us .user-info{
+        justify-content: space-between;
+    }
+    .THIS .contact-us .user-info{
+        padding:16px 40px 21px 16px;
+    }
+}
+
+
+
+
+/* Media for Account Settings */
+
+/* Mobile devices */
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+
+    .THIS {
+        margin-top:16px;
+        margin-left:0px;
+        margin-right:0px;
+    }
+    .THIS .accounts-wrapper{
+        padding: 0px 21px;
+    }
+    .THIS .accounts-wrapper h1{
+        padding-top:20px;
+        font-size: 22px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.18;
+        letter-spacing: normal;
+        color: #005172;
+    }
+    .THIS .accounts-wrapper .contact-section{
+        border: solid 1px #d9d9d9;
+    }
+    .THIS .accounts-wrapper .contact-section .value{
+        border:none;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        padding: 17px 15px 15px 36px;
+        letter-spacing: normal;
+    }
+    .THIS .accounts-wrapper .heading{
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.35px;
+        border:none;
+        border-bottom:solid 1px #d9d9d9;
+    }
+    .THIS .accounts-wrapper .contact-section .value .label-name{
+        font-size:14px;
+        margin-bottom:4px;
+    }
+    .THIS .accounts-wrapper .contact-section .value .label-value{
+        font-size:16px;
+        margin-bottom:16px;
+    }
+    .THIS .slds-tabs_default__content .align_text{
+        padding:0px;
+    }
+    .THIS .accounts-section .self_cover{
+        padding: 16px 16px 16px 16px;
+    }
+    .THIS .accounts-section .self_cover .account-info{
+        display: flex;
+        height:auto;
+        flex-direction: column;
+    }
+
+    .THIS .accounts-section .self_cover .account-info .align_text{
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.43;
+        letter-spacing: 0px;
+        color: #4d4f53;
+        width: 201px;
+        height: auto;
+        padding-bottom:16px;
+        align-self:initial;
+
+    }
+    .THIS .accounts-section .self_cover .account-info .align_text .add-account{
+        margin-top: 16px;
+    }
+    .THIS .accounts-section .self_cover .account-info .add-account{
+        width: 246px;
+        height: 36px;
+        border-radius: 2px;
+        font-size: 12px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.34px;
+        text-align: center;
+        color: #ffffff;
+    }
+    .THIS .accounts-section .self_cover .account-second{
+        display: inline;
+        height: auto;
+        margin-top: 16px;
+    }
+    .THIS .accounts-section .self_cover .account-second .account-input{
+        margin-bottom: 24px;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .THIS .accounts-section .self_cover .account-second .account-input label.slds-form-element__label{
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.43;
+        letter-spacing: .09px;
+        color: #4d4f53;
+        margin-bottom: 4px;
+        padding-right: 0px;
+    }
+    .THIS .accounts-section .self_cover .account-second .account-input.slds-form-element .slds-form-element__control input{
+        width: 100%;
+        height: 36px;
+        border-radius: 2px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+        border: solid 1px #d9d9d9;
+        background-color: #ffffff;
+    }
+
+    .THIS .accounts-section .self_cover .account-second > div{
+        display:inline;
+    }
+    .THIS .accounts-section .self_cover .account-second .account-input.slds-form-element .slds-form-element__control .slds-input{
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.43;
+        letter-spacing: 0px;
+        color: #4d4f53;
+    }
+    .THIS .accounts-section .self_cover .account-second .btn-group{
+        border-radius: 2px;
+        font-size: 12px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.34px;
+        text-align: center;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+    .THIS .accounts-section .self_cover .account-second .btn-group button:first-child{
+        margin-bottom: 16px;
+    }
+    .THIS .accounts-section .self_cover .account-second .btn-group button.cancel{
+        background: #fff;
+        width: 100%;
+        height: 36px;
+    }
+    .THIS .accounts-section .self_cover .account-second .btn-group button.add{
+        width: 100%;
+        height: 36px;
+    }
+    .THIS .accounts-wrapper .accounts-section .account-details-section .left h3{
+        font-size: 16px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #005172;
+    }
+    .THIS .accounts-wrapper .accounts-section .account-details-section .left .account-number span{
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        color: #4d4f53;
+    }
+    .THIS .accounts-wrapper .accounts-section .account-details-section .left .account-name span.label-value{
+        font-size: 18px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        color: #005172;
+    }
+    .THIS .accounts-wrapper .accounts-section .support_message,
+    .THIS .accounts-wrapper .accounts-section .account-details-section{
+        border-radius:0px;
+    }
+    .THIS .account-details-section .left img,
+    .THIS .sidenav .closebtn img{
+        width:30px;
+        height:30px;
+    }
+    /* portal access */
+    .THIS .portal-access .wrapper .choose-your-profile .slds-box.midBox{
+        padding:16px 19px;
+    }
+    .THIS .portal-access .wrapper .choose-your-profile .profile-details{
+        display:inline;
+    }
+    .THIS .portal-access .wrapper .choose-your-profile .profile-details .profile{
+        height:auto;
+    }
+    .THIS .portal-access .wrapper .choose-your-profile .profile-details .profile .user{
+        width:81px;
+        height:80px;
+    }
+    .THIS .portal-access .wrapper .choose-your-profile .slds-box.midBox{
+        padding:16px 19px;
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.29;
+        letter-spacing: 0px;
+        text-align: center;
+        color: #4d4f53;
+    }
+    .THIS .portal-access .wrapper .profile .ec_btn_secondary{
+        height:42px;
+    }
+    .THIS .portal-access .wrapper .profile .profile-name{
+        margin: 16px 0 8px 0;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .THIS .portal-access .wrapper .btn-container button{
+        width: 100%;
+        height: 42px;
+        border-radius: 2px;
+    }
+    .THIS .portal-access .wrapper .choose-your-profile .profile-details .profile .profile-content{
+        min-height: 105px;
+    }
+    .THIS .portal-access .wrapper .btn-container{
+        display:inline;
+    }
+    .THIS .slds-button+.slds-button{
+        margin-left:0px;
+    }
+    .THIS .portal-access .wrapper .btn-container button:first-child{
+        margin-bottom:16px;
+    }
+    .THIS .accounts-section .self_cover .account-second .btn-group button.add{
+        margin-bottom:10px;
+    }
+    .THIS .accounts-section .slds-tabs--default__item{
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.29;
+        letter-spacing: normal;
+        text-align: center;
+        color: #4d4f53;
+        width:122px;
+        padding-bottom:6px;
+    }
+    .THIS .accounts-section .slds-tabs--default__item:last-child{
+        margin-left:15px;
+    }
+    .THIS .accounts-section .slds-tabs--default__link{
+        overflow: initial;
+        display: inline-block;
+        height: auto;
+        white-space: normal;
+        line-height: normal;
+        font-size: 14px;
+        letter-spacing: normal;
+        text-align: center;
+        text-decoration:none;
+    }
+    .THIS .accounts-section  .slds-tabs--default__item.slds-active .slds-tabs--default__link{
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        text-align: center;
+        color:#007ac9;
+    }
+
+    .THIS .accounts-wrapper .accounts-section .value{
+        border:none;
+        background-color: #ffffff;
+        padding: 25px 0px 26px 0px;
+        display: flex;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        width:100%;
+    }
+    .THIS .accounts-wrapper .accounts-section .value .search-wrapper{
+        margin-bottom:16px;
+        width:100%;
+    }
+    .THIS .accounts-wrapper .accounts-section .value .search-wrapper button{
+        height:39px;
+    }
+    .THIS .accounts-wrapper .accounts-section .value .search-wrapper input{
+        width:100%;
+        height: 42px;
+        border-radius: 2px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+        border: solid 1px #d9d9d9;
+        background-color: #ffffff;
+    }
+    .THIS .accounts-wrapper .accounts-section .support_message{
+        border: solid 1px #d9d9d9;
+        background-color: #f7f7f7;
+        height: auto;
+    }
+    .THIS .accounts-wrapper .accounts-section .support_message .message_text{
+        padding: 9px 16px 8px 16px;
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.38;
+        letter-spacing: 0px;
+        color: #4d4f53;
+    }
+    .THIS .accounts-wrapper .accounts-section .account-details-section .left{
+        width:100%;
+    }
+    .THIS .account-details-section .left h3{
+        display:flex;
+        justify-content: space-between;
+    }
+    .THIS .opacity-layer{
+        width: 100%;
+        height: 100%;
+        z-index: 1030;
+        top: 0;
+        right: 0;
+        overflow-x: hidden;
+        transition: .5s;
+        opacity: .85;
+        background-color: #4d4f53;
+        position: fixed;
+    }
+    .THIS .sidenav {
+        height: 100%;
+        position: fixed;
+        z-index: 1031;
+        top: 0;
+        right: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        width: 80%;
+        border-radius: 2px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+        border: solid 1px #d9d9d9;
+        background-color: #ffffff;
+        transition: all 0.25s;
+        -webkit-transition: all 0.25s;
+    }
+    .THIS .sidenav a {
+        padding:16px 0px 16px 11px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    .THIS .sidenav a:hover {
+        color: #f1f1f1;
+    }
+    .THIS .sidenav .heading{
+        background-color: #ffffff;
+        font-size: 18px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        color: #005172;
+        border-top: 1px solid #d9d9d9;
+        width: 100%;
+    }
+    .THIS .sidenav .accounts-section .support_message{
+        padding: 16px 21px 16px 16px;
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.38;
+        letter-spacing: 0px;
+        color: #4d4f53;
+        border-left: none;
+        border-right: none;
+    }
+    .THIS .sidenav .ship-to-details{
+        margin:16px 16px 0px 16px;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.43;
+        letter-spacing: 0.09px;
+        color: #4d4f53;
+        border-bottom: solid 1px #d9d9d9;
+        padding-bottom:15px;
+    }
+    .THIS .sidenav .ship-to-details .label-name{
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.43;
+        letter-spacing: 0px;
+        color: #4d4f53;
+        margin-bottom:4px;
+        display:block;
+
+    }
+    .THIS .sidenav .ship-to-details .state-info{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+        width: 70%;
+    }
+    .THIS .sidenav .closebtn{
+        font-size:24px;
+        color:#4d4f53;
+        padding:16px 0px 16px 11px;
+        display:block;
+    }
+    .THIS .parentPop{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .THIS .modalHeader{
+        border:0px;
+        padding:0px;
+    }
+    .THIS .contentContainer .orangeBox{
+        padding:0px;
+    }
+    .THIS .modalHeader .modalHeading{
+        font-size: 22px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.18;
+        letter-spacing: normal;
+        color: #005172;
+        /* text-align: center; */
+        padding-bottom: 24px;
+        padding-left: 16px;
+    }
+    .THIS  .modalHeader .closeButton{
+        color: #000000;
+        top: 12px;
+        right: 10px;
+        height: 24px;  
+        margin:0px;
+    }
+    .THIS .slds-modal .contentContainer{
+        padding: 0 16px 0 16px;
+        background-color: #FFF;
+        border: 0;
+    }
+    .THIS .contentContainer .orangeBox .error{
+        font-size: 32px;
+        color: #e17000;
+        margin: 21px 0px;
+    }
+    .THIS .bodyHeading {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.5px;
+        text-align: center;
+        color: #005172;
+        padding: 7px 7px 21px 7px;
+    }
+    .THIS .modalFooter{
+        padding: 24px 0px;
+        text-align: center;
+    }
+    .THIS .choose-your-profile .profile-details .right-spacer{
+        margin: 0;
+        width: 100%
+    }
+    .THIS .portal-access .wrapper .choose-your-profile .profile-details .profile{
+        width:100%;
+    }
+
+}
+
+/* IE 10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   .THIS.ie-grid {
+		display: block !important;
+    }
+}
+.THIS .disp-block{
+    display: block !important;
+}

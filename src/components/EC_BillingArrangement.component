@@ -1,0 +1,204 @@
+<!--
+
+  @Component Name     : EC_BillingArrangement
+
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  venkata ramana        07-Aug-2020          Component for displaying BA numbers.
+
+-->
+<apex:component access="global" controller="EC_BillingArrangementController">
+    <script id="BAPage-Template" type="text/template">
+        <div class="ba-container {{#ifEquals this.length 0}} no-ba-container {{/ifEquals}}">
+            <div class="ba-title">
+                <h1>{{pageLabelMap 'EC_BAPageHeading'}}</h1>
+            </div>
+            <div class="billing-arrangements">
+                {{#ifNotEquals this.length 0}}
+                <table class="ba-details-table" border="0" cellpadding="0" cellspacing="0">
+                    <thead class="display-in-large">
+                        <tr>
+                            <th width="80px"></th>
+                            <th width="20%">
+                                <div>{{pageLabelMap 'EC_BA_Number'}}</div>
+                            </th>
+                            {{#ifNotEquals (isCustomer) true}}
+                            <th width="30%">
+                                <div>{{pageLabelMap 'EC_BADescLabel'}}</div>
+                            </th>
+                            {{/ifNotEquals}}
+                            <th width="{{#if (isSalesRep)}} 19% {{else}} auto {{/if}}">
+                                <div>{{pageLabelMap 'EC_BATypeLabel'}}</div>
+                            </th>
+                            {{#ifNotEquals (isCustomer) true}}
+                            <th>
+                                <div>{{pageLabelMap 'EC_BAStartDate'}}</div>
+                            </th>
+                            <th>
+                                <div>{{pageLabelMap 'EC_BAEndDate'}}</div>
+                            </th>
+                            {{/ifNotEquals}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each this}}
+                        {{#if (spaTypeCustBA this.baType) }}
+                        <tr class="odd">
+                            <td class="display-in-large"></td>
+                            <td class="display-in-large">
+                                <div class="ba-num">
+                                    <a href="{{badpURL this.baId}}">{{this.baNumber}}</a>
+                                </div>
+                            </td>
+                            {{#ifNotEquals (isCustomer) true}}
+                            <td class="display-in-large">{{{this.baDesc}}}</td>
+                            {{/ifNotEquals}}
+                            <td class="display-in-large">{{this.baType}}</td>
+                            {{#ifNotEquals (isCustomer) true}}
+                            <td class="display-in-large">{{this.startDate}}</td>
+                            <td class="display-in-large">{{this.EndDate}}</td>
+                            {{/ifNotEquals}}
+                            <td class="display-in-small mob-pad-24 small-screen-data">
+                                <div class="col-xs-12 {{#if (isSalesRep)}} col-sm-12 {{else}} col-sm-6 {{/if}} ba-num">
+                                    <span class="text-label">{{pageLabelMap 'EC_BA_Number'}}:</span>
+                                    <span class="value-label"><a href="{{badpURL this.baId}}"><b>{{this.baNumber}}</b></a></span>
+                                </div>
+                                <div class="col-xs-12 {{#if (isSalesRep)}} col-sm-8 {{else}} col-sm-6 btp-m-btm-0{{/if}}">
+                                    {{#ifNotEquals (isCustomer) true}}
+                                    <div class="ba-desc m-btm-8">
+                                        <span class="text-label">{{pageLabelMap 'EC_BADescLabel'}}:</span>
+                                        <span class="value-label">{{{this.baDesc}}}</span>
+                                    </div>
+                                    {{/ifNotEquals}}
+                                    {{#if (spaTypeCustBA this.baType) }}
+                                    <div class="ba-type m-btm-8">
+                                        <span class="text-label">{{pageLabelMap 'EC_BATypeLabel'}}:</span>
+                                        <span class="value-label">{{this.baType}}</span>
+                                    </div>
+                                    {{/if}}
+                                </div>
+                                {{#ifNotEquals (isCustomer) true}}
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="ba-start-date m-btm-8">
+                                        <span class="text-label">{{pageLabelMap 'EC_BAStartDate'}}:</span>
+                                        <span class="value-label">{{this.startDate}}</span>
+                                    </div>
+                                    <div class="ba-end-date m-btm-8">
+                                        <span class="text-label">{{pageLabelMap 'EC_BAEndDate'}}:</span>
+                                        <span class="value-label">{{this.EndDate}}</span>
+                                    </div>
+                                </div>
+                                {{/ifNotEquals}}
+                            </td>
+                        </tr>
+                        {{/if}}
+                        {{/each}}
+                    </tbody>
+                </table>
+                {{/ifNotEquals}}
+            </div>
+          </div>
+    </script>
+    <div class="BAPageDskTarget"></div>
+    <script type="text/javascript">
+        jQuery(function($){
+            CCRZ.pubSub.on('view:BAView:refresh', function (viewInstance) {
+                console.log('page got refreshed...');
+            });
+            CCRZ.util.createView({
+        		desktop: {target:'BAPageDskTarget', template:'BAPage-Template'},
+                phone: {target:'BAPageDskTarget', template:'BAPage-Template'},
+            });
+            CCRZ.uiProperties.BAView = {
+                "tmpl": "BAPage-Template",
+                "selector": ".ba-container"
+            };
+            CCRZ.collections.BAView = CCRZ.CloudCrazePageable.extend({
+                className: "EC_BillingArrangementController",
+                initialize: function() {},
+                fetchData: function(callback) {
+                    var coll = this;
+                    Visualforce.remoting.Manager.invokeAction(
+                                'EC_BillingArrangementController.getBANums', CCRZ.pagevars.remoteContext, CCRZ.pagevars.effAccountId,
+                                function (resp) {
+                                    if (resp.success && resp.data) {
+                                        callback(resp.data);
+                                    } else {
+                                        console.log('NO BA Nums');
+                                    }
+                                });
+                }
+            });
+            CCRZ.views.BAView = CCRZ.CloudCrazeView.extend({
+                templateBoth: CCRZ.util.template(CCRZ.uiProperties.BAView.tmpl),
+                viewName : "BAView",
+                className: "EC_BillingArrangementController",
+                initialize: function() {
+                    console.log('initialize...');
+                    this.$el = $(CCRZ.uiProperties.BAView.selector);
+                    var v = this;
+                    this.coll = new CCRZ.collections.BAView();
+                    v.coll.fetchData(function(data) {
+                        console.log('data--> ', data);
+                        if (!data || data == "") {
+                            CCRZ.BAModel = {baData: []};
+                        } else {
+                            CCRZ.BAModel = {baData: data};
+                        }
+                        setTimeout(()=>{
+                            v.render(data.baWrapper);
+                        })
+                    });
+                },
+                render: function(data) {
+                    this.data = {};
+                    this.data.BA = data;
+                    this.setElement(this.$el);
+                    this.$el.html(this.templateBoth(CCRZ.BAModel.baData.baWrapper));
+                    CCRZ.pubSub.trigger("view:"+this.viewName+":refresh", this);
+                },
+                refresh: function () {
+                    var v = this;
+                    v.render();                    
+                }
+            });
+            Handlebars.registerHelper("badpURL", function(baid) {
+                let url = "ccrz__CCPage?pageKey=badetail";
+                url += "&cartID=" + CCRZ.pagevars.currentCartID + 
+                       "&effectiveAccount=" + CCRZ.pagevars.effAccountId +
+                       "&baid=" + baid;
+                return url;
+            })
+            Handlebars.registerHelper('isCustomer', function () {
+                let profile = CCRZ.BAModel.baData.loggedInUserProfile;
+                if (CCRZ.pagevars.pageLabels.EC_BAProfileUser.toLowerCase() === profile.toLowerCase()) {
+                    return true;
+                }
+                return false;
+            });
+            Handlebars.registerHelper('isSalesRep', function () {
+                let profile = CCRZ.BAModel.baData.loggedInUserProfile;
+                if (CCRZ.pagevars.pageLabels.EC_BAProfileRep.toLowerCase() === profile.toLowerCase()) {
+                    return true;
+                }
+                return false;
+            });
+            Handlebars.registerHelper('spaTypeCustBA', function (batype) {
+                let profile = CCRZ.BAModel.baData.loggedInUserProfile;
+                if (CCRZ.pagevars.pageLabels.EC_BAProfileUser.toLowerCase() === profile.toLowerCase()) {
+                    if (CCRZ.headerModel.attributes.BAUser) {
+                        return true;
+                    } else {
+                        if (CCRZ.pagevars.pageLabels.EC_BAspa.toLowerCase() === batype.toLowerCase()) {
+                            return true;
+                        }
+                        return false;
+                    }
+                }
+                return true;
+            });
+            CCRZ.BAView = new CCRZ.views.BAView;
+        });
+    </script>
+</apex:component>

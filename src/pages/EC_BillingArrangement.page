@@ -1,0 +1,15 @@
+<!--
+
+  @Page Name     : EC_BillingArrangement
+
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  venkata ramana        07-Aug-2020        Page for displaying BA numbers.
+
+-->
+<apex:page id="EC_BillingArrangement" docType="html-5.0" sidebar="false" showHeader="false"  standardStylesheets="false" applyHtmlTag="false" controller="EC_BillingArrangementController">
+ 
+<c:EC_BillingArrangement />
+  
+</apex:page>

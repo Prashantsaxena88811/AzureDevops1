@@ -1,0 +1,1056 @@
+@charset "UTF-8";
+.THIS .icon-color{
+    color: #007ac9;
+}
+.THIS .Progress{
+    border: solid 1px #b35900 !important;
+    color: #b35900 !important;
+}
+.THIS .Submitted{
+    border: solid 1px #b35900 !important;
+    color: #b35900 !important;
+}
+
+.THIS .Canceled{
+    border: solid 1px #e00034 !important;
+    color: #e00034 !important;
+}
+.THIS .date-items-status .order-date-format {
+    font-weight: 700;
+}
+@media (max-width: 1365px) and (min-width: 768px) {
+  .THIS {
+    border: solid 1px #d9d9d9;
+    margin-top: 16px;
+  }
+  .THIS .summary1 {
+    background-color: #f7f7f7;
+    padding: 16px;
+  }
+  .THIS .summary1 .date-items-status td {
+    padding-bottom: 5px;
+  }
+  .THIS .summary1 .date-items-status .date {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #4d4f53;
+  }
+  .THIS .summary1 .date-items-status .date .value {
+    font-weight: bold;
+  }
+  .THIS .summary1 .date-items-status .accountNo {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: 0.09px;
+    color: #4d4f53;
+  }
+  .THIS .summary1 .date-items-status .accountNo .value {
+    font-weight: bold;
+    color: #005172;
+  }
+  .THIS .summary1 .date-items-status .right {
+    text-align: right;
+  }
+  .THIS .summary1 .numbers-collabpsable .orderNo {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: 0.09px;
+    color: #4d4f53;
+  }
+  .THIS .summary1 .numbers-collabpsable .orderNo .value {
+    font-weight: bold;
+    color: #005172;
+  }
+  .THIS .summary1 .numbers-collabpsable .itemCount {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #4d4f53;
+  }
+  .THIS .summary1 .numbers-collabpsable .itemCount .value {
+    font-weight: bold;
+  }
+  .THIS .summary1 .seperator {
+    margin-top: 15.5px;
+    margin-bottom: 15.5px;
+    height: 1px;
+    border: solid 1px #d9d9d9;
+    display: block;
+  }
+  .THIS .summary1 .viewmore-price {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .THIS .summary1 .viewmore-price .status label {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #4d4f53;
+  }
+  .THIS .summary1 .viewmore-price .status .value {
+    height: 27.8px;
+    border-radius: 14px;
+    border: solid 1px #5b8f22;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.1px;
+    text-align: center;
+    color: #5b8f22;
+    padding: 4px 19px;
+    margin-left: 8px;
+  }
+  .THIS .summary1 .viewmore-price .viewMore button {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    color: #007ac9;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    text-transform: capitalize;
+    padding-right: 0;
+  }
+  .THIS .summary1 .viewmore-price .viewMore button:active {
+    border-style: none;
+  }
+  .THIS .summary1 .viewmore-price .viewMore button.active::before,
+  .THIS .summary1 .viewmore-price #true button::before {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .THIS .summary1 .viewmore-price .viewMore button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  .THIS .summary1 .viewmore-price .viewMore button::before {
+    font-family: "Material Icons", sans-serif;
+    content: "";
+    float: right;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    font-size: 24px;
+    margin-left: 6px;
+  }
+  .THIS .summary2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 16px;
+  }
+  .THIS .summary2 .left {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+  }
+  .THIS .summary2 .left .placedBy {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #4d4f53;
+  }
+  .THIS .summary2 .left .placedBy .value {
+    font-weight: bold;
+  }
+  .THIS .summary2 .left .poNumber {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: 0.09px;
+    color: #4d4f53;
+  }
+  .THIS .summary2 .left .poNumber .value {
+    font-weight: bold;
+    color: #005172;
+  }
+  .THIS .summary2 .right {
+    width: 50%;
+    text-align: right;
+  }
+  .THIS .summary2 .right button {
+    width: 246px;
+    height: 29px;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.34px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .THIS .productList .slds-grid {
+    margin: 0;
+  }
+  .THIS .productList .slds-grid .productlist-container {
+    width: 100%;
+    border-top: solid 1px #d9d9d9;
+  }
+  .THIS .productList .slds-grid .productlist-container .shipping-billing-address {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 15px 16px 12px 16px;
+    border-bottom: solid 1px #d9d9d9;
+  }
+  .THIS .productList .slds-grid .productlist-container .shipping-billing-address .shipping-address {
+    width: 50%;
+  }
+  .THIS .productList .slds-grid .productlist-container .shipping-billing-address .shipping-address .address-heading {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.35px;
+    color: #005172;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .THIS .productList .slds-grid .productlist-container .shipping-billing-address .shipping-address .address-heading span{
+    padding-right: 7px;
+  }
+  .THIS .productList .slds-grid .productlist-container .shipping-billing-address .shipping-address .address-heading img {
+    width: 18px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  .THIS .productList .slds-grid .productlist-container .shipping-billing-address .shipping-address .value {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.09px;
+    color: #4d4f53;
+    margin-left: 31px;
+    margin-top: 8px;
+  }
+  .THIS .productList .slds-grid .productlist-container .shipping-billing-address .billing-address {
+    width: 50%;
+  }
+  .THIS .productList .slds-grid .productlist-container .shipping-billing-address .billing-address .address-heading {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.35px;
+    color: #005172;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+    .THIS .productList .slds-grid .productlist-container .shipping-billing-address .billing-address .address-heading span{
+        padding-right: 7px; 
+    }
+  .THIS .productList .slds-grid .productlist-container .shipping-billing-address .billing-address .address-heading img {
+    width: 18px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  .THIS .productList .slds-grid .productlist-container .shipping-billing-address .billing-address .value {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.09px;
+    color: #4d4f53;
+    margin-left: 31px;
+    margin-top: 8px;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 17px 16px 16px 16px;
+    border-bottom: solid 1px #d9d9d9;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data:last-child {
+    border-bottom: none;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .image {
+    min-width: 110px;
+    max-width: 110px;
+    margin-right: 8px;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data .product-details {
+    width: 70%;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data .product-details .product-name {
+    margin-bottom: 8px;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data .product-details .product-name a {
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: #373737;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data .product-details .prod-desc {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.09px;
+    color: #4d4f53;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data .product-details .prod-desc .value {
+    font-weight: bold;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data .product-details .prod-desc .spacer {
+    margin: 0px 8px;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data .product-details .prod-desc .no-of-products {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    color: #005172;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data .product-details .prod-desc .price {
+    margin-top: 16px;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data .product-details .prod-desc .price .dollar {
+    Font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.13px;
+    color: #005172;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data .product-details .prod-desc .price .cent {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.23px;
+    color: #005172;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data .quantity-value .qunty {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.27px;
+    color: #4d4f53;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data .quantity-value .qunty .value {
+    font-weight: bold;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data .quantity-value .price {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.27px;
+    color: #4d4f53;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .image-details .product-data .quantity-value .price .value {
+    font-weight: bold;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .document-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 16px;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .document-container .doc-info {
+    width: 23.90625%;
+    margin-right: 100px;
+  }
+  .THIS .productList .slds-grid .productlist-container .product-list-data .document-container .doc-info:last-child {
+    margin-right: 0px;
+  }
+  .THIS .product-list-data .document-container {
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    color: #007ac9;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .THIS {
+    margin-top: 32px;
+    position: relative;
+  }
+  .THIS:first-child {
+    margin-top: 0px;
+  }
+  .THIS .hide {
+    display: none !important;
+  }
+  .THIS .ec_selectBox .slds-select_container select {
+    height: 42px;
+    border-radius: 2px;
+    border: solid 1px #d9d9d9;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.46px;
+    color: #373737;
+    padding: 12px 16px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAAmpJREFUeAHt18Fu0zAYB3B7k9hph/UKTBogsRHWCp6gT9BOE5UmcduLrLwPWiueIE/AhSmlJ56AA+My1jTG/2ieuqwpTmvHkfhbaqPU9vd9+cnOPCHYKEABClCAAhSgAAUoQAEKUIACFKAABShAAQpQgAIUoAAFKEABCvgS6J2f7/qKXYzrM9dWMZmL+97Jh6H4ef11MBg8dRFvVYw8h86V51w1cM2+7TXnlU5DoUqpCz2gNZ+LXrsdXSZJ8rt0wgYdwPlzq2Il1Csdpnt4FMnp9yTeIOSjqU6BFnBMIm9IBRyTzzmSM6AlOKboHCmK3o0mk2/X5sdNrqenH5/N0tSsnGIop0he3kHFirEF0uwmxoMV+6reIwZi3W2rqtMrj3e2grD38Q7QFXRLqmgpkfajN+8v111J9zhKvCzJIaSUn76MPw/L+qv+7gwIiX0ihcDBMzkFqoJ0+Lozmk6vrN5J/f7Z80zcxqrGlYNnQXMOhKBWK0lm/SMLpBxHzmIRAMcbkCXSnvoH0gLOC8Rc1ly/c4o5vKwgk8RiJeVIneO3Y32Y/GXm4arPOfuzbI6VEwwHdXgFQgIbJH3iPtEn7pFBAg5OyHp6UBzUjz/LtbQVB8k8vxTyx84T2cXN3b8PB3nHki/f22oxZW1ASGqDhHH6ENgIHNTifYshiWk2202P3TPji9c6V47JXSsQklogmdoeXEPgoIDagZC0KlIonGBAVZBC4gQFskEKjRMcaBVSE3AaAbQMqSk4qK1RDeckfBpVFIuhAAUoQAEKUIACFKAABShAAQpQgAIUoAAFKEABClCAAhSgwH8g8BeBvjlnYPW7ugAAAABJRU5ErkJggg=="),
+      -webkit-linear-gradient(top, rgba(0, 122, 201, 0.1) 0%, rgba(0, 122, 201, 0.1) 100%);
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAAmpJREFUeAHt18Fu0zAYB3B7k9hph/UKTBogsRHWCp6gT9BOE5UmcduLrLwPWiueIE/AhSmlJ56AA+My1jTG/2ieuqwpTmvHkfhbaqPU9vd9+cnOPCHYKEABClCAAhSgAAUoQAEKUIACFKAABShAAQpQgAIUoAAFKEABCvgS6J2f7/qKXYzrM9dWMZmL+97Jh6H4ef11MBg8dRFvVYw8h86V51w1cM2+7TXnlU5DoUqpCz2gNZ+LXrsdXSZJ8rt0wgYdwPlzq2Il1Csdpnt4FMnp9yTeIOSjqU6BFnBMIm9IBRyTzzmSM6AlOKboHCmK3o0mk2/X5sdNrqenH5/N0tSsnGIop0he3kHFirEF0uwmxoMV+6reIwZi3W2rqtMrj3e2grD38Q7QFXRLqmgpkfajN+8v111J9zhKvCzJIaSUn76MPw/L+qv+7gwIiX0ihcDBMzkFqoJ0+Lozmk6vrN5J/f7Z80zcxqrGlYNnQXMOhKBWK0lm/SMLpBxHzmIRAMcbkCXSnvoH0gLOC8Rc1ly/c4o5vKwgk8RiJeVIneO3Y32Y/GXm4arPOfuzbI6VEwwHdXgFQgIbJH3iPtEn7pFBAg5OyHp6UBzUjz/LtbQVB8k8vxTyx84T2cXN3b8PB3nHki/f22oxZW1ASGqDhHH6ENgIHNTifYshiWk2202P3TPji9c6V47JXSsQklogmdoeXEPgoIDagZC0KlIonGBAVZBC4gQFskEKjRMcaBVSE3AaAbQMqSk4qK1RDeckfBpVFIuhAAUoQAEKUIACFKAABShAAQpQgAIUoAAFKEABClCAAhSgwH8g8BeBvjlnYPW7ugAAAABJRU5ErkJggg=="),
+      linear-gradient(to bottom, rgba(0, 122, 201, 0.1) 0%, rgba(0, 122, 201, 0.1) 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right 5% top 50%;
+    background-size: 24px auto, 100%;
+  }
+  .THIS .ec_selectBox .slds-select_container::before,
+  .THIS .ec_selectBox .slds-select_container::after {
+    content: none;
+  }
+  .THIS.root-wrapper-container .slds-grid.orders-wrapper {
+    margin-left: 0px !important;
+  }
+  .THIS .productlist-container {
+    padding-top: 15px;
+    width: 100%;
+    border-top: solid 1px #d9d9d9;
+  }
+  .THIS .shipping-billing-address {
+    display: flex;
+    border-bottom: solid 1px #d9d9d9;
+  }
+  .THIS .shipping-address,
+  .THIS .billing-address {
+    display: flex;
+    flex-direction: column;
+  }
+  .THIS .shipping-address .address-heading span,
+  .THIS .billing-address .address-heading span {
+    padding-right: 12px;
+  }
+  .THIS .shipping-address img,
+  .THIS .billing-address img {
+    width: 24px;
+    height: 24px;
+  }
+  .THIS .shipping-address {
+    width: 55%;
+  }
+  .THIS .address-heading {
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.46px;
+    color: #373737;
+    margin-bottom: 10px;
+    display: flex;
+  }
+  .THIS .address-heading span i {
+    padding-right: 0px;
+  }
+  .THIS .shipping-billing-address .value {
+    font-size: 16px;
+    line-height: 1.38;
+    letter-spacing: 0.1px;
+    color: #4d4f53;
+    padding-left: 36px;
+  }
+  .THIS .shipping-address .value {
+    width: 55%;
+  }
+  .THIS .empty-columns-spacer {
+    width: 113px;
+  }
+  .THIS .product-data .product-details .product-name a {
+    font-size: 22px;
+    color: #373737;
+  }
+  .THIS .productlist-container .product-list-data {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 20px 0px 20px;
+    border-bottom: 1px solid #d9d9d9;
+    padding-bottom: 20px;
+  }
+  .THIS .productlist-container .product-list-data:last-child {
+      border-bottom: none;
+  }
+  .THIS .product-data {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+    padding-left: 17px;
+    width: calc(100% - 113px);
+  }
+  .THIS .product-list-data .image {
+    width: 113px;
+  }
+  .THIS .product-list-data .image img {
+    width: 100%;
+    height: 100%;
+  }
+  .THIS .product-list-data .product-name {
+    font-size: 22px;
+    color: #373737;
+  }
+  .THIS .product-data .shipped-on,
+  .THIS .quantity-value {
+    align-self: flex-start;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    color: #4d4f53;
+  }
+  .THIS .quantity-value {
+    width: 20%;
+    margin-top: 31px;
+  }
+  .THIS .product-data .product-details {
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    color: #4d4f53;
+    align-self: flex-start;
+  }
+  .THIS .product-data .prod-desc {
+    margin: 6px 0px 0 0px;
+  }
+  .THIS .product-details .prod-desc span.value,
+  .THIS .shipped-on .shipped-date,
+  .THIS .quantity-value span.value {
+    font-weight: bold;
+  }
+  .THIS .spacer {
+    padding: 0px 10px;
+    color: #d9d9d9;
+  }
+  .THIS .product-data .prod-desc .no-of-products {
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    color: #005172;
+  }
+  .THIS .product-data .prod-desc .price {
+    font-size: 24px;
+    letter-spacing: 0.13px;
+    color: #005172;
+    margin-top: 6px;
+  }
+  .THIS .product-data .prod-desc .price .dollar{
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.13px;
+        color: #005172;   
+  }
+  .THIS .product-data .prod-desc .price .cent{
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.23px;
+        color: #005172; 
+  }
+  .THIS .product-data .document-container {
+    width: 15%;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    color: #007ac9;
+    align-self: center;
+  }
+  .THIS .product-list-spinner {
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+    width: 55px;
+    height: 200px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .THIS .TitleBtn {
+    border: none;
+    background: none;
+    outline: none;
+  }
+  .THIS .document-container .doc-info i.material-icons {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .THIS {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  .THIS .shipping-address {
+    width: calc(100% - 32px);
+    padding: 15px 0;
+    margin: 0 16px;
+    border-top: 1px solid #d9d9d9;
+  }
+  .THIS .shipping-address .address-heading {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.35px;
+    color: #005172;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .THIS .shipping-address .address-heading .left-spacer,
+  .THIS .billing-address .address-heading .left-spacer{
+    padding-left:13px;    
+  }
+  .THIS .shipping-address .value {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.09px;
+    color: #4d4f53;
+    width: 100%;
+  }
+  .THIS .billing-address {
+    width: 100%;
+    padding: 20px 15px 15px 0px;
+    border-bottom: 1px solid #d9d9d9;
+  }
+  .THIS .billing-address .address-heading {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.35px;
+    color: #005172;
+     display: flex;
+    flex-direction: row;
+    align-items:center;
+  }
+  .THIS .billing-address .value {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.09px;
+    color: #4d4f53;
+    width: 100%;
+  }
+  .THIS .product-list {
+    padding: 15px 16px 0;
+    border-top: 1px solid #d9d9d9;
+  }
+  .THIS .list .product-details {
+    display: flex;
+    padding-bottom: 33px;
+    border-bottom: 1px solid #d9d9d9;
+  }
+  .THIS .list .product-details .image {
+    width: 93px;
+  }
+  .THIS .list .product-details .product-list-info .product-name {
+    margin-bottom: 9px;
+  }
+  .THIS .list .product-details .product-details-info {
+    margin-left: 8px;
+    width: calc(100% - 101px);
+  }
+  .THIS .list .product-details .product-list-info .product-name a {
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: #373737;
+    word-break: break-all;
+  }
+  .THIS .list .product-details .product-list-info .prod-desc span {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.09px;
+  }
+  .THIS .list .product-details .product-list-info .prod-desc span.value {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.09px;
+    color: #4d4f53;
+  }
+  .THIS .list .product-details .product-list-info span.no-of-products {
+    display: block;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0px;
+    color: #005172;
+    margin: 9px 0px 18px 0px;
+  }
+  .THIS .list .product-details .product-list-info .price {
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.13px;
+    color: #005172;
+  }
+  .THIS .list .product-details .product-list-info .price .dollar{
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.13px;
+        color: #005172;   
+  }
+  .THIS .list .product-details .product-list-info .price .cent{
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.23px;
+        color: #005172; 
+  }
+
+  .THIS .list .product-details .price-quantity-info {
+    border-bottom: 1px solid #d9d9d9;
+    margin-top: 16px;
+    padding-bottom: 16px;
+  }
+  .THIS .list .product-details .price-quantity-info > div {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.27px;
+    color: #4d4f53;
+    margin-bottom: 6px;
+  }
+  .THIS .list .document-name {
+    padding: 18px 0 18px 0px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0px;
+    color: #007ac9;
+    border-bottom: 1px solid #d9d9d9;
+  }
+  .THIS .list .product-list:last-child .document-name {
+    border-bottom: none;
+  }
+  .THIS .status-details .viewMore button {
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0px;
+    color: #007ac9;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    text-transform: capitalize;
+    padding-right: 0;
+  }
+  .THIS .status-details .viewMore button:active {
+    border-style: none;
+  }
+  .THIS .status-details .viewMore button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  .THIS .status-details .viewMore button::before {
+    font-family: "Material Icons", sans-serif;
+    content: "\e5cf";
+    float: right;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    font-size: 24px;
+    margin-left: 6px;
+  }
+  .THIS .status-details .viewMore button.active::before,
+  .THIS .status-details #true button::before {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .THIS .price-quantity-info {
+    padding: 16px 0px 16px 0px;
+    border-bottom: 1px solid #d9d9d9;
+  }
+  .THIS .price-quantity-info > div {
+    margin-bottom: 8px;
+  }
+  .THIS .order-summary .placed-by {
+    padding: 18px 16px 0px 15px;
+  }
+  .THIS .placed-by > div {
+    margin-bottom: 6px;
+  }
+  .THIS .order-summary .ec_btn_primary {
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.34px;
+    text-align: center;
+    color: #ffffff;
+    width: 100%;
+  }
+  .THIS .status-details .viewMore {
+    display: flex;
+  }
+  .THIS .price-quantity-info .lbl-name {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.27px;
+    color: #4d4f53;
+  }
+  .THIS .price-quantity-info .lbl-value {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.27px;
+    color: #4d4f53;
+  }
+  .THIS .btn-container {
+    padding: 16px 16px 18px 16px;
+  }
+  .THIS .shipping-address .value,
+  .THIS .billing-address .value {
+    padding-left: 35px;
+  }
+}
+
+.THIS .inline-status {
+    width: 23%;
+    margin-top: 31px;
+}
+.THIS .inline-status label {
+    display: block;
+    padding: 0 5px 5px 0;
+}
+.THIS .inline-status div.statusvalue {
+    border-radius: 14px;
+    border: solid 1px #5b8f22;
+    padding: 5px 19px;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: .1px;
+    color: #5b8f22;
+    display: inline-block;
+}
+.THIS .inline-status div.statusvalue.Submitted, .THIS .inline-status div.statusvalue.Ship, .THIS .inline-status div.statusvalue.Transit {
+    border: solid 1px #b35900!important;
+    color: #b35900!important;
+}
+.THIS .track-shipment {
+	padding-top: 20px;
+  position: relative;
+}
+
+.THIS .track-shipment img {
+  position: absolute;
+}
+
+.THIS .track-shipment button {
+  padding-left: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 24px;
+  color: #007ac9;
+}
+.THIS .slds-modal__container iframe {
+  background: #fff;
+}
+.THIS .product-list-data section, .THIS .product-list-data .slds-backdrop {
+  display: none;
+}
+.THIS .product-list-data .show-fourkites section, .THIS .product-list-data .show-fourkites .slds-backdrop {
+  display: block;
+}
+@media (max-width: 1365px) and (min-width: 768px) {
+	.THIS .inline-status {
+    	width: 100%;
+    }
+    .THIS .inline-status label {
+    	display: inline-block;
+        width: 118px;
+    }
+    .THIS .inline-status div.statusvalue {
+    	display: inline;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .THIS .inline-status {
+    	width: 100%;
+    }
+    .THIS .inline-status label {
+    	display: inline-block;
+        font-size: 14px;
+    }
+    .THIS .inline-status div.statusvalue {
+    	display: inline-block;
+    }
+    .THIS .track-shipment {
+        padding: 13px 0;
+    }
+}
+.THIS .shipToName .val{
+  margin-left: 0;
+ }
+
+ 

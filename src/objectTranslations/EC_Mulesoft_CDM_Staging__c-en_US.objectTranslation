@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Mulesoft CDM Staging</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Mulesoft CDM Stagings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Business Unit Name --></label>
+        <name>EC_Account_Business_Unit_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Divisional Business Unit Code --></label>
+        <name>EC_Account_Divisional_Business_Unit_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Divisional Business Unit Name --></label>
+        <name>EC_Account_Divisional_Business_Unit_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Global Business Unit Code --></label>
+        <name>EC_Account_Global_Business_Unit_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Global Business Unit Name --></label>
+        <name>EC_Account_Global_Business_Unit_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Key --></label>
+        <name>EC_Account_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name English --></label>
+        <name>EC_Account_Name_English__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>EC_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Number --></label>
+        <name>EC_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Province Code --></label>
+        <name>EC_Account_State_Province_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Type Code --></label>
+        <name>EC_Account_Type_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>EC_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_Account_data_intg_exec_id --></label>
+        <name>EC_Account_data_intg_exec_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action --></label>
+        <name>EC_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alias --></label>
+        <name>EC_Alias__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alignment Type --></label>
+        <name>EC_Alignment_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application code --></label>
+        <name>EC_Application_code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>EC_Business_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>EC_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Community Nickname --></label>
+        <name>EC_Community_Nickname__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>EC_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Context Point Key --></label>
+        <name>EC_Context_Point_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Context Point Type --></label>
+        <name>EC_Context_Point_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corporate Reference Number --></label>
+        <name>EC_Corporate_Reference_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Code --></label>
+        <name>EC_Country_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country ISO Code --></label>
+        <name>EC_Country_ISO3_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By --></label>
+        <name>EC_Created_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created On --></label>
+        <name>EC_Created_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- Culture --></label>
+        <name>EC_Culture__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency --></label>
+        <name>EC_Currency__c</name>
+        <picklistValues>
+            <masterLabel>AED</masterLabel>
+            <translation><!-- AED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFN</masterLabel>
+            <translation><!-- AFN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ALL</masterLabel>
+            <translation><!-- ALL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AMD</masterLabel>
+            <translation><!-- AMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ANG</masterLabel>
+            <translation><!-- ANG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AOA</masterLabel>
+            <translation><!-- AOA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ARS</masterLabel>
+            <translation><!-- ARS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AUD</masterLabel>
+            <translation><!-- AUD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AWG</masterLabel>
+            <translation><!-- AWG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AZN</masterLabel>
+            <translation><!-- AZN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAM</masterLabel>
+            <translation><!-- BAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BBD</masterLabel>
+            <translation><!-- BBD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BDT</masterLabel>
+            <translation><!-- BDT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BGN</masterLabel>
+            <translation><!-- BGN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BHD</masterLabel>
+            <translation><!-- BHD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BIF</masterLabel>
+            <translation><!-- BIF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BMD</masterLabel>
+            <translation><!-- BMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BND</masterLabel>
+            <translation><!-- BND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BOB</masterLabel>
+            <translation><!-- BOB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BRL</masterLabel>
+            <translation><!-- BRL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BSD</masterLabel>
+            <translation><!-- BSD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BTN</masterLabel>
+            <translation><!-- BTN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BWP</masterLabel>
+            <translation><!-- BWP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BYN</masterLabel>
+            <translation><!-- BYN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BZD</masterLabel>
+            <translation><!-- BZD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAD</masterLabel>
+            <translation><!-- CAD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CDF</masterLabel>
+            <translation><!-- CDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHF</masterLabel>
+            <translation><!-- CHF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CLP</masterLabel>
+            <translation><!-- CLP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CNY</masterLabel>
+            <translation><!-- CNY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COP</masterLabel>
+            <translation><!-- COP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CRC</masterLabel>
+            <translation><!-- CRC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CUP</masterLabel>
+            <translation><!-- CUP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CVE</masterLabel>
+            <translation><!-- CVE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CZK</masterLabel>
+            <translation><!-- CZK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DJF</masterLabel>
+            <translation><!-- DJF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DKK</masterLabel>
+            <translation><!-- DKK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DOP</masterLabel>
+            <translation><!-- DOP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DZD</masterLabel>
+            <translation><!-- DZD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EEK</masterLabel>
+            <translation><!-- EEK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EGP</masterLabel>
+            <translation><!-- EGP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ERN</masterLabel>
+            <translation><!-- ERN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ETB</masterLabel>
+            <translation><!-- ETB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EUR</masterLabel>
+            <translation><!-- EUR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FJD</masterLabel>
+            <translation><!-- FJD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FKP</masterLabel>
+            <translation><!-- FKP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GBP</masterLabel>
+            <translation><!-- GBP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GEL</masterLabel>
+            <translation><!-- GEL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GHS</masterLabel>
+            <translation><!-- GHS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GIP</masterLabel>
+            <translation><!-- GIP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GMD</masterLabel>
+            <translation><!-- GMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GNF</masterLabel>
+            <translation><!-- GNF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTQ</masterLabel>
+            <translation><!-- GTQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GYD</masterLabel>
+            <translation><!-- GYD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HKD</masterLabel>
+            <translation><!-- HKD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HNL</masterLabel>
+            <translation><!-- HNL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HRK</masterLabel>
+            <translation><!-- HRK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HTG</masterLabel>
+            <translation><!-- HTG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HUF</masterLabel>
+            <translation><!-- HUF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IDR</masterLabel>
+            <translation><!-- IDR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ILS</masterLabel>
+            <translation><!-- ILS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INR</masterLabel>
+            <translation><!-- INR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQD</masterLabel>
+            <translation><!-- IQD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IRR</masterLabel>
+            <translation><!-- IRR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISK</masterLabel>
+            <translation><!-- ISK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JMD</masterLabel>
+            <translation><!-- JMD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JOD</masterLabel>
+            <translation><!-- JOD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JPY</masterLabel>
+            <translation><!-- JPY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KES</masterLabel>
+            <translation><!-- KES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KGS</masterLabel>
+            <translation><!-- KGS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KHR</masterLabel>
+            <translation><!-- KHR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KMF</masterLabel>
+            <translation><!-- KMF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KPW</masterLabel>
+            <translation><!-- KPW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KRW</masterLabel>
+            <translation><!-- KRW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KWD</masterLabel>
+            <translation><!-- KWD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KYD</masterLabel>
+            <translation><!-- KYD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KZT</masterLabel>
+            <translation><!-- KZT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LAK</masterLabel>
+            <translation><!-- LAK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LBP</masterLabel>
+            <translation><!-- LBP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LKR</masterLabel>
+            <translation><!-- LKR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LRD</masterLabel>
+            <translation><!-- LRD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LSL</masterLabel>
+            <translation><!-- LSL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LYD</masterLabel>
+            <translation><!-- LYD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MAD</masterLabel>
+            <translation><!-- MAD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MDL</masterLabel>
+            <translation><!-- MDL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MGA</masterLabel>
+            <translation><!-- MGA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MKD</masterLabel>
+            <translation><!-- MKD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MMK</masterLabel>
+            <translation><!-- MMK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MNT</masterLabel>
+            <translation><!-- MNT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MOP</masterLabel>
+            <translation><!-- MOP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MRU</masterLabel>
+            <translation><!-- MRU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MUR</masterLabel>
+            <translation><!-- MUR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MVR</masterLabel>
+            <translation><!-- MVR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MWK</masterLabel>
+            <translation><!-- MWK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MXN</masterLabel>
+            <translation><!-- MXN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MXV</masterLabel>
+            <translation><!-- MXV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MYR</masterLabel>
+            <translation><!-- MYR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MZN</masterLabel>
+            <translation><!-- MZN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NAD</masterLabel>
+            <translation><!-- NAD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NGN</masterLabel>
+            <translation><!-- NGN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NIO</masterLabel>
+            <translation><!-- NIO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOK</masterLabel>
+            <translation><!-- NOK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NPR</masterLabel>
+            <translation><!-- NPR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NZD</masterLabel>
+            <translation><!-- NZD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMR</masterLabel>
+            <translation><!-- OMR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAB</masterLabel>
+            <translation><!-- PAB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PEN</masterLabel>
+            <translation><!-- PEN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGK</masterLabel>
+            <translation><!-- PGK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHP</masterLabel>
+            <translation><!-- PHP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PKR</masterLabel>
+            <translation><!-- PKR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLN</masterLabel>
+            <translation><!-- PLN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PYG</masterLabel>
+            <translation><!-- PYG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QAR</masterLabel>
+            <translation><!-- QAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RON</masterLabel>
+            <translation><!-- RON --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RSD</masterLabel>
+            <translation><!-- RSD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RUB</masterLabel>
+            <translation><!-- RUB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RWF</masterLabel>
+            <translation><!-- RWF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAR</masterLabel>
+            <translation><!-- SAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBD</masterLabel>
+            <translation><!-- SBD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SCR</masterLabel>
+            <translation><!-- SCR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SDG</masterLabel>
+            <translation><!-- SDG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SEK</masterLabel>
+            <translation><!-- SEK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SGD</masterLabel>
+            <translation><!-- SGD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHP</masterLabel>
+            <translation><!-- SHP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SLL</masterLabel>
+            <translation><!-- SLL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOS</masterLabel>
+            <translation><!-- SOS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SRD</masterLabel>
+            <translation><!-- SRD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SSP</masterLabel>
+            <translation><!-- SSP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STD</masterLabel>
+            <translation><!-- STD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYP</masterLabel>
+            <translation><!-- SYP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SZL</masterLabel>
+            <translation><!-- SZL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>THB</masterLabel>
+            <translation><!-- THB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TJS</masterLabel>
+            <translation><!-- TJS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMT</masterLabel>
+            <translation><!-- TMT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TND</masterLabel>
+            <translation><!-- TND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TOP</masterLabel>
+            <translation><!-- TOP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TRY</masterLabel>
+            <translation><!-- TRY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTD</masterLabel>
+            <translation><!-- TTD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TWD</masterLabel>
+            <translation><!-- TWD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TZS</masterLabel>
+            <translation><!-- TZS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UAH</masterLabel>
+            <translation><!-- UAH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UGX</masterLabel>
+            <translation><!-- UGX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USD</masterLabel>
+            <translation><!-- USD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UYU</masterLabel>
+            <translation><!-- UYU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UZS</masterLabel>
+            <translation><!-- UZS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VEF</masterLabel>
+            <translation><!-- VEF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VES</masterLabel>
+            <translation><!-- VES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VND</masterLabel>
+            <translation><!-- VND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VUV</masterLabel>
+            <translation><!-- VUV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WST</masterLabel>
+            <translation><!-- WST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XAF</masterLabel>
+            <translation><!-- XAF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XCD</masterLabel>
+            <translation><!-- XCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XOF</masterLabel>
+            <translation><!-- XOF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XPF</masterLabel>
+            <translation><!-- XPF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YER</masterLabel>
+            <translation><!-- YER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZAR</masterLabel>
+            <translation><!-- ZAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZMK</masterLabel>
+            <translation><!-- ZMK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZWL</masterLabel>
+            <translation><!-- ZWL --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Access --></label>
+        <name>EC_Customer_Access__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Account Name --></label>
+        <name>EC_Customer_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Key --></label>
+        <name>EC_Customer_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>EC_Customer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Intg Exec Id --></label>
+        <name>EC_Data_Intg_Exec_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>EC_Division__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Encoding Key --></label>
+        <name>EC_Email_Encoding_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>EC_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee Number --></label>
+        <name>EC_Employee_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event ID --></label>
+        <name>EC_Event_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Name --></label>
+        <name>EC_Event_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event State --></label>
+        <name>EC_Event_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Status --></label>
+        <name>EC_Event_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- FederationIdentifier --></label>
+        <name>EC_FederationIdentifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>EC_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Friendly Name --></label>
+        <name>EC_Friendly_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsProcessed --></label>
+        <name>EC_IsProcessed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>EC_Is_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Demo --></label>
+        <name>EC_Is_Demo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Language Key --></label>
+        <name>EC_Language_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Language --></label>
+        <name>EC_Language__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>EC_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Processed --></label>
+        <name>EC_Last_Processed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Locale --></label>
+        <name>EC_Locale__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDM ID --></label>
+        <name>EC_MDM_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Modified By --></label>
+        <name>EC_Modified_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Modified On --></label>
+        <name>EC_Modified_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- MultiSite --></label>
+        <name>EC_MultiSite__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>EC_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Origination Account System Code --></label>
+        <name>EC_Origination_Account_System_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Account Key --></label>
+        <name>EC_Parent_Account_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Account Number --></label>
+        <name>EC_Parent_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Customer Account --></label>
+        <name>EC_Parent_Customer_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Function --></label>
+        <name>EC_Partner_Function__c</name>
+    </fields>
+    <fields>
+        <label><!-- Permission Code --></label>
+        <name>EC_Permission_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>EC_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Port Enabled --></label>
+        <name>EC_Port_Enabled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Code --></label>
+        <name>EC_Postal_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Key --></label>
+        <name>EC_Primary_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processing Log --></label>
+        <name>EC_Processing_Log__c</name>
+    </fields>
+    <fields>
+        <label><!-- Profile ID --></label>
+        <name>EC_Profile_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Profile Name --></label>
+        <name>EC_Profile_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Persona Key --></label>
+        <name>EC_Program_Persona_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Persona --></label>
+        <name>EC_Program_Persona__c</name>
+    </fields>
+    <fields>
+        <label><!-- RecordType ID --></label>
+        <name>EC_RecordType_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- RecordType Name --></label>
+        <name>EC_RecordType_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Status --></label>
+        <name>EC_Record_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate</masterLabel>
+            <translation><!-- Duplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SF Country Code --></label>
+        <name>EC_SF_Country_Code__c</name>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US</masterLabel>
+            <translation><!-- US --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SF Currency --></label>
+        <name>EC_SF_Currency__c</name>
+        <picklistValues>
+            <masterLabel>USD</masterLabel>
+            <translation><!-- USD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SF Language Key --></label>
+        <name>EC_SF_Language_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- SF Locale --></label>
+        <name>EC_SF_Locale__c</name>
+    </fields>
+    <fields>
+        <label><!-- SF Notification Frequency --></label>
+        <name>EC_SF_Notification_Frequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- SF Redemption URL --></label>
+        <name>EC_SF_Redemption_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- SF Status --></label>
+        <name>EC_SF_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SF Street Address --></label>
+        <name>EC_SF_Street_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- SF Time Zone --></label>
+        <name>EC_SF_Time_Zone__c</name>
+    </fields>
+    <fields>
+        <label><!-- SalesOrg --></label>
+        <name>EC_SalesOrg__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Name English --></label>
+        <name>EC_Site_Name_English__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sold To Account Number --></label>
+        <name>EC_Sold_To_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Code System --></label>
+        <name>EC_Source_System_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Table --></label>
+        <name>EC_Source_Table__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Account Number --></label>
+        <name>EC_Stage_Unique_AccNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- State/Province --></label>
+        <name>EC_State_Province__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Code --></label>
+        <name>EC_Status_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>EC_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Street Address 1 --></label>
+        <name>EC_Street_Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address 2 --></label>
+        <name>EC_Street_Address_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address 3 --></label>
+        <name>EC_Street_Address_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address 4 --></label>
+        <name>EC_Street_Address_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Object ID --></label>
+        <name>EC_Target_Object_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Object --></label>
+        <name>EC_Target_Object__c</name>
+    </fields>
+    <fields>
+        <label><!-- Territory Name --></label>
+        <name>EC_Territory_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Territory Number --></label>
+        <name>EC_Territory_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Zone ID --></label>
+        <name>EC_Time_Zone_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Zone --></label>
+        <name>EC_Time_Zone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>EC_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alignment Type --></label>
+        <name>EC_User_Account_Alignment_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Integration Exec Id --></label>
+        <name>EC_User_Data_Integration_Exec_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Key --></label>
+        <name>EC_User_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Middle Name --></label>
+        <name>EC_User_Middle_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Status Code --></label>
+        <name>EC_User_Status_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Type --></label>
+        <name>EC_User_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>EC_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Username --></label>
+        <name>EC_Username__c</name>
+    </fields>
+    <layouts>
+        <layout>Mulesoft CDM Staging Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

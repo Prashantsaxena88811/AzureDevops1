@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>EC_Home_DSR_PowerBIController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>EC_PowerBIController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>Permission Set to display Pest PI Dashboards in Community Portal</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>EC_PESTPI</label>
+</PermissionSet>

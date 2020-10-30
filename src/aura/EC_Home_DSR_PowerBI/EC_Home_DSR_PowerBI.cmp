@@ -1,0 +1,89 @@
+<aura:component controller="EC_Home_DSR_PowerBIController" implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:handler name="init" action="{!c.init}" value="{!this}" />
+    <aura:attribute name="enableIntelligence" type="Boolean" default="false" />
+    <aura:attribute name="enableDSR" type="Boolean" default="false" />
+    <aura:attribute name="baseURL" type="String" />
+
+	<div class="slds-grid slds-wrap marketing-wrapper">
+        <aura:if isTrue="{!and(v.enableIntelligence == true, v.enableDSR == false)}">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 home-tile-wrapper">
+            <label class="heading">{!$Label.c.EC_HomeTile_Our_Intelligence}</label>
+            <div class="home-tile">
+            	<div class="home-tile-logo">
+                	<img class="logo-image" alt="Intelligence" src="{!$Resource.EC_Branding_Theme+'/images/Insights.png'}"/>
+                </div>
+                <div class="home-tile-text">
+                	<p>{!$Label.c.EC_HomeTile_Intelligence_Text}</p>
+                    <a href="{!v.baseURL + '/s/intelligence'}">{!$Label.c.EC_HomeTile_Intelligence_Link}</a>
+                </div>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 home-tile-wrapper">
+            <label class="heading">{!$Label.c.EC_Covid_Title}</label>
+            <div class="home-tile">
+            	<div class="home-tile-logo">
+                	<img class="logo-image" alt="coivd-19" src="{!$Resource.EC_Branding_Theme+'/images/crisisicon.png'}"/>
+                </div>
+                <div class="home-tile-text">
+                	<p>{!$Label.c.EC_Covid_Text1}</p>
+                    <p>{!$Label.c.EC_Covid_Text2}</p>
+                    <a target="blank" href="{!$Label.c.EC_Covid_Link_URL}">{!$Label.c.EC_Covid_Link}</a>
+                </div>
+            </div>
+        </div>
+        </aura:if>
+        <aura:if isTrue="{!and(v.enableIntelligence == false, v.enableDSR == true)}">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 home-tile-wrapper">
+            <label class="heading">{!$Label.c.EC_HomeTile_DSR_Title}</label>
+            <div class="home-tile">
+            	<div class="home-tile-logo">
+                	<img class="logo-image" alt="pest" src="{!$Resource.EC_Branding_Theme+'/images/Insect.png'}"/>
+                </div>
+                <div class="home-tile-text">
+                	<p>{!$Label.c.EC_HomeTile_DSR_Text}</p>
+                    <a target="blank" href="{!v.baseURL + '/s/digital-service-report'}">{!$Label.c.EC_HomeTile_DSR_Link}</a>
+                </div>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 home-tile-wrapper">
+            <label class="heading">{!$Label.c.EC_Covid_Title}</label>
+            <div class="home-tile">
+            	<div class="home-tile-logo">
+                	<img class="logo-image" alt="coivd-19" src="{!$Resource.EC_Branding_Theme+'/images/crisisicon.png'}"/>
+                </div>
+                <div class="home-tile-text">
+                	<p>{!$Label.c.EC_Covid_Text1}</p>
+                    <p>{!$Label.c.EC_Covid_Text2}</p>
+                    <a target="blank" href="{!$Label.c.EC_Covid_Link_URL}">{!$Label.c.EC_Covid_Link}</a>
+                </div>
+            </div>
+        </div>
+        </aura:if>
+        <aura:if isTrue="{!and(v.enableIntelligence == true, v.enableDSR == true)}">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 home-tile-wrapper">
+                <label class="heading">{!$Label.c.EC_HomeTile_Our_Intelligence}</label>
+                <div class="home-tile">
+                    <div class="home-tile-logo">
+                        <img class="logo-image" alt="Intelligence" src="{!$Resource.EC_Branding_Theme+'/images/Insights.png'}"/>
+                    </div>
+                    <div class="home-tile-text">
+                        <p>{!$Label.c.EC_HomeTile_Intelligence_Text}</p>
+                        <a href="{!v.baseURL + '/s/intelligence'}">{!$Label.c.EC_HomeTile_Intelligence_Link}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 home-tile-wrapper">
+                <label class="heading">{!$Label.c.EC_HomeTile_DSR_Title}</label>
+                <div class="home-tile">
+                    <div class="home-tile-logo">
+                        <img class="logo-image" alt="pest" src="{!$Resource.EC_Branding_Theme+'/images/Insect.png'}"/>
+                    </div>
+                    <div class="home-tile-text">
+                        <p>{!$Label.c.EC_HomeTile_DSR_Text}</p>
+                        <a target="blank" href="{!v.baseURL + '/s/digital-service-report'}">{!$Label.c.EC_HomeTile_DSR_Link}</a>
+                    </div>
+                </div>
+            </div>
+    </aura:if>
+    </div>
+</aura:component>

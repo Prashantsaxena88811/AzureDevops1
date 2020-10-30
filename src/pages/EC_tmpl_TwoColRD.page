@@ -1,0 +1,52 @@
+<!-- 
+	Description: Custom Template for Two Column Layout
+	Author: Pratyusha Yadavilli
+	Created Date: 21 June 2019
+-->
+<apex:page id="EC_tmpl_TwoColRD" controller="EC_ProductListController" applyHtmlTag="false" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false">
+    <div class="pdp-container container cc_main_container cc_tmpl_TwoColRD">
+        <!-- Main content two column layout -->
+        <div class="row cc_main_row">
+            <div class="col-md-2 cc_left_col mobile-only mob-my-cartquick clearfix" >
+            <apex:outputPanel rendered="{!buyOnline}">
+                <!--To hide QuickOrder and MiniCart for Mobile-->
+                <apex:outputPanel rendered="{!!(indirectStreetBrand)}">
+                    <div class="search-box-LeftNav" />				
+                    <div class="promotion-box-LeftNav"></div>
+                </apex:outputPanel>
+            </apex:outputPanel>
+				<apex:insert name="LeftNavX" />
+            </div>
+            <apex:outputPanel rendered="{!(!buyOnline)}">
+              <div class="col-md-1"></div>
+            </apex:outputPanel>
+			<div class="col-md-10 cc_main_content_col">
+                <apex:insert name="Banner" />
+                <div class="promotion-box-Banner"></div>
+                <div class="effwig"></div>
+                 <apex:insert name="ProductSearch" />
+                <apex:insert name="body" />
+                <apex:insert name="CrossSell" />
+               
+            </div>
+            <apex:outputPanel rendered="{!(buyOnline)}">
+                <div class="col-md-2 cc_right_col right_column">
+                    <div class="effright"></div>
+                    <div class="search-box-RightNav" />
+                    <div id="MyAccount_navSection"></div> <!-- placeholder for MyAccount Nav in right nav -->
+                    <apex:insert name="ContactUs" />            
+                    <apex:outputPanel rendered="{!!(indirectStreetBrand)}">
+                      <apex:insert name="MiniQuickOrderBox" />
+                      <apex:insert name="MiniCartBox" />
+                      <div id="categories-right-nav"></div> <!-- placeholder for category tree in right nav -->
+                    </apex:outputPanel>
+                    <apex:insert name="SellerLocatorBox"/>               
+                    
+                    <div class="widgetSection"></div>
+                    <div class="promotion-box-RightNav"></div>
+                    <apex:insert name="SideNavigation" />
+                </div>
+            </apex:outputPanel>
+        </div>
+    </div>
+</apex:page>

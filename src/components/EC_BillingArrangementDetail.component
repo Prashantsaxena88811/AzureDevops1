@@ -1,0 +1,314 @@
+<!--
+
+  @Component Name     : EC_BillingArrangementDetail
+
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Akhil                 24-Aug-2020       Component for displaying of BA products.
+
+-->
+<apex:component access="global" controller="EC_BillingArrangementController">
+    <script id="BADetailsPage-Template" type="text/template">
+        <div class="ba-detail-container">
+            {{#if this.baNumber}}
+            <div class="back-to-bapage">
+                <a href="ccrz__CCPage?pageKey=badp" class="ba-details ba-det-btn mt-25 mb-11 ml--10" name="" type="button">
+                    <i class="material-icons keyboard_arrow_left vmiddle"></i>{{pageLabelMap 'EC_BA_BackLabel'}}
+                </a>
+            </div>
+            <div>
+                <h1 class="ba-det-label">{{pageLabelMap 'EC_BADetail'}}</h1>
+            </div>
+            <div class="panel panel-default cc_panel clearfix mob-pad-btm-0">
+                <div class="conf-wrapper">
+                    <div class="panel-heading cc_heading">
+                        <h3 class="panel-title cc_title ucase ec-shipping-info-title">{{pageLabelMap 'EC_BA_Detail'}}</h3>
+                    </div>
+                    <div class="panel-body cc_body ec-ack-date-panel-body conf-left">
+                        <div class="{{#if (HideDatesForCustomer this.profile)}}col-sm-7 {{else}} col-sm-12 {{/if}} col-md-8 badp-left-sec">
+                            <div class="ba-details col-xs-12  col-sm-5 col-lg-3">
+                                <div class="text-label">{{pageLabelMap 'EC_BA_Number'}}</div>
+                                <div class="value-label">{{this.baNumber}}</div>
+                            </div>
+                            {{#if  this.baDesc}}
+                                {{#if (HideBADescription this)}}
+                                <div class="ba-details col-xs-12 col-lg-6 ba-desc-width">
+                                    <div class="text-label">{{pageLabelMap 'EC_BADescLabel'}}</div>
+                                    <div class="value-label">{{{this.baDesc}}}</div>
+                                </div>
+                                {{/if}}
+                            {{/if}}
+                            <div class="ba-details ba-type-width col-xs-12  col-sm-7 col-lg-3 ">
+                                <div class="text-label">{{pageLabelMap 'EC_BATypeLabel'}}</div>
+                                <div class="value-label">{{this.baType}}</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-md-4 badp-right-sec">
+                        {{#if  this.startDate}}
+                            {{#if (HideDatesForCustomer this.profile)}}
+                            <div class="ba-details col-xs-12 col-lg-6 ">
+                                <div class="text-label">{{pageLabelMap 'EC_BAStartDate'}}</div>
+                                <div class="value-label">{{this.startDate}}</div>
+                            </div>
+                            <div class="ba-details col-xs-12 col-lg-6 ">
+                                <div class="text-label">{{pageLabelMap 'EC_BAEndDate'}}</div>
+                                <div class="value-label">{{this.EndDate}}</div>
+                            </div>
+                            {{/if}}
+                        {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ba-prod-list">
+                {{#ifNotEquals this.ItemWrapper.length 0}}
+                {{#each this.ItemWrapper}}
+                    <div class="ba_row cc_badetail_item mob_ba_row row">
+                            <div class="col-xs-12 col-md-2 col-sm-3 ba-prod-image">
+                                <div class="cc_badetail_image">
+                                    {{#if this.uri}}
+                                        <img class="img-responsive custom-thumbnail ga-prodImage" src="{{this.uri}}"/>
+                                    {{else}}
+                                        <img class="img-responsive custom-thumbnail ga-prodImage" src="{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.jpg'}"/>
+                                    {{/if}}    
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-7 col-sm-5 ba-prod-name">
+                                <p class="item_title cc_badetail_item_title {{#if this.genLine}} gen-line-prod {{/if}}">
+                                <span>{{{this.product.Name}}}</span>
+                                </p>
+                                {{#ifNotEquals this.genLine true}}
+                                <div class="sku cc_sku">
+                                    <span class="cc_label">Product Code:</span>
+                                    <span class="cc_value">{{this.product.ccrz__SKU__c}}</span>
+                                    <span class="ba-line mobile-ba-line"></span>
+                                    <span class="ba-prod-desc">{{this.product.ccrz__UnitOfMeasure__c}}</span>
+                                </div>
+                                {{/ifNotEquals}}
+                                {{#if (isNotOrderable this.product.ccrz__ProductStatus__c)}}
+                                <div class="not-ord">
+                                    {{pageLabelMap 'EC_NotOrderableMessage'}}
+                                </div>
+                                {{/if}}
+                            </div>
+                            {{#ifNotEquals this.genLine true}}
+                            {{#if (basicSPAPrice)}}
+                            <div class="bad_price col-xs-12 col-md-3 col-sm-4">
+                                <p class="cc_badetail_action">
+                                    {{#if (isOrderable this.product.ccrz__ProductStatus__c)}}
+                                    {{#if (ShowPriceSPA)}}
+                                        {{#if (taxonomyBADP this.taxonomy 'Equipment')}}
+                                            <div class="cc_price price first-price disptab_none">
+                                                <span class="cc_price here">{{{formatUSD (price this.price)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span></span>
+                                            </div>
+                                            {{/if}}
+                                            {{#if (taxonomyBADP this.taxonomy 'Chemical')}}
+                                                {{#if (packageTypeBADP this.packageTypeUOM 'NonBulk')}}
+                                                    <div class="cc_price price first-price">
+                                                        <span class="cc_price here disptab_none">
+                                                        {{{formatUSD (price this.price)}}} <span class="price-wrap-dec one-uom">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span>
+                                                        </span>
+                                                    </div>
+                                                    {{#if (nonBulkEABADP this.packageTypeUOM this.customPricingUOM)}}
+                                                    <div class="cc_price price second-price">
+                                                        <span class="cc_price here disptab_none">{{{formatUSD (price this.customUnitPrice)}}} <span class="price-wrap-dec">
+                                                        {{pageLabelMap 'EC_UOM_Per'}} {{this.PricePer}} {{this.customPricingUOM}}</span></span>
+                                                    </div>
+                                                    {{/if}}
+                                                {{/if}}
+                                                {{#if (packageTypeBADP this.packageTypeUOM 'Bulk')}}
+                                                    <div class="cc_price price first-price">
+                                                        <span class="cc_price here disptab_none">
+                                                        {{{formatUSD (price this.customUnitPrice)}}} <span class="price-wrap-dec one-uom">
+                                                        {{pageLabelMap 'EC_UOM_Per'}} {{this.PricePer}} {{this.customPricingUOM}}</span>
+                                                        </span>
+                                                    </div>
+                                                {{/if}}
+                                        {{/if}}
+                                    {{/if}}
+                                    {{#if (hasBuyer)}}
+                                    <button type="button" class="btn btn-default btn-sm addItem cc_add_item ec-btn-primary ec-btn-primary-qd ba-add-to-cart" prodId="{{this.product.Id}}">ADD TO CART</button>
+                                    {{/if}}
+                                    {{/if}}
+                                </p>
+                            </div>
+                            {{/if}}
+                            {{/ifNotEquals}}
+                    </div>
+                {{/each}}
+                {{else}}
+                    <span></span>
+                {{/ifNotEquals}}
+            </div>
+            {{/if}}
+        </div>
+    </script>
+    <div class="badp-desk-target"></div>
+    <script type="text/javascript">
+        jQuery(function($){
+            CCRZ.pubSub.on('view:BADPView:refresh', function (viewInstance) {
+                //ba-add-to-cart
+                setBADetail(CCRZ.views.BADPView.prototype, viewInstance);
+                viewInstance.setElement(viewInstance.$el);
+            });
+            var setBADetail = function (badView, viewIn) {
+                var events = badView.events;
+                events["click .ba-add-to-cart"] = "addToCartBA";
+                badView.addToCartBA = function() {
+                    let prodId = $(event.target).attr("prodId");
+                    let cartId = CCRZ.pagevars.currentCartID;
+                    let badpModel = CCRZ.BADPModel.baProducts;
+                    let baSFID = badpModel.baId;
+                    if (badpModel.baType && CCRZ.pagevars.pageLabels.EC_BAspa.toLowerCase() === badpModel.baType.toLowerCase()) {
+                        baSFID = "";
+                    }
+                    $("body").prepend("<div id='overlay' class='ba-update-overlay'></div>");
+                    Visualforce.remoting.Manager.invokeAction(
+                                'EC_BillingArrangementController.addToCartBADP', CCRZ.pagevars.remoteContext, prodId, cartId, baSFID,
+                                function (resp) {
+                                    CCRZ.pubSub.trigger('cartChange', cartId);
+                                    $('.ba-update-overlay').remove();
+                                });
+                }
+            }
+            
+            CCRZ.util.createView({
+        		desktop: {target:'badp-desk-target', template:'BADetailsPage-Template'},
+                phone: {target:'badp-desk-target', template:'BADetailsPage-Template'},
+            });
+            CCRZ.uiProperties.BADPView = {
+                "tmpl": "BADetailsPage-Template",
+                "selector": ".ba-detail-container"
+            };
+            CCRZ.collections.BADPView = CCRZ.CloudCrazePageable.extend({
+                className: "EC_BillingArrangementController",
+                initialize: function() {},
+                fetchData: function(callback) {
+                    let baId = CCRZ.pagevars.queryParams.baid;
+                    Visualforce.remoting.Manager.invokeAction(
+                                'EC_BillingArrangementController.getBADetail', CCRZ.pagevars.remoteContext,baId,
+                                function (resp) {
+                                    console.log('baProducts--> ', resp);
+                                    if (resp.success && resp.data) {
+                                        callback(resp.data);
+                                    } else {
+                                        console.log('NO BA Details');
+                                    }
+                                });
+                }
+            });
+            CCRZ.views.BADPView = CCRZ.CloudCrazeView.extend({
+                templateBoth: CCRZ.util.template(CCRZ.uiProperties.BADPView.tmpl),
+                viewName : "BADPView",
+                className: "EC_BillingArrangementController",
+                initialize: function() {
+                    console.log('initialize...');
+                    this.$el = $(CCRZ.uiProperties.BADPView.selector);
+                    var v = this;
+                    this.coll = new CCRZ.collections.BADPView();
+                    $("body").prepend("<div id='overlay' class='ba-update-overlay'></div>");
+                    v.coll.fetchData(function(data) {
+                        let genLineItems = data.prodLineItems;
+                        if (genLineItems) {
+                            genLineItems.forEach(item => {
+                                item.genLine = true;
+                            });
+                        }
+                        data.ItemWrapper = [...genLineItems,...data.ItemWrapper];
+                        if (!data || data == "") {
+                            CCRZ.BADPModel = {baProducts: []};
+                        } else {
+                            CCRZ.BADPModel = {baProducts: data};
+                        }
+                        $('.ba-update-overlay').remove();
+                        v.render(data);
+                    });
+                },
+                events: {},
+                render: function(data) {
+                    this.data = {};
+                    this.data.BA = data;
+                    this.setElement(this.$el);
+                    this.$el.html(this.templateBoth(CCRZ.BADPModel.baProducts));
+                    CCRZ.pubSub.trigger("view:"+this.viewName+":refresh", this);
+                },
+                refresh: function () {
+                    var v = this;
+                    v.render();                    
+                }
+            });
+            Handlebars.registerHelper('taxonomyBADP', function (taxonomy, type) {
+                if (taxonomy && CCRZ.pagevars.pageLabels['EC_Taxonomy_'+type].includes(taxonomy.toLowerCase())) {
+                    return true;
+                }
+                return false;
+            });
+            Handlebars.registerHelper('packageTypeBADP', function (packageType, type) {
+                if (packageType && CCRZ.pagevars.pageLabels['EC_PackageType_'+type] === packageType.toLowerCase() ) {
+                    return true;
+                }
+                return false;
+            });
+            Handlebars.registerHelper('nonBulkEABADP', function(type, uom) {
+                if (CCRZ.pagevars.pageLabels.EC_PackageType_NonBulk === type.toLowerCase()
+                 && uom && uom.toLowerCase() !== CCRZ.pagevars.pageLabels.EC_UOM_EA.toLowerCase()) {
+                    return true;
+                }
+                return false;
+            });
+            Handlebars.registerHelper('formatUSD', function (price) {
+                var getPrice = price.toString().split(".");
+                var ab = CCRZ.pagevars.userLocale;
+                var cd = CCRZ.userIsoCode;
+                console.log(cd);
+                var priceHtml = "<span class='price-wrap price-blue'><span class='price-wrap-num'>" + getPrice[0] + "</span><span class='price-wrap-dec'>." + getPrice[1] + "&nbsp;" + cd + "</span></span>";
+                return priceHtml;
+            });
+            Handlebars.registerHelper('HideBADescription', function(data) {
+                if (CCRZ.pagevars.pageLabels.EC_BAProfileUser.toLowerCase() === data.profile.toLowerCase() && 
+                    CCRZ.pagevars.pageLabels.EC_BAspa.toLowerCase() === data.baType.toLowerCase()) {
+                    return false;
+                }
+                return true;
+            });
+            Handlebars.registerHelper('HideDatesForCustomer', function (profile) {
+                if (CCRZ.pagevars.pageLabels.EC_BAProfileRep.toLowerCase() === profile.toLowerCase()) {
+                    return true;
+                }
+                return false;
+            });
+            Handlebars.registerHelper('ShowPriceSPA', function () {
+                let batype = CCRZ.BADPModel.baProducts.baType;
+                if (CCRZ.pagevars.pageLabels.EC_BAspa.toLowerCase() === batype.toLowerCase()) {
+                    return true;
+                }
+                return false;
+            });
+            Handlebars.registerHelper('hasBuyer', function() {
+                return CCRZ.headerModel.attributes.buyerPerm;
+            });
+            Handlebars.registerHelper('basicSPAPrice', function() {
+                let batype = CCRZ.BADPModel.baProducts.baType;
+                if (!CCRZ.headerModel.attributes.buyerPerm && 
+                    CCRZ.pagevars.pageLabels.EC_BAspa.toLowerCase() === batype.toLowerCase()) {
+                        return false;
+                }
+                return true;
+            });
+            Handlebars.registerHelper('isOrderable', function(orderable) {
+              if (CCRZ.pagevars.pageLabels.EC_ProdOrderable.toLowerCase() === orderable.toLowerCase()){
+                  return true;
+              }
+               return false;
+            });
+            Handlebars.registerHelper('isNotOrderable', function(notorderable) {
+              if (CCRZ.pagevars.pageLabels.EC_ProdNotOrderable.toLowerCase() === notorderable.toLowerCase()){
+                  return true;
+              }
+               return false;
+            });
+            CCRZ.BADPView = new CCRZ.views.BADPView;
+        });
+    </script>
+</apex:component>

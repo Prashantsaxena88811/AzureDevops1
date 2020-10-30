@@ -1,0 +1,504 @@
+<apex:component ><div id="search" class="CoveoSearchInterface" data-enable-history="true" data-design="new">
+  <div class="CoveoAnalytics" data-search-hub="EcolabProductSearch"></div>
+  <!-- <div class="CoveoGTM"></div> -->
+  <div class="CoveoCommerceQuery"></div>
+  <div class="CoveoFacetsMobileMode" data-is-modal="true"></div>
+  <div class="CoveoEcolabCusto"></div>
+  <div class="CoveoCcWishlist"></div>
+  <div class="CoveoCommerceDataLayer"></div>
+  <div class="coveo-main-section">
+    <div class="coveo-facet-column">
+      
+      <div class="CoveoDynamicHierarchicalFacet" data-number-of-values="15" data-title="Categories" data-field="@sfccrz_product_categories" data-tab="All"></div>
+<div class="coveo-facet-header-section">
+    <div class="CoveoText" data-value="FILTERS"></div>
+</div>
+<!-- <div class="CoveoHierarchicalFacet" data-number-of-values="15" data-title="Categories" data-field="@sfccrz_product_categories" data-tab="All"></div> -->
+<!-- <div class="CoveoDynamicFacet" data-title="Battery Capacity" data-field="@sfccrz_product_spec_batterycapacity" data-tab="All"></div> -->
+<!-- <div class="CoveoDynamicFacet" data-title="Boiling Point" data-field="@sfccrz_product_spec_boilingpoint" data-tab="All"></div> -->
+<div class="CoveoDynamicFacet" data-title="Case Barcode" data-field="@sfccrz_product_spec_casebarcode" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Certifications" data-field="@sfccrz_product_spec_certifications" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Che Color" data-field="@sfccrz_product_spec_checolor" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Color" data-field="@sfccrz_product_spec_color" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Compatible Materials" data-field="@sfccrz_product_spec_compatiblematerials" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Connected" data-field="@sfccrz_product_spec_connected" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Decaf" data-field="@sfccrz_product_spec_decaf" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Decaf clone" data-field="@sfccrz_product_spec_decafclone" data-tab="All"></div>
+<!-- <div class="CoveoDynamicFacet" data-title="Filters" data-field="@sfccrz_product_spec_filters" data-tab="All"></div> -->
+<!-- <div class="CoveoDynamicFacet" data-title="Flash Point" data-field="@sfccrz_product_spec_flashpoint" data-tab="All"></div> -->
+<div class="CoveoDynamicFacet" data-title="Flash Point Remark" data-field="@sfccrz_product_spec_flashpointremark" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Form" data-field="@sfccrz_product_spec_form" data-tab="All"></div>
+<!-- <div class="CoveoDynamicFacet" data-title="Freeze Point" data-field="@sfccrz_product_spec_freezepoint" data-tab="All"></div> -->
+<!-- <div class="CoveoDynamicFacet" data-title="Freeze Thaw Recovery" data-field="@sfccrz_product_spec_freezethawrecovery" data-tab="All"></div> -->
+<div class="CoveoDynamicFacet" data-title="Grade" data-field="@sfccrz_product_spec_grade" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Material" data-field="@sfccrz_product_spec_material" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Model Number" data-field="@sfccrz_product_spec_modelnumber" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Not Compatible Materials" data-field="@sfccrz_product_spec_notcompatiblematerials" data-tab="All"></div>
+<!-- <div class="CoveoDynamicFacet" data-title="Odor" data-field="@sfccrz_product_spec_odor" data-tab="All"></div> -->
+<div class="CoveoDynamicFacet" data-title="Organic" data-field="@sfccrz_product_spec_organic" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Pack Size" data-field="@sfccrz_product_spec_packsize" data-tab="All"></div>
+<!-- <div class="CoveoDynamicFacet" data-title="Package Weight" data-field="@sfccrz_product_spec_packageweight" data-tab="All"></div> -->
+<!-- <div class="CoveoDynamicFacet" data-title="Partition Coefficient" data-field="@sfccrz_product_spec_partitioncoefficient" data-tab="All"></div> -->
+<!-- <div class="CoveoDynamicFacet" data-title="pH" data-field="@sfccrz_product_spec_ph" data-tab="All"></div> -->
+<!-- <div class="CoveoDynamicFacet" data-title="Phase Transition Liquid" data-field="@sfccrz_product_spec_phasetransitionliquid" data-tab="All"></div> -->
+<!-- <div class="CoveoDynamicFacet" data-title="Phase Trasition solution" data-field="@sfccrz_product_spec_phasetrasitionsolution" data-tab="All"></div> -->
+<div class="CoveoDynamicFacet" data-title="PPE Required" data-field="@sfccrz_product_spec_pperequired" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Product Color" data-field="@sfccrz_product_spec_productcolor" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Product Description" data-field="@sfccrz_product_spec_productdescription" data-tab="All"></div>
+<!-- <div class="CoveoDynamicFacet" data-title="Product Factor" data-field="@sfccrz_product_spec_productfactor" data-tab="All"></div> -->
+<div class="CoveoDynamicFacet" data-title="Product Type" data-field="@sfccrz_product_spec_producttype" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Product Weight" data-field="@sfccrz_product_spec_productweight" data-tab="All"></div>
+<!-- <div class="CoveoDynamicFacet" data-title="Relative Density" data-field="@sfccrz_product_spec_relativedensity" data-tab="All"></div> -->
+<div class="CoveoDynamicFacet" data-title="Roast" data-field="@sfccrz_product_spec_roast" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="RTU or Concentrate" data-field="@sfccrz_product_spec_rtuorconcentrate" data-tab="All"></div>
+<!-- <div class="CoveoDynamicFacet" data-title="Sol in Water" data-field="@sfccrz_product_spec_solinwater" data-tab="All"></div> -->
+<!-- <div class="CoveoDynamicFacet" data-title="Specific Gravity" data-field="@sfccrz_product_spec_specificgravity" data-tab="All"></div> -->
+<div class="CoveoDynamicFacet" data-title="Unit Of Measure" data-field="@sfccrz_product_spec_unitofmeasure" data-tab="All"></div>
+<!-- <div class="CoveoDynamicFacet" data-title="Vapor Pressure" data-field="@sfccrz_product_spec_vaporpressure" data-tab="All"></div> -->
+<!-- <div class="CoveoDynamicFacet" data-title="Viscosity Dynamic" data-field="@sfccrz_product_spec_viscositydynamic" data-tab="All"></div> -->
+<!-- <div class="CoveoDynamicFacet" data-title="Viscosity Kinematic" data-field="@sfccrz_product_spec_viscositykinematic" data-tab="All"></div> -->
+<div class="CoveoDynamicFacet" data-title="Weight" data-field="@sfccrz_product_spec_weight" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Weight UOM" data-field="@sfccrz_product_spec_weightuom" data-tab="All"></div>
+<div class="CoveoDynamicFacet" data-title="Width" data-field="@sfccrz_product_spec_width" data-tab="All"></div>
+<!-- <div class="CoveoDynamicFacet" data-title="Weight" data-field="@sfccrz_product_weight" data-tab="All"></div> -->
+<!-- <div class="CoveoDynamicFacet" data-title="Pack Size" data-field="@sfccrz_product_packsize" data-tab="All"></div> -->
+<!-- <div class="CoveoDynamicFacet" data-title="Filters" data-field="@allfiltersvalue" data-tab="All"></div> -->
+<!-- <div class="CoveoFacet" data-title="FileType" data-field="@filetype" data-tab="All"></div>
+<div class="CoveoFacet" data-title="Author" data-field="@author" data-tab="All"></div>
+<div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="All"></div>
+<div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="All"></div> -->
+    </div>
+    <div class="coveo-results-column">
+      
+      <div class="CoveoShareQuery"></div>
+      <div class="CoveoExportToExcel"></div>
+      <div class="CoveoPreferencesPanel">
+        <div class="CoveoResultsPreferences"></div>
+        <div class="CoveoResultsFiltersPreferences"></div>
+      </div>
+      <div class="coveo-results-header">
+        <div class="coveo-product-searchbox-section">
+          <!-- <div class="CoveoQuerySuggestPreview" data-result-template-id="ProductsPreview"></div> -->
+          <div class="CoveoSearchbox" data-placeholder="Search for a product by name or code"></div>
+          <div class="CoveoFieldSuggestions" data-field="@ec_suggested_name" data-header-title="Products"></div>
+          <!-- <div class="CoveoFieldSuggestions" data-field="@title" data-header-title="Products Names"></div> -->
+          <!-- <div class="CoveoFieldSuggestions" data-field="@sfccrz__sku__c" data-header-title="Products SKUs"></div> -->
+        </div>
+        <div class="coveo-sort-section">
+          <div class="CoveoCustomSortDropdown" data-caption="Sort by" data-display-caption="true">
+    <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+    <span class="CoveoSort" data-sort-criteria="@ec_title_sort ascending" data-caption="Sort_Name_A_to_Z"></span>
+    <span class="CoveoSort" data-sort-criteria="@ec_title_sort descending" data-caption="Sort_Name_Z_to_A"></span>
+    <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
+</div>
+        </div>
+        <div class="coveo-product-searchbox-section">
+          <div class="CoveoResultsPerPageDropdown" data-caption="Showing"></div>
+          <span class="CoveoQuerySummary"></span>
+        </div>
+       
+        <!-- <div class="coveo-result-layout-section">
+          <span class="CoveoResultLayoutSelector"></span>
+        </div> -->
+        
+      </div>
+      <div class="CoveoBreadcrumb"></div>
+      <div class="CoveoHiddenQuery"></div>
+      <div class="CoveoDidYouMean"></div>
+      <div class="CoveoErrorReport"></div>
+      <span class="CoveoQuerySummary"></span>
+      <div class="CoveoIndirectStreetBrandBanner"></div>
+      <div class="CoveoCCResultList" data-layout="card" data-wait-animation="fade" data-auto-select-fields-to-include="true">
+        <script id="ProductsCard" class="result-template" type="text/underscore" data-layout="card" data-field-objecttype="ccrz__E_Product__c">
+    <div class="coveo-result-frame">
+      <div class="grid-top-row clearfix">
+        {{if (raw.sfccrz__productstatus__c == "Released") { }}
+        <div class="CoveoLastPurchasedDate last-purchase-rectangle pull-left"></div>
+        <div class="pull-right plp-ql-box">
+          {{ if(raw.isaddtocartshow) { }}
+              {{if (raw.shownewsubscriptionselection == false && raw.sfccrz__producttype__c != 'Aggregated') {}}
+                <div class="CoveoCcWishlistButton"></div>
+              {{ } }}
+          {{ } }}
+        </div>
+        {{ } }}
+      </div>
+      <div class="cc_product_item cc_grid_item clearfix no-padding grid-center-row">
+        <div class="thumbnail-section col-sm-3 no-padding">
+          <img class="img-responsive custom-thumbnail" src="{{= raw.sfccrz__e_productmedias__rccrz__uri__c }}" alt="{{= title }}"
+                    onerror='this.src="{{=CCRZ.pagevars.currSiteURL}}resource/EC_EcoLabs_Theme/images/EC_no_image.svg";this.className="img-responsive custom-thumbnail ec_default_product_thumbnail"'/>
+        </div>
+        <div class="description-section col-sm-9">
+          <div class="plp-title-code-wrapper">
+            <div class="product-title-section clearfix">
+                <div class="product-title pull-left">
+                  <a class="CoveoResultLink cc_product_name" title="{{-title}}" data-href-template="./ccrz__ProductDetails?sku=${raw.sfccrz__sku__c}">
+                    <div class="CoveoFieldValue" data-field="@title" data-helper="shorten" data-helper-options-length="60"></div>
+                  </a>
+                </div>                         
+            </div>
+            <div class="product-code-section clearfix">
+                    <p class="cc_product_sku_wrap pull-left">
+                      <span class="CoveoFieldValue" data-field="@sfid" style="display:none"></span>
+                      {{if (CCRZ.pagevars.pageConfig['pl.dsplsku'] && CCRZ.pagevars.pageConfig['pl.dsplsku'] == "TRUE") { }}
+                        <span class="CoveoFieldValue" data-field="@sfccrz__sku__c" data-text-caption="Product Code:" style="display:block"></span>
+                      {{ } }}
+                    </p>
+                    <div class="cc_product_uom_wrap pull-left">
+                    {{if (CCRZ.pagevars.pageConfig['pl.dspluom'] && CCRZ.pagevars.pageConfig['pl.dspluom'] == "TRUE") { }}
+                        <span class="cc_product_uom"><span class="CoveoFieldValue" data-field="@sfccrz__unitofmeasure__c" data-text-caption="" style="display:block"></span></span>
+                    {{ } }}
+                    </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <div class="product-add-section clearfix grid-third-row {{ if (raw.ecdivision && CCRZ.pagevars.pageLabels.EC_NALCO.includes(raw.ecdivision.toLowerCase())){ }}inlarge-nalco{{ } }}">
+         {{if (raw.sfccrz__productstatus__c == "Released") { }}
+          {{if (CCRZ.pagevars.pageConfig['pl.dspladdcart'] && CCRZ.pagevars.pageConfig['pl.dspladdcart'] == "TRUE") { }}
+            {{if (raw.shownewsubscriptionselection == false) { }}
+              {{ if (raw.ecdivision && CCRZ.pagevars.pageLabels.EC_NALCO.includes(raw.ecdivision.toLowerCase())) { }}
+                <div class="row nalco m-r-0">
+                {{ if (CoveoPL.viewPrice || CoveoPL.buyOnline) { }}
+                  {{ if(raw.isaddtocartshow) { }}
+                    {{ if (CoveoPL.viewPrice) { }}
+                      <div class="cc_price_container cc_grid_price_info caption fa-pull-left">
+                        <!-- <div class="CoveoPrice"></div>
+{{ if (raw.price && CCRZ.pagevars.currencyData.currencyName) { }}
+<span class="price-wrap-dec">{{-CCRZ.pagevars.currencyData.currencyName}}<span>
+{{ } }} -->
+
+{{if (CCRZ.pagevars.pageConfig['pl.dspllistprc'] && CCRZ.pagevars.pageConfig['pl.dspllistprc'] == "TRUE") { }}
+    {{if (raw.baseprice) { }}
+        <div class="cc_price cc_baseprice">
+            <span class="cc_base_price_label"><span class="CoveoText" data-value="ProductList_BasePrice"></span></span>
+            <span class="cc_base_price_value"><div class="CoveoPrice" data-field="@baseprice"></div></span>
+        </div>
+    {{ } }}
+{{ } }}
+{{if (CCRZ.pagevars.pageConfig['pl.dsplprc'] && CCRZ.pagevars.pageConfig['pl.dsplprc'] == "TRUE") { }}
+    {{if (raw.shownewsubscriptionselection) { }}   
+        <p class="price priceSubscription cc_subscr_price"><span class="CoveoText" data-value="Prod_SubsListPrice"></span></p>
+    {{ } else { }}
+        {{if (raw.maxPrice) { }}
+            {{if (raw.displayPrice) { }}
+                <div class="cc_price cc_baseprice">
+                    <span class="price cc_price"><div class="CoveoPrice" data-field="@displayprice"></div></span>
+                </div>
+            {{ } else { }}
+                <span class="price cc_price_label">{{=raw.minprice}}<span class="CoveoText" data-value="ProductDetails_PriceRangeFormat"></span>{{=raw.maxprice}}</span>
+            {{ } }}
+        {{ } else { }}
+            {{if (raw.primaryAttr) { }}
+                <span class="cc_attr_message"><span class="CoveoText" data-value="ProductAttributes_PriceMessage"></span></span>
+            {{ } else { }}
+                {{if (raw.displayPrice) { }}
+                <div class="cc_price cc_baseprice">
+                    <span class="price cc_price"><div class="CoveoPrice" data-field="@displayprice"></div></span>
+                </div>
+                {{ } else { }}
+                    {{if (raw.price) { }}
+                         {{ if (raw.ecdivision && CCRZ.pagevars.pageLabels.EC_NALCO.includes(raw.ecdivision.toLowerCase())) { }}
+                            {{ if (raw.taxonomy && CCRZ.pagevars.pageLabels['EC_Taxonomy_Equipment'].includes(raw.taxonomy.toLowerCase())) { }}
+                                <div class="cc_price price">
+                                    <span class="price cc_price">
+                                        <div class="CoveoPrice" data-field="@price"></div>
+                                        {{ if (raw.price && CCRZ.pagevars.currencyData.currencyName) { }}
+                                            <span class="price-wrap-dec">{{-CCRZ.pagevars.currencyData.currencyName}}<span>
+                                        {{ } }}
+                                        <span class="price-wrap-dec one-uom">Per EA</span>
+                                    </span>
+                                </div>
+                            {{ } }}
+                            {{ if (raw.taxonomy && CCRZ.pagevars.pageLabels['EC_Taxonomy_Chemical'].includes(raw.taxonomy.toLowerCase())) { }}
+                                {{ if (raw.packagetypeuom && CCRZ.pagevars.pageLabels['EC_PackageType_NonBulk'] === raw.packagetypeuom.toLowerCase() ) { }}
+                                    <div class="cc_price price">
+                                        <span class="price cc_price">
+                                            <div class="CoveoPrice" data-field="@price"></div>
+                                            {{ if (raw.price && CCRZ.pagevars.currencyData.currencyName) { }}
+                                                <span class="price-wrap-dec">{{-CCRZ.pagevars.currencyData.currencyName}}<span>
+                                            {{ } }}
+                                            <span class="price-wrap-dec one-uom">Per EA</span>
+                                        </span>
+                                    </div>
+                                    {{ if (raw.customunitprice && raw.packagetypeuom && CCRZ.pagevars.pageLabels.EC_PackageType_NonBulk === raw.packagetypeuom.toLowerCase() && raw.CustomPricingUOM !== 'EA') { }}
+                                        <div class="cc_price price second-price">
+                                            <span class="price cc_price">
+                                                <div class="CoveoPrice" data-field="@customunitprice"></div> 
+                                                {{ if (raw.price && CCRZ.pagevars.currencyData.currencyName) { }}
+                                                        <span class="price-wrap-dec">{{-CCRZ.pagevars.currencyData.currencyName}}<span>
+                                                {{ } }}
+                                                <span class="price-wrap-dec">Per {{=raw.priceper}} {{=raw.custompricinguom}}</span>
+                                            </span>
+                                        </div>
+                                    {{ } }}
+                                {{ } }}
+                                {{ if (raw.customunitprice && raw.packagetypeuom && CCRZ.pagevars.pageLabels['EC_PackageType_Bulk'] === raw.packagetypeuom.toLowerCase() ) { }}
+                                    <div class="cc_price price">
+                                        <span class="price cc_price">
+                                            <div class="CoveoPrice" data-field="@customunitprice"></div> 
+                                            {{ if (raw.price && CCRZ.pagevars.currencyData.currencyName) { }}
+                                                <span class="price-wrap-dec">{{-CCRZ.pagevars.currencyData.currencyName}}<span>
+                                            {{ } }}
+                                            <span class="price-wrap-dec one-uom">Per {{=raw.priceper}} {{=raw.custompricinguom}}</span>
+                                         </span>
+                                    </div>
+                                {{ } }}
+                            {{ } }}
+
+                         {{ } else { }}
+                            <span class="price cc_price">
+                                    <div class="CoveoPrice" data-field="@price"></div>
+                                    {{ if (raw.price && CCRZ.pagevars.currencyData.currencyName) { }}
+                                        <span class="price-wrap-dec">{{-CCRZ.pagevars.currencyData.currencyName}}<span>
+                                    {{ } }}
+                            </span>
+                         {{ } }}
+                         {{if (raw.sellername) { }}
+                            <span class="cc_sold_by">
+                                <span class="CoveoText" data-value="Prod_SoldBy"></span>
+                            </span>
+                            <span class="cc_seller_name">{{=raw.sellername}}</span>
+                         {{ } }}
+                    {{ } }}
+                    {{if(raw.itemtype == 'tiered') { }}
+                            <span class="cc_label">
+                                <span class="CoveoText" data-value="ProductPricingTiers_VolumePricing"></span>
+                            </span>
+                    {{ } }}
+                    {{if(raw.producttype == 'Dynamic Kit') { }}
+                        <span class="cc_label dispPriceDynKit">
+                            <span class="CoveoText" data-value="DisplayPrice_DynamicKit"></span>
+                        </span>
+                    {{ } }}
+                {{ } }}
+            {{ } }}
+        {{ } }}
+    {{ } }}
+{{ } }}
+
+
+
+
+
+ 
+                      </div>
+                    {{ } }}
+                    {{ if (CoveoPL.buyOnline) { }}
+                      <div class="action cc_action addcartplp wishFinder fa-pull-right">
+                        {{ if (raw.custompricinguom && raw.packagetypeuom && CCRZ.pagevars.pageLabels['EC_PackageType_Bulk'] === raw.packagetypeuom.toLowerCase() ) { }}
+                          <div class="CoveoAddToCart" data-is-unit-of-measure-visible="true" data-unit-of-measure-field="@custompricinguom"></div>
+                        {{ } else { }}
+                          <div class="CoveoAddToCart"></div>
+                        {{ } }}   
+                      </div>
+                    {{ } }}   
+                  {{ } else { }}
+                    <div class="error_msg no-padding"><span class="CoveoText" data-value="Sales_Entitlement"></span></div>
+                  {{ } }}
+                {{ } }}
+                </div>
+              {{ } else { }}
+                <div class=""> 
+                  {{ if (CoveoPL.viewPrice || CoveoPL.buyOnline) { }}
+                    {{ if (CoveoPL.viewPrice) { }}
+                      <div class="cc_price_container cc_grid_price_info caption fa-pull-left">
+                        {{if (raw.isflatfeeproduct) { }}
+                                  <span class="noChargeWrap">
+                                      <span class="noChargeLabel"><span class="CoveoText" data-value="EC_NoCharge"></span></span>
+                                      <span class="noCharge">
+                                          <i class="material-icons info_outline"></i>
+                                          <span class="noChargeMsg"><span class="CoveoText" data-value="EC_NoChargeMsg"></span></span>
+                                      </span>
+                                  </span>
+                        {{ } else { }}
+                            <!-- <div class="CoveoPrice"></div>
+{{ if (raw.price && CCRZ.pagevars.currencyData.currencyName) { }}
+<span class="price-wrap-dec">{{-CCRZ.pagevars.currencyData.currencyName}}<span>
+{{ } }} -->
+
+{{if (CCRZ.pagevars.pageConfig['pl.dspllistprc'] && CCRZ.pagevars.pageConfig['pl.dspllistprc'] == "TRUE") { }}
+    {{if (raw.baseprice) { }}
+        <div class="cc_price cc_baseprice">
+            <span class="cc_base_price_label"><span class="CoveoText" data-value="ProductList_BasePrice"></span></span>
+            <span class="cc_base_price_value"><div class="CoveoPrice" data-field="@baseprice"></div></span>
+        </div>
+    {{ } }}
+{{ } }}
+{{if (CCRZ.pagevars.pageConfig['pl.dsplprc'] && CCRZ.pagevars.pageConfig['pl.dsplprc'] == "TRUE") { }}
+    {{if (raw.shownewsubscriptionselection) { }}   
+        <p class="price priceSubscription cc_subscr_price"><span class="CoveoText" data-value="Prod_SubsListPrice"></span></p>
+    {{ } else { }}
+        {{if (raw.maxPrice) { }}
+            {{if (raw.displayPrice) { }}
+                <div class="cc_price cc_baseprice">
+                    <span class="price cc_price"><div class="CoveoPrice" data-field="@displayprice"></div></span>
+                </div>
+            {{ } else { }}
+                <span class="price cc_price_label">{{=raw.minprice}}<span class="CoveoText" data-value="ProductDetails_PriceRangeFormat"></span>{{=raw.maxprice}}</span>
+            {{ } }}
+        {{ } else { }}
+            {{if (raw.primaryAttr) { }}
+                <span class="cc_attr_message"><span class="CoveoText" data-value="ProductAttributes_PriceMessage"></span></span>
+            {{ } else { }}
+                {{if (raw.displayPrice) { }}
+                <div class="cc_price cc_baseprice">
+                    <span class="price cc_price"><div class="CoveoPrice" data-field="@displayprice"></div></span>
+                </div>
+                {{ } else { }}
+                    {{if (raw.price) { }}
+                         {{ if (raw.ecdivision && CCRZ.pagevars.pageLabels.EC_NALCO.includes(raw.ecdivision.toLowerCase())) { }}
+                            {{ if (raw.taxonomy && CCRZ.pagevars.pageLabels['EC_Taxonomy_Equipment'].includes(raw.taxonomy.toLowerCase())) { }}
+                                <div class="cc_price price">
+                                    <span class="price cc_price">
+                                        <div class="CoveoPrice" data-field="@price"></div>
+                                        {{ if (raw.price && CCRZ.pagevars.currencyData.currencyName) { }}
+                                            <span class="price-wrap-dec">{{-CCRZ.pagevars.currencyData.currencyName}}<span>
+                                        {{ } }}
+                                        <span class="price-wrap-dec one-uom">Per EA</span>
+                                    </span>
+                                </div>
+                            {{ } }}
+                            {{ if (raw.taxonomy && CCRZ.pagevars.pageLabels['EC_Taxonomy_Chemical'].includes(raw.taxonomy.toLowerCase())) { }}
+                                {{ if (raw.packagetypeuom && CCRZ.pagevars.pageLabels['EC_PackageType_NonBulk'] === raw.packagetypeuom.toLowerCase() ) { }}
+                                    <div class="cc_price price">
+                                        <span class="price cc_price">
+                                            <div class="CoveoPrice" data-field="@price"></div>
+                                            {{ if (raw.price && CCRZ.pagevars.currencyData.currencyName) { }}
+                                                <span class="price-wrap-dec">{{-CCRZ.pagevars.currencyData.currencyName}}<span>
+                                            {{ } }}
+                                            <span class="price-wrap-dec one-uom">Per EA</span>
+                                        </span>
+                                    </div>
+                                    {{ if (raw.customunitprice && raw.packagetypeuom && CCRZ.pagevars.pageLabels.EC_PackageType_NonBulk === raw.packagetypeuom.toLowerCase() && raw.CustomPricingUOM !== 'EA') { }}
+                                        <div class="cc_price price second-price">
+                                            <span class="price cc_price">
+                                                <div class="CoveoPrice" data-field="@customunitprice"></div> 
+                                                {{ if (raw.price && CCRZ.pagevars.currencyData.currencyName) { }}
+                                                        <span class="price-wrap-dec">{{-CCRZ.pagevars.currencyData.currencyName}}<span>
+                                                {{ } }}
+                                                <span class="price-wrap-dec">Per {{=raw.priceper}} {{=raw.custompricinguom}}</span>
+                                            </span>
+                                        </div>
+                                    {{ } }}
+                                {{ } }}
+                                {{ if (raw.customunitprice && raw.packagetypeuom && CCRZ.pagevars.pageLabels['EC_PackageType_Bulk'] === raw.packagetypeuom.toLowerCase() ) { }}
+                                    <div class="cc_price price">
+                                        <span class="price cc_price">
+                                            <div class="CoveoPrice" data-field="@customunitprice"></div> 
+                                            {{ if (raw.price && CCRZ.pagevars.currencyData.currencyName) { }}
+                                                <span class="price-wrap-dec">{{-CCRZ.pagevars.currencyData.currencyName}}<span>
+                                            {{ } }}
+                                            <span class="price-wrap-dec one-uom">Per {{=raw.priceper}} {{=raw.custompricinguom}}</span>
+                                         </span>
+                                    </div>
+                                {{ } }}
+                            {{ } }}
+
+                         {{ } else { }}
+                            <span class="price cc_price">
+                                    <div class="CoveoPrice" data-field="@price"></div>
+                                    {{ if (raw.price && CCRZ.pagevars.currencyData.currencyName) { }}
+                                        <span class="price-wrap-dec">{{-CCRZ.pagevars.currencyData.currencyName}}<span>
+                                    {{ } }}
+                            </span>
+                         {{ } }}
+                         {{if (raw.sellername) { }}
+                            <span class="cc_sold_by">
+                                <span class="CoveoText" data-value="Prod_SoldBy"></span>
+                            </span>
+                            <span class="cc_seller_name">{{=raw.sellername}}</span>
+                         {{ } }}
+                    {{ } }}
+                    {{if(raw.itemtype == 'tiered') { }}
+                            <span class="cc_label">
+                                <span class="CoveoText" data-value="ProductPricingTiers_VolumePricing"></span>
+                            </span>
+                    {{ } }}
+                    {{if(raw.producttype == 'Dynamic Kit') { }}
+                        <span class="cc_label dispPriceDynKit">
+                            <span class="CoveoText" data-value="DisplayPrice_DynamicKit"></span>
+                        </span>
+                    {{ } }}
+                {{ } }}
+            {{ } }}
+        {{ } }}
+    {{ } }}
+{{ } }}
+
+
+
+
+
+ 
+                        {{ } }}                   
+                      </div>
+                    {{ } }} 
+                    {{ if (CoveoPL.buyOnline) { }}
+                      {{ if(raw.isaddtocartshow) { }}
+                        <div class="action cc_action addcartplp wishFinder fa-pull-right">
+                          <div class="CoveoAddToCart"></div>
+                        </div>
+                      {{ } else { }} 
+                        <div class="error_msg" style="text-align: center;padding: 8px;"><span class="CoveoText" data-value="Sales_Entitlement"></span></div>
+                      {{ } }} 
+                    {{ } }} 
+                  {{ } }} 
+                </div>
+              {{ } }}
+            {{ } }}
+          {{ } }}
+        {{ } else { }}
+          <div class="error_msg no-padding"><span class="CoveoText" data-value="Non_orderable_msgList"></span></div>
+        {{ } }}
+      <div>
+    </div>
+</script>
+
+<!-- <script id="ProductsPreview" class="result-template" type="text/underscore" data-layout="preview">
+  <div class="coveo-result-frame">
+    <div class="grid-top-row clearfix"></div>
+
+    <div class="cc_product_item cc_grid_item clearfix no-padding grid-center-row">
+      <div class="thumbnail-section col-sm-3 no-padding">
+        <img class="img-responsive custom-thumbnail" src="{{= raw.sfccrz__e_productmedias__rccrz__uri__c }}" alt="{{= title }}"
+          onerror='this.src="{{=CCRZ.pagevars.currSiteURL}}resource/EC_EcoLabs_Theme/images/EC_no_image.svg";this.className="img-responsive custom-thumbnail ec_default_product_thumbnail"'/>
+      </div>
+      <div class="description-section col-sm-9">
+        <div class="plp-title-code-wrapper">
+          <div class="product-title-section clearfix">
+            <div class="product-title pull-left">
+              <a class="CoveoResultLink cc_product_name" title="{{-title}}" data-href-template="./ccrz__ProductDetails?sku=${raw.sfccrz__sku__c}">
+                <div class="CoveoFieldValue" data-field="@title" data-helper="shorten" data-helper-options-length="60"></div>
+              </a>
+            </div>                         
+          </div>
+          <div class="product-code-section clearfix">
+            <p class="cc_product_sku_wrap pull-left">
+              <span class="CoveoFieldValue" data-field="@sfid" style="display:none"></span>
+              {{if (CCRZ.pagevars.pageConfig['pl.dsplsku'] && CCRZ.pagevars.pageConfig['pl.dsplsku'] == "TRUE") { }}
+              <span class="CoveoFieldValue" data-field="@sfccrz__sku__c" data-text-caption="Product Code:" style="display:block"></span>
+              {{ } }}
+            </p>
+            <div class="cc_product_uom_wrap pull-left">
+              {{if (CCRZ.pagevars.pageConfig['pl.dspluom'] && CCRZ.pagevars.pageConfig['pl.dspluom'] == "TRUE") { }}
+              <span class="cc_product_uom"><span class="CoveoFieldValue" data-field="@sfccrz__unitofmeasure__c" data-text-caption="" style="display:block"></span></span>
+              {{ } }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</script> -->
+      </div>
+      <!-- <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true">
+        
+      </div> -->
+      <div class="CoveoPager pull-right"></div>
+      <!-- <div class="CoveoLogo"></div> -->
+      <!-- <div class="CoveoResultsPerPage"></div> -->
+   
+    </div>
+  </div>
+</div></apex:component>

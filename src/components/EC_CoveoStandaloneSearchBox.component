@@ -1,0 +1,10 @@
+<apex:component >
+    <div id="coveoStandaloneSearchBox-wrapper" style="z-index:20;min-height:100%;background:white;">
+        <div class="CoveoAnalytics" data-search-hub="EcolabProductSearch"></div>
+        <div class="CoveoCommerceQuery"></div>
+        <div class="CoveoSearchbox"></div>
+        <div class="CoveoFieldSuggestions" data-field="@ec_suggested_name" data-header-title="Products"></div>
+        <!-- <div class="CoveoFieldSuggestions" data-field="@title" data-header-title="Products Names"></div> -->
+        <!-- <div class="CoveoFieldSuggestions" data-field="@sfccrz__sku__c" data-header-title="Products SKUs"></div> -->
+    </div>
+</apex:component>

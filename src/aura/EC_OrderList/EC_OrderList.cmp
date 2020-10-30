@@ -1,0 +1,315 @@
+<!--
+  @Component Name     : EC_OrderDetails.cmp
+
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    	7/5/2019				  Vijay Kumar 		This page is used to show all the list of orders
+									              			and products inside.
+-->
+<aura:component controller="EC_PastOrders"
+    implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:handler event="aura:doneRendering" action="{!c.doneRendering}"/>
+    <aura:attribute name="loaded" type="Boolean" default="true" />
+
+    <aura:attribute type="String" name="ordersCount" />
+    <aura:attribute name="productListReady" type="Boolean" default="false" />
+    <aura:attribute name="searchTypeOptions" type="List" access="PRIVATE" />
+    <aura:attribute name="searchTypeOrderNumber" type="String" access="PRIVATE" />
+    <aura:attribute name="sortByOptions" type="List" access="PRIVATE" />
+    <aura:attribute name="sortBy" type="String" access="PRIVATE" default="orderDate|DESC" />
+    <aura:attribute name="searchType" type="String" access="PRIVATE" />
+    <aura:attribute name="ordersMasterList" type="List" />
+    <aura:attribute name="filteredOrderMasterLst" type="List" />
+    <aura:attribute name="isFilterApplied" type="Boolean" default="false" />
+    <aura:attribute name="isDateInputError" type="Boolean" default="false" />
+    <aura:attribute name="Orders" type="List" />
+    <aura:attribute name="OrderDetail" type="list" />
+    <aura:attribute name="ProductImage" type="Map" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:attribute name="emptyOrderList" type="Boolean" default="false" />
+    <aura:attribute name="searchDisable" type="Boolean" default="true" />
+    <aura:attribute name="viewInvoice" type="Boolean" />
+    <aura:attribute name="buyOnline" type="Boolean" />
+    <aura:attribute name="viwPrice" type="Boolean" />
+    <aura:attribute name="pageSize" type="Integer" default="10" />
+    <aura:attribute name="currentPage" type="Integer" default="1" />
+    <aura:attribute name="pageList" type="List" />
+    <aura:attribute name="pagination" type="Map" />
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+    <aura:attribute name="isEligibleForPaymentPortal" type="Boolean" />
+    <aura:attribute name="isAthenaEnabled" type="Boolean" />
+    <aura:attribute name="fromdate" type="Date" access="GLOBAL"/>
+    <aura:attribute name="todate" type="Date" access="GLOBAL"/>
+    <aura:attribute name="NoOrdersMatch" type="Boolean" />
+    <aura:handler name="change" value="{!v.fromdate}" action="{!c.filterChange}"/>
+    <aura:handler name="change" value="{!v.todate}" action="{!c.filterChange}"/>
+
+    <aura:if isTrue="{!v.showSpinner}" >
+        <div class="slds-spinner_container">
+          <div role="status" class="slds-spinner slds-spinner--medium">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+         </div>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!!v.showSpinner}" >
+        <div class="orderlist-wrapper">
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-1">
+                    <div class="orders-wrapper">
+                        <div class="orders-heading">
+                            <h1>{!$Label.c.EC_Order_Heading}({!v.pagination.total})</h1>
+                            <div class="btn-wrapper">
+                            
+
+                                <lightning:button class="ec_btn_secondary btn filters_btn" 
+                                    label="{!$Label.c.EC_Order_OrderFilterButton}"
+                                    title="{!$Label.c.EC_Order_OrderFilterButton}" 
+                                    onclick="{!c.showFilter}" />
+                                <aura:if isTrue="{!v.isEligibleForPaymentPortal}">
+                                    <lightning:button
+                                        class="ec_btn_primary btn mar-20 ga-onlinePay" 
+                                        label="ONLINE PAYMENT"
+                                        title="{!$Label.c.EC_Order_OrderPaymentPortalButton}" 
+                                        onclick="{!c.openBillTrust}" />
+                                </aura:if>
+                            </div>
+                        </div>
+
+                        <aura:if isTrue="{!!v.emptyOrderList}" >
+                            <div class="slds-spinner_container">
+                            <div role="status" class="slds-spinner slds-spinner--medium">
+                                <span class="slds-assistive-text">Loading</span>
+                                <div class="slds-spinner__dot-a"></div>
+                                <div class="slds-spinner__dot-b"></div>
+                            </div>
+                            </div>
+                        </aura:if>
+
+                        <aura:if isTrue="{!v.emptyOrderList}">
+                            <div class="search-list-container">
+
+                                    <div class="search-wrapper" aura:id="showFilterModal">
+                                        <div class="search-modal">
+                                            <h2>{!$Label.c.EC_Order_FiltersHeading}</h2>
+                                            <lightning:buttonIcon iconName="utility:close"
+                                                onclick="{! c.hideFilter }"
+                                                alternativeText="close"
+                                                variant="bare"
+                                                class="slds-modal__close"/>
+
+                                            <div class="filters-wrapper">
+                                                <label class="message">{!$Label.c.EC_NarrowSearchOnOrders}</label>
+                                                <div class="filters">
+                                                    <div class="options ">
+                                                        <!-- searchType -->
+                                                        <div class="three-input-sec">
+                                                            <div class="slds-form-element searchType ec_selectBox ">
+                                                                <label class="slds-form-element__label">
+                                                                    <span class="">Order Status</span></label>
+                                                                <div class="slds-form-element__control slds-grow">
+                                                                    <div class="slds-select_container">
+                                                                        <select class="slds-select" name="searchType" aura:id="searchType"
+                                                                            onchange="{!c.filterChange}">
+                                                                            <aura:iteration items="{!v.searchTypeOptions}" var="option">
+                                                                                <option text="{!option.label}" value="{!option.id}"
+                                                                                    selected="{!option.selected}" />
+                                                                            </aura:iteration>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <lightning:input aura:id="poNumber" class="inputelement mar-60 po-number"
+                                                                label="{!$Label.c.EC_Order_FiltersPONumber}" onchange="{!c.filterChange}" />
+                                                            <lightning:input aura:id="accNumber" class="inputelement mar-60 account-number"
+                                                                label="{!$Label.c.EC_Order_FiltersAccountNumber}"
+                                                                onchange="{!c.filterChange}" />
+
+                                                        </div>
+
+                                                        <div class="two-btn-sec">
+
+                                                            <div class="date-pickers">
+                                                                <div class="pickers">
+                                                                    <div class="slds-form-element inputelement mar-20">
+                                                                        <div
+                                                                            class="{!v.isDateInputError ? 'slds-form-element__control date-picker has-error' : 'slds-form-element__control date-picker'}">
+                                                                            <ui:inputDate aura:id="fromDateField"
+                                                                                label="{!$Label.c.EC_Order_FiltersFromDate}"
+                                                                                class="slds-input" labelClass="slds-form-element__label"
+
+                                                            format="MM/DD/YYYY" value="{!v.fromdate}"
+
+                                                                                displayDatePicker="true" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="slds-form-element inputelement">
+                                                                        <div
+                                                                            class="{!v.isDateInputError ? 'slds-form-element__control date-picker has-error' : 'slds-form-element__control date-picker'}">
+                                                                            <ui:inputDate aura:id="toDateField"
+                                                                                label="{!$Label.c.EC_Order_FiltersToDate}"
+                                                                                class="slds-input" labelClass="slds-form-element__label"
+
+                                                            format="MM/DD/YYYY" value="{!v.todate}"
+
+                                                                                displayDatePicker="true" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <aura:if isTrue="{!v.isDateInputError}">
+                                                                    <div class="error">From Date and To Date range is
+                                                                        invalid.{!v.dateError}</div>
+                                                                </aura:if>
+                                                            </div>
+                                                            <div class="btn-wrapper">
+                                                                <lightning:button class="ec_btn_primary btn mar-20" label="{!$Label.c.EC_Order_OrderSearchButton}"
+                                                                    title="{!$Label.c.EC_Order_OrderSearchButton}" onclick="{!c.performSearch}"
+                                                                    disabled="{!v.searchDisable}" />
+                                                                <lightning:button class="ec_btn_secondary btn" label="{!$Label.c.EC_ClearSearchLabel}"
+                                                                    title="{!$Label.c.EC_ClearSearchLabel}" onclick="{!c.clearSearch}" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                <div class="result-list-container">
+                                    <aura:if isTrue="{!not(empty(v.Orders))}">
+                                        <div class="sort-pagination">
+
+                                            <span class="sort-wrapper">
+                                                <!-- {!$Label.c.EC_Order_SortBy}&nbsp;
+                                                <div class="dropdown">
+                                                    <span id="sortBy"
+                                                        onclick="{!c.toggleDropDown}">{!$Label.c.EC_Order_SortByOption}</span>
+                                                    <ul class="dropdownmenu" onclick="{!c.selectSortOption}">
+                                                        <li class="list-item selected">{!$Label.c.EC_Order_SortByOption}</li>
+                                                        <li class="list-item">First Purchased</li>
+                                                    </ul>
+                                                </div> -->
+                                            </span>
+                                            <span class="pagination-wrapper">
+                                                <span class="page-info">
+                                                    {!$Label.c.EC_Order_Results_Showing}&nbsp;<span class="pageSizeOptions-wrapper">
+                                                        <lightning:select name="select1" label="" variant="label-hidden">
+                                                            <option value="" selected="selected">{!lessthan(v.pagination.total,
+                                                                v.pageSize) ? v.pagination.total : v.pagination.per_page}</option>
+                                                        </lightning:select>
+                                                    </span>{!$Label.c.EC_Order_Results_OutOf}&nbsp;{!v.pagination.total}&nbsp;{!$Label.c.EC_Order_Results_Results}
+                                                </span>
+                                                <div class="pageOptions">
+                                                    <div class="{!v.pagination.pre_action ? 'prev_next disabled' : 'prev_next'}"
+                                                        data-value="prev" onclick="{!c.changePage}"><img
+                                                            src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-left.svg'}"
+                                                            data-value="prev" />
+                                                    </div>
+                                                    <div class="pages">
+                                                        <aura:iteration items="{!v.pagination.pageOptions}" var="pageNumber">
+                                                            <div class="{! pageNumber == v.pagination.page ? 'page_item active' : pageNumber == '...' ? 'page_item disabled' :  'page_item'}"
+                                                                data-value="{!pageNumber}" onclick="{!c.changePage}">{!pageNumber}
+                                                            </div>
+                                                        </aura:iteration>
+                                                    </div>
+                                                    <div class="{!v.pagination.next_action ? 'prev_next disabled' : 'prev_next'}"
+                                                        data-value="next" onclick="{!c.changePage}"><img
+                                                            src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-right.svg'}"
+                                                            data-value="next" />
+                                                    </div>
+
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </aura:if>
+                                    <div class="result-wrapper">
+                                        <aura:if isTrue="{!not(empty(v.Orders))}">
+                                            <aura:iteration items="{!v.Orders}" var="ord" indexVar="idx">
+                                                    <aura:if isTrue="{!v.isAthenaEnabled}">
+                                                        <c:EC_AthenaOrderDetails order="{!ord}" invoice="{!v.viewInvoice}"
+                                                        isOnline="{!v.buyOnline}" viewPrice="{!v.viwPrice}"></c:EC_AthenaOrderDetails>
+                                                        <aura:set attribute="else">
+                                                                <c:EC_OrderDetails order="{!ord}" invoice="{!v.viewInvoice}"
+                                                                isOnline="{!v.buyOnline}" viewPrice="{!v.viwPrice}"></c:EC_OrderDetails>
+                                                        </aura:set>
+                                                    </aura:if>
+                                            </aura:iteration>
+                                            <aura:set attribute="else">
+                                                <div class="noOrders">
+                                                    <span class="icon-wrapper"><i class="material-icons">
+                                                            info
+                                                        </i></span>
+                                                    <aura:if isTrue="{!v.NoOrdersMatch}">
+                                                            <label class="nosearch-tilte">{!$Label.c.EC_Orders_NoOrdersMatch}</label>
+                                                            <label class="nosearch-caption">{!$Label.c.EC_Orders_NoOrdersMatchCaption}</label>
+                                                        <aura:set attribute="else">
+                                                            <label>{!$Label.c.EC_Order_NoOrders}</label>
+                                                        </aura:set>
+                                                    </aura:if>
+                                                </div>
+                                            </aura:set>
+                                        </aura:if>
+                                    </div>
+                                    <aura:if isTrue="{!not(empty(v.Orders))}">
+                                        <div class="sort-pagination bottom">
+                                            <span class="sort-wrapper">
+                                                <!--{!$Label.c.EC_Order_SortBy}&nbsp;
+                                                <div class="dropdown">
+                                                    <span id="sortBy"
+                                                        onclick="{!c.toggleDropDown}">{!$Label.c.EC_Order_SortByOption}</span>
+                                                    <ul class="dropdownmenu" onclick="{!c.selectSortOption}">
+                                                        <li class="list-item selected">{!$Label.c.EC_Order_SortByOption}</li>
+                                                        <li class="list-item">First Purchased</li>
+                                                    </ul>
+                                                </div>-->
+                                            </span>
+                                            <span class="pagination-wrapper">
+                                                <div class="pageOptions">
+                                                    <div class="{!v.pagination.pre_action ? 'prev_next disabled' : 'prev_next'}"
+                                                        data-value="prev" onclick="{!c.changePage}"><img
+                                                            src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-left.svg'}"
+                                                            data-value="prev" />
+                                                    </div>
+                                                    <div class="pages">
+                                                        <aura:iteration items="{!v.pagination.pageOptions}" var="pageNumber">
+                                                            <div class="{! pageNumber == v.pagination.page ? 'page_item active' : pageNumber == '...' ? 'page_item disabled' :  'page_item'}"
+                                                                data-value="{!pageNumber}" onclick="{!c.changePage}">{!pageNumber}
+                                                            </div>
+                                                        </aura:iteration>
+                                                    </div>
+                                                    <div class="{!v.pagination.next_action ? 'prev_next disabled' : 'prev_next'}"
+                                                        data-value="next" onclick="{!c.changePage}"><img
+                                                            src="{!$Resource.EC_Branding_Theme + '/images/icons/outline-arrow-right.svg'}"
+                                                            data-value="next" />
+                                                    </div>
+
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </aura:if>
+                                </div>
+                            </div>
+
+                            <aura:set attribute="else">
+                                <div class="no-documents slds-hide" aura:id="orderListEmptyWrapper">
+                                    <div class="noOrders">
+                                        <span class="icon-wrapper"><i class="material-icons">
+                                                info_outline
+                                            </i></span>
+                                        <h3>{!$Label.c.EC_Order_NoOrders}</h3>
+                                        <label>{!$Label.c.EC_Order_NoOrdersSubHeading}</label>
+                                    </div>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aura:if>
+</aura:component>

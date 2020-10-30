@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>PunchOutInfo</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PunchOutInfos</value>
+    </caseValues>
+    <fields>
+        <label><!-- EC_BuyerCookie --></label>
+        <name>EC_BuyerCookie__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_EncryptedCartId --></label>
+        <name>EC_EncryptedCartId__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_From_Domain --></label>
+        <name>EC_From_Domain__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_ From_Identity --></label>
+        <name>EC_From_Identity__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_PayloadId --></label>
+        <name>EC_PayloadId__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_SenderUserAgent --></label>
+        <name>EC_SenderUserAgent__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_Sender_Domain --></label>
+        <name>EC_Sender_Domain__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_ Sender_Identity --></label>
+        <name>EC_Sender_Identity__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_To_Domain --></label>
+        <name>EC_To_Domain__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_ To_Identity --></label>
+        <name>EC_To_Identity__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_Version --></label>
+        <name>EC_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_XMLLanguage --></label>
+        <name>EC_XMLLanguage__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

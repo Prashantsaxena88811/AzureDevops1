@@ -1,0 +1,15 @@
+<!--
+
+  @Page Name     : EC_ProductDetailPage
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Viraj                 6/6/2019          Product Details Page
+
+--> 
+
+<apex:page docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" cache="false" applyHtmlTag="false">
+  <c:EC_ProductDetail />
+  <c:EC_ProductDetailWidget />
+</apex:page>

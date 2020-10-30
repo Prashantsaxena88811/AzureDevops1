@@ -1,0 +1,64 @@
+<!--
+  @Component Name     : EC_OrderDetails.cmp
+ 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    	7/5/2019				  Vijay Kumar 		This page is used to show all the list of orders
+									              			and products inside.
+-->
+<aura:component controller="EC_GlobalSearchController"
+    implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="loaded" type="Boolean" default="true" />
+    <aura:attribute name="emptyOrderList" type="Boolean" default="false" />
+    <aura:attribute type="String" name="ordersCount" />
+    <aura:attribute name="productListReady" type="Boolean" default="false" />
+    <aura:attribute name="searchTypeOptions" type="List" access="PRIVATE" />
+    <aura:attribute name="searchTypeOrderNumber" type="String" access="PRIVATE" />
+    <aura:attribute name="sortByOptions" type="List" access="PRIVATE" />
+    <aura:attribute name="sortBy" type="String" access="PRIVATE" />
+    <aura:attribute name="searchType" type="String" access="PRIVATE" />
+    <aura:attribute name="Orders" type="List" />
+    <aura:attribute name="OrderDetail" type="List" />
+    <aura:attribute name="ProductImage" type="Map" />
+    <aura:attribute name="invoiceVisible" type="Boolean" />
+    <aura:attribute name="buyOnline" type="Boolean" />
+    <aura:attribute name="viwPrice" type="Boolean" />
+    <aura:attribute type="String" name="SearchTextField" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:registerEvent name="setAttribute" type="c:setAttributeEvent" />
+
+    <div class="root-wrapper-container">
+        <aura:if isTrue="{!v.emptyOrderList}">
+            <div class="orders-wrapper">
+                <div class="result-wrapper">
+                    <aura:iteration items="{!v.Orders}" var="ord" indexVar="idx">
+                        <c:EC_OrderDetails order="{!ord}" invoice="{!v.invoiceVisible}" viewPrice="{!v.viwPrice}"
+                            isOnline="{!v.buyOnline}"></c:EC_OrderDetails>
+                    </aura:iteration>
+                </div>
+            </div>
+            <aura:set attribute="else">
+                <div class="no-documents slds-hide" aura:id="orderListEmptyWrapper">
+                    <div class="image slds-m-top_x-large">
+                        <!-- <div class="slds-grid">
+                    <div class="slds-col slds-size_12-of-12">-->
+                        <i class="material-icons">
+                            info_outline
+                        </i>
+                    </div>
+                    <div class="search-result slds-m-top_large slds-p-bottom_xx-large">
+                        <span>{!$Label.c.EC_SearchEmpty}</span><span
+                            class="searchedValue slds-p-horizontal_xxx-small">"{!v.SearchTextField}"</span>
+                        <span>{!$Label.c.EC_NotMatchedOrders}</span>
+                        <div>{!$Label.c.EC_SelectAnotherCategory}</div>
+                    </div>
+                </div>
+
+            </aura:set>
+        </aura:if>
+    </div>
+
+
+
+</aura:component>

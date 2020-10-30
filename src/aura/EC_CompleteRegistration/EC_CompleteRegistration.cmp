@@ -1,0 +1,78 @@
+<!--
+  @Component Name     : EC_RegistrationPage.cmp
+
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Rajeshwar Bachu       10/07/2020         Complete Registartion use to create the user in 
+                                           B2C azure Directory whether it's Local/Federated.
+-->
+
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="EC_CompleteRegistrationController">
+    <aura:attribute name="options" type="List" default="[
+                                                        {'label':'Yes, I want to use my work account', 'value': 'federated'},
+                                                        {'label':'No, I don’t want to use my work account', 'value': 'LocalAccount'}
+                                                        ]"/>
+    <aura:attribute name="radioValue" type="String" default=""/>
+    <aura:attribute name="username" type="String" />
+    <aura:attribute name="ContinueButton" type="Boolean" default="True"/>
+    <aura:attribute name="CompleteRegistration" type="Boolean" default="false"/>
+    <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+    <aura:attribute name="errorFlag" type="boolean" default="false" />
+    <aura:attribute name="statusForPop" type="string" />
+    <aura:attribute name="labelForPop" type="string" />
+    <aura:attribute name="messageForPop" type="string" />
+    <aura:attribute name="progress" type="Integer" default ="0"/>
+    <aura:attribute name="isProgressing" type="Boolean" default="false"/>
+    <aura:attribute name="flagForProgressBar" type="Boolean" default="false"/>
+    <aura:attribute name="fromSelfReg" type="Boolean" default="false"/>
+    <aura:attribute name="firstName" type="string" />
+    <aura:attribute name="lastName" type="string" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="isCompleteRegistration" type="Boolean" default="false" />
+    <aura:if isTrue="{!v.fromSelfReg}">
+
+    <aura:set attribute ="else">
+        <c:EC_ProgressBarPopUp progressBar ="{!v.progress}" flagForProgressBar1 ="{!v.flagForProgressBar}" isProgressingBar ="{!v.isProgressing}" isOpen ="{!v.isModalOpen}" />
+    </aura:set>
+    </aura:if>
+
+    <aura:if isTrue="{!v.isCompleteRegistration}">
+            <div class="registration-wrapper">
+            <div class="slds-grid form-container">
+                <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12 slds-show_large">
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_8-of-12 register-container">
+                    <div class="reg slds-m-top_large slds-m-bottom_large">{!$Label.c.EC_Registration_Title}</div>
+                    <div class="blueBox slds-col slds-box slds-size_12-of-12">
+                        <p class="page-heading heading">{!$Label.c.EC_CompleteRegHeading}</p>
+                    </div>
+                    <div class="bigBox slds-box slds-size_12-of-12">
+                        <div class="help-text">{!$Label.c.EC_CompleteregHelpText}</div>
+                        <div class="help-text">{!$Label.c.EC_CompleteRegWarning}</div>
+                        <div class="personal-info">
+                            <div class="slds-col slds-col-small-size_6-of-12 slds-col-medium-size_6-of-12 slds-col-large-size_12-of-12">
+                                <lightning:radioGroup aura:id="mygroup" name="" label="" options="{!v.options}" value="{!v.radioValue}" type="radio" onchange ="{!c.validateSelection}"/><br/>
+                            </div>
+                            <div class="help-text">{!$Label.c.EC_CompleteRegNo}</div>
+                            <lightning:button label="Continue" aura:id="registerUser"
+                                                onclick="{!c.onContinue}" class="slds-m-bottom_x-large ec_btn_primary"
+                                                disabled="{!v.ContinueButton}" /> 
+                                                                 
+                                                <aura:if isTrue="{!v.fromSelfReg}">
+
+                                                    <aura:set attribute ="else">
+                                                        <c:EC_ProgressBarPopUp progressBar ="{!v.progress}" flagForProgressBar1 ="{!v.flagForProgressBar}" isProgressingBar ="{!v.isProgressing}" isOpen ="{!v.isModalOpen}" />
+                                                    </aura:set>
+                                                    </aura:if>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.errorFlag}">
+        <c:EC_SelfAlignmentPopups status="{!v.statusForPop}" label="{!v.labelForPop}" message="{!v.messageForPop}" isOpen="{!v.errorFlag}"/>
+    </aura:if>   
+</aura:component>

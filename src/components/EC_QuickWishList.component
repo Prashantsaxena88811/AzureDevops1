@@ -1,0 +1,103 @@
+<!--
+
+  @Component Name     : EC_CheckOutOrderReview
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Srishti              6/26/2019         Suggested Products.
+
+--> 
+
+<apex:component controller="EC_SuggestedProducts">
+    <script id="EC-ProductDetail-ProductsSection-Desktop" type="text/template">
+        <div class="quick_wishlist cc_quick_wishlist cc_addon_tab">
+            
+            <div class="sp-carousel-wrapper col-md-12 col-xs-12">
+                <button class="sugBack col-md-1 col-xs-1">
+                    <i class="material-icons">keyboard_arrow_left</i>
+                </button> 
+                 
+                <div class="responsive sp-carousel col-md-offset-2 col-md-10 col-xs-9">
+                    {{#each this.pageData}}
+                        <div class="test ">
+                            <div class="row">
+                                <div class="quick_wishlist_item col-md-12 cc_quick_wishlist_item">
+                                    <div class="cc_cart_item">
+                                        {{productLink this.prodBean 'cc_cart_item' image=(displayImage this.mediaWrapper 'prodDetRel img-responsive suggested-img' alt=this.prodBean.name dataId=this.prodBean.sku)}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cont">
+                            <div class="row">
+                                <div class="prodName">
+                                    <p class="cc_prod_name">
+                                        {{productLink this.prodBean 'productName cc_data_link'}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="skulabel">{{pageLabelMap 'ProductCode'}}:&#160<span class="skuvalue">{{this.prodBean.sku}}</span></p>
+                            </div>
+                            <div class="row">
+                                <p class="shortdescription">{{this.prodBean.UnitOfMeasure}}</p>
+                            </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <div class="suggestedprice">
+                                        <input type="hidden" name="qtyIncrement" value="{{this.qtySingleIncrement}}" class="item_qtyIncrement" />
+                                        <input type="hidden" name="qtySkipIncrement" value="{{this.qtySkipIncrement}}" class="item_qtySkipIncrement" />
+                                        {{#ifDisplay 'PD.DsplPrc' }}
+                                            {{#if this.prodBean.primaryAttr}}
+                                                <span class="cc_attr_message">{{pageLabelMap 'ProductAttributes_PriceMessage'}}</span>
+                                            {{else}}
+                                                {{#if this.showNewSubscriptionSelection}}
+                                                    <p class="price priceSubscription cc_price_subscription">
+                                                        <strong>{{pageLabelMap 'Prod_SubsAlternatePrice' (price this.price) (price this.minSubPrice) (price this.maxSubPrice)}}</strong>
+                                                    </p>
+                                                {{else}}
+                                                    {{#if this.displayPrice}}
+                                                        <p class="price displayPrice cc_display_price">
+                                                            {{pageLabelPrefixMap 'DisplayPrice_' this.displayPrice}}
+                                                        </p>
+                                                    {{else}}
+                                                        {{#if this.showPricing}}
+                                                            {{#if this.price}}
+                                                                <div class="cc_pricing">
+                                                                    <p class="price cc_price">{{price this.price}}<span class="currency">{{pageLabelMap 'CurrencyUSD'}}</span></p>
+                                                                </div>
+                                                            {{/if}}
+                                                        {{/if}}
+                                                    {{/if}}
+                                                    {{#if this.isTierPriced}}
+                                                        <div class="cc_prt_tool_tip_div cc_prt_tool_tip_div_pdp">
+                                                            <span class="cc_prt_tool_tip_text cc_prt_tool_tip_text_pdp" data-toggle="tooltip" title="{{pageLabelMap 'ProductPricingTiers_VolumeHover'}}">
+                                                                {{pageLabelMap 'ProductPricingTiers_VolumePricing'}}
+                                                            </span>
+                                                        </div>
+                                                    {{/if}}
+                                                {{/if}}
+                                            {{/if}}
+                                        {{/ifDisplay}}
+                                    </div>
+                                </div>
+                                                                    
+                            </div> 
+                            
+                
+            
+                            <div class="col-sm-12 sp-add-to-cart">
+                                <button class="ga-addtocart btn btnAdd ec-btn-secondary add-to-cart" data-sku="{{this.prodBean.sku}}" data-price="{{this.price}}">{{pageLabelMap 'Add to cart'}}</button>
+                            </div>
+                        </div>                        
+                    {{/each}}
+                </div> 
+                    <button class="sugNext col-md-1 col-xs-1">
+            <i class="material-icons">keyboard_arrow_right</i>
+            </button>
+            </div>
+                
+        </div>
+  </script>
+</apex:component>

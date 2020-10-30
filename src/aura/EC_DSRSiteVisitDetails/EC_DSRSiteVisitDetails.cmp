@@ -1,0 +1,348 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="serviceDetails" type="Map" default="" />
+    <aura:attribute name="serviceCommentsminLength" type="String" default=""/>
+    <aura:attribute name="serviceCommentsLength" type="String" default=""/>
+    <aura:attribute name="interiorLength" type="String" default=""/>
+    <aura:attribute name="exteriorLength" type="String" default=""/>
+    <aura:attribute name="materialLength" type="String" default=""/>
+    <aura:attribute name="showServicecomments" type="Boolean" default="false"/>
+    <aura:attribute name="showMaterialTable" type="Boolean" default="false"/>
+    <aura:attribute name="listArea" type="Map" default="" />
+    <aura:attribute name="listPesttype" type="Map" default="" />
+    <aura:attribute name="showQandA" type="Boolean" default="true"/>
+    <aura:attribute name="qaLength" type="String" default=""/>
+    <aura:attribute name="showRegulatory" type="Boolean" default="true"/>
+    <aura:attribute name="regulatoryCommentsminLength" type="String" default=""/>
+    <aura:attribute name="regulatoryCommentsLength" type="String" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.serviceDetails}" action="{!c.doInit}"/>
+    <ltng:require scripts="{!$Resource.EC_Branding_Theme  + '/js/jquery-3.3.1.min.js'}" afterScriptsLoaded="{!c.jqueryInit}" />
+    <div class="site-visit-container tile-wrapper">
+    	<div class="site-visit-title">
+        	{!$Label.c.EC_DSR_SiteVisitDetails}
+        </div>
+
+        <div class="sv-tiles tiles-container">
+
+            <!-- Service Comments Tile -->
+            <aura:if isTrue="{!v.showServicecomments}">
+                <div class="tile-box one-of-three sv-tile-one">
+                    <div class="sv-title">
+                        {!$Label.c.EC_DSR_ServiceComments}
+                    </div>
+                    <ul class="comments-section">
+                        <aura:iteration items="{!v.serviceDetails.service.findingConditions.findingCondition}" var="findings" indexVar="indx">
+                            <aura:if isTrue="{!findings.globalConditionCategoryId == $Label.c.EC_DSR_Json_Other}">
+                                <li class="comments-line">
+                                    <div class="cline-one">{!findings.conditionDescription}&nbsp;{!findings.conditionComments}</div>
+                                    <aura:iteration items="{!findings.findingActions.findingAction}" var="findingsaction" indexVar="indx">
+                                        <div class="cline-two">{!findingsaction.actionDescription}&nbsp;{!findingsaction.actionComments}</div>
+                                    </aura:iteration>
+                                </li>
+                            </aura:if>
+                        </aura:iteration>
+                    </ul>
+                    <div class="total-count">{!v.serviceCommentsminLength} of {!v.serviceCommentsLength}</div>
+                    <div class="sv-see-all">
+                        {!$Label.c.EC_DSR_SeeAll}
+                    </div>
+                </div>
+                <div class="table-box sv-tile-one-table">
+                    <aura:iteration items="{!v.serviceDetails.service.serviceSubTypes.serviceSubType}" var="serviceType" indexVar="indx">
+                        <div class="table-title">{!serviceType.serviceSubTypeName}</div>
+                    </aura:iteration> 
+                    <span class="material-icons close-table">close</span>
+                    
+                    <div class="mobile-total table-title-one">{!$Label.c.EC_DSR_Comments} ({!v.serviceCommentsLength})</div>
+                    <aura:iteration items="{!v.serviceDetails.service.findingConditions.findingCondition}" var="findings" indexVar="indx">
+                        <aura:if isTrue="{!findings.globalConditionCategoryId == $Label.c.EC_DSR_Json_Other}">
+                            <div class="tile-lineitems">
+                                <div class="table-title-one"> 
+                                    {!$Label.c.EC_DSR_Comment}(<span class="counter"></span>)
+                                </div>
+                                <div class="tile-lineitem">
+                                    <div class="condition-description">{!findings.conditionDescription}&nbsp;{!findings.conditionComments}</div>
+                                    <aura:iteration items="{!findings.findingActions.findingAction}" var="findingsaction" indexVar="indx">
+                                        <div class="action-description">{!findingsaction.actionDescription}&nbsp;{!findingsaction.actionComments}</div>
+                                    </aura:iteration>
+                                </div>
+                            </div>
+                        </aura:if>
+                    </aura:iteration>
+                </div>
+            </aura:if>
+
+            <!-- Material Used Tile -->
+            <aura:if isTrue="{!v.showMaterialTable}">
+                <div class="tile-box one-of-three sv-tile-two">
+                    <div class="sv-title">
+                        {!$Label.c.EC_DSR_MaterialsUsed}
+                    </div>
+                    <section class="pie-chart">
+                        <div class="pieID pie">
+                            
+                        </div>
+                        <ul class="pieID legend">
+                            <li>
+                                <em>{!$Label.c.EC_DSR_Interior}</em>
+                                <span>{!v.interiorLength}</span>
+                            </li>
+                            <li>
+                                <em>{!$Label.c.EC_DSR_Exterior}</em>
+                                <span>{!v.exteriorLength}</span>
+                            </li>
+                        </ul>
+                        <div class="total-mat-count">{!v.materialLength}</div>
+                    </section>
+                    <div class="sv-see-all"> 
+                        {!$Label.c.EC_DSR_SeeDetails}
+                    </div>
+                </div>
+                <div class="table-box sv-tile-two-table">
+                    <div class="table-title">{!$Label.c.EC_DSR_MaterialDetails}</div>
+                    <span class="material-icons close-table">close</span>
+
+                    <aura:if isTrue="{!or(v.listArea.length > 1, v.listPesttype.length > 1)}">
+                        <div class="mat-filter">
+                            <span class="filter-title">{!$Label.c.EC_DSR_Filter}: </span>
+                            
+                            <aura:if isTrue="{!v.listArea.length > 1}">
+                                <div class="slds-form-element">
+                                    <div class="slds-form-element__control">
+                                        <label>{!$Label.c.EC_DSR_Locations}: </label>
+                                        <div class="slds-select_container">
+                                            <select class="slds-select" id="select-01">
+                                                <option>{!$Label.c.EC_DSR_All}</option>
+                                                <aura:iteration items="{!v.listArea}" var="list" indexVar="indx">
+                                                    <option>{!list}</option>
+                                                </aura:iteration>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.listPesttype.length > 1}">
+                                <div class="slds-form-element">
+                                    <div class="slds-form-element__control">
+                                        <label>{!$Label.c.EC_DSR_PestType}: </label>
+                                        <div class="slds-select_container">
+                                            <select class="slds-select" id="select-02">
+                                                <option>{!$Label.c.EC_DSR_All}</option>
+                                                <aura:iteration items="{!v.listPesttype}" var="list" indexVar="indx">
+                                                    <option>{!list}</option>
+                                                </aura:iteration>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </aura:if>
+                        </div>
+                    </aura:if>
+
+                    <div class="mat-table">
+                        <div class="row row-1">
+                            <div class="col-1 col">
+                                {!$Label.c.EC_DSR_WhatMaterialWasUsed}
+                            </div>
+                            <div class="col-2 col">
+                                {!$Label.c.EC_DSR_Regulatory}
+                            </div>
+                            <div class="col-3 col">
+                                {!$Label.c.EC_DSR_Lot}
+                            </div>
+                            <div class="col-4 col">
+                                {!$Label.c.EC_DSR_ActiveIngredient}
+                            </div>
+                            <div class="col-5 col">
+                                {!$Label.c.EC_DSR_Quantity}
+                            </div>
+                            <div class="col-6 col">
+                                {!$Label.c.EC_DSR_Application}
+                            </div>
+                            <div class="col-7 col">
+                                {!$Label.c.EC_DSR_Location}
+                            </div>
+                            <div class="col-8 col">
+                                {!$Label.c.EC_DSR_PestType}
+                            </div>
+                        </div>
+                        <aura:iteration items="{!v.serviceDetails.service.serviceProducts.serviceProduct}" var="servicematerial" indexVar="indx">
+                            <div class="row row-2">
+                                <div class="col-1 col">
+                                    <aura:if isTrue="{!not(empty(servicematerial.productDescription))}">
+                                        {!servicematerial.productDescription}
+                                        <aura:set attribute="else">
+                                            {!servicematerial.productName}
+                                        </aura:set>
+                                    </aura:if>
+                                </div>
+                                <div class="col-2 col">
+                                    <span class="hide-in-desktop">{!$Label.c.EC_DSR_Regulatory} <span class="colon"> : </span> </span>
+                                    <aura:if isTrue="{!not(empty(servicematerial.regulatoryCode))}">
+                                        {!servicematerial.regulatoryCode}
+                                        <aura:set attribute="else">
+                                            N/A
+                                        </aura:set>
+                                    </aura:if>
+                                </div>
+                                <div class="col-3 col">
+                                    <span class="hide-in-desktop">{!$Label.c.EC_DSR_Lot} <span class="colon"> : </span> </span>
+                                    <aura:if isTrue="{!not(empty(servicematerial.lotNumber))}">
+                                        {!servicematerial.lotNumber}
+                                        <aura:set attribute="else">
+                                            N/A
+                                        </aura:set>
+                                    </aura:if>
+                                </div>
+                                <div class="col-4 col">
+                                    <span class="hide-in-desktop">{!$Label.c.EC_DSR_ActiveIngredient} <span class="colon"> : </span> </span>
+                                    <aura:if isTrue="{!not(empty(servicematerial.productIngredient))}">
+                                        {!servicematerial.productIngredient}
+                                        <aura:set attribute="else">
+                                            N/A
+                                        </aura:set>
+                                    </aura:if>
+                                </div>
+                                <div class="col-5 col">
+                                    <span class="hide-in-desktop">{!$Label.c.EC_DSR_Quantity} <span class="colon"> : </span> </span>
+                                    {!servicematerial.quantity}&nbsp;{!servicematerial.unitOfMeasure}
+                                </div>
+                                <div class="col-6 col">
+                                    <span class="hide-in-desktop">{!$Label.c.EC_DSR_Application} <span class="colon"> : </span> </span>
+                                    <aura:iteration items="{!servicematerial.serviceProductApplicationMethods.serviceProductApplicationMethod}" var="appmethod" indexVar="indx">
+                                        {!appmethod.applicationMethodName}
+                                    </aura:iteration>
+                                </div>
+                                <div class="col-7 col">
+                                    <span class="hide-in-desktop">{!$Label.c.EC_DSR_Location} <span class="colon"> : </span> </span>
+                                    <aura:iteration items="{!servicematerial.serviceProductAreas.serviceProductArea}" var="areaname" indexVar="indx">
+                                        <div>{!areaname.areaName}</div>
+                                    </aura:iteration>
+                                </div>
+                                <div class="col-8 col">
+                                    <span class="hide-in-desktop">{!$Label.c.EC_DSR_PestType} <span class="colon"> : </span> </span>
+                                    {!servicematerial.targetPestName}
+                                </div>
+                            </div>
+                        </aura:iteration>
+                    </div>
+                </div>
+            </aura:if>
+
+            <!-- Q and A Tile -->
+            <aura:if isTrue="{!v.showQandA}">
+                <div class="tile-box one-of-three sv-tile-three">
+                    <div class="sv-title">
+                        {!$Label.c.EC_DSR_RequestedQA}
+                    </div>
+                    <div class="q_a_section">
+                        <aura:iteration items="{!v.serviceDetails.service.serviceSurveyAnswers.serviceSurveyAnswer}" var="survey" indexVar="indx">
+                            <aura:if isTrue="{!indx == 0}">
+                                <div class="question">{!survey.questionDescription}</div>
+                                <aura:if isTrue="{!not(survey.answerDescription == null)}">
+                                    <div class="answer">{!survey.answerDescription}</div>
+                                    <aura:set attribute="else">
+                                        <div class="answer">N/A</div>
+                                    </aura:set>
+                                </aura:if>
+                            </aura:if>
+                        </aura:iteration>
+                    </div>
+                    <div class="total-count">1 of {!v.qaLength}</div>
+                    <div class="sv-see-all">
+                        {!$Label.c.EC_DSR_SeeAll}
+                    </div>
+                </div>
+                <div class="table-box sv-tile-three-table">
+                    <div class="table-title">{!$Label.c.EC_DSR_RequestedQA}</div>
+                    <span class="material-icons close-table">close</span>
+                    
+                    <div class="q-a-table-head">
+                        <div class="q-a-head1">{!$Label.c.EC_DSR_RequestedInformation}</div>
+                        <div class="q-a-head2">{!$Label.c.EC_DSR_Response}</div>
+                    </div>
+                    <div class="q-a-table"> 
+                        <div class="q-a-tbody">
+                            <aura:iteration items="{!v.serviceDetails.service.serviceSurveyAnswers.serviceSurveyAnswer}" var="survey" indexVar="indx">
+                                <aura:if isTrue="{!survey.printFlag == true}">
+                                    <div class="q-a-row">
+                                        <div class="q-a-col1">{!survey.questionDescription}</div>
+                                        <aura:if isTrue="{!not(survey.answerDescription == null)}">
+                                            <div class="q-a-col2">{!survey.answerDescription}</div>
+                                            <aura:set attribute="else">
+                                                <div class="q-a-col2">N/A</div>
+                                            </aura:set>
+                                        </aura:if>
+                                    </div>
+                                </aura:if>
+                            </aura:iteration>
+                        </div>
+                    </div>
+                </div>
+            </aura:if>
+
+            <div class="emptyrow"></div>
+
+            <!-- Regulatory Comments Tile -->
+            <aura:if isTrue="{!v.showRegulatory}">
+                <div class="tile-box one-of-two sv-tile-four">
+                    <div class="sv-title">
+                        {!$Label.c.EC_DSR_RegulatoryComments}
+                    </div>
+                    <ul class="regulatory_comments">
+                        <aura:iteration items="{!v.serviceDetails.reportConfigurations.reportConfiguration}" var="regulatory" indexVar="indx">
+                            <aura:if isTrue="{!regulatory.reportConfigurationTypeID == $Label.c.EC_DSR_Json_RegulatoryComment}">
+                                <li class="r-comments-line">
+                                    {!regulatory.value}
+                                </li>
+                            </aura:if>
+                        </aura:iteration>
+                    </ul>
+                    <div class="total-count">{!v.regulatoryCommentsminLength} of {!v.regulatoryCommentsLength}</div>
+                    <div class="sv-see-all"> 
+                        {!$Label.c.EC_DSR_SeeAll}
+                    </div>
+                </div>
+                <div class="table-box sv-tile-four-table">
+                    <div class="table-title">{!$Label.c.EC_DSR_RegulatoryComments}</div>
+                    <span class="material-icons close-table">close</span>
+                    
+                    <div class="mobile-total table-title-one">{!$Label.c.EC_DSR_Comments} ({!v.regulatoryCommentsLength})</div>
+                    <aura:iteration items="{!v.serviceDetails.reportConfigurations.reportConfiguration}" var="regulatory" indexVar="indx">
+                        <aura:if isTrue="{!regulatory.reportConfigurationTypeID == $Label.c.EC_DSR_Json_RegulatoryComment}">
+                            <div class="tile-lineitems">
+                                <div class="table-title-one"> 
+                                    {!$Label.c.EC_DSR_Comment}(<span class="counter"></span>)
+                                </div>
+                                <div class="tile-lineitem">
+                                    <div class="condition-description">{!regulatory.value}</div>
+                                </div>
+                            </div>
+                        </aura:if>
+                    </aura:iteration>
+                </div>
+            </aura:if>
+
+            <!-- Signature Tile -->
+            <div class="tile-box one-of-two sv-tile-five"> 
+                <div class="sv-title">
+                	{!$Label.c.EC_DSR_ThankyouforyourBusiness}
+                </div>
+                <div class="sign-section">
+                    <div class="emp-sign">
+                        <img src="{!'data:image/png;base64,' + v.serviceDetails.service.employeeSignOff.signature}" ></img>
+                        <div class="sign-label-one">{!$Label.c.EC_DSR_EcolabSignature}</div>
+                        <div class="sign-label-two">{!v.serviceDetails.service.employeeName}</div>
+                    </div>
+                    <div class="service-sign">
+                        <img src="{!'data:image/png;base64,' + v.serviceDetails.service.serviceSignOff.signature}" ></img>
+                        <div class="sign-label-one">{!$Label.c.EC_DSR_CustomerSignature}</div>
+                        <div class="sign-label-two">{!v.serviceDetails.service.serviceSignOff.serviceSignoffName}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</aura:component>

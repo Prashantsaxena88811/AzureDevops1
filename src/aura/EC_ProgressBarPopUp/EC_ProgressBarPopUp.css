@@ -1,0 +1,152 @@
+.THIS{
+    align-content: center;
+}
+/* CSS for the Modal Box */
+.THIS .popUpPrime {
+    text-align: center;
+}
+
+.THIS .modalHeader .closeButton {
+    margin-top: 0;
+    margin-right: 0;
+    font-size: 24px;
+}
+.THIS .slds-progress-bar__value {
+    height: 30px;
+  }
+  .THIS .help-text1{
+    font-size: 14px;
+    font-style: italic;
+    color: #4d4f53;
+    margin-left: 9px;
+    margin-top: 17px;
+    margin-bottom: 24px;
+}
+
+.THIS .modalHeader .modalHeading {
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.3px;
+    color: #005172;
+    visibility: hidden;
+}
+.THIS .slds-progress-bar_medium {
+    height: 30px;
+    width: 796px;
+    margin-left: 45px;
+    position:absolute;
+    top:35%;
+}
+.THIS .slds-progress-bar--medium {
+    height: 30px;
+    width: 796px;
+    margin-left: 45px;
+}
+.THIS .Progressbar{
+    color: #007ac9;
+    font-weight: bold;
+    position: absolute ;
+    top: 20%;
+    left: 47.5%;
+}
+.THIS .slds-modal__content {
+    width: 935px;
+    height: 295px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    visibility: visible;
+    display: grid;
+    margin: 0 auto;
+
+}
+.THIS .bodyHeading {
+    font-size: 24px;
+    padding: 8px;
+}
+
+@media screen and (max-width: 1365px) and (min-width: 768px){
+    .THIS .modalHeader{
+        visibility: hidden;
+    }
+    .THIS .slds-modal__content {
+        width: 544px;
+        height: 198px;
+        background-color: #ffffff;
+        border-radius: 4px;
+        visibility: visible;
+        display: grid;
+        margin: 0 auto;
+    
+    }
+    .THIS .slds-progress-bar_medium {
+        width: 435px;
+        margin: 0 auto;
+        margin-left: 40px;
+    }
+    .THIS .slds-progress-bar--medium {
+        width: 435px;
+    }
+    .THIS .Progressbar{
+        color: #007ac9;
+        font-weight: bold;
+        
+    }
+    .THIS .help-text1{
+        width: 400px;
+        height: 32px;
+        font-family: 'Arial', 'Helvetica', sans-serif;
+        font-size: 14px;
+        color: #4d4f53;
+        position: absolute;
+        top: 50%;
+        margin-left: 7%;
+    }
+  
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px){
+    .THIS .parentPop{
+        height:auto;
+    }
+    .THIS .modalHeader{
+        visibility: hidden;
+    }
+    .THIS .slds-modal__content {
+        width: 278px;
+        height: 192px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        visibility: visible;
+        display: grid;
+        margin: 0 auto;
+    
+    }
+    .THIS .Progressbar{
+        color: #007ac9;
+        font-weight: bold;
+        position: absolute;
+        left: 63.5%;
+    }
+    .THIS .help-text1{
+        font-size: 12px;
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        width: 246px;
+        height: 30px;
+        left: 10.5%;
+
+    }
+   .THIS .slds-progress-bar__value {
+    height: 20px;
+  }
+   .THIS .slds-progress-bar_medium {
+    height: 20px;
+    width: 246px;
+    margin : 0 auto;
+}
+    
+}

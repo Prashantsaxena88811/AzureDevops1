@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CC プロモーション取引先グループ検索条件</value>
+    </caseValues>
+    <nameFieldLabel>CC プロモーション取引先トグループ条件名</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,188 @@
+<!--
+  @Component Name     : EC_CoveoProductList
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  COVEO               18/09/2020         Wrapper for Coveo Product List page
+  lgcarrier@Coveo     29/09/2020         Handle the fact that there is a standalone search box in the header
+-->
+
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" controller="EC_CoveoProductListController" applyHtmlTag="false">
+    
+    <style>
+        .container.cc_main_container.cc_tmpl_OneColRD.cc_main_content_col {
+            margin-top: -20px;
+        }
+        .cc_categories_side_container {
+            display: none;
+        }
+        @media (min-width: 992px) {
+            .col-md-3 {
+                width: 20%;
+            }
+            .col-md-9 {
+                width: 80%;
+            }
+        }
+        /*.coveo-is-indirect-street-brand .cc_right_col {
+            display: none;
+        }*/
+    </style>
+
+
+
+   <script>
+
+        //Set timeout for remote call to 10 seconds
+        Visualforce.remoting.timeout = 10000; // Set timeout at page level
+
+        function addToCart(sku, qty) {
+            return new Promise((resolve, reject) => {
+                Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.EC_CoveoProductListController.addToCart}',
+                CCRZ.pagevars.remoteContext,
+                sku,
+                qty,
+                CCRZ.pagevars.currentCartID,
+                // JSON.stringify([{ partNumber: "OTR109685", poolNumber: "114", quantity: qty.toString() }]),
+                (result, event) => {
+                    if (event.status) {
+                    resolve(result);
+                    CCRZ.pubSub.trigger('cartChange', CCRZ.pagevars.currentCartID);
+                    } else if (event.type === 'exception') {
+                    reject(event.message + '<br/>\n<pre>' + event.where + '</pre>');
+                    } else {
+                    reject(event.message);
+                    }
+                },
+                { escape: false }
+                );
+            });
+        }
+
+        //Remote action to fecth Pricing info for Product list 
+        function getProducts(productIdsList) {
+            return new Promise((resolve, reject) => {
+                if (!productIdsList && !productIdsList.isArray()) {
+                    reject('productIdsList is not an array.');
+                }
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.EC_CoveoProductListController.fetchProducts}',
+                    CCRZ.pagevars.remoteContext,
+                    productIdsList,
+                    function (result, event) {
+                        if (event.status) {
+                            resolve(result);
+                        } else if (event.type === 'exception') {
+                            reject(`${event.message} : ${event.where}`);
+                        } else {
+                            reject(event.message);
+                        }
+                    }
+                )
+            });
+        }
+    
+    </script>
+
+    <!-- Coveo custom resources for Ecolab Connect -->
+    <apex:stylesheet value="{!URLFOR($Resource.EC_CoveoProductList_bundle_assets, '/css/EC_CoveoProductList.css')}" />
+    <!-- <apex:stylesheet value="{!URLFOR($Resource.EC_EcoLabs_Theme, '/css3/plp.css')}" /> -->
+    <apex:includeScript value="{!URLFOR($Resource.EC_CoveoProductList_bundle_assets + '/js/EC_CoveoProductList.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.EC_CoveoProductList_bundle_assets + '/js/cultures/en.js')}" />
+    
+    
+    
+    <div class="container cc_main_container cc_tmpl_TwoColRD">
+        <!-- Main content two column layout -->
+  		
+        <!-- If user can Buy online and is not Indirect Street brand -->
+        <apex:outputPanel rendered="{!(buyOnline)}">
+            <apex:outputPanel rendered="{!!(indirectStreetBrand)}">
+                <div class="search-box-LeftNav" />
+        		<div class="promotion-box-LeftNav"></div>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        <div class="row cc_main_row">
+            <div class="col-md-9 cc_main_content_col">
+                 <c:EC_CoveoProductList />
+            </div>
+            <div class="col-md-3 cc_right_col right_column">
+                <!-- If user can Buy online and is not Indirect Street brand -->
+                <apex:outputPanel rendered="{!(buyOnline)}">
+                    <apex:outputPanel rendered="{!!(indirectStreetBrand)}">
+                        <apex:insert name="MiniQuickOrderBox" />
+                		<apex:insert name="MiniCartBox" />
+                    </apex:outputPanel>
+                </apex:outputPanel>  
+            </div>
+        </div>
+    </div>
+
+   
+    
+    <script>
+        // Setting Coveo Product List variables from controller
+        var CoveoPL = {
+            viewPrice: {!viewPrice},
+            buyOnline: {!buyOnline},
+            indirectStreetBrand: {!indirectStreetBrand}
+        }
+
+        jQuery(function($){
+
+            // Workaround for the effective account not refeshed issue 
+            CCRZ.pubSub.on('view:EffAccountSelView:refresh', function (viewInstance) {
+                Coveo.$$(document.querySelector('#effAccounts .cc_close')).on('click', function(){
+                    document.getElementById('search').style.display = 'none';
+                    Coveo.$$(document.body).append(Coveo.$$('div', {id: 'overlay', class: 'modal-backdrop fade in'}).el);                    
+                    window.location.reload();
+                });
+            });
+           
+            CCRZ.pubSub.once('view:productSearchView:refresh', function (event, args) {
+                // Setting options for Coveo Components
+                var coveoSearchInterfaceRoot = document.getElementById('search');
+                Coveo.init(coveoSearchInterfaceRoot, {
+                    EcolabCusto: {
+                        pipelineContext: {
+                            host: window.location.hostname
+                        }
+                    },
+                    CCResultList: {
+                        productRemoteAction: window.getProducts
+                    },
+                    AddToCart: {
+                        addToCartRemoteAction: window.addToCart,
+                        isQtyPickerVisible: true
+                    },
+                    CommerceQuery: {
+                        listing: '{!CommerceQueryListing}' || 'All'
+                    },
+                    ResultLayoutSelector: {
+                        desktopLayouts: ['card'],
+                        tabletLayouts: ['card'],
+                        mobileLayouts: ['card']
+                    },
+                    QuerySuggestPreview: {
+                        numberOfPreviewResults: 6
+                    },
+                    DynamicFacet: {
+                        enableFacetSearch : false,
+                        collapsedByDefault: true
+                    },
+                    CommerceDataLayer : {
+                        productFormatter: Coveo.EcolabCommerceProduct.getFormattedProduct
+                    },
+                    IndirectStreetBrandBanner: {
+                        enable: CoveoPL.indirectStreetBrand
+                    }
+                });
+
+            });   
+            
+        });
+      </script>
+      
+</apex:page>

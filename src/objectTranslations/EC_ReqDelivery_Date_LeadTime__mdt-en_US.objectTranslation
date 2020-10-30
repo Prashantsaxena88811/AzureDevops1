@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Req Delivery Date Lead Time</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Req Delivery Date Lead Times</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date Type --></label>
+        <name>EC_Date_Type__c</name>
+        <picklistValues>
+            <masterLabel>Business</masterLabel>
+            <translation><!-- Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Calendar</masterLabel>
+            <translation><!-- Calendar --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Days --></label>
+        <name>EC_Days__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EC Custom Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EC Custom Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- CloudCraze Order Owner Id --></label>
+        <name>CloudCraze_Order_Owner_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Order Routing To SAP --></label>
+        <name>Default_Order_Routing_To_SAP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instance Domain --></label>
+        <name>Instance_Domain__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org CRM Connection Name --></label>
+        <name>Org_CRM_Connection_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Territory Account Record Type Label --></label>
+        <name>Territory_Account_Record_Type_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Products per page --></label>
+        <name>products_per_page__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

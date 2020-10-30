@@ -1,0 +1,29 @@
+<apex:page id="EC_Custommaintenance" title="{!$Label.EC_Service_Unavailable}" sidebar="false" showHeader="false" docType="html-5.0" standardStylesheets="false" applyHtmlTag="false">
+    <apex:slds />
+    <apex:stylesheet value="{!URLFOR($Resource.EC_EcoLabs_Theme, 'css3/ecolab-styles.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.EC_EcoLabs_Theme, 'css3/footer.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.EC_Branding_Theme, 'css/theme.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.EC_ErrorPages, 'css3/styles.css')}"/>
+      
+    <div class="EC_ErrorPage slds-scope">
+        <!-- header -->
+        <c:EC_ErrorPageHeader />
+        <!-- error content -->
+        <div class="slds-grid error-wrapper">
+            <div class="slds-col slds-size_12-of-12">
+                <div class="errorFound">
+                    <div class="image slds-m-top_x-large">
+                        <span class="icon-wrapper">
+                            <i class="material-icons">info</i>
+                            <div class="errorHeading">{!$Label.EC_Service_Unavailable_Heading}</div>
+                            <div class="errorText">{!$Label.EC_Service_Unavailable_Text}</div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- footer -->
+    <c:EC_ErrorPageFooter />
+    </div>
+
+</apex:page>

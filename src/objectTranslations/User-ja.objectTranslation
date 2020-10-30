@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- EC Associated Contact --></label>
+        <name>EC_Associated_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- CDM User Status --></label>
+        <name>EC_CDM_User_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- External UserKey --></label>
+        <name>EC_CDM_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Portal Access Role --></label>
+        <name>EC_Portal_Access_Role__c</name>
+        <picklistValues>
+            <masterLabel>Basic</masterLabel>
+            <translation><!-- Basic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Basic+</masterLabel>
+            <translation><!-- Basic+ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Buyer</masterLabel>
+            <translation><!-- Buyer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Buyer+</masterLabel>
+            <translation><!-- Buyer+ --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Redemption URL --></label>
+        <name>EC_Redemption_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Type --></label>
+        <name>User_Type__c</name>
+        <picklistValues>
+            <masterLabel>External</masterLabel>
+            <translation><!-- External --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal</masterLabel>
+            <translation><!-- Internal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Currency --></label>
+        <name>ccrz__CC_CurrencyCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CompanyType --></label>
+        <name>ccrz__CompanyType__c</name>
+        <picklistValues>
+            <masterLabel>Data Management</masterLabel>
+            <translation>データ管理</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISP</masterLabel>
+            <translation>ISP</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security</masterLabel>
+            <translation>セキュリティ</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact Type Role --></label>
+        <name>ccrz__ContactTypeRole__c</name>
+        <picklistValues>
+            <masterLabel>Department Chair</masterLabel>
+            <translation>学科長</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lab Manager</masterLabel>
+            <translation>室長</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Principal Investigator</masterLabel>
+            <translation>主任研究員</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchasing Agent</masterLabel>
+            <translation>購買代理人</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Researcher/Post Doc</masterLabel>
+            <translation>調査員/博士研究員</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student</masterLabel>
+            <translation>学生</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>ccApiTestData で使用される場合を除き、B2B Commerce 内部でのみ使用されます。</help>
+        <label><!-- DataId --></label>
+        <name>ccrz__DataId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Exempt --></label>
+        <name>ccrz__Tax_Exempt__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Industry --></label>
+        <name>ccrz__User_Industry__c</name>
+        <picklistValues>
+            <masterLabel>Academic research</masterLabel>
+            <translation>学術研究</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEM-Reseller</masterLabel>
+            <translation>OEM 再販業者</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>commercial</masterLabel>
+            <translation>商業</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>government</masterLabel>
+            <translation>政府機関</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>other</masterLabel>
+            <translation>その他</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User Salutation --></label>
+        <name>ccrz__User_Salutation__c</name>
+        <picklistValues>
+            <masterLabel>Dr</masterLabel>
+            <translation>Dr</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mr</masterLabel>
+            <translation>Mr</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mrs</masterLabel>
+            <translation>Mrs</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ms</masterLabel>
+            <translation>Ms</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Default Marketing Cloud Page --></label>
+        <name>et4ae5__Default_ET_Page__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default MID --></label>
+        <name>et4ae5__Default_MID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud for AppExchange Admin --></label>
+        <name>et4ae5__ExactTargetForAppExchangeAdmin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud for AppExchange User --></label>
+        <name>et4ae5__ExactTargetForAppExchangeUser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud Username --></label>
+        <name>et4ae5__ExactTargetUsername__c</name>
+    </fields>
+    <fields>
+        <label><!-- @deprecated --></label>
+        <name>et4ae5__ExactTarget_OAuth_Token__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Marketing Cloud Admin --></label>
+        <name>et4ae5__ValidExactTargetAdmin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Marketing Cloud User --></label>
+        <name>et4ae5__ValidExactTargetUser__c</name>
+    </fields>
+    <layouts>
+        <layout>Community Member Layout</layout>
+        <layoutType>CommunityMemberLayout</layoutType>
+        <sections>
+            <label><!-- Basic Information --></label>
+            <section>Basic Information</section>
+        </sections>
+        <sections>
+            <label><!-- Chatter Settings --></label>
+            <section>Chatter Settings</section>
+        </sections>
+        <sections>
+            <label><!-- Language And Locale Settings --></label>
+            <section>Language And Locale Settings</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- User Details --></label>
+            <section>User Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Profile Layout</layout>
+        <layoutType>UserAlt</layoutType>
+        <sections>
+            <label><!-- About --></label>
+            <section>About</section>
+        </sections>
+        <sections>
+            <label><!-- Background --></label>
+            <section>Background</section>
+        </sections>
+        <sections>
+            <label><!-- Contact --></label>
+            <section>Contact</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

@@ -1,0 +1,243 @@
+.THIS .pest-activity-title {
+	color: #005172;
+	font-size: 32px;
+	font-weight: bold;
+	line-height: 38px;
+	padding-bottom: 16px;
+}
+.THIS .ps-tile-one,
+.THIS .ps-tile-two {
+	padding-top: 65px;
+}
+.THIS .ps-tile-one {
+	margin-right: 20px;
+	order: 1;
+}
+.THIS .ps-tile-two {
+	order: 2;
+}
+.THIS .ps-tile-one-table {
+	order: 3;
+}
+.THIS .ps-tile-two-table {
+	order: 4;
+}
+.THIS .ps-icons {
+	text-align: center;
+}
+.THIS .ps-icons .material-icons {
+	font-size: 42px;
+	padding: 22px;
+	border-radius: 50%;
+}
+.THIS .ps-check {
+	color: #275e37;
+	border: 7px solid #275e37;
+}
+.THIS .ps-error {
+	color: #eeaf00;
+	border: 7px solid #eeaf00;
+}
+.THIS .ps-tile-btm {
+	padding: 23px 20px 12px 24px;
+	position: relative;
+}
+.THIS .ps-text {
+	color: #005172;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 20px;
+	text-transform: uppercase;
+	padding-bottom: 7px;
+}
+.THIS .dsr-label {
+	color: #4d4f53;
+	font-size: 16px;
+	line-height: 19px;
+}
+.THIS .ps-count {
+	color: #005172;
+	font-size: 32px;
+	font-weight: bold;
+	letter-spacing: 0;
+	line-height: 38px;
+	position: absolute;
+	top: 25px;
+	right: 20px;
+}
+.THIS .action-items {
+	color: #005172;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: .35px;
+	line-height: 17px;
+	position: absolute;
+	top: 59px;
+	right: 20px;
+}
+.THIS .action-items span {
+	padding-left: 10px;
+	margin-left: 10px;
+	border-left: 1px solid #d9d9d9;
+}
+.THIS .action-items span:first-child {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+.THIS .area-name {
+	color: #005172;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 26px;
+	margin-bottom: 10px;
+}
+.THIS .condition-description {
+	color: #4d4f53;
+	line-height: 19px;
+	margin-bottom: 25px;
+}
+.THIS .action-description {
+	color: #4d4f53;
+	line-height: 19px;
+	margin-bottom: 14px;
+}
+@media (max-width: 1365px) and (min-width: 768px) {
+	.THIS .ps-tile-one,
+	.THIS .ps-tile-two {
+		padding-top: 43px;
+	}
+	.THIS .pest-activity-title {
+		font-size: 20px;
+	}
+	.THIS .area-name {
+		font-size: 18px;
+	}
+	.THIS .ps-icons .material-icons {
+		font-size: 30px;
+		padding: 16px;
+	}
+	.THIS .ps-check,
+	.THIS .ps-error {
+		border-width: 3px;
+	}
+	.THIS .ps-tile-btm {
+		margin-top: 43px;
+		padding: 16px;
+		position: relative;
+	}
+	.THIS .ps-text {
+		font-size: 14px;
+	}
+	.THIS .ps-count {
+		font-size: 22px;
+		position: relative;
+		top: 0;
+		left: 0;
+		text-align: right;
+	}
+	.THIS .action-items {
+		top: 82px;
+		left: 16px;
+	}
+}
+@media screen and (max-width: 768px) and (min-width: 320px) {
+	.THIS .ps-tile-two {
+		order: 3;
+	}
+	.THIS .ps-tile-one-table {
+		order: 2;
+	}
+	.THIS .ps-tile-one,
+	.THIS .ps-tile-two {
+		padding-top: 43px;
+		margin-top: 15px;
+	}
+	.THIS .pest-activity-title {
+		font-size: 18px;
+		line-height: 24px;
+		padding: 0;
+	}
+	.THIS .area-name {
+		font-size: 18px;
+	}
+	.THIS .ps-icons .material-icons {
+		font-size: 30px;
+		padding: 16px;
+	}
+	.THIS .ps-check,
+	.THIS .ps-error {
+		border-width: 3px;
+	}
+	.THIS .ps-tile-btm {
+		margin-top: 43px;
+		padding: 16px;
+		position: relative;
+	}
+	.THIS .ps-text {
+		font-size: 14px;
+	}
+	.THIS .ps-count {
+		font-size: 22px;
+		position: relative;
+		top: 0;
+		left: 0;
+		text-align: right;
+	}
+	.THIS .action-items {
+		top: 75px;
+		left: 16px;
+		width: 85%;
+	}
+	.THIS .action-items span:nth-child(3) {
+		padding: 0;
+		margin: 0;
+		display: block;
+		border: none;
+	}
+}
+@media print {
+	.THIS .ps-tile-two {
+		order: 3;
+	}
+	.THIS .ps-tile-one-table {
+		order: 2;
+	}
+	.THIS .pest-activity-title {
+		padding: 0;
+		border-top: 5px solid #d9d9d9;
+		border-bottom: 5px solid #d9d9d9;
+		font-size: 20px;
+		text-transform: uppercase;
+		line-height: 50px;
+	}
+	.THIS .area-name {
+		font-size: 18px;
+	}
+	.THIS .ps-tile-btm {
+		margin: 10px 0 0;
+		padding: 0;
+		position: relative;
+	}
+	.THIS .ps-text {
+		font-size: 16px;
+	}
+	.THIS .ps-count {
+		font-size: 22px;
+		position: relative;
+		top: 0;
+		left: 0;
+		text-align: left;
+	}
+	.THIS .action-items {
+		position: static;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.THIS .action-description {
+		margin: 10px 0 0;
+	}
+	.THIS .condition-description {
+		margin-bottom: 0;
+	}
+}

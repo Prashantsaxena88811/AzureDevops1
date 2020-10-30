@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Exception</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Exceptions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Calling Context --></label>
+        <name>EC_Calling_Context__c</name>
+    </fields>
+    <fields>
+        <label><!-- Class Name --></label>
+        <name>EC_Class_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Message --></label>
+        <name>EC_Error_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exception Type --></label>
+        <name>EC_Exception_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gov Limit KPI --></label>
+        <name>EC_GovLimitKpi__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Number --></label>
+        <name>EC_Line_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Method Name --></label>
+        <name>EC_Method_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Note --></label>
+        <name>EC_Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporting user --></label>
+        <name>EC_Reporting_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stack Trace --></label>
+        <name>EC_Stack_Trace__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trigger --></label>
+        <name>EC_Trigger__c</name>
+    </fields>
+    <layouts>
+        <layout>Exception Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

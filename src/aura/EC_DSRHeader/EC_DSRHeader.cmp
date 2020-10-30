@@ -1,0 +1,250 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable" controller="EC_DSRHeaderController" access="global">
+    <aura:attribute name="totalCharCount" type="String" default="0"/>
+    <aura:attribute name="account" type="String" default=""/>
+    <aura:attribute name="accountName" type="String" default=""/>
+    <aura:attribute name="TotalAccounts" type="Integer" default="0"/>
+    <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+    <aura:attribute name="isSingleAccount" type="Boolean" default="false" />
+    <aura:attribute name="accountListMap" type="Map" />
+    <aura:attribute name="effectiveAccountId" type="String" default=""/>
+    <aura:attribute name="selectedAccount" type="Map" default="" />
+    <aura:attribute name="searchAccountKey" type="String" default="" />
+    <aura:attribute name="NoSearchResults" type="Boolean" default="false" />
+    <aura:attribute name="effectiveAccountName" type="String" default="Please Select an Account"/>
+    <aura:attribute name="effectiveAccountAddress" type="String" default=""/>
+    <aura:attribute name="effectiveAccountNumber" type="String" default=""/>
+    <aura:attribute name="effectiveParentAccountNumber" type="String" default=""/>
+    <aura:attribute name="serviceDates" type="String[]" default=""/>
+    <aura:attribute name="selectedDate" type="String" default=""/>
+    <aura:attribute name="dateOffSet" type="Map" />
+    <aura:attribute name="selectedDateOffset" type="String" default=""/>
+    <aura:attribute name="serviceDetails" type="Map" access="PRIVATE" />
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="showDate" type="Boolean" default="false"/>
+    <aura:attribute name="showError" type="Boolean" required="true" description="" default="false" access="private"/>
+    <aura:attribute name="errorMessage" type="String" required="false" description="" access="private"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="selectedShipTo" event="c:EC_AccountPickerEvent" action="{!c.onAccountSelect}"/>
+    <aura:registerEvent name="EC_ReportSelectedEvent" type="c:EC_ReportSelectedEvent"/>
+	<aura:if isTrue="{!v.showSpinner}" >
+        <div class="slds-spinner_container">
+          <div role="status" class="slds-spinner slds-spinner--medium">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+         </div>
+        </div>
+    </aura:if>
+    <aura:renderIf isTrue="{!v.showError}">
+        <div class = "popUpPrime">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__content slds-p-around_medium dsr-error-popup"  id="modal-content-id-1">
+                        <div><i class="material-icons error" ></i></div>
+                        <div id="error"><span class="errorMsg"><ui:outputRichText value="{!v.errorMessage}"/></span></div>
+                        <lightning:button class="slds-m-top_large slds-button_brand btn-login" label="{!$Label.c.EC_General_OK_Label}" onclick="{! c.closeErrorModel }" />
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </aura:renderIf>
+    <div class="print-logo">
+        <img src="{!$Resource.EC_Branding_Theme+'/images/logo.png'}" alt="Ecolab"/>
+    </div>
+    <div class="dsr-header">
+    	<div class="header-wrapper">
+            <div class="header-left">
+                <span class="shipto-label">{!$Label.c.EC_Home_PurchasedProduct_ShippedToLabel}</span>
+                <div class="{!v.isSingleAccount ? 'account-box disable' : 'account-box'}">
+                    <span class="material-icons">location_on</span>
+                    <span class="dsr-scc-selector" onclick="{! c.openModel }">{!v.effectiveAccountName} | {!v.effectiveAccountAddress}</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <aura:if isTrue="{!v.showDate}">
+                    <div class="date-pick">
+                        <span class="selected-date">
+                            <lightning:formattedDateTime value="{!v.selectedDate +'+00:00'}" year="numeric" month="numeric" day="numeric" hour="2-digit"
+                                minute="2-digit" timeZone="UTC" hour12="true"/>
+                        </span>
+                        <span class="material-icons">arrow_drop_down</span>
+                    </div>
+                    <div class="date-pick-dropdown">
+                        <div class="pickreport-text">
+                            {!$Label.c.EC_DSR_PickYourReport}
+                            <span class="material-icons close-pickreport">close</span>
+                        </div>
+                        <ul>
+                            <aura:iteration items="{!v.serviceDates}" var="dates" indexVar="idx">
+                                <aura:if isTrue="{!lessthan(idx, 3)}">
+                                <li onclick="{!c.dateSelected}" data-value="{!dates}" >
+                                    <lightning:formattedDateTime value="{!dates +'+00:00'}" year="numeric" month="numeric" day="numeric" hour="2-digit"
+                                                                minute="2-digit" timeZone="UTC" hour12="true"/>
+
+                                </li>
+                                </aura:if>
+                            </aura:iteration>
+                        </ul>
+                        <aura:if isTrue="{!v.serviceDates.length > 3}">
+                            <div class="view-more-btn">
+                                <button>{!$Label.c.EC_DSR_ViewMore}</button>
+                            </div>
+                        </aura:if>
+                    </div>
+                </aura:if>
+                <div class="fixed-date-picklist">
+                    <div class="fixed-date-pick">
+                        <div class="fixed-pickreport-text">
+                            {!$Label.c.EC_DSR_PickYourReport}
+                            <span class="material-icons fixed-close-pickreport">close</span>
+                        </div>
+                        <ul>
+                            <aura:iteration items="{!v.serviceDates}" var="dates" indexVar="idx">
+
+                                <li onclick="{!c.dateSelected}" data-value="{!dates}">
+                                    <lightning:formattedDateTime value="{!dates +'+00:00'}" year="numeric" month="numeric" day="numeric" hour="2-digit"
+                                                                minute="2-digit" timeZone="UTC" hour12="true"/>
+
+                                </li>
+                            </aura:iteration>
+                        </ul>
+                    </div>
+                </div>
+                <div class="print-box">
+                    <span class="print-label">{!$Label.c.EC_DSR_Print}</span> <span class="material-icons">print</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <aura:if isTrue="{!v.isModalOpen}">
+        <!-- Modal/Popup Box starts here-->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container modal-account">
+                <!-- Modal/Popup Box Header Starts here-->
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModel }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                                          <span class="slds-assistive-text">Close</span>
+                    <h2 class="slds-p-left_medium slds-p-top_medium slds-p-bottom_medium">{!$Label.c.EC_SR_Account_Picker_Header}</h2>
+                </header>
+                <!--Modal/Popup Box Body Starts here-->
+                <div class="slds-modal__content" id="modal-content-id-1">
+                    <aura:if isTrue="{!v.NoSearchResults}">
+                    <div class="search-wrapper">
+                        <div class="acc-info slds-p-around_medium slds-border_bottom slds-border_top slds-border_left slds-border_right">{!$Label.c.EC_SR_Account_Picker_Info}</div>
+
+                        <div class="acc-search slds-grid slds-wrap slds-grid_vertical-align-center slds-no-gutters slds-p-around_medium slds-border_bottom slds-border_left slds-border_right">
+                            <div class="acc-search-info slds-col slds-size_1-of-1 slds-medium-size_7-of-12 slds-p-top_small slds-order_2 slds-medium-order_1 error-align"><i class="material-icons error-color">error</i>&nbsp;{!$Label.c.EC_SR_Account_Picker_No_Results}&nbsp;<span class="search-str">'{!v.searchAccountKey}'</span></div>
+                            <div class="slds-form-element slds-col slds-size_1-of-1 slds-medium-size_5-of-12 slds-order_1 slds-medium-order_2">
+                                <div class="error-color slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                                    <lightning:input
+                                            aura:id="searchKnowledgeInput"
+                                            name="searchKnowledgeInput"
+                                            label="" type="search"
+                                            placeholder="Search"
+                                            class="searchError"
+                                            isLoading="{! v.issearching }"
+                                            value="{!v.searchAccountKey}"
+                                            onchange="{!c.searchAccounts}"/>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<aura:set attribute="else">
+                        <div class="search-wrapper">
+                        <div class="acc-info slds-p-around_medium slds-border_bottom slds-border_top slds-border_left slds-border_right">Account Information</div>
+                        <div class="acc-search slds-grid slds-wrap slds-grid_vertical-align-center slds-no-gutters slds-p-around_medium slds-border_bottom slds-border_left slds-border_right">
+                            <aura:if isTrue="{!lessthan(v.searchAccountKey.length, 3)}">
+                                <div class="acc-search-info slds-col slds-size_1-of-1 slds-medium-size_7-of-12 slds-p-top_small slds-order_2 slds-medium-order_1">{!$Label.c.EC_SR_Show}&nbsp;'<span class="search-str">{!v.TotalAccounts}&nbsp;{!$Label.c.EC_ECOLAB}</span>'&nbsp;{!$Label.c.EC_SR_Ecolab_accs}</div>
+                            <aura:set attribute="else">
+                                <div class="acc-search-info slds-col slds-size_1-of-1 slds-medium-size_7-of-12 slds-p-top_small slds-order_2 slds-medium-order_1">{!$Label.c.EC_SR_Show}&nbsp;<span class="search-str">'{!v.searchAccountKey}'</span>&nbsp;{!$Label.c.EC_SR_Showing_Results}</div>
+                            </aura:set>
+                            </aura:if>
+                            <div class="slds-form-element slds-col slds-size_1-of-1 slds-medium-size_5-of-12 slds-order_1 slds-medium-order_2">
+                                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                                    <lightning:input
+                                            aura:id="searchKnowledgeInput"
+                                            name="searchKnowledgeInput"
+                                            label="" type="search accounts"
+                                            placeholder="Search"
+                                            isLoading="{! v.issearching }"
+                                            value="{!v.searchAccountKey}"
+                                            onchange="{!c.searchAccounts}"/>
+                                    <a class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default slds-is-absolute" >
+                                        <i class="material-icons" aura:id="searchIcon">
+                                            search
+                                        </i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Use the Apex model and controller to fetch server side data -->
+                    <aura:iteration items="{!v.accountListMap}" var="parentAccount" indexVar="key">
+
+                    <!-- add class "selected" on with onRowSelect -->
+                    <div class="acc-item-wrapper slds-m-top_small slds-m-bottom_small slds-m-left_large slds-m-right_large slds-border_top slds-border_bottom slds-border_right slds-border_left">
+                        <div class="slds-grid slds-wrap slds-no-gutters">
+                            <div class="acc-item slds-p-around_medium slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+                                <div class="slds-grid slds-wrap slds-no-gutters">
+                                    <div class="slds-col slds-size_1-of-1 eco-acc slds-truncate">{!$Label.c.EC_SR_Account_Picker_Account}</div>
+                                    <div class="slds-col slds-size_1-of-1 eco-separator slds-truncate"></div>
+                                </div>
+                                <div class="acc-item-detail slds-grid slds-wrap slds-no-gutters">
+                                    <div class="acc-name-wrapper slds-col fz-14 slds-m-bottom_small slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                        <div class="eff-acc-name fz-14 slds-text-body_regular">{!$Label.c.EC_SR_Account_Name}</div>
+                                        <div class="eff-acc-name-val fz-14 slds-m-bottom_small slds-text-body_regular"><aura:unescapedHtml value="{!parentAccount.ParentAccName}"/></div>
+                                    </div>
+                                    <div class="acc-no-wrapper slds-col fz-14 slds-m-bottom_small slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                        <div class="eff-acc-num fz-14">{!$Label.c.EC_SR_Account_Number}</div>
+                                        <div class="eff-acc-num-val fz-14 slds-m-bottom_small slds-text-body_regular" id="acc_no" value="{!parentAccount.ParentAccNumber}"><aura:unescapedHtml value="{!parentAccount.ParentAccNumber}"/></div>
+                                    </div>
+                                    <!-- PBI-126181 -->
+                                    <aura:if isTrue="{!not(parentAccount.PrimaryRep == null)}">
+                                    <div class="prim-rep-wrapper slds-col fz-14 slds-m-bottom_small slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                        <div class="prim-rep fz-14">{!$Label.c.EC_PrimaryRepLabel}</div>
+                                        <div class="prim-rep-val fz-14 slds-m-bottom_small slds-text-body_regular"><aura:unescapedHtml value="{!parentAccount.PrimaryRep}"/></div>
+                                    </div>
+                                    </aura:if>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-1 slds-large-size_9-of-12 slds-border_left">
+                                <div>
+                                    <div class="slds-col slds-size_1-of-1 slds-large-size_12-of-12 slds-p-top_medium slds-p-bottom_medium slds-show_large addrHeader">
+                                        <span class="sta-header">{!$Label.c.EC_SR_ShipTo_address}</span>
+                                    </div>
+                                    <div class="address-wrapper">
+                                        <div class="slds-grid slds-wrap slds-no-gutters sta-headings slds-p-top_medium slds-p-bottom_medium slds-border_top slds-show_medium">
+                                            <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                                                <span class="">{!$Label.c.EC_SR_Acc_address}</span>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-1 slds-medium-size_8-of-12 slds-large-size_8-of-12">
+                                                <span class="">{!$Label.c.EC_SR_Account_ShiptTo}</span>
+                                            </div>
+                                        </div>
+                                        <aura:iteration items="{!parentAccount.value}" var="acc" indexVar="keyvalue">
+                                            <c:EC_ShipToAccountsIterator accListMap="{!v.accountListMap}" ShipToaccount="{!acc}" effectiveAccount="{!v.effectiveAccountId}"/>
+                                        </aura:iteration>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </aura:iteration>
+                    </aura:set>
+                </aura:if>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+
+</aura:component>

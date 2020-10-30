@@ -1,0 +1,1204 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>ServiceNow_Exceptions_Retry_Status_Codes</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceNow Retry Exceptions Retry Status Codes</shortDescription>
+        <value>400,401,200,201</value>
+    </labels>
+    
+    
+    <labels>
+        <fullName>EC_OrderDetails_ShipToName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderDetails_ShipToName</shortDescription>
+        <value>Ship to Name / ID</value>
+    </labels>
+    <labels>
+        <fullName>EC_Did_you_Know</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Did_you_Know</shortDescription>
+        <value>Did you Know?</value>
+    </labels>
+    <labels>
+        <fullName>EC_bank_robberies</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_bank_robberies</shortDescription>
+        <value>Half of all bank robberies take place on a Friday.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Unaligned_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unaligned Account Key</shortDescription>
+        <value>Corp_2</value>
+    </labels>
+    <labels>
+        <fullName>EC_Confirming_your_account_details</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Confirming_your_account_details</shortDescription>
+        <value>Confirming your account details and granting your access.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Division</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Division</shortDescription>
+        <value>NALCO</value>
+    </labels>
+    <labels>
+        <fullName>EC_rush_order_submit_mail_subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RUSH order submit mail</shortDescription>
+        <value>RUSH ECOMMERCE</value>
+    </labels>
+    <labels>
+        <fullName>EC_Accounts_ShipTo_TableHeader_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ship To Name</shortDescription>
+        <value>Ship to Name and ID</value>
+    </labels>
+    <labels>
+        <fullName>EC_PrimaryRepLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_PrimaryRepLabel</shortDescription>
+        <value>Ecolab Representative</value>
+    </labels>
+    <labels>
+        <fullName>EC_ProductIndexCurrent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ProductIndexCurrent</shortDescription>
+        <value>Current</value>
+    </labels>
+    <labels>
+        <fullName>Ec_Continue_Shopping</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ec Continue Shopping</shortDescription>
+        <value>&lt; Continue Shopping</value>
+    </labels>
+    <labels>
+        <fullName>Attention_phone_should_10_digits</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Attention phone should 10 digits</shortDescription>
+        <value>Please enter a 10 digit phone number</value>
+    </labels>
+     <labels>
+        <fullName>Please_enter_First_and_Last_name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please enter First and Last name</shortDescription>
+        <value>Please enter First and Last name</value>
+    </labels>
+    <labels>
+        <fullName>EC_UserRoleApproval_Subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_UserRoleApproval_Subject</shortDescription>
+        <value>Customer update on connect.ecolab.com</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Ecolab_accs</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Ecolab accs</shortDescription>
+        <value>Accounts linked to your Profile</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Account_Picker_Header</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Account Picker Header</shortDescription>
+        <value>Select an Account</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Account_ShiptTo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Account ShiptTo</shortDescription>
+        <value>Ship to Name and ID</value>
+    </labels>
+    <labels>
+        <fullName>EC_SR_Continue_button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC SR Continue button</shortDescription>
+        <value>SELECT</value>
+    </labels>
+    <labels>
+        <fullName>EC_Bulk</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bulk</shortDescription>
+         <value>Bulk</value>
+   </labels>
+   <labels>
+        <fullName>EC_Chemistry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>chemistry</shortDescription>
+         <value>Chemical</value>
+   </labels>
+   <labels>
+        <fullName>EC_Equipment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Equipment</shortDescription>
+         <value>Equipment</value>
+   </labels>
+    <labels>
+        <fullName>EC_NonBulk</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Non Bulk</shortDescription>
+         <value>NonBulk</value>
+   </labels>
+   <labels>
+        <fullName>NonBulk</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Non Bulk</shortDescription>
+         <value>Non Bulk</value>
+   </labels>
+   <labels>
+        <fullName>EC_Per</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Per Each</shortDescription>
+         <value>Per</value>
+   </labels>
+   <labels>
+        <fullName>EC_Price_Each</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Price Each</shortDescription>
+         <value>EA</value>
+   </labels>
+   <labels>
+    <fullName>order_submit_mail_Multiple_Orders_Needed</fullName>
+    <categories>order submit mail</categories>
+    <language>en_US</language>
+    <protected>false</protected>
+    <shortDescription>order submit mail - Multiple Orders Needed</shortDescription>
+    <value>MultipleOrdersNeeded</value>
+    </labels>
+    <labels>
+        <fullName>order_submit_mail_Tank_Number</fullName>
+        <categories>order submit mail</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - Tank Number</shortDescription>
+        <value>Tank Number:</value>
+    </labels>
+    <labels>
+        <fullName>order_submit_mail_Unloading_Point</fullName>
+        <categories>order submit mail</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order submit mail - Unloading Point</shortDescription>
+        <value>Unloading Point:</value>
+    </labels>
+    <labels>
+        <fullName>DropOff</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DropOff</shortDescription>
+        <value>Drop-Off</value>
+    </labels>
+    <labels>
+        <fullName>EC_DeliveryPriority_7</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DeliveryPriority_7</shortDescription>
+        <value>7</value>
+    </labels>
+    <labels>
+        <fullName>EC_ChemicalCategory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC ChemicalCategory</shortDescription>
+        <value>99999.N1009</value>
+    </labels>
+    <labels>
+        <fullName>EC_Chemical_Taxonomy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Chemical Taxonomy</shortDescription>
+        <value>Chemical</value>
+    </labels>
+        <labels>
+        <fullName>EC_order_submit_mail_uom</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order submit mail - UOM</shortDescription>
+        <value>UOM:</value>
+    </labels>
+     <labels>
+        <fullName>EC_HelpText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC HelpText</shortDescription>
+        <value>Ecolab’s Customer Portal is best viewed using the most current version of Chrome. Please take a moment to adjust your browser or</value>
+    </labels>
+    <labels>
+        <fullName>EC_Dont_have_an_account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC Dont have an account</shortDescription>
+        <value>Don't have an account?</value>
+    </labels>
+    <labels>
+        <fullName>EC_SIGN_IN</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LoginPageText</shortDescription>
+        <value>Sign In</value>
+    </labels>
+    <labels>
+        <fullName>EC_Footer_CopyrightContent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Footer_CopyrightContent</shortDescription>
+        <value>© 2020 Ecolab Inc. All rights reserved.</value>
+    </labels>
+    <labels>
+        <fullName>Acceptable_Browsers</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Acceptable Browsers</shortDescription>
+        <value>are also acceptable browsers but are currently not optimized.</value>
+    </labels>
+    <labels>
+        <fullName>Ecolab_Customer_Portal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ecolab Customer Portal</shortDescription>
+        <value>Ecolab’s Customer Portal is best viewed using the most current version of Chrome. Please take a moment to adjust your browser or</value>
+    </labels>
+	<labels>
+        <fullName>EC_CompleteRegHeading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC CompleteRegHeading</shortDescription>
+        <value>WOULD YOU LIKE TO USE A WORK ACCOUNT?</value>
+    </labels>
+    <labels>
+        <fullName>EC_CompleteRegWarning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC CompleteRegWarning</shortDescription>
+        <value>By selecting "Yes," you are confirming that your company approves your registration.</value>
+    </labels>
+    <labels>
+        <fullName>EC_CompleteRegWorkAccount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC CompleteRegWorkAccount</shortDescription>
+        <value>WORK ACCOUNT INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>EC_Completed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Completed</shortDescription>
+        <value>Completed</value>
+    </labels>
+    <labels>
+        <fullName>EC_CompleteregHelpText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC CompleteregHelpText</shortDescription>
+        <value>We noticed that the email address you’ve provided appears to be a Microsoft enabled work account. Would you like to use this account to login to the Ecolab portal?</value>
+    </labels>
+      <labels>
+        <fullName>Try_again</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Try again</shortDescription>
+        <value>Please try again.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_PageHeadingText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_PageHeadingText</shortDescription>
+        <value>REGISTER TO GAIN ACCESS TO MANAGE YOUR PROGRAM(S) ONLINE.</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_AccountNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_AccountNumber</shortDescription>
+        <value>Account Number</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_SalesRepEmailId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_SalesRepEmailId</shortDescription>
+        <value>Ecolab Rep Email Address</value>
+    </labels>
+    <labels>
+        <fullName>EC_INST_RR_Permissions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Institutional RR permission sets</shortDescription>
+        <value>EC_INSTRRDB</value>
+    </labels>
+    <labels>
+        <fullName>EC_Registration_MandatoryFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Registration_MandatoryFields</shortDescription>
+        <value>All fields are mandatory</value>
+    </labels>
+    <labels>
+        <fullName>Register_with_Account_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Register with Account Number</shortDescription>
+        <value>Register with your Ecolab Account Number</value>
+    </labels>
+    <labels>
+        <fullName>Ecolab_Rep_Helptext</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ecolab Rep Helptext</shortDescription>
+        <value>firstname.lastname@ecolab.com</value>
+    </labels>
+    <labels>
+        <fullName>Agree_to</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Agree to</shortDescription>
+        <value>I Agree to the</value>
+    </labels>
+    <labels>
+        <fullName>Terms_and_Conditions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Terms and Conditions</shortDescription>
+        <value>terms and conditions</value>
+    </labels>
+    <labels>
+        <fullName>Terms_of_use</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Terms of use</shortDescription>
+        <value>https://www.ecolab.com/terms-of-use</value>
+    </labels>
+    <labels>
+        <fullName>Must_agree_terms</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Must agree terms</shortDescription>
+        <value>You Must agree to terms and conditions</value>
+    </labels>
+    <labels>
+        <fullName>EC_Origin_Online_Registration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Origin_Online_Registration</shortDescription>
+        <value>Connect</value>
+    </labels>
+     <labels>
+        <fullName>EC_CompleteRegNo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC CompleteRegNo</shortDescription>
+        <value>Please note: if you are unable to successfully login through your work account, you may re-register by selecting “No” above.
+</value>
+    </labels>
+    <labels>
+        <fullName>Ecolab_Account_Helptext</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ecolab_Account_Helptext</shortDescription>
+        <value>Missing your account number? Reference any Ecolab invoice or contact your sales representative.</value>
+    </labels>
+    <labels>
+        <fullName>GEN_CHEMICAL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GEN CHEMICAL</shortDescription>
+        <value>GEN CHEMICAL</value>
+    </labels>
+    <labels>
+        <fullName>GEN_EQUIPMENT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GEN EQUIPMENT</shortDescription>
+        <value>GEN EQUIPMENT</value>
+    </labels> 
+    <labels>
+        <fullName>Contact_Distribution_Partner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Distribution Partner</shortDescription>
+        <value>Please contact your distribution partner to purchase this product.</value>
+    </labels>    
+    <labels>
+        <fullName>EC_ClearSearchLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_ClearSearchLabel</shortDescription>
+        <value>CLEAR SEARCH</value>
+    </labels>
+        <labels>
+        <fullName>EC_Order_OrderSearchButton</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderSearchButton</shortDescription>
+        <value>SEARCH</value>
+    </labels>
+    <labels>
+        <fullName>EC_Order_OrderFilterButton</fullName>
+        <categories>Order History</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Order_OrderFilterButton</shortDescription>
+        <value>Filters</value>
+    </labels>
+    <labels>
+        <fullName>Self_Align_Success</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Self Align Success</shortDescription>
+        <value>Successfully Aligned</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_PickYourReport</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_PickYourReport</shortDescription>
+        <value>Pick Your Report</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_ViewDigitalServiceReports</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_ViewDigitalServiceReports</shortDescription>
+        <value>View Digital Service Reports</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_ViewReports</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_ViewReports</shortDescription>
+        <value>View Reports</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_ViewMore</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_ViewMore</shortDescription>
+        <value>VIEW MORE</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Servicedby</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Servicedby</shortDescription>
+        <value>Serviced by : </value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Print</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Print</shortDescription>
+        <value>Print</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Invoice</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Invoice</shortDescription>
+        <value>Invoice : </value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_EndDate</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_EndDate</shortDescription>
+        <value>End Date : </value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_PestEliminationServiceReport</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_PestEliminationServiceReport</shortDescription>
+        <value>Pest Elimination Service Report</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_PestActivity</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_PestActivity</shortDescription>
+        <value>Pest Activity</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_FindingsServicedbyEcolab</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_FindingsServicedbyEcolab</shortDescription>
+        <value>Findings Serviced by Ecolab</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_PestsFindings</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_PestsFindings</shortDescription>
+        <value>Pests Findings</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_ActionItems</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_ActionItems</shortDescription>
+        <value>Action Items</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_FindingsThatRequireAttention</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_FindingsThatRequireAttention</shortDescription>
+        <value>Findings That Require Attention</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Sanitation</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Sanitation</shortDescription>
+        <value>Sanitation</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Structural</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Structural</shortDescription>
+        <value>Structural</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Preparation</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Preparation</shortDescription>
+        <value>Preparation</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_StructuralFindings</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_StructuralFindings</shortDescription>
+        <value>Structural Findings</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_SanitationFindings</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_SanitationFindings</shortDescription>
+        <value>Sanitation Findings</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_PreparationFindings</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_PreparationFindings</shortDescription>
+        <value>Preparation Findings</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_SiteVisitDetails</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_SiteVisitDetails</shortDescription>
+        <value>Site Visit Details</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_ServiceComments</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_ServiceComments</shortDescription>
+        <value>Service Comments</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_SeeAll</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_SeeAll</shortDescription>
+        <value>See All</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Comment</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Comment</shortDescription>
+        <value>Comment</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_MaterialsUsed</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_MaterialsUsed</shortDescription>
+        <value>Materials Used</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Interior</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Interior</shortDescription>
+        <value>Interior</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Exterior</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Exterior</shortDescription>
+        <value>Exterior</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_SeeDetails</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_SeeDetails</shortDescription>
+        <value>See Details</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_MaterialDetails</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_MaterialDetails</shortDescription>
+        <value>Material Details</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_WhatMaterialWasUsed</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_WhatMaterialWasUsed</shortDescription>
+        <value>What Material Was Used?</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Regulatory</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Regulatory</shortDescription>
+        <value>Regulatory #</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Lot</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Lot</shortDescription>
+        <value>Lot #</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_ActiveIngredient</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_ActiveIngredient</shortDescription>
+        <value>Active Ingredient</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Quantity</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Quantity</shortDescription>
+        <value>Quantity</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Application</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Application</shortDescription>
+        <value>Application</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Location</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Location</shortDescription>
+        <value>Location</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_PestType</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_PestType</shortDescription>
+        <value>Pest Type</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_RequestedQA</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_RequestedQA</shortDescription>
+        <value>Requested Q &#38; A’s</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_RequestedInformation</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_RequestedInformation</shortDescription>
+        <value>Requested Information</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Response</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Response</shortDescription>
+        <value>Response</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_RegulatoryComments</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_RegulatoryComments</shortDescription>
+        <value>Regulatory Comments</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_ThankyouforyourBusiness</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_ThankyouforyourBusiness</shortDescription>
+        <value>Thank you for your Business</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_EcolabSignature</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_EcolabSignature</shortDescription>
+        <value>Ecolab Signature</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_CustomerSignature</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_CustomerSignature</shortDescription>
+        <value>Customer Signature</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Json_PestPaymentPhone</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Json_PestPaymentPhone</shortDescription>
+        <value>PestPaymentPhone</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Json_PestAutoPayEmail</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Json_PestAutoPayEmail</shortDescription>
+        <value>PestAutoPayEmail</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Json_PestActivity</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Json_PestActivity</shortDescription>
+        <value>Pest Activity</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Json_Structural</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Json_Structural</shortDescription>
+        <value>Structural</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Json_Sanitation</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Json_Sanitation</shortDescription>
+        <value>Sanitation</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Json_Prep</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Json_Prep</shortDescription>
+        <value>Prep</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Json_Other</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Json_Other</shortDescription>
+        <value>Other</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Json_Interior</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Json_Interior</shortDescription>
+        <value>Interior</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Json_Exterior</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Json_Exterior</shortDescription>
+        <value>Exterior</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Json_RegulatoryComment</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Json_RegulatoryComment</shortDescription>
+        <value>RegulatoryComment</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Comments</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Comments</shortDescription>
+        <value>Comments</value>
+    </labels>
+    <labels>
+        <fullName>EC_BillingArrangement</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_BillingArrangement</shortDescription>
+        <value>Billing Arrangements</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Filter</fullName>
+        <categories>EC_DSR</categories> 
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Filter</shortDescription>
+        <value>FILTER</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Locations</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Locations</shortDescription>
+        <value>Locations</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_All</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_All</shortDescription>
+        <value>All</value>
+    </labels>
+    <labels>
+        <fullName>EC_HomeTile_Our_Intelligence</fullName>
+        <categories>EC_HomeTile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HomeTile_Our_Intelligence</shortDescription>
+        <value>OUR INTELLIGENCE</value>
+    </labels>
+    <labels>
+        <fullName>EC_HomeTile_Intelligence_Text</fullName>
+        <categories>EC_HomeTile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HomeTile_Intelligence_Text</shortDescription>
+        <value>Access to key metrics and insights that provide visibility to your Ecolab programs and drive action for your business.</value>
+    </labels>
+    <labels>
+        <fullName>EC_HomeTile_Intelligence_Link</fullName>
+        <categories>EC_HomeTile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HomeTile_Intelligence_Link</shortDescription>
+        <value>Click here for Intelligence</value>
+    </labels>
+    <labels>
+        <fullName>EC_HomeTile_DSR_Title</fullName>
+        <categories>EC_HomeTile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HomeTile_DSR_Title</shortDescription>
+        <value>PEST ELIMINATION DIGITAL SERVICE REPORTS</value>
+    </labels>
+    <labels>
+        <fullName>EC_HomeTile_DSR_Text</fullName>
+        <categories>EC_HomeTile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HomeTile_DSR_Text</shortDescription>
+        <value>View current and historical Pest Elimination digital service reports to review services performed, service findings, and customer action items.</value>
+    </labels>
+    <labels>
+        <fullName>EC_HomeTile_DSR_Link</fullName>
+        <categories>EC_HomeTile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HomeTile_DSR_Link</shortDescription>
+        <value>Click here to view your Service Reports</value>
+    </labels>
+    <labels>
+        <fullName>EC_HomeTile_Browser_Title</fullName>
+        <categories>EC_HomeTile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HomeTile_Browser_Title</shortDescription>
+        <value>BROWSER SUPPORT</value>
+    </labels>
+    <labels>
+        <fullName>EC_HomeTile_Browser_Text1</fullName>
+        <categories>EC_HomeTile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HomeTile_Browser_Text1</shortDescription>
+        <value>Ecolab’s Customer Portal is best viewed using the most current version of Chrome. Please take a moment to adjust your browser or </value>
+    </labels>
+    <labels>
+        <fullName>EC_HomeTile_Browser_Chrome</fullName>
+        <categories>EC_HomeTile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HomeTile_Browser_Chrome</shortDescription>
+        <value>Download Chrome</value>
+    </labels>
+    <labels>
+        <fullName>EC_HomeTile_Browser_Text2</fullName>
+        <categories>EC_HomeTile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HomeTile_Browser_Text2</shortDescription>
+        <value>The most recent version of </value>
+    </labels>
+    <labels>
+        <fullName>EC_HomeTile_Browser_Safari</fullName>
+        <categories>EC_HomeTile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HomeTile_Browser_Safari</shortDescription>
+        <value>Safari</value>
+    </labels>
+    <labels>
+        <fullName>EC_HomeTile_Browser_Firefox</fullName>
+        <categories>EC_HomeTile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HomeTile_Browser_Firefox</shortDescription>
+        <value>Firefox</value>
+    </labels>
+    <labels>
+        <fullName>EC_HomeTile_Browser_Edge</fullName>
+        <categories>EC_HomeTile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HomeTile_Browser_Edge</shortDescription>
+        <value>Edge </value>
+    </labels>
+    <labels>
+        <fullName>EC_HomeTile_Browser_Text3</fullName>
+        <categories>EC_HomeTile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_HomeTile_Browser_Text3</shortDescription>
+        <value>are also supported browsers.</value>
+    </labels>
+    <labels>
+        <fullName>EC_SupportEmail_Nalco</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_SupportEmail_Nalco</shortDescription>
+        <value>vanasuri@deloitte.com</value>
+    </labels>
+     <labels>
+        <fullName>EC_NoChargeMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_NoChargeMsg</shortDescription>
+        <value>Based on your Ecolab contract this item has no charge</value>
+    </labels>
+    <labels>
+        <fullName>EC_NoCharge</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_NoCharge</shortDescription>
+        <value>No Charge</value>
+    </labels>
+    <labels>
+        <fullName>EC_TriggerEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_TriggerEmail</shortDescription>
+        <value>FALSE</value>
+    </labels>
+    <labels>
+        <fullName>EC_Nalco</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Nalco</shortDescription>
+        <value>WATER,ENERGY,PAPER</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_BaURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_BaURL</shortDescription>
+        <value>https://devec1-ecolabconnect--devec1.cs62.force.com/DefaultStore/ccrz__CCPage?pageKey=badp</value>
+    </labels>
+    <labels>
+        <fullName>EC_Header_BillingArrangement</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Header_BillingArrangement</shortDescription>
+        <value>Billing Arrangements</value>
+    </labels>
+        <labels>
+        <fullName>EC_Info_Icon</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Info_Icon</shortDescription>
+        <value>https://ecolabconnect--qa--c.documentforce.com/servlet/servlet.ImageServer?id=015q0000000mc7H&amp;oid=00Dq0000000DjsF&amp;lastMod=1601041461000</value>
+    </labels>  
+    <labels>
+        <fullName>EC_LLI_Divisions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_LLI_Divisions</shortDescription>
+        <value>WATER,ENERGY,PAPER</value>
+    </labels>
+    <labels>
+        <fullName>EC_InactivePriceListType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_InactivePriceListType</shortDescription>
+        <value>Customer Group,Customer Price Group,Industry Code,Sales Org,Contract,USR,USG,SBA,FBA,FlatFee,NoCharge</value>
+    </labels>
+    <labels>
+        <fullName>EC_order_submit_mail_paymentMethod</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_order_submit_mail_paymentMethod</shortDescription>
+        <value>Payment method:</value>
+    </labels>
+    <labels>
+        <fullName>EC_InactivePLSequence</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_InactivePLSequence</shortDescription>
+        <value>100,200,300,400,500,1000,1,120,140</value>
+    </labels>
+    <labels>
+        <fullName>EC_OrderSubmissionDivision</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderSubmissionDivision</shortDescription>
+        <value>INSTITUTIONAL,Institutional,FOOD &amp; BEVERAGE,food &amp; beverage,TEXTILE CARE,textile care</value>
+    </labels>  
+    <!--<labels>
+        <fullName>Agent_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Agent URL</shortDescription>
+        <value>https://ecolabconnect-preprod.lightning.force.com/lightning/r/Case/</value>
+    </labels>-->
+    <labels>
+        <fullName>DCS_Agent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DCS Agent</shortDescription>
+        <value>DCS_Agents</value>
+    </labels>
+    <!--<labels>
+        <fullName>Ecolab_Community_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ecolab Community URL</shortDescription>
+        <value>https://preprod-ecolabconnect.cs169.force.com/s/case/</value>
+    </labels>-->
+    <labels>
+        <fullName>EC_OrderChannel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_OrderChannel</shortDescription>
+        <value>Connect</value>
+    </labels>
+    <labels>
+        <fullName>EC_DSR_Json_IntroductionPoint</fullName>
+        <categories>EC_DSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_DSR_Json_IntroductionPoint</shortDescription>
+        <value>Introduction Point</value>
+    </labels>
+    <labels>
+        <fullName>EC_IBuyPLP1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_IBuyPLP1</shortDescription>
+        <value>/commerce/ccrz__CCPage?pageKey=coveo&amp;viewState=ListView&amp;isIBEUser=true&amp;categoryId=</value>
+	</labels>
+	<labels>
+        <fullName>EC_Punchout_IFrameCustonUrl1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EC_Punchout_IFrameCustonUrl1</shortDescription>
+        <value>/EC_IFrameCustomPage?CartId=xyz&amp;retUrl=ccrz__CCPage?pageKey=coveo&amp;viewState=ListView&amp;categoryId=</value>
+	</labels>
+</CustomLabels>

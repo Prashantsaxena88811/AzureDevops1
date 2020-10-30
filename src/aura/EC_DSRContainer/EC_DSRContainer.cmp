@@ -1,0 +1,10 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable" access="global">
+	<aura:attribute name="displayElement" type="Boolean" default="false" />
+    <aura:attribute name="serviceDetails" type="Map" default="" />
+	<aura:handler event="c:EC_ReportSelectedEvent" action="{!c.onReportSelect}"/>
+    <aura:if isTrue="{!v.displayElement}" >
+        <c:EC_DSRReport serviceDetails="{!v.serviceDetails}"/>
+		<c:EC_DSRPestActivity serviceDetails="{!v.serviceDetails}"/>
+		<c:EC_DSRSiteVisitDetails serviceDetails="{!v.serviceDetails}"/>
+	</aura:if> 
+</aura:component>

@@ -1,0 +1,486 @@
+<!--
+
+  @Component Name     : EC_QuickListDetail
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Pratyusha             7/30/2019         Quicklist detail page
+
+--> 
+
+<apex:component controller="EC_QuickListController">
+    <script id="EC-MyAccount-WishlistDetail-Desktop" type="text/template">
+        <div class="panel panel-default cc_panel cc_myaccount_mywishlists_container">
+            <!--<div class="panel-heading cc_heading">
+                <h3 class="panel-title cc_title">{{pageLabelMap 'MyAccount_MyWishlist'}}</h3>
+            </div> -->
+            <div class="cc_body">
+                <div class="cc_wishlist_heading">
+                    <div class=" ql-rt-top">
+                        <h4 class="cc_wishlist_name">{{this.name}}</h4>
+                        {{#if this.note}}
+                            <div class="ql-desc">
+                                <span class="cc_wishlist_note_label">{{pageLabelMap 'Field_Notes'}}&#58;</span>
+                                <span class="cc_wishlist_note">{{this.note}}</span>
+                            </div>
+                        {{/if}}
+                        <div class="button-group cc_button_group ql-action-btns">
+                            <span class="ql-action-icon">
+                                <span class="material-icons">file_copy</span>
+                                <input type="button" class="clone cc_clone" data-id="{{sfid}}" value="{{pageLabelMap 'Action_Clone'}}"/> 
+                            </span
+                            {{#if isRO}}
+                                &#160;
+                            {{else}}
+                                <span> 
+                                    <span class="ql-action-icon">
+                                        <span class="material-icons">create</span>
+                                        <input type="button" class="openModal cc_edit" data-id="{{sfid}}" value="{{pageLabelMap 'Action_Edit'}}"/>
+                                    </span>
+                                </span>
+                            {{/if}}
+                                
+                            {{#if isActive}}
+                                &#160;
+                            {{else}}
+                                {{#if isRO}}
+                                &#160;
+                                {{else}}
+                                <span class="ql-action-icon">
+                                    <span class="material-icons">delete</span>
+                                    <input type="button" class="delete cc_delete" data-id="{{sfid}}" value="{{pageLabelMap 'Action_Delete'}}"/>
+                                </span>
+                                
+                                {{/if}}
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{#if (checkQLLength this.itemData)}}
+                        <div class="ql-selectall">
+                            <input type="checkbox" id="all_checkbox" class="cc_ql_checkbox select_ql_all cc_checkbox ch_box"/> Select All
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="ql-row-wrapper">
+                    {{#each this.itemData}}
+                        <div class="row cc_wishlist_item">
+                            <div class="col-xs-12 col-sm-3 col-lg-2 img-col">
+                                {{#ifEquals '{!buyOnline}' "true"}}
+                                    {{#if this.prodBean.isAddToCartShow}} 
+                                        <input type="checkbox" class="cc_ql_checkbox select_ql cc_checkbox ch_box"
+                                            sf_id="{{this.prodBean.sfid}}" sku="{{this.prodBean.sku}}" {{#if selected}} checked {{/if}} />
+                                    {{/if}}   
+                                {{/ifEquals}}
+                                <div class="cc_wishlist_image">
+                                    {{#if this.mediaWrapper }}
+                                        {{productLink this.prodBean 'cc_prod_link' image=(displayImage this.mediaWrapper 'accountWish img-responsive thumbnail' alt=this.prodBean.name dataId=this.prodBean.sku)}}
+                                    {{else}}
+                                        <img class="carouselImg cc_alternate img-responsive thumbnail " src="{!$Resource.EC_EcoLabs_Theme+'/images/EC_no_image.jpg'}" alt="{{this.product.prodBean.name}}"/>
+                                    {{/if}}
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-7 col-lg-5">
+                                <p class="item_title cc_wishlist_item_title">{{productLink this.prodBean 'cc_prod_link'}}</p>
+                                <div class="sku cc_sku">
+                                    {{#ifDisplay 'WL.DsplAddtlSku'}}
+                                        <span class="cc_label">Product Code:</span>
+                                        <span class="cc_value">{{this.prodBean.sku}} | </span>
+                                        <label class="description">{{this.prodBean.UnitOfMeasure}}</label>
+                                    {{/ifDisplay}}
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-3 qty-col">
+                                {{#ifEquals '{!viewPrice}' "true"}}
+                                   {{#if this.prodBean.isFlatFeeProduct}}
+                                     <!-- f&b and no charge -->
+                                        <p class="noChargeWrap">
+                                            <span class="noChargeLabel">{{pageLabelMap 'EC_NoCharge'}}</span>
+                                            <span class="noCharge">
+                                                <i class="material-icons info_outline"></i>
+                                                <span class="noChargeMsg">{{pageLabelMap 'EC_NoChargeMsg'}}</span>
+                                            </span>
+                                        </p>
+                                    {{else}}
+                                        {{#if (checknalcoquicklist this.prodBean)}}
+                                            <div class="price_block cc_price_block">
+                                                {{#if (taxonomyQl this.prodBean.taxonomy 'Equipment')}}
+                                                    <p class="price cc_price">
+                                                        <input type="hidden" value={{{this.price}}} id="{{this.prodBean.sfid}}_unitprice">
+                                                        <span class="value cc_value">{{{price this.price}}}</span>
+                                                        <span class="ec-price-label">{{userLocale}}</span> 
+                                                        <span class="per-ea">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span>
+                                                    </p>
+                                                {{/if}}
+                                                {{#if (taxonomyQl this.prodBean.taxonomy 'Chemical')}}
+                                                    {{#if (packageTypeQl this.prodBean.packageTypeUOM 'NonBulk')}}
+                                                        <p class="price cc_price">
+                                                            <input type="hidden" value={{{this.price}}} id="{{this.prodBean.sfid}}_unitprice">
+                                                            <span class="value cc_value">{{{price this.price}}}</span>
+                                                            <span class="ec-price-label">{{userLocale}}</span> 
+                                                            <span class="per-ea">{{pageLabelMap 'EC_UOM_Per'}} {{pageLabelMap 'EC_UOM_EA'}}</span>
+                                                        </p>
+                                                        {{#if (nonBulkEAQl this.prodBean.packageTypeUOM this.prodBean.CustomPricingUOM)}}
+                                                            <p class="price cc_price second-price">
+                                                                <input type="hidden" value={{{this.prodBean.price}}} id="{{this.prodBean.sfid}}_unitprice">
+                                                                <span class="unit-price">{{{price this.prodBean.CustomUnitPrice}}}</span>
+                                                                <span class="unit-price">{{userLocale}}</span> 
+                                                            	<span class="unit-price">{{pageLabelMap 'EC_UOM_Per'}} {{this.prodBean.PricePer}} {{this.prodBean.CustomPricingUOM}}</span>
+                                                            </p>
+                                                        {{/if}}
+                                                    {{/if}}
+                                                    {{#if (packageTypeQl this.prodBean.packageTypeUOM 'Bulk')}}
+                                                        <p class="price cc_price">
+                                                            <input type="hidden" value={{{this.prodBean.price}}} id="{{this.prodBean.sfid}}_unitprice">
+                                                            <span class="value cc_value">{{{price this.prodBean.CustomUnitPrice}}}</span>
+                                                            <span class="ec-price-label">{{userLocale}}</span> 
+                                                        <span class="per-ea">{{pageLabelMap 'EC_UOM_Per'}} {{this.prodBean.PricePer}} {{this.prodBean.CustomPricingUOM}}</span>
+                                                        </p>
+                                                    {{/if}}
+                                                {{/if}}
+                                            </div>
+                                        {{else}}
+                                            <p class="price cc_price">
+                                                <input type="hidden" value={{{this.price}}} id="{{this.prodBean.sfid}}_unitprice">
+                                                <span class="value cc_value">{{{price this.price}}}</span>
+                                                <span class="ec-price-label">{{userLocale}}</span> 
+                                            </p>
+                                        {{/if}}
+                                    {{/if}}
+                                {{/ifEquals}}
+                                {{#ifEquals '{!buyOnline}' "true"}}
+                                    {{#if this.prodBean.isAddToCartShow}} 
+                                        <div class="plp-quan-block">
+                                            <div class="input-group input-group-sm cc_input_group form-group">
+                                                <span class="input-group-btn cust-min cc_input_group_btn">
+                                                    <button type="button" sf_id="{{this.prodBean.sfid}}" class="btn btn-default custom-minus cc_minus material-icons remove"></button>
+                                                </span>
+                                                <input type="text" sf_id="{{this.prodBean.sfid}}" id="{{this.prodBean.sfid}}_qtyEntry"  class="plp-input plpinpdis qty qty entry form-control cc_entry" value="1" maxlength="7"/>
+                                                <span class="input-group-btn cc_input_group_btn pluswidth minus-wrapper">
+                                                    <button type="button" sf_id="{{this.prodBean.sfid}}" class="btn btn-default plus pludisbtn plus-width cc_plus material-icons add"></button>
+                                                </span>
+                                            </div>
+                                            {{#if (checknalcoquicklist this.prodBean)}}
+                                                <span class='nalco-uom'>
+                                                    {{#if (packageTypeQl this.prodBean.packageTypeUOM 'Bulk')}}
+                                                        {{{price this.prodBean.CustomUnitPrice}}}
+                                                    {{else}}
+                                                        {{pageLabelMap 'EC_UOM_EA'}}
+                                                    {{/if}}
+                                                </span>
+                                            {{/if}}
+                                        </div>
+                                    {{else}}
+                                        <div style="color:#005172;font-size:14px;font-weight:bold;padding-bottom:2em">{{pageLabelMap 'Sales_Entitlement'}}</div>                                
+                                    {{/if}}
+                                {{/ifEquals}}
+                                <button type="button" class="deleteItem cc_delete ec-btn-secondary-qd" data-id="{{uid}}" data-pid="{{parentId}}"><span class="material-icons">delete</span>Delete</button>
+                            </div>
+                            {{#if this.prodBean.isAddToCartShow}} 
+                                <div class="col-xs-12 col-sm-3 col-lg-2">
+                                    <div class="cart_item wishFinder cc_wish_finder" data-sku="{{this.prodBean.sku}}">
+                                        {{#ifEquals '{!viewPrice}' "true"}}
+                                            {{#if (checknalcoquicklist this.prodBean)}}
+                                                <div class="price_block cc_price_block">
+                                                    {{#if (taxonomyQl this.prodBean.taxonomy 'Equipment')}}
+                                                        <p class="price cc_price">
+                                                            <span class="{{this.prodBean.sfid}}_totalprice value cc_value">{{{price (totalPrice this.price this.prodBean.sfid)}}}</span>
+                                                            <span class="ec-price-label">{{userLocale}}</span>
+                                                        </p>
+                                                    {{/if}}
+                                                    {{#if (taxonomyQl this.prodBean.taxonomy 'Chemical')}}
+                                                        {{#if (packageTypeQl this.prodBean.packageTypeUOM 'NonBulk')}}
+                                                            <p class="price cc_price">
+                                                                <span class="{{this.prodBean.sfid}}_totalprice value cc_value">{{{totalPrice this.price this.prodBean.sfid}}}</span>
+                                                                <span class="ec-price-label">{{userLocale}}</span>
+                                                            </p>
+                                                        {{/if}}
+                                                        {{#if (packageTypeQl this.prodBean.packageTypeUOM 'Bulk')}}
+                                                            <p class="price cc_price">
+                                                                <span class="{{this.prodBean.sfid}}_totalprice value cc_value">{{{totalPrice this.price this.prodBean.sfid}}}</span>
+                                                                <span class="ec-price-label">{{userLocale}}</span>
+                                                            </p>
+                                                        {{/if}}
+                                                    {{/if}}
+                                                </div>
+                                            {{else}}
+                                            <p class="price cc_price">
+                                                    <span class="{{this.prodBean.sfid}}_totalprice value cc_value">{{{totalPrice this.price this.prodBean.sfid}}}</span>
+                                                    <span class="ec-price-label">{{userLocale}}</span> 
+                                                </p>
+                                            {{/if}}
+                                        {{/ifEquals}}
+                                    </div>
+                                </div>
+                            {{/if}}
+                        </div>
+                        <hr>
+                    {{/each}}
+                </div>
+                <div class="ql-rt-btm">
+                    <div class="ql-total-sel-count"><span class="selectedCount">0</span> Products Selected</div>
+                    <button type="button" disabled=true class="btn btn-default btn-sm addAllItem cc_add_item ec-btn-primary ec-btn-primary-qd">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script>
+        jQuery(function ($) {
+            CCRZ.uiProperties.wishlistDetailsView.desktop.tmpl = "EC-MyAccount-WishlistDetail-Desktop";
+            CCRZ.pubSub.on("view:myWishlistsView:refresh", function(viewInstance) {
+                setQuickList(CCRZ.models.WishlistModel.prototype, CCRZ.views.myWishlistsView.prototype, viewInstance);
+                viewInstance.setElement(viewInstance.$el);
+                getWishListCount();
+            });
+            
+            /*var formatPrice = function(price) {
+              var getPrice = price.toString().split(".");
+                var ab = CCRZ.pagevars.userLocale;
+                var priceHtml = "$" + getPrice[0] + "." + (getPrice[1]== undefined?"00":getPrice[1]);
+                return priceHtml;
+            }*/
+            
+            $(document).on('keypress','.plp-input',function (e) {
+                var regex = new RegExp("^[0-9]\d*$");
+                var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+                if (regex.test(str)) {
+                    return true;
+                }
+                e.preventDefault();
+                return false;
+            });
+            
+            var formatPrice = function(amount) {
+              try {
+                var decimalCount = 2;
+                var decimal = ".";
+                var thousands = ","
+                decimalCount = Math.abs(decimalCount);
+                decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+            
+                const negativeSign = amount < 0 ? "-" : "";
+            
+                let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
+                let j = (i.length > 3) ? i.length % 3 : 0;
+            
+                return "$" + negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+              } catch (e) {
+                console.log(e)
+              }
+            };
+
+			let getWishListCount = function() {
+                Visualforce.remoting.Manager.invokeAction(
+                    'EC_QuickListController.getWLCount', CCRZ.pagevars.remoteContext, CCRZ.userIsoCode,
+                    function (resp) {
+                        if (resp.success) {
+                            var response = resp.data;
+                            if(response != null) {
+                                for(var i=0;i<response.length;i++){
+  									var counts = response[i].split(":");
+  									$('.count_'+counts[0]).text(counts[1]);
+								}
+                                $('.selListLength').text("("+response.length+")")
+                        	}
+                        } else {
+                            console.log('Error');
+                        }
+                    },
+                    { buffer: false, escape: false }
+                );
+            }
+            var setQuickList = function(wishListModel, wishListView, thisView) {
+                thisView.setElement(thisView.$el);
+                wishListView.openQuickList = function(sfid) {
+                    var selList = thisView.detailsView.pickerView.coll.models.filter(function(item) {
+                        return item.id==sfid;
+                    });
+                    if (selList !== null && selList !== undefined && selList.length > 0) {
+                        thisView.detailsView.generateDisplay(selList[0], thisView.$el);
+                    }
+                }
+                var url_string = window.location.href
+                var url = new URL(url_string);
+                var quicklistid = url.searchParams.get("quicklistid");
+                if (quicklistid !== null && quicklistid !== undefined && quicklistid !== '') {
+                    wishListView.openQuickList(quicklistid);
+                } 
+                
+                var events = wishListView.events;
+                events["click .select_ql"] = "updateCount";
+                events["click .addAllItem"] = "AddAllToCart";
+                events["click .select_ql_all"] = "selectAll";
+                events["click .custom-minus"] = "customAdjustQty"; 
+                events["keydown .plp-input"] = "disableZero";
+                events["blur .plpinpdis"] = "disableAddToCart";
+                events["click .pludisbtn"]= "disaddcartplus";
+                events["click .delete.cc_delete"]= "deleteQlist";
+                events["click .deleteItem.cc_delete"]= "deleteQlistItem";
+                
+                wishListView.deleteQlist = function(event){
+                    getWishListCount();
+                }
+                
+                wishListView.deleteQlistItem = function(event){
+                    var qlId = $(event.currentTarget).data("pid");
+                	$('.count_'+qlId).text(parseInt($('.count_'+qlId).text())-1);
+                }
+                
+                wishListView.customAdjustQty = function(event){
+                  var qty=1;
+                  var sfId = event.target.getAttribute('sf_id');
+                  var prevQty = parseInt($("#" + sfId + "_qtyEntry").val());
+                  var newQty = (prevQty - qty)>1 ? prevQty - qty : 1;
+                  $("#" + sfId + "_qtyEntry").val(newQty);
+                  var unitPrice = $("#" + sfId + "_unitprice");
+                  $("." + sfId + "_totalprice").text(formatPrice(newQty*parseFloat(unitPrice.val())));
+                }
+                
+                wishListView.disaddcartplus = function (event) {
+                    var sfId = event.target.getAttribute('sf_id');
+                    var qtyInput = $("#" + sfId + "_qtyEntry");
+                    var prevQty = parseInt(qtyInput.val());
+                    var newQty = (prevQty == null || prevQty < 1)?1:prevQty + 1;
+                    $("#" + sfId + "_qtyEntry").val(newQty);
+                    var unitPrice = $("#" + sfId + "_unitprice");
+                    $("." + sfId + "_totalprice").text(formatPrice(newQty*parseFloat(unitPrice.val())));
+                }
+               
+                wishListView.disableAddToCart = function (event) {
+                  var sfId = event.target.getAttribute('sf_id');
+                    var unitPrice = $("#" + sfId + "_unitprice");
+                    if (event.target.value == 0 && event.target.value.length == 0 && event.which == 48 ){
+                        $(event.target).val(1);
+                        $("." + sfId + "_totalprice").text(formatPrice(parseInt(unitPrice.val())));
+                    } else {
+                        $("." + sfId + "_totalprice").text(formatPrice(parseInt($(event.target).val())*parseFloat(unitPrice.val())));
+                    }
+                }
+                
+                wishListView.disableZero = function (event) {
+                   var sfId = event.target.getAttribute('sf_id');
+                   var unitPrice = $("#" + sfId + "_unitprice");
+                   if (event.target.value == 0 && event.target.value.length == 0 && event.which == 48 ){
+                      $(event.target).val(1);
+                        $("." + sfId + "_totalprice").text(formatPrice(parseInt(unitPrice.val())));
+                        return false;
+                   } else {
+                      $("." + sfId + "_totalprice").text(formatPrice(parseInt($(event.target).val())*parseFloat(unitPrice.val())));
+                   }
+                }
+                
+                wishListView.selectAll = function (event) {
+                    if(event.target.checked){
+                    $('.select_ql:unchecked').trigger('click');
+                    } else {
+                        $('.select_ql:checked').trigger('click');
+                    }
+                }
+                wishListView.updateCount = function (event) {
+                    var itemLen = $('.cc_ql_checkbox.select_ql:checked').length;
+                    var totalLen = $('.cc_ql_checkbox.select_ql').length;
+                  $('.selectedCount').text(itemLen);
+                    if(itemLen > 0) {
+                        $('.addAllItem').prop('disabled', false);
+                        if(totalLen == itemLen) {
+                          $('#all_checkbox').prop('checked',true)
+                        } else {
+                          $('#all_checkbox').prop('checked',false);
+                        }
+                    } else {
+                      $('.addAllItem').prop('disabled', true);
+                        $('#all_checkbox').prop('checked',false);
+                    }
+                }
+                
+                wishListView.AddAllToCart = function (event) {
+                    loading(jQuery('.addAllItem'));
+                    var elements = $('.cc_ql_checkbox.select_ql:checked');
+                    var items = [];
+                    for (var i=0; i < elements.length; i++) {
+                        var item = {};
+                        var sfId = elements[i].getAttribute("sf_id");
+                        var qtyInput = $("#" + sfId + "_qtyEntry");
+                        item.sku = elements[i].getAttribute("sku");
+                        item.quantity = parseInt(qtyInput.val());
+                        items.push(item);
+                    }
+                    if(items != null && items.length > 0) {
+                        var dataSet = JSON.stringify(items);
+                        var remoteActionCallAddToCart = _.extend(CCRZ.RemoteInvocation, {
+                            className: 'EC_QuickListController'
+                        });
+                        
+                        var productData = [];
+                        var encryID = CCRZ.headerModel.attributes.cartId;     
+                        remoteActionCallAddToCart.invokeCtx('addToCartItems', items, encryID,
+                                function (resp) {
+                                    if (resp != null && resp.success) {
+                                        var cartId = resp.data;
+                                        CCRZ.pagevars.currentCartID = cartId;
+                                        //setTimeout(function(){ //wait 3 seconds, then redirect to the cart page
+                                        CCRZ.pubSub.trigger('cartChange', cartId);
+                                        doneLoading(jQuery('.addAllItem'));
+                                        window.scroll(0, 0);
+                                        $('.select_ql:checked').trigger('click');
+                                        if (CCRZ.pagevars.pageConfig.isTrue('wl.g2c')) {
+                                            cartDetails();
+                                        }
+                                        //}, 5000);
+                                    }
+                                }, {
+                                    buffer: false, escape: false, nmsp: false
+                                }
+                            );
+                      }
+                  }
+            }
+        });
+       
+        Handlebars.registerHelper('taxonomyQl', function (taxonomy, type) {
+            if (type && taxonomy && CCRZ.pagevars.pageLabels['EC_Taxonomy_'+type].includes(taxonomy.toLowerCase())) {
+                return true;
+            }
+            return false;
+        });
+        
+        Handlebars.registerHelper('userLocale', function () {
+            return CCRZ.userIsoCode;
+        });
+    
+        Handlebars.registerHelper('packageTypeQl', function (packageType, type) {
+            if (type && packageType && CCRZ.pagevars.pageLabels['EC_PackageType_'+type] === packageType.toLowerCase() ) {
+                return true;
+            }
+            return false;
+        });
+        Handlebars.registerHelper('nonBulkEAQl', function(type, uom) {
+            if (type && CCRZ.pagevars.pageLabels.EC_PackageType_NonBulk === type.toLowerCase()
+                && uom != null && uom.toLowerCase() !== CCRZ.pagevars.pageLabels.EC_UOM_EA.toLowerCase()) {
+                return true;
+            }
+            return false;
+        });
+        Handlebars.registerHelper('checknalcoquicklist', function(prod) {
+            if (prod && prod.ECDivision && CCRZ.pagevars.pageLabels.EC_NALCO.includes(prod.ECDivision.toLowerCase())) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        Handlebars.registerHelper('checkQLLength', function(items) {
+            if (items != null && items.length > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        Handlebars.registerHelper('totalPrice', function(unitPrice, sfid) {
+            var qtyInput = $("#" + sfid + "_qtyEntry");
+            var total = qtyInput.val() != undefined?parseInt(qtyInput.val())*unitPrice:unitPrice;
+            return formatPrice(total);
+        });
+    </script>
+</apex:component>

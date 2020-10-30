@@ -1,0 +1,20 @@
+<!--
+
+  @Component Name     : EC_CommunityTheme.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Soumick               11/26/2019        Themes for communities
+
+--> 
+
+<aura:component implements="forceCommunity:themeLayout" access="global" description="Communities Custom Theme Layout">
+    <!-- Importing the branding theme in the page -->
+    <aura:attribute name="header" type="Aura.Component[]" required="false"/>
+    <ltng:require styles="{!$Resource.EC_Branding_Theme  + '/css/theme.css'}" />
+    <aura:attribute name="footer" type="Aura.Component[]" required="false"/>
+    <div class="header">{!v.header}</div>
+    <div class="content">{!v.body}</div>
+    <footer>{!v.footer}</footer>
+</aura:component>

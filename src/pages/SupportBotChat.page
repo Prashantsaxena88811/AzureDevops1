@@ -1,0 +1,7 @@
+<apex:page docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" cache="false" applyHtmlTag="false">
+    
+        <apex:stylesheet value="{!URLFOR($Resource.supportbotchat, 'style.css')}"/>
+        <script type="text/javascript" src="https://service.force.com/embeddedservice/5.0/esw.min.js"></script>
+        <apex:includeScript value="{!URLFOR($Resource.supportbotchat, 'script.js')}" loadOnReady="true"/>
+                
+</apex:page>

@@ -1,0 +1,2936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>External_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_Source_System__c</fullName>
+        <externalId>false</externalId>
+        <label>External Source System</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cat_1_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Cat 1 Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cat_2_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Cat 2 Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cat_3_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Cat 3 Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cat_4_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Cat 4 Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category_1_4__c</fullName>
+        <description>E101CRMXIF_SUBJECT_CODE</description>
+        <externalId>false</externalId>
+        <label>Category 1 4</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category_1_8__c</fullName>
+        <description>E101CRMXIF_SUBJECT_CODEGROUP</description>
+        <externalId>false</externalId>
+        <label>Category 1 8</label>
+        <length>8</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category_2_4__c</fullName>
+        <description>E101CRMXIF_SUBJECT_CODE</description>
+        <externalId>false</externalId>
+        <label>Category 2 4</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category_2_8__c</fullName>
+        <description>E101CRMXIF_SUBJECT_CODEGROUP</description>
+        <externalId>false</externalId>
+        <label>Category 2 8</label>
+        <length>8</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category_3_4__c</fullName>
+        <description>E101CRMXIF_SUBJECT_CODE</description>
+        <externalId>false</externalId>
+        <label>Category 3 4</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category_3_8__c</fullName>
+        <description>E101CRMXIF_SUBJECT_CODEGROUP My not be passed</description>
+        <externalId>false</externalId>
+        <label>Category 3 8</label>
+        <length>8</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category_4_4__c</fullName>
+        <description>E101CRMXIF_SUBJECT_CODE</description>
+        <externalId>false</externalId>
+        <label>Category 4 4</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category_4_8__c</fullName>
+        <description>E101CRMXIF_SUBJECT_CODEGROUP May not be passed</description>
+        <externalId>false</externalId>
+        <label>Category 4 8</label>
+        <length>8</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.EC_Account_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Category_Values__c</fullName>
+        <externalId>false</externalId>
+        <label>EC Category Value</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>EC_Request_Service_Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>MACHINE PROBLEM - DISH</fullName>
+                    <default>false</default>
+                    <label>MACHINE PROBLEM - DISH</label>
+                </value>
+                <value>
+                    <fullName>MACHINE PROBLEM - DISPENSER</fullName>
+                    <default>false</default>
+                    <label>MACHINE PROBLEM - DISPENSER</label>
+                </value>
+                <value>
+                    <fullName>MACHINE PROBLEM - LAUNDRY</fullName>
+                    <default>false</default>
+                    <label>MACHINE PROBLEM - LAUNDRY</label>
+                </value>
+                <value>
+                    <fullName>GLASS WASHER</fullName>
+                    <default>false</default>
+                    <label>GLASS WASHER</label>
+                </value>
+                <value>
+                    <fullName>CONVEYOR BELT</fullName>
+                    <default>false</default>
+                    <label>CONVEYOR BELT</label>
+                </value>
+                <value>
+                    <fullName>PRERINSE SPRAYER</fullName>
+                    <default>false</default>
+                    <label>PRERINSE SPRAYER</label>
+                </value>
+                <value>
+                    <fullName>OUT OF PRODUCT</fullName>
+                    <default>false</default>
+                    <label>OUT OF PRODUCT</label>
+                </value>
+                <value>
+                    <fullName>INSTALLATION</fullName>
+                    <default>false</default>
+                    <label>INSTALLATION</label>
+                </value>
+                <value>
+                    <fullName>TRAINING</fullName>
+                    <default>false</default>
+                    <label>TRAINING</label>
+                </value>
+                <value>
+                    <fullName>OTHER</fullName>
+                    <default>false</default>
+                    <label>OTHER</label>
+                </value>
+                <value>
+                    <fullName>CANCEL SERVICE REQUEST</fullName>
+                    <default>false</default>
+                    <label>CANCEL SERVICE REQUEST</label>
+                </value>
+                <value>
+                    <fullName>NEED MSDS</fullName>
+                    <default>false</default>
+                    <label>NEED MSDS</label>
+                </value>
+                <value>
+                    <fullName>DELIVERY ISSUE</fullName>
+                    <default>false</default>
+                    <label>DELIVERY ISSUE</label>
+                </value>
+                <value>
+                    <fullName>PRICING</fullName>
+                    <default>false</default>
+                    <label>PRICING</label>
+                </value>
+                <value>
+                    <fullName>CREDIT ISSUE</fullName>
+                    <default>false</default>
+                    <label>CREDIT ISSUE</label>
+                </value>
+                <value>
+                    <fullName>RETURN</fullName>
+                    <default>false</default>
+                    <label>RETURN</label>
+                </value>
+                <value>
+                    <fullName>INFORMATION</fullName>
+                    <default>false</default>
+                    <label>INFORMATION</label>
+                </value>
+                <value>
+                    <fullName>REPAIR</fullName>
+                    <default>false</default>
+                    <label>REPAIR</label>
+                </value>
+                <value>
+                    <fullName>MAINTENANCE</fullName>
+                    <default>false</default>
+                    <label>MAINTENANCE</label>
+                </value>
+                <value>
+                    <fullName>DE-INSTALLATION</fullName>
+                    <default>false</default>
+                    <label>DE-INSTALLATION</label>
+                </value>
+                <value>
+                    <fullName>REBUILDING</fullName>
+                    <default>false</default>
+                    <label>REBUILDING</label>
+                </value>
+                <value>
+                    <fullName>PRODUCT CHANGE</fullName>
+                    <default>false</default>
+                    <label>PRODUCT CHANGE</label>
+                </value>
+                <value>
+                    <fullName>COMMISIONING</fullName>
+                    <default>false</default>
+                    <label>COMMISIONING</label>
+                </value>
+                <value>
+                    <fullName>CONCENTRATION CHANGE/CHECK</fullName>
+                    <default>false</default>
+                    <label>CONCENTRATION CHANGE/CHECK</label>
+                </value>
+                <value>
+                    <fullName>REMEDIATION</fullName>
+                    <default>false</default>
+                    <label>REMEDIATION</label>
+                </value>
+                <value>
+                    <fullName>TENDER PREPARATION</fullName>
+                    <default>false</default>
+                    <label>TENDER PREPARATION</label>
+                </value>
+                <value>
+                    <fullName>MISCELLANEOUS SERVICES</fullName>
+                    <default>false</default>
+                    <label>MISCELLANEOUS SERVICES</label>
+                </value>
+                <value>
+                    <fullName>INSTRUMENT CARE</fullName>
+                    <default>false</default>
+                    <label>INSTRUMENT CARE</label>
+                </value>
+                <value>
+                    <fullName>MAINTENANCE ETD2</fullName>
+                    <default>false</default>
+                    <label>MAINTENANCE ETD2</label>
+                </value>
+                <value>
+                    <fullName>OLYMPUS REMEDIATION</fullName>
+                    <default>false</default>
+                    <label>OLYMPUS REMEDIATION</label>
+                </value>
+                <value>
+                    <fullName>NEED SDS</fullName>
+                    <default>false</default>
+                    <label>NEED SDS</label>
+                </value>
+                <value>
+                    <fullName>NEW LEAD</fullName>
+                    <default>false</default>
+                    <label>NEW LEAD</label>
+                </value>
+                <value>
+                    <fullName>OUT OF BUSINESS</fullName>
+                    <default>false</default>
+                    <label>OUT OF BUSINESS</label>
+                </value>
+                <value>
+                    <fullName>P/U DISH MACHINE</fullName>
+                    <default>false</default>
+                    <label>P/U DISH MACHINE</label>
+                </value>
+                <value>
+                    <fullName>P/U EQUIPMENT</fullName>
+                    <default>false</default>
+                    <label>P/U EQUIPMENT</label>
+                </value>
+                <value>
+                    <fullName>PERIODICALLY EXCHANGE</fullName>
+                    <default>false</default>
+                    <label>PERIODICALLY EXCHANGE</label>
+                </value>
+                <value>
+                    <fullName>PLACE ORDER</fullName>
+                    <default>false</default>
+                    <label>PLACE ORDER</label>
+                </value>
+                <value>
+                    <fullName>QUALITY ISSUE</fullName>
+                    <default>false</default>
+                    <label>QUALITY ISSUE</label>
+                </value>
+                <value>
+                    <fullName>SAFETY INSPECTIONS</fullName>
+                    <default>false</default>
+                    <label>SAFETY INSPECTIONS</label>
+                </value>
+                <value>
+                    <fullName>TM DID NOT SHOW</fullName>
+                    <default>false</default>
+                    <label>TM DID NOT SHOW</label>
+                </value>
+                <value>
+                    <fullName>UPSET</fullName>
+                    <default>false</default>
+                    <label>UPSET</label>
+                </value>
+                <value>
+                    <fullName>WARRANTY</fullName>
+                    <default>false</default>
+                    <label>WARRANTY</label>
+                </value>
+                <value>
+                    <fullName>RODENT PROBLEM</fullName>
+                    <default>false</default>
+                    <label>RODENT PROBLEM</label>
+                </value>
+                <value>
+                    <fullName>COCKROACH PROBLEM</fullName>
+                    <default>false</default>
+                    <label>COCKROACH PROBLEM</label>
+                </value>
+                <value>
+                    <fullName>FLY PROBLEM</fullName>
+                    <default>false</default>
+                    <label>FLY PROBLEM</label>
+                </value>
+                <value>
+                    <fullName>OTHERS</fullName>
+                    <default>false</default>
+                    <label>OTHERS</label>
+                </value>
+                <value>
+                    <fullName>DISPENSER PROBLEM</fullName>
+                    <default>false</default>
+                    <label>DISPENSER PROBLEM</label>
+                </value>
+                <value>
+                    <fullName>FOLLOW UP REPAIR</fullName>
+                    <default>false</default>
+                    <label>FOLLOW UP REPAIR</label>
+                </value>
+                <value>
+                    <fullName>NEW SERVICE REQUEST</fullName>
+                    <default>false</default>
+                    <label>NEW SERVICE REQUEST</label>
+                </value>
+                <value>
+                    <fullName>PLEASE CALL - NO MESSAGE</fullName>
+                    <default>false</default>
+                    <label>PLEASE CALL - NO MESSAGE</label>
+                </value>
+                <value>
+                    <fullName>EQUIPMENT NOT WORKING</fullName>
+                    <default>false</default>
+                    <label>EQUIPMENT NOT WORKING</label>
+                </value>
+                <value>
+                    <fullName>TECHNICAL ISSUE</fullName>
+                    <default>false</default>
+                    <label>TECHNICAL ISSUE</label>
+                </value>
+                <value>
+                    <fullName>NEW PROGRAM / NEW SERVICE REQUEST</fullName>
+                    <default>false</default>
+                    <label>NEW PROGRAM / NEW SERVICE REQUEST</label>
+                </value>
+                <value>
+                    <fullName>AUDIT FAILURE</fullName>
+                    <default>false</default>
+                    <label>AUDIT FAILURE</label>
+                </value>
+                <value>
+                    <fullName>ACCIDENT / INJURY / CHEMICAL EXPLOSION</fullName>
+                    <default>false</default>
+                    <label>ACCIDENT / INJURY / CHEMICAL EXPLOSION</label>
+                </value>
+                <value>
+                    <fullName>INSTALL NEW EQUIPMENT</fullName>
+                    <default>false</default>
+                    <label>INSTALL NEW EQUIPMENT</label>
+                </value>
+                <value>
+                    <fullName>NEED CERTITICATE OF ANALYSIS</fullName>
+                    <default>false</default>
+                    <label>NEED CERTITICATE OF ANALYSIS</label>
+                </value>
+                <value>
+                    <fullName>MAINTENANCE ETD3</fullName>
+                    <default>false</default>
+                    <label>MAINTENANCE ETD3</label>
+                </value>
+                <value>
+                    <fullName>NEED CERTIFICATE OF ANALYSIS</fullName>
+                    <default>false</default>
+                    <label>NEED CERTIFICATE OF ANALYSIS</label>
+                </value>
+                <value>
+                    <fullName>LAUNDRY MACHINE PROBLEM</fullName>
+                    <default>false</default>
+                    <label>LAUNDRY MACHINE PROBLEM</label>
+                </value>
+                <value>
+                    <fullName>MACHINE PROBLEM</fullName>
+                    <default>false</default>
+                    <label>MACHINE PROBLEM</label>
+                </value>
+                <value>
+                    <fullName>MULT/REPEAT CALL</fullName>
+                    <default>false</default>
+                    <label>MULT/REPEAT CALL</label>
+                </value>
+                <value>
+                    <fullName>DEMONSTRATION</fullName>
+                    <default>false</default>
+                    <label>DEMONSTRATION</label>
+                </value>
+                <value>
+                    <fullName>HEALTH INSPECTOR</fullName>
+                    <default>false</default>
+                    <label>HEALTH INSPECTOR</label>
+                </value>
+                <value>
+                    <fullName>LEAVING ECOLAB</fullName>
+                    <default>false</default>
+                    <label>LEAVING ECOLAB</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+                <valueName>OUT OF PRODUCT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+                <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>WPS</controllingFieldValue>
+                <valueName>INSTALLATION</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+                <controllingFieldValue>PEST ELIMINATION</controllingFieldValue>
+                <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>WPS</controllingFieldValue>
+                <valueName>TRAINING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+                <valueName>OTHER</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+                <valueName>NEED MSDS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+                <controllingFieldValue>WPS</controllingFieldValue>
+                <valueName>DELIVERY ISSUE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+                <valueName>PRICING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+                <valueName>CREDIT ISSUE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+                <valueName>RETURN</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+                <controllingFieldValue>WPS</controllingFieldValue>
+                <valueName>INFORMATION</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>REPAIR</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>WPS</controllingFieldValue>
+                <valueName>MAINTENANCE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>DE-INSTALLATION</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>REBUILDING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>PRODUCT CHANGE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>COMMISIONING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>CONCENTRATION CHANGE/CHECK</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>REMEDIATION</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>TENDER PREPARATION</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>MISCELLANEOUS SERVICES</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>INSTRUMENT CARE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>MAINTENANCE ETD2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>OLYMPUS REMEDIATION</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+                <valueName>PLACE ORDER</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+                <valueName>QUALITY ISSUE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+                <controllingFieldValue>WPS</controllingFieldValue>
+                <valueName>DISPENSER PROBLEM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+                <valueName>PLEASE CALL - NO MESSAGE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+                <valueName>TECHNICAL ISSUE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HEALTHCARE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>MACHINE PROBLEM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+                <valueName>MACHINE PROBLEM - DISH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+                <valueName>MACHINE PROBLEM - DISPENSER</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+                <valueName>MACHINE PROBLEM - LAUNDRY</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+                <valueName>GLASS WASHER</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+                <valueName>CONVEYOR BELT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+                <valueName>PRERINSE SPRAYER</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>INSTITUTIONAL</controllingFieldValue>
+                <valueName>CANCEL SERVICE REQUEST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PEST ELIMINATION</controllingFieldValue>
+                <valueName>RODENT PROBLEM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PEST ELIMINATION</controllingFieldValue>
+                <valueName>COCKROACH PROBLEM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PEST ELIMINATION</controllingFieldValue>
+                <valueName>FLY PROBLEM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PEST ELIMINATION</controllingFieldValue>
+                <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>WPS</controllingFieldValue>
+                <valueName>OTHERS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+                <controllingFieldValue>WPS</controllingFieldValue>
+                <valueName>FOLLOW UP REPAIR</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ENERGY SERVICE</controllingFieldValue>
+                <controllingFieldValue>WPS</controllingFieldValue>
+                <valueName>NEW SERVICE REQUEST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>EQUIPMENT NOT WORKING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>NEW PROGRAM / NEW SERVICE REQUEST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>AUDIT FAILURE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>ACCIDENT / INJURY / CHEMICAL EXPLOSION</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>INSTALL NEW EQUIPMENT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>FOOD &amp; BEVERAGE</controllingFieldValue>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>NEED CERTIFICATE OF ANALYSIS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>NEED CERTITICATE OF ANALYSIS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>LIFE SCIENCES</controllingFieldValue>
+                <valueName>MAINTENANCE ETD3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>TEXTILE CARE</controllingFieldValue>
+                <valueName>LAUNDRY MACHINE PROBLEM</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EC_PortalAccessRole__c</fullName>
+        <externalId>false</externalId>
+        <label>Portal Access Role</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Basic</fullName>
+                    <default>false</default>
+                    <label>Basic</label>
+                </value>
+                <value>
+                    <fullName>Buyer</fullName>
+                    <default>false</default>
+                    <label>Buyer</label>
+                </value>
+                <value>
+                    <fullName>Payer</fullName>
+                    <default>false</default>
+                    <label>Payer</label>
+                </value>
+                <value>
+                    <fullName>Basic+</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Basic+</label>
+                </value>
+                <value>
+                    <fullName>Buyer+</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Buyer+</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EC_Previous_Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Previous Role</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_ReqService_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>EC ReqService Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_ReqService_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>EC ReqService Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>EC_Request_Service_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>EC Request Service Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>HEALTHCARE</fullName>
+                    <default>false</default>
+                    <label>HEALTHCARE</label>
+                </value>
+                <value>
+                    <fullName>INSTITUTIONAL</fullName>
+                    <default>false</default>
+                    <label>INSTITUTIONAL</label>
+                </value>
+                <value>
+                    <fullName>PEST ELIMINATION</fullName>
+                    <default>false</default>
+                    <label>PEST ELIMINATION</label>
+                </value>
+                <value>
+                    <fullName>ENERGY SERVICE</fullName>
+                    <default>false</default>
+                    <label>ENERGY SERVICE</label>
+                </value>
+                <value>
+                    <fullName>FOOD &amp; BEVERAGE</fullName>
+                    <default>false</default>
+                    <label>FOOD &amp; BEVERAGE</label>
+                </value>
+                <value>
+                    <fullName>LIFE SCIENCES</fullName>
+                    <default>false</default>
+                    <label>LIFE SCIENCES</label>
+                </value>
+                <value>
+                    <fullName>TEXTILE CARE</fullName>
+                    <default>false</default>
+                    <label>TEXTILE CARE</label>
+                </value>
+                <value>
+                    <fullName>WPS</fullName>
+                    <default>false</default>
+                    <label>WPS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EC_SalesRepName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.EC_SalesRepresentative__r.FirstName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SalesRepName</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Sales_Rep_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Rep Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>lookup to user field</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Order_Type__c</fullName>
+        <description>E101CRMXIF_BUSTRANS-Process_Type</description>
+        <externalId>false</externalId>
+        <label>Order Type</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_To__c</fullName>
+        <description>E101CRMXIF_PARTNER- PARTNER_NO
+Record with Application Name: CRMXIF_PARTNER
+Read the partner segment for partner function (PARTNER_FCT) ‘00000001’</description>
+        <externalId>false</externalId>
+        <label>Ship To</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sold_To__c</fullName>
+        <description>E101CRMXIF_PARTNER- PARTNER_NO
+Record with Application Name: CRMXIF_PARTNER
+Read the partner segment for partner function (PARTNER_FCT) ‘00000001’.</description>
+        <externalId>false</externalId>
+        <label>Sold To</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+	<fields>
+		<fullName>Integration_Status__c</fullName>
+		<description>Integration Status</description>
+		<externalId>false</externalId>
+		<inlineHelpText>Integration Status</inlineHelpText>
+		<label>Integration Status</label>
+		<length>255</length>
+		<required>false</required>
+		<trackFeedHistory>false</trackFeedHistory>
+		<trackHistory>false</trackHistory>
+		<trackTrending>false</trackTrending>
+		<type>Text</type>
+		<unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Integration_Error_Log__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Integration Error Log</description>
+        <externalId>false</externalId>
+        <label>Integration Error Log (if any)</label>
+        <referenceTo>Integration_Log__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+	<fields>
+        <fullName>Category__c</fullName>
+        <description>Used to in routing in Ecolab project.</description>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>SupportCategory</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sub_Category__c</fullName>
+        <description>Used to in routing in Ecolab project.</description>
+        <externalId>false</externalId>
+        <label>Sub Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Category__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetName>SupportSubCategory</valueSetName>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>Cannot Checkout Rush Order</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>Credit Card Error</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>Credit Card Not Available</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>How to Checkout</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>How to Specify Unloading Point &amp; Tank Numbers</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>Missing Unloading Point or Tank Number</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>Order Acknowledgement Not Received</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>Order Confirmation Not Received</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Checkout</controllingFieldValue>
+                <valueName>Tax and Freight Not Calculated</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>General</controllingFieldValue>
+                <valueName>Unsupported Browser</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>Forgot Password (Local Account)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>Forgot Password (Work Account)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>Forgot Username</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>How to Login</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>How to Logout</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>How to Reset / Change Password (Local Account)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>How to Reset / Change Password (Work Account)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Login</controllingFieldValue>
+                <valueName>Single Sign On Error (Work Account)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Orders</controllingFieldValue>
+                <valueName>How to Re-Order from Order History</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Orders</controllingFieldValue>
+                <valueName>How to Track Shipments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Orders</controllingFieldValue>
+                <valueName>How to View Order History</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Orders</controllingFieldValue>
+                <valueName>Order Missing From History</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Orders</controllingFieldValue>
+                <valueName>Order Not Received</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>Cannot Settle Invoices via Credit Card</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>Dispute Invoice</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>How to Settle Invoices via ACH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>How to Update ACH Information</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>How to View / Download Invoice</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>How to View Open / Closed Payments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>How to View Payment History</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>Missing / Incorrect Payment Accounts</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payment</controllingFieldValue>
+                <valueName>Missing Payment Portal Access</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>How to Browse Product Categories</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>How to Download Safety Data Sheets (SDS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>How to Re-Order Previous Purchased Product</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>How to Search for Products</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>How to View Product Details</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>How to View Suggested Products</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>Incorrect Product Entitlements</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>Incorrect Product Pricing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Products</controllingFieldValue>
+                <valueName>Missing Safety Data Sheet (SDS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Quicklist</controllingFieldValue>
+                <valueName>How to Create / Edit / Delete Quicklists</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Quicklist</controllingFieldValue>
+                <valueName>How to Reorder from Quicklist</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Service Register</controllingFieldValue>
+                <valueName>How to Register</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Service Register</controllingFieldValue>
+                <valueName>Missing Account Number</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Service Register</controllingFieldValue>
+                <valueName>Missing Local Account Option</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Service Register</controllingFieldValue>
+                <valueName>Missing Rep&apos;s Email Address</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Service Register</controllingFieldValue>
+                <valueName>Missing Verification Email</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Service Register</controllingFieldValue>
+                <valueName>Missing Work Account Option</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Self-Service Register</controllingFieldValue>
+                <valueName>Work Account Failure</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Service</controllingFieldValue>
+                <valueName>How to Request Service</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Service</controllingFieldValue>
+                <valueName>Service Not Completed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Service</controllingFieldValue>
+                <valueName>Status of Service Request</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>User</controllingFieldValue>
+                <valueName>How to Add Account Alignments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>User</controllingFieldValue>
+                <valueName>How to Request Additional Permissions</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>User</controllingFieldValue>
+                <valueName>Incorrect Account Alignments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>User</controllingFieldValue>
+                <valueName>Incorrect Permissions</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Run_Assignment_Rule__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field used for community case routing in Ecolab Project.</description>
+        <externalId>false</externalId>
+        <label>Run Assignment Rule</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Resolution_Category__c</fullName>
+        <description>Required to be populated when resolving the case for service cloud project.</description>
+        <externalId>false</externalId>
+        <label>Resolution Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Apply Break / Fix</fullName>
+                    <default>false</default>
+                    <label>Apply Break / Fix</label>
+                </value>
+                <value>
+                    <fullName>Case Abandoned</fullName>
+                    <default>false</default>
+                    <label>Case Abandoned</label>
+                </value>
+                <value>
+                    <fullName>Correct Data Error</fullName>
+                    <default>false</default>
+                    <label>Correct Data Error</label>
+                </value>
+                <value>
+                    <fullName>No Workaround Applied</fullName>
+                    <default>false</default>
+                    <label>No Workaround Applied</label>
+                </value>
+                <value>
+                    <fullName>Provide Training or Documentation</fullName>
+                    <default>false</default>
+                    <label>Provide Training or Documentation</label>
+                </value>
+                <value>
+                    <fullName>Request for Enhancement</fullName>
+                    <default>false</default>
+                    <label>Request for Enhancement</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Resolution_Description__c</fullName>
+        <description>Required to be populated when resolving the case for service cloud project.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please note it will be visible to customer.</inlineHelpText>
+        <label>Resolution Description</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Company_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Company Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Email_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(Contact_Email__c) , 
+    Contact.Email  , 
+    Contact_Email__c
+)</formula>
+        <label>Case Contact Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Email__c</fullName>
+        <description>Used on community and as agent to take Contact Email as input in Service Cloud project.</description>
+        <externalId>false</externalId>
+        <label>Case Contact Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Phone_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(SuppliedPhone) , 
+    Contact.Phone, 
+    SuppliedPhone
+)</formula>
+        <label>Case Contact Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_Open__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY() -  DATEVALUE(CreatedDate)</formula>
+        <label>Days Open</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Impact__c</fullName>
+        <description>Used as one of the values to calculate Priority for service cloud project.</description>
+        <externalId>false</externalId>
+        <label>Impact</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - High</fullName>
+                    <default>false</default>
+                    <label>1 - High</label>
+                </value>
+                <value>
+                    <fullName>2 - Medium</fullName>
+                    <default>true</default>
+                    <label>2 - Medium</label>
+                </value>
+                <value>
+                    <fullName>3 - Low</fullName>
+                    <default>false</default>
+                    <label>3 - Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Urgency__c</fullName>
+        <description>Used as one of the values to calculate Priority in service cloud project.</description>
+        <externalId>false</externalId>
+        <label>Urgency</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - High</fullName>
+                    <default>false</default>
+                    <label>1 - High</label>
+                </value>
+                <value>
+                    <fullName>2 - Medium</fullName>
+                    <default>true</default>
+                    <label>2 - Medium</label>
+                </value>
+                <value>
+                    <fullName>3 - Low</fullName>
+                    <default>false</default>
+                    <label>3 - Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Response_SLA__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(TEXT(Priority) == &apos;Critical&apos;, (CreatedDate + (4/24)),IF(TEXT(Priority) == &apos;High&apos;, (CreatedDate + (8/24)),IF(TEXT(Priority) == &apos;Medium&apos;, (CreatedDate + 1),IF(TEXT(Priority) == &apos;Low&apos;, (CreatedDate + 1),NULL))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Response SLA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Resolved_Resolution_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Resolved Resolution Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Resolution_SLA__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(TEXT(Priority) == &apos;Critical&apos;, (CreatedDate + 1),IF(TEXT(Priority) == &apos;High&apos;, (CreatedDate + 2),IF(TEXT(Priority) == &apos;Medium&apos;, (CreatedDate + 7),IF(TEXT(Priority) == &apos;Low&apos;, (CreatedDate + 14),NULL))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Resolution SLA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>First_Response_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>First Response Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Is_Resolution_SLA_Breached__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Resolution SLA Breached?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Response_SLA_Breached__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Response SLA Breached?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Assigned_To_Queue__c</fullName>
+        <externalId>false</externalId>
+        <label>Assigned To Queue</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Division__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact.Division__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Division</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DCS_Case_Action__c</fullName>
+        <description>This field will help us for firing assignment rules</description>
+        <externalId>false</externalId>
+        <label>Case Action</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Connect L3 Agent</fullName>
+                    <default>false</default>
+                    <label>Connect L3 Agent</label>
+                </value>
+                <value>
+                    <fullName>Connect Technical Team</fullName>
+                    <default>false</default>
+                    <label>Connect Technical Team</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Hide_from_Customer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Hide from Customer</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Latest_Public_Case_Comment__c</fullName>
+        <description>Used to store latest case comment created by user.</description>
+        <externalId>false</externalId>
+        <label>Latest Public Case Comment</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>MTTR__c</fullName>
+        <externalId>false</externalId>
+        <formula>Resolved_Resolution_Time__c -  CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MTTR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLA_Performance__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Is_Resolution_SLA_Breached__c, &apos;Breach&apos;, &apos;Okay&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SLA Performance</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>Abandoned_Cases_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Abandoned Cases</label>
+        <queue>Abandoned_Cases</queue>
+        <sharedTo>
+            <role>Admin</role>
+            <role>Connect_Support</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>ClosedCases_Support</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>EC_Account_Number__c</columns>
+        <columns>NAME</columns>
+        <columns>Sub_Category__c</columns>
+        <columns>CASES.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Support</value>
+        </filters>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Closed Cases</label>
+        <sharedTo>
+            <role>Admin</role>
+            <role>Connect_Support</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AllOpenCases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>EC_Account_Number__c</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.ORIGIN</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Open Cases</label>
+        <sharedTo>
+            <role>Admin</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>EC_Account_Number__c</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Support</value>
+        </filters>
+        <filters>
+            <field>Hide_from_Customer__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Cases</label>
+        <sharedTo>
+            <allCustomerPortalUsers/>
+            <allInternalUsers/>
+        </sharedTo>
+    </listViews>
+	<listViews>
+        <fullName>Closed_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>EC_Account_Number__c</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Support</value>
+        </filters>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Hide_from_Customer__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Closed Cases</label>
+        <language>en_US</language>
+        <sharedTo>
+            <allCustomerPortalUsers/>
+            <allInternalUsers/>
+        </sharedTo>
+    </listViews>
+	<listViews>
+        <fullName>EmptyQueue_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Chat Pending</label>
+        <queue>Chat_Pending</queue>
+        <sharedTo>
+            <role>Admin</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>EBS_Agents_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>EBS Agents Unaccepted</label>
+        <queue>EBS_Agents</queue>
+        <sharedTo>
+            <role>Connect_Support</role>
+            <role>Admin</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MyCases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.ORIGIN</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>EC_Account_Number__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Cases</label>
+        <sharedTo>
+            <role>Connect_Support</role>
+            <role>Admin</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MyOpenCases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>EC_Account_Number__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.ORIGIN</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Support</value>
+        </filters>
+        <label>My Open Cases</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>Connect_Support</role>
+            <role>Admin</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NSAP_Agents_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>NSAP Agents Unaccepted</label>
+        <queue>NSAP_Agents</queue>
+        <sharedTo>
+            <role>Connect_Support</role>
+            <role>Admin</role>
+        </sharedTo>
+    </listViews>    
+    <listViews>
+        <fullName>My_Open_Cases_Community</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>EC_Account_Number__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Support</value>
+        </filters>
+        <filters>
+            <field>Hide_from_Customer__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Open Cases</label>
+        <sharedTo>
+            <allCustomerPortalUsers/>
+            <allInternalUsers/>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Open_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>EC_Account_Number__c</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Support</value>
+        </filters>
+        <label>My Open Cases</label>
+        <sharedTo>
+            <role>Admin</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Q1_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>Q1</label>
+        <queue>Q1</queue>        
+        <sharedTo>
+            <role>Admin</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Request_Service_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CASES.TYPE</columns>
+        <filterScope>Everything</filterScope>
+        <!--<filters>
+            <field>CASES.TYPE</field>
+            <operation>equals</operation>
+            <value>Request Service</value>
+        </filters>-->
+        <label>Request Service Cases</label>
+		<sharedTo>
+            <role>Admin</role>
+        </sharedTo>    
+    </listViews>
+	<listViews>
+        <fullName>Cases_Support</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>EC_Account_Number__c</columns>
+        <columns>NAME</columns>
+        <columns>Sub_Category__c</columns>
+        <columns>CASES.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Support</value>
+        </filters>
+        <label>All Support Cases</label>
+        <sharedTo>
+            <role>Connect_Support</role>
+            <role>Admin</role>
+        </sharedTo>
+    </listViews>
+	<listViews>
+        <fullName>L3_Agents_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>L3 Agents Unaccepted</label>
+        <queue>L3_Agents</queue>
+        <sharedTo>
+            <role>Connect_Support</role>
+            <role>Admin</role>
+        </sharedTo>
+    </listViews>    
+	<listViews>
+        <fullName>DCS_Agents_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>All DCS Cases</label>
+        <queue>DCS_Agents</queue>
+        <sharedTo>
+            <role>Connect_Support</role>
+            <role>Admin</role>
+        </sharedTo>
+    </listViews>
+    <businessProcesses>
+        <fullName>Internal</fullName>
+        <description>Used for Ecolab service request</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <!--<values>
+            <fullName>Assigned</fullName>
+            <default>false</default>
+        </values>-->
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalated</fullName>
+            <default>false</default>
+        </values>
+        <!--<values>
+            <fullName>Exception</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>-->
+        <values>
+            <fullName>Message Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Message Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <!-- <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP Message Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting for Customer Response</fullName>
+            <default>false</default>
+        </values>-->
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Support</fullName>
+        <description>Used for Ecolab service cloud, for Sales Rep, Community user and Agents.</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Awaiting Customer Response</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Pending additional Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resolved</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <recordTypes>
+        <fullName>Support</fullName>
+        <active>true</active>
+        <businessProcess>Support</businessProcess>
+        <!--<compactLayoutAssignment>Support_Compact_Layout</compactLayoutAssignment>-->
+        <description>Used for Ecolab service cloud, for Sales Rep, Community user and Agents.</description>
+        <label>Support</label>
+        <picklistValues>
+            <picklist>DCS_Case_Action__c</picklist>
+            <values>
+                <fullName>Connect L3 Agent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect Technical Team</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EC_Category_Values__c</picklist>
+            <values>
+                <fullName>ACCIDENT %2F INJURY %2F CHEMICAL EXPLOSION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AUDIT FAILURE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CANCEL SERVICE REQUEST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>COCKROACH PROBLEM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>COMMISIONING</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CONCENTRATION CHANGE%2FCHECK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CONVEYOR BELT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CREDIT ISSUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DE-INSTALLATION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DELIVERY ISSUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DEMONSTRATION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DISPENSER PROBLEM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EQUIPMENT NOT WORKING</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FLY PROBLEM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FOLLOW UP REPAIR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GLASS WASHER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HEALTH INSPECTOR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INFORMATION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INSTALL NEW EQUIPMENT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INSTALLATION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INSTRUMENT CARE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LAUNDRY MACHINE PROBLEM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LEAVING ECOLAB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MACHINE PROBLEM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MACHINE PROBLEM - DISH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MACHINE PROBLEM - DISPENSER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MACHINE PROBLEM - LAUNDRY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAINTENANCE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAINTENANCE ETD2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAINTENANCE ETD3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MISCELLANEOUS SERVICES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MULT%2FREPEAT CALL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEED CERTIFICATE OF ANALYSIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEED CERTITICATE OF ANALYSIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEED MSDS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEED SDS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEW LEAD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEW PROGRAM %2F NEW SERVICE REQUEST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEW SERVICE REQUEST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OLYMPUS REMEDIATION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTHER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTHERS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OUT OF BUSINESS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OUT OF PRODUCT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P%2FU DISH MACHINE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P%2FU EQUIPMENT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PERIODICALLY EXCHANGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLACE ORDER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLEASE CALL - NO MESSAGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRERINSE SPRAYER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRICING</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRODUCT CHANGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QUALITY ISSUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REBUILDING</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REMEDIATION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REPAIR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RETURN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RODENT PROBLEM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAFETY INSPECTIONS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TECHNICAL ISSUE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TENDER PREPARATION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TM DID NOT SHOW</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TRAINING</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UPSET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WARRANTY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EC_PortalAccessRole__c</picklist>
+            <values>
+                <fullName>Basic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Buyer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EC_Request_Service_Type__c</picklist>
+            <values>
+                <fullName>ENERGY SERVICE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FOOD %26 BEVERAGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HEALTHCARE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INSTITUTIONAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIFE SCIENCES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PEST ELIMINATION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TEXTILE CARE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WPS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <!--<values>
+                <fullName>Agent Support</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal Support</fullName>
+                <default>false</default>
+            </values>-->
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>Critical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Complex functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Existing problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User didn%27t attend training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Checkout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Login</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orders</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quicklist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Service Register</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Impact__c</picklist>
+            <values>
+                <fullName>1 - High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Low</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Resolution_Category__c</picklist>
+            <values>
+                <fullName>Apply Break %2F Fix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Case Abandoned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correct Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Workaround Applied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provide Training or Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request for Enhancement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Category__c</picklist>
+            <values>
+                <fullName>Cannot Checkout Rush Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cannot Settle Invoices via Credit Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Card Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Card Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dispute Invoice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forgot Password %28Local Account%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forgot Password %28Work Account%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forgot Username</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Add Account Alignments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Browse Product Categories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Checkout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Create %2F Edit %2F Delete Quicklists</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Download Safety Data Sheets %28SDS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Login</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Logout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Re-Order Previous Purchased Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Re-Order from Order History</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Register</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Reorder from Quicklist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Request Additional Permissions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Request Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Reset %2F Change Password %28Local Account%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Reset %2F Change Password %28Work Account%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Search for Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Settle Invoices via ACH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Specify Unloading Point %26 Tank Numbers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Track Shipments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to Update ACH Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to View %2F Download Invoice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to View Open %2F Closed Payments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to View Order History</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to View Payment History</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to View Product Details</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>How to View Suggested Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect Account Alignments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect Permissions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect Product Entitlements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect Product Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing %2F Incorrect Payment Accounts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing Account Number</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing Local Account Option</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing Payment Portal Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing Rep%27s Email Address</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing Safety Data Sheet %28SDS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing Unloading Point or Tank Number</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing Verification Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing Work Account Option</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Acknowledgement Not Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Confirmation Not Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Missing From History</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Not Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Not Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Sign On Error %28Work Account%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Status of Service Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tax and Freight Not Calculated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsupported Browser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work Account Failure</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Urgency__c</picklist>
+            <values>
+                <fullName>1 - High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Low</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Access Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </values>
+            <!--<values>
+                <fullName>Payer Request</fullName>
+                <default>false</default>
+            </values>-->
+            <values>
+                <fullName>Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </values>
+            <!--<values>
+                <fullName>Request Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support Request</fullName>
+                <default>false</default>
+            </values>-->
+            <values>
+                <fullName>User Registration</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <validationRules>
+        <fullName>Closed_case_cannot_be_reopened</fullName>
+        <active>true</active>
+        <description>To restrict user, closed case can&apos;t be opened again.</description>
+        <errorConditionFormula>IF( RecordType.Name == &apos;Support&apos; &amp;&amp;  ISPICKVAL(PRIORVALUE(Status),&apos;Closed&apos;) &amp;&amp;  ISCHANGED( Status), true, false)</errorConditionFormula>
+        <errorDisplayField>Status</errorDisplayField>
+        <errorMessage>Closed case can&apos;t be reopen.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Community_User_Case_Status_Validate</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+				 RecordType.Name = &apos;Support&apos;,
+					NOT(ISNEW()), ISCHANGED(Status),  
+					OR($Profile.Name=&apos;Sales Rep&apos;, $Profile.Name =&apos;Ecolab Customer Community Plus Users&apos;),
+					TEXT(Status) != &apos;Closed&apos;,
+				 OR(TEXT(Status) != &apos;In Progress&apos;, 
+     TEXT(PRIORVALUE(Status)) != &apos;Awaiting Customer Response&apos;)
+)</errorConditionFormula>
+        <errorDisplayField>Status</errorDisplayField>
+        <errorMessage>You cannot change case status</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Res_Demandatory_for_resolved_case</fullName>
+        <active>true</active>
+        <description>Restrict user to save case record without putting Resolution Description. If case is resolved then Description is mandatory.</description>
+        <errorConditionFormula>AND( RecordType.DeveloperName = &apos;Support&apos;,
+				ISCHANGED(Status),
+				ISPICKVAL(Status, &apos;Resolved&apos;),
+				OR(ISBLANK(Resolution_Description__c), ISBLANK( TEXT(Resolution_Category__c)))
+)</errorConditionFormula>
+        <errorDisplayField>Status</errorDisplayField>
+        <errorMessage>Resolution Description and Resolution Category are mandatory for resolved case.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,166 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="serviceDetails" type="Map" default="" />
+    <aura:attribute name="pestActivityLength" type="String" default=""/>
+    <aura:attribute name="structuralLength" type="String" default=""/>
+    <aura:attribute name="sanitationLength" type="String" default=""/>
+    <aura:attribute name="prepLength" type="String" default=""/>
+    <aura:attribute name="actionItemLength" type="String" default=""/>
+    <aura:attribute name="showPeastActivity" type="Boolean" default="false"/>
+    <aura:attribute name="showActionItem" type="Boolean" default="false"/>
+    <aura:attribute name="showStructural" type="Boolean" default="false"/>
+    <aura:attribute name="showSanitation" type="Boolean" default="false"/>
+    <aura:attribute name="showPrep" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.serviceDetails}" action="{!c.doInit}"/>
+	<div class="pest-activity-container tile-wrapper">
+        <div class="pest-activity-title">
+        	{!$Label.c.EC_DSR_PestEliminationServiceReport}
+        </div>
+        
+        <div class="ps-tiles tiles-container">
+
+            <!-- Pest Activity Tile -->
+        	<div class="{!v.showPeastActivity ? 'tile-box one-of-two ps-tile-one' : 'nofindings tile-box one-of-two ps-tile-one'}">
+                <div class="ps-icons">
+                    <aura:if isTrue="{!v.showPeastActivity}">
+                        <span class="material-icons ps-error">error</span>
+                    <aura:set attribute="else">
+                        <span class="material-icons ps-check">check_circle</span>
+                    </aura:set>
+                    </aura:if>
+                </div>
+                <div class="ps-tile-btm">
+                	<div class="ps-text">{!$Label.c.EC_DSR_PestActivity}</div>
+                    <div class="dsr-label">{!$Label.c.EC_DSR_FindingsServicedbyEcolab}</div>
+                    <div class="ps-count">{!v.pestActivityLength}</div>
+                </div>
+            </div>
+            <aura:if isTrue="{!v.showPeastActivity}">
+                <div class="table-box ps-tile-one-table">
+                    <div class="table-title">Pest Activity</div>
+                    <span class="material-icons close-table">close</span>
+                    
+                    <div class="tile-lineitems">
+                        <div class="table-title-one">{!$Label.c.EC_DSR_PestsFindings} ({!v.pestActivityLength})</div>
+                        <aura:iteration items="{!v.serviceDetails.service.findingConditions.findingCondition}" var="findings" indexVar="indx">
+                            <aura:if isTrue="{!findings.globalConditionCategoryId == $Label.c.EC_DSR_Json_PestActivity}">
+                                <div class="tile-lineitem">
+                                    <div class="area-name">{!findings.areaName}</div>
+                                    <div class="condition-description">{!findings.conditionDescription}&nbsp;{!findings.conditionComments}</div>
+                                    <aura:iteration items="{!findings.findingActions.findingAction}" var="findingsaction" indexVar="indx">
+                                        <div class="action-description">{!findingsaction.actionDescription}&nbsp;{!findingsaction.actionComments}</div>
+                                    </aura:iteration>
+                                </div>
+                            </aura:if>
+                        </aura:iteration>
+                    </div>
+                </div>
+            </aura:if>
+
+            <!-- Action Items Tile -->
+            <div class="{!v.showActionItem ? 'tile-box one-of-two ps-tile-two' : 'nofindings tile-box one-of-two ps-tile-two'}">
+                <div class="ps-icons">
+                	<aura:if isTrue="{!v.showActionItem}">
+                        <span class="material-icons ps-error">error</span>
+                    <aura:set attribute="else">
+                        <span class="material-icons ps-check">check_circle</span>
+                    </aura:set>
+                    </aura:if>
+                </div>
+                <div class="ps-tile-btm">
+                	<div class="ps-text">{!$Label.c.EC_DSR_ActionItems}</div>
+                    <div class="dsr-label">{!$Label.c.EC_DSR_FindingsThatRequireAttention}</div>
+                    <div class="ps-count">{!v.actionItemLength}</div>
+                    <div class="action-items">
+                        <aura:if isTrue="{!v.showSanitation}">
+                            <span>{!$Label.c.EC_DSR_Sanitation}&nbsp;{!v.sanitationLength}</span>
+                        </aura:if>
+                    	<aura:if isTrue="{!v.showStructural}">
+                            <span>{!$Label.c.EC_DSR_Structural}&nbsp;{!v.structuralLength}</span>
+                        </aura:if>
+                        <aura:if isTrue="{!v.showPrep}">
+                            <span>{!$Label.c.EC_DSR_Preparation}&nbsp;{!v.prepLength}</span>
+                        </aura:if>
+                    </div>
+                </div>
+            </div>
+            <aura:if isTrue="{!v.showActionItem}">
+                <div class="table-box ps-tile-two-table"> 
+                    <div class="table-title">{!$Label.c.EC_DSR_ActionItems}</div>
+                    <span class="material-icons close-table">close</span>
+                    
+                    <aura:if isTrue="{!v.showStructural}">
+                        <div class="tile-lineitems">
+                            <div class="table-title-one">
+                                {!$Label.c.EC_DSR_StructuralFindings} ({!v.structuralLength})
+                                <div class="lineitem-toggle">
+                                    <span class="material-icons plus-icon">add</span>
+                                    <span class="material-icons minus-icon">remove</span>
+                                </div>
+                            </div>
+                            <aura:iteration items="{!v.serviceDetails.service.findingConditions.findingCondition}" var="findings" indexVar="indx">
+                                <aura:if isTrue="{!findings.globalConditionCategoryId == $Label.c.EC_DSR_Json_Structural}">
+                                    <div class="tile-lineitem">
+                                        <div class="area-name">{!findings.areaName}</div>
+                                        <div class="condition-description">{!findings.conditionDescription}&nbsp;{!findings.conditionComments}</div>
+                                        <aura:iteration items="{!findings.findingActions.findingAction}" var="findingsaction" indexVar="indx">
+                                            <div class="action-description">{!findingsaction.actionDescription}&nbsp;{!findingsaction.actionComments}</div>
+                                        </aura:iteration>
+                                    </div>
+                                </aura:if>
+                            </aura:iteration>
+                        </div>
+                    </aura:if>
+                    
+                    <aura:if isTrue="{!v.showSanitation}">
+                        <div class="tile-lineitems">
+                            <div class="table-title-one">
+                                {!$Label.c.EC_DSR_SanitationFindings} ({!v.sanitationLength})
+                                <div class="lineitem-toggle">
+                                    <span class="material-icons plus-icon">add</span>
+                                    <span class="material-icons minus-icon">remove</span>
+                                </div>
+                            </div>
+                            <aura:iteration items="{!v.serviceDetails.service.findingConditions.findingCondition}" var="findings" indexVar="indx">
+                                <aura:if isTrue="{!findings.globalConditionCategoryId == $Label.c.EC_DSR_Json_Sanitation}">
+                                    <div class="tile-lineitem">
+                                        <div class="area-name">{!findings.areaName}</div>
+                                        <div class="condition-description">{!findings.conditionDescription}&nbsp;{!findings.conditionComments}</div>
+                                        <aura:iteration items="{!findings.findingActions.findingAction}" var="findingsaction" indexVar="indx">
+                                            <div class="action-description">{!findingsaction.actionDescription}&nbsp;{!findingsaction.actionComments}</div>
+                                        </aura:iteration>
+                                    </div>
+                                </aura:if>
+                            </aura:iteration>
+                        </div>
+                    </aura:if>
+
+                    <aura:if isTrue="{!v.showPrep}">
+                        <div class="tile-lineitems">
+                            <div class="table-title-one">
+                                {!$Label.c.EC_DSR_PreparationFindings} ({!v.prepLength})
+                                <div class="lineitem-toggle">
+                                    <span class="material-icons plus-icon">add</span>
+                                    <span class="material-icons minus-icon">remove</span>
+                                </div>
+                            </div>
+                            <aura:iteration items="{!v.serviceDetails.service.findingConditions.findingCondition}" var="findings" indexVar="indx">
+                                <aura:if isTrue="{!findings.globalConditionCategoryId == $Label.c.EC_DSR_Json_Prep}">
+                                    <div class="tile-lineitem">
+                                        <div class="area-name">{!findings.areaName}</div>
+                                        <div class="condition-description">{!findings.conditionDescription}&nbsp;{!findings.conditionComments}</div>
+                                        <aura:iteration items="{!findings.findingActions.findingAction}" var="findingsaction" indexVar="indx">
+                                            <div class="action-description">{!findingsaction.actionDescription}&nbsp;{!findingsaction.actionComments}</div>
+                                        </aura:iteration>
+                                    </div>
+                                </aura:if>
+                            </aura:iteration>
+                        </div>
+                    </aura:if>
+
+                </div>
+            </aura:if>
+            
+        </div>
+    </div>
+</aura:component>

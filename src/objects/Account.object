@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Account_Name2__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Name 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Name3__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Name 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Name4__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Name 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Key__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Key</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Division__c</fullName>
+        <description>This field specifies the division that a Ship To account is related to.</description>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Institutional</fullName>
+                    <default>false</default>
+                    <label>INSTITUTIONAL</label>
+                </value>
+                <value>
+                    <fullName>WATER</fullName>
+                    <default>false</default>
+                    <label>WATER</label>
+                </value>
+                <value>
+                    <fullName>PAPER</fullName>
+                    <default>false</default>
+                    <label>PAPER</label>
+                </value>
+                <value>
+                    <fullName>FOOD &amp; BEVERAGE</fullName>
+                    <default>false</default>
+                    <label>FOOD &amp; BEVERAGE</label>
+                </value>
+                <value>
+                    <fullName>ENERGY</fullName>
+                    <default>false</default>
+                    <label>ENERGY</label>
+                </value>
+                <value>
+                    <fullName>PEST</fullName>
+                    <default>false</default>
+                    <label>PEST</label>
+                </value>
+                <value>
+                    <fullName>TEXTILE CARE</fullName>
+                    <default>false</default>
+                    <label>TEXTILE CARE</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Ship_To_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(
+        NOT(ISNULL(Account_Name2__c)|| ISBLANK(Account_Name2__c)) &amp;&amp;
+        NOT(ISNULL(Account_Name3__c) || ISBLANK(Account_Name3__c)) &amp;&amp;
+        NOT(ISNULL(Account_Name4__c) || ISBLANK(Account_Name4__c) ),
+        Account_Name2__c+&#39;, &#39;+Account_Name3__c+&#39;, &#39;+Account_Name4__c,
+                    IF( (ISNULL(Account_Name2__c)|| ISBLANK(Account_Name2__c)) &amp;&amp; (ISNULL(Account_Name3__c) || ISBLANK(Account_Name3__c)),
+                                 Account_Name4__c,
+                                  IF(( ISNULL(Account_Name3__c)|| ISBLANK(Account_Name3__c)) &amp;&amp; (ISNULL(Account_Name4__c) || ISBLANK(Account_Name4__c)),
+                                                    Account_Name2__c,
+                                                     IF((ISNULL(Account_Name4__c)|| ISBLANK(Account_Name4__c)) &amp;&amp; (ISNULL(Account_Name2__c) || ISBLANK(Account_Name2__c)),
+                                                                    Account_Name3__c,
+                                                                     IF(ISNULL(Account_Name2__c)||ISBLANK(Account_Name2__c),
+                                                                                Account_Name3__c+&#39;, &#39;+Account_Name4__c,
+                                                                                     IF(ISNULL(Account_Name3__c) || ISBLANK(Account_Name3__c),
+                                                                                                    Account_Name2__c+&#39;, &#39;+Account_Name4__c,
+                                                                                                     IF(ISNULL(Account_Name4__c) || ISBLANK(Account_Name4__c),
+                                                                                                                    Account_Name2__c+&#39;, &#39;+Account_Name3__c,&#39;&#39;
+                                                                                                          )
+                                                                                          )
+                                                                                    )
+                                                          )
+                                          )
+                      )
+            )</formula>
+        <label>Ship To Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>       
+    </fields>
+    <fields>
+        <fullName>Carrier_Haulier_Note__c</fullName>
+        <description>To store Carrier Haulier Note at account level</description>
+        <externalId>false</externalId>
+        <label>Carrier Haulier Note</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Customer_Profile_Note__c</fullName>
+        <description>To store profile note for customer.</description>
+        <externalId>false</externalId>
+        <label>Customer Profile Note</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <recordTypes>
+        <fullName>EC_ShipTo</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>EC_CompactLayout</compactLayoutAssignment>
+        <label>Ship To</label>
+        <picklistValues>
+            <picklist>EC_Division__c</picklist>
+            <values>
+                <fullName>ENERGY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FOOD %26 BEVERAGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Institutional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAPER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PEST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TEXTILE CARE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WATER</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>EC_SoldTo</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>EC_CompactLayout</compactLayoutAssignment>
+        <label>Sold To</label>
+        <picklistValues>
+            <picklist>EC_Division__c</picklist>
+            <values>
+                <fullName>ENERGY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FOOD %26 BEVERAGE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Institutional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAPER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PEST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TEXTILE CARE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WATER</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+</CustomObject>

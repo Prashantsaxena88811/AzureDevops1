@@ -1,0 +1,15 @@
+<!--
+
+  @Component Name     : EC_BillingArrangementDetail
+
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Akhil                 24-Aug-2020       Page for displaying of BA products.
+
+-->
+<apex:page id="EC_BillingArrangementDetail" docType="html-5.0" sidebar="false" showHeader="false"  standardStylesheets="false" applyHtmlTag="false" controller="EC_BillingArrangementController">
+ 
+<c:EC_BillingArrangementDetail />
+  
+</apex:page>

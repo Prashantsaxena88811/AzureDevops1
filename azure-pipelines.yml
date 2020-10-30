@@ -1,0 +1,42 @@
+# Ant
+# Build your Java projects and run tests with Apache Ant.
+# Add steps that save build artifacts and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+trigger:
+- UAT
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+steps:
+- task: Ant@1
+  inputs:
+    workingDirectory: ''
+    buildFile: './build/build.xml'
+    targets: 'deployCheckOnly'
+    options : -Dsalesforce.password=$(salesforce.password) -Dsalesforce.username=$(salesforce.username) -Dsalesforce.loginurl=$(salesforce.loginurl) -Dsalesforce.testLevel=$(salesforce.testLevel)
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.11'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: false
+    testResultsFiles: '**/TEST-*.xml'
+    #options: # Optional
+    #targets: # Optional
+    #publishJUnitResults: true 
+    #testResultsFiles: '**/TEST-*.xml' # Required when publishJUnitResults == True
+    #testRunTitle: # Optional
+    #codeCoverageToolOptions: 'None' # Optional. Options: none, cobertura, jaCoCo
+    #codeCoverageClassFilesDirectories: '.' # Required when codeCoverageToolOptions != None
+    #codeCoverageClassFilter: # Optional
+    #codeCoverageSourceDirectories: # Optional
+    #codeCoverageFailIfEmpty: false # Optional
+    #antHomeDirectory: # Optional
+    #javaHomeOption: 'JDKVersion' # Options: jDKVersion, path
+    #jdkVersionOption: 'default' # Optional. Options: default, 1.11, 1.10, 1.9, 1.8, 1.7, 1.6
+    #jdkUserInputDirectory: # Required when javaHomeOption == Path
+    #jdkArchitectureOption: 'x64' # Optional. Options: x86, x64
+
+- script: 
+    echo $(sf.username)
+    echo $(sf.password)

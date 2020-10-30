@@ -1,0 +1,5 @@
+<messaging:emailTemplate subject="Connect Order {!relatedTo.Name} Failed" recipientType="User" relatedToType="ccrz__E_Order__c">
+<messaging:plainTextEmailBody >
+  Order: {!relatedTo.Name} was not picked up by tibco. Please address and change overall status to submitted
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

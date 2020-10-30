@@ -1,0 +1,56 @@
+<apex:page showHeader="false">
+    <html>
+
+    <head>
+        <title>reCAPTCHA demo: Explicit render after an onload callback</title>
+        <script type="text/javascript">
+            var verifyCallback = function (response) {
+                console.log("CallbackLoaded");
+                parent.postMessage("Unlock", '{!$Setup.EC_communityUrl__c.EC_URL__c}');
+            };
+            
+            //Done by Ranu on 1st October 2020
+            var expiredCallback = function (response) {
+                parent.postMessage("Expired", '{!$Setup.EC_communityUrl__c.EC_URL__c}');
+            };
+            
+            var onloadCallback = function () {
+                grecaptcha.render('html_element', {
+                    'sitekey': '{!$Label.EC_RegCaptchaSiteKey}', //reCaptcha V2 Site Key
+                    'callback': verifyCallback,
+                    'expired-callback': expiredCallback
+                });
+                grecaptcha.reset();
+                parent.postMessage("Loaded", '{!$Setup.EC_communityUrl__c.EC_URL__c}');
+            };
+            setInterval(function () {
+                var iframes = document.getElementsByTagName("iframe");
+                if (iframes.length > 1) {
+                    var isChallengeVisible = iframes[2].parentElement.parentElement.style.visibility;
+                    console.log('isChallengeVisible: '+isChallengeVisible);
+                    if (isChallengeVisible !== "hidden") {
+                        parent.postMessage("resizeCaptcha", '{!$Setup.EC_communityUrl__c.EC_URL__c}');
+                    } else {
+                        parent.postMessage("revertResize", '{!$Setup.EC_communityUrl__c.EC_URL__c}');
+                    }
+                }
+            }, 2000);
+        </script>
+    </head>
+
+    <body>
+        <div class="g-recaptcha" data-size="normal">
+            <form action="?" method="POST">
+                <div id="html_element"></div>
+                <br />
+                <input type="submit" value="Submit" style="display:none" />
+            </form>
+        </div>
+
+        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async="" defer="">
+        </script>
+    </body>
+
+    </html>
+
+</apex:page>

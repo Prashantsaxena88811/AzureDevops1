@@ -1,0 +1,16 @@
+<!--
+
+  @Page Name     : EC_ProductListPage
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Viraj                 6/6/2019          Product list page
+
+-->
+
+<apex:page docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" cache="false" applyHtmlTag="false">
+  	<c:EC_ProductList />
+    <c:EC_Categories />
+    <c:EC_PLPSearch />
+</apex:page>

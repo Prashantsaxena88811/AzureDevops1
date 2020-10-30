@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>EC_WriteApexLogsSynchronously__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Write Apex Logs Synchronously</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EC_write_Apex_Logs_Asynchronously__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>write Apex Logs Asynchronously</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>LogType</label>
+    <pluralLabel>LogTypes</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

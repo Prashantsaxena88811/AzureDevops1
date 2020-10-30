@@ -1,0 +1,54 @@
+<!--
+
+  @Component Name     : EC_ShipToAccountsIterator.cmp 
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Soumick               11/26/2019        Component for iterating on ship to accounts
+
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="ShipToaccount" type="Object" />
+    <aura:attribute name="accId" type="String" />
+    <aura:attribute name="effectiveAccount" type="String" />
+    <aura:attribute name="accListMap" type="Map" />
+    <aura:attribute name="isNalco" type="Boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:registerEvent name="selectedShipTo" type="c:EC_AccountPickerEvent"/>
+             
+    <div class="{!v.effectiveAccount == v.ShipToaccount.ID ? 'selected sta-body slds-grid slds-wrap slds-no-gutters slds-p-top_small slds-p-bottom_medium' : 'sta-body slds-grid slds-wrap slds-no-gutters slds-p-top_small slds-p-bottom_medium'}">  
+        <div class="mobile-heading fz-14 slds-col slds-size_1-of-1 slds-hide_medium">
+            {!$Label.c.EC_SR_Acc_address}
+        </div>
+        <div class="accData slds-col fz-14 slds-m-bottom_small slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12 slds-text-body_regular slds-hyphenate">
+            <aura:unescapedHtml value="{!v.ShipToaccount.ShippingAddress}"/>
+        </div>
+        <div class="mobile-heading fz-14 slds-col slds-size_1-of-1 slds-hide_medium">
+            {!$Label.c.EC_SR_Account_ShiptTo}
+        </div>
+        <div class="accData slds-col fz-14 slds-m-bottom_small slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+            <aura:if isTrue="{!and(v.isNalco, not(v.ShipToaccount.Ship_To_Name__c == null))}"><span class=""><aura:unescapedHtml value="{!v.ShipToaccount.Ship_To_Name__c}"/><br/></span></aura:if>
+            <aura:unescapedHtml value="{!v.ShipToaccount.AccountNumber}"/>
+        </div>
+        <aura:if isTrue="{!v.effectiveAccount == v.ShipToaccount.ID}">
+            <div id="{!v.ShipToaccount.ID}" class="slds-text-body_regular continueclass slds-grid slds-wrap slds-no-gutters slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                <div class="slds-col slds-size_1-of-1">
+                    <span class="selectclass">
+                        <i class="material-icons" aura:id="CheckIcon">check</i>SELECTED
+                    </span>
+                </div>
+            </div>
+            <aura:set attribute="else">
+                <div id="{!v.ShipToaccount.ID}" class="continueclass slds-grid slds-wrap slds-no-gutters slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                    <div class="slds-col slds-size_1-of-1" id="SelButton" title="Select">                                		
+                        <button class="selectButton slds-button slds-button_outline-brand slds-text-selected-focus" label="SELECT" value="{!v.ShipToaccount.name}" onclick="{! c.onAccountSelect }">{!$Label.c.EC_SR_Continue_button}</button>
+                    </div>
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+       
+</aura:component>

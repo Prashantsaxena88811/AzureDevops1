@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account Number --></label>
+        <name>EC_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill To Address --></label>
+        <name>EC_BillToAddress__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Billing Account Number --></label>
+        <name>EC_Billing_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Account Key --></label>
+        <name>EC_CDM_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC_CorporateCDMKey --></label>
+        <name>EC_CorporateCDMKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>EC_Division__c</name>
+        <picklistValues>
+            <masterLabel>ENERGY</masterLabel>
+            <translation><!-- ENERGY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FOOD &amp; BEVERAGE</masterLabel>
+            <translation><!-- FOOD &amp; BEVERAGE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSTITUTIONAL</masterLabel>
+            <translation><!-- INSTITUTIONAL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAPER</masterLabel>
+            <translation><!-- PAPER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WATER</masterLabel>
+            <translation><!-- WATER --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment Mode --></label>
+        <name>EC_PaymentMode__c</name>
+        <picklistValues>
+            <masterLabel>BOTH</masterLabel>
+            <translation><!-- BOTH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CC</masterLabel>
+            <translation><!-- CC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PO</masterLabel>
+            <translation><!-- PO --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SalesOrg --></label>
+        <name>EC_SalesOrg__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Representative --></label>
+        <name>EC_SalesRepresentative__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ShipToNumber --></label>
+        <name>EC_ShipToNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>EC_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unique Account Number --></label>
+        <name>EC_Unique_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Portal access --></label>
+        <name>Payment_Portal_access__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom Field 1 --></label>
+        <name>ccrz__CustomField1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom Field 2 --></label>
+        <name>ccrz__CustomField2__c</name>
+    </fields>
+    <fields>
+        <help><!-- B2B Commerce internal use only except when used with ccApiTestData. --></help>
+        <label><!-- DataId --></label>
+        <name>ccrz__DataId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Group --></label>
+        <name>ccrz__E_AccountGroup__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Prevent Address Book Saves --></label>
+        <name>ccrz__PreventAddrBookSave__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prevent New Addresses at Checkout --></label>
+        <name>ccrz__PreventNewAddrCheckout__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prevent New Checkout Billing Address --></label>
+        <name>ccrz__PreventNewBillAddrCO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source System --></label>
+        <name>ccrz__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the field to indicate whether an account is tax exempt. --></help>
+        <label><!-- TaxExemptAccount --></label>
+        <name>ccrz__TaxExemptAccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used by Cloudcraze Customer Portal --></label>
+        <name>ccrz__UsedByCloudcraze__c</name>
+    </fields>
+    <layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label><!-- Useful Links --></label>
+            <section>Useful Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Corporate Layout</layout>
+        <sections>
+            <label><!-- Useful Links --></label>
+            <section>Useful Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Ship To Layout</layout>
+        <sections>
+            <label><!-- Useful Links --></label>
+            <section>Useful Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Sold To Layout</layout>
+        <sections>
+            <label><!-- Useful Links --></label>
+            <section>Useful Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Corporate --></label>
+        <name>EC_Corporate</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Ship To --></label>
+        <name>EC_ShipTo</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Sold To --></label>
+        <name>EC_SoldTo</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- AltavistaNews --></label>
+        <name>AltavistaNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- HooversProfile --></label>
+        <name>HooversProfile</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- YahooMaps --></label>
+        <name>YahooMaps</name>
+    </webLinks>
+</CustomObjectTranslation>

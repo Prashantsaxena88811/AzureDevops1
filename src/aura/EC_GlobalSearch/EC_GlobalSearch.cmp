@@ -1,0 +1,70 @@
+<!--
+
+  @Component Name     : EC_GlobalSearch.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Soumick               11/26/2019        Component for global search
+
+--> 
+
+<aura:component controller="EC_GlobalSearchController" implements="forceCommunity:searchInterface" access="global">
+    <aura:attribute name="searchTerm" type="String" />
+    <aura:attribute name="dummyData" type="List" />
+    <aura:attribute name="maxChar" type="Boolean" default="false" />
+    <aura:attribute name="noResults" type="Boolean" default="false" />
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+  <!--create a component attributs -->
+    <aura:attribute name="Spinner" type="boolean" default="false"/>
+    <aura:attribute name="toShow" type="Boolean" default="false"/>
+    
+    <aura:handler name="init" action="{!c.init}" value="this" />
+   
+    <div class="search-wrapper slds-clearfix" aura:id="search-wrapper">
+        <div class='slds-grid slds-gutters search-box-wrapper'>
+			<!-- COVEO START -->
+            <!-- <c:EC_CoveoCommunitySearchBox /> -->
+            <!-- COVEO END -->
+            <div class="slds-col search-box">
+                <ui:inputText aura:id="globalSearchId" placeholder="Search" class="search-input globalSearch"
+                    value="{!v.searchTerm}"  keyup="{!c.checkKeyCode}" updateOn="keyup"  />
+                <aura:if isTrue="{!v.Spinner}">
+                    <lightning:spinner alternativeText="Loading" size="small" />
+                </aura:if>
+                <aura:if isTrue="{!v.dummyData}">
+                    <div class="auto-complete slds-hide" onblur="{!c.hideOnblur}">
+                        <ul>
+                            <aura:iteration items="{!v.dummyData}" var="prodName" indexVar="indx">
+                                <li onclick="{!c.selectSearchTerm}" data-index="{!indx}" data-value="{!prodName.id}"
+                                    class="move">
+                                    <aura:unescapedHtml value="{!prodName.value}" />
+                                </li>
+                            </aura:iteration>
+                        </ul>
+                        <!--<aura:if isTrue="{!v.noResults}">
+                            <ul>
+                                <li>
+                                    No Results Found
+                                </li>
+                            </ul>
+                        </aura:if>-->
+                    </div>
+                </aura:if>
+            </div>
+            <div class="slds-col search-btn">
+                
+                    
+                <ui:button class="slds-button slds-button--brand slds-align-middle search_button" press="{!c.doGlobalSearch}">
+            <span class="slds-icon_container slds-icon-utility-search search-button-icon slds-button__icon forceIcon display-icon"
+                        data-aura-rendered-by="155:0">
+                        <lightning:icon iconName="utility:search" />
+                    </span>
+                </ui:button>
+                
+                    
+            </div>
+
+        </div>
+    </div>
+</aura:component>

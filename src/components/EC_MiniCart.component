@@ -1,0 +1,361 @@
+<!--
+
+  @Component Name     : EC_MiniCart
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Sai Kiran Pidugu     6/14/2019          Component for mini cart.
+
+--> 
+
+<apex:component controller="EC_MiniCartController">
+    <script id="EC-MiniCart-Desktop" type="text/template">
+      {{#ifEquals '{!buyOnline}' "true"}}
+        <div class="panel panel-default MiniCart cc_mini_cart">
+        
+            <div class="panel-heading cc_heading min-heading">
+                <h3 class="panel-title cc_title minititle">{{pageLabelMap 'Header_MyCart'}}
+                    <span class="pull-right">
+                        <span class="icon-toggle minitoggle cc_filter_icon" role="button" data-toggle="collapse" data-target="#collapseMiniCart"
+                            aria-expanded="true" aria-controls="collapseMiniCart">
+                            
+                            <i class="material-icons  minitgle keyboard_arrow_down menu-expand"></i>
+                            <i class="material-icons  minitgle keyboard_arrow_up menu-collapse"></i>
+                        </span>
+                    </span>
+                </h3>
+            </div>
+            <div id="collapseMiniCart" class="panel-collapse collapse in">
+                <div class="cc_body">
+                    <div class="my_cart mini_cart cc_mini_cart">
+                        {{#ifDisplay 'MC.Ext'}}
+                            {{#ifGreater cartItemCount 0}}
+                                {{#ifDisplay 'MC.DsplItem'}}
+                                    {{#each this.cartItems}}
+                                        <div class="row cc_items rowitems-cart ">
+                                            <div class="col-md-12 col-xs-12 ">
+                                                <div class="cc_prod_name minicartprodname">
+                                                    {{#ifEquals pricingType 'external'}}
+                                                        {{#if extName}}
+                                                            {{productLink this.mockProduct 'small cc_product_name_link' text=(displayProductName 'Aggregate_Display' displayProductBean.name extName)}}
+                                                        {{else}}
+                                                            {{productLink this.mockProduct 'small cc_product_name_link' text=(displayProductName 'Aggregate_Display' displayProductBean.name mockProduct.name)}}
+                                                        {{/if}}
+                                                        {{else}}
+                                                            {{productLink this.mockProduct 'small cc_product_name_link' text=(displayProductName 'Aggregate_Display' displayProductBean.name mockProduct.name)}}
+                                                    {{/ifEquals}}
+                                                </div>
+                                                <div class="cc_prod_qty custom-divClass">
+                                                    <div id="CartItemDetail-Qty-View" class="quantity cc_quantity input-group">  
+                                                                                                           
+                                                        <span class="input-group-btn cust-min cc_input_group_btn">
+                                                            <button type="button" class="btn btn-default custom-minus minus cc_minus material-icons remove" id="{{this.itemID}}"></button>
+                                                        </span>
+                                                        {{#ifEquals pricingType 'external'}}
+                                                            <label for="{{this.itemID}}" class="sr-only">Quantity</label>
+                                                            <input id="{{this.itemID}}" type="text" name="qty" class="form-control input-sm  cc_input_sm {{this.itemID}} plp-input input-text entry" data-id="{{this.itemID}}"
+                                                                value="{{this.quantity}}" readonly />
+                                                            {{else}}
+                                                                {{#ifNotEquals pricingType 'attrGroup'}}
+                                                                    {{#ifDisplay 'MC.RO'}}
+                                                                        <label for="{{this.itemID}}" class="sr-only">Quantity</label>
+                                                                        <input id="{{this.itemID}}" type="text" name="qty" class="form-control  input-sm cc_input_sm {{this.itemID}} plp-input" data-id="{{this.itemID}}"
+                                                                            value="{{this.quantity}}" readonly />
+                                                                        {{else}}
+                                                                            <label for="qtyInput_{{this.itemID}}" class="sr-only">Enter
+                                                                                Quantity</label>
+                                                                            <input id="qtyInput_{{this.itemID}}" type="text" name="qty" class="form-control  input-sm input-text entry cc_input_sm  {{this.itemID}} plp-input"
+                                                                                data-id="{{this.itemID}}" value="{{this.quantity}}" maxlength="7"
+                                                                            />
+                                                                    {{/ifDisplay}}
+                                                                {{/ifNotEquals}}
+                                                                {{#ifEquals pricingType 'attrGroup'}}
+                                                                    <span class="cc_attributes_link{{this.itemID}}"><a href="#minicart_attribute_items{{this.itemID}}"
+                                                                            class="attributeItemsLink cc_attribute_items_link" id="attributeItemsLink{{itemID}}"
+                                                                            data-desktop="true" data-toggle="modal" data-id="{{itemID}}">{{pageLabelMap 'Cart_AttributeItems'}}</a></span>
+                                                                    {{> minicartAttributesDisplay}}
+                                                                {{/ifEquals}}
+                                                        {{/ifEquals}}
+                                                        
+                                                        <span class="input-group-btn cc_input_group_btn pluswidth minus-wrapper">
+                                                            <button type="button" class="btn btn-default plus pludisbtn plus-width cc_plus material-icons add" id="{{this.itemID}}"></button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row minierrorrow cc_error_row row-count ">
+                                            <div class="col-xs-12 cc_error_col">
+                                                <div class="error-{{this.itemID}} miniCartError cc_mini_cart_error" style="display: none">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {{/each}}
+                                {{/ifDisplay}}
+                                <hr>
+                                <div class="summary minisummaryrow cc_summary bline-transp">
+                                    <div class="clearfix cc_row_total rowsum">
+                                        <div class="pull-left minisum cc_total_qty">{{pageLabelMap 'EC_TotalQuantity'}}</div>
+                                        <div class="pull-right minisum cc_total_items"><span class="cc_cart_item_count minisum">{{cartItemCount}}</span></div>
+                                    </div>
+                                    <div class="clearfix cc_row_sum rowsum">
+                                        <div class="pull-left minisum cc_total_price">{{pageLabelMap 'MiniCart_Total_Price'}}</div>
+                                        <div class="pull-right cc_subtotal"><span class="cc_subtotal minisubtotal">{{{formatUSD (price subTotal)}}}</span></div>
+                                    </div>
+                                    <hr>
+                                    <div class="rowbtn text-center cc_form_group mc-button-wrapper clearfix">
+                                        {{#ifDisplay 'MC.DsplItem'}}
+                                            {{#ifDisplay 'MC.RO'}}
+                                                {{else}}
+                                                    <button class="btn btn-default minibtn btn-sm ec-btn-secondary updateCartButton cc_update_cart_button fwb" type="submit">{{pageLabelMap 'MiniCart_Update'}}</button>
+                                            {{/ifDisplay}}
+                                        {{/ifDisplay}}
+                                        <button class="btn btn-default ec-btn-primary minibtn btn-sm loggedInAction fwb cc_logged_in_action" type="submit">{{pageLabelMap 'EC_Checkout'}}</button>
+                                    </div>
+                                </div>
+                                {{else}}
+                                    <p class="cc_mini_cart_noitems noitemsmini">{{pageLabelMap 'EC_MiniCartEmpty'}}</p>
+                                    <div class="rowbtn text-center cc_form_group mc-button-wrapper clearfix">                                                                                            
+                                        <button class="btn btn-default minibtn btn-sm ec-btn-secondary updateCartButton cc_update_cart_button fwb" type="submit" disabled>{{pageLabelMap 'MiniCart_Update'}}</button>
+                                        <button class="btn btn-default ec-btn-secondary minibtn btn-sm loggedInAction fwb cc_logged_in_action" type="submit" disabled>{{pageLabelMap 'EC_Checkout'}}</button>
+                                    </div>                                                                                             
+                                {{/ifGreater}}
+                            {{else}}
+                                {{#ifGreater cartItemCount 0}}
+                                    <div class="row cc_row_caption">
+                                        <div class="col-xs-12 cc_col_caption">
+                                            {{#ifEquals cartItemCount 1}}
+                                                {{pageLabelMap 'Component_MiniCart_ThereIs'}}&#160;{{cartItemCount}}&#160;{{pageLabelMap 'Component_MiniCart_Item'}}
+                                                {{else}}
+                                                    {{pageLabelMap 'Component_MiniCart_ThereAre'}}&#160;{{cartItemCount}}&#160;{{pageLabelMap 'Component_MiniCart_Items'}}
+                                            {{/ifEquals}}
+                                        </div>
+                                    </div>
+                                    <div class="row cc_row_subtotal">
+                                        <div class="col-xs-12 cc_col_subtotal">
+                                            {{pageLabelMap 'Component_MiniCart_Subtotal'}}:&#160;<strong>{{{formatUSD (price subTotal)}}}</strong>
+                                        </div>
+                                    </div>
+                                    <div class="form-group cc_form">
+                                        <div class="form-group text-center cc_form_group">
+                                            <button class="btn btn-default btn-sm loggedInAction cc_logged_in_action" type="submit">{{pageLabelMap 'Component_MiniCart_Action'}}</button>
+                                        </div>
+                                    </div>
+                                    {{else}}
+                                        <div class="form-group cc_form_group">
+                                            <p class="cc_no_items">{{pageLabelMap 'Component_MiniCart_NoItems'}}</p>
+                                        </div>
+                                {{/ifGreater}}
+                        {{/ifDisplay}}
+                    </div>
+                    <div id="modalSec"></div>
+                </div>
+            </div>
+            
+        </div>   
+       {{/ifEquals}}
+    </script>
+    <script id="EC-MiniCart-Mobile" type="text/template">
+      {{#ifEquals '{!buyOnline}' "true"}}
+        <div class="full-btn col-xs-12" data-toggle="modal" data-target="#mini-cart-modal">
+            <span class="pull-left">{{pageLabelMap 'Header_MyCart'}}</span>
+            <span class="pull-right material-icons keyboard_arrow_right lh-16"></span>
+        </div>     
+        
+        <div class="modal fade right MobileNav" id="mini-cart-modal" tabindex="-1" role="dialog" style="display:none;">
+            <div class="modal-dialog modal-sm modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close cc_close" data-dismiss="modal" aria-label="Close">
+                            <span class="visible-xs" aria-hidden="true">&times</span>
+                            <span class="hidden-xs modal-back-link blue-color fz-14"><span class="material-icons arrow_back vmiddle"></span>{{pageLabelMap 'EC_Back'}}</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="panel panel-default MiniCart cc_mini_cart">
+                            <div class="panel-heading cc_heading min-heading">
+                                <h3 class="panel-title cc_title minititle">{{pageLabelMap 'Header_MyCart'}}
+                                    <span class="pull-right">
+                                        <span class="icon-toggle minitoggle cc_filter_icon" role="button" data-toggle="collapse" data-target="#collapseMiniCart"
+                                            aria-expanded="true" aria-controls="collapseMiniCart">
+                                            
+                                            <i class="material-icons  minitgle keyboard_arrow_down menu-expand"></i>
+                                            <i class="material-icons  minitgle keyboard_arrow_up menu-collapse"></i>
+                                        </span>
+                                    </span>
+                                </h3>
+                            </div>
+                            <div id="collapseMiniCart" class="panel-collapse collapse in">
+                                <div class="cc_body">
+                                    <div class="my_cart mini_cart cc_mini_cart">
+                                        {{#ifDisplay 'MC.Ext'}}
+                                            {{#ifGreater cartItemCount 0}}
+                                                {{#ifDisplay 'MC.DsplItem'}}
+                                                    {{#each this.cartItems}}
+                                                        <div class="row cc_items rowitems-cart ">
+                                                            <div class="col-md-12 col-xs-12 ">
+                                                                <div class="cc_prod_name minicartprodname">
+                                                                    {{#ifEquals pricingType 'external'}}
+                                                                        {{#if extName}}
+                                                                            {{productLink this.mockProduct 'small cc_product_name_link' text=(displayProductName 'Aggregate_Display' displayProductBean.name extName)}}
+                                                                        {{else}}
+                                                                            {{productLink this.mockProduct 'small cc_product_name_link' text=(displayProductName 'Aggregate_Display' displayProductBean.name mockProduct.name)}}
+                                                                        {{/if}}
+                                                                        {{else}}
+                                                                            {{productLink this.mockProduct 'small cc_product_name_link' text=(displayProductName 'Aggregate_Display' displayProductBean.name mockProduct.name)}}
+                                                                    {{/ifEquals}}
+                                                                </div>
+                                                                <div class="cc_prod_qty custom-divClass">
+                                                                    <div id="CartItemDetail-Qty-View" class="quantity cc_quantity input-group">
+                                                                        
+                                                                        <span class="input-group-btn cust-min cc_input_group_btn">
+                                                                            <button type="button" class="btn btn-default custom-minus minus cc_minus material-icons remove" id="{{this.itemID}}"></button>
+                                                                        </span>
+                                                                        {{#ifEquals pricingType 'external'}}
+                                                                            <label for="{{this.itemID}}" class="sr-only">Quantity</label>
+                                                                            <input id="{{this.itemID}}" type="text" name="qty" class="form-control input-sm  cc_input_sm {{this.itemID}} plp-input input-text entry" data-id="{{this.itemID}}"
+                                                                                value="{{this.quantity}}" readonly />
+                                                                            {{else}}
+                                                                                {{#ifNotEquals pricingType 'attrGroup'}}
+                                                                                    {{#ifDisplay 'MC.RO'}}
+                                                                                        <label for="{{this.itemID}}" class="sr-only">Quantity</label>
+                                                                                        <input id="{{this.itemID}}" type="text" name="qty" class="form-control  input-sm cc_input_sm {{this.itemID}} plp-input" data-id="{{this.itemID}}"
+                                                                                            value="{{this.quantity}}" readonly />
+                                                                                        {{else}}
+                                                                                            <label for="qtyInput_{{this.itemID}}" class="sr-only">Enter
+                                                                                                Quantity</label>
+                                                                                            <input id="qtyInput_{{this.itemID}}" type="text" name="qty" class="form-control  input-sm input-text entry cc_input_sm  {{this.itemID}} plp-input"
+                                                                                                data-id="{{this.itemID}}" value="{{this.quantity}}" maxlength="7"
+                                                                                            />
+                                                                                    {{/ifDisplay}}
+                                                                                {{/ifNotEquals}}
+                                                                                {{#ifEquals pricingType 'attrGroup'}}
+                                                                                    <span class="cc_attributes_link{{this.itemID}}"><a href="#minicart_attribute_items{{this.itemID}}"
+                                                                                            class="attributeItemsLink cc_attribute_items_link" id="attributeItemsLink{{itemID}}"
+                                                                                            data-desktop="true" data-toggle="modal" data-id="{{itemID}}">{{pageLabelMap 'Cart_AttributeItems'}}</a></span>
+                                                                                    {{> minicartAttributesDisplay}}
+                                                                                {{/ifEquals}}
+                                                                        {{/ifEquals}}
+                                                                        
+                                                                        <span class="input-group-btn cc_input_group_btn pluswidth minus-wrapper">
+                                                                            <button type="button" class="btn btn-default plus pludisbtn plus-width cc_plus material-icons add" id="{{this.itemID}}"></button>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row minierrorrow cc_error_row row-count ">
+                                                            <div class="col-xs-12 cc_error_col">
+                                                                <div class="error-{{this.itemID}} miniCartError cc_mini_cart_error" style="display: none">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    {{/each}}
+                                                {{/ifDisplay}}
+                                                <hr>
+                                                <div class="summary minisummaryrow cc_summary bline-transp">
+                                                    <div class="clearfix cc_row_total rowsum">
+                                                        <div class="pull-left minisum cc_total_qty">{{pageLabelMap 'EC_TotalQuantity'}}</div>
+                                                        <div class="pull-right minisum cc_total_items"><span class="cc_cart_item_count minisum">{{cartItemCount}}</span></div>
+                                                    </div>
+                                                    <div class="clearfix cc_row_sum rowsum">
+                                                        <div class="pull-left minisum cc_total_price">{{pageLabelMap 'MiniCart_Total_Price'}}</div>
+                                                        <div class="pull-right cc_subtotal"><span class="cc_subtotal minisubtotal">{{{formatUSD (price subTotal)}}}</span></div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class=" form-group rowbtn text-center cc_form_group mc-button-wrapper clearfix">
+                                                        {{#ifDisplay 'MC.DsplItem'}}
+                                                            {{#ifDisplay 'MC.RO'}}
+                                                                {{else}}
+                                                                    <button class="btn btn-default minibtn btn-sm ec-btn-secondary updateCartButton cc_update_cart_button fwb" type="submit">{{pageLabelMap 'MiniCart_Update'}}</button>
+                                                            {{/ifDisplay}}
+                                                        {{/ifDisplay}}
+                                                        <button class="btn btn-default ec-btn-primary minibtn btn-sm loggedInAction fwb cc_logged_in_action" type="submit">{{pageLabelMap 'EC_Checkout'}}</button>
+                                                    </div>
+                                                </div>
+                                                {{else}}
+                                                    <p class="cc_mini_cart_noitems noitemsmini">{{pageLabelMap 'EC_MiniCartEmpty'}}</p>
+                                                    <div class="form-group rowbtn text-center cc_form_group mc-button-wrapper clearfix">                                                                                            
+                                                        <button class="btn btn-default minibtn btn-sm ec-btn-secondary updateCartButton cc_update_cart_button fwb" type="submit" disabled>{{pageLabelMap 'MiniCart_Update'}}</button>
+                                                        <button class="btn btn-default ec-btn-primary minibtn btn-sm loggedInAction fwb cc_logged_in_action" type="submit" disabled>{{pageLabelMap 'EC_Checkout'}}</button>
+                                                    </div>                                                                                             
+                                                {{/ifGreater}}
+                                            {{else}}
+                                                {{#ifGreater cartItemCount 0}}
+                                                    <div class="row cc_row_caption">
+                                                        <div class="col-xs-12 cc_col_caption">
+                                                            {{#ifEquals cartItemCount 1}}
+                                                                {{pageLabelMap 'Component_MiniCart_ThereIs'}}&#160;{{cartItemCount}}&#160;{{pageLabelMap 'Component_MiniCart_Item'}}
+                                                                {{else}}
+                                                                    {{pageLabelMap 'Component_MiniCart_ThereAre'}}&#160;{{cartItemCount}}&#160;{{pageLabelMap 'Component_MiniCart_Items'}}
+                                                            {{/ifEquals}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row cc_row_subtotal">
+                                                        <div class="col-xs-12 cc_col_subtotal">
+                                                            {{pageLabelMap 'Component_MiniCart_Subtotal'}}:&#160;<strong>{{{formatUSD (price subTotal)}}}</strong>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group cc_form">
+                                                        <div class="form-group text-center cc_form_group">
+                                                            <button class="btn btn-default btn-sm loggedInAction cc_logged_in_action" type="submit">{{pageLabelMap 'Component_MiniCart_Action'}}</button>
+                                                        </div>
+                                                    </div>
+                                                    {{else}}
+                                                        <div class="form-group cc_form_group">
+                                                            <p class="cc_no_items">{{pageLabelMap 'Component_MiniCart_NoItems'}}</p>
+                                                        </div>
+                                                {{/ifGreater}}
+                                        {{/ifDisplay}}
+                                    </div>
+                                    <div id="modalSec"></div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      {{/ifEquals}}
+    </script>
+    <script>
+      jQuery(function ($) {
+          // to position minicart according to the screen size
+          if(window.innerWidth <=1365) {
+                CCRZ.uiProperties.miniCartView.desktop.selector = ".promotion-box-LeftNav";
+                CCRZ.uiProperties.PromoDisp.desktop.left.selector = ".minicart";
+                CCRZ.uiProperties.miniCartView.desktop.tmpl = 'EC-MiniCart-Mobile';
+            } else {
+                CCRZ.uiProperties.miniCartView.desktop.selector = ".minicart";
+                CCRZ.uiProperties.PromoDisp.desktop.left.selector = ".promotion-box-LeftNav";
+                CCRZ.uiProperties.miniCartView.desktop.tmpl = 'EC-MiniCart-Desktop';
+            }
+          CCRZ.pubSub.on("view:cartView:refresh", function(viewInstance) {
+          
+              setMiniCartData(CCRZ.views.cartView.prototype, viewInstance);
+              
+              viewInstance.setElement(viewInstance.$el);
+          });
+          var setMiniCartData = function(miniCartView, thisView) {
+                thisView.setElement(thisView.$el);
+                var events = miniCartView.events;
+                events["click .plus"] = "addSingleQty";
+                events["click .minus"] = "removeSingleQty";
+                // incr decr functions
+                miniCartView.addSingleQty = function(event){
+                    var id= event.target.id;
+                    $('.'+id).val(parseInt($('.'+id).val())+1);
+                    $('.'+id).change();
+                },
+                miniCartView.removeSingleQty = function(event){
+                    var id= event.target.id;
+                    if (parseInt($('.'+id).val())) {
+                        $('.'+id).val(parseInt($('.'+id).val())-1);
+                        $('.'+id).change();
+                    }
+                }
+          }
+      });
+  </script>
+</apex:component>

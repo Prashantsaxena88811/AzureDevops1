@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Submission Error</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order Submission Errors</value>
+    </caseValues>
+    <fields>
+        <label><!-- CC Order --></label>
+        <name>EC_CC_Order__c</name>
+        <relationshipLabel><!-- Order Submission Errors --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Error Description --></label>
+        <name>EC_Error_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request --></label>
+        <name>EC_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- Web Service Name --></label>
+        <name>EC_Web_Service_Name__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

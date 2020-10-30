@@ -1,0 +1,21 @@
+<!--
+
+  @Component Name     : EC_nonLoggedInHeader.cmp
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Vijay Kumar          21/06/2019         This component will show Ecolab image when
+                                            the user not loggedin.
+
+-->  
+  
+
+
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
+    <div>
+        <div class="slds-grid header-wrapper">
+    	<img src="{!$Resource.EC_Branding_Theme + '/images/logo_white.png'}"/>
+        </div>
+    </div>
+</aura:component>

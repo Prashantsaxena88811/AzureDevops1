@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>WebService Callouts Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>WebService Callouts Logs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Code Traverse Log --></label>
+        <name>EC_CodeTraverseLog__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Message --></label>
+        <name>EC_ErrorMessage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Call --></label>
+        <name>EC_RequestCall__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Name --></label>
+        <name>EC_RequestName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Call --></label>
+        <name>EC_ResponseCall__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>EC_Status__c</name>
+    </fields>
+    <layouts>
+        <layout>WebService Callouts Log Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

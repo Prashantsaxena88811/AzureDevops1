@@ -1,0 +1,68 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable" access="global">
+    <aura:attribute name="serviceDetails" type="Map" default="" />
+    <aura:attribute name="showEnddate" type="Boolean" default="false"/>
+    <aura:attribute name="showEndDateValue" type="String" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.serviceDetails}" action="{!c.doInit}"/>
+    <div class="report-box">
+        <div class="slds-grid">
+            <div class="slds-col slds-size_11-of-12">
+                <div class="report-title">{!v.serviceDetails.service.customer.serviceAddress.serviceAddressName}&nbsp;{!v.serviceDetails.service.customer.serviceAddress.serviceAddressId}</div>
+            </div>
+            <div class="slds-col slds-size_1-of-12">
+                <div class="report-toggle">
+                    <span class="material-icons plus-icon">add</span>
+                    <span class="material-icons minus-icon">remove</span>
+                </div>
+            </div>
+        </div>
+        <div class="report-box-bottom">
+            <div class="slds-grid">
+                <div class="slds-col slds-size_6-of-12 slds-medium-size_4-of-12 slds-small-size_12-of-12">
+                    <ul class="service-type ">
+                        <aura:iteration items="{!v.serviceDetails.service.serviceSubTypes.serviceSubType}" var="serviceType" indexVar="indx">
+                            <li>{!serviceType.serviceSubTypeName}</li>
+                        </aura:iteration>
+                    </ul>
+                    <div class="cust-detail">
+                        <div class="cust-address-ln1 dsr-label">
+                            {!v.serviceDetails.service.customer.addressLine1}
+                        </div>
+                        <span class="cust-address dsr-label">
+                            {!v.serviceDetails.service.customer.city}, 
+                            {!v.serviceDetails.service.customer.state}&nbsp;{!v.serviceDetails.service.customer.postalCode}
+                        </span>
+                        <span class="cust-phn dsr-value">{!v.serviceDetails.service.customer.contact.phone}</span>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_6-of-12 slds-medium-size_8-of-12 slds-small-size_12-of-12 service-detail">
+                    <div class="serviced-by">
+                        <span class="dsr-label">{!$Label.c.EC_DSR_Servicedby}&nbsp;</span>
+                        <span class="dsr-value">{!v.serviceDetails.service.employeeName}, {!v.serviceDetails.service.employeeGeographies.employeeGeography[0].licenseID}</span>
+                    </div>
+                    <div class="invoice-line">
+                        <span class="dsr-label">{!$Label.c.EC_DSR_Invoice}&nbsp;</span>
+                        <span  class="dsr-value">{!v.serviceDetails.service.serviceName}</span>
+                        <aura:if isTrue="{!v.showEnddate}">
+                            <span  class="dsr-label end-date">{!$Label.c.EC_DSR_EndDate}&nbsp;</span>
+                            <span class="end-date-value dsr-value">
+                                <lightning:formattedDateTime value="{!v.showEndDateValue +'+00:00'}" year="numeric" month="numeric" day="numeric" hour="2-digit"
+                                                             minute="2-digit" timeZone="UTC" hour12="true"/>
+                            </span>
+                        </aura:if>
+                    </div>
+                    <div class="service-address">
+                        <aura:iteration items="{!v.serviceDetails.reportConfigurations.reportConfiguration}" var="report" indexVar="indx">
+                            <aura:if isTrue="{!report.reportConfigurationTypeID == $Label.c.EC_DSR_Json_PestPaymentPhone}">
+                                <span class="service-phn dsr-value">{!report.value}</span>
+                            </aura:if>
+                            <aura:if isTrue="{!report.reportConfigurationTypeID == $Label.c.EC_DSR_Json_PestAutoPayEmail}">
+                                <span class="service-mail dsr-value">{!report.value}</span>
+                            </aura:if>
+                        </aura:iteration>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

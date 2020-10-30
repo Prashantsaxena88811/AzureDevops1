@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CategoryTreeCache</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CategoryTreeCache</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Group --></label>
+        <name>EC_AccountGroup__c</name>
+        <relationshipLabel><!-- CategoryTreeCache --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CacheData --></label>
+        <name>EC_CacheData__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency --></label>
+        <name>EC_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Locale --></label>
+        <name>EC_Locale__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sequence --></label>
+        <name>EC_Sequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Storefront --></label>
+        <name>EC_Storefront__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

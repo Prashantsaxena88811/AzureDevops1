@@ -1,0 +1,41 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="message" type="String"  />
+    <aura:attribute name="status" type="String"   />
+    <aura:attribute name="label" type="String"   />
+    <aura:attribute name="isOpen" type="Boolean" default="true"  /> 
+    
+    <aura:if isTrue="{!v.isOpen}"> 
+        <div class = "popUpPrime">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <div class="{!'slds-modal__content slds-p-around_medium' + ' ' +  (v.status != '1001' ? 'orangeBox' : 'greenBox')}"  id="modal-content-id-1">
+                        <div><i class="{!'material-icons' + ' ' +  (v.status != '1001' ? 'error' : 'check_circle')}" ></i></div>
+                        <div><span class="{! (v.status != '1001' ? 'errorMsg' : 'successMsg')}">{!v.message}</span></div> 
+                        <!--Success (responseCode=1001) Or CaseStatus = Closed (responseCode=0000)-->
+                        <aura:if isTrue="{! or(v.status == '0000', v.status == '1001')}">  
+                            <!-- If label = 'Successfully Aligned' (Self Alignment) display OK button else display SIGN IN -->
+                            <aura:if isTrue="{! !(v.label == $Label.c.Self_Align_Success) }">
+                                <lightning:button class="slds-m-top_large slds-button_brand btn-login" label="SIGN IN" title="{!$Label.c.EC_SIGN_IN}" onclick="{! c.navToMainPage }"/>   
+                                <aura:set attribute="else">
+                                    <lightning:button class="slds-m-top_large slds-button_brand btn-login" label="{!$Label.c.EC_General_OK_Label}" onclick="{! c.closeModel }" />
+                                </aura:set>
+                            </aura:if>
+                            <!--Error popup-->
+                            <aura:set attribute="else">
+                                <!-- If email already exists (responseCode=1009) display Sign In button else display OK -->
+                                <aura:if isTrue="{! v.status == '1009'}">
+                                    <lightning:button class="slds-m-top_large slds-button_brand btn-login" label="SIGN IN" title="{!$Label.c.EC_SIGN_IN}" onclick="{! c.navToMainPage }"/>   
+                                    <aura:set attribute="else">
+                                        <span>{! $Label.c.Try_again }</span><br/>
+                                        <lightning:button class="slds-m-top_large slds-button_brand btn-login" label="{!$Label.c.EC_General_OK_Label}" onclick="{! c.closeModel }" />
+                                    </aura:set>
+                                </aura:if>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </aura:if>
+</aura:component>

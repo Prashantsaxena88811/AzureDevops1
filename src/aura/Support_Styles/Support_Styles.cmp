@@ -1,0 +1,358 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+	
+    <aura:html tag="style">
+        <!-- for all screens start-->
+        .siteforceContentArea{
+        background:#fff;
+        padding:0.8em;
+        margin:1em;
+        }
+        .ec_community_support_tabs
+        {
+        width: auto;
+        margin: auto;
+        }
+        .ec_community_support_tabs ul>li:before {
+        content: ' ' !important;
+        }
+        .slds-breadcrumb.slds-list_horizontal.slds-wrap{
+        padding-left: 0;
+        text-decoration: underline;
+        }
+        .slds-breadcrumb .slds-breadcrumb__item>a{
+        font-size: 0.9rem;
+        }
+        <!-- for all screens end-->
+        
+        <!-- Article all screens start-->
+        .forceTopicFeaturedTopics .featuredTopicHeader{
+        	font-family: Arial;
+            font-size: 20px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.57px;
+            color: #003660;
+            padding-bottom : 5px;
+        }
+        
+        community_article-topic-trending-articles-list li community_article-topic-trending-articles-item a.slds-border_bottom{
+        border-bottom:none;
+        }
+        community_article-topic-trending-articles-list li community_article-topic-trending-articles-item a>span.slds-text-body_small.slds-show{
+        font-family: Arial;
+        font-size: 1em;
+        font-weight: 100;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.34px;
+        color: #007ac9;
+        }
+        community_article-topic-trending-articles-list h2.slds-text-heading--small
+        {
+        font-family: Arial;
+        font-size: 20px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.57px;
+        color: #003660;
+        padding-top : 20px;
+        padding-bottom : 15px;
+        }
+        
+        .comm-topic-trending-articles .comm-topic-trending-articles__item>a{
+        	padding-top: 0.5em;
+        	padding-bottom: 0.5em;
+        }
+        .forceCommunityTopArticleList{
+        padding: 0px 20px 0 20px;
+        }
+        .forceCommunityTopArticleList .forceCommunityTopArticleListForTopic .topicHeaderLink{
+        font-family: Arial;
+        font-size: 20px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.57px;
+        color: #003660;
+        }
+        .forceCommunityTopArticleList .forceCommunityTopArticleListForTopic {
+        width: auto;
+        display:block;
+        }
+        .forceCommunityTopArticleList .forceCommunityTopArticleListForTopic .article-title {
+        font-family: Arial;
+        font-size: 1em;
+        font-weight: 100;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.34px;
+        color: #007ac9;
+        }
+        .selfServiceTopicRelatedArticle .headerLabel{
+        font-size: 20px;
+        }
+        .article-link>.article-head{
+        font-family: Arial;
+        font-size: 1em;
+        font-weight: 100;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.34px;
+        color: #007ac9;
+        }
+        .selfServiceBaseArticleList.selfServiceTopicArticleList li.article-item.selfServiceArticleListItem{
+        padding:10px 0;
+        border: none;
+        }
+        .selfServiceBaseArticleList.selfServiceTopicArticleList li.article-item.selfServiceArticleListItem .summary div.footer span:not(:first-child){
+        display:none;
+        }
+        .comm-layout-column+.slds-large-nowrap{
+        margin-top:0.5rem;
+        }
+        
+        .listTab.uiTabset--base.uiTabset--default.uiTabset.forceCommunityResultsList .tabs__nav li{
+        display:none;
+        }
+        .forceCommunityHeadline h1.headlineTitle{
+        text-align: left;       
+        font-family: Arial;
+        font-size: 20px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.57px;
+        color: #003660;
+        }
+        .forceSearchResultsRegion .kbResultStencil .slds-tile__detail{
+        display: none;
+        }
+        .forceSearchSearchResultsGridHeader+div li.slds-item{
+        	padding-left: 5px;
+        }
+        .forceSearchResultsRegion {
+            margin-left: 1em;
+            width: 95%;
+        }
+        .forceSearchSearchResultsGridHeader+div .forceOutputLookupWithPreview a.textUnderline {
+        border-bottom: none;
+        }
+        .forceCommunitySearch>div:first-child{ display:none;}
+        .forceSearchSearchResultsGridHeader{ display:none;}
+        .forceCommunityTopArticleList {
+        padding: 30px 20px 0 20px;
+        }
+        .forceSearchQueryExpansionMessage.forceSearchResultsList{
+        display:none;
+        }
+        .forceCommunityTopArticleListForTopic .topicHeader{
+        font-size: 1.5rem;
+        }
+        .forceCommunityTabset {
+        padding: 30px;
+        }
+        .comm-related-articles ul li a span{
+            font-family: Arial;
+            font-size: 1em;
+            font-weight: 100;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.34px;
+            color: #007ac9;
+        }
+        .comm-related-articles .comm-related-articles__item>a, .comm-related-articles .comm-related-articles__item>div{
+        	padding-top: 0.7rem;
+        	padding-bottom: 0.7rem;
+        }
+        .comm-related-articles .comm-related-articles__item>div{
+        	display:none !important;
+        }
+        .comm-related-articles>h2{
+        	padding-top: 3rem;
+        	padding-bottom: 0.75rem;
+        }
+        .listTab.uiTabset--base.uiTabset--default.uiTabset.forceCommunityResultsList div[role="tablist"]{
+        	display:none;
+        }
+        .forceSearchSearchResultsGridHeader+.listContent>.slds-has-dividers--bottom li{
+        	border:none;
+        }
+        community_article-similar-articles-item.comm-related-articles__item .slds-border_bottom{
+        	border:none;
+        }
+        <!-- article detail page css start-->
+        div[data-region-name="content"]>div[class="ui-widget"]>div.article-column>article.summary>.selfServiceArticleHeaderDetail{
+        margin-bottom:0.5rem;
+        }
+        .selfServiceArticleLayout .summary>div.selfServiceArticleHeaderDetail {
+        	display:none;
+        } 
+        .selfServiceArticleLayout .content>div>div:first-child {
+        	display:none;
+        }
+        .selfServiceArticleLayout .content>div>div:first-child {
+        	display:none;
+        }
+        .selfServiceArticleLayout .content .slds-form_stacked>div:first-child{
+        	display:none;
+        }
+        .selfServiceArticleLayout .content .slds-form_stacked .slds-form-element .slds-form-element__label {
+        	display:none;
+        }
+        .selfServiceArticleLayout .content .slds-form_stacked .slds-form-element .slds-form-element__label {
+        	display:none;
+        }
+        .selfServiceArticleLayout .content .slds-form_stacked .slds-form-element .itemBody{
+            margin-left:0;
+            font-family: Arial;
+            font-size: 1.2em;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.67;
+            letter-spacing: .34px;
+            color: #4d4f53;
+        }
+        .selfServiceArticleLayout .content .slds-form_stacked .slds-form-element {
+        	border-bottom: none;
+        }
+        .selfServiceArticleLayout .content .slds-form_stacked div[role="listitem"]
+        {
+        	margin-left:0;
+        }
+        .voting.selfServiceArticleLayout {
+        	margin: 0 1.5rem;
+        }
+        
+        div.article-column>article.summary+article.content .forcePageBlockSectionRow:last-child .test-id__field-label-container.slds-form-element__label+.slds-form-element__control.itemBody
+        {
+        margin-left:0;
+        font-family: Arial;
+        font-size: 1.2em;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.67;
+        letter-spacing: .34px;
+        color: #4d4f53;
+        }        
+        .forceCommunityArticleThumbVote .slds-card__body{
+        	float: none !important;
+        	margin: 0 !important; 
+        }
+        <!-- article detail page css end-->
+        <!-- Article all screens end-->
+        
+        <!-- case list and detail start -->
+        div[data-region-name="sidebar"] .oneActionsComposer.forceActionsContainer{
+        display:none;
+        }
+        div[data-region-name="sidebar"] .forceRelatedListSingleContainer:first-child table thead tr th:nth-child(2),
+        div[data-region-name="sidebar"] .forceRelatedListSingleContainer:first-child table tbody tr td:nth-child(2){
+        display:none;
+        }
+        a[href*='/account/'],a[href*='/detail/003']{
+        pointer-events: none;
+        color: rgb(26, 16, 16);
+        }
+        .slds-form-element__control .outputLookupLink{
+        pointer-events: none;
+        color: rgb(26, 16, 16);
+        }
+        .primaryFieldRow+ul{
+        display:none;
+        }
+        .slds-grid.primaryFieldRow:first-child{
+        margin-left: 0;
+        }
+        .slds-grid.primaryFieldRow:first-child button{
+        display:none;
+        }
+        .slds-grid.primaryFieldRow>.slds-grid:first-child{
+        padding-left: 0;
+        margin-left: 0;
+        }
+        .modal-body .slds-form.slds-form_stacked.slds-is-editing .forcePageBlockSectionRow+.forcePageBlockSectionRow{
+        display:none;
+        }
+        .PHONE.uiContainerManager .slds-form.slds-form_stacked.slds-is-editing .forcePageBlockSectionRow+.forcePageBlockSectionRow{
+        display:none;
+        }
+        .forceChatterPublisherQuickAction .activeState .slds-grid.bottomBar{
+        margin-left: 0;
+        }
+        .forceVirtualActionMarker.forceVirtualAction {
+        display: none;
+        }
+        .uiVirtualDataTable+.slds-table{
+        font-size:0.8rem;
+        }
+        .uiVirtualDataTable+.slds-table thead th:first-child,
+        .uiVirtualDataTable+.slds-table thead th:last-child,
+        .uiVirtualDataTable+.slds-table tbody td:first-child,
+        .uiVirtualDataTable+.slds-table tbody td:last-child
+        {
+        display: none;
+        }
+        .forceListViewManagerHeader>.slds-grid:last-child
+        {
+        justify-content: flex-end;
+        }
+        .forceListViewManagerHeader>.slds-grid:last-child .slds-col:first-child,
+        .forceListViewManagerHeader>.slds-grid:last-child .slds-col:last-child
+        {
+        display:none;
+        }
+        .forceListViewManagerHeader>.slds-grid:first-child {
+        	display: inline-flex;
+        }
+        .forceListViewManagerHeader>.slds-grid:last-child {
+        	float:right;
+        }
+        .comm-page-custom-create-case .siteforceDesignTimeComponent{
+        margin-left: 5rem;
+        }         
+        
+        <!-- case list start -->
+        .listViewPickerPanel li.slds-dropdown__item:nth-child(5) {
+        	display:none; 
+        }
+        .listViewPickerPanel li.slds-dropdown__item:nth-child(6) {
+        	display:none; 
+        }
+        
+        .uiVirtualDataTable tbody th .slds-grid, .uiVirtualDataTable tbody td .slds-grid {	
+        	margin-left: 0px;
+        	margin-right: 0px;
+        }
+        
+        .forceCommunityRecordListMobile .forceCommunityActionsContainerMobile .forceCommunityActionButtonMobile:first-child, 
+        .forceCommunityRecordListMobile .forceCommunityActionsContainerMobile .forceCommunityActionButtonMobile:nth-child(3){
+        	display:none; 
+        }
+        .forceActionRow.uiInfiniteListRow .swipeBody {
+        	display:none !important; 
+        }
+        .PHONE.uiContainerManager .container {
+        	height: 70%
+        }
+        @media (max-width: 1365px) and (min-width: 1024px){
+            .slds-grid {                
+        		margin-left: 25px;
+        		margin-right: 25px;
+            }
+        }
+        <!-- case list and detail end -->
+    </aura:html>
+    
+</aura:component>

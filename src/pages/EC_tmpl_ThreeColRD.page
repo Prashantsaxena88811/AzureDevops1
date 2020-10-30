@@ -1,0 +1,80 @@
+<!--
+
+  @Page Name     : EC_tmpl_ThreeColRD
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Pratyusha            6/21/2019          Three column layout
+
+--> 
+
+<apex:page id="EC_tmpl_ThreeColRD" controller="EC_ProductListController" applyHtmlTag="false" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false">
+	<div class="container cc_main_container cc_tmpl_ThreeColRD">
+		<!-- Main content three column layout -->
+		<div class="row cc_main_row">
+			<div class="col-md-2 cc_left_col">
+				<apex:insert name="WidgetBoxL" />
+				<apex:insert name="ProductSearch" />
+				<apex:insert name="PhoneSplash"/>
+				<!-- ISE-152904-->
+                <apex:outputPanel rendered="{!indirectStreetBrand = false}">
+                <div id="categories-left-nav"></div></apex:outputPanel><!-- placeholder for category tree in left nav -->
+                <!--ISE-152904-->
+				<apex:outputPanel rendered="{!buyOnline}">
+					<!--To hide QuickOrder for Mobile-->
+					<apex:outputPanel rendered="{!!(indirectStreetBrand)}">
+						<div class="search-box-LeftNav" />
+					</apex:outputPanel>
+				</apex:outputPanel>
+				<div class="filterContainer"></div>
+				<apex:insert name="ContactUs" />
+				<apex:outputPanel rendered="{!buyOnline}">
+					<!--To hide MiniCart for Mobile-->
+					<apex:outputPanel rendered="{!!(indirectStreetBrand)}">
+						<div class="promotion-box-LeftNav"></div>
+					</apex:outputPanel>	
+				</apex:outputPanel>
+				<apex:insert name="LeftNavX" />
+			</div>
+			<div class="cc_main_content_col {!If(buyOnline ,'col-md-8','col-md-10') }">
+				<div class="row cc_main_content_row">
+					<apex:insert name="WidgetBoxC" />
+					<apex:insert name="Banner" />
+					<div class="promotion-box-Banner"></div>
+					<div class="effwig"></div>
+                    <div class="search-box-RightNav" />
+					<apex:insert name="ProductSpotlight" />
+					<apex:insert name="body" />
+					<apex:insert name="PromosCenter" />
+					<apex:insert name="FeaturedProducts" />
+					<apex:insert name="GuideProducts" />
+					<apex:insert name="UpsellProducts" />
+					<apex:insert name="ProductReviews" />
+					<apex:insert name="CenterX" />
+				</div>
+			</div>
+			<apex:outputPanel rendered="{!(buyOnline)}">
+				<div class="col-md-2 cc_right_col right_column">
+					<div class="effright"></div>
+					<!--<div class="search-box-RightNav" />-->
+					<div id="MyAccount_navSection"></div> <!-- placeholder for MyAccount Nav in right nav -->
+					<apex:insert name="WidgetBoxR" />
+					<apex:outputPanel rendered="{!!(indirectStreetBrand)}">
+                      <apex:insert name="MiniQuickOrderBox" />
+                      <apex:insert name="MiniCartBox" />
+                  	</apex:outputPanel>
+					<apex:insert name="SellerLocatorBox"/>
+                    <apex:outputPanel rendered="{!indirectStreetBrand = false}">
+                    <div id="categories-right-nav"></div> <!-- placeholder for category tree in right nav -->
+                    </apex:outputPanel>
+					<div class="widgetSection"></div>				
+					<!--<c:cc_SFLiveChatWidget />-->
+					<apex:insert name="MiniWishListBox" />
+					<div class="promotion-box-RightNav"></div>
+					<apex:insert name="RightNavX" />
+				</div>
+			</apex:outputPanel>
+		</div>
+	</div>
+</apex:page>

@@ -1,0 +1,407 @@
+.THIS {
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4d4f53;
+    overflow:hidden;
+}
+.THIS .clsFieldset {    
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px groove;
+    display: block;    
+ }
+ 
+ .THIS .clsLegend {    
+    padding-left: 2px;
+    padding-right: 2px;
+    border: none;
+    display: block;
+ }
+
+.THIS .challengeLoaded {
+    width: 450px;
+    height: 500px;
+}
+
+.THIS.registration-wrapper {
+    padding-top: 24px;
+    padding-bottom: 83px;
+    background: #f7f7f7;
+}
+
+.THIS .form-container .slds-grid {
+    margin: 0;
+}
+
+.THIS .register-container {
+    box-sizing: border-box;
+    background: #fff;
+    padding: 0 5.269%;
+    height: auto;
+}
+
+.THIS .page-heading {
+    font-size: 18px;
+    font-weight: bold;
+    color: #373737;
+}
+
+.THIS .help-text {
+    font-size: 14px;
+    font-style: italic;
+    color: #4d4f53;
+    margin-left: 9px;
+    margin-top: 17px;
+    margin-bottom: 24px;
+}
+
+.THIS .reg {
+    width: 215px;
+    height: 36px;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    text-align: center;
+    color: #005172;
+}
+
+.THIS .blueBox {
+    border: solid 1px #d9d9d9;
+    background-color: #dff0fa;
+    margin-bottom: 0;
+    border-radius: 2px;
+    padding-left: 3.78%;
+}
+
+.THIS .bigBox {
+    box-sizing: border-box;
+    height: auto;
+    margin-bottom: 56px;
+    border-radius: 2px;
+    border: solid 1px #d9d9d9;
+    padding: 0 7.4% 0 2.9%;
+}
+
+.THIS .slds-select_container::before {
+    border-bottom: none;
+}
+
+.THIS .slds-select_container::after {
+    border-top: none;
+}
+
+.THIS .slds-select_container .slds-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("/resource/1561559330000/EC_Branding_Theme/images/icons/down-arrow.png") no-repeat right;
+    background-position: calc(100% - 14px) center;
+    background-size: 26px;
+    outline: 0;
+}
+
+.THIS .subheading {
+    font-size: 15px;
+    font-weight: bold;
+    color: #005172;
+    margin-left: 9px;
+}
+
+.THIS .ec_btn_primary {
+    width: 140px;
+    height: 42px;
+    letter-spacing: normal;
+    margin-left: 9px;
+    position: relative;
+}
+
+.THIS .ec_btn_primary:disabled {
+    font-size: 14px;
+    border-radius: 2px;
+}
+
+.THIS .text-filled input {
+    border: 1px solid #007ac9;
+}
+
+.THIS .slds-form-element.slds-has-error .slds-form-element__label {
+    color: inherit !important;
+}
+
+.THIS .country-code .slds-form-element.slds-has-error:after {
+    content: "";
+}
+
+.THIS .slds-button_neutral[disabled],
+.THIS .slds-button_neutral:disabled,
+.THIS .slds-button--neutral[disabled],
+.THIS .slds-button--neutral:disabled {
+    background-color: #adafaf;
+    cursor: default;
+}
+
+.THIS .slds-button[disabled],
+.THIS .slds-button:disabled {
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.THIS .slds-select {
+    height: 42px;
+    border-radius: 2px;
+    border: solid 1px #edeeef;
+    background-color: #ffffff;
+    outline: 0;
+}
+
+.THIS abbr {
+    display: none;
+}
+.THIS .account-security .information {
+    left: 175px;
+    top: 5px;
+    cursor: pointer;
+}
+.THIS .information i {
+    color: #2476ba;
+    font-size: 16px;
+}
+
+/* CSS for the Modal Box */
+.THIS .popUpPrime {
+    text-align: center;
+}
+
+.THIS .modalHeader {
+    visibility: hidden;
+}
+.THIS .slds-progress-bar__value {
+    height: 30px;
+  }
+.THIS .modalHeader .modalHeading {
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.3px;
+    color: #005172;
+}
+.THIS .slds-progress-bar_medium {
+    height: 30px;
+    width: 796px;
+    margin-left: 45px;
+    position:absolute;
+    top:35%;
+}
+.THIS .slds-progress-bar--medium {
+    height: 30px;
+    width: 796px;
+    margin-left: 45px;
+}
+.THIS .bodyHeading {
+    font-size: 24px;
+    padding: 8px;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    
+}
+
+.THIS .slds-radio{
+    display: inline;
+    margin-right: 5%;
+}
+.THIS .bodyHeading {
+    font-size: 24px;
+    padding: 8px;
+}
+
+
+@media screen and (min-width: 767px) {
+    .THIS .mobile-view {
+        display: none;
+    }
+}
+/* Media for Account Settings */
+
+/* Mobile devices */
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .THIS .slds-radio__label{
+        display:block;
+    }
+
+    .THIS {
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #4d4f53;
+    }
+
+    .THIS .mobile-view {
+        display: block;
+        background: #ffffff;
+    }
+
+    .THIS .desktop-view {
+        display: none;
+    }
+
+    .THIS .reg {
+        height: 26px;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1.18;
+        color: #005172;
+        text-align: left;
+    }
+
+    .THIS .page-heading {
+        height: 32px;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.35px;
+        color: #4d4f53;
+    }
+
+    .THIS .help-text {
+        width: 278px;
+        height: 62px;
+        font-family: 'Arial', 'Helvetica', sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: italic;
+        line-height: 1.33;
+        letter-spacing: normal;
+        color: #4d4f53;
+    }
+
+    .THIS .subheading {
+        width: 228px;
+        height: 16px;
+        font-family: 'Arial', 'Helvetica', sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.35px;
+        color: #005172;
+    }
+
+    
+    .THIS .slds-form-element.slds-has-error:after {
+        top: 35px !important;
+    }
+    .THIS .ec_btn_primary {
+        width: 100%;
+        height: 42px;
+        border-radius: 2px;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.4px;
+        text-align: center;
+        color: #ffffff;
+    }
+    
+    .THIS.registration-wrapper {
+        overflow: hidden;
+        padding-bottom: 40px;
+    }
+
+    .THIS .register-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .THIS .form-container {
+        margin: auto;
+    }
+    .THIS .blueBox, .THIS .reg  {
+        padding-left: 21px;
+        padding-right: 21px;
+    } 
+
+    .THIS .bigBox {
+        border: none;
+        padding: 0 21px;
+        margin-bottom: 0;
+    }
+
+    .THIS .ec_btn_primary {
+        margin-left: 0;
+    }
+
+    .THIS .input-pad-remove {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .THIS .subheading, .THIS .help-text {
+        margin-left: 0;
+    }
+    
+    .THIS .first-name-input,.THIS .country-code-input,.THIS .account-number-input {
+        padding-bottom: 18px;
+    }
+    .THIS .slds-progress-bar_medium {
+        width: 246px;
+        margin: 0 auto;
+        height: 20px;
+        
+    }
+    .THIS .slds-progress-bar--medium {
+        width: 246px;
+        
+    }
+    .THIS .slds-progress-bar__value {
+        height: 20px;
+      }
+}
+@media screen and (max-width: 1365px) and (min-width: 768px){
+    .THIS .slds-show_large{
+        display: none;
+    }
+    .THIS .modalHeader{
+        visibility: hidden;
+    }
+    .THIS .slds-modal__content {
+        width: 544px;
+        height: 198px;
+        background-color: #ffffff;
+        border-radius: 4px;
+        visibility: visible;
+        display: grid;
+        margin: 0 auto;
+    
+    }
+    .THIS .slds-progress-bar_medium {
+        width: 435px;
+        margin: 0 auto;
+        height: 20px;
+        margin-left: 5.5%;
+    }
+    .THIS .slds-progress-bar--medium {
+        width: 435px;
+        height: 20px;
+        margin: 0 auto;
+    }
+    .THIS .slds-progress-bar__value {
+        height: 20px;
+      }
+}
+/*Tablet*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .THIS .slds-radio{
+        display: inline;
+        margin-right: 2%;
+    }
+    
+}

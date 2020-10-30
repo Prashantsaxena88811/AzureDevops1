@@ -1,0 +1,6 @@
+<messaging:emailTemplate subject="{!If(relatedTo.ccrz__Order__r.OrderRushEmail__c==True, $Label.EC_rush_order_submit_mail_subject,$Label.EC_order_submit_mail_subject)} {!relatedTo.ccrz__Order__r.Name}" recipientType="User" relatedToType="ccrz__E_OrderItemGroup__c">
+<messaging:plainTextEmailBody >
+TEST ORDER DO NOT PROCESS
+    <c:EC_OrderSubmitEmail orderId="{!relatedTo.ccrz__Order__c}"/>
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

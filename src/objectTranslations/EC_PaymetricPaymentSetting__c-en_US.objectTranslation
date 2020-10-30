@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EC Paymetric Payment Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EC Paymetric Payment Setting</value>
+    </caseValues>
+    <fields>
+        <label><!-- Access Token Endpoint --></label>
+        <name>Access_Token_Endpoint__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ajax Endpoint --></label>
+        <name>Ajax_Endpoint__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tokenization Endpoint --></label>
+        <name>EndPoint__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merchant GUID --></label>
+        <name>MerchantGUID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pre Auth Amount --></label>
+        <name>PreAuthAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pre-Auth Only --></label>
+        <name>Pre_Auth_Only__c</name>
+    </fields>
+    <fields>
+        <label><!-- Redirect URL --></label>
+        <name>RedirectURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Packet Endpoint --></label>
+        <name>Response_Packet_Endpoint__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shared Key --></label>
+        <name>SharedKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- XiPay Endpoint --></label>
+        <name>XiPayEndpoint__c</name>
+    </fields>
+    <fields>
+        <label><!-- XiPay Merchant ID --></label>
+        <name>XiPayMerchantID__c</name>
+    </fields>
+    <fields>
+        <label><!-- XiPay Password --></label>
+        <name>XiPayPassword__c</name>
+    </fields>
+    <fields>
+        <label><!-- XiPay Soapaction --></label>
+        <name>XiPaySoapaction__c</name>
+    </fields>
+    <fields>
+        <label><!-- XiPay Username --></label>
+        <name>XiPayUsername__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

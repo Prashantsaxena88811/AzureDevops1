@@ -1,0 +1,39 @@
+<!--
+
+  @Component Name     : EC_PLPSearch
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Srishti              7/09/2019         Search on PLP.
+
+--> 
+
+<apex:component >
+    
+    <script id="SidebarSearch-View-Desktop" type="text/template">
+        <div class="panel panel-default cc_panel cc_product_search_panel plpsearchwrapper">
+            
+            <div class="panel-body cc_body">
+                
+                <div class="input-group form-group plpsearchcont">
+                    <input name="sidebarSearchText" type="text" class="form-control cc_sidebar_search_text search_input1" placeholder="{{pageLabelMap 'EC_PLPSearchPlaceholder'}}" title="{{pageLabelMap 'ProductSearch_Tooltip'}}" autocomplete="off" />
+                    <div class="input-group-btn search_button">
+                        <button name="sidebarSearchButton" class="btn btn-default sidebarSearchButton cc_sidebar_search_button" type="submit" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{pageLabelMap 'ProductSearch_Tooltip'}}">
+                            <i class="material-icons search" aria-hidden="true"></i> <!--*****************************-->
+                        </button>
+                    </div>
+                </div>
+                <div class="searchBoxError cc_searchbox_error" role="alert" style="display:none;">
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                    <span class="sr-only">Error:</span>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script>
+        jQuery(function ($) {
+            //CCRZ.uiProperties.searchWidget.tmpl = 'EC-SidebarSearch-View-Desktop';       
+        });
+    </script>
+</apex:component>

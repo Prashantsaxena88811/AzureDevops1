@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Ecolab Connect Breached Response SLA Template</name>
+    <style>none</style>
+    <subject>IMPORTANT: Ecolab Connect {!Case.CaseNumber} Breached Response SLA</subject>
+    <textOnly>Hello,
+
+Case {!Case.CaseNumber} - {!Case.Subject} has been assigned to your queue but has not yet been assigned to an Agent within the defined timeframe of our Service Level Agreement (SLA).  An Agent needs to accept the assignment of this case as soon as possible via the Salesforce Service Cloud Console in order to maintain our customer support and satisfaction levels.
+
+Thank you,
+
+Ecolab Support Team
+
+-----
+
+Please do not reply to this email.  This is a system generated email to inform you of an Ecolab Connect Case assigned to your Queue breaching an SLA.  This message was generated from https://connect.ecolab.com.
+
+ECOLAB
+Global Headquarters
+1 Ecolab Place, St. Paul MN 55102
+Ecolab.com
+Privacy Policy
+© 2020 Ecolab Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

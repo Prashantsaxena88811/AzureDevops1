@@ -1,0 +1,128 @@
+<!--
+
+  @Component Name     : EC_QuickList
+  
+  ==============================================================================
+  Author                Date              @Description
+  ==============================================================================
+  Pratyusha             6/24/2019         Quicklist popup
+
+--> 
+
+<apex:component > 
+    <script id="EC-AddtoWishlist-Desktop" type="text/template">
+        <div class="btn-group dropdown form-group qldrpdwn ">
+            <span class="ql-dropdown-icon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="{!URLFOR($Resource.EC_EcoLabs_Theme, 'images/outline-add-box.svg')}" class="ga-quicklist del ec-clickable"></img></button>
+                {{#if this}}
+                    {{#each this}}
+                        {{#if isActive}}
+                            <span class="qltext abc" data-id="{{sfid}}">{{pageLabelMap 'EC_Quicklist'}}</span>
+                        {{/if}}
+                        {{#if noActive}}
+                            <span class="qltext def" data-id="-1">{{pageLabelMap 'EC_Quicklist'}}</span>
+                        {{/if}}
+                    {{/each}}
+                {{else}}
+                    <span class="qltext ghi"  data-id="-1">{{pageLabelMap 'EC_Quicklist'}}</span>
+                {{/if}}
+            </span>
+            <ul class="dropdown-menu ql-dropdown" aria-labelledby="dropWish">
+                <div class="ql-head clearfix">
+                    {{pageLabelMap 'EC_Quicklist'}}
+                    <button type="button" class="closeql pull-right"><i class="material-icons">close</i></button>
+                </div>  
+                <hr>
+                <div class="li-container">        
+                {{#each this}}
+                    <li class="ql-radio-item"><input type="radio" value="{{sfid}}" data-name="{{{name}}}" name="qlrdo" class="ql-radio"><span class="rdo-name">{{{name}}}</span><br></li>
+                {{/each}}
+                 </div> 
+                <li role="separator" class="divider"></li>
+                <li>
+                    <div class="center-block">
+                        <div class="">
+                            
+                            <input id="newWishList" type="text" class="newListName form-control" />
+                        </div>
+                    </div>
+                </li>
+                <li><a href="javascript:void(0);" class="pickWish pickWish1 btn btn-primary ec-btn-secondary createTemplate" data-id="-1">{{pageLabelMap 'Action_CreateWishlist'}}</a>
+                    <button type="button"class="btn btn-primary savebtnmsg ec-btn-primary quickSave" disabled><a href="javascript:void(0);"></a><span class="savebtn">{{pageLabelMap 'EC_Save'}}</span></button>
+                </li>
+                
+            </ul>
+        </div>
+    </script>
+    <script>
+        jQuery(function ($) {
+            CCRZ.uiProperties.wishlistPickerModal.desktop.tmpl = 'EC-AddtoWishlist-Desktop';
+            CCRZ.pubSub.on("view:wishlistPickerModal:refresh", function (viewInstance) {
+                setHeaderViewData(CCRZ.views.wishlistPickerModal.prototype, viewInstance);
+                viewInstance.setElement(viewInstance.$el);
+            });
+            var setHeaderViewData = function (wishListView, thisView) {
+                // function to enable save button on selecting a radio button
+                wishListView.selectql = function (event) {
+                    console.log(event.target.value);
+                    var labelname = $(event.target).data("name");
+                    $(".quickSave").attr({ "data-id": event.target.value, class: "ec-btn-primary savebtnmsg quickSave", "data-name": labelname });
+                    $(".quickSave").removeAttr("disabled");
+                }
+                wishListView.clickonclose = function (event) {
+                    event.stopPropagation();
+                }
+                wishListView.xtoclose = function (event) {
+                    $(".qldrpdwn").attr("class", "btn-group dropdown form-group qldrpdwn");
+                }
+                // function to save and show message
+                wishListView.qlmessage = function (event) {
+                    var objLink = $(event.target);
+                    var id = objLink.data("id");
+                    var parentObj = objLink.closest('.wishFinder');
+                    var sku = parentObj.data("sku");
+
+                    var createName = objLink.closest(CCRZ.uiProperties.wishlistPickerModal.nameSelector).find('.newListName').val();
+                    if(createName == "")
+                        
+                        {
+                         	$('body').append('<div class="qlnotification"><i class="material-icons tickmessage done"></i>' + CCRZ.pagevars.pageLabels.EC_QLNotification +  "" + CCRZ.pagevars.pageLabels.EC_the_quicklist + '</div>');
+                        }
+                    else {
+                    		$('body').append('<div class="qlnotification"><i class="material-icons tickmessage done"></i>' + CCRZ.pagevars.pageLabels.EC_QLNotification + ' ' + '<b>' +'"' + ' ' + createName + ' "'+ ' ' +'</b>' + '</div>');
+                    	  }
+                        $(window).scrollTop(0);
+                }
+                // function to save and show message
+                wishListView.qlmsave = function (event) {
+                    var mname = $(".savebtnmsg").attr("data-name");
+                    var obj = $(event.target);
+     				var val = obj.closest(".quickSave").data("id");
+                    //this.processAddItem(objLink, id);
+                    var parentObj = obj.closest('.wishFinder');
+                    var sku = parentObj.data("sku");
+                    var createName = obj.closest(CCRZ.uiProperties.wishlistPickerModal.nameSelector).find('.newListName').val();
+                    var v = this;
+                    this.invokeContainerLoadingCtx($('.deskLayout'), 'handleAddtoWishlist', sku, val, createName, function(response) {
+                        CCRZ.pubSub.trigger('refreshWishlists', val);
+                        if (val == '-1') {
+                            v.refresh();
+                        }
+                    });
+                    if(mname == ""){
+                    	$('body').append('<div class="qlnotification"><i class="material-icons tickmessage done"></i>' + CCRZ.pagevars.pageLabels.EC_QLNotification +   createName   + '</div>');
+                    }else {
+                    	$('body').append('<div class="qlnotification"><i class="material-icons tickmessage done"></i>' + CCRZ.pagevars.pageLabels.EC_QLNotification + ' '+ '<b> ' +'"'+ ' '  + mname + ' ' +'"' +'</b>' + '</div>');
+                 	}   
+                    $(window).scrollTop(0);
+                }
+                var events = wishListView.events;
+                events["change .ql-radio"] = "selectql";
+                events["click .ql-dropdown"] = "clickonclose";
+                events["click .closeql"] = "xtoclose";
+                events["click .pickWish1"] = "qlmessage";
+                events["click .savebtnmsg"] = "qlmsave";
+            }
+        });
+    </script>
+</apex:component>

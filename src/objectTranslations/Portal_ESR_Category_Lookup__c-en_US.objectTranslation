@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Portal ESR Category Lookup</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Portal ESR Category Lookup</value>
+    </caseValues>
+    <fields>
+        <label><!-- CalculatedKey --></label>
+        <name>CalculatedKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cat 1_4 Chars --></label>
+        <name>Cat_1_4_Chars__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cat 1_8 Chars --></label>
+        <name>Cat_1_8_Chars__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cat 1 Code --></label>
+        <name>Cat_1_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cat 1 Text --></label>
+        <name>Cat_1_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cat 2_4 Chars --></label>
+        <name>Cat_2_4_Chars__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cat 2_8 Chars --></label>
+        <name>Cat_2_8_Chars__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cat 2 Code --></label>
+        <name>Cat_2_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cat 2 Text --></label>
+        <name>Cat_2_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cat 3 Code --></label>
+        <name>Cat_3_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cat 3 Text --></label>
+        <name>Cat_3_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cat 4 Code --></label>
+        <name>Cat_4_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cat 4 Text --></label>
+        <name>Cat_4_Text__c</name>
+    </fields>
+    <fields>
+        <help><!-- Show to Customer? --></help>
+        <label><!-- Show on Portal --></label>
+        <name>Show_on_Portal__c</name>
+    </fields>
+    <layouts>
+        <layout>Portal ESR Category Lookup Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

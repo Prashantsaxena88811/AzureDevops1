@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send notification to customer whenever case is created.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Case Create Notification to Customer</name>
+    <style>none</style>
+    <subject>Confirming your Ecolab Case {!Case.CaseNumber}</subject>
+    <textOnly>Hello {!Case.Contact},
+
+Thank you for contacting the Ecolab Support Team. This message is to confirm that we have received your request and have opened a case for your issue regarding {!Case.Subject}.
+
+For your reference, your case number is {!Case.CaseNumber} and and you can check on the status of your case by clicking the following link:
+
+{!$Label.Ecolab_Community_URL}{!Case.Id}
+
+If you are unable to click the above link, please copy and paste it into your browser&apos;s address bar.
+
+
+Thank you for being an Ecolab customer.
+
+Best,
+
+Ecolab Support Team
+
+-----
+
+Please do not reply to this email.  This is a system generated email to inform you of updates to your Ecolab Case.  This message was generated from https://connect.ecolab.com.
+
+ECOLAB
+Global Headquarters
+1 Ecolab Place, St. Paul MN 55102
+Ecolab.com
+Privacy Policy
+© 2020 Ecolab Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

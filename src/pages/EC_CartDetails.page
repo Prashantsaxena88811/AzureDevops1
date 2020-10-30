@@ -1,0 +1,17 @@
+<!--/*******************************************************************************************************
+* @Class Name       EC_CartDetails
+* @description      Page to extend the Cart page
+* @Created By       Ravindra Singh
+* @Created On       2019-06-06
+********************************************************************************************************
+* Modification Log: 
+* ------------------------------------------------------------------------------------------------------
+* Developer                Date                         Description 
+* ------------------------------------------------------------------------------------------------------
+* Ravindra       6th Jun 19                 Created the page
+
+********************************************************************************************************/-->
+<apex:page docType="html-5.0" sidebar="false" showHeader="false"  standardStylesheets="false" applyHtmlTag="false">
+    <c:EC_CartItemDetailView />
+     <c:EC_CartEmailModal />
+</apex:page>

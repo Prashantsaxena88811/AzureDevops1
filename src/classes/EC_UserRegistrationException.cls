@@ -1,0 +1,1 @@
+public class EC_UserRegistrationException extends Exception { }

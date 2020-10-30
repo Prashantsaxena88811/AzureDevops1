@@ -1,0 +1,426 @@
+html {
+    width: 100% !important;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #FFFFFF;
+    font-size: 13px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+#div {
+    padding-top: 35px;
+}
+
+#div:nth-child(3),#div:nth-child(4) {
+    float: left;
+    margin-right: 3.4%;
+}
+
+#div:nth-child(5) {
+    float: left;
+}
+
+label {
+    height: 24px;
+    line-height: 24px;
+    padding-right: 5px;
+    display: block;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4d4f53;
+    margin-bottom: 9px;
+}
+
+input, select {
+    padding: 6px 12px;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.46px;
+    color: #4d4f53;
+}
+
+select {
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right;
+    -webkit-appearance: none;
+    background-position-x: 96%;
+}
+
+#c-ct {
+    width: 244px;
+    height: 42px;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+    border: solid 1px #d9d9d9;
+}
+
+#c-cardname, #c-cardnumber {
+    width: 244px;
+    height: 42px;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+    border: solid 1px #d9d9d9;
+}
+
+#c-exmth, #c-exyr {
+    width: 110px;
+    height: 42px;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+    border: solid 1px #d9d9d9;
+    background-position-x: 90%;
+}
+
+#c-cvv {
+    width: 110px;
+    height: 42px;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+    border: solid 1px #d9d9d9;
+}
+
+#c-exmth {
+    margin-right: 0.5em;
+}
+
+.merchant_combos {
+    margin-right: 0px;
+}
+
+input::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.46px;
+  color: #4d4f53;
+}
+
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  opacity: 1;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.46px;
+  color: #4d4f53;
+}
+
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  opacity: 1;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.46px;
+  color: #4d4f53;
+}
+
+input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.46px;
+  color: #4d4f53;
+}
+
+.paymetric-content .footer {
+    width: 450px;
+    text-align: right;
+    margin: 4px auto;
+}
+
+.payment-content {
+    border: solid 2px #F0F0F0;
+    width: 450px;
+    border-radius: 15px;
+    margin: 20px auto 0 auto;
+}
+
+.merchant-logo {
+    background: #FFF url('../Images/acme.png') no-repeat right top;
+    height: 150px;
+    width: 400px;
+    margin: auto;
+    background-size: 60%;
+    background-position: center;
+}
+
+.billing-content {
+    background-color: #F0F0F0;
+    margin: auto;
+    padding: 4px 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.billing-header {
+    background-color: transparent;
+    width: 96%;
+    margin: auto;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 0;
+}
+
+.billing-info {
+    background-color: #FFF;
+    width: 96%;
+    margin: auto;
+    border: solid 2px #FFF;
+    border-radius: 8px;
+}
+
+.payment-button {
+    background-color: transparent;
+    width: 96%;
+    margin: auto;
+    padding: 5px 0;
+    text-align: right;
+}
+
+    .payment-button input {
+        border: none;
+        border-radius: 3px;
+        font-weight: bold;
+        color: #FFF;
+        padding: 2px 10px;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .payment-button .cancel-button {
+        background-color: #BBB;
+        border: solid 1px #BBB;
+        margin-right: 10px;
+    }
+
+    .payment-button .submit-button {
+        background-color: #0099FF;
+        border: solid 1px #0099FF;
+    }
+
+.payment-content #c-content div,
+.payment-content #ec-content div {
+    border-top: solid 1px #e5e5e5;
+    padding: 3px 2px;
+    margin: 0 10px;
+}
+
+.payment-content div #c-cvvh {
+    border-top: none;
+}
+
+[name='dieCommFrame'] {
+    padding-left: 5px;
+    overflow: hidden !important;
+}
+
+.IFrameButton {
+    border: 1px solid rgb(124, 123, 123);
+    background-color: #F0F0F0;
+    border-radius: 2px 3px;
+    padding: 4px;
+    margin: 20px 0 5px 310px;
+}
+/* IFrame styles*/
+#html-main-content {
+    width: 100%;
+}
+
+#c-ct-error {
+    display: inherit !important;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #e00034;
+    padding-top: 3px;
+}
+
+#c-cardnumber-error {
+    max-width: 244px;
+}
+
+#c-exmth-error {
+    display: none !important;
+}
+
+.valmsg {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #e00034;
+    padding-top: 3px;
+}
+
+.valmsg-ac-type {
+    margin-left: 35px;
+    color: #c63b3b;
+}
+
+.valmsg-img {
+    background-image: url("../Images/red-info.png");
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+.errorTooltip {
+    background-color: white;
+    border: 1px solid #626161;
+    color: #c63b3b;
+    border-radius: 7px;
+}
+
+.xiInputError {
+    border: solid 1px #e00034 !important;
+    background-color: #ffffff;
+}
+
+.PaymentDetailHeader {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(232, 6, 6);
+    color: white;
+    height: 20px;
+    padding-top: 2px;
+    /*margin: 5px 0;*/
+}
+
+.cardIndicator {
+    display: inline-flex;
+    padding-top: 20px;
+}
+
+.mcIndicator {
+    background-image: url("../Images/mc.png");
+    width: 33px;
+    height: 26px;
+    vertical-align: middle;
+    margin-left: 40px;
+    opacity: .3;
+}
+
+.viIndicator {
+    background-image: url("../Images/visa.png");
+    width: 35px;
+    height: 22px;
+    vertical-align: middle;
+    margin-left: 40px;
+    opacity: .3;
+}
+
+.axIndicator {
+    background-image: url("../Images/amex1.png");
+    width: 27px;
+    height: 25px;
+    vertical-align: middle;
+    margin-left: 40px;
+    opacity: .3;
+}
+
+.customIndicator {
+    background-image: url("../Images/red-info.png");
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-left: 40px;
+    opacity: .3;
+}
+
+.mcIndicator.selected {
+    opacity: 1;
+}
+
+.viIndicator.selected {
+    opacity: 1;
+}
+
+.axIndicator.selected {
+    opacity: 1;
+}
+
+.customIndicator.selected {
+    opacity: 1;
+}
+/*float labels*/
+.floatLabelSection label {
+    opacity: 0;
+}
+
+.inputdiv {
+    position: relative;
+    margin-left: 130px;
+}
+
+.inputdiv > input {
+    height: 33px;
+    padding-top: 12px;
+    padding-left: 6px;
+}
+
+.inputdiv > label {
+    opacity: 0;
+    height: 0;
+}
+
+.inputdiv .valmsg {
+    margin-left: 0;
+}
+
+.inputdiv input:valid + label, .inputdiv input:valid + span +label {
+    opacity: 1;
+    top: 100%;
+    position: absolute;
+    left: 3px;
+    top: -12%;
+    height: 24px;
+    /*margin-left: -228px;
+    margin-top: -40px;*/
+    color: red;
+    font-size: 10px;
+    text-align: left;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.expMonthRequiredDisplayNone {
+    display: none;
+}
