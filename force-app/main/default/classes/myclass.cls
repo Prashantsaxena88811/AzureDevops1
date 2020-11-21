@@ -311,7 +311,7 @@ global class DataSetup implements Database.Batchable<sObject>,Database.AllowsCal
                          }
                      }
                      if(whereClause!=null && whereClause!=''){
-                         whereClause =whereClause +'+'+parentFieldCheck;
+                         whereClause =whereClause +'+AND+'+parentFieldCheck;
                      }else{
                          whereClause = '+where+'+parentFieldCheck+'+';
                      }
