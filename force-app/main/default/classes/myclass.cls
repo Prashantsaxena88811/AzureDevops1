@@ -117,7 +117,7 @@ global class DataSetup implements Database.Batchable<sObject>,Database.AllowsCal
             }
             System.debug('whereClause->'+whereClause);
             if(whereClause != null && whereClause!=''){
-               whereClause = whereClause+')'; 
+                whereClause = whereClause+')'; 
             }
             
             System.debug('whereClause->'+whereClause);
@@ -182,7 +182,7 @@ global class DataSetup implements Database.Batchable<sObject>,Database.AllowsCal
         return Ids;
     }
     
-    public String returnEndpointURL(String whereClause,String Ids,String accountGroupIds , List<String> parentRelationInfo){
+    public String returnEndpointURL(String whereClause,String Ids, List<String> parentRelationInfo){
         String endpointUrl;
         if(whereClause !=null && whereClause!='' ){
             if( currentsObject.SObjectRecordLimit__c !=null ){
@@ -242,7 +242,7 @@ global class DataSetup implements Database.Batchable<sObject>,Database.AllowsCal
         }
         return endpointUrl;
     }
-   
+    
     global void execute(Database.BatchableContext BC, List<SObject_Data_Sync_Configuration__mdt> confugurationList) {	// expecting a single record here
         try{
             
@@ -284,23 +284,23 @@ global class DataSetup implements Database.Batchable<sObject>,Database.AllowsCal
                      String Ids ='';
                      //integer idCount = 0;//max 600
                      Ids = createInquery(objectNameToOld_NewId.get(parentRelationInfo[0]).keySet() , 550);
-
+                     
                      Ids = '('+Ids+')';
                      
                      //System.debug('retrieveFilterOfObject()---->'+whereClause);
                      String accountGroupIds = '';
                      /*if(currentsObject.sObjectAPIName__c == 'ccrz__E_AccountGroupPriceList__c'){
-                         accountGroupIds = createInquery(objectNameToOld_NewId.get('ccrz__E_AccountGroup__c').keySet(),50);
-                        
-                         accountGroupIds = '('+accountGroupIds+')';
-                     } */
+accountGroupIds = createInquery(objectNameToOld_NewId.get('ccrz__E_AccountGroup__c').keySet(),50);
+
+accountGroupIds = '('+accountGroupIds+')';
+} */
                      
-                    /* if(currentsObject.sObjectAPIName__c == 'ccrz__E_PriceListItem__c'){
-                         accountGroupIds = '';// productids when query pricelistitem
-                         accountGroupIds = createInquery(objectNameToOld_NewId.get('ccrz__E_Product__c').keySet(),500);
-                         
-                         accountGroupIds = '('+accountGroupIds+')';
-                     }*/
+                     /* if(currentsObject.sObjectAPIName__c == 'ccrz__E_PriceListItem__c'){
+accountGroupIds = '';// productids when query pricelistitem
+accountGroupIds = createInquery(objectNameToOld_NewId.get('ccrz__E_Product__c').keySet(),500);
+
+accountGroupIds = '('+accountGroupIds+')';
+}*/
                      String whereClause = retrieveFilterOfObject();
                      String parentFieldCheck='';
                      for(String parentField :parentRelations){
@@ -315,20 +315,28 @@ global class DataSetup implements Database.Batchable<sObject>,Database.AllowsCal
                      }else{
                          whereClause = '+where+'+parentFieldCheck+'+';
                      }
-                     endpointUrl = returnEndpointURL(whereClause,Ids,accountGroupIds,parentRelationInfo);
-                     System.debug('returnsObjectData-endpointUrl>'+endpointUrl); 
-                     //
-                     //parent field must be null , if for the sobject parent exists.
+                     if( !(currentsObject.sObjectAPIName__c == 'ccrz__E_ProductSpec__c' 
+                           || currentsObject.sObjectAPIName__c == 'ccrz__E_ProductMedia__c'
+                           ||  currentsObject.sObjectAPIName__c == 'ccrz__E_ProductCategory__c') ){
+                               endpointUrl = returnEndpointURL(whereClause,Ids,parentRelationInfo);
+                               System.debug('returnsObjectData-endpointUrl>'+endpointUrl); 
+                               //parent field must be null , if for the sobject parent exists.
+                               returnsObjectData(endpointUrl,true,parentRelationInfo); 
+                           }else{
+                               // process child records of Products , product size can be > 500//
+                              // if(currentsObject.sObjectAPIName__c == 'ccrz__E_ProductSpec__c' ){
+                                   endpointUrl = objAuthenticationInfo.instance_url+'/services/data/v49.0/query/?q='+'Select+Id,'+currentsObject.Fields__c+'+FROM+'+currentsObject.sObjectAPIName__c;
+                                   processChildRecordsOfProducts(endpointUrl);
+                              // }
+                               
+                           }
                      
-                     //endpointUrl=endpointUrl+parentFieldCheck;
-                     //
-                     returnsObjectData(endpointUrl,true,parentRelationInfo);
                  }else{
                      String whereClause ='';
                      System.debug('******************');
                      //if parent exist for this sobject for now only for single for single parent.
                      endpointUrl = objAuthenticationInfo.instance_url+'/services/data/v49.0/query/?q='+'Select+Id,'+currentsObject.Fields__c+'+FROM+'+currentsObject.sObjectAPIName__c; 
-                      
+                     
                      whereClause = retrieveFilterOfObject();
                      if(whereClause !=null && whereClause!='' ){
                          endpointUrl=endpointUrl+whereClause; 
@@ -337,88 +345,14 @@ global class DataSetup implements Database.Batchable<sObject>,Database.AllowsCal
                          parentRelations = currentsObject.Parent_Relations__c.split('-');
                      }
                      if(currentsObject.sObjectAPIName__c == 'ccrz__E_PriceList__c'){
-                         /*Map<String, Object> responseMap = new Map<String, Object>();
-                         // query on accountgroup pricelist to retrieve the pricelist IDs
-                         String accountgroupPricelist = objAuthenticationInfo.instance_url+'/services/data/v49.0/query/?q='+'Select+Id,ccrz__AccountGroup__c,ccrz__Pricelist__c+from+ccrz__E_AccountGroupPriceList__c+WHERE+ccrz__AccountGroup__c+IN+';
-                         String Ids ='';
-                         //integer idCount = 0;//max 500
-                         Ids = createInquery(objectNameToOld_NewId.get('ccrz__E_AccountGroup__c').keySet() , 500);
-                         Ids = '('+Ids+')';
-                         accountgroupPricelist = accountgroupPricelist+Ids;
-                         System.debug('accountgroupPricelist-->'+accountgroupPricelist);
-                         responseMap = fetchSobejctData(accountgroupPricelist);
-                         List<Sobject> accountGrpsobjectList = new List<Sobject>();
-                         accountGrpsobjectList = (List<Sobject>)JSON.deserialize(JSON.serializePretty(responseMap.get('records')), List<Sobject>.Class);
-                         String priceListIds ='';
-                         Integer idCount = 0;//max 500
-                         //make set of Pricelist Ids
-                         for(Sobject accountGrpsobjectvar : accountGrpsobjectList ){
-                             if(idCount == 500 )
-                                 break;
-                             if(accountGrpsobjectvar.get('ccrz__Pricelist__c') != null && accountGrpsobjectvar.get('ccrz__Pricelist__c') != '' && (!priceListIds.containsIgnoreCase( String.valueOf(accountGrpsobjectvar.get('ccrz__Pricelist__c')) ))  ){                      
-                                 idCount = idCount + 1;
-                                 if(priceListIds ==''){
-                                     priceListIds =   '\''+accountGrpsobjectvar.get('ccrz__Pricelist__c')+'\'';
-                                 }else{
-                                   priceListIds =priceListIds+','+ '\''+accountGrpsobjectvar.get('ccrz__Pricelist__c')+'\''; 
-                                 }
-                                 
-                             }
-                         }
-                         priceListIds = '('+priceListIds+')';
-                         System.debug('endpointUrl11--->'+endpointUrl);
-                         if(whereClause !=null && whereClause!='' ){
-                             endpointUrl=endpointUrl+'+AND+Id+IN+'+priceListIds; 
-                             System.debug('endpointUrl21--->'+endpointUrl);
-                         }else{
-                             endpointUrl=endpointUrl+'+WHERE+Id+IN+'+priceListIds; 
-                             System.debug('endpointUrl41--->'+endpointUrl);
-                         }
-                         responseMap.clear();*/
-                         endpointUrl =  buildQueryForObject(endpointUrl,whereClause);
+                        
+                         buildQueryForObject(endpointUrl,whereClause);
                      }
                      else if(currentsObject.sObjectAPIName__c == 'ccrz__E_Product__c'){
-                       /*  Map<String, Object> responseMap = new Map<String, Object>();
-                         // query on accountgroup pricelist to retrieve the pricelist IDs
-                         String priceListItem = objAuthenticationInfo.instance_url+'/services/data/v49.0/query/?q='+'Select+Id,ccrz__Product__c+from+ccrz__E_PriceListItem__c+WHERE+ccrz__Product__c+!=NULL+AND+ccrz__Pricelist__c+IN+';
-                         String Ids ='';
-                         //integer idCount = 0;//max 500
-                         Ids = createInquery(objectNameToOld_NewId.get('ccrz__E_PriceList__c').keySet() , 500);
-                         Ids = '('+Ids+')';
-                         priceListItem = priceListItem+Ids;
-                         System.debug('priceListItem-for-product-fetch->'+priceListItem);
-                         responseMap = fetchSobejctData(priceListItem);
-                         List<Sobject> priceListItemList = new List<Sobject>();
-                         priceListItemList = (List<Sobject>)JSON.deserialize(JSON.serializePretty(responseMap.get('records')), List<Sobject>.Class);
-                         String productIds ='';
-                         Integer idCount = 0;//max 500
-                         //make set of Pricelist Ids
-                         for(Sobject priceListvar : priceListItemList ){
-                             if(idCount == 500 )
-                                 break;
-                             if(priceListvar.get('ccrz__Product__c') != null && priceListvar.get('ccrz__Product__c') != '' && (!productIds.containsIgnoreCase( String.valueOf(priceListvar.get('ccrz__Product__c')) ))  ){                      
-                                 idCount = idCount + 1;
-                                 if(productIds ==''){
-                                     productIds =   '\''+priceListvar.get('ccrz__Product__c')+'\'';
-                                 }else{
-                                    productIds =productIds+','+ '\''+priceListvar.get('ccrz__Product__c')+'\''; 
-                                 }
-                                 
-                             }
-                         }
-                         productIds = '('+productIds+')';
-                         System.debug('endpointUrl11--->'+endpointUrl);
-                         if(whereClause !=null && whereClause!='' ){
-                             endpointUrl=endpointUrl+'+AND+Id+IN+'+productIds; 
-                             System.debug('endpointUrl21--->'+endpointUrl);
-                         }else{
-                             endpointUrl=endpointUrl+'+WHERE+Id+IN+'+productIds; 
-                             System.debug('endpointUrl41--->'+endpointUrl);
-                         }
-                         responseMap.clear();*/
-                         endpointUrl = buildQueryForObject(endpointUrl,whereClause);
+                        
+                         buildQueryForObject(endpointUrl,whereClause);
                      }
-                   
+                     
                      if(currentsObject.SObjectRecordLimit__c != null &&
                         !(currentsObject.sObjectAPIName__c == 'ccrz__E_AccountGroup__c' 
                           || currentsObject.sObjectAPIName__c == 'ccrz__E_Category__c' || currentsObject.sObjectAPIName__c == 'ccrz__E_Spec__c'
@@ -431,67 +365,194 @@ global class DataSetup implements Database.Batchable<sObject>,Database.AllowsCal
                               
                           }
                      
-                     returnsObjectData(endpointUrl,false,new List<String>());
+                     if( !(currentsObject.sObjectAPIName__c == 'ccrz__E_Product__c' || currentsObject.sObjectAPIName__c == 'ccrz__E_PriceList__c') ){
+                         returnsObjectData(endpointUrl,false,new List<String>());
+                     }
+                     
                  }
             
         }catch(Exception e){
             System.debug('get exeption on line number-->'+e.getLineNumber()+' error is-->'+e.getMessage());
         }
     }
-    //this method will build query only for ccrz__E_Product__c and ccrz__E_PriceList__c
-    public String buildQueryForObject(String endpointUrl , String whereClause){
+    
+    // this method will process the child record of Products('ccrz__E_ProductSpec__c','ccrz__E_ProductMedia__c','ccrz__E_ProductCategory__c')
+    public void processChildRecordsOfProducts(String endpointUrl){
+        System.debug('endpointUrl-->>>>>'+endpointUrl);
+        String endpointUrlClone = endpointUrl;
+        System.debug(parentRelations[0].split('/')[1]+'parentRelations-processChildRecordsOfProducts->'+parentRelations);
+        List<Sobject> objectTobeInserted = new List<Sobject>();
+        Integer idCount = 0;//max 500
+        String recordIds = '';
         Map<String, Object> responseMap = new Map<String, Object>();
+        System.debug('parentRelations---->records'+parentRelations[0].split('/')[0]);
+        for(String parentId : objectNameToOld_NewId.get(parentRelations[0].split('/')[0]).keySet() ){
+            idCount =  idCount +1;
+            if(recordIds ==''){
+                recordIds =   '\''+parentId+'\'';
+            }else{
+                recordIds =recordIds+','+ '\''+parentId+'\''; 
+            }
+            if(Math.mod(idCount, 520) == 0){
+                recordIds = '('+recordIds+')';
+                endpointUrl = endpointUrl+'+WHERE+'+parentRelations[0].split('/')[1]+'+IN+'+recordIds;
+                System.debug('endpointUrl2-->>>>>'+endpointUrl);
+                while(endpointUrl!='' && endpointUrl!=null){
+                    responseMap = fetchSobejctData(endpointUrl);
+                    if(responseMap.containsKey('nextRecordsUrl')){
+                        endpointUrl = objAuthenticationInfo.instance_url+(String)responseMap.get('nextRecordsUrl');
+                    }else{
+                        endpointUrl = '';
+                    }
+                    recordIds = '';
+                    objectTobeInserted.addAll((List<Sobject>)JSON.deserialize(JSON.serializePretty(responseMap.get('records')), List<Sobject>.Class));
+                }
+                endpointUrl = endpointUrlClone;
+            }	            
+        }
+       
+        if(recordIds != '' && recordIds != null){
+            recordIds = '('+recordIds+')';
+            endpointUrl = endpointUrl+'+WHERE+'+parentRelations[0].split('/')[1]+'+IN+'+recordIds;
+            //System.debug('endpointUrl-->1-'+endpointUrl);
+            responseMap = fetchSobejctData(endpointUrl);
+            recordIds = '';
+            
+            objectTobeInserted.addAll((List<Sobject>)JSON.deserialize(JSON.serializePretty(responseMap.get('records')), List<Sobject>.Class));
+        }
+       
+        List<Sobject> objectTobeInsertedClone = (List<Sobject>)JSON.deserialize(JSON.serializePretty(objectTobeInserted), List<Sobject>.Class);
+        List<String> parentRelationInfo;
+        for(Sobject SobjectIns : objectTobeInserted){
+            SobjectIns.Id = null;
+            for(String parentRelationInfoVar:parentRelations){
+                parentRelationInfo = parentRelationInfoVar.split('/');
+                System.debug('parentRelationInfo--->'+parentRelationInfo);
+                System.debug(SobjectIns.get(parentRelationInfo[1]) +'-SobjectIns.get(parentRelationInfo[1])--'+objectNameToOld_NewId.get(parentRelationInfo[0]).get((String)SobjectIns.get(parentRelationInfo[1])));
+                if( SobjectIns.get(parentRelationInfo[1]) != null ){
+                    SobjectIns.put(parentRelationInfo[1] , (objectNameToOld_NewId.get(parentRelationInfo[0])).get((String)SobjectIns.get(parentRelationInfo[1])) );
+                } 
+            }
+        }
+         if(false){
+            return;  
+        }
+        try{
+            List<sObject> sObjectList = deleteOldRecords();
+            if(!sObjectList.isEmpty()){
+                database.delete(sObjectList,false);
+            }
+        }catch(Exception e){
+            System.debug('get exeption delete records on line number-->'+e.getLineNumber()+' error is-->'+e.getMessage());
+            
+        }
+        createOldToNewIdMap(objectTobeInserted,objectTobeInsertedClone,false);
+        
+    }
+    //this method will build query only for ccrz__E_Product__c and ccrz__E_PriceList__c
+    public void buildQueryForObject(String endpointUrl , String whereClause){
+        //Map<String, Object> responseMap = new Map<String, Object>();
         String Ids ='';
         string field = '';
         //accountgroupPricelist
         String junctionRecordquery ; // store the accountgroupPricelist in case of ccrz__E_PriceList__c and pricelist item in case of ccrz__E_Product__c
         if(currentsObject.sObjectAPIName__c == 'ccrz__E_PriceList__c'){
-            junctionRecordquery = objAuthenticationInfo.instance_url+'/services/data/v49.0/query/?q='+'Select+Id,ccrz__AccountGroup__c,ccrz__Pricelist__c+from+ccrz__E_AccountGroupPriceList__c+WHERE+ccrz__AccountGroup__c+IN+';
+            junctionRecordquery = objAuthenticationInfo.instance_url+'/services/data/v49.0/query/?q='+'Select+Id,ccrz__AccountGroup__c,ccrz__Pricelist__c+from+ccrz__E_AccountGroupPriceList__c+WHERE+ccrz__Pricelist__c+!=null+AND+ccrz__AccountGroup__c+IN+';
             Ids = createInquery(objectNameToOld_NewId.get('ccrz__E_AccountGroup__c').keySet() , 500);
             field = 'ccrz__Pricelist__c';
         }else if (currentsObject.sObjectAPIName__c == 'ccrz__E_Product__c'){
             junctionRecordquery = objAuthenticationInfo.instance_url+'/services/data/v49.0/query/?q='+'Select+Id,ccrz__Product__c+from+ccrz__E_PriceListItem__c+WHERE+ccrz__Product__c+!=NULL+AND+ccrz__Pricelist__c+IN+';
-        	Ids = createInquery(objectNameToOld_NewId.get('ccrz__E_PriceList__c').keySet() , 500);
+            Ids = createInquery(objectNameToOld_NewId.get('ccrz__E_PriceList__c').keySet() , 500);
             field = 'ccrz__Product__c';
         }
         // query on accountgroup pricelist to retrieve the pricelist IDs
         // query on  pricelist to retrieve the pricelist IDs
-       
+        
         //integer idCount = 0;//max 500
         
         Ids = '('+Ids+')';// store the accountgroup Ids in case of ccrz__E_PriceList__c and pricelist id in case of ccrz__E_Product__c
         junctionRecordquery = junctionRecordquery+Ids;
         System.debug('junctionRecordlist-->'+junctionRecordquery);
-        responseMap = fetchSobejctData(junctionRecordquery);
+        fetchAllJunctionRecord(endpointUrl,junctionRecordquery,field,whereClause);
+        
+        
+    }
+    public void fetchAllJunctionRecord(String endpointUrl,String junctionRecordQuery,String field ,String whereClause){
+        String endpointUrlClone = endpointUrl;
         List<Sobject> junctionRecordList = new List<Sobject>();
-        junctionRecordList = (List<Sobject>)JSON.deserialize(JSON.serializePretty(responseMap.get('records')), List<Sobject>.Class);
+        List<Sobject> objectTobeInserted = new List<Sobject>();
+        Map<String, Object> responseMap = new Map<String, Object>();
         String recordIds =''; // store the Pricelist Ids in case of ccrz__E_PriceList__c and products ids item in case of ccrz__E_Product__c
         Integer idCount = 0;//max 500
-        //make set of Pricelist Ids
-        for(Sobject accountGrpsobjectvar : junctionRecordList ){
-            if(idCount == 500 )
-                break;
-            if(accountGrpsobjectvar.get(field) != null && accountGrpsobjectvar.get(field) != '' && (!recordIds.containsIgnoreCase( String.valueOf(accountGrpsobjectvar.get(field)) ))  ){                      
-                idCount = idCount + 1;
-                if(recordIds ==''){
-                    recordIds =   '\''+accountGrpsobjectvar.get(field)+'\'';
-                }else{
-                    recordIds =recordIds+','+ '\''+accountGrpsobjectvar.get(field)+'\''; 
-                }
-                
+        Set<String> processedIds = new Set<String>();
+        while(junctionRecordquery !='' && junctionRecordquery!=null){
+            System.debug('junctionRecordquery-------->'+junctionRecordquery);
+            responseMap = fetchSobejctData(junctionRecordquery);
+            if(responseMap.containsKey('nextRecordsUrl')){
+                junctionRecordquery = objAuthenticationInfo.instance_url+(String)responseMap.get('nextRecordsUrl');
+            }else{
+                junctionRecordquery = '';
             }
+            junctionRecordList.addAll((List<Sobject>)JSON.deserialize(JSON.serializePretty(responseMap.get('records')), List<Sobject>.Class)); 
+            responseMap.clear();
+            for(Sobject accountGrpsobjectvar : junctionRecordList ){
+                if(accountGrpsobjectvar.get(field) != null && accountGrpsobjectvar.get(field) != '' && ( !processedIds.contains((String)accountGrpsobjectvar.get(field)) )  ){                      
+                    idCount = idCount + 1;
+                    processedIds.add((String)accountGrpsobjectvar.get(field));
+                    if(recordIds ==''){
+                        recordIds =   '\''+accountGrpsobjectvar.get(field)+'\'';
+                    }else{
+                        recordIds =recordIds+','+ '\''+accountGrpsobjectvar.get(field)+'\''; 
+                    }
+                    
+                }
+                if( Math.mod(idCount, 520) == 0){
+                    recordIds = '('+recordIds+')';
+                    //call method to fetch the products
+                    if(whereClause !=null && whereClause!='' ){
+                        endpointUrl=endpointUrl+'+AND+Id+IN+'+recordIds; 
+                        System.debug('endpointUrl21--->'+endpointUrl);
+                    }else{
+                        endpointUrl=endpointUrl+'+WHERE+Id+IN+'+recordIds; 
+                        System.debug('endpointUrl41--->'+endpointUrl);
+                    }
+                    responseMap = fetchSobejctData(endpointUrl);
+                    recordIds = '';
+                    objectTobeInserted.addAll((List<Sobject>)JSON.deserialize(JSON.serializePretty(responseMap.get('records')), List<Sobject>.Class));
+                    endpointUrl = endpointUrlClone;
+                }
+            }
+            
         }
-        recordIds = '('+recordIds+')';
-        System.debug('endpointUrl11--->'+endpointUrl);
-        if(whereClause !=null && whereClause!='' ){
-            endpointUrl=endpointUrl+'+AND+Id+IN+'+recordIds; 
-            System.debug('endpointUrl21--->'+endpointUrl);
-        }else{
-            endpointUrl=endpointUrl+'+WHERE+Id+IN+'+recordIds; 
-            System.debug('endpointUrl41--->'+endpointUrl);
+        junctionRecordList.clear();
+        if(recordIds != '' && recordIds != null){
+            recordIds = '('+recordIds+')';
+            if(whereClause !=null && whereClause!='' ){
+                endpointUrl=endpointUrl+'+AND+Id+IN+'+recordIds; 
+                System.debug('endpointUrl21--->'+endpointUrl);
+            }else{
+                endpointUrl=endpointUrl+'+WHERE+Id+IN+'+recordIds; 
+                System.debug('endpointUrl41--->'+endpointUrl);
+            }
+            responseMap = fetchSobejctData(endpointUrl);
+            recordIds = '';
+            objectTobeInserted.addAll((List<Sobject>)JSON.deserialize(JSON.serializePretty(responseMap.get('records')), List<Sobject>.Class));
         }
-        responseMap.clear();
-        return endpointUrl;
+        List<Sobject> objectTobeInsertedClone = (List<Sobject>)JSON.deserialize(JSON.serializePretty(objectTobeInserted), List<Sobject>.Class);
+        for(Sobject SobjectIns : objectTobeInserted){
+            SobjectIns.Id = null;
+        }
+        try{
+            List<sObject> sObjectList = deleteOldRecords();
+            if(!sObjectList.isEmpty()){
+                database.delete(sObjectList,false);
+            }
+        }catch(Exception e){
+            System.debug('get exeption delete records on line number-->'+e.getLineNumber()+' error is-->'+e.getMessage());
+            
+        }
+        createOldToNewIdMap(objectTobeInserted,objectTobeInsertedClone,true);
+        
     }
     public Map<String, Object> fetchSobejctData(String endpointUrl ){
         System.debug('endpointUrl-fetchSobejctData->'+endpointUrl);
@@ -665,9 +726,9 @@ global class DataSetup implements Database.Batchable<sObject>,Database.AllowsCal
                     getChildAccounts(Ids,sobjectList,sobjectListClone);
                 }else{
                     try{
-                       List<sObject> sObjectList = deleteOldRecords();
+                        List<sObject> sObjectList = deleteOldRecords();
                         if(!sObjectList.isEmpty()){
-                           // database.delete(sObjectList,false);
+                             database.delete(sObjectList,false);
                         }
                     }catch(Exception e){
                         System.debug('get exeption delete records on line number-->'+e.getLineNumber()+' error is-->'+e.getMessage());
@@ -690,7 +751,7 @@ global class DataSetup implements Database.Batchable<sObject>,Database.AllowsCal
                             System.debug('error is--->'+saveresultList[counter].geterrors()[0].getMessage());
                         }
                     }
-                   
+                    
                     if(currentsObject.sObjectAPIName__c != 'ccrz__E_ProductCategory__c' || currentsObject.sObjectAPIName__c != 'ccrz__E_ProductSpec__c'
                        || currentsObject.sObjectAPIName__c != 'ccrz__E_ProductMedia__c' || currentsObject.sObjectAPIName__c != 'ccrz__E_RelatedProduct__c'
                        || currentsObject.sObjectAPIName__c != 'ccrz__E_Menu__c' || currentsObject.sObjectAPIName__c != 'ccrz__E_Configuration__c'
@@ -708,7 +769,7 @@ global class DataSetup implements Database.Batchable<sObject>,Database.AllowsCal
         }
     }
     public List<sObject> deleteOldRecords(){
-        String sObjectQuery = 'SELECT Id FROM '+currentsObject.sObjectAPIName__c+' Limit 5000';
+        String sObjectQuery = 'SELECT Id FROM '+currentsObject.sObjectAPIName__c+' Limit 10000';
         System.debug('sObjectQuery--->'+sObjectQuery);
         List<sObject> sObjectList = Database.query(sObjectQuery);
         System.debug('sObjectQuery--size--->'+sObjectList.size());
@@ -735,14 +796,14 @@ global class DataSetup implements Database.Batchable<sObject>,Database.AllowsCal
         try{
             List<sObject> sObjectList = deleteOldRecords();
             if(!sObjectList.isEmpty()){
-                //database.delete(sObjectList,false);
+                database.delete(sObjectList,false);
             }
         }catch(Exception e){
             System.debug('get exeption delete records on line number-->'+e.getLineNumber()+' error is-->'+e.getMessage());
             
         }
         //parentAccountinserted here
-        createOldToNewIdMap(sobjectListparent,sobjectListparentClone);
+        createOldToNewIdMap(sobjectListparent,sobjectListparentClone,true);
         
         System.debug('responseMap---getChildAccounts>'+responseMap);
         if (responseMap !=null && (!responseMap.isEmpty()) ) { 
@@ -776,10 +837,10 @@ global class DataSetup implements Database.Batchable<sObject>,Database.AllowsCal
             
         }
         if(!sobjectList.isEmpty())
-            createOldToNewIdMap(sobjectList,sobjectListClone);
+            createOldToNewIdMap(sobjectList,sobjectListClone,true);
         
     }
-    public void createOldToNewIdMap(List<Sobject> sobjectListparent , List<Sobject> sobjectListparentClone){
+    public void createOldToNewIdMap(List<Sobject> sobjectListparent , List<Sobject> sobjectListparentClone, Boolean holdValue){
         saveresultList = new List<Database.SaveResult>();
         Map<String,String> oldToNewIdMap = new Map<String,string>();
         if( objectNameToOld_NewId.containsKey(currentsObject.sObjectAPIName__c) ){
@@ -798,6 +859,7 @@ global class DataSetup implements Database.Batchable<sObject>,Database.AllowsCal
                 System.debug('error is--->'+saveresultList[counter].geterrors()[0].getMessage());
             }
         }
+        if(holdValue)
         objectNameToOld_NewId.put(currentsObject.sObjectAPIName__c,oldToNewIdMap);
     }
     global void finish(Database.BatchableContext BC) {
